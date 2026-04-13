@@ -214,6 +214,21 @@
 .stars{display:flex;gap:1px}
 .star-y{color:var(--yellow);font-size:0.85rem}
 .star-e{color:var(--dim);font-size:0.85rem}
+.star-partial{
+    font-size:0.85rem;
+    position: relative;
+    color: var(--dim);
+    display: inline-block;
+}
+.star-partial::before {
+    content: '\2605';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--yellow);
+    overflow: hidden;
+    width: var(--fill, 50%);
+}
 .rating-num{font-family:var(--fh);font-weight:700;font-size:0.86rem}
 .review-cnt{font-size:0.76rem;color:var(--dim)}
 

@@ -4,7 +4,7 @@
 const packs = [
     {
         id:1, name:'Ultimate Business ChatGPT Pack',
-        emoji:'💼', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B6B)',
+        emoji:'✨', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B6B)',
         price:19, origPrice:35, priceCategory:'15-30',
         platforms:['chatgpt','business'],
         count:50, category:'ChatGPT / Business',
@@ -52,7 +52,7 @@ const packs = [
     },
     {
         id:3, name:'SEO Content Writer Pack',
-        emoji:'📈', bgColor:'linear-gradient(135deg,#1E2E1E,#1B6B35)',
+        emoji:'📝', bgColor:'linear-gradient(135deg,#1E2E1E,#1B6B35)',
         price:15, origPrice:25, priceCategory:'5-15',
         platforms:['chatgpt','seo'],
         count:30, category:'ChatGPT / SEO',
@@ -75,7 +75,7 @@ const packs = [
     },
     {
         id:4, name:'Social Media Content Pack',
-        emoji:'📱', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B5A)',
+        emoji:'📲', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B5A)',
         price:12, origPrice:20, priceCategory:'5-15',
         platforms:['chatgpt','social'],
         count:40, category:'ChatGPT / Social Media',
@@ -101,7 +101,7 @@ const packs = [
         id:5, name:'YouTube Script Writing Pack',
         emoji:'🎬', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B1B)',
         price:17, origPrice:29, priceCategory:'15-30',
-        platforms:['chatgpt'],
+        platforms:['chatgpt','business'],
         count:25, category:'ChatGPT / Video',
         rating:4.9, reviews:45, reviewCount:'45',
         badge:'✨ New', badgeClass:'badge-new',
@@ -122,12 +122,12 @@ const packs = [
     },
     {
         id:6, name:'Freelancer Income Pack',
-        emoji:'💰', bgColor:'linear-gradient(135deg,#1E2E1A,#2B5A1B)',
+        emoji:'💵', bgColor:'linear-gradient(135deg,#1E2E1A,#2B5A1B)',
         price:22, origPrice:39, priceCategory:'15-30',
         platforms:['chatgpt','business','freelance'],
         count:60, category:'ChatGPT / Freelancing',
         rating:4.7, reviews:33, reviewCount:'33',
-        badge:'💰 Money Making', badgeClass:'badge-money',
+        badge:'🏆 Top Earner', badgeClass:'badge-money',
         cardClass:'',
         desc:'60 income-generating prompts for freelancers, consultants and solopreneurs. Win more clients, write better proposals, set premium prices and automate your freelance business with AI.',
         included:['Winning project proposal writer','Client outreach & pitch emails','Freelance contract clause generator','Upwork & Fiverr profile optimizer','Rate negotiation scripts & tactics'],
@@ -150,7 +150,7 @@ const packs = [
         platforms:['chatgpt','business'],
         count:35, category:'ChatGPT / E-commerce',
         rating:4.6, reviews:78, reviewCount:'78',
-        badge:'', badgeClass:'',
+        badge:'📦 Value Pack', badgeClass:'badge-trending',
         cardClass:'',
         desc:'35 e-commerce focused prompts that help you write killer product descriptions, optimize your store and create high-converting ad copy. Perfect for Shopify, Amazon and Etsy sellers.',
         included:['High-converting product descriptions','Amazon listing optimizer','Facebook & Instagram ad copy','Customer review response templates','Abandoned cart email sequences'],
@@ -307,8 +307,8 @@ function getPlatformLabel(p) {
         claude:'🧠 Claude', gemini:'✨ Gemini',
         'stable-diffusion':'🌊 SD', runway:'🎬 Runway',
         business:'💼 Business', seo:'📈 SEO',
-        social:'📱 Social', art:'🎨 Art',
-        freelance:'💰 Freelance'
+        social:'📣 Social', art:'🖼️ Art',
+        freelance:'💼 Freelance'
     };
     return labels[p] || p;
 }
@@ -316,9 +316,15 @@ function getPlatformLabel(p) {
 function renderStars(rating) {
     let html = '';
     for (let i = 1; i <= 5; i++) {
-        if (i <= Math.floor(rating)) html += `<span class="star-y">★</span>`;
-        else if (i - 0.5 <= rating) html += `<span class="star-y" style="opacity:0.6;">★</span>`;
-        else html += `<span class="star-e">★</span>`;
+        if (i <= Math.floor(rating)) {
+            html += `<span class="star-y">★</span>`;
+        } else if (i - rating < 1 && i > Math.floor(rating)) {
+            // Partial star using CSS clip
+            const pct = Math.round((rating - Math.floor(rating)) * 100);
+            html += `<span class="star-partial" style="--fill:${pct}%">★</span>`;
+        } else {
+            html += `<span class="star-e">★</span>`;
+        }
     }
     return html;
 }
@@ -360,6 +366,7 @@ function applyAllFilters() {
         else if (activePriceFilter === '1-5') matchPrice = pack.price >= 1 && pack.price <= 5;
         else if (activePriceFilter === '5-15') matchPrice = pack.price > 5 && pack.price <= 15;
         else if (activePriceFilter === '15-30') matchPrice = pack.price > 15 && pack.price <= 30;
+        else if (activePriceFilter === '30+') matchPrice = pack.price > 30;
 
         return matchPlatform && matchPrice;
     });
@@ -654,8 +661,18 @@ window.handleFreeDownload = function(e) {
 // =============================================
 window.handleSellApply = function(e) {
     e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = '✅ Application Submitted!';
+    btn.style.background = '#00C851';
+    btn.style.pointerEvents = 'none';
     showToast('Application submitted! We\'ll review it within 48 hours.','🚀');
-    e.target.reset();
+    setTimeout(() => {
+        form.reset();
+        btn.textContent = '🚀 Submit Application';
+        btn.style.background = '';
+        btn.style.pointerEvents = '';
+    }, 4000);
 }
 
 // =============================================
