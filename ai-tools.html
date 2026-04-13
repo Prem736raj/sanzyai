@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best AI Tools Directory 2025 - Free & Paid | SanzyAI</title>
+    <meta name="description" content="Discover 500+ best AI tools for writing, image, video, code, SEO, voice & more. Compare free and paid AI tools with ratings and reviews.">
+    <link rel="canonical" href="https://sanzyai.com/ai-tools">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/ai-tools.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+============================================ -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools" class="active">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#" class="btn btn-glow btn-sm">💬 Chat with Sanzy</a>
+                <button class="hamburger" id="ham" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+    <div class="mobile-nav-cta"><a href="#" class="btn btn-glow">💬 Chat with Sanzy</a></div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <div class="bc-inner">
+            <a href="/">🏠 Home</a>
+            <span class="bc-sep">›</span>
+            <span>AI Tools Directory</span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     PAGE HERO
+============================================ -->
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-label">AI Tools Directory 2025</div>
+        <h1>Discover The <span class="gradient-text">Best AI Tools</span></h1>
+        <p>500+ AI tools reviewed, rated and categorized. Find the perfect AI tool for writing, images, video, code, SEO & more.</p>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+            <div class="hstat">
+                <span class="hstat-icon">🤖</span>
+                <div>
+                    <div class="hstat-num">500+</div>
+                    <div class="hstat-label">Tools Listed</div>
+                </div>
+            </div>
+            <div class="hstat">
+                <span class="hstat-icon">⭐</span>
+                <div>
+                    <div class="hstat-num">20</div>
+                    <div class="hstat-label">Featured Today</div>
+                </div>
+            </div>
+            <div class="hstat">
+                <span class="hstat-icon">🆓</span>
+                <div>
+                    <div class="hstat-num">180+</div>
+                    <div class="hstat-label">Free Tools</div>
+                </div>
+            </div>
+            <div class="hstat">
+                <span class="hstat-icon">🔄</span>
+                <div>
+                    <div class="hstat-num">Daily</div>
+                    <div class="hstat-label">Updated</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-wrap">
+            <div class="search-bar">
+                <span class="search-icon-el">🔍</span>
+                <input type="text" class="search-input-el" id="toolSearch"
+                    placeholder="Search AI tools, categories, features..."
+                    oninput="handleSearch(this.value)" autocomplete="off">
+                <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FILTER BAR
+============================================ -->
+<div class="filter-bar">
+    <div class="container">
+        <div class="filter-inner">
+            <div class="filter-scroll" id="filterScroll">
+                <span class="filter-group-label">Pricing</span>
+                <button class="filter-btn active" onclick="applyFilter(this,'all')" data-filter="all">
+                    All Tools <span class="f-count" id="fc-all">20</span>
+                </button>
+                <button class="filter-btn" onclick="applyFilter(this,'free')" data-filter="free">
+                    🆓 Free <span class="f-count" id="fc-free">6</span>
+                </button>
+                <button class="filter-btn" onclick="applyFilter(this,'freemium')" data-filter="freemium">
+                    ✨ Freemium <span class="f-count" id="fc-freemium">8</span>
+                </button>
+                <button class="filter-btn" onclick="applyFilter(this,'paid')" data-filter="paid">
+                    💳 Paid <span class="f-count" id="fc-paid">6</span>
+                </button>
+                <div class="filter-divider"></div>
+                <span class="filter-group-label">Category</span>
+                <button class="filter-btn" onclick="applyFilter(this,'writing')" data-filter="writing">✍️ Writing</button>
+                <button class="filter-btn" onclick="applyFilter(this,'image')" data-filter="image">🎨 Image</button>
+                <button class="filter-btn" onclick="applyFilter(this,'video')" data-filter="video">🎬 Video</button>
+                <button class="filter-btn" onclick="applyFilter(this,'code')" data-filter="code">💻 Code</button>
+                <button class="filter-btn" onclick="applyFilter(this,'seo')" data-filter="seo">📈 SEO</button>
+                <button class="filter-btn" onclick="applyFilter(this,'chatbot')" data-filter="chatbot">💬 Chatbot</button>
+                <button class="filter-btn" onclick="applyFilter(this,'voice')" data-filter="voice">🎙️ Voice</button>
+                <button class="filter-btn" onclick="applyFilter(this,'design')" data-filter="design">🖌️ Design</button>
+                <button class="filter-btn" onclick="applyFilter(this,'business')" data-filter="business">💼 Business</button>
+                <button class="filter-btn" onclick="applyFilter(this,'marketing')" data-filter="marketing">📣 Marketing</button>
+                <button class="filter-btn" onclick="applyFilter(this,'education')" data-filter="education">📚 Education</button>
+                <button class="filter-btn" onclick="applyFilter(this,'research')" data-filter="research">🔬 Research</button>
+                <button class="filter-btn" onclick="applyFilter(this,'productivity')" data-filter="productivity">⚡ Productivity</button>
+                <button class="filter-btn" onclick="applyFilter(this,'automation')" data-filter="automation">🔁 Automation</button>
+                <button class="filter-btn" onclick="applyFilter(this,'music')" data-filter="music">🎵 Music</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     TOOLS SECTION
+============================================ -->
+<section class="tools-section">
+    <div class="container">
+        <div class="sec-header">
+            <div class="sec-left">
+                <div class="sec-badge">⭐ Editor's Choice</div>
+                <h2 class="sec-title">Featured <span class="gradient-text">AI Tools</span></h2>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                <span class="sec-count" id="toolCount">Showing 20 tools</span>
+                <select class="sort-sel" id="sortTools" onchange="sortTools()">
+                    <option value="rating">Sort: Top Rated</option>
+                    <option value="name">Sort: A-Z</option>
+                    <option value="price-low">Sort: Price Low→High</option>
+                    <option value="price-high">Sort: Price High→Low</option>
+                    <option value="newest">Sort: Newest</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tools-grid" id="toolsGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     COMPARE STICKY BAR
+============================================ -->
+<div class="compare-bar" id="compareBar">
+    <div class="compare-bar-inner">
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <div>
+                <div style="font-family:var(--font-h);font-weight:700;font-size:0.92rem;">Compare Tools</div>
+                <div class="compare-info" id="compareInfo">Select up to 3 tools to compare side by side</div>
+            </div>
+            <div class="compare-selected" id="compareChips"></div>
+        </div>
+        <div class="compare-bar-btns">
+            <button class="btn btn-outline btn-sm" onclick="clearCompare()">Clear All</button>
+            <button class="btn btn-primary btn-sm" onclick="openCompare()" id="compareBtn" disabled>
+                ⚖️ Compare Now
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     COMPARISON TABLE MODAL
+============================================ -->
+<section class="compare-section" id="compareSection" style="display:none;">
+    <div class="container">
+        <div class="sec-header">
+            <div class="sec-left">
+                <h2 class="sec-title">⚖️ Side-by-Side <span class="gradient-text">Comparison</span></h2>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="closeCompare()">✕ Close</button>
+        </div>
+        <div class="compare-table-wrap">
+            <div class="compare-scroll">
+                <table class="compare-table" id="compareTable">
+                    <!-- Populated by JS -->
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     NEWSLETTER
+============================================ -->
+<section class="newsletter-sec">
+    <div class="container">
+        <div class="newsletter-card">
+            <div class="newsletter-inner">
+                <span class="nl-icon">📬</span>
+                <h2 class="nl-title">Get Weekly AI Tool <span class="gradient-text">Recommendations</span></h2>
+                <p class="nl-sub">Join 10,000+ AI enthusiasts getting the freshest tool discoveries, honest reviews, and exclusive deals — every week.</p>
+                <div class="nl-badges">
+                    <span class="nl-badge">✅ No spam, ever</span>
+                    <span class="nl-badge">✅ Unsubscribe anytime</span>
+                    <span class="nl-badge">✅ 10,000+ readers</span>
+                    <span class="nl-badge">✅ Weekly digest</span>
+                </div>
+                <form class="nl-form" onsubmit="handleNL(event)">
+                    <input type="email" class="nl-input" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn btn-primary">
+                        Subscribe 🚀
+                    </button>
+                </form>
+                <p class="nl-note">🔒 We respect your privacy. Your email is never shared or sold.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SUBMIT A TOOL
+============================================ -->
+<section class="submit-sec">
+    <div class="container">
+        <div class="submit-card">
+            <div class="submit-left">
+                <h2>Know a Great <span class="gradient-text">AI Tool?</span></h2>
+                <p>Help the community discover amazing AI tools. Submit any tool you've found useful and our team will review and list it — for free!</p>
+                <div class="submit-perks">
+                    <div class="perk-item"><span class="perk-icon">✅</span> Free to submit, no fees</div>
+                    <div class="perk-item"><span class="perk-icon">⚡</span> Reviewed within 48 hours</div>
+                    <div class="perk-item"><span class="perk-icon">🌐</span> Reach 10,000+ monthly visitors</div>
+                    <div class="perk-item"><span class="perk-icon">🔗</span> Dofollow backlink included</div>
+                </div>
+            </div>
+            <form class="submit-form" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Tool Name *</label>
+                        <input type="text" class="form-input" placeholder="e.g. ChatGPT" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Website URL *</label>
+                        <input type="url" class="form-input" placeholder="https://toolname.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Category *</label>
+                        <select class="form-select" required>
+                            <option value="">Select category...</option>
+                            <option>Writing</option>
+                            <option>Image Generation</option>
+                            <option>Video</option>
+                            <option>Code</option>
+                            <option>SEO</option>
+                            <option>Voice</option>
+                            <option>Design</option>
+                            <option>Productivity</option>
+                            <option>Research</option>
+                            <option>Marketing</option>
+                            <option>Automation</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Pricing Model *</label>
+                        <select class="form-select" required>
+                            <option value="">Select pricing...</option>
+                            <option>Free</option>
+                            <option>Freemium</option>
+                            <option>Paid</option>
+                            <option>Open Source</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Short Description *</label>
+                    <textarea class="form-textarea" placeholder="Briefly describe what this AI tool does and who it's best for..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Your Email (optional)</label>
+                    <input type="email" class="form-input" placeholder="Get notified when your tool is listed">
+                </div>
+                <button type="submit" class="form-submit-btn">
+                    🚀 Submit AI Tool
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <div class="footer-links-row">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Submit Tool</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2025 SanzyAI.com — All Rights Reserved | AI Tools Directory updated daily
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/ai-tools.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>

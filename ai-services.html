@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Services - Content, Design, Chatbots & More | SanzyAI</title>
+    <meta name="description" content="Professional AI-powered services: content writing, logo design, chatbot setup, SEO, video creation & more. Fast delivery, affordable prices, 100% satisfaction guaranteed.">
+    <link rel="canonical" href="https://sanzyai.com/ai-services">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/ai-services.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+============================================ -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services" class="active">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#quote-form" class="btn btn-glow btn-sm">💬 Get Free Quote</a>
+                <button class="hamburger" id="ham" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+    <div class="mobile-nav-cta"><a href="#quote-form" class="btn btn-glow">💬 Get Free Quote</a></div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <div class="bc-inner">
+            <a href="/">🏠 Home</a>
+            <span class="bc-sep">›</span>
+            <span>AI Services</span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     HERO SECTION
+============================================ -->
+<section class="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-label">🚀 AI-Powered Agency Services</div>
+                <h1 class="hero-title">
+                    Professional AI Services<br>
+                    <span class="gradient-text">For Your Business</span>
+                </h1>
+                <p class="hero-sub">Get high-quality AI-powered work delivered fast at affordable prices. From content creation to full automation — we handle it all.</p>
+
+                <div class="hero-trust">
+                    <div class="trust-item-sm"><span class="ti-icon">✅</span> 50+ Happy Clients</div>
+                    <div class="trust-item-sm"><span class="ti-icon">⚡</span> Fast Delivery</div>
+                    <div class="trust-item-sm"><span class="ti-icon">💯</span> 100% Satisfaction</div>
+                    <div class="trust-item-sm"><span class="ti-icon">🌍</span> 30+ Countries</div>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#quote-form" class="btn btn-primary btn-lg">📋 Get Free Quote</a>
+                    <a href="#portfolio" class="btn btn-outline btn-lg">👁️ View Our Work</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-stats-card">
+                    <div class="hsc-title">📊 Our Track Record</div>
+                    <div class="hsc-grid">
+                        <div class="hsc-item">
+                            <span class="hsc-num">50+</span>
+                            <span class="hsc-lbl">Happy Clients</span>
+                        </div>
+                        <div class="hsc-item">
+                            <span class="hsc-num">98%</span>
+                            <span class="hsc-lbl">Satisfaction Rate</span>
+                        </div>
+                        <div class="hsc-item">
+                            <span class="hsc-num">8</span>
+                            <span class="hsc-lbl">AI Services</span>
+                        </div>
+                        <div class="hsc-item">
+                            <span class="hsc-num">24h</span>
+                            <span class="hsc-lbl">Avg. Delivery</span>
+                        </div>
+                    </div>
+                    <div class="hsc-badges">
+                        <div class="hsc-badge"><span class="hsc-badge-icon">🔒</span> Secure Payments via Stripe & PayPal</div>
+                        <div class="hsc-badge"><span class="hsc-badge-icon">💯</span> 30-Day Money-Back Guarantee</div>
+                        <div class="hsc-badge"><span class="hsc-badge-icon">🔄</span> Unlimited Revisions Until Happy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION
+============================================ -->
+<section class="sec-pad" id="services">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">What We Offer</div>
+            <h2 class="sec-title">Our <span class="gradient-text">AI Services</span></h2>
+            <p class="sec-sub">8 professional AI-powered services designed to grow your business faster, smarter and at a fraction of traditional agency costs.</p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     HOW IT WORKS
+============================================ -->
+<section class="sec-pad" style="background:var(--surface);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">Our Process</div>
+            <h2 class="sec-title">How It <span class="gradient-text">Works</span></h2>
+            <p class="sec-sub">Getting started is simple. From quote to delivery in 4 easy steps — no complicated contracts, no hidden fees.</p>
+        </div>
+
+        <div class="hiw-grid">
+            <div class="hiw-card">
+                <div class="hiw-num">📋</div>
+                <div class="hiw-step-label">Step 01</div>
+                <div class="hiw-title">Tell Us Your Needs</div>
+                <p class="hiw-desc">Fill out our quick quote form or chat with Sanzy AI. Tell us what you need, your budget and timeline — takes 2 minutes.</p>
+            </div>
+            <div class="hiw-card">
+                <div class="hiw-num">💰</div>
+                <div class="hiw-step-label">Step 02</div>
+                <div class="hiw-title">Get Free Quote</div>
+                <p class="hiw-desc">We review your requirements and send you a detailed custom quote within 2 hours — completely free, no commitment required.</p>
+            </div>
+            <div class="hiw-card">
+                <div class="hiw-num">⚡</div>
+                <div class="hiw-step-label">Step 03</div>
+                <div class="hiw-title">We Deliver Fast</div>
+                <p class="hiw-desc">Our AI-powered team gets to work immediately after approval. Most projects delivered within 24-72 hours — sometimes even faster.</p>
+            </div>
+            <div class="hiw-card">
+                <div class="hiw-num">✅</div>
+                <div class="hiw-step-label">Step 04</div>
+                <div class="hiw-title">You Approve & Pay</div>
+                <p class="hiw-desc">Review the work. Request any revisions (free, unlimited). Only pay when you're 100% happy with the result. Simple as that.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     WHY CHOOSE US
+============================================ -->
+<section class="sec-pad">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">Why SanzyAI</div>
+            <h2 class="sec-title">Why Choose <span class="gradient-text">Us?</span></h2>
+            <p class="sec-sub">We combine cutting-edge AI technology with human creativity to deliver work that's faster, smarter and better than traditional agencies.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">⚡</div>
+                <div class="why-content">
+                    <div class="why-title">Lightning Fast Delivery</div>
+                    <p class="why-desc">Most projects delivered within 24 hours. Need it urgent? We offer same-day delivery for select services. Time is money — we get it.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <div class="why-content">
+                    <div class="why-title">Best Prices Guaranteed</div>
+                    <p class="why-desc">AI-powered efficiency means we pass savings to you. Get agency-quality work at freelancer prices. No bloated overhead costs.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🔄</div>
+                <div class="why-content">
+                    <div class="why-title">Unlimited Revisions</div>
+                    <p class="why-desc">Not happy? We revise for free — as many times as needed. We only consider a project done when you're 100% satisfied with it.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤖</div>
+                <div class="why-content">
+                    <div class="why-title">AI-Powered Quality</div>
+                    <p class="why-desc">We use the latest AI models (GPT-4, Claude, Midjourney) combined with human expertise for results that traditional agencies simply can't match.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💬</div>
+                <div class="why-content">
+                    <div class="why-title">24/7 Support via Sanzy</div>
+                    <p class="why-desc">Our AI chatbot Sanzy is available 24/7 to answer questions, provide updates and escalate to humans when needed. Never feel ignored.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🌍</div>
+                <div class="why-content">
+                    <div class="why-title">Serving 30+ Countries</div>
+                    <p class="why-desc">We work with clients from USA, UK, Australia, Canada, India, UAE, Germany and 24+ more countries. Language is never a barrier.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     PORTFOLIO SECTION
+============================================ -->
+<section class="sec-pad" id="portfolio" style="background:var(--surface);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">Our Work</div>
+            <h2 class="sec-title">Recent <span class="gradient-text">Portfolio</span></h2>
+            <p class="sec-sub">A selection of recent projects we're proud of. Every piece is AI-powered and human-refined for maximum quality.</p>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS
+============================================ -->
+<section class="sec-pad">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">Client Reviews</div>
+            <h2 class="sec-title">What Our <span class="gradient-text">Clients Say</span></h2>
+            <p class="sec-sub">Don't just take our word for it. Here's what real clients say about working with SanzyAI. <em style="color:var(--dim);font-size:0.8rem;">(Sample testimonials for illustration purposes)</em></p>
+        </div>
+
+        <div class="testi-grid" id="testiGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     PRICING PLANS
+============================================ -->
+<section class="sec-pad" style="background:var(--surface);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);">
+    <div class="container">
+        <div class="sec-hdr">
+            <div class="sec-label">Simple Pricing</div>
+            <h2 class="sec-title">Monthly <span class="gradient-text">Service Plans</span></h2>
+            <p class="sec-sub">Need ongoing AI services? Our monthly plans save you up to 40% compared to one-off pricing. Cancel anytime.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <span class="pc-icon">🌱</span>
+                <div class="pc-name">Starter</div>
+                <div class="pc-price">$199<span>/month</span></div>
+                <div class="pc-desc">Perfect for solopreneurs & startups</div>
+                <ul class="pc-list">
+                    <li>4 blog articles (1000 words each)</li>
+                    <li>12 social media posts/month</li>
+                    <li>1 logo or design revision</li>
+                    <li>Basic SEO optimization</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="btn btn-outline pc-btn" onclick="scrollToQuote('Starter Monthly Plan')">Get Started →</button>
+            </div>
+
+            <div class="price-card featured">
+                <span class="pc-icon">🚀</span>
+                <div class="pc-name">Growth</div>
+                <div class="pc-price">$499<span>/month</span></div>
+                <div class="pc-desc">For growing businesses & brands</div>
+                <ul class="pc-list">
+                    <li>12 blog articles + SEO optimization</li>
+                    <li>30 social media posts + scheduling</li>
+                    <li>2 AI videos per month</li>
+                    <li>Full brand kit creation</li>
+                    <li>1 email campaign per month</li>
+                    <li>Monthly strategy call (30 mins)</li>
+                    <li>Priority 12-hour support</li>
+                </ul>
+                <button class="btn btn-primary pc-btn" onclick="scrollToQuote('Growth Monthly Plan')">Get Started →</button>
+            </div>
+
+            <div class="price-card">
+                <span class="pc-icon">🏢</span>
+                <div class="pc-name">Enterprise</div>
+                <div class="pc-price">$999<span>/month</span></div>
+                <div class="pc-desc">For established brands & agencies</div>
+                <ul class="pc-list">
+                    <li>Unlimited content writing</li>
+                    <li>Full social media management</li>
+                    <li>Custom AI chatbot setup</li>
+                    <li>4 AI videos per month</li>
+                    <li>Full SEO + monthly reports</li>
+                    <li>3 email campaign sequences</li>
+                    <li>Weekly strategy calls</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <button class="btn btn-outline pc-btn" onclick="scrollToQuote('Enterprise Monthly Plan')">Contact Sales →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FREE QUOTE FORM
+============================================ -->
+<section class="quote-section" id="quote-form">
+    <div class="container">
+        <div class="quote-card">
+            <div class="quote-left">
+                <div class="sec-label" style="margin-bottom:20px;">Free Consultation</div>
+                <h2 class="ql-title">Get Your <span class="gradient-text">Free Quote</span> in 2 Hours</h2>
+                <p class="ql-sub">Tell us about your project and we'll get back to you with a detailed custom quote — no commitment, completely free.</p>
+
+                <div class="ql-perks">
+                    <div class="ql-perk"><span class="ql-perk-icon">✅</span> Response within 2 hours (business hours)</div>
+                    <div class="ql-perk"><span class="ql-perk-icon">✅</span> Custom quote tailored to your needs</div>
+                    <div class="ql-perk"><span class="ql-perk-icon">✅</span> No obligation or hidden fees</div>
+                    <div class="ql-perk"><span class="ql-perk-icon">✅</span> Free strategy advice included</div>
+                    <div class="ql-perk"><span class="ql-perk-icon">✅</span> Talk to a human, not a bot</div>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-chip"><span class="contact-icon">📧</span> hello@sanzyai.com</div>
+                    <div class="contact-chip"><span class="contact-icon">💬</span> WhatsApp: +1 (555) AI-SANZY</div>
+                    <div class="contact-chip"><span class="contact-icon">🕐</span> Mon–Fri 9am–6pm EST | 24/7 via Sanzy Bot</div>
+                </div>
+            </div>
+
+            <div class="quote-right">
+                <div class="form-title">📋 Request Free Quote</div>
+                <form class="quote-form" id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+                    <div class="form-row">
+                        <div class="fgrp">
+                            <label class="flbl">Full Name *</label>
+                            <input type="text" class="finp" id="fname" placeholder="Your full name" required>
+                        </div>
+                        <div class="fgrp">
+                            <label class="flbl">Email Address *</label>
+                            <input type="email" class="finp" id="femail" placeholder="you@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="fgrp">
+                            <label class="flbl">WhatsApp Number</label>
+                            <input type="tel" class="finp" id="fphone" placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="fgrp">
+                            <label class="flbl">Service Needed *</label>
+                            <select class="fsel" id="fservice" required>
+                                <option value="">Select a service...</option>
+                                <option>AI Content Writing</option>
+                                <option>AI Logo & Brand Design</option>
+                                <option>AI Social Media Management</option>
+                                <option>AI Chatbot Setup</option>
+                                <option>AI Video Creation</option>
+                                <option>AI SEO Optimization</option>
+                                <option>AI Email Marketing</option>
+                                <option>AI Business Consulting</option>
+                                <option>Monthly Service Plan</option>
+                                <option>Custom / Multiple Services</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fgrp">
+                        <label class="flbl">Budget Range *</label>
+                        <select class="fsel" id="fbudget" required>
+                            <option value="">Select budget range...</option>
+                            <option>Under $100</option>
+                            <option>$100 – $300</option>
+                            <option>$300 – $500</option>
+                            <option>$500 – $1,000</option>
+                            <option>$1,000 – $3,000</option>
+                            <option>$3,000+</option>
+                            <option>Monthly Plan (Ongoing)</option>
+                        </select>
+                    </div>
+
+                    <div class="fgrp">
+                        <label class="flbl">How did you hear about us?</label>
+                        <select class="fsel" id="fsource">
+                            <option value="">Select source...</option>
+                            <option>Google Search</option>
+                            <option>Social Media</option>
+                            <option>Referral from Friend</option>
+                            <option>Blog / Article</option>
+                            <option>YouTube</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="fgrp">
+                        <label class="flbl">Project Description *</label>
+                        <textarea class="ftxt" id="fdesc" placeholder="Tell us about your project, goals, target audience and any specific requirements. The more detail you share, the better quote we can provide..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        <span class="btn-text">🚀 Send Free Quote Request</span>
+                        <div class="spinner"></div>
+                    </button>
+                    <p class="form-note">🔒 Your information is 100% private and never shared with third parties</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Modal -->
+<div class="success-overlay" id="successOverlay">
+    <div class="success-card">
+        <span class="success-icon">🎉</span>
+        <h2 class="success-title">Quote Request Sent!</h2>
+        <p class="success-sub">Thank you! We've received your request and will send a detailed custom quote to your email within <strong>2 hours</strong> during business hours. Check your inbox (and spam folder just in case).</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="#" class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('open')">← Back to Services</a>
+            <a href="/ai-tools" class="btn btn-outline">Browse AI Tools →</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#quote-form">Get Quote</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2025 SanzyAI.com — All Rights Reserved | Professional AI Services for Modern Businesses
+        </div>
+    </div>
+</footer>
+
+<!-- Floating CTA + Scroll Top -->
+<div class="float-cta">
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <a href="#quote-form" class="fcta-btn">📋 Free Quote</a>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/ai-services.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>

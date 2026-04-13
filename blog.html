@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog - Latest News, Tutorials & Tool Reviews | SanzyAI</title>
+    <meta name="description" content="Latest AI news, tutorials, tool reviews and guides. Learn how to use AI tools, make money online, and build websites with AI.">
+    <link rel="canonical" href="https://sanzyai.com/blog">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/blog.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog" class="active">Blog</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#" class="btn btn-glow btn-sm">💬 Chat with Sanzy</a>
+                <button class="hamburger" id="ham" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+    <div class="mobile-nav-cta"><a href="#" class="btn btn-glow" style="width:100%;justify-content:center;">💬 Chat with Sanzy</a></div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <div class="container">
+        <div class="bc-inner">
+            <a href="/">🏠 Home</a>
+            <span class="bc-sep">›</span>
+            <span>AI Blog</span>
+        </div>
+    </div>
+</div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+    <div class="container">
+        <div class="blog-hero-inner">
+            <div class="blog-label">Updated Daily</div>
+            <h1>AI <span class="gradient-text">Blog</span> & Insights</h1>
+            <p>Latest AI news, tutorials, tool reviews, and guides to help you build, grow and earn with AI in 2025.</p>
+            <div class="blog-stats">
+                <div class="bstat"><span class="bstat-num">150+</span><span class="bstat-lbl">Articles</span></div>
+                <div class="bstat-div"></div>
+                <div class="bstat"><span class="bstat-num">12K+</span><span class="bstat-lbl">Readers</span></div>
+                <div class="bstat-div"></div>
+                <div class="bstat"><span class="bstat-num">Daily</span><span class="bstat-lbl">Updates</span></div>
+                <div class="bstat-div"></div>
+                <div class="bstat"><span class="bstat-num">7</span><span class="bstat-lbl">Categories</span></div>
+            </div>
+            <div class="filter-row" id="filterRow">
+                <button class="fchip active" onclick="filterPosts(this,'all')">📰 All Posts</button>
+                <button class="fchip" onclick="filterPosts(this,'AI Tools')">🤖 AI Tools</button>
+                <button class="fchip" onclick="filterPosts(this,'Domain')">🌐 Domain</button>
+                <button class="fchip" onclick="filterPosts(this,'Make Money')">💰 Make Money</button>
+                <button class="fchip" onclick="filterPosts(this,'Tutorial')">📚 Tutorial</button>
+                <button class="fchip" onclick="filterPosts(this,'Prompts')">💡 Prompts</button>
+                <button class="fchip" onclick="filterPosts(this,'SEO')">📈 SEO</button>
+                <button class="fchip" onclick="filterPosts(this,'Freelancing')">💼 Freelancing</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <div class="blog-main">
+        <div class="posts-column">
+            <!-- Featured Post -->
+            <div class="featured-post" id="featuredPost" onclick="openPost(1)">
+                <div class="feat-img">
+                    <div class="feat-img-overlay"></div>
+                    <div class="feat-img-emojis">🤖💰📈</div>
+                    <div class="feat-img-bottom"></div>
+                    <div class="feat-badge-row">
+                        <span class="feat-badge fb-chatgpt">ChatGPT</span>
+                        <span class="feat-badge fb-money">Make Money</span>
+                    </div>
+                    <span class="feat-featured">⭐ Featured</span>
+                </div>
+                <div class="feat-body">
+                    <h2 class="feat-title">Complete Guide: How to Use ChatGPT to Make Money in 2025</h2>
+                    <div class="feat-meta">
+                        <span>👤 Sanzy</span>
+                        <span>📅 January 15, 2025</span>
+                        <span>⏱️ 8 min read</span>
+                        <span>👁️ 12.4K views</span>
+                    </div>
+                    <p class="feat-excerpt">Discover the proven strategies top creators are using to generate $1,000–$10,000/month with ChatGPT. From freelance writing and prompt engineering to building AI products — this comprehensive guide covers every income stream with step-by-step action plans.</p>
+                    <div class="feat-bottom">
+                        <div class="feat-tags">
+                            <span class="feat-tag">ChatGPT</span>
+                            <span class="feat-tag">Make Money</span>
+                            <span class="feat-tag">2025 Guide</span>
+                            <span class="feat-tag">Side Hustle</span>
+                        </div>
+                        <button class="read-full-btn" onclick="openPost(1)">Read Full Article →</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec-head">
+                <div class="sec-title">🔥 Latest Articles</div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="sec-count" id="postsCount">Showing 12 posts</span>
+                    <select id="sortSel" onchange="sortPosts()">
+                        <option value="new">Newest</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="reading">Read Time</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="posts-grid" id="postsGrid"></div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <aside class="sidebar">
+            <!-- Search -->
+            <div class="sw">
+                <div class="sw-title">🔍 Search Articles</div>
+                <div class="search-form">
+                    <input type="text" class="search-inp" id="searchInp" placeholder="Search..." onkeydown="if(event.key==='Enter')doSearch()">
+                    <button class="search-go" onclick="doSearch()">🔍</button>
+                </div>
+            </div>
+            <!-- Categories -->
+            <div class="sw">
+                <div class="sw-title">🗂️ Categories</div>
+                <div class="cat-list">
+                    <div class="cat-row" onclick="filterPostsCat('AI Tools')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#00D4FF"></span><span class="cat-name">AI Tools</span></div>
+                        <span class="cat-num">45</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('Domain')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#FFB800"></span><span class="cat-name">Domain</span></div>
+                        <span class="cat-num">23</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('Make Money')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#00C851"></span><span class="cat-name">Make Money</span></div>
+                        <span class="cat-num">31</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('Tutorial')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#8B5CF6"></span><span class="cat-name">Tutorials</span></div>
+                        <span class="cat-num">28</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('Prompts')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#FF6B35"></span><span class="cat-name">Prompts</span></div>
+                        <span class="cat-num">19</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('SEO')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#00C851"></span><span class="cat-name">SEO</span></div>
+                        <span class="cat-num">14</span>
+                    </div>
+                    <div class="cat-row" onclick="filterPostsCat('Freelancing')">
+                        <div class="cat-row-l"><span class="cat-dot" style="background:#FF69B4"></span><span class="cat-name">Freelancing</span></div>
+                        <span class="cat-num">12</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Popular -->
+            <div class="sw">
+                <div class="sw-title">🔥 Popular Posts</div>
+                <div class="pop-list" id="popList"></div>
+            </div>
+            <!-- Newsletter -->
+            <div class="sw nl-sw">
+                <span class="nl-icon">📬</span>
+                <div class="nl-head">Get Weekly AI Tips</div>
+                <div class="nl-sub">Join 12,000+ creators getting fresh AI insights.</div>
+                <form onsubmit="subNewsletter(event)">
+                    <input type="email" class="nl-inp" placeholder="Email..." required>
+                    <button type="submit" class="nl-btn">🚀 Subscribe Free</button>
+                </form>
+            </div>
+            <!-- Tool of the Week -->
+            <div class="sw tool-sw">
+                <div class="tool-week-badge">⭐ Tool of the Week</div>
+                <div class="tool-header">
+                    <div class="tool-ico">🎨</div>
+                    <div>
+                        <div class="tool-name">Midjourney v6</div>
+                        <div class="tool-tag">✅ Editor's Pick</div>
+                    </div>
+                </div>
+                <p class="tool-desc">The world's most advanced AI image generator.</p>
+                <div class="tool-price">💰 From $10/mo</div>
+                <button class="tool-cta">🔥 Try Free</button>
+            </div>
+            <!-- Tags Cloud -->
+            <div class="sw">
+                <div class="sw-title">🏷️ Popular Tags</div>
+                <div class="tags-cloud">
+                    <span class="tag-cl" onclick="filterTag('ChatGPT')">ChatGPT</span>
+                    <span class="tag-cl" onclick="filterTag('Midjourney')">Midjourney</span>
+                    <span class="tag-cl" onclick="filterTag('Domains')">Domains</span>
+                    <span class="tag-cl" onclick="filterTag('Hosting')">Hosting</span>
+                    <span class="tag-cl" onclick="filterTag('Make Money')">Make Money</span>
+                    <span class="tag-cl" onclick="filterTag('Side Hustle')">Side Hustle</span>
+                    <span class="tag-cl" onclick="filterTag('Freelancing')">Freelancing</span>
+                    <span class="tag-cl" onclick="filterTag('Automation')">Automation</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- POST MODAL -->
+<div class="post-modal" id="postModal" onclick="handleModalClick(event)">
+    <div class="pm-inner">
+        <div class="pm-box" id="pmBox"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <div class="footer-links">
+                <a href="#">About</a><a href="#">Contact</a>
+                <a href="#">Privacy</a><a href="#">Terms</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2025 SanzyAI.com — AI Blog & Resources</div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/blog.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>

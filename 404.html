@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | SanzyAI</title>
+    <meta name="description" content="Oops! The page you're looking for doesn't exist. Find domain prices, AI tools, or prompts on SanzyAI.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/chat.css">
+    <link rel="stylesheet" href="./src/globals.css">
+
+    <style>
+        .error-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .error-section::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 600px; height: 600px; background: radial-gradient(circle, rgba(108,53,222,0.15) 0%, transparent 70%); z-index: 0;
+        }
+        .error-content { position: relative; z-index: 1; max-width: 600px; }
+        .error-code { font-family: 'Space Grotesk', sans-serif; font-size: 8rem; font-weight: 700; background: linear-gradient(135deg, #6C35DE, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 10px; }
+        .bot-img { font-size: 5rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .error-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .error-desc { color: #9999BB; font-size: 1.1rem; line-height: 1.6; margin-bottom: 32px; }
+        .error-search { width: 100%; max-width: 400px; margin: 0 auto 40px; display: flex; gap: 10px; }
+        .error-search input { flex: 1; padding: 14px 20px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Inter', sans-serif; outline: none; }
+        .error-search input:focus { border-color: #6C35DE; }
+        .error-search button { background: #6C35DE; color: #fff; border: none; padding: 0 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .error-search button:hover { background: #8B5CF6; }
+        .quick-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .q-link { padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; color: #fff; text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .q-link:hover { background: rgba(108,53,222,0.2); border-color: #6C35DE; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="mobileMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store" class="new-badge">Prompt Store</a></li>
+                <li><a href="/ai-services">Services</a></li>
+                <li><a href="/learn-free">Learn</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="error-section">
+    <div class="error-content">
+        <div class="bot-img">🤖💦</div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Oops! Sanzy seems lost.</h1>
+        <p class="error-desc">The page you're looking for doesn't exist or has been moved. Use the search bar below or let Sanzy, our chatbot, help you find your way!</p>
+        
+        <form class="error-search" action="index.html" onsubmit="(e) => e.preventDefault()">
+            <input type="text" placeholder="Search SanzyAI...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="quick-links">
+            <a href="/" class="q-link">🏠 Homepage</a>
+            <a href="/domain-finder" class="q-link">🌐 Domain Finder</a>
+            <a href="/ai-tools" class="q-link">🤖 AI Tools Directory</a>
+            <a href="/prompt-store" class="q-link">💰 Prompt Store</a>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="./src/chat.js" defer></script>
+<script src="./src/globals.js" defer></script>
+<script>
+    // Customize Sanzy's message for the 404 page
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            if(window.SanzyBot) {
+                window.SanzyBot.pageMessages['home'] = "Oops! Seems like you hit a dead end (404 Error). Don't worry, I know all the links! What are you trying to find?";
+                // Auto open the bot heavily suggesting help
+                if(!window.SanzyBot.isOpen) window.SanzyBot.open();
+            }
+        }, 3500);
+    });
+</script>
+</body>
+</html>

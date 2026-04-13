@@ -1,0 +1,711 @@
+/* ============================================
+   SANZY CHATBOT — COMPLETE STYLES
+============================================ */
+
+/* CSS Variables for the bot */
+:root {
+    --bot-primary: #6C35DE;
+    --bot-primary-light: #8B5CF6;
+    --bot-secondary: #00D4FF;
+    --bot-bg: #0D0D15;
+    --bot-card: #14141F;
+    --bot-surface: #1A1A28;
+    --bot-surface2: #1F1F30;
+    --bot-text: #FFFFFF;
+    --bot-muted: #9999BB;
+    --bot-dim: #55556A;
+    --bot-green: #00C851;
+    --bot-accent: #00FF88;
+    --bot-border: rgba(108,53,222,0.25);
+    --bot-grad: linear-gradient(135deg,#6C35DE,#8B5CF6);
+    --bot-grad-msg: linear-gradient(135deg,#5025C4,#6C35DE);
+    --bot-fh: 'Space Grotesk',sans-serif;
+    --bot-fb: 'Inter',sans-serif;
+    --bot-ease: all 0.28s cubic-bezier(0.4,0,0.2,1);
+    --bot-r: 18px;
+    --bot-rs: 12px;
+    --bot-rxs: 8px;
+}
+
+/* ============================================
+   FLOATING BUTTON
+============================================ */
+.sanzy-btn-wrap {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+/* Tooltip label */
+.sanzy-btn-label {
+    background: var(--bot-card);
+    border: 1px solid var(--bot-border);
+    color: var(--bot-text);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--bot-ease);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    opacity: 1;
+    transform: translateX(0);
+    animation: label-slide-in 0.5s ease 1.5s both;
+}
+
+@keyframes label-slide-in {
+    from { opacity:0; transform:translateX(20px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+.sanzy-btn-label:hover {
+    background: var(--bot-primary);
+    border-color: var(--bot-primary);
+}
+
+/* Main floating button */
+.sanzy-float-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--bot-grad);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 20px rgba(108,53,222,0.5);
+    transition: var(--bot-ease);
+    position: relative;
+    animation: float-btn-appear 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.5s both;
+}
+
+@keyframes float-btn-appear {
+    from { opacity:0; transform:scale(0) rotate(-180deg); }
+    to { opacity:1; transform:scale(1) rotate(0deg); }
+}
+
+/* Pulse ring - subtle */
+.sanzy-float-btn::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(108,53,222,0.3);
+    animation: pulse-ring 3s ease-in-out infinite;
+}
+
+.sanzy-float-btn::after {
+    display: none;
+}
+
+@keyframes pulse-ring {
+    0% { transform:scale(0.95); opacity:0.6; }
+    50% { transform:scale(1.05); opacity:0.2; }
+    100% { transform:scale(0.95); opacity:0.6; }
+}
+
+.sanzy-float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 40px rgba(108,53,222,0.8);
+}
+
+.sanzy-float-btn.bot-open {
+    background: linear-gradient(135deg,#FF4444,#CC2222);
+    animation: none;
+}
+
+.sanzy-float-btn.bot-open::before,
+.sanzy-float-btn.bot-open::after { display:none; }
+
+/* Notification badge */
+.sanzy-notif {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 20px;
+    height: 20px;
+    background: var(--bot-green);
+    border-radius: 50%;
+    border: 2px solid var(--bg, #0A0A0F);
+    font-size: 0.6rem;
+    font-weight: 700;
+    font-family: var(--bot-fh);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: notif-pop 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes notif-pop {
+    from { transform:scale(0); }
+    to { transform:scale(1); }
+}
+
+.sanzy-notif.hide { display:none; }
+
+/* ============================================
+   CHAT WINDOW
+============================================ */
+.sanzy-window {
+    position: fixed;
+    bottom: 108px;
+    right: 28px;
+    width: 380px;
+    height: 560px;
+    background: var(--bot-bg);
+    border: 1px solid var(--bot-border);
+    border-radius: var(--bot-r);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(108,53,222,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9998;
+    transform: scale(0.85) translateY(30px);
+    transform-origin: bottom right;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.sanzy-window.open {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ============================================
+   CHAT HEADER
+============================================ */
+.sanzy-header {
+    background: var(--bot-grad);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sanzy-header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.sanzy-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+}
+
+.sanzy-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.25);
+    position: relative;
+    z-index: 1;
+}
+
+.sanzy-header-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.sanzy-name {
+    font-family: var(--bot-fh);
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: #fff;
+    display: block;
+}
+
+.sanzy-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+}
+
+.sanzy-status-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--bot-green);
+    border-radius: 50%;
+    animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.6; transform:scale(1.3); }
+}
+
+.sanzy-header-btns {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.sanzy-hbtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--bot-ease);
+}
+
+.sanzy-hbtn:hover {
+    background: rgba(255,255,255,0.28);
+    color: #fff;
+}
+
+/* ============================================
+   MESSAGES AREA
+============================================ */
+.sanzy-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+}
+
+.sanzy-messages::-webkit-scrollbar { width: 4px; }
+.sanzy-messages::-webkit-scrollbar-track { background: transparent; }
+.sanzy-messages::-webkit-scrollbar-thumb { background: var(--bot-border); border-radius: 2px; }
+
+/* Date divider */
+.sanzy-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.68rem;
+    color: var(--bot-dim);
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sanzy-divider::before,
+.sanzy-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--bot-border);
+}
+
+/* Message wrapper */
+.sanzy-msg-wrap {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    animation: msg-appear 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes msg-appear {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+.sanzy-msg-wrap.user {
+    flex-direction: row-reverse;
+}
+
+/* Avatar */
+.sanzy-msg-ava {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bot-grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+    border: 1px solid rgba(108,53,222,0.3);
+}
+
+.sanzy-msg-wrap.user .sanzy-msg-ava {
+    background: var(--bot-surface2);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Bubble */
+.sanzy-bubble {
+    max-width: 78%;
+    background: var(--bot-surface);
+    border: 1px solid var(--bot-border);
+    border-radius: 18px 18px 18px 4px;
+    padding: 11px 14px;
+    position: relative;
+}
+
+.sanzy-msg-wrap.user .sanzy-bubble {
+    background: var(--bot-grad-msg);
+    border-color: rgba(108,53,222,0.2);
+    border-radius: 18px 18px 4px 18px;
+}
+
+.sanzy-bubble-text {
+    font-family: var(--bot-fb);
+    font-size: 0.86rem;
+    color: var(--bot-text);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.sanzy-bubble-text a {
+    color: var(--bot-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--bot-ease);
+}
+
+.sanzy-bubble-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Inline link button */
+.bot-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,212,255,0.12);
+    border: 1px solid rgba(0,212,255,0.3);
+    color: var(--bot-secondary) !important;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    text-decoration: none !important;
+    margin: 2px 0;
+    cursor: pointer;
+    transition: var(--bot-ease);
+}
+
+.bot-link-btn:hover {
+    background: rgba(0,212,255,0.22) !important;
+    color: #fff !important;
+    border-color: var(--bot-secondary) !important;
+}
+
+/* Timestamp */
+.sanzy-time {
+    font-size: 0.62rem;
+    color: var(--bot-dim);
+    font-family: var(--bot-fh);
+    margin-top: 4px;
+    text-align: right;
+}
+
+.sanzy-msg-wrap:not(.user) .sanzy-time { text-align:left; }
+
+/* ============================================
+   QUICK REPLIES
+============================================ */
+.sanzy-quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 16px 8px;
+    animation: msg-appear 0.3s ease;
+}
+
+.qr-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--bot-border);
+    color: var(--bot-muted);
+    padding: 7px 13px;
+    border-radius: 100px;
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: var(--bot-ease);
+    white-space: nowrap;
+}
+
+.qr-btn:hover {
+    border-color: var(--bot-primary-light);
+    color: var(--bot-primary-light);
+    background: rgba(108,53,222,0.1);
+}
+
+.qr-btn:active {
+    transform: scale(0.96);
+}
+
+/* ============================================
+   TYPING INDICATOR
+============================================ */
+.sanzy-typing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    animation: msg-appear 0.2s ease;
+}
+
+.typing-ava {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bot-grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.typing-bubble {
+    background: var(--bot-surface);
+    border: 1px solid var(--bot-border);
+    border-radius: 18px 18px 18px 4px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.typing-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--bot-dim);
+    border-radius: 50%;
+    animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+    0%,60%,100% { transform:translateY(0); background:var(--bot-dim); }
+    30% { transform:translateY(-6px); background:var(--bot-primary-light); }
+}
+
+/* ============================================
+   SUGGESTIONS AREA
+============================================ */
+.sanzy-suggestions {
+    padding: 6px 16px 4px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.sanzy-suggestions::-webkit-scrollbar { display:none; }
+
+.sug-chip {
+    flex-shrink: 0;
+    background: rgba(108,53,222,0.08);
+    border: 1px solid rgba(108,53,222,0.2);
+    color: var(--bot-muted);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 0.74rem;
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--bot-ease);
+}
+
+.sug-chip:hover {
+    background: rgba(108,53,222,0.2);
+    color: var(--bot-primary-light);
+    border-color: var(--bot-primary-light);
+}
+
+/* ============================================
+   INPUT AREA
+============================================ */
+.sanzy-input-area {
+    border-top: 1px solid var(--bot-border);
+    background: var(--bot-card);
+    padding: 12px 14px;
+    flex-shrink: 0;
+}
+
+.sanzy-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bot-surface);
+    border: 1px solid var(--bot-border);
+    border-radius: 100px;
+    padding: 8px 8px 8px 16px;
+    transition: var(--bot-ease);
+}
+
+.sanzy-input-row:focus-within {
+    border-color: var(--bot-primary-light);
+    box-shadow: 0 0 0 3px rgba(108,53,222,0.12);
+}
+
+.sanzy-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--bot-text);
+    font-family: var(--bot-fb);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.sanzy-input::placeholder { color: var(--bot-dim); }
+
+.sanzy-send {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bot-grad);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--bot-ease);
+    flex-shrink: 0;
+}
+
+.sanzy-send:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(108,53,222,0.5);
+}
+
+.sanzy-send:active { transform:scale(0.95); }
+.sanzy-send:disabled { opacity:0.4; cursor:not-allowed; transform:none; }
+
+/* Input footer */
+.sanzy-input-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0 4px;
+}
+
+.sanzy-powered {
+    font-size: 0.66rem;
+    color: var(--bot-dim);
+    font-family: var(--bot-fh);
+}
+
+.sanzy-powered span {
+    color: var(--bot-primary-light);
+    font-weight: 700;
+}
+
+.sanzy-restart {
+    font-size: 0.66rem;
+    color: var(--bot-dim);
+    cursor: pointer;
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    transition: var(--bot-ease);
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.sanzy-restart:hover { color: var(--bot-muted); }
+
+/* ============================================
+   PAGE-SPECIFIC BANNER
+============================================ */
+.sanzy-page-banner {
+    background: rgba(0,200,81,0.08);
+    border-bottom: 1px solid rgba(0,200,81,0.2);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--bot-green);
+    font-family: var(--bot-fh);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.sanzy-page-banner.hide { display:none; }
+
+/* ============================================
+   MOBILE RESPONSIVE
+============================================ */
+@media (max-width: 480px) {
+    .sanzy-window {
+        width: calc(100vw - 24px);
+        height: calc(100vh - 110px);
+        bottom: 96px;
+        right: 12px;
+        border-radius: 16px;
+    }
+
+    .sanzy-btn-wrap {
+        bottom: 18px;
+        right: 16px;
+    }
+
+    .sanzy-float-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 1.4rem;
+    }
+
+    .sanzy-btn-label { display:none; }
+}

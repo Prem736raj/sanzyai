@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn to Build Websites & Use AI Tools - Free Course | SanzyAI</title>
+    <meta name="description" content="Free complete course: Domain → Hosting → Design → Launch → Promote → Earn Money. 20+ lessons, certificate included. 100% free forever.">
+    <link rel="canonical" href="https://sanzyai.com/learn-free">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/learn-free.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free" class="active">Learn Free</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#" class="btn btn-glow btn-sm">💬 Chat with Sanzy</a>
+                <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+    <div class="mobile-nav-cta"><a href="#" class="btn btn-glow">💬 Chat with Sanzy</a></div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <div class="container">
+        <div class="bc-inner">
+            <a href="/">🏠 Home</a>
+            <span style="color:var(--dim);">›</span>
+            <span>Free Learning Hub</span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     HERO
+============================================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-label">100% Free Course — No Credit Card</div>
+        <h1>Build Your Website<br><span class="gradient-text">From Zero to Launch</span> — FREE</h1>
+        <p>Complete guide: Domain → Hosting → Design → Launch → Promote → Earn Money.<br>Everything you need, completely free, forever.</p>
+
+        <div class="stats-pills">
+            <div class="stat-pill green"><span class="pill-icon">📚</span>50 Lessons</div>
+            <div class="stat-pill blue"><span class="pill-icon">👶</span>Beginner Friendly</div>
+            <div class="stat-pill green"><span class="pill-icon">✅</span>100% Free</div>
+            <div class="stat-pill yellow"><span class="pill-icon">🏆</span>Certificate Included</div>
+            <div class="stat-pill purple"><span class="pill-icon">⏱️</span>12+ Hours Content</div>
+            <div class="stat-pill blue"><span class="pill-icon">🌐</span>8 Modules</div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-green btn-lg" onclick="openEnrollModal()">
+                🚀 Enroll Free — Start Now
+            </button>
+            <a href="#modules" class="btn btn-outline btn-lg">
+                👀 Preview Course
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     PROGRESS TRACKER
+============================================ -->
+<section class="progress-section">
+    <div class="container">
+        <div class="progress-card">
+            <div class="progress-header">
+                <div class="progress-title">
+                    📊 Your Learning Progress
+                    <span id="enrolledBadge" style="display:none;background:var(--green-bg);border:1px solid var(--green-b);color:var(--green);padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:700;">✓ Enrolled</span>
+                </div>
+                <span class="progress-pct" id="progressPct">0% Complete</span>
+            </div>
+            <div class="progress-bar-wrap" onclick="openEnrollModal()" title="Enroll to track progress">
+                <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
+            </div>
+            <div class="progress-modules" id="modBadges">
+                <!-- Populated by JS -->
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:12px;">
+                <span style="font-size:0.8rem;color:var(--dim);" id="progressMsg">👆 Enroll free to start tracking your progress</span>
+                <button class="btn btn-primary btn-sm" id="continueBtn" style="display:none;" onclick="continueLearning()">▶ Continue Learning</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     MAIN COURSE LAYOUT
+============================================ -->
+<div class="container" id="modules">
+    <div class="course-layout">
+
+        <!-- LEFT: MODULES -->
+        <div>
+            <!-- Lesson Viewer -->
+            <div class="lesson-viewer" id="lessonViewer">
+                <div class="viewer-header">
+                    <div>
+                        <div style="font-size:0.74rem;color:var(--dim);margin-bottom:4px;" id="viewerMeta">Module 1 · Lesson 1</div>
+                        <div class="viewer-title" id="viewerTitle">Lesson Title</div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="closeViewer()">✕ Close</button>
+                </div>
+                <div class="viewer-body" id="viewerBody"><!-- populated by JS --></div>
+            </div>
+
+            <!-- Modules List -->
+            <div class="modules-section" id="modulesList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- RIGHT: SIDEBAR -->
+        <div class="sidebar">
+            <!-- Enroll Card -->
+            <div class="enroll-card">
+                <div class="enroll-inner">
+                    <div class="enroll-price">FREE</div>
+                    <div class="enroll-sub">Full course access — no credit card ever</div>
+                    <div class="enroll-perks">
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>20+ Video lessons</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>Written article versions</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>Quizzes & key takeaways</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>6 downloadable resources</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>Completion certificate</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>Community access</div>
+                        <div class="enroll-perk"><span class="ep-icon">✅</span>Lifetime free updates</div>
+                    </div>
+                    <button class="btn btn-green enroll-btn" onclick="openEnrollModal()">
+                        🎓 Enroll For Free
+                    </button>
+                    <div class="enroll-note">🔒 No spam · Unsubscribe anytime · 100% Free</div>
+                </div>
+            </div>
+
+            <!-- Course Stats -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">📊 Course Details</div>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--border-s);">
+                        <span style="color:var(--muted);">📚 Total Lessons</span>
+                        <span style="font-family:var(--fh);font-weight:700;">50 Lessons</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--border-s);">
+                        <span style="color:var(--muted);">⏱️ Total Duration</span>
+                        <span style="font-family:var(--fh);font-weight:700;">12.5 Hours</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--border-s);">
+                        <span style="color:var(--muted);">🗂️ Modules</span>
+                        <span style="font-family:var(--fh);font-weight:700;">7 + 1 Bonus</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--border-s);">
+                        <span style="color:var(--muted);">📥 Resources</span>
+                        <span style="font-family:var(--fh);font-weight:700;">6 PDFs</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--border-s);">
+                        <span style="color:var(--muted);">🏆 Certificate</span>
+                        <span style="font-family:var(--fh);font-weight:700;color:var(--yellow);">Included ✓</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.84rem;">
+                        <span style="color:var(--muted);">👥 Students</span>
+                        <span style="font-family:var(--fh);font-weight:700;color:var(--green);">12,400+</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructor Card -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">👤 Your Instructor</div>
+                <div class="instructor-avatar">🧑💻</div>
+                <div class="instructor-name">Sanzy — AI Expert</div>
+                <div class="instructor-role">Founder of SanzyAI · 6+ Years in AI & Web</div>
+                <div class="instructor-bio">Built 50+ websites, worked with AI tools since GPT-2. Teaching beginner to advanced web building with AI tools since 2022.</div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">⚡ Quick Jump</div>
+                <div style="display:flex;flex-direction:column;gap:6px;" id="quickJump">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     RESOURCES SECTION
+============================================ -->
+<section class="resources-section">
+    <div class="container">
+        <div class="sec-head">
+            <div class="sec-label">Free Downloads</div>
+            <h2 class="sec-title">📥 Course <span class="gradient-text">Resources</span></h2>
+            <p class="sec-sub">Download these free resources to follow along with the course. All PDFs are updated regularly.</p>
+        </div>
+        <div class="res-grid">
+            <div class="res-card" onclick="downloadResource('Domain Buying Checklist')">
+                <div class="res-icon">🌐</div>
+                <div class="res-info">
+                    <div class="res-name">Domain Buying Checklist</div>
+                    <div class="res-size">PDF · 2 pages · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+            <div class="res-card" onclick="downloadResource('Hosting Comparison Sheet')">
+                <div class="res-icon">☁️</div>
+                <div class="res-info">
+                    <div class="res-name">Hosting Comparison Sheet</div>
+                    <div class="res-size">PDF · 4 pages · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+            <div class="res-card" onclick="downloadResource('Website Launch Checklist')">
+                <div class="res-icon">🚀</div>
+                <div class="res-info">
+                    <div class="res-name">Website Launch Checklist</div>
+                    <div class="res-size">PDF · 3 pages · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+            <div class="res-card" onclick="downloadResource('SEO Starter Guide')">
+                <div class="res-icon">📈</div>
+                <div class="res-info">
+                    <div class="res-name">SEO Starter Guide 2025</div>
+                    <div class="res-size">PDF · 8 pages · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+            <div class="res-card" onclick="downloadResource('AI Tools Master List')">
+                <div class="res-icon">🤖</div>
+                <div class="res-info">
+                    <div class="res-name">AI Tools Master List PDF</div>
+                    <div class="res-size">PDF · 6 pages · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+            <div class="res-card" onclick="downloadResource('Monthly Income Tracker')">
+                <div class="res-icon">💰</div>
+                <div class="res-info">
+                    <div class="res-name">Monthly Income Tracker</div>
+                    <div class="res-size">PDF + Spreadsheet · Free</div>
+                </div>
+                <div class="dl-arrow">⬇️</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CERTIFICATE SECTION
+============================================ -->
+<section class="cert-section">
+    <div class="container">
+        <div class="cert-card">
+            <div class="cert-left">
+                <span class="cert-badge-icon">🏆</span>
+                <h2 class="cert-title">Earn Your <span class="gradient-text">Certificate</span></h2>
+                <p class="cert-sub">Complete all 7 modules and earn your official SanzyAI certificate. Share it on LinkedIn to show employers and clients your AI & web skills.</p>
+                <div class="cert-requirements">
+                    <div class="cert-req"><span class="cert-req-icon">✅</span> Complete all 7 modules (50 lessons)</div>
+                    <div class="cert-req"><span class="cert-req-icon">✅</span> Pass the quiz in each module (70%+)</div>
+                    <div class="cert-req"><span class="cert-req-icon">✅</span> Mark each lesson as complete</div>
+                    <div class="cert-req"><span class="cert-req-icon">✅</span> Enter your full name below</div>
+                    <div class="cert-req"><span class="cert-req-icon">✅</span> Generate & download your PDF</div>
+                </div>
+            </div>
+            <div class="cert-right">
+                <div class="cert-gen-title">🎓 Generate Your Certificate</div>
+                <div class="cert-gen-sub">Enter your name exactly as you want it on the certificate</div>
+                <div class="cert-form">
+                    <input type="text" class="cert-input" id="certName" placeholder="Your Full Name" oninput="updateCertPreview()">
+                    <input type="email" class="cert-input" id="certEmail" placeholder="Your Email Address">
+                    <div class="cert-preview" id="certPreview">
+                        <div style="font-size:0.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Certificate of Completion</div>
+                        <div style="font-size:1rem;color:var(--muted);margin-bottom:4px;">This certifies that</div>
+                        <div class="cert-preview-name" id="certPreviewName">Your Name</div>
+                        <div class="cert-preview-course">has successfully completed<br><strong style="color:var(--primary-light);">Build Your Website From Zero to Launch</strong><br>on SanzyAI.com · 2025</div>
+                        <div style="margin-top:12px;font-size:0.72rem;color:var(--dim);">⚡ Powered by SanzyAI</div>
+                    </div>
+                    <div class="cert-btns">
+                        <button class="btn btn-primary" onclick="generateCert()">
+                            🏆 Generate Certificate
+                        </button>
+                        <button class="btn btn-outline" id="dlCertBtn" style="display:none;" onclick="showToast('Certificate PDF downloaded!','📄')">
+                            📄 Download PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     COMMUNITY SECTION
+============================================ -->
+<section class="community-section">
+    <div class="container">
+        <div class="sec-head" style="text-align:center;margin-bottom:36px;">
+            <div class="sec-label" style="display:inline-flex;">Join the Community</div>
+            <h2 class="sec-title">👥 Learn Together, <span class="gradient-text">Grow Faster</span></h2>
+            <p class="sec-sub" style="margin:0 auto;">Connect with 12,000+ learners, get answers, share wins and get weekly live Q&As from the SanzyAI team.</p>
+        </div>
+        <div class="community-grid">
+            <a href="#" class="comm-card" onclick="showToast('Joining Discord...','💬')">
+                <span class="comm-icon">💬</span>
+                <div class="comm-name">Discord Server</div>
+                <div class="comm-desc">Real-time chat, help channels, showcase your work & connect with builders worldwide.</div>
+                <div class="comm-count">🟢 4,200+ Members</div>
+            </a>
+            <a href="#" class="comm-card" onclick="showToast('Opening Telegram...','📱')">
+                <span class="comm-icon">📱</span>
+                <div class="comm-name">Telegram Group</div>
+                <div class="comm-desc">Daily tips, tool updates, and quick questions answered fast by the community.</div>
+                <div class="comm-count">🟢 6,800+ Members</div>
+            </a>
+            <a href="#" class="comm-card" onclick="showToast('Opening Forum...','💭')">
+                <span class="comm-icon">💭</span>
+                <div class="comm-name">Community Forum</div>
+                <div class="comm-desc">Ask questions, share projects, get feedback and help other learners on their journey.</div>
+                <div class="comm-count">💬 1,200+ Posts</div>
+            </a>
+            <a href="#" class="comm-card" onclick="showToast('Adding to calendar...','📅')">
+                <span class="comm-icon">📅</span>
+                <div class="comm-name">Weekly Live Q&A</div>
+                <div class="comm-desc">Every Wednesday at 8PM UTC — live Q&A with Sanzy. Ask anything, get real answers.</div>
+                <div class="comm-count">⏰ Every Wednesday</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <div class="footer-links">
+                <a href="#">About</a><a href="#">Contact</a>
+                <a href="#">Privacy</a><a href="#">Terms</a>
+                <a href="#">Affiliate</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2025 SanzyAI.com — All Rights Reserved | Free Learning Hub</div>
+    </div>
+</footer>
+
+<!-- Enroll Modal -->
+<div class="modal-overlay" id="enrollModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeEnrollModal()">✕</button>
+        <span class="modal-icon">🎓</span>
+        <h2 class="modal-title">Enroll <span class="gradient-text">For Free!</span></h2>
+        <p class="modal-sub">Enter your email to get full access to all 50 lessons, 6 resources, and your completion certificate — completely free.</p>
+        <form onsubmit="handleEnroll(event)">
+            <input type="text" class="modal-input" placeholder="Your first name" required id="enrollName">
+            <input type="email" class="modal-input" placeholder="Your email address" required id="enrollEmail">
+            <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;padding:14px;font-size:0.95rem;">
+                🚀 Start Learning Free Now!
+            </button>
+        </form>
+        <p class="modal-note">🔒 No spam ever · Unsubscribe anytime · 100% Free forever</p>
+    </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/learn-free.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>

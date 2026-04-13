@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy & Sell AI Prompts - ChatGPT, Midjourney Prompts | SanzyAI</title>
+    <meta name="description" content="Buy premium AI prompts for ChatGPT, Midjourney, Claude, Gemini & more. 500+ ready-to-use prompt packs with instant download and money-back guarantee.">
+    <link rel="canonical" href="https://sanzyai.com/prompt-store">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/prompt-store.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+============================================ -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store" class="active">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#" class="btn btn-glow btn-sm">💬 Chat with Sanzy</a>
+                <button class="hamburger" id="ham" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+    <div class="mobile-nav-cta"><a href="#" class="btn btn-glow">💬 Chat with Sanzy</a></div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <div class="bc-inner">
+            <a href="/">🏠 Home</a>
+            <span class="bc-sep">›</span>
+            <span>Prompt Store</span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     HERO
+============================================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-label">AI Prompt Marketplace 2025</div>
+        <h1>Best AI Prompts <span class="gradient-text">Marketplace</span></h1>
+        <p>Ready-to-use prompts for ChatGPT, Midjourney, Claude, Gemini & more. Crafted by experts. Instant download.</p>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-icon">📦</span>
+                <span class="stat-val">500+</span>
+                <span class="stat-lbl">Prompts Available</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🗂️</span>
+                <span class="stat-val">50+</span>
+                <span class="stat-lbl">Categories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">⚡</span>
+                <span class="stat-val">Instant</span>
+                <span class="stat-lbl">Download</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">💯</span>
+                <span class="stat-val">30-Day</span>
+                <span class="stat-lbl">Money Back</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FILTER BAR
+============================================ -->
+<div class="filter-bar">
+    <div class="container">
+        <div class="filter-inner">
+            <div class="filter-rows">
+                <!-- Row 1: AI Platform -->
+                <div class="filter-row">
+                    <span class="filter-label">Platform:</span>
+                    <button class="fbtn active" data-platform="all" onclick="filterPlatform(this,'all')">All Prompts</button>
+                    <button class="fbtn" data-platform="chatgpt" onclick="filterPlatform(this,'chatgpt')">🤖 ChatGPT</button>
+                    <button class="fbtn" data-platform="midjourney" onclick="filterPlatform(this,'midjourney')">🎨 Midjourney</button>
+                    <button class="fbtn" data-platform="claude" onclick="filterPlatform(this,'claude')">🧠 Claude</button>
+                    <button class="fbtn" data-platform="gemini" onclick="filterPlatform(this,'gemini')">✨ Gemini</button>
+                    <button class="fbtn" data-platform="stable-diffusion" onclick="filterPlatform(this,'stable-diffusion')">🌊 Stable Diffusion</button>
+                    <button class="fbtn" data-platform="runway" onclick="filterPlatform(this,'runway')">🎬 Runway</button>
+                    <div class="filter-div"></div>
+                    <button class="fbtn" data-platform="business" onclick="filterPlatform(this,'business')">💼 Business</button>
+                    <button class="fbtn" data-platform="seo" onclick="filterPlatform(this,'seo')">📈 SEO</button>
+                    <button class="fbtn" data-platform="social" onclick="filterPlatform(this,'social')">📱 Social Media</button>
+                    <button class="fbtn" data-platform="art" onclick="filterPlatform(this,'art')">🎨 Art</button>
+                    <button class="fbtn" data-platform="freelance" onclick="filterPlatform(this,'freelance')">💰 Freelancing</button>
+                </div>
+                <!-- Row 2: Price + Sort -->
+                <div class="filter-row">
+                    <span class="filter-label">Price:</span>
+                    <button class="fbtn" data-price="free" onclick="filterPrice(this,'free')">🆓 Free</button>
+                    <button class="fbtn" data-price="1-5" onclick="filterPrice(this,'1-5')">$1–$5</button>
+                    <button class="fbtn" data-price="5-15" onclick="filterPrice(this,'5-15')">$5–$15</button>
+                    <button class="fbtn" data-price="15-30" onclick="filterPrice(this,'15-30')">$15–$30</button>
+                    <div class="filter-div"></div>
+                    <span class="filter-label">Sort:</span>
+                    <select class="sort-sel" id="sortSel" onchange="sortPacks()">
+                        <option value="popular">🔥 Most Popular</option>
+                        <option value="new">✨ Newest</option>
+                        <option value="price-low">💵 Price: Low→High</option>
+                        <option value="price-high">💰 Price: High→Low</option>
+                        <option value="rating">⭐ Top Rated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     MAIN PRODUCTS
+============================================ -->
+<section class="main-section">
+    <div class="container">
+        <div class="sec-head">
+            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+                <div class="sec-badge">🔥 Editor's Pick Packs</div>
+                <h2 class="sec-title">Premium <span class="gradient-text">Prompt Packs</span></h2>
+            </div>
+            <span class="sec-count" id="packCount">Showing 8 packs</span>
+        </div>
+
+        <div class="prompt-grid" id="promptGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     TRUST BADGES
+============================================ -->
+<section class="trust-section">
+    <div class="container">
+        <div class="trust-bar">
+            <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <div class="trust-text">
+                    <span class="trust-main">Secure Payment</span>
+                    <span class="trust-sub">256-bit SSL Encrypted</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">⚡</span>
+                <div class="trust-text">
+                    <span class="trust-main">Instant Download</span>
+                    <span class="trust-sub">Delivered immediately</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">💯</span>
+                <div class="trust-text">
+                    <span class="trust-main">Money Back Guarantee</span>
+                    <span class="trust-sub">Full refund within 30 days</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">⭐</span>
+                <div class="trust-text">
+                    <span class="trust-main">4.8/5 Average Rating</span>
+                    <span class="trust-sub">From 637+ verified reviews</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🔄</span>
+                <div class="trust-text">
+                    <span class="trust-main">Lifetime Updates</span>
+                    <span class="trust-sub">Free updates forever</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SELL YOUR PROMPTS SECTION
+============================================ -->
+<section class="sell-section">
+    <div class="container">
+        <div class="sell-card">
+            <div class="sell-left">
+                <div class="sell-badge">💡 For Prompt Engineers</div>
+                <h2 class="sell-title">Are You A <span class="gradient-text">Prompt Engineer?</span></h2>
+                <p class="sell-sub">Join our marketplace and earn up to <strong style="color:var(--accent);">80% commission</strong> on every sale. Turn your prompts into passive income with zero platform fees to get started.</p>
+                <div class="sell-perks">
+                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Keep 80% of every sale — no hidden fees</div>
+                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Instant payouts via PayPal or Stripe</div>
+                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Reach 10,000+ monthly buyers</div>
+                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Free seller dashboard & analytics</div>
+                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Marketing support from SanzyAI team</div>
+                </div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="#sell-form" class="btn btn-primary btn-lg">🚀 Start Selling Now</a>
+                    <a href="#" class="btn btn-outline">Learn More →</a>
+                </div>
+            </div>
+            <div class="sell-right" id="sell-form">
+                <div class="sell-form-title">✍️ Apply to Sell Prompts</div>
+                <form class="sell-form" onsubmit="handleSellApply(event)">
+                    <div class="form-row-2">
+                        <div class="form-grp">
+                            <label class="flabel">Full Name *</label>
+                            <input type="text" class="finput" placeholder="Your name" required>
+                        </div>
+                        <div class="form-grp">
+                            <label class="flabel">Email Address *</label>
+                            <input type="email" class="finput" placeholder="you@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-grp">
+                        <label class="flabel">AI Specialization *</label>
+                        <select class="fselect" required>
+                            <option value="">Select your specialty...</option>
+                            <option>ChatGPT / GPT-4 Prompts</option>
+                            <option>Midjourney Image Prompts</option>
+                            <option>Claude Prompts</option>
+                            <option>Stable Diffusion Prompts</option>
+                            <option>Business / Marketing Prompts</option>
+                            <option>Code / Developer Prompts</option>
+                            <option>Multiple Categories</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <label class="flabel">How Many Prompts Do You Have? *</label>
+                        <select class="fselect" required>
+                            <option value="">Select range...</option>
+                            <option>10–25 prompts</option>
+                            <option>25–50 prompts</option>
+                            <option>50–100 prompts</option>
+                            <option>100+ prompts</option>
+                        </select>
+                    </div>
+                    <div class="form-grp">
+                        <label class="flabel">Tell Us About Your Prompts</label>
+                        <textarea class="ftextarea" placeholder="Describe your prompts and what makes them unique..."></textarea>
+                    </div>
+                    <div class="form-grp">
+                        <label class="flabel">Portfolio / Sample Link (Optional)</label>
+                        <input type="url" class="finput" placeholder="https://your-portfolio.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="justify-content:center;padding:13px;">
+                        🚀 Submit Application
+                    </button>
+                    <p style="font-size:0.74rem;color:var(--dim);text-align:center;">We review applications within 48 hours</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Sell Prompts</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Affiliate</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2025 SanzyAI.com — All Rights Reserved | Prompt Marketplace powered by SanzyAI
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================
+     PRODUCT DETAIL MODAL
+============================================ -->
+<div class="modal-overlay" id="prodModal">
+    <div class="modal" id="modalContent">
+        <!-- Populated by JS -->
+    </div>
+</div>
+
+<!-- ============================================
+     FREE PACK EMAIL MODAL
+============================================ -->
+<div class="email-modal-overlay" id="emailModal">
+    <div class="email-modal" style="position:relative;">
+        <button class="email-modal-close" onclick="closeEmailModal()">✕</button>
+        <span class="email-modal-icon">🎁</span>
+        <h2 class="email-modal-title">Get Your <span class="gradient-text">FREE Pack!</span></h2>
+        <p class="email-modal-sub">Enter your email to instantly download the <strong>10 Starter ChatGPT Prompts</strong> — completely free, no credit card needed.</p>
+        <form onsubmit="handleFreeDownload(event)">
+            <input type="email" class="email-modal-input" placeholder="Enter your email address..." required id="freePackEmail">
+            <button type="submit" class="btn btn-green btn-lg" style="width:100%;justify-content:center;">
+                ✅ Send Me The Free Pack!
+            </button>
+        </form>
+        <p class="email-modal-note">🔒 We respect your privacy. No spam, ever. Unsubscribe anytime.</p>
+    </div>
+</div>
+
+<!-- ============================================
+     PREVIEW MODAL
+============================================ -->
+<div class="preview-overlay" id="previewModal">
+    <div class="preview-modal">
+        <div class="preview-header">
+            <span class="preview-title" id="previewTitle">Free Sample Prompts</span>
+            <button class="modal-close" onclick="closePreview()">✕</button>
+        </div>
+        <div class="preview-body" id="previewBody">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- Scroll Top & Toast -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/prompt-store.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>

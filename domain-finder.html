@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Domain Prices - Find Cheapest Registrar | SanzyAI</title>
+    <meta name="description" content="Compare domain prices from 15+ registrars instantly. Find the cheapest .com, .io, .ai domains with SanzyAI's domain price comparison tool.">
+    <link rel="canonical" href="https://sanzyai.com/domain-finder">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/domain-finder.css">
+    <link rel="stylesheet" href="./src/chat.css">
+    <!-- Re-using some core styles if needed, or keeping standalone as per provided code -->
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+    ============================================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="/" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <span class="logo-text">SanzyAI</span>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/domain-finder" class="active">Domain Finder</a></li>
+                    <li><a href="/ai-tools">AI Tools</a></li>
+                    <li><a href="/prompt-store">Prompt Store</a></li>
+                    <li><a href="/ai-services">AI Services</a></li>
+                    <li><a href="/learn-free">Learn Free</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <a href="#" class="btn btn-glow btn-sm">💬 Chat with Sanzy</a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+            <li><a href="/ai-tools">🤖 AI Tools</a></li>
+            <li><a href="/prompt-store">💰 Prompt Store</a></li>
+            <li><a href="/ai-services">🚀 AI Services</a></li>
+            <li><a href="/learn-free">📚 Learn Free</a></li>
+            <li><a href="/blog">📰 Blog</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+            <a href="#" class="btn btn-glow">💬 Chat with Sanzy</a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         BREADCRUMB
+    ============================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="/">🏠 Home</a>
+                <span class="sep">›</span>
+                <span>Domain Price Finder</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================ -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-label">Domain Price Comparison Tool</div>
+
+                <h1>Find <span class="gradient-text">Cheapest Domain</span><br>Price Instantly</h1>
+
+                <p>Compare prices from 15+ registrars in seconds. Save money on your next domain registration, renewal, or transfer.</p>
+
+                <!-- Search Box -->
+                <div class="search-container">
+                    <div class="search-box" id="searchBox">
+                        <span class="search-icon">🌐</span>
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="domainInput"
+                            placeholder="Enter domain name (e.g. mybusiness.com)"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button class="search-btn" id="searchBtn" onclick="searchDomain()">
+                            <span class="btn-text">🔍 Compare Prices</span>
+                            <div class="spinner"></div>
+                        </button>
+                    </div>
+
+                    <!-- TLD Pills -->
+                    <div class="tld-pills">
+                        <span class="tld-label">Quick select:</span>
+                        <div class="tld-pills-wrap" id="tldPills">
+                            <button class="tld-pill active" onclick="selectTLD(this, '.com')">.com</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.net')">.net</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.org')">.org</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.io')">.io</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.co')">.co</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.ai')">.ai</button>
+                            <button class="tld-pill" onclick="selectTLD(this, '.app')">.app</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading bar -->
+                <div class="loading-bar" id="loadingBar">
+                    <div class="loading-bar-fill"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RESULTS SECTION
+    ============================================ -->
+    <section class="results-section" id="resultsSection">
+        <div class="container">
+
+            <!-- Best Deal Banner -->
+            <div class="best-deal-banner" id="bestDealBanner">
+                <div class="best-deal-left">
+                    <span class="best-deal-trophy">🏆</span>
+                    <div class="best-deal-text">
+                        <h3>Best Deal Found!</h3>
+                        <p id="bestDealSub">Cheapest registration price across all registrars</p>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <div class="best-deal-price" id="bestDealPrice">$8.88<span>/year</span></div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;" id="bestDealName">Spaceship Registrar</div>
+                </div>
+                <a href="#" class="btn btn-green" id="bestDealBtn" onclick="showToast('Opening Spaceship...','🚀')">
+                    Get This Deal →
+                </a>
+            </div>
+
+            <!-- Domain Availability Status (dynamic — populated by JS) -->
+            <div class="avail-status" id="availStatus" style="display:none;"></div>
+
+            <!-- Notice Box -->
+            <div class="notice-box yellow">
+                <span class="notice-icon">⚠️</span>
+                <div>
+                    <strong>Price Disclaimer:</strong> Prices shown are approximate and may vary. 
+                    Always verify the final price on the registrar's website before purchasing. 
+                    Promotional pricing may be first-year only. Prices may change without notice.
+                </div>
+            </div>
+
+            <!-- Results Controls -->
+            <div class="results-controls">
+                <div class="results-info">
+                    Showing <span id="resultCount">10</span> registrars for 
+                    <span id="resultDomain" style="color:var(--secondary);">example.com</span>
+                </div>
+                <div class="controls-right">
+                    <select class="sort-select" id="sortSelect" onchange="sortTable()">
+                        <option value="register">Sort: Register Price ↑</option>
+                        <option value="renewal">Sort: Renewal Price</option>
+                        <option value="transfer">Sort: Transfer Price</option>
+                        <option value="rating">Sort: Rating</option>
+                        <option value="name">Sort: Name A-Z</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="view-btn active" id="tableViewBtn" onclick="switchView('table')" title="Table view">☰</button>
+                        <button class="view-btn" id="cardViewBtn" onclick="switchView('cards')" title="Card view">⊞</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table View -->
+            <div class="table-wrapper" id="tableView">
+                <div class="table-scroll">
+                    <table class="price-table" id="priceTable">
+                        <thead>
+                            <tr>
+                                <th>Registrar</th>
+                                <th class="sortable sort-asc" onclick="sortByCol('register')" data-col="register">
+                                    Register (1yr)<span class="sort-icon"></span>
+                                </th>
+                                <th class="sortable" onclick="sortByCol('renewal')" data-col="renewal">
+                                    Renewal<span class="sort-icon"></span>
+                                </th>
+                                <th class="sortable" onclick="sortByCol('transfer')" data-col="transfer">
+                                    Transfer<span class="sort-icon"></span>
+                                </th>
+                                <th>Rating</th>
+                                <th>Offer / Coupon</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="priceTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cards View -->
+            <div class="cards-view" id="cardsView">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Affiliate Notice -->
+            <div class="notice-box blue">
+                <span class="notice-icon">ℹ️</span>
+                <div>
+                    <strong>Affiliate Disclosure:</strong> SanzyAI earns a commission when you purchase through our links. 
+                    This does not affect our price comparison accuracy or editorial independence. 
+                    We always show you the actual prices. <a href="#">Learn more</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES: CALCULATOR + COUPONS
+    ============================================ -->
+    <section class="features-section" id="featuresSection" style="display: none;">
+        <div class="container">
+
+            <!-- Price Calculator -->
+            <div class="calculator-card">
+                <div class="calc-header">
+                    <div class="calc-icon">🧮</div>
+                    <div>
+                        <div class="calc-title">Multi-Year Cost Calculator</div>
+                        <div class="calc-sub">See total cost over multiple years & find your best long-term deal</div>
+                    </div>
+                </div>
+
+                <div class="calc-controls">
+                    <span class="calc-label">Years to register:</span>
+                    <div class="years-slider-wrap">
+                        <input 
+                            type="range" 
+                            class="years-slider" 
+                            id="yearsSlider"
+                            min="1" max="10" value="1"
+                            oninput="updateCalculator()"
+                        >
+                    </div>
+                    <div class="years-display" id="yearsDisplay">1 yr</div>
+                </div>
+
+                <div class="calc-results" id="calcResults">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Coupons Section -->
+            <div class="coupons-card">
+                <div class="calc-header">
+                    <div class="calc-icon">🎫</div>
+                    <div>
+                        <div class="calc-title">Working Coupon Codes</div>
+                        <div class="calc-sub">Click any code to copy it. Always verify on registrar site before using.</div>
+                    </div>
+                </div>
+
+                <div class="coupon-grid" id="couponGrid">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div style="margin-top:18px;padding:14px 18px;background:var(--yellow-bg);border:1px solid var(--yellow-border);border-radius:var(--radius-sm);font-size:0.82rem;color:rgba(255,184,0,0.9);display:flex;align-items:center;gap:10px;">
+                    <span>⚠️</span>
+                    <span><strong>Note:</strong> Coupon codes may expire or have restrictions. Always verify the discount is applied before completing your purchase. SanzyAI does not guarantee coupon validity.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         TLD PRICE COMPARISON TABLE
+    ============================================ -->
+    <section class="tld-section">
+        <div class="container">
+            <div style="margin-bottom:32px;">
+                <div class="section-title">
+                    🌐 TLD Price <span class="gradient-text">Comparison Chart</span>
+                </div>
+                <div class="section-sub">Compare registration prices across popular domain extensions from top registrars</div>
+            </div>
+
+            <div class="tld-table-wrap">
+                <div class="tld-scroll">
+                    <table class="tld-table" id="tldTable">
+                        <thead>
+                            <tr id="tldTableHead">
+                                <!-- Populated by JS -->
+                            </tr>
+                        </thead>
+                        <tbody id="tldTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="affiliate-disclaimer">
+                <p>💼 <strong>Affiliate Disclosure:</strong> We earn a small commission when you purchase through our links. This helps us maintain free tools. Prices are shown accurately without markup.<br>
+                🔒 Your trust is our priority. We never inflate prices or hide fees. <a href="#">Read our editorial policy</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-simple">
+                <a href="/" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <span class="logo-text">SanzyAI</span>
+                </a>
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Affiliate Disclosure</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2025 SanzyAI.com — All Rights Reserved | Domain prices are approximate and subject to change.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toastIcon">✅</span>
+        <span id="toastMsg">Copied!</span>
+    </div>
+
+    <script type="module" src="./src/domain-finder.js"></script>
+<script src="./src/globals.js" defer></script>
+<script src="./src/chat.js" defer></script>
+</body>
+</html>
