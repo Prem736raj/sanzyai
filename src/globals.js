@@ -99,8 +99,8 @@
             .map((lang) => `<option value="${lang.code}">${lang.label}</option>`)
             .join('');
 
-        const controlsHTML = `
-            <div class="site-controls" id="siteControls">
+        // Only show language controls when multiple languages are configured.
+        const langControlHtml = (languageOptions && languageOptions.length > 1) ? `
                 <button class="site-control-btn" id="langToggleBtn" onclick="window.toggleLangPanel()" aria-label="Change language" title="Change language">🌐</button>
                 <div class="language-panel" id="languagePanel" aria-hidden="true">
                     <div class="language-panel-title">Choose language</div>
@@ -108,6 +108,11 @@
                         ${optionsHtml}
                     </select>
                 </div>
+            ` : '';
+
+        const controlsHTML = `
+            <div class="site-controls" id="siteControls">
+                ${langControlHtml}
                 <button class="site-control-btn" id="themeToggleBtn" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
             </div>
             <div id="google_translate_element" class="translate-hidden" aria-hidden="true"></div>
@@ -123,6 +128,14 @@
         if (controls && navControlHost && !navControlHost.contains(controls)) {
             controls.classList.add('in-navbar');
             navControlHost.appendChild(controls);
+        }
+
+        // If the language select ended up with only one option (English), remove the
+        // language toggle to avoid showing a non-functional UI element.
+        const _langSelect = document.getElementById('siteLangSelect');
+        if (_langSelect && _langSelect.options.length <= 1) {
+            document.getElementById('langToggleBtn')?.remove();
+            document.getElementById('languagePanel')?.remove();
         }
 
         // 1. Cookie Consent Banner
@@ -143,17 +156,8 @@
             }, 3000);
         }
 
-        // 2. Social Proof Popup
-        const spHTML = `
-            <div class="social-proof" id="socialProof">
-                <div class="sp-icon">🔥</div>
-                <div>
-                    <div class="sp-text" id="spText"><span>John from USA</span> just bought Business Pack</div>
-                    <span class="sp-time">Just now</span>
-                </div>
-            </div>
-        `;
-        body.insertAdjacentHTML('beforeend', spHTML);
+        // Social proof popup removed: static/fabricated notifications were removed to
+        // avoid misleading repeat visitors and to improve trustworthiness.
 
         // 3. Newsletter Popup
         if (!localStorage.getItem('sanzy_newsletter_subbed')) {
@@ -183,10 +187,28 @@
     window.acceptCookies = () => {
         localStorage.setItem('sanzy_cookies', 'accepted');
         document.getElementById('cookieBanner')?.classList.remove('show');
+        // Load analytics only after explicit consent
+        if (window.loadAnalytics) window.loadAnalytics();
     };
     window.declineCookies = () => {
         localStorage.setItem('sanzy_cookies', 'declined');
         document.getElementById('cookieBanner')?.classList.remove('show');
+    };
+
+    // Load analytics (Google Analytics / GA4) only after user consent.
+    window.loadAnalytics = function() {
+        const gaId = window.SANZY_GA_ID;
+        if (!gaId) return; // no id configured
+        if (document.getElementById('sanzyGAScript')) return;
+        const script = document.createElement('script');
+        script.id = 'sanzyGAScript';
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){dataLayer.push(arguments);};
+        window.gtag('js', new Date());
+        window.gtag('config', gaId, { 'anonymize_ip': true });
     };
 
     // Newsletter Functions
@@ -204,32 +226,7 @@
         sessionStorage.setItem('nl_closed_session', 'true');
     };
 
-    // Social Proof Logic
-    const spNames = ['John from USA', 'Sarah from UK', 'Mike from CA', 'Emma from AUS', 'David from NY', 'Chloe from TX'];
-    const spActions = [
-        'just bought Business Prompt Pack',
-        'just enrolled in the Free Course',
-        'subscribed to the Newsletter',
-        'just downloaded Midjourney Prompts',
-        'found a $8.88 .com domain'
-    ];
-
-    function showSocialProof() {
-        const sp = document.getElementById('socialProof');
-        const spText = document.getElementById('spText');
-        if (!sp || !spText) return;
-
-        const name = spNames[Math.floor(Math.random() * spNames.length)];
-        const action = spActions[Math.floor(Math.random() * spActions.length)];
-        
-        spText.innerHTML = `<span>${name}</span> ${action}`;
-        sp.classList.add('show');
-
-        // Hide after 5 seconds
-        setTimeout(() => {
-            sp.classList.remove('show');
-        }, 5000);
-    }
+    // Social proof logic removed to avoid misleading or static notifications.
 
     // ============================================
     // INITIALIZATION
@@ -247,6 +244,11 @@
         }
         if (savedLang !== 'en') {
             loadGoogleTranslateScript();
+        }
+
+        // If user previously accepted cookies, initialize analytics now.
+        if (localStorage.getItem('sanzy_cookies') === 'accepted' && window.loadAnalytics) {
+            window.loadAnalytics();
         }
 
         document.addEventListener('click', (event) => {

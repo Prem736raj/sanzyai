@@ -207,6 +207,7 @@ let currentSort = { col: 'register', dir: 'asc' };
 let currentView = 'table';
 let tableData = [...registrars];
 const domainSessionKey = 'sanzy_domain_last_search';
+let currentAvailStatus = 'unknown';
 
 // ============================================
 // INIT
@@ -540,6 +541,8 @@ function getAdjustedRegistrars(domain) {
 // SHOW RESULTS
 // ============================================
 function showResults(domain, availStatus) {
+    // Track availability globally so renderers can adapt (e.g., hide buy buttons when taken)
+    currentAvailStatus = availStatus;
     // Update info
     const resDomain = document.getElementById('resultDomain');
     const resCount = document.getElementById('resultCount');
@@ -640,6 +643,14 @@ function renderTableRows() {
 
         const stars = renderStars(r.rating);
 
+        const buyCell = currentAvailStatus === 'taken'
+            ? `<button class="buy-btn disabled" disabled>Taken</button>`
+            : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored" \
+                   class="buy-btn ${r.isBest ? 'best' : ''}"\
+                   onclick="showToast('Redirecting to ${r.name}...','🌐')">\
+                    ${r.isBest ? '★ ' : ''}Buy Now ↗\
+                </a>`;
+
         return `
         <tr class="${r.isBest ? 'best-row' : ''}">
             <td>
@@ -679,11 +690,7 @@ function renderTableRows() {
                 }
             </td>
             <td>
-                <a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored" 
-                   class="buy-btn ${r.isBest ? 'best' : ''}"
-                   onclick="showToast('Redirecting to ${r.name}...','🌐')">
-                    ${r.isBest ? '★ ' : ''}Buy Now ↗
-                </a>
+                ${buyCell}
             </td>
         </tr>`;
     }).join('');
@@ -702,6 +709,15 @@ function renderCards() {
 
     container.innerHTML = tableData.map(r => {
         const regClass = getPriceClass(r.register, minPrice, maxPrice);
+        const buyCell = currentAvailStatus === 'taken'
+            ? `<button class="buy-btn disabled" disabled style="width:100%;justify-content:center;">Taken</button>`
+            : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
+               class="buy-btn ${r.isBest ? 'best' : ''}" 
+               style="width:100%;justify-content:center;"
+               onclick="showToast('Opening ${r.name}...','🌐')">\
+                Buy at ${r.name} ↗
+            </a>`;
+
         return `
         <div class="registrar-card ${r.isBest ? 'best' : ''}">
             <div class="card-header">

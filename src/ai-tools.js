@@ -374,7 +374,6 @@ function renderTools() {
             <div class="card-rating">
                 <div class="stars-row">${stars}</div>
                 <span class="rating-val">${tool.rating}</span>
-                <span class="rating-count">(${tool.reviews} reviews)</span>
             </div>
 
             <p class="tool-desc">${tool.desc}</p>
@@ -515,6 +514,22 @@ window.toggleSave = function(id, btn) {
         }
         showToast('Tool saved! ❤️', '✅');
     }
+}
+
+// Persist saved tools to localStorage so favorites survive reloads
+function persistSavedTools() {
+    try {
+        localStorage.setItem('sanzy_saved_tools', JSON.stringify(Array.from(savedTools)));
+    } catch (e) {
+        console.warn('Could not persist saved tools', e);
+    }
+}
+
+// Wrap toggleSave to persist after changes
+const _origToggleSave = window.toggleSave;
+window.toggleSave = function(id, btn) {
+    _origToggleSave(id, btn);
+    persistSavedTools();
 }
 
 // =============================================
@@ -733,6 +748,12 @@ function updateFilterCounts() {
 // INIT
 // =============================================
 window.addEventListener('DOMContentLoaded', () => {
+    // Load saved tools from localStorage
+    try {
+        const saved = localStorage.getItem('sanzy_saved_tools');
+        if (saved) savedTools = new Set(JSON.parse(saved));
+    } catch (e) { /* ignore */ }
+
     updateFilterCounts();
     sortToolsData();
     renderTools();

@@ -23,10 +23,10 @@
                     <div class="sanzy-avatar">🤖</div>
                     <div class="sanzy-header-info">
                         <span class="sanzy-name">Sanzy — AI Assistant</span>
-                        <div class="sanzy-status">
-                            <span class="sanzy-status-dot"></span>
-                            <span>Online · Always here to help</span>
-                        </div>
+                            <div class="sanzy-status">
+                                <span class="sanzy-status-dot" id="sanzyStatusDot"></span>
+                                <span id="sanzyStatusText">Demo mode · Simulated responses</span>
+                            </div>
                     </div>
                     <div class="sanzy-header-btns">
                         <button class="sanzy-hbtn" onclick="window.SanzyBot.restart()" title="Restart chat">↺</button>
@@ -79,6 +79,7 @@
         // ---- STATE ----
         isOpen: false,
         isTyping: false,
+        connected: false,
         conversationHistory: [],
         hasGreeted: false,
         currentPage: 'home',
@@ -379,6 +380,23 @@ I can help you with:
             this.setupEventListeners();
             this.showPageBanner();
             this.setupAutoOpen();
+
+            // Update status badge: if a backend URL is configured via
+            // `window.SANZY_BOT_BACKEND_URL` then show connected state, otherwise
+            // label the chat as demo/simulated to avoid misleading users.
+            const statusTextEl = document.getElementById('sanzyStatusText');
+            const statusDotEl = document.getElementById('sanzyStatusDot');
+            if (statusTextEl) {
+                if (window.SANZY_BOT_BACKEND_URL) {
+                    statusTextEl.textContent = 'Online · Connected to AI';
+                    if (statusDotEl) statusDotEl.classList.add('online');
+                    this.connected = true;
+                } else {
+                    statusTextEl.textContent = 'Demo mode · Simulated responses';
+                    if (statusDotEl) statusDotEl.classList.remove('online');
+                    this.connected = false;
+                }
+            }
         },
 
         setupEventListeners() {

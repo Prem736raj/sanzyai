@@ -316,7 +316,7 @@ function renderPacks() {
 
                 <div class="card-price-row">
                     <span class="price-main ${pack.price === 0 ? 'free' : ''}">
-                        ${pack.price === 0 ? 'FREE' : '$' + pack.price}
+                        ${pack.price === 0 ? 'FREE' : '$' + pack.price.toFixed(2)}
                     </span>
                     ${pack.origPrice ? `<span class="price-orig">$${pack.origPrice}</span>` : ''}
                     ${discount > 0 ? `<span class="price-save">${discount}% OFF</span>` : ''}
@@ -342,7 +342,7 @@ function renderPacks() {
                     </button>
                     <button class="buy-btn ${pack.isFree ? 'free-btn' : ''}"
                         onclick="${pack.isFree ? `openEmailModal()` : `openProduct(${pack.id})`}">
-                        ${pack.isFree ? '🎁 Get Free Pack' : `🛒 Buy Now — $${pack.price}`}
+                        ${pack.isFree ? '🎁 Get Free Pack' : `🛒 Buy Now — $${pack.price.toFixed(2)}`}
                     </button>
                 </div>
             </div>
