@@ -174,6 +174,8 @@ I'll pick the perfect tool for you! 💪`
 **🔥 Bestsellers:**
 🥇 Ultimate Business Pack — $19 (50 prompts)
 🥈 Midjourney Art Masterpack — $24 (100 prompts)
+🆕 Gemini Image Prompt Pro Pack — $21 (80 prompts)
+🆕 ChatGPT Image Direction Pack — $18 (70 prompts)
 🥉 SEO Content Writer Pack — $15 (30 prompts)
 📱 Social Media Pack — $12 (40 prompts)
 
@@ -197,8 +199,8 @@ Which type of prompts are you looking for? 😊`
 🎨 Logo Design — from $30
 📱 Social Media — from $100/month
 🤖 Custom Chatbot — from $200
-⚙️ AI Automation — from $150
-📊 Business Strategy — from $75
+🎬 AI Video Creation — from $75/video
+🔍 AI SEO Optimization — from $150/month
 
 <a class="bot-link-btn" href="ai-services.html">🚀 See All Services →</a>
 <a class="bot-link-btn" href="ai-services.html">📋 Request Consultation →</a>

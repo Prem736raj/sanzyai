@@ -51,6 +51,13 @@ body {
 .sec-pad{padding:80px 0}
 .sec-pad-sm{padding:60px 0}
 
+/* Improves initial render by skipping below-the-fold section work until needed */
+.sec-pad,
+.quote-section {
+   content-visibility: auto;
+   contain-intrinsic-size: 1px 900px;
+}
+
 /* Section Header */
 .sec-hdr{text-align:center;margin-bottom:56px}
 .sec-label{display:inline-flex;align-items:center;gap:7px;background:rgba(108,53,222,0.12);border:1px solid rgba(108,53,222,0.3);color:var(--primary-light);padding:5px 15px;border-radius:100px;font-size:0.74rem;font-family:var(--fh);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
@@ -237,11 +244,30 @@ body {
 .port-bg{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
 .port-overlay{position:absolute;inset:0;background:rgba(10,10,15,0.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;transition:var(--ease)}
 .port-item:hover .port-overlay{opacity:1}
+.port-item:focus-within .port-overlay{opacity:1}
 .port-label{font-family:var(--fh);font-weight:700;font-size:0.95rem;text-align:center;z-index:1}
 .port-sublabel{font-size:0.78rem;color:var(--muted);z-index:1}
 .port-emoji{font-size:2.5rem;z-index:1;transition:var(--ease)}
 .port-item:hover .port-emoji{transform:scale(1.15)}
 .port-view-btn{background:var(--primary);color:#fff;border:none;padding:8px 16px;border-radius:var(--rxs);font-family:var(--fh);font-size:0.78rem;font-weight:700;cursor:pointer;z-index:2}
+
+/* Portfolio modal */
+.portfolio-modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);z-index:4000;padding:20px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s ease}
+.portfolio-modal.open{opacity:1;pointer-events:all}
+.portfolio-modal-card{width:100%;max-width:860px;background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:24px;max-height:88vh;overflow:auto}
+.portfolio-modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.portfolio-modal-head h3{font-family:var(--fh);font-size:1.1rem;font-weight:700}
+.portfolio-close{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:1rem}
+.portfolio-close:hover{border-color:var(--primary-light);color:var(--primary-light)}
+.pm-hero{border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;gap:14px;border:1px solid rgba(255,255,255,0.08);margin-bottom:14px}
+.pm-emoji{font-size:2rem;flex-shrink:0}
+.pm-title{font-family:var(--fh);font-weight:700;font-size:1.1rem}
+.pm-sub{font-size:0.84rem;color:var(--muted);margin-top:4px}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pm-card{background:var(--surface);border:1px solid var(--border-s);border-radius:var(--rs);padding:14px}
+.pm-card h4{font-family:var(--fh);font-size:0.86rem;margin-bottom:8px}
+.pm-card p{font-size:0.84rem;color:var(--muted);line-height:1.7}
+.pm-card ul{padding-left:18px;color:var(--muted);font-size:0.84rem;line-height:1.7}
 
 /* ============================================
    QUOTE FORM
@@ -360,6 +386,7 @@ body {
     .hero-btns{flex-direction:column;align-items:stretch}
     .hero-btns .btn{justify-content:center}
     .svc-cta{flex-direction:column}
+   .pm-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
     .services-grid{grid-template-columns:1fr}

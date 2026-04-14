@@ -130,6 +130,16 @@ body {
 ============================================ */
 .blog-main { padding:0 0 80px; display:block; }
 
+/* Topical cluster links */
+.cluster-links { padding: 8px 0 34px; }
+.cluster-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.cluster-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.cluster-card { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:16px; text-decoration:none; transition:var(--ease); display:flex; flex-direction:column; gap:6px; }
+.cluster-card:hover { transform:translateY(-3px); border-color:var(--primary-light); box-shadow:0 12px 28px rgba(108,53,222,0.16); }
+.cluster-emoji { font-size:1.4rem; }
+.cluster-title { font-family:var(--fh); font-size:0.92rem; font-weight:700; color:var(--text); }
+.cluster-sub { font-size:0.8rem; line-height:1.65; color:var(--muted); }
+
 /* ============================================
    FEATURED POST
 ============================================ */
@@ -394,5 +404,14 @@ body {
     .pm-body{padding:24px 22px;} .pm-title{font-size:1.5rem;} .related-grid{grid-template-columns:1fr 1fr;}
     .cf-row{grid-template-columns:1fr;} .feat-img{height:240px;} .feat-body{padding:20px 22px;} .feat-title{font-size:1.3rem;}
     .share-bar{gap:8px;} .modal-nl-form{flex-direction:column;} .blog-stats{gap:14px;} .bstat-div{display:none;}
+   .cluster-grid{grid-template-columns:1fr;}
 }
 @media(max-width:480px) { .related-grid{grid-template-columns:1fr;} .pm-banner{height:200px;} .pm-banner-emoji{font-size:3.5rem;} }
+
+/* Footer override for compact prompt-store-like layout */
+.footer { background:var(--card); border-top:1px solid var(--border); padding:26px 0 0; }
+.footer-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:18px; flex-wrap:wrap; }
+.footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+.footer-links a { color:var(--muted); text-decoration:none; font-size:0.86rem; transition:var(--ease); }
+.footer-links a:hover { color:var(--primary-light); }
+.footer-copy { border-top:1px solid var(--border-s); padding:14px 0; text-align:center; color:var(--dim); font-size:0.78rem; }

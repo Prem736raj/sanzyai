@@ -407,6 +407,14 @@ body {
     clip-path: inset(0);
 }
 
+.features,
+.trust-bar,
+.cta-section,
+.footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+}
+
 /* Particle Canvas */
 #particle-canvas {
     position: absolute;

@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare Domain Prices - Find Cheapest Registrar | SanzyAI</title>
     <meta name="description" content="Compare domain prices from 15+ registrars instantly. Find the cheapest .com, .io, .ai domains with SanzyAI's domain price comparison tool.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://sanzyai.com/domain-finder">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Compare Domain Prices - Find Cheapest Registrar | SanzyAI">
+    <meta property="og:description" content="Compare domain prices from top registrars and find the cheapest option for your next domain.">
+    <meta property="og:url" content="https://sanzyai.com/domain-finder">
+    <meta property="og:site_name" content="SanzyAI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compare Domain Prices - Find Cheapest Registrar | SanzyAI">
+    <meta name="twitter:description" content="Compare domain prices from top registrars and find the cheapest option for your next domain.">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "SanzyAI Domain Price Finder",
+            "url": "https://sanzyai.com/domain-finder",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+        </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,7 +117,7 @@
             <div class="hero-inner">
                 <div class="hero-label">Domain Price Comparison Tool</div>
 
-                <h1>Find <span class="gradient-text">Cheapest Domain</span><br>Price Instantly</h1>
+                <h1>Find <span class="gradient-text">Cheapest Domain</span> Price Instantly</h1>
 
                 <p>Compare prices from 15+ registrars in seconds. Save money on your next domain registration, renewal, or transfer.</p>
 
@@ -249,35 +273,6 @@
     <section class="features-section" id="featuresSection" style="display: none;">
         <div class="container">
 
-            <!-- Price Calculator -->
-            <div class="calculator-card">
-                <div class="calc-header">
-                    <div class="calc-icon">🧮</div>
-                    <div>
-                        <div class="calc-title">Multi-Year Cost Calculator</div>
-                        <div class="calc-sub">See total cost over multiple years & find your best long-term deal</div>
-                    </div>
-                </div>
-
-                <div class="calc-controls">
-                    <span class="calc-label">Years to register:</span>
-                    <div class="years-slider-wrap">
-                        <input 
-                            type="range" 
-                            class="years-slider" 
-                            id="yearsSlider"
-                            min="1" max="10" value="1"
-                            oninput="updateCalculator()"
-                        >
-                    </div>
-                    <div class="years-display" id="yearsDisplay">1 yr</div>
-                </div>
-
-                <div class="calc-results" id="calcResults">
-                    <!-- Populated by JS -->
-                </div>
-            </div>
-
             <!-- Coupons Section -->
             <div class="coupons-card">
                 <div class="calc-header">
@@ -366,7 +361,7 @@
     </div>
 
     <script type="module" src="./src/domain-finder.js"></script>
-<script src="./src/globals.js" defer></script>
-<script src="./src/chat.js" defer></script>
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/chat.js"></script>
 </body>
 </html>

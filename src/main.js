@@ -1,20 +1,4 @@
 // ============================================
-// PAGE LOADER
-// ============================================
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('pageLoader');
-        if (loader) {
-            loader.classList.add('hidden');
-            // Remove from DOM after transition
-            setTimeout(() => loader.remove(), 500);
-        }
-        // Start animations after load
-        initAnimations();
-    }, 1600);
-});
-
-// ============================================
 // PARTICLE CANVAS ANIMATION
 // ============================================
 const canvas = document.getElementById('particle-canvas');
@@ -146,9 +130,17 @@ function animateParticles() {
 
 // Initialize particles if canvas exists
 if (canvas) {
-    resizeCanvas();
-    initParticles();
-    animateParticles();
+    const startParticles = () => {
+        resizeCanvas();
+        initParticles();
+        animateParticles();
+    };
+
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(startParticles, { timeout: 1500 });
+    } else {
+        setTimeout(startParticles, 300);
+    }
 
     // Handle resize
     let resizeTimer;

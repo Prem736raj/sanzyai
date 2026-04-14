@@ -159,6 +159,13 @@ body{background:var(--bg);color:var(--text)}
 ============================================ */
 .main-section{padding:40px 0 60px}
 
+.main-section,
+.trust-section,
+.sell-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+}
+
 /* Section header */
 .sec-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
 .sec-badge{display:inline-flex;align-items:center;gap:6px;background:var(--yellow-bg);border:1px solid var(--yellow-b);color:var(--yellow);padding:5px 12px;border-radius:100px;font-family:var(--fh);font-size:0.74rem;font-weight:700;text-transform:uppercase}

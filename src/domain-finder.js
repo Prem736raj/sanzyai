@@ -206,33 +206,40 @@ let currentTLD = '.com';
 let currentSort = { col: 'register', dir: 'asc' };
 let currentView = 'table';
 let tableData = [...registrars];
+const domainSessionKey = 'sanzy_domain_last_search';
 
 // ============================================
 // INIT
 // ============================================
 window.addEventListener('DOMContentLoaded', () => {
     initDomainFinder();
-    
-    // Auto-run a demo search
-    setTimeout(() => {
-        const input = document.getElementById('domainInput');
-        if (input) {
-            input.value = 'mybusiness.com';
-            searchDomain();
-        }
-    }, 600);
 });
 
 function initDomainFinder() {
     renderCoupons();
     renderTLDTable();
-    renderCalculator(1);
+
+    const domainInput = document.getElementById('domainInput');
+    if (domainInput) {
+        const savedDomain = sessionStorage.getItem(domainSessionKey) || '';
+        domainInput.value = savedDomain;
+
+        if (savedDomain) {
+            // Restore previous search context when user comes back from other pages.
+            setTimeout(() => searchDomain(), 120);
+        }
+    }
 
     // Allow Enter key search
-    const domainInput = document.getElementById('domainInput');
     if (domainInput) {
         domainInput.addEventListener('keydown', e => {
             if (e.key === 'Enter') searchDomain();
+        });
+
+        domainInput.addEventListener('input', () => {
+            if (!domainInput.value.trim()) {
+                sessionStorage.removeItem(domainSessionKey);
+            }
         });
     }
 
@@ -275,9 +282,26 @@ window.selectTLD = function(el, tld) {
     if (val) {
         const baseName = val.includes('.') ? val.split('.')[0] : val;
         input.value = baseName + tld;
-    } else {
-        input.value = 'mybusiness' + tld;
     }
+}
+
+function getRegistrarSearchLink(registrar, domain) {
+    const d = encodeURIComponent(domain);
+
+    const links = {
+        cloudflare: `https://dash.cloudflare.com/?to=/:account/domains/register/${d}`,
+        porkbun: `https://porkbun.com/checkout/search?q=${d}`,
+        spaceship: `https://spaceship.com/domain-search?query=${d}`,
+        namecheap: `https://www.namecheap.com/domains/registration/results/?domain=${d}`,
+        hostinger: `https://www.hostinger.com/domain-checker?domain=${d}`,
+        dynadot: `https://www.dynadot.com/domain/search.html?domain=${d}`,
+        godaddy: `https://www.godaddy.com/domainsearch/find?domainToCheck=${d}`,
+        ionos: `https://www.ionos.com/domains/domain-name-registration?domain=${d}`,
+        squarespace: `https://domains.squarespace.com/?query=${d}`,
+        namedotcom: `https://www.name.com/domain/search/${d}`
+    };
+
+    return links[registrar.id] || registrar.link;
 }
 
 // ============================================
@@ -301,6 +325,7 @@ window.searchDomain = function() {
     }
 
     currentDomain = domain;
+    sessionStorage.setItem(domainSessionKey, domain);
 
     // Show loading
     const btn = document.getElementById('searchBtn');
@@ -552,20 +577,29 @@ function showResults(domain, availStatus) {
         if (bestPrice) bestPrice.innerHTML = `$${best.register.toFixed(2)}<span>/year</span>`;
         if (bestName) bestName.textContent = `${best.name} — Registration price (domain is taken)`;
         if (bestSub) bestSub.textContent = `This domain is already registered. Prices shown are for new ${tld} registrations.`;
-        if (bestBtn) bestBtn.textContent = `Visit ${best.name} →`;
+        if (bestBtn) {
+            bestBtn.textContent = `Visit ${best.name} →`;
+            bestBtn.href = getRegistrarSearchLink(best, domain);
+            bestBtn.target = '_blank';
+            bestBtn.rel = 'noopener sponsored';
+        }
     } else {
         if (bestBanner) bestBanner.style.opacity = '1';
         if (bestPrice) bestPrice.innerHTML = `$${best.register.toFixed(2)}<span>/year</span>`;
         if (bestName) bestName.textContent = `${best.name} — Best for ${tld} domains`;
         if (bestSub) bestSub.textContent = `Save vs. average ${tld} price of ${avgPrice}/year`;
-        if (bestBtn) bestBtn.textContent = `Get This Deal at ${best.name} →`;
+        if (bestBtn) {
+            bestBtn.textContent = `Get This Deal at ${best.name} →`;
+            bestBtn.href = getRegistrarSearchLink(best, domain);
+            bestBtn.target = '_blank';
+            bestBtn.rel = 'noopener sponsored';
+        }
     }
 
     tableData = [...adjustedRegistrars];
     sortTableData();
     renderTableRows();
     renderCards();
-    renderCalculator(parseInt(document.getElementById('yearsSlider').value) || 1);
 
     const resultsSection = document.getElementById('resultsSection');
     const featuresSection = document.getElementById('featuresSection');
@@ -645,7 +679,7 @@ function renderTableRows() {
                 }
             </td>
             <td>
-                <a href="${r.link}" target="_blank" rel="noopener" 
+                <a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored" 
                    class="buy-btn ${r.isBest ? 'best' : ''}"
                    onclick="showToast('Redirecting to ${r.name}...','🌐')">
                     ${r.isBest ? '★ ' : ''}Buy Now ↗
@@ -702,7 +736,7 @@ function renderCards() {
                    </div>`
                 : `<div style="color:var(--text-dim);font-size:0.8rem;margin-bottom:12px;text-align:center;">${r.offer}</div>`
             }
-            <a href="${r.link}" target="_blank" rel="noopener"
+                <a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
                class="buy-btn ${r.isBest ? 'best' : ''}" 
                style="width:100%;justify-content:center;"
                onclick="showToast('Opening ${r.name}...','🌐')">
@@ -788,62 +822,6 @@ window.switchView = function(view) {
         if (cardBtn) cardBtn.classList.add('active');
         if (tableBtn) tableBtn.classList.remove('active');
     }
-}
-
-// ============================================
-// CALCULATOR
-// ============================================
-window.updateCalculator = function() {
-    const slider = document.getElementById('yearsSlider');
-    if (!slider) return;
-    
-    const years = parseInt(slider.value);
-    const display = document.getElementById('yearsDisplay');
-    if (display) display.textContent = years === 1 ? '1 yr' : `${years} yrs`;
-
-    // Update slider fill
-    const pct = ((years - 1) / 9) * 100;
-    slider.style.background = `linear-gradient(90deg, var(--primary) ${pct}%, rgba(108,53,222,0.2) ${pct}%)`;
-
-    renderCalculator(years);
-}
-
-function renderCalculator(years) {
-    const container = document.getElementById('calcResults');
-    if (!container) return;
-
-    // Calculate totals: year 1 = register, subsequent = renewal
-    const withTotals = registrars.map(r => {
-        const total = years === 1 
-            ? r.register 
-            : r.register + (r.renewal * (years - 1));
-        return { ...r, total };
-    }).sort((a, b) => a.total - b.total);
-
-    const minTotal = withTotals[0].total;
-    const maxTotal = withTotals[withTotals.length - 1].total;
-
-    container.innerHTML = withTotals.map((r, i) => {
-        const savings = maxTotal - r.total;
-        const barW = ((r.total - minTotal) / (maxTotal - minTotal + 0.01)) * 100;
-        const barColor = i === 0 ? 'var(--green)' 
-                       : i <= 2 ? '#9BDE7E' 
-                       : i >= withTotals.length - 2 ? 'var(--red)' 
-                       : 'var(--primary-light)';
-
-        return `
-        <div class="calc-row ${i === 0 ? 'best' : ''}">
-            <div style="font-size:1rem;flex-shrink:0;">${r.emoji}</div>
-            <div class="calc-reg-name">${r.name} ${i === 0 ? '🏆' : ''}</div>
-            <div class="calc-bar-wrap">
-                <div class="calc-bar-fill" style="width:${barW}%;background:${barColor};"></div>
-            </div>
-            <div class="calc-total" style="color:${i === 0 ? 'var(--green)' : i >= withTotals.length - 2 ? 'var(--red)' : 'var(--text)'};">
-                $${r.total.toFixed(2)}
-            </div>
-            ${savings > 0.5 ? `<div class="calc-savings">Save $${savings.toFixed(0)}</div>` : ''}
-        </div>`;
-    }).join('');
 }
 
 // ============================================

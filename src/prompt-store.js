@@ -5,7 +5,7 @@ const packs = [
     {
         id:1, name:'Ultimate Business ChatGPT Pack',
         emoji:'✨', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B6B)',
-        price:19, origPrice:35, priceCategory:'15-30',
+        price:9.5, origPrice:35, priceCategory:'5-15',
         platforms:['chatgpt','business'],
         count:50, category:'ChatGPT / Business',
         rating:4.9, reviews:127, reviewCount:'127',
@@ -29,7 +29,7 @@ const packs = [
     {
         id:2, name:'Midjourney Art Masterpack',
         emoji:'🎨', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B4B)',
-        price:24, origPrice:45, priceCategory:'15-30',
+        price:12, origPrice:45, priceCategory:'5-15',
         platforms:['midjourney','art','stable-diffusion'],
         count:100, category:'Midjourney / Art',
         rating:4.8, reviews:89, reviewCount:'89',
@@ -53,7 +53,7 @@ const packs = [
     {
         id:3, name:'SEO Content Writer Pack',
         emoji:'📝', bgColor:'linear-gradient(135deg,#1E2E1E,#1B6B35)',
-        price:15, origPrice:25, priceCategory:'5-15',
+        price:7.5, origPrice:25, priceCategory:'5-15',
         platforms:['chatgpt','seo'],
         count:30, category:'ChatGPT / SEO',
         rating:4.7, reviews:64, reviewCount:'64',
@@ -76,7 +76,7 @@ const packs = [
     {
         id:4, name:'Social Media Content Pack',
         emoji:'📲', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B5A)',
-        price:12, origPrice:20, priceCategory:'5-15',
+        price:6, origPrice:20, priceCategory:'5-15',
         platforms:['chatgpt','social'],
         count:40, category:'ChatGPT / Social Media',
         rating:4.8, reviews:201, reviewCount:'201',
@@ -100,7 +100,7 @@ const packs = [
     {
         id:5, name:'YouTube Script Writing Pack',
         emoji:'🎬', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B1B)',
-        price:17, origPrice:29, priceCategory:'15-30',
+        price:8.5, origPrice:29, priceCategory:'5-15',
         platforms:['chatgpt','business'],
         count:25, category:'ChatGPT / Video',
         rating:4.9, reviews:45, reviewCount:'45',
@@ -123,7 +123,7 @@ const packs = [
     {
         id:6, name:'Freelancer Income Pack',
         emoji:'💵', bgColor:'linear-gradient(135deg,#1E2E1A,#2B5A1B)',
-        price:22, origPrice:39, priceCategory:'15-30',
+        price:11, origPrice:39, priceCategory:'5-15',
         platforms:['chatgpt','business','freelance'],
         count:60, category:'ChatGPT / Freelancing',
         rating:4.7, reviews:33, reviewCount:'33',
@@ -146,7 +146,7 @@ const packs = [
     {
         id:7, name:'E-commerce Product Pack',
         emoji:'🛍️', bgColor:'linear-gradient(135deg,#1E1E2E,#1B4B6B)',
-        price:14, origPrice:24, priceCategory:'5-15',
+        price:7, origPrice:24, priceCategory:'5-15',
         platforms:['chatgpt','business'],
         count:35, category:'ChatGPT / E-commerce',
         rating:4.6, reviews:78, reviewCount:'78',
@@ -189,6 +189,54 @@ const packs = [
             { name:'Creator Chris', rating:4, text:'Solid free pack. The content idea generator alone is super valuable.', date:'1 month ago' }
         ],
         fbt:[1,4],
+        link:'https://gumroad.com/sanzyai'
+    },
+    {
+        id:9, name:'Gemini Image Prompt Pro Pack',
+        emoji:'🖼️', bgColor:'linear-gradient(135deg,#1C2338,#214D6C)',
+        price:10.5, origPrice:39, priceCategory:'5-15',
+        platforms:['gemini','art'],
+        count:80, category:'Gemini / Image Generation',
+        rating:4.8, reviews:54, reviewCount:'54',
+        badge:'🧪 New Gemini Pack', badgeClass:'badge-new',
+        cardClass:'',
+        desc:'80 production-ready Gemini prompts for product shots, ad creatives, social thumbnails, cinematic scenes and consistent brand visuals. Designed for creators and marketers who want high quality image outputs quickly.',
+        included:['Photoreal product image prompts','Ad creative + text-safe composition prompts','Character consistency workflows','Food, fashion and lifestyle campaign prompts','Thumbnail and poster prompt frameworks'],
+        samples:[
+            { label:'E-commerce Product Hero', text:'Generate a premium product hero image of [PRODUCT] on a minimal studio set, soft-box lighting from left and top, realistic reflections, shallow depth of field, clean white and slate background, 4K detail, commercial photography style, leave negative space on right for headline text.' },
+            { label:'Cinematic Brand Scene', text:'Create a cinematic scene for [BRAND TYPE] showing [SUBJECT] in [LOCATION], golden-hour volumetric lighting, subtle film grain, teal-orange grade, realistic skin texture, high dynamic range, emotionally aspirational mood, suitable for a homepage hero banner 16:9.' },
+            { label:'Social Carousel Visual Set', text:'Produce a 5-image visual series for Instagram carousel about [TOPIC], consistent art direction and palette [COLORS], each frame with one focal subject, bold composition, editorial style, modern shadows, high clarity, ready for text overlays.' }
+        ],
+        reviews_data:[
+            { name:'Ava N.', rating:5, text:'The product-shot prompts are insanely good. My ad creatives look agency-level now.', date:'1 week ago' },
+            { name:'Harsh V.', rating:5, text:'Gemini outputs became much more consistent after using these templates.', date:'2 weeks ago' },
+            { name:'Leo P.', rating:4, text:'Great pack overall. Character consistency prompts are especially useful.', date:'3 weeks ago' }
+        ],
+        fbt:[2,10],
+        link:'https://gumroad.com/sanzyai'
+    },
+    {
+        id:10, name:'ChatGPT Image Direction Pack',
+        emoji:'📸', bgColor:'linear-gradient(135deg,#2A1F3A,#4A2D63)',
+        price:9, origPrice:34, priceCategory:'5-15',
+        platforms:['chatgpt','art'],
+        count:70, category:'ChatGPT / Image Prompting',
+        rating:4.7, reviews:47, reviewCount:'47',
+        badge:'🎯 Creator Favorite', badgeClass:'badge-trending',
+        cardClass:'',
+        desc:'70 advanced ChatGPT prompt blueprints to plan, refine and iterate image outputs for logos, branding, concept art, storyboards and social content. Built to help you get clearer, higher-converting visuals.',
+        included:['Prompt frameworks for multiple image styles','Visual moodboard and art-direction templates','Shot-list and scene breakdown prompts','Brand style consistency prompts','Iteration prompts for fixing image errors'],
+        samples:[
+            { label:'Art Direction Blueprint', text:'Act as a senior art director. Build a detailed image prompt for [CAMPAIGN GOAL] with style [STYLE], color palette [COLORS], subject [SUBJECT], camera angle [ANGLE], lighting [LIGHTING], and composition rules. Return final prompt + 3 alternate variations for testing.' },
+            { label:'Character Consistency Prompt', text:'Create a reusable image prompt template that keeps the same character identity across 10 scenes. Character profile: [PROFILE]. Keep face shape, hair, clothing motifs and color palette consistent while changing background, camera distance and pose.' },
+            { label:'Thumbnail CTR Prompt', text:'Write 6 thumbnail-generation prompts for a YouTube video about [TOPIC]. Each prompt should target one CTR trigger: curiosity, contrast, urgency, authority, emotion and transformation. Keep designs clean with one focal point and safe text placement.' }
+        ],
+        reviews_data:[
+            { name:'Noah G.', rating:5, text:'This pack made my thumbnail ideation 3x faster. Super practical prompts.', date:'5 days ago' },
+            { name:'Mina R.', rating:4, text:'Excellent for brand visuals and storyboard planning with ChatGPT.', date:'2 weeks ago' },
+            { name:'Daniel K.', rating:5, text:'The iteration prompts helped me fix image outputs without guesswork.', date:'1 month ago' }
+        ],
+        fbt:[1,9],
         link:'https://gumroad.com/sanzyai'
     }
 ];
