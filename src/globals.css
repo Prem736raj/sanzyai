@@ -689,6 +689,32 @@ body.light-mode .nl-modal p {
     color: #475467 !important;
 }
 
+body.light-mode .nav-links a,
+body.light-mode .mobile-nav a,
+body.light-mode .mobile-menu a {
+    color: #334155 !important;
+}
+
+body.light-mode .nav-links a.active,
+body.light-mode .mobile-nav a.active,
+body.light-mode .mobile-menu a.active {
+    color: #0f172a !important;
+}
+
+body.light-mode .wish-btn,
+body.light-mode .prompt-count-badge {
+    background: #ffffff !important;
+    color: #334155 !important;
+    border-color: rgba(15, 23, 42, 0.16) !important;
+}
+
+body.light-mode .wish-btn:hover,
+body.light-mode .wish-btn.active {
+    color: #e11d48 !important;
+    border-color: rgba(225, 29, 72, 0.45) !important;
+    background: rgba(255, 241, 245, 0.95) !important;
+}
+
 body.light-mode .site-control-btn {
     background: #ffffff;
     color: #0f172a;

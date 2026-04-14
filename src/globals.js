@@ -125,29 +125,7 @@
             navControlHost.appendChild(controls);
         }
 
-        // 1. Loading Screen
-        // We only want this to run once per session to avoid annoying users on every navigate
-        if (!sessionStorage.getItem('sanzy_loaded')) {
-            const loaderHTML = `
-                <div class="global-loader" id="globalLoader">
-                    <div class="loader-logo">⚡</div>
-                    <div class="loader-text">Loading your AI hub...</div>
-                </div>
-            `;
-            body.insertAdjacentHTML('beforeend', loaderHTML);
-            sessionStorage.setItem('sanzy_loaded', 'true');
-            
-            // Remove loader after 2 seconds
-            setTimeout(() => {
-                const loader = document.getElementById('globalLoader');
-                if (loader) {
-                    loader.classList.add('hide');
-                    setTimeout(() => loader.remove(), 500);
-                }
-            }, 2000);
-        }
-
-        // 2. Cookie Consent Banner
+        // 1. Cookie Consent Banner
         if (!localStorage.getItem('sanzy_cookies')) {
             const cookieHTML = `
                 <div class="cookie-banner" id="cookieBanner">
@@ -165,7 +143,7 @@
             }, 3000);
         }
 
-        // 3. Social Proof Popup
+        // 2. Social Proof Popup
         const spHTML = `
             <div class="social-proof" id="socialProof">
                 <div class="sp-icon">🔥</div>
@@ -177,7 +155,7 @@
         `;
         body.insertAdjacentHTML('beforeend', spHTML);
 
-        // 4. Newsletter Popup
+        // 3. Newsletter Popup
         if (!localStorage.getItem('sanzy_newsletter_subbed')) {
             const nlHTML = `
                 <div class="nl-overlay" id="nlOverlay">
