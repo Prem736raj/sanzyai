@@ -429,7 +429,9 @@ window.sortPosts = function() {
 // SEARCH
 // =============================================
 window.doSearch = function() {
-    const q = document.getElementById('searchInp').value.trim().toLowerCase();
+    const searchInp = document.getElementById('searchInp');
+    if (!searchInp) return;
+    const q = searchInp.value.trim().toLowerCase();
     if (!q) { displayPosts = [...allPosts]; window.renderPosts(); return; }
     displayPosts = allPosts.filter(p =>
         p.title.toLowerCase().includes(q) ||

@@ -47,7 +47,6 @@
                 <li><a href="/blog">Blog</a></li>
             </ul>
             <div style="display:flex;align-items:center;gap:10px;">
-                <a href="#quote-form" class="btn btn-glow btn-sm">💬 Get Free Quote</a>
                 <button class="hamburger" id="ham" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -67,7 +66,6 @@
         <li><a href="/learn-free">📚 Learn Free</a></li>
         <li><a href="/blog">📰 Blog</a></li>
     </ul>
-    <div class="mobile-nav-cta"><a href="#quote-form" class="btn btn-glow">💬 Get Free Quote</a></div>
 </div>
 
 <!-- Breadcrumb -->
@@ -104,7 +102,7 @@
                 </div>
 
                 <div class="hero-btns">
-                    <a href="#quote-form" class="btn btn-primary btn-lg">📋 Get Free Quote</a>
+                    <a href="#quote-form" class="btn btn-primary btn-lg">📋 Request Consultation</a>
                     <a href="#portfolio" class="btn btn-outline btn-lg">👁️ View Our Work</a>
                 </div>
             </div>
@@ -132,7 +130,7 @@
                     </div>
                     <div class="hsc-badges">
                         <div class="hsc-badge"><span class="hsc-badge-icon">🔒</span> Secure Payments via Stripe & PayPal</div>
-                        <div class="hsc-badge"><span class="hsc-badge-icon">💯</span> 30-Day Money-Back Guarantee</div>
+                        <div class="hsc-badge"><span class="hsc-badge-icon">💯</span> 30-Day Priority Support Included</div>
                         <div class="hsc-badge"><span class="hsc-badge-icon">🔄</span> Unlimited Revisions Until Happy</div>
                     </div>
                 </div>
@@ -174,12 +172,12 @@
                 <div class="hiw-num">📋</div>
                 <div class="hiw-step-label">Step 01</div>
                 <div class="hiw-title">Tell Us Your Needs</div>
-                <p class="hiw-desc">Fill out our quick quote form or chat with Sanzy AI. Tell us what you need, your budget and timeline — takes 2 minutes.</p>
+                <p class="hiw-desc">Fill out our quick consultation form. Tell us what you need, your budget and timeline — takes 2 minutes.</p>
             </div>
             <div class="hiw-card">
                 <div class="hiw-num">💰</div>
                 <div class="hiw-step-label">Step 02</div>
-                <div class="hiw-title">Get Free Quote</div>
+                <div class="hiw-title">Request Consultation</div>
                 <p class="hiw-desc">We review your requirements and send you a detailed custom quote within 2 hours — completely free, no commitment required.</p>
             </div>
             <div class="hiw-card">
@@ -468,7 +466,7 @@
         <h2 class="success-title">Quote Request Sent!</h2>
         <p class="success-sub">Thank you! We've received your request and will send a detailed custom quote to your email within <strong>2 hours</strong> during business hours. Check your inbox (and spam folder just in case).</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-            <a href="#" class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('open')">← Back to Services</a>
+            <a href="/ai-services" class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('open')">← Back to Services</a>
             <a href="/ai-tools" class="btn btn-outline">Browse AI Tools →</a>
         </div>
     </div>
@@ -485,12 +483,12 @@
                 <span class="logo-text">SanzyAI</span>
             </a>
             <div class="footer-links">
-                <a href="#">About</a>
+                <a href="/about">About</a>
                 <a href="#services">Services</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#quote-form">Get Quote</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
+                <a href="/privacy-policy">Privacy</a>
+                <a href="/terms-of-service">Terms</a>
             </div>
         </div>
         <div class="footer-copy">
@@ -498,12 +496,6 @@
         </div>
     </div>
 </footer>
-
-<!-- Floating CTA + Scroll Top -->
-<div class="float-cta">
-    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-    <a href="#quote-form" class="fcta-btn">📋 Free Quote</a>
-</div>
 
 <!-- Toast -->
 <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>

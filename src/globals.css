@@ -55,78 +55,6 @@
 }
 
 /* ============================================
-   ANNOUNCEMENT BAR
-============================================ */
-.announce-bar {
-    background: linear-gradient(90deg, #5025C4, #6C35DE);
-    color: #fff;
-    text-align: center;
-    padding: 8px 40px 8px 16px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    position: relative;
-    z-index: 1000;
-}
-
-.announce-bar a {
-    color: #00FF88;
-    text-decoration: underline;
-    font-weight: 600;
-    margin-left: 8px;
-}
-
-.announce-bar a:hover {
-    color: #fff;
-}
-
-.announce-close {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 4px 6px;
-    line-height: 1;
-    transition: color 0.2s;
-}
-
-.announce-close:hover {
-    color: #fff;
-}
-
-/* Adjust navbar top if announce bar is active */
-body.has-announce .navbar { top: 35px; }
-
-/* ============================================
-   READING PROGRESS BAR
-============================================ */
-.progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: transparent;
-    z-index: 10000;
-    pointer-events: none;
-}
-body.has-announce .progress-container { top: 35px; }
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #6C35DE, #00D4FF);
-    width: 0%;
-    transition: width 0.1s;
-    box-shadow: 0 0 8px rgba(108,53,222,0.8);
-}
-
-/* ============================================
    WHATSAPP BUTTON
 ============================================ */
 .whatsapp-btn {
@@ -146,6 +74,9 @@ body.has-announce .progress-container { top: 35px; }
     z-index: 9998;
     cursor: pointer;
     text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: manipulation;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -178,7 +109,7 @@ body.has-announce .progress-container { top: 35px; }
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
-    .whatsapp-btn { bottom: 85px; right: 16px; width: 48px; height: 48px; font-size: 1.5rem; }
+    .whatsapp-btn { bottom: 85px; left: 16px; right: auto; width: 48px; height: 48px; font-size: 1.5rem; }
 }
 
 /* ============================================
@@ -372,4 +303,466 @@ body.has-announce .progress-container { top: 35px; }
     color: #fff !important;
     border: none !important;
     box-shadow: 0 4px 12px rgba(108,53,222,0.4) !important;
+}
+
+/* ============================================
+   GLOBAL USER CONTROLS (LANG + THEME)
+============================================ */
+.site-controls {
+    position: fixed;
+    top: 10px;
+    right: 14px;
+    z-index: 99995;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 14px;
+    background: rgba(12, 14, 24, 0.9);
+    border: 1px solid rgba(108, 53, 222, 0.25);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.site-controls.in-navbar {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-left: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.site-controls.in-navbar .language-panel {
+    top: 48px;
+    right: 44px;
+}
+
+.site-control-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(157, 123, 255, 0.65);
+    background: #f8f9ff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(108, 53, 222, 0.2);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-control-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(108, 53, 222, 0.95);
+    box-shadow: 0 6px 16px rgba(108, 53, 222, 0.28);
+}
+
+.language-panel {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    min-width: 190px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(108, 53, 222, 0.35);
+    background: rgba(18, 18, 26, 0.97);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.language-panel.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.language-panel-title {
+    color: #d9ddff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.site-lang-select {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(108, 53, 222, 0.4);
+    background: rgba(10, 10, 15, 0.95);
+    color: #f3f5ff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.84rem;
+    padding: 8px 10px;
+    outline: none;
+}
+
+.translate-hidden {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .site-controls {
+        top: 8px;
+        right: 12px;
+    }
+
+    .language-panel {
+        right: 0;
+        top: 46px;
+        min-width: 170px;
+    }
+
+    .site-controls.in-navbar {
+        margin-left: 0;
+    }
+}
+
+body:not(.light-mode) .site-control-btn {
+    background: #171828;
+    color: #f3f6ff;
+}
+
+body:not(.light-mode) .site-controls {
+    background: rgba(10, 10, 15, 0.88);
+    border-color: rgba(108, 53, 222, 0.35);
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+============================================ */
+body.light-mode {
+    --background: #f4f7fb;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --card-bg: #ffffff;
+    --card-h: #f7f9ff;
+    --card-bg-hover: #f2f5ff;
+    --card-hover: #f2f5ff;
+    --surface: #eef3fb;
+    --surface2: #e9eef8;
+    --text: #0f172a;
+    --muted: #475467;
+    --text-muted: #475467;
+    --dim: #667085;
+    --text-dim: #667085;
+    --border: rgba(15, 23, 42, 0.14);
+    --border-s: rgba(15, 23, 42, 0.1);
+    --border-subtle: rgba(15, 23, 42, 0.09);
+    background: #f4f7fb !important;
+    color: #0f172a !important;
+}
+
+body.light-mode .global-loader {
+    background: #f4f7fb !important;
+}
+
+body.light-mode .loader-logo {
+    box-shadow: 0 0 20px rgba(108, 53, 222, 0.28);
+}
+
+body.light-mode .loader-text {
+    -webkit-text-fill-color: #334155;
+    background: none;
+}
+
+body.light-mode,
+body.light-mode p,
+body.light-mode li,
+body.light-mode td,
+body.light-mode th,
+body.light-mode label,
+body.light-mode .article-body,
+body.light-mode .pm-meta,
+body.light-mode .feat-meta,
+body.light-mode .pmeta,
+body.light-mode .comment-text,
+body.light-mode .bc-inner,
+body.light-mode .hero p,
+body.light-mode .section-sub,
+body.light-mode .sec-sub,
+body.light-mode .results-info,
+body.light-mode .tool-desc,
+body.light-mode .cat-num,
+body.light-mode .pop-meta,
+body.light-mode .trust-sub,
+body.light-mode .stat-lbl,
+body.light-mode .avail-desc,
+body.light-mode .notice-box,
+body.light-mode .footer-copy,
+body.light-mode .loader-text {
+    color: #334155 !important;
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea,
+body.light-mode .search-inp,
+body.light-mode .nl-inp,
+body.light-mode .modal-nl-inp,
+body.light-mode .cf-inp,
+body.light-mode .cf-area,
+body.light-mode .search-input,
+body.light-mode .site-lang-select {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.18) !important;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+    color: #64748b !important;
+}
+
+body.light-mode .btn-outline,
+body.light-mode a.btn-outline {
+    color: #334155 !important;
+    border-color: rgba(15, 23, 42, 0.28) !important;
+}
+
+body.light-mode .trust-item {
+    color: #334155 !important;
+}
+
+body.light-mode .trust-bar::before {
+    background: linear-gradient(90deg, #f4f7fb, transparent) !important;
+}
+
+body.light-mode .trust-bar::after {
+    background: linear-gradient(-90deg, #f4f7fb, transparent) !important;
+}
+
+body.light-mode .hstat,
+body.light-mode .stats-bar,
+body.light-mode .prod-card,
+body.light-mode .tool-card,
+body.light-mode .compare-table-wrap,
+body.light-mode .modal,
+body.light-mode .preview-modal,
+body.light-mode .email-modal,
+body.light-mode .newsletter-card,
+body.light-mode .submit-card {
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.light-mode .tool-card:hover,
+body.light-mode .prod-card:hover {
+    background: #f7f9ff !important;
+}
+
+body.light-mode .filter-bar,
+body.light-mode .compare-bar,
+body.light-mode .fbt-section {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body.light-mode .filter-btn,
+body.light-mode .fbtn,
+body.light-mode .sort-sel,
+body.light-mode .review-btn,
+body.light-mode .preview-btn,
+body.light-mode .filter-search,
+body.light-mode .search-bar,
+body.light-mode .search-input-el,
+body.light-mode .search-clear {
+    color: #1e293b !important;
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.16) !important;
+}
+
+body.light-mode .filter-group-label,
+body.light-mode .filter-label,
+body.light-mode .tool-cat,
+body.light-mode .rating-count,
+body.light-mode .compare-label,
+body.light-mode .nl-note,
+body.light-mode .review-cnt,
+body.light-mode .trust-sub,
+body.light-mode .hstat-label {
+    color: #64748b !important;
+}
+
+body.light-mode .tool-name,
+body.light-mode .card-title,
+body.light-mode .rating-val,
+body.light-mode .price-main,
+body.light-mode .trust-main,
+body.light-mode .hstat-num,
+body.light-mode .sec-title,
+body.light-mode .modal-title,
+body.light-mode .preview-title,
+body.light-mode .samples-title,
+body.light-mode .reviewer-name {
+    color: #0f172a !important;
+}
+
+body.light-mode .tool-desc,
+body.light-mode .modal-desc,
+body.light-mode .included-item,
+body.light-mode .review-text,
+body.light-mode .sample-prompt-text,
+body.light-mode .mprice-label,
+body.light-mode .tool-price,
+body.light-mode .tool-price strong,
+body.light-mode .sec-count,
+body.light-mode .bc-inner,
+body.light-mode .hero p,
+body.light-mode .page-hero p,
+body.light-mode .nl-sub,
+body.light-mode .submit-left p,
+body.light-mode .perk-item,
+body.light-mode .footer-links a,
+body.light-mode .footer-links-row a,
+body.light-mode .fbt-title,
+body.light-mode .fbt-price,
+body.light-mode .compare-feature {
+    color: #334155 !important;
+}
+
+body.light-mode .modal-header,
+body.light-mode .preview-header,
+body.light-mode .compare-wrap,
+body.light-mode .footer-copy {
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+body.light-mode .search-input-el::placeholder,
+body.light-mode .filter-search::placeholder {
+    color: #64748b !important;
+}
+
+body.light-mode .btn-outline:hover,
+body.light-mode a.btn-outline:hover {
+    background: rgba(108, 53, 222, 0.08) !important;
+    color: #1e293b !important;
+}
+
+body.light-mode .navbar,
+body.light-mode .mobile-nav,
+body.light-mode .mobile-menu,
+body.light-mode .footer,
+body.light-mode .sw,
+body.light-mode .featured-post,
+body.light-mode .post-card,
+body.light-mode .table-wrapper,
+body.light-mode .registrar-card,
+body.light-mode .calculator-card,
+body.light-mode .coupons-card,
+body.light-mode .tld-table-wrap,
+body.light-mode .cookie-banner,
+body.light-mode .social-proof,
+body.light-mode .nl-modal {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.light-mode .nav-links a,
+body.light-mode .nav-menu a,
+body.light-mode .mobile-nav a,
+body.light-mode .mobile-menu a,
+body.light-mode .footer-links a,
+body.light-mode .footer-links-row a,
+body.light-mode .post-excerpt,
+body.light-mode .feat-excerpt,
+body.light-mode .bstat-lbl,
+body.light-mode .sec-count,
+body.light-mode .tld-avg,
+body.light-mode .coupon-desc,
+body.light-mode .cookie-text,
+body.light-mode .sp-time,
+body.light-mode .nl-modal p {
+    color: #475467 !important;
+}
+
+body.light-mode .site-control-btn {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: rgba(108, 53, 222, 0.45);
+}
+
+body.light-mode .site-controls {
+    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(15, 23, 42, 0.16);
+}
+
+body.light-mode .language-panel {
+    background: #ffffff;
+    border-color: rgba(108, 53, 222, 0.35);
+}
+
+body.light-mode .language-panel select,
+body.light-mode .language-panel-title {
+    color: #0f172a !important;
+}
+
+body.light-mode .language-panel-title,
+body.light-mode .nl-head,
+body.light-mode .tool-name,
+body.light-mode .pop-title,
+body.light-mode .post-title,
+body.light-mode .feat-title,
+body.light-mode .section-title,
+body.light-mode .results-info,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+    color: #0f172a !important;
+}
+
+/* Chat readability in light mode */
+body.light-mode .sanzy-window {
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.light-mode .sanzy-messages {
+    background: #f8fafc !important;
+}
+
+body.light-mode .sanzy-bubble {
+    background: #eef3fb !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body.light-mode .sanzy-bubble-text {
+    color: #0f172a !important;
+}
+
+body.light-mode .sanzy-divider,
+body.light-mode .sanzy-status,
+body.light-mode .sanzy-time,
+body.light-mode .sanzy-input::placeholder {
+    color: #64748b !important;
+}
+
+body.light-mode .sanzy-input {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+/* Slight dark-mode readability boost for muted text */
+body:not(.light-mode) .post-excerpt,
+body:not(.light-mode) .feat-excerpt,
+body:not(.light-mode) .sec-sub,
+body:not(.light-mode) .section-sub,
+body:not(.light-mode) .cookie-text,
+body:not(.light-mode) .footer-copy {
+    color: #a8adcc !important;
 }

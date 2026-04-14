@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy & Sell AI Prompts - ChatGPT, Midjourney Prompts | SanzyAI</title>
-    <meta name="description" content="Buy premium AI prompts for ChatGPT, Midjourney, Claude, Gemini & more. 500+ ready-to-use prompt packs with instant download and money-back guarantee.">
+    <meta name="description" content="Buy premium AI prompts for ChatGPT, Midjourney, Claude, Gemini & more. 500+ ready-to-use prompt packs with instant download and lifetime updates.">
     <link rel="canonical" href="https://sanzyai.com/prompt-store">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,9 +27,7 @@
 </head>
 <body>
 
-<!-- ============================================
-     NAVBAR
-============================================ -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="container">
         <div class="nav-inner">
@@ -55,7 +53,6 @@
     </div>
 </nav>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
     <ul>
         <li><a href="/">🏠 Home</a></li>
@@ -68,7 +65,6 @@
     </ul>
 </div>
 
-<!-- Breadcrumb -->
 <div class="breadcrumb">
     <div class="container">
         <div class="bc-inner">
@@ -102,13 +98,13 @@
             </div>
             <div class="stat-item">
                 <span class="stat-icon">⚡</span>
-                <span class="stat-val">Instant</span>
-                <span class="stat-lbl">Download</span>
+                <span class="stat-val">10,000+</span>
+                <span class="stat-lbl">Happy Customers</span>
             </div>
             <div class="stat-item">
                 <span class="stat-icon">💯</span>
-                <span class="stat-val">30-Day</span>
-                <span class="stat-lbl">Money Back</span>
+                <span class="stat-val">Weekly</span>
+                <span class="stat-lbl">Prompt Updates</span>
             </div>
         </div>
     </div>
@@ -120,33 +116,40 @@
 <div class="filter-bar">
     <div class="container">
         <div class="filter-inner">
-            <div class="filter-rows">
-                <!-- Row 1: AI Platform -->
-                <div class="filter-row">
-                    <span class="filter-label">Platform:</span>
-                    <button class="fbtn active" data-platform="all" onclick="filterPlatform(this,'all')">All Prompts</button>
-                    <button class="fbtn" data-platform="chatgpt" onclick="filterPlatform(this,'chatgpt')">🤖 ChatGPT</button>
-                    <button class="fbtn" data-platform="midjourney" onclick="filterPlatform(this,'midjourney')">🎨 Midjourney</button>
-                    <button class="fbtn" data-platform="claude" onclick="filterPlatform(this,'claude')">🧠 Claude</button>
-                    <button class="fbtn" data-platform="gemini" onclick="filterPlatform(this,'gemini')">✨ Gemini</button>
-                    <button class="fbtn" data-platform="stable-diffusion" onclick="filterPlatform(this,'stable-diffusion')">🌊 Stable Diffusion</button>
-                    <button class="fbtn" data-platform="runway" onclick="filterPlatform(this,'runway')">🎬 Runway</button>
-                    <div class="filter-div"></div>
-                    <button class="fbtn" data-platform="business" onclick="filterPlatform(this,'business')">💼 Business</button>
-                    <button class="fbtn" data-platform="seo" onclick="filterPlatform(this,'seo')">📈 SEO</button>
-                    <button class="fbtn" data-platform="social" onclick="filterPlatform(this,'social')">📱 Social Media</button>
-                    <button class="fbtn" data-platform="art" onclick="filterPlatform(this,'art')">🖼️ Art</button>
-                    <button class="fbtn" data-platform="freelance" onclick="filterPlatform(this,'freelance')">💰 Freelancing</button>
+            <div class="filter-select-grid">
+                <div class="filter-field filter-search-field">
+                    <span class="filter-label">Search:</span>
+                    <input type="text" class="filter-search" id="searchInput" placeholder="Search prompts e.g. python, email marketing" oninput="filterSearchInput()">
                 </div>
-                <!-- Row 2: Price + Sort -->
-                <div class="filter-row">
+                <div class="filter-field">
+                    <span class="filter-label">Platform:</span>
+                    <select class="sort-sel" id="platformSel" onchange="filterPlatformSelect()">
+                        <option value="all">🤖 All Prompts</option>
+                        <option value="chatgpt">🤖 ChatGPT</option>
+                        <option value="midjourney">🎨 Midjourney</option>
+                        <option value="claude">🧠 Claude</option>
+                        <option value="gemini">✨ Gemini</option>
+                        <option value="stable-diffusion">🌊 Stable Diffusion</option>
+                        <option value="runway">🎬 Runway</option>
+                        <option value="business">💼 Business</option>
+                        <option value="seo">📈 SEO</option>
+                        <option value="social">📱 Social Media</option>
+                        <option value="art">🖼️ Art</option>
+                        <option value="freelance">💰 Freelancing</option>
+                    </select>
+                </div>
+                <div class="filter-field">
                     <span class="filter-label">Price:</span>
-                    <button class="fbtn" data-price="free" onclick="filterPrice(this,'free')">🆓 Free</button>
-                    <button class="fbtn" data-price="1-5" onclick="filterPrice(this,'1-5')">$1–$5</button>
-                    <button class="fbtn" data-price="5-15" onclick="filterPrice(this,'5-15')">$5–$15</button>
-                    <button class="fbtn" data-price="15-30" onclick="filterPrice(this,'15-30')">$15–$30</button>
-                    <button class="fbtn" data-price="30+" onclick="filterPrice(this,'30+')">$30+</button>
-                    <div class="filter-div"></div>
+                    <select class="sort-sel" id="priceSel" onchange="filterPriceSelect()">
+                        <option value="all">💵 All Prices</option>
+                        <option value="free">🆓 Free</option>
+                        <option value="1-5">$1–$5</option>
+                        <option value="5-15">$5–$15</option>
+                        <option value="15-30">$15–$30</option>
+                        <option value="30+">$30+</option>
+                    </select>
+                </div>
+                <div class="filter-field">
                     <span class="filter-label">Sort:</span>
                     <select class="sort-sel" id="sortSel" onchange="sortPacks()">
                         <option value="popular">🔥 Most Popular</option>
@@ -196,15 +199,15 @@
             <div class="trust-item">
                 <span class="trust-icon">⚡</span>
                 <div class="trust-text">
-                    <span class="trust-main">Instant Download</span>
-                    <span class="trust-sub">Delivered immediately</span>
+                    <span class="trust-main">Verified Prompt Creators</span>
+                    <span class="trust-sub">Quality reviewed submissions</span>
                 </div>
             </div>
             <div class="trust-item">
                 <span class="trust-icon">💯</span>
                 <div class="trust-text">
-                    <span class="trust-main">Money Back Guarantee</span>
-                    <span class="trust-sub">Full refund within 30 days</span>
+                    <span class="trust-main">24/7 Expert Support</span>
+                    <span class="trust-sub">Guidance whenever you need help</span>
                 </div>
             </div>
             <div class="trust-item">
@@ -226,82 +229,6 @@
 </section>
 
 <!-- ============================================
-     SELL YOUR PROMPTS SECTION
-============================================ -->
-<section class="sell-section">
-    <div class="container">
-        <div class="sell-card">
-            <div class="sell-left">
-                <div class="sell-badge">💡 For Prompt Engineers</div>
-                <h2 class="sell-title">Are You A <span class="gradient-text">Prompt Engineer?</span></h2>
-                <p class="sell-sub">Join our marketplace and earn up to <strong style="color:var(--accent);">80% commission</strong> on every sale. Turn your prompts into passive income with zero platform fees to get started.</p>
-                <div class="sell-perks">
-                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Keep 80% of every sale — no hidden fees</div>
-                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Instant payouts via PayPal or Stripe</div>
-                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Reach 10,000+ monthly buyers</div>
-                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Free seller dashboard & analytics</div>
-                    <div class="sell-perk"><span class="sell-perk-icon">✅</span> Marketing support from SanzyAI team</div>
-                </div>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                    <a href="#sell-form" class="btn btn-primary btn-lg">🚀 Start Selling Now</a>
-                    <a href="#sell-form" class="btn btn-outline" style="border-color: rgba(139,92,246,0.5); color: #FFFFFF;">Learn More →</a>
-                </div>
-            </div>
-            <div class="sell-right" id="sell-form">
-                <div class="sell-form-title">✍️ Apply to Sell Prompts</div>
-                <form class="sell-form" onsubmit="handleSellApply(event)">
-                    <div class="form-row-2">
-                        <div class="form-grp">
-                            <label class="flabel">Full Name *</label>
-                            <input type="text" class="finput" placeholder="Your name" required>
-                        </div>
-                        <div class="form-grp">
-                            <label class="flabel">Email Address *</label>
-                            <input type="email" class="finput" placeholder="you@email.com" required>
-                        </div>
-                    </div>
-                    <div class="form-grp">
-                        <label class="flabel">AI Specialization *</label>
-                        <select class="fselect" required>
-                            <option value="">Select your specialty...</option>
-                            <option>ChatGPT / GPT-4 Prompts</option>
-                            <option>Midjourney Image Prompts</option>
-                            <option>Claude Prompts</option>
-                            <option>Stable Diffusion Prompts</option>
-                            <option>Business / Marketing Prompts</option>
-                            <option>Code / Developer Prompts</option>
-                            <option>Multiple Categories</option>
-                        </select>
-                    </div>
-                    <div class="form-grp">
-                        <label class="flabel">How Many Prompts Do You Have? *</label>
-                        <select class="fselect" required>
-                            <option value="">Select range...</option>
-                            <option>10–25 prompts</option>
-                            <option>25–50 prompts</option>
-                            <option>50–100 prompts</option>
-                            <option>100+ prompts</option>
-                        </select>
-                    </div>
-                    <div class="form-grp">
-                        <label class="flabel">Tell Us About Your Prompts</label>
-                        <textarea class="ftextarea" placeholder="Describe your prompts and what makes them unique..."></textarea>
-                    </div>
-                    <div class="form-grp">
-                        <label class="flabel">Portfolio / Sample Link (Optional)</label>
-                        <input type="url" class="finput" placeholder="https://your-portfolio.com">
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="justify-content:center;padding:13px;">
-                        🚀 Submit Application
-                    </button>
-                    <p style="font-size:0.74rem;color:var(--dim);text-align:center;">We review applications within 48 hours</p>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
      FOOTER
 ============================================ -->
 <footer class="footer">
@@ -313,12 +240,15 @@
             </a>
             <div class="footer-links">
                 <a href="/">Home</a>
+                <a href="/prompt-store">Prompt Store</a>
                 <a href="/ai-tools">AI Tools</a>
-                <a href="#sell-form">Sell Prompts</a>
-                <a href="/blog">Blog</a>
-                <a href="/learn-free">Learn Free</a>
-                <a href="/ai-services">AI Services</a>
                 <a href="/domain-finder">Domain Finder</a>
+                <a href="/ai-services">AI Services</a>
+                <a href="/learn-free">Learn Free</a>
+                <a href="/blog">Blog</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/refund-policy">Refund Policy</a>
             </div>
         </div>
         <div class="footer-copy">
@@ -371,7 +301,6 @@
 </div>
 
 <!-- Scroll Top & Toast -->
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
 
 <script type="module" src="./src/prompt-store.js"></script>

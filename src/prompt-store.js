@@ -199,6 +199,7 @@ const packs = [
 let activePlatform = 'all';
 let activePriceFilter = 'all';
 let activeSort = 'popular';
+let searchQuery = '';
 let wishlist = new Set();
 let filteredPacks = [...packs];
 
@@ -368,7 +369,16 @@ function applyAllFilters() {
         else if (activePriceFilter === '15-30') matchPrice = pack.price > 15 && pack.price <= 30;
         else if (activePriceFilter === '30+') matchPrice = pack.price > 30;
 
-        return matchPlatform && matchPrice;
+        const haystack = [
+            pack.name,
+            pack.category,
+            pack.desc,
+            ...(pack.included || []),
+            ...(pack.platforms || [])
+        ].join(' ').toLowerCase();
+        const matchSearch = !searchQuery || haystack.includes(searchQuery);
+
+        return matchPlatform && matchPrice && matchSearch;
     });
     sortPacksData();
     renderPacks();
@@ -378,6 +388,21 @@ window.sortPacks = function() {
     activeSort = document.getElementById('sortSel').value;
     sortPacksData();
     renderPacks();
+}
+
+window.filterPlatformSelect = function() {
+    activePlatform = document.getElementById('platformSel').value;
+    applyAllFilters();
+}
+
+window.filterPriceSelect = function() {
+    activePriceFilter = document.getElementById('priceSel').value;
+    applyAllFilters();
+}
+
+window.filterSearchInput = function() {
+    searchQuery = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+    applyAllFilters();
 }
 
 function sortPacksData() {
@@ -396,8 +421,20 @@ function sortPacksData() {
 window.resetFilters = function() {
     activePlatform = 'all';
     activePriceFilter = 'all';
+    searchQuery = '';
+    const platformSel = document.getElementById('platformSel');
+    const priceSel = document.getElementById('priceSel');
+    const sortSel = document.getElementById('sortSel');
+    const searchInput = document.getElementById('searchInput');
+
+    if (platformSel) platformSel.value = 'all';
+    if (priceSel) priceSel.value = 'all';
+    if (sortSel) sortSel.value = 'popular';
+    if (searchInput) searchInput.value = '';
+
     document.querySelectorAll('[data-platform]').forEach(b => b.classList.remove('active'));
-    document.querySelector('[data-platform="all"]').classList.add('active');
+    const allBtn = document.querySelector('[data-platform="all"]');
+    if (allBtn) allBtn.classList.add('active');
     document.querySelectorAll('[data-price]').forEach(b => {
         b.classList.remove('active','active-free','active-price');
     });
@@ -521,7 +558,7 @@ window.openProduct = function(id) {
                     <div class="modal-perks">
                         <div class="modal-perk"><span class="modal-perk-icon">🔒</span> Secure payment via Stripe / PayPal</div>
                         <div class="modal-perk"><span class="modal-perk-icon">⚡</span> Instant download after purchase</div>
-                        <div class="modal-perk"><span class="modal-perk-icon">💯</span> 30-day money back guarantee</div>
+                        <div class="modal-perk"><span class="modal-perk-icon">💯</span> Premium quality checked by experts</div>
                         <div class="modal-perk"><span class="modal-perk-icon">🔄</span> Free lifetime updates included</div>
                         <div class="modal-perk"><span class="modal-perk-icon">📧</span> Customer support via email</div>
                     </div>
@@ -531,7 +568,7 @@ window.openProduct = function(id) {
                 <div class="modal-trust">
                     <div class="trust-chip">🔒 Secure SSL</div>
                     <div class="trust-chip">⚡ Instant Download</div>
-                    <div class="trust-chip">💯 Money Back</div>
+                    <div class="trust-chip">💯 Verified Quality</div>
                     <div class="trust-chip">⭐ ${pack.rating}/5 Rated</div>
                 </div>
             </div>
@@ -645,15 +682,53 @@ window.closeEmailModal = function() {
     document.body.style.overflow = '';
 }
 
-window.handleFreeDownload = function(e) {
+window.handleFreeDownload = async function(e) {
     e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const email = document.getElementById('freePackEmail').value;
-    closeEmailModal();
-    showToast('🎉 Free pack sent to ' + email,'📬');
-    // Simulate download
-    setTimeout(() => {
-        showToast('Checking your email for the download link!','✅');
-    }, 2000);
+    const packUrl = `${window.location.origin}/free-starter-chatgpt-pack.txt`;
+
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.textContent = 'Sending...';
+
+    try {
+        const response = await fetch('https://formsubmit.co/ajax/hello@sanzyai.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                source: 'Prompt Store Free Pack',
+                message: `Send free pack to ${email}`,
+                free_pack_link: packUrl,
+                _subject: `Free Pack Request - ${email}`,
+                _captcha: 'false',
+                _template: 'table',
+                _autoresponse: `Thanks for joining SanzyAI. Your free starter pack is ready: ${packUrl}`
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Email provider returned non-200 response.');
+        }
+
+        closeEmailModal();
+        showToast('📬 Free pack email sent to ' + email, '✅');
+        window.open(packUrl, '_blank', 'noopener');
+    } catch (err) {
+        closeEmailModal();
+        showToast('⚠️ Email delayed. Download opened directly.', '⬇️');
+        window.open(packUrl, '_blank', 'noopener');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        submitBtn.innerHTML = '✅ Send Me The Free Pack!';
+        form.reset();
+    }
 }
 
 // =============================================
@@ -680,21 +755,25 @@ window.handleSellApply = function(e) {
 // =============================================
 const ham = document.getElementById('ham');
 const mobileNav = document.getElementById('mobileNav');
-ham.addEventListener('click', () => {
-    ham.classList.toggle('active');
-    mobileNav.classList.toggle('open');
-});
-mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => { ham.classList.remove('active'); mobileNav.classList.remove('open'); });
-});
+if (ham && mobileNav) {
+    ham.addEventListener('click', () => {
+        ham.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => { ham.classList.remove('active'); mobileNav.classList.remove('open'); });
+    });
+}
 
 // =============================================
 // SCROLL TOP
 // =============================================
 const scrollTopBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-    scrollTopBtn.classList.toggle('vis', window.scrollY > 400);
-});
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('vis', window.scrollY > 400);
+    });
+}
 
 // =============================================
 // CLOSE MODALS ON OVERLAY CLICK

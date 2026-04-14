@@ -10,10 +10,7 @@
         const widgetHTML = `
             <!-- Floating Button -->
             <div class="sanzy-btn-wrap">
-                <div class="sanzy-btn-label" id="sanzyLabel" onclick="window.SanzyBot.toggle()">
-                    💬 Chat with Sanzy
-                </div>
-                <button class="sanzy-float-btn" id="sanzyFloatBtn" onclick="window.SanzyBot.toggle()" aria-label="Chat with Sanzy AI">
+                <button class="sanzy-float-btn" id="sanzyFloatBtn" onclick="window.SanzyBot.toggle()" aria-label="Chat with Sanzy AI" draggable="false">
                     🤖
                     <div class="sanzy-notif" id="sanzyNotif">1</div>
                 </button>
@@ -186,7 +183,7 @@ I'll pick the perfect tool for you! 💪`
 
 All packs come with:
 ✅ Instant download
-✅ 30-day money-back guarantee
+✅ Expert-reviewed quality
 ✅ Lifetime updates
 
 Which type of prompts are you looking for? 😊`
@@ -204,7 +201,7 @@ Which type of prompts are you looking for? 😊`
 📊 Business Strategy — from $75
 
 <a class="bot-link-btn" href="ai-services.html">🚀 See All Services →</a>
-<a class="bot-link-btn" href="ai-services.html">📋 Get Free Quote →</a>
+<a class="bot-link-btn" href="ai-services.html">📋 Request Consultation →</a>
 
 **Want a custom quote?** Just tell me:
 • What service you need
@@ -374,6 +371,7 @@ I can help you with:
         // INITIALIZE
         // =============================================
         init() {
+            if (document.body.classList.contains('no-float-widgets')) return;
             injectSanzyBot();
             this.currentPage = this.detectPage();
             this.setupEventListeners();
@@ -406,8 +404,6 @@ I can help you with:
             setTimeout(() => {
                 if (!this.isOpen) {
                     if (this.notif) this.notif.classList.remove('hide');
-                    // Animate label
-                    if (this.label) this.label.style.animation = 'label-slide-in 0.5s ease';
                 }
             }, 3000);
         },
@@ -430,7 +426,6 @@ I can help you with:
             this.floatBtn.textContent = '';
             this.floatBtn.innerHTML = '<span>✕</span>';
             this.notif.classList.add('hide');
-            this.label.style.display = 'none';
 
             // Greet on first open
             if (!this.hasGreeted) {
@@ -447,7 +442,6 @@ I can help you with:
             this.window.classList.remove('open');
             this.floatBtn.classList.remove('bot-open');
             this.floatBtn.innerHTML = '🤖<div class="sanzy-notif hide" id="sanzyNotif">1</div>';
-            this.label.style.display = '';
         },
 
         toggle() {
@@ -570,7 +564,7 @@ I can help you with:
                 domain: ['Check hosting options', 'Learn domain tips', 'Compare registrars'],
                 tools: ['Find writing tools', 'Image AI tools', 'Free tools only'],
                 prompts: ['Business prompts', 'Free starter pack', 'Midjourney prompts'],
-                services: ['Get free quote', 'View all services', 'Content writing'],
+                services: ['Request consultation', 'View all services', 'Content writing'],
                 learn: ['Start Module 1', 'Download resources', 'View certificate'],
             };
 
