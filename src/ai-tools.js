@@ -388,8 +388,8 @@ function renderTools() {
                    onclick="showToast('Opening ${tool.name}...','🌐')">
                     🔗 Visit Tool
                 </a>
-                <button class="review-btn" onclick="showToast('Review coming soon!','📝')">
-                    📖 Review
+                <button class="review-btn" onclick="quickCompare(${tool.id})">
+                    ⚖️ Compare
                 </button>
             </div>
 
@@ -603,12 +603,26 @@ window.clearCompare = function() {
 }
 
 window.openCompare = function() {
+    if (compareList.length < 2) {
+        showToast('Select at least 2 tools to compare', '⚠️');
+        return;
+    }
     buildCompareTable();
     const section = document.getElementById('compareSection');
     if (section) {
         section.style.display = 'block';
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+window.quickCompare = function(id) {
+    const cb = document.getElementById(`cmp-${id}`);
+    if (!cb) return;
+    if (!cb.checked) {
+        cb.checked = true;
+        window.toggleCompare(id, cb);
+    }
+    showToast('Added to compare', '⚖️');
 }
 
 window.closeCompare = function() {

@@ -80,6 +80,7 @@
         isOpen: false,
         isTyping: false,
         connected: false,
+        backendUrl: '',
         conversationHistory: [],
         hasGreeted: false,
         currentPage: 'home',
@@ -150,7 +151,7 @@ Anything else I can help with? 😊`
             },
             tools: {
                 keywords: ['ai tools','tools','chatgpt','midjourney','claude','gemini','elevenlabs','cursor','jasper','copy.ai','runway','synthesia','perplexity','best ai','ai tool','tool recommendation','which tool','what tool'],
-                response: `We have 500+ AI tools listed and reviewed! 🤖
+                response: `We have a curated AI tools list you can browse right now! 🤖
 
 **🔥 Most popular right now:**
 • ChatGPT — Best for writing & chat
@@ -173,12 +174,12 @@ I'll pick the perfect tool for you! 💪`
                 response: `Our Prompt Marketplace has amazing packs! 💰
 
 **🔥 Bestsellers:**
-🥇 Ultimate Business Pack — $19 (50 prompts)
-🥈 Midjourney Art Masterpack — $24 (100 prompts)
-🆕 Gemini Image Prompt Pro Pack — $21 (80 prompts)
-🆕 ChatGPT Image Direction Pack — $18 (70 prompts)
-🥉 SEO Content Writer Pack — $15 (30 prompts)
-📱 Social Media Pack — $12 (40 prompts)
+🥇 Ultimate Business Pack — $9.50 (50 prompts)
+🥈 Midjourney Art Masterpack — $12.00 (100 prompts)
+🆕 Gemini Image Prompt Pro Pack — $10.50 (80 prompts)
+🆕 ChatGPT Image Direction Pack — $9.00 (70 prompts)
+🥉 SEO Content Writer Pack — $7.50 (30 prompts)
+📱 Social Media Pack — $6.00 (40 prompts)
 
 **🎁 FREE Starter Pack** — 10 prompts, no credit card!
 
@@ -196,12 +197,12 @@ Which type of prompts are you looking for? 😊`
                 response: `We offer professional AI-powered services! 🚀
 
 **Quick pricing:**
-✍️ Content Writing — from $50
-🎨 Logo Design — from $30
-📱 Social Media — from $100/month
-🤖 Custom Chatbot — from $200
-🎬 AI Video Creation — from $75/video
-🔍 AI SEO Optimization — from $150/month
+✍️ Content Writing — from $5
+🎨 Logo Design — from $3
+📱 Social Media — from $10/month
+🤖 Custom Chatbot — from $20
+🎬 AI Video Creation — from $7.50/video
+🔍 AI SEO Optimization — from $15/month
 
 <a class="bot-link-btn" href="ai-services.html">🚀 See All Services →</a>
 <a class="bot-link-btn" href="ai-services.html">📋 Request Consultation →</a>
@@ -264,8 +265,8 @@ Which income stream interests you most? Tell me more and I'll give you a persona
 🆓 Free Starter Prompt Pack — free
 
 **Paid products:**
-💰 Prompt Packs — $12–$24 one-time
-🚀 AI Services — from $30
+💰 Prompt Packs — $6.00–$12.00 one-time
+🚀 AI Services — from $3
 🎓 Certificate — free (included in course)
 
 **No subscription needed for most features!**
@@ -297,7 +298,7 @@ What would you like to explore today? ✨`
 Find cheapest registrars, compare prices, tips on choosing domains
 
 **🤖 AI Tools**
-500+ tools reviewed — I can recommend the right one for you
+Curated tools list — I can recommend the right one for you
 
 **💰 Prompt Store**
 All prompt packs explained, free samples, recommendations
@@ -377,25 +378,63 @@ I can help you with:
             if (document.body.classList.contains('no-float-widgets')) return;
             injectSanzyBot();
             this.currentPage = this.detectPage();
+            this.backendUrl = window.SANZY_BOT_BACKEND_URL || '/api/chat';
             this.setupEventListeners();
             this.showPageBanner();
             this.setupAutoOpen();
 
-            // Update status badge: if a backend URL is configured via
-            // `window.SANZY_BOT_BACKEND_URL` then show connected state, otherwise
-            // label the chat as demo/simulated to avoid misleading users.
+            // Start in demo mode and upgrade to connected if backend health check passes.
+            this.setConnectionStatus(false);
+            this.detectBackendConnection();
+        },
+
+        setConnectionStatus(isConnected) {
             const statusTextEl = document.getElementById('sanzyStatusText');
             const statusDotEl = document.getElementById('sanzyStatusDot');
-            if (statusTextEl) {
-                if (window.SANZY_BOT_BACKEND_URL) {
-                    statusTextEl.textContent = 'Online · Connected to AI';
-                    if (statusDotEl) statusDotEl.classList.add('online');
-                    this.connected = true;
-                } else {
-                    statusTextEl.textContent = 'Demo mode · Simulated responses';
-                    if (statusDotEl) statusDotEl.classList.remove('online');
-                    this.connected = false;
-                }
+            this.connected = Boolean(isConnected);
+
+            if (!statusTextEl || !statusDotEl) return;
+            if (this.connected) {
+                statusTextEl.textContent = 'Online · Connected to AI';
+                statusDotEl.classList.remove('demo');
+            } else {
+                statusTextEl.textContent = 'Demo mode · Simulated responses';
+                statusDotEl.classList.add('demo');
+            }
+        },
+
+        async detectBackendConnection() {
+            if (!this.backendUrl) {
+                this.setConnectionStatus(false);
+                return;
+            }
+
+            const healthUrl = this.backendUrl.replace(/\/chat$/, '/health');
+            try {
+                const res = await fetch(healthUrl, { method: 'GET', signal: AbortSignal.timeout(2500) });
+                this.setConnectionStatus(res.ok);
+            } catch (e) {
+                this.setConnectionStatus(false);
+            }
+        },
+
+        async fetchAIReply(text) {
+            if (!this.connected || !this.backendUrl) return null;
+
+            try {
+                const history = this.conversationHistory.slice(-6);
+                const res = await fetch(this.backendUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text, history }),
+                    signal: AbortSignal.timeout(10000)
+                });
+
+                if (!res.ok) return null;
+                const data = await res.json();
+                return data?.reply ? String(data.reply).trim() : null;
+            } catch (e) {
+                return null;
             }
         },
 
@@ -567,9 +606,10 @@ I can help you with:
             this.showTyping();
             const delay = 800 + Math.random() * 800;
 
-            this.typingTimer = setTimeout(() => {
+            this.typingTimer = setTimeout(async () => {
+                const aiReply = await this.fetchAIReply(text);
                 this.hideTyping();
-                this.addBotMessage(matched);
+                this.addBotMessage(aiReply || matched);
 
                 // Show suggestions after response
                 setTimeout(() => this.showSuggestions(lc), 300);
