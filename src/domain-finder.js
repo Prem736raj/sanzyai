@@ -323,15 +323,12 @@ window.searchDomain = function() {
 }
 
 // ============================================
-// DOMAIN AVAILABILITY CHECK (via Google DNS)
+// DOMAIN AVAILABILITY CHECK (via Custom API)
 // ============================================
 async function checkDomainAvailability(domain) {
     try {
-        // Use Google's public DNS-over-HTTPS resolver
-        // Status 0 = NOERROR (domain has DNS records → registered)
-        // Status 3 = NXDOMAIN (domain doesn't exist → likely available)
         const response = await fetch(
-            `https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=NS`,
+            `https://domain-price-api.prem736raj.workers.dev/availability?domain=${encodeURIComponent(domain)}`,
             { signal: AbortSignal.timeout(6000) }
         );
         
@@ -339,19 +336,10 @@ async function checkDomainAvailability(domain) {
         
         const data = await response.json();
         
-        if (data.Status === 3) {
-            // NXDOMAIN — domain does not exist in DNS
-            return 'available';
-        }
-        
-        if (data.Status === 0) {
-            // NOERROR — domain has DNS records, it's registered
-            return 'taken';
-        }
-        
-        return 'unknown';
+        // Custom API returns { domain, status: 'available'|'taken'|'unknown' }
+        return data.status || 'unknown';
     } catch (error) {
-        console.warn('DNS check failed:', error);
+        console.warn('API check failed:', error);
         return 'unknown';
     }
 }
