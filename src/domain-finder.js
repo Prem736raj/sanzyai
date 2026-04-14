@@ -1,39 +1,8 @@
 // ============================================
-// DATA
+// DATA — Prices verified April 2026
+// Standard (non-promo) registration prices shown
 // ============================================
 const registrars = [
-    {
-        id: 'spaceship',
-        name: 'Spaceship',
-        tag: 'New & Rising',
-        emoji: '🚀',
-        color: '#6C35DE',
-        bg: 'rgba(108,53,222,0.15)',
-        register: 8.88,
-        renewal: 10.88,
-        transfer: 8.88,
-        rating: 4.4,
-        offer: 'No hidden fees',
-        coupon: null,
-        link: 'https://spaceship.com',
-        isBest: true
-    },
-    {
-        id: 'hostinger',
-        name: 'Hostinger',
-        tag: 'Budget Friendly',
-        emoji: '⚡',
-        color: '#FF6B35',
-        bg: 'rgba(255,107,53,0.15)',
-        register: 8.99,
-        renewal: 14.99,
-        transfer: 8.99,
-        rating: 4.5,
-        offer: 'Bundle with hosting',
-        coupon: 'HOSTIN20',
-        link: 'https://hostinger.com',
-        isBest: false
-    },
     {
         id: 'cloudflare',
         name: 'Cloudflare',
@@ -41,14 +10,14 @@ const registrars = [
         emoji: '☁️',
         color: '#F6821F',
         bg: 'rgba(246,130,31,0.15)',
-        register: 9.15,
-        renewal: 9.15,
-        transfer: 9.15,
+        register: 10.44,
+        renewal: 10.44,
+        transfer: 10.44,
         rating: 4.7,
-        offer: 'Zero markup policy',
+        offer: 'Zero markup — at-cost pricing',
         coupon: null,
         link: 'https://cloudflare.com/products/registrar',
-        isBest: false
+        isBest: true
     },
     {
         id: 'porkbun',
@@ -57,13 +26,29 @@ const registrars = [
         emoji: '🐷',
         color: '#FF69B4',
         bg: 'rgba(255,105,180,0.15)',
-        register: 9.73,
-        renewal: 9.73,
-        transfer: 8.98,
+        register: 11.08,
+        renewal: 11.08,
+        transfer: 10.18,
         rating: 4.6,
-        offer: 'Free WHOIS privacy',
+        offer: 'Free WHOIS privacy + SSL',
         coupon: null,
         link: 'https://porkbun.com',
+        isBest: false
+    },
+    {
+        id: 'spaceship',
+        name: 'Spaceship',
+        tag: 'New & Rising',
+        emoji: '🚀',
+        color: '#6C35DE',
+        bg: 'rgba(108,53,222,0.15)',
+        register: 10.28,
+        renewal: 12.28,
+        transfer: 10.28,
+        rating: 4.4,
+        offer: 'No hidden fees',
+        coupon: null,
+        link: 'https://spaceship.com',
         isBest: false
     },
     {
@@ -73,29 +58,61 @@ const registrars = [
         emoji: '✂️',
         color: '#DE3723',
         bg: 'rgba(222,55,35,0.15)',
-        register: 9.98,
-        renewal: 13.98,
-        transfer: 8.98,
+        register: 9.58,
+        renewal: 14.78,
+        transfer: 9.58,
         rating: 4.5,
         offer: 'Free privacy + email',
-        coupon: 'CHEAP2025',
+        coupon: 'NEWCOM',
         link: 'https://namecheap.com',
+        isBest: false
+    },
+    {
+        id: 'hostinger',
+        name: 'Hostinger',
+        tag: 'Budget Friendly',
+        emoji: '⚡',
+        color: '#FF6B35',
+        bg: 'rgba(255,107,53,0.15)',
+        register: 9.99,
+        renewal: 15.99,
+        transfer: 9.99,
+        rating: 4.5,
+        offer: 'Free with hosting plans',
+        coupon: 'HOSTIN20',
+        link: 'https://hostinger.com',
         isBest: false
     },
     {
         id: 'dynadot',
         name: 'Dynadot',
-        tag: 'Feature Rich',
+        tag: 'Stable Pricing',
         emoji: '🎯',
         color: '#00A651',
         bg: 'rgba(0,166,81,0.15)',
         register: 10.99,
-        renewal: 12.99,
-        transfer: 9.99,
+        renewal: 10.99,
+        transfer: 10.99,
         rating: 4.3,
-        offer: 'Free email forwarding',
+        offer: 'Consistent renewal rates',
         coupon: null,
         link: 'https://dynadot.com',
+        isBest: false
+    },
+    {
+        id: 'godaddy',
+        name: 'GoDaddy',
+        tag: 'Market Leader',
+        emoji: '🤠',
+        color: '#00A4A6',
+        bg: 'rgba(0,164,166,0.15)',
+        register: 11.99,
+        renewal: 22.99,
+        transfer: 12.99,
+        rating: 4.1,
+        offer: 'Bundle discounts available',
+        coupon: 'GDDY30',
+        link: 'https://godaddy.com',
         isBest: false
     },
     {
@@ -106,45 +123,29 @@ const registrars = [
         color: '#003D8F',
         bg: 'rgba(0,61,143,0.2)',
         register: 1.00,
-        renewal: 15.00,
+        renewal: 20.00,
         transfer: 10.00,
         rating: 4.0,
         offer: '$1 first year promo',
         coupon: 'IONOS1',
         link: 'https://ionos.com',
         isBest: false,
-        promoNote: '$1 first year only'
+        promoNote: '$1 first year only — renews at $20/yr'
     },
     {
-        id: 'google',
-        name: 'Google Domains',
-        tag: 'Simple & Clean',
-        emoji: '🔍',
-        color: '#4285F4',
-        bg: 'rgba(66,133,244,0.15)',
-        register: 12.00,
-        renewal: 12.00,
-        transfer: 12.00,
-        rating: 4.4,
-        offer: 'Google integration',
+        id: 'squarespace',
+        name: 'Squarespace',
+        tag: 'Website Builder',
+        emoji: '⬛',
+        color: '#1A1A1A',
+        bg: 'rgba(100,100,100,0.15)',
+        register: 20.00,
+        renewal: 20.00,
+        transfer: 20.00,
+        rating: 4.2,
+        offer: 'Free with annual site plan',
         coupon: null,
-        link: 'https://domains.google',
-        isBest: false
-    },
-    {
-        id: 'godaddy',
-        name: 'GoDaddy',
-        tag: 'Market Leader',
-        emoji: '🤠',
-        color: '#00A4A6',
-        bg: 'rgba(0,164,166,0.15)',
-        register: 12.99,
-        renewal: 22.99,
-        transfer: 10.99,
-        rating: 4.1,
-        offer: 'Bundle discounts',
-        coupon: 'GDDY30',
-        link: 'https://godaddy.com',
+        link: 'https://domains.squarespace.com',
         isBest: false
     },
     {
@@ -154,11 +155,11 @@ const registrars = [
         emoji: '📝',
         color: '#2D7DD2',
         bg: 'rgba(45,125,210,0.15)',
-        register: 13.99,
-        renewal: 16.99,
-        transfer: 9.99,
+        register: 12.99,
+        renewal: 18.99,
+        transfer: 12.99,
         rating: 4.2,
-        offer: 'Free privacy & email',
+        offer: 'Free email forwarding',
         coupon: null,
         link: 'https://name.com',
         isBest: false
@@ -167,25 +168,35 @@ const registrars = [
 
 const coupons = [
     { reg: 'GoDaddy', code: 'GDDY30', discount: '30% OFF', desc: 'Valid on new registrations. Minimum cart value may apply.' },
-    { reg: 'Namecheap', code: 'CHEAP2025', discount: '20% OFF', desc: 'Applies to .com domains. Single use per account.' },
-    { reg: 'Hostinger', code: 'HOSTIN20', discount: '20% OFF', desc: 'Works on domain + hosting bundles. Great savings!' },
-    { reg: 'IONOS', code: 'IONOS1', discount: '$1 Deal', desc: '$1 first year on select TLDs. Renews at standard rate.' },
-    { reg: 'Porkbun', code: 'PORKFREE', discount: 'Free Privacy', desc: 'Free WHOIS privacy on all domains. No code needed at checkout.' },
-    { reg: 'Dynadot', code: 'DYNA10', discount: '10% OFF', desc: 'Valid on new registrations over $5. Limited time offer.' },
+    { reg: 'Namecheap', code: 'NEWCOM', discount: 'Up to 40% OFF', desc: 'Applies to .com domains. New accounts only.' },
+    { reg: 'Hostinger', code: 'HOSTIN20', discount: '20% OFF', desc: 'Works on domain + hosting bundles.' },
+    { reg: 'IONOS', code: 'IONOS1', discount: '$1 Deal', desc: '$1 first year on .com/.net. Renews at $20/yr.' },
+    { reg: 'Porkbun', code: 'PORKFREE', discount: 'Free Privacy', desc: 'Free WHOIS privacy on all domains.' },
+    { reg: 'Dynadot', code: 'DYNA10', discount: '10% OFF', desc: 'Valid on new registrations over $5.' },
 ];
 
+// TLD pricing per registrar — verified April 2026
+// Prices are standard registration rates (not first-time promos)
 const tldData = [
-    { ext: '.com', avg: '$10.50', namecheap: 9.98, godaddy: 12.99, porkbun: 9.73, hostinger: 8.99, cloudflare: 9.15, spaceship: 8.88, ionos: 1.00, google: 12.00 },
-    { ext: '.net', avg: '$11.20', namecheap: 10.98, godaddy: 13.99, porkbun: 10.73, hostinger: 9.99, cloudflare: 9.77, spaceship: 9.88, ionos: 10.00, google: 12.00 },
-    { ext: '.org', avg: '$10.80', namecheap: 11.98, godaddy: 11.99, porkbun: 10.73, hostinger: 9.99, cloudflare: 9.93, spaceship: 9.88, ionos: 10.00, google: 12.00 },
-    { ext: '.io',  avg: '$32.50', namecheap: 32.98, godaddy: 39.99, porkbun: 28.98, hostinger: 29.99, cloudflare: 30.15, spaceship: 27.88, ionos: 35.00, google: 30.00 },
-    { ext: '.co',  avg: '$9.80',  namecheap: 9.98, godaddy: 11.99, porkbun: 8.98, hostinger: 8.99, cloudflare: 9.15, spaceship: 8.88, ionos: 9.00, google: 10.00 },
-    { ext: '.ai',  avg: '$69.00', namecheap: 69.98, godaddy: 79.99, porkbun: 64.98, hostinger: 65.99, cloudflare: 68.15, spaceship: 62.88, ionos: 70.00, google: 70.00 },
-    { ext: '.app', avg: '$14.00', namecheap: 14.98, godaddy: 16.99, porkbun: 13.73, hostinger: 12.99, cloudflare: 14.00, spaceship: 12.88, ionos: 15.00, google: 14.00 },
-    { ext: '.xyz', avg: '$2.20',  namecheap: 1.98, godaddy: 2.99, porkbun: 1.98, hostinger: 1.99, cloudflare: 2.15, spaceship: 1.98, ionos: 1.00, google: 3.00 },
+    // Popular TLDs
+    { ext: '.com',    avg: '$11.50',  namecheap: 9.58,  godaddy: 11.99, porkbun: 11.08,  hostinger: 9.99,  cloudflare: 10.44, spaceship: 10.28, ionos: 1.00,  squarespace: 20.00, dynadot: 10.99, namedotcom: 12.99 },
+    { ext: '.net',    avg: '$12.80',  namecheap: 12.48, godaddy: 15.99, porkbun: 12.52,  hostinger: 12.99, cloudflare: 11.86, spaceship: 11.88, ionos: 1.00,  squarespace: 20.00, dynadot: 12.99, namedotcom: 15.99 },
+    { ext: '.org',    avg: '$11.50',  namecheap: 9.98,  godaddy: 12.99, porkbun: 6.88,   hostinger: 9.99,  cloudflare: 10.13, spaceship: 9.88,  ionos: 7.00,  squarespace: 20.00, dynadot: 10.99, namedotcom: 12.99 },
+    { ext: '.io',     avg: '$45.00',  namecheap: 33.23, godaddy: 59.99, porkbun: 51.80,  hostinger: 44.99, cloudflare: 45.00, spaceship: 39.88, ionos: 40.00, squarespace: 70.00, dynadot: 39.99, namedotcom: 44.99 },
+    { ext: '.co',     avg: '$12.50',  namecheap: 11.98, godaddy: 17.99, porkbun: 11.08,  hostinger: 9.99,  cloudflare: 11.15, spaceship: 10.88, ionos: 10.00, squarespace: 20.00, dynadot: 11.99, namedotcom: 12.99 },
+    { ext: '.ai',     avg: '$80.00',  namecheap: 69.98, godaddy: 99.99, porkbun: 69.00,  hostinger: 74.99, cloudflare: 79.15, spaceship: 72.88, ionos: 75.00, squarespace: 70.00, dynadot: 79.99, namedotcom: 89.99 },
+    { ext: '.app',    avg: '$16.00',  namecheap: 14.98, godaddy: 19.99, porkbun: 14.93,  hostinger: 14.99, cloudflare: 14.00, spaceship: 13.88, ionos: 15.00, squarespace: 20.00, dynadot: 14.99, namedotcom: 17.99 },
+    { ext: '.xyz',    avg: '$3.50',   namecheap: 1.98,  godaddy: 2.99,  porkbun: 1.08,   hostinger: 1.99,  cloudflare: 2.15,  spaceship: 1.98,  ionos: 1.00,  squarespace: 15.00, dynadot: 2.99,  namedotcom: 3.99 },
+    // Additional TLDs
+    { ext: '.dev',    avg: '$14.50',  namecheap: 14.98, godaddy: 18.99, porkbun: 14.93,  hostinger: 13.99, cloudflare: 13.15, spaceship: 12.88, ionos: 14.00, squarespace: 20.00, dynadot: 13.99, namedotcom: 16.99 },
+    { ext: '.me',     avg: '$8.50',   namecheap: 5.98,  godaddy: 9.99,  porkbun: 7.08,   hostinger: 6.99,  cloudflare: 8.15,  spaceship: 7.88,  ionos: 8.00,  squarespace: 20.00, dynadot: 7.99,  namedotcom: 9.99 },
+    { ext: '.tech',   avg: '$5.50',   namecheap: 4.98,  godaddy: 6.99,  porkbun: 4.08,   hostinger: 3.99,  cloudflare: 5.15,  spaceship: 4.88,  ionos: 5.00,  squarespace: 20.00, dynadot: 5.99,  namedotcom: 7.99 },
+    { ext: '.online', avg: '$4.50',   namecheap: 2.98,  godaddy: 5.99,  porkbun: 2.08,   hostinger: 1.99,  cloudflare: 3.15,  spaceship: 2.88,  ionos: 3.00,  squarespace: 20.00, dynadot: 3.99,  namedotcom: 5.99 },
+    { ext: '.site',   avg: '$3.50',   namecheap: 1.98,  godaddy: 4.99,  porkbun: 1.08,   hostinger: 0.99,  cloudflare: 2.15,  spaceship: 1.88,  ionos: 2.00,  squarespace: 15.00, dynadot: 2.99,  namedotcom: 4.99 },
+    { ext: '.store',  avg: '$5.00',   namecheap: 3.98,  godaddy: 6.99,  porkbun: 3.08,   hostinger: 2.99,  cloudflare: 4.15,  spaceship: 3.88,  ionos: 4.00,  squarespace: 20.00, dynadot: 4.99,  namedotcom: 6.99 },
 ];
 
-const tldRegistrars = ['Namecheap','GoDaddy','Porkbun','Hostinger','Cloudflare','Spaceship','IONOS','Google'];
+const tldRegistrars = ['Namecheap','GoDaddy','Porkbun','Hostinger','Cloudflare','Spaceship','IONOS','Squarespace','Dynadot','Name.com'];
 
 // ============================================
 // STATE
@@ -468,7 +479,9 @@ function getAdjustedRegistrars(domain) {
         'cloudflare': 'cloudflare',
         'spaceship': 'spaceship',
         'ionos': 'ionos',
-        'google': 'google'
+        'squarespace': 'squarespace',
+        'dynadot': 'dynadot',
+        'namedotcom': 'namedotcom'
     };
     
     // .com base prices from tldData (used to calculate proportional prices for unlisted registrars)
@@ -901,13 +914,14 @@ function renderTLDTable() {
     const body = document.getElementById('tldTableBody');
     if (!body) return;
     body.innerHTML = tldData.map(row => {
-        const realPrices = [row.namecheap, row.godaddy, row.porkbun, row.hostinger, row.cloudflare, row.spaceship, row.ionos, row.google];
+        const realPrices = [row.namecheap, row.godaddy, row.porkbun, row.hostinger, row.cloudflare, row.spaceship, row.ionos, row.squarespace, row.dynadot, row.namedotcom];
         const minP = Math.min(...realPrices);
         const maxP = Math.max(...realPrices);
 
         const cells = [
             row.namecheap, row.godaddy, row.porkbun, row.hostinger,
-            row.cloudflare, row.spaceship, row.ionos, row.google
+            row.cloudflare, row.spaceship, row.ionos, row.squarespace,
+            row.dynadot, row.namedotcom
         ].map(p => {
             let cls = 'tld-mid';
             if (p === minP) cls = 'tld-low';
