@@ -335,7 +335,7 @@ function parseFreePackText(content = '') {
         if (!trimmed) continue;
         if (trimmed.toLowerCase().startsWith('download source:')) continue;
 
-        current.body = current.body ? `${current.body} ${trimmed}` : trimmed;
+        current.body = current.body ? `${current.body}\n${trimmed}` : trimmed;
     }
 
     if (current) prompts.push(current);

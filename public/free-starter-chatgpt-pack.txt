@@ -1,33 +1,181 @@
-FREE STARTER CHATGPT PACK (10 PROMPTS)
+FREE STARTER CHATGPT PACK (10 DETAILED PROMPTS)
 
-1) CONTENT IDEA GENERATOR
-Generate 20 unique content ideas for [NICHE] targeting [AUDIENCE]. Include title, format, angle, and CTA.
+1) CONTENT STRATEGY IDEA ENGINE
+Problem solved: "I do not know what to post or write next."
+Best for: Creators, bloggers, coaches, founders, YouTubers.
+Use when: You need fresh ideas that can become real content quickly.
+Prompt:
+Act as a senior content strategist for the [NICHE] industry.
+Generate 24 high-potential content ideas for [AUDIENCE], grouped into 4 pillars: [PILLAR 1], [PILLAR 2], [PILLAR 3], [PILLAR 4].
+For each idea, provide:
+- Title with strong curiosity
+- Best format (blog, short video, carousel, newsletter, thread)
+- Funnel stage (awareness, consideration, conversion)
+- Primary user pain point solved
+- Suggested hook (1 line)
+- CTA
+- Estimated difficulty (easy/medium/hard)
+Then rank top 5 ideas by likely ROI for the next 30 days.
 
-2) EMAIL REWRITE
-Rewrite this email to be more professional and clear: [PASTE EMAIL]. Provide formal and friendly versions.
+2) PROFESSIONAL EMAIL REWRITER + INTENT PRESERVER
+Problem solved: "My email sounds weak, unclear, or unprofessional."
+Best for: Freelancers, job seekers, managers, support teams.
+Use when: You want to improve reply rate without changing meaning.
+Prompt:
+You are an executive communication editor.
+Rewrite the following email while preserving exact intent and facts:
+[PASTE EMAIL]
+Return 3 versions:
+A) Executive Formal
+B) Friendly Professional
+C) Short and Direct
+For each version include:
+- Subject line (3 options)
+- Main email body
+- Strong but polite CTA
+- Risk check: any phrase that may sound rude or vague
+Constraints:
+- Keep under [WORD LIMIT] words
+- Keep timeline/deadline unchanged
+- Do not invent details
 
-3) MEETING AGENDA
-Create a [LENGTH]-minute agenda for [TOPIC] with objectives, time blocks, and action items.
+3) DECISION-DRIVEN MEETING AGENDA BUILDER
+Problem solved: "Meetings waste time and end without decisions."
+Best for: Team leads, startup founders, project managers.
+Use when: You need a tight agenda with ownership and outcomes.
+Prompt:
+Design a [LENGTH]-minute meeting agenda for [TOPIC] with [NUMBER] participants.
+Context: [PROJECT/TEAM CONTEXT].
+Return:
+1. Pre-read checklist (what each attendee must review)
+2. Time-boxed agenda with minute-by-minute allocation
+3. Decision points (what must be decided live)
+4. Discussion questions by priority
+5. Action item template (owner, deadline, dependency, risk)
+6. Parking lot section for non-critical topics
+7. 24-hour follow-up summary format
+Goal: reduce meeting time while increasing decision quality.
 
-4) BLOG OUTLINE
-Create a detailed SEO outline for [TOPIC] targeting [KEYWORD] with H2/H3 headings and FAQ.
+4) SEO ARTICLE OUTLINE + TOPICAL AUTHORITY PLAN
+Problem solved: "My content does not rank or lacks structure."
+Best for: SEO writers, niche site builders, affiliate publishers.
+Use when: You want rank-ready structure before writing full draft.
+Prompt:
+Act as an SEO strategist.
+Create a detailed outline for an article about [TOPIC], targeting keyword [PRIMARY KEYWORD] and secondary keywords [KEYWORD LIST].
+Output format:
+- SEO title options (5)
+- Meta description options (3)
+- Search intent classification
+- H1, H2, H3 structure with section goals
+- PAA/FAQ block (8 questions)
+- Internal link opportunities (existing pages to link)
+- External authority references to cite
+- Suggested schema type
+- Content brief for a writer (tone, examples, word count, proof sources)
+Also include 5 common ranking mistakes to avoid.
 
-5) INSTAGRAM CAPTIONS
-Write 5 engaging captions for [POST TOPIC] with hooks, CTA, and 5 hashtags.
+5) INSTAGRAM CAPTION SYSTEM (HOOK-TO-CTA)
+Problem solved: "My posts get low engagement and weak saves/shares."
+Best for: Personal brands, ecommerce, agency pages.
+Use when: You need scroll-stopping captions with conversion intent.
+Prompt:
+You are a social media growth copywriter.
+Create 7 Instagram caption options for [POST TOPIC] targeting [AUDIENCE].
+Each caption must include:
+- Hook in first sentence
+- Story/value section
+- One authority or proof element
+- One actionable takeaway
+- CTA aligned to goal [COMMENT/DM/CLICK/SAVE]
+- 8 hashtags: 3 broad, 3 niche, 2 intent-based
+Tone: [TONE].
+Output each caption with expected objective: Reach / Comments / Saves / Clicks.
 
-6) LINKEDIN POST
-Write a thought-leadership LinkedIn post about [TOPIC] with a strong hook and 3 insights.
+6) LINKEDIN AUTHORITY POST GENERATOR
+Problem solved: "My LinkedIn posts look generic and get no traction."
+Best for: Consultants, executives, B2B founders, job seekers.
+Use when: You want quality thought leadership, not motivational fluff.
+Prompt:
+Act as a B2B thought-leadership writer.
+Write a LinkedIn post on [TOPIC] for [TARGET ROLE/AUDIENCE].
+Include:
+- Bold opening line
+- Personal observation or mini-story
+- 3 practical insights (with examples)
+- Contrarian perspective or myth-busting point
+- Soft CTA for comments or DMs
+- 3 alternate hooks and 3 post titles
+Limit 220-320 words.
+Then provide a "comment strategy" with 5 replies I can use to boost conversation quality.
 
-7) PRODUCT DESCRIPTION
-Write a high-converting product description for [PRODUCT] for [AUDIENCE] in 150 words.
+7) HIGH-CONVERSION PRODUCT DESCRIPTION ARCHITECT
+Problem solved: "My product page does not convert visitors into buyers."
+Best for: Ecommerce owners, D2C brands, Amazon sellers.
+Use when: You need benefit-led copy for one product across channels.
+Prompt:
+You are a conversion copywriter.
+Write product copy for [PRODUCT] targeting [AUDIENCE].
+Return:
+A) PDP description (180-250 words)
+B) Short mobile description (70-100 words)
+C) 5 bullet benefits (feature -> user outcome)
+D) Objection handling block (price, trust, fit)
+E) 3 CTA variations
+F) "Who this is for / not for"
+Brand voice: [VOICE].
+Use pain points [PAIN POINTS] and desired outcome [OUTCOME].
 
-8) AD COPY VARIATIONS
-Write 5 ad copy variations for [PRODUCT] using urgency, social proof, and curiosity.
+8) PERFORMANCE AD COPY MATRIX
+Problem solved: "Ads are expensive and CTR is low."
+Best for: Performance marketers, media buyers, founders.
+Use when: You need multiple ad angles to test quickly.
+Prompt:
+Create a paid-ad copy matrix for [PRODUCT/SERVICE] targeting [AUDIENCE].
+Generate 12 ad variations:
+- 3 urgency
+- 3 social proof
+- 3 curiosity
+- 3 problem-solution
+For each variation provide:
+- Headline
+- Primary text
+- CTA text
+- Angle label
+- Best channel (Meta/Google/LinkedIn/TikTok)
+- Suggested creative direction
+Then propose a 7-day test plan with budget split and kill/scale rules.
 
-9) YOUTUBE SCRIPT HOOK
-Create 10 video hooks for [TOPIC], each under 15 seconds and highly clickable.
+9) YOUTUBE HOOK + RETENTION SCRIPT STARTER
+Problem solved: "Viewers drop in first 20 seconds."
+Best for: YouTubers, educators, business channels.
+Use when: You need hooks that increase watch time.
+Prompt:
+Act as a YouTube retention strategist.
+For topic [TOPIC], create:
+1. Ten hooks under 15 seconds
+2. Best 3 hooks ranked by CTR potential
+3. 60-second opening script for the top hook
+4. Pattern interrupt ideas at second 20 and 40
+5. Visual/b-roll suggestions
+6. CTA that does not feel forced
+Audience profile: [AUDIENCE].
+Style: [FAST/CALM/EDUCATIONAL/ENTERTAINING].
 
-10) DAILY PLANNER
-Create a focused daily plan for [GOAL] with deep-work blocks and priority tasks.
+10) DEEP-WORK DAILY EXECUTION PLANNER
+Problem solved: "My day is busy but not productive."
+Best for: Solo founders, students, creators, operators.
+Use when: You want realistic daily execution with priorities.
+Prompt:
+You are an execution coach.
+Build a focused day plan for [GOAL] with total available time [HOURS].
+Include:
+- Top 3 priority outcomes (not tasks)
+- Time blocks (deep work, admin, communication, review)
+- Energy-aware schedule (hard tasks in peak hours)
+- Distraction control checklist
+- Recovery breaks and shutdown ritual
+- End-of-day scorecard (what to measure)
+Also provide a "minimum viable day" version for low-energy days.
 
 Download source: https://sanzyai.com/free-starter-chatgpt-pack.txt
