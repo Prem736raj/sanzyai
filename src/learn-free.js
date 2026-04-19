@@ -374,7 +374,7 @@ function renderRoadmap() {
     if (!track || !stages) return;
 
     track.innerHTML = stages.map((stage, index) => `
-        <article class="stage-card ${index === activeStageIndex ? 'active' : ''}" onclick="selectStage(${index})">
+        <article class="stage-card ${index === activeStageIndex ? 'active' : ''}" data-action="select-stage" data-stage-index="${index}" role="button" tabindex="0">
             <div class="stage-index">${index + 1}</div>
             <div>
                 <div class="stage-name">${stage.title}</div>
@@ -712,7 +712,7 @@ function renderChecklist() {
 
     grid.innerHTML = launchChecklist.map((item, index) => `
         <label class="check-item">
-            <input type="checkbox" ${active.has(index) ? 'checked' : ''} onchange="toggleChecklist(${index}, this.checked)">
+            <input type="checkbox" ${active.has(index) ? 'checked' : ''} data-action="toggle-checklist" data-item-index="${index}">
             <span>${item}</span>
         </label>
     `).join('');
@@ -766,8 +766,62 @@ function setupMobileNav() {
     });
 }
 
+function bindLearnFreeControls() {
+    document.getElementById('freePathBtn')?.addEventListener('click', () => window.setPath('free'));
+    document.getElementById('paidPathBtn')?.addEventListener('click', () => window.setPath('paid'));
+
+    ['projectType', 'trafficRange', 'aiUsage'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const evt = id === 'trafficRange' ? 'input' : 'change';
+        el.addEventListener(evt, () => window.updateBudget());
+    });
+
+    document.getElementById('generateSprintBtn')?.addEventListener('click', () => {
+        window.generateSprintPlan();
+    });
+
+    document.getElementById('savePlanPdfBtn')?.addEventListener('click', () => {
+        window.saveSprintPlanAsPdf();
+    });
+
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-action]');
+        if (!trigger) return;
+
+        if (trigger.dataset.action === 'select-stage') {
+            const index = Number(trigger.dataset.stageIndex || '-1');
+            if (index >= 0) {
+                window.selectStage(index);
+            }
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const card = event.target.closest('[data-action="select-stage"]');
+        if (!card || event.target !== card) return;
+        event.preventDefault();
+        const index = Number(card.dataset.stageIndex || '-1');
+        if (index >= 0) {
+            window.selectStage(index);
+        }
+    });
+
+    document.addEventListener('change', (event) => {
+        const input = event.target;
+        if (!(input instanceof HTMLInputElement)) return;
+        if (input.dataset.action !== 'toggle-checklist') return;
+        const index = Number(input.dataset.itemIndex || '-1');
+        if (index >= 0) {
+            window.toggleChecklist(index, input.checked);
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initDebugPanel();
+    bindLearnFreeControls();
     renderRoadmap();
     updateBudget();
     renderChecklist();
@@ -776,5 +830,3 @@ document.addEventListener('DOMContentLoaded', () => {
     if (firstStage) setVisitedStage(`${activePath}:${firstStage.id}`);
     updateLearnProgressUI();
 });
-
-console.log('%cLearn Free Interactive Lab Loaded', 'color:#4f79ff;font-weight:bold');

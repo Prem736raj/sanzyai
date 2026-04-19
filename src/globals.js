@@ -409,10 +409,10 @@
 
         // Only show language controls when multiple languages are configured.
         const langControlHtml = (languageOptions && languageOptions.length > 1) ? `
-                <button class="site-control-btn" id="langToggleBtn" onclick="window.toggleLangPanel()" aria-label="Change language" title="Change language">🌐</button>
+                <button class="site-control-btn" id="langToggleBtn" aria-label="Change language" title="Change language">🌐</button>
                 <div class="language-panel" id="languagePanel" aria-hidden="true">
                     <div class="language-panel-title">Choose language</div>
-                    <select id="siteLangSelect" class="site-lang-select" onchange="window.setSiteLanguage(this.value)">
+                    <select id="siteLangSelect" class="site-lang-select">
                         ${optionsHtml}
                     </select>
                 </div>
@@ -421,7 +421,7 @@
         const controlsHTML = `
             <div class="site-controls" id="siteControls">
                 ${langControlHtml}
-                <button class="site-control-btn" id="themeToggleBtn" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+                <button class="site-control-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
             </div>
             <div id="google_translate_element" class="translate-hidden" aria-hidden="true"></div>
         `;
@@ -452,8 +452,8 @@
                 <div class="cookie-banner" id="cookieBanner">
                     <div class="cookie-text">🍪 We use cookies to improve experience.</div>
                     <div class="cookie-btns">
-                        <button class="cookie-btn accept" onclick="window.acceptCookies()">Accept</button>
-                        <button class="cookie-btn decline" onclick="window.declineCookies()">Decline</button>
+                        <button class="cookie-btn accept" id="cookieAcceptBtn">Accept</button>
+                        <button class="cookie-btn decline" id="cookieDeclineBtn">Decline</button>
                     </div>
                 </div>
             `;
@@ -463,6 +463,26 @@
                 if (cb) cb.classList.add('show');
             }, 3000);
         }
+
+        document.getElementById('langToggleBtn')?.addEventListener('click', () => {
+            window.toggleLangPanel();
+        });
+
+        document.getElementById('siteLangSelect')?.addEventListener('change', (event) => {
+            window.setSiteLanguage(event.target.value);
+        });
+
+        document.getElementById('themeToggleBtn')?.addEventListener('click', () => {
+            window.toggleTheme();
+        });
+
+        document.getElementById('cookieAcceptBtn')?.addEventListener('click', () => {
+            window.acceptCookies();
+        });
+
+        document.getElementById('cookieDeclineBtn')?.addEventListener('click', () => {
+            window.declineCookies();
+        });
 
         // Social proof popup removed: static/fabricated notifications were removed to
         // avoid misleading repeat visitors and to improve trustworthiness.

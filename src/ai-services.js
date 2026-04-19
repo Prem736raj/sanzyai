@@ -103,8 +103,7 @@ function renderServices() {
                 <div>
                     <div class="pkg-tabs" id="tabs-${svc.id}">
                         ${svc.packages.map((p,i) => `
-                            <div class="pkg-tab ${i===0?'active':''}"
-                                onclick="switchPkg(${svc.id},${i})">${p.name}</div>
+                            <button type="button" class="pkg-tab ${i===0?'active':''}" data-action="switch-pkg" data-svc-id="${svc.id}" data-pkg-index="${i}">${p.name}</button>
                         `).join('')}
                     </div>
                     <div class="pkg-content" id="pkg-${svc.id}">
@@ -113,10 +112,10 @@ function renderServices() {
                 </div>
 
                 <div class="svc-cta">
-                    <button class="svc-buy-btn" onclick="scrollToQuote('${svc.name}')">
+                    <button type="button" class="svc-buy-btn" data-action="scroll-quote" data-service-name="${svc.name}">
                         🚀 Order Now
                     </button>
-                    <button class="svc-quote-btn" onclick="scrollToQuote('${svc.name}')">
+                    <button type="button" class="svc-quote-btn" data-action="scroll-quote" data-service-name="${svc.name}">
                         📋 Quote
                     </button>
                 </div>
@@ -154,7 +153,7 @@ function renderPortfolio() {
     if(!grid) return;
 
     grid.innerHTML = portfolioItems.map((item, index) => `
-        <div class="port-item" onclick="openPortfolio(${index})" role="button" tabindex="0" aria-label="Open ${item.label} case study">
+        <div class="port-item" data-action="open-portfolio" data-portfolio-index="${index}" role="button" tabindex="0" aria-label="Open ${item.label} case study">
             <div class="port-bg" style="background:${item.bg};">
                 <div class="port-emoji">${item.emoji}</div>
                 <div class="port-label">${item.label}</div>
@@ -274,8 +273,6 @@ window.handleQuoteSubmit = async function(e) {
         timestamp: new Date().toISOString()
     };
 
-    console.log('Quote Request:', data);
-
     const sentToSheet = await submitQuoteToGoogleSheets(data);
 
     btn.classList.remove('loading');
@@ -362,6 +359,52 @@ document.addEventListener('DOMContentLoaded', () => {
     renderServices();
     renderPortfolio();
     createParticles();
-});
 
-console.log('%c🚀 SanzyAI Services Page Loaded','color:#6C35DE;font-weight:bold;font-size:16px;');
+    document.getElementById('quoteForm')?.addEventListener('submit', (event) => {
+        window.handleQuoteSubmit(event);
+    });
+
+    document.getElementById('portfolioCloseBtn')?.addEventListener('click', () => {
+        window.closePortfolio();
+    });
+
+    document.getElementById('successBackBtn')?.addEventListener('click', () => {
+        document.getElementById('successOverlay')?.classList.remove('open');
+    });
+
+    document.addEventListener('click', (event) => {
+        const actionEl = event.target.closest('[data-action]');
+        if (!actionEl) return;
+
+        const action = actionEl.dataset.action;
+        if (action === 'switch-pkg') {
+            const svcId = Number(actionEl.dataset.svcId || '0');
+            const pkgIndex = Number(actionEl.dataset.pkgIndex || '0');
+            if (svcId) {
+                window.switchPkg(svcId, pkgIndex);
+            }
+            return;
+        }
+
+        if (action === 'scroll-quote') {
+            const serviceName = actionEl.dataset.serviceName || '';
+            window.scrollToQuote(serviceName);
+            return;
+        }
+
+        if (action === 'open-portfolio') {
+            const index = Number(actionEl.dataset.portfolioIndex || '-1');
+            if (index >= 0) {
+                window.openPortfolio(index);
+            }
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const item = event.target.closest('[data-action="open-portfolio"]');
+        if (!item || event.target !== item) return;
+        event.preventDefault();
+        item.click();
+    });
+});

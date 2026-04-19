@@ -352,7 +352,7 @@ function renderPacks() {
                 <div style="font-size:3rem;margin-bottom:16px;">🔍</div>
                 <h3>No packs found</h3>
                 <p>Try a different filter combination.</p>
-                <button class="btn btn-primary" style="margin-top:16px;" onclick="resetFilters()">Show All Packs</button>
+                <button type="button" class="btn btn-primary" style="margin-top:16px;" data-action="reset-filters">Show All Packs</button>
             </div>`;
         document.getElementById('packCount').textContent = '0 packs found';
         return;
@@ -380,7 +380,7 @@ function renderPacks() {
                 </div>` : ''}
 
                 <button class="wish-btn ${isWished ? 'active' : ''}"
-                    onclick="toggleWish(${pack.id}, this)" title="Save to wishlist">
+                    type="button" data-action="toggle-wish" data-pack-id="${pack.id}" title="Save to wishlist">
                     ${isWished ? '❤️' : '🤍'}
                 </button>
 
@@ -426,11 +426,11 @@ function renderPacks() {
 
                 <!-- Actions -->
                 <div class="card-actions">
-                    <button class="preview-btn" onclick="openPreview(${pack.id})">
+                    <button type="button" class="preview-btn" data-action="open-preview" data-pack-id="${pack.id}">
                         👁️ Preview
                     </button>
-                    <button class="buy-btn ${pack.isFree ? 'free-btn' : ''}"
-                        onclick="${pack.isFree ? `openEmailModal()` : `openProduct(${pack.id})`}">
+                    <button type="button" class="buy-btn ${pack.isFree ? 'free-btn' : ''}"
+                        data-action="${pack.isFree ? 'open-email-modal' : 'open-product'}" ${pack.isFree ? '' : `data-pack-id="${pack.id}"`}>
                         ${pack.isFree ? '🎁 Get Free Pack' : `🛒 Buy Now — $${pack.price.toFixed(2)}`}
                     </button>
                 </div>
@@ -611,7 +611,7 @@ window.openProduct = function(id) {
     modal.innerHTML = `
         <div class="modal-header">
             <span class="modal-title">${pack.emoji} ${pack.name}</span>
-            <button class="modal-close" onclick="closeModal()">✕</button>
+            <button type="button" class="modal-close" data-action="close-modal">✕</button>
         </div>
 
         <div class="modal-body">
@@ -646,7 +646,7 @@ window.openProduct = function(id) {
                         <div class="sample-prompt">
                             <div class="sample-prompt-label">${s.label}</div>
                             <div class="sample-prompt-text">${s.text}</div>
-                            <button class="sample-copy-btn" onclick="copyPrompt('${s.text.replace(/'/g,"\\'")}', this)" title="Copy prompt">📋</button>
+                            <button type="button" class="sample-copy-btn" data-action="copy-prompt" data-prompt="${encodeURIComponent(s.text)}" title="Copy prompt">📋</button>
                         </div>
                     `).join('')}
                 </div>
@@ -678,17 +678,17 @@ window.openProduct = function(id) {
                     <p class="mprice-label">📦 ${pack.count} prompts · Instant PDF download · Lifetime access</p>
 
                     ${pack.isFree
-                        ? `<button class="btn btn-green btn-lg modal-buy-btn" onclick="closeModal();openEmailModal();">
+                        ? `<button type="button" class="btn btn-green btn-lg modal-buy-btn" data-action="close-modal-open-email">
                                 🎁 Get FREE Pack Now
                            </button>`
                         : `<a href="${pack.link}" target="_blank" rel="noopener sponsored"
                                class="btn btn-primary btn-lg modal-buy-btn"
-                               onclick="showToast('Opening secure checkout...','🔒')">
+                               data-action="open-secure-checkout">
                                 🛒 Buy Now — $${pack.price}
                            </a>`
                     }
 
-                    <button class="btn btn-outline modal-preview-btn" onclick="closeModal();openPreview(${pack.id});">
+                    <button type="button" class="btn btn-outline modal-preview-btn" data-action="close-modal-open-preview" data-pack-id="${pack.id}">
                         👁️ Preview Free Sample Prompts
                     </button>
 
@@ -716,7 +716,7 @@ window.openProduct = function(id) {
         <div class="fbt-section">
             <div class="fbt-title">🛒 Frequently Bought Together</div>
             <div class="fbt-row">
-                <div class="fbt-item" onclick="closeModal();openProduct(${pack.id})">
+                <div class="fbt-item" data-action="fbt-open-product" data-pack-id="${pack.id}" role="button" tabindex="0">
                     <span class="fbt-emoji">${pack.emoji}</span>
                     <div class="fbt-info">
                         <div class="fbt-name">${pack.name.substring(0,28)}...</div>
@@ -725,7 +725,7 @@ window.openProduct = function(id) {
                 </div>
                 <span class="fbt-plus">+</span>
                 ${fbtPacks.map(fp => `
-                    <div class="fbt-item" onclick="closeModal();setTimeout(()=>openProduct(${fp.id}),200);">
+                    <div class="fbt-item" data-action="fbt-open-product" data-pack-id="${fp.id}" data-delay="200" role="button" tabindex="0">
                         <span class="fbt-emoji">${fp.emoji}</span>
                         <div class="fbt-info">
                             <div class="fbt-name">${fp.name.substring(0,28)}...</div>
@@ -766,16 +766,16 @@ window.openPreview = function(id) {
             <div class="sample-prompt">
                 <div class="sample-prompt-label">Sample ${i+1}: ${s.label}</div>
                 <div class="sample-prompt-text">${s.text}</div>
-                <button class="sample-copy-btn" onclick="copyPrompt('${s.text.replace(/'/g,"\\'")}',this)" title="Copy">📋</button>
+                <button type="button" class="sample-copy-btn" data-action="copy-prompt" data-prompt="${encodeURIComponent(s.text)}" title="Copy">📋</button>
             </div>
         `).join('')}
         <div style="text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border-s);">
             <p style="color:var(--muted);font-size:0.86rem;margin-bottom:16px;">Want all <strong>${pack.count} prompts</strong>? Get the full pack now.</p>
             ${pack.isFree
-                ? `<button class="btn btn-green btn-lg" onclick="closePreview();openEmailModal();">🎁 Get FREE Pack</button>`
+                ? `<button type="button" class="btn btn-green btn-lg" data-action="close-preview-open-email">🎁 Get FREE Pack</button>`
                 : `<a href="${pack.link}" target="_blank" rel="noopener"
                        class="btn btn-primary btn-lg"
-                       onclick="showToast('Opening checkout...','🔒')">
+                       data-action="open-checkout">
                        🛒 Buy Full Pack — $${pack.price}
                    </a>`
             }
@@ -962,8 +962,87 @@ function showToast(msg, icon='✅') {
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('searchInput')?.addEventListener('input', () => window.filterSearchInput());
+    document.getElementById('platformSel')?.addEventListener('change', () => window.filterPlatformSelect());
+    document.getElementById('priceSel')?.addEventListener('change', () => window.filterPriceSelect());
+    document.getElementById('sortSel')?.addEventListener('change', () => window.sortPacks());
+    document.getElementById('emailModalCloseBtn')?.addEventListener('click', () => window.closeEmailModal());
+    document.getElementById('previewCloseBtn')?.addEventListener('click', () => window.closePreview());
+    document.getElementById('freeDownloadForm')?.addEventListener('submit', (event) => window.handleFreeDownload(event));
+
     sortPacksData();
     renderPacks();
-});
 
-console.log('%c💰 SanzyAI Prompt Marketplace Loaded','color:#6C35DE;font-weight:bold;font-size:16px;');
+    document.addEventListener('click', (event) => {
+        const actionEl = event.target.closest('[data-action]');
+        if (!actionEl) return;
+
+        const action = actionEl.dataset.action;
+        const packId = Number(actionEl.dataset.packId || '0');
+
+        switch (action) {
+            case 'reset-filters':
+                window.resetFilters();
+                break;
+            case 'toggle-wish':
+                if (packId) window.toggleWish(packId, actionEl);
+                break;
+            case 'open-preview':
+                if (packId) window.openPreview(packId);
+                break;
+            case 'open-email-modal':
+                window.openEmailModal();
+                break;
+            case 'open-product':
+                if (packId) window.openProduct(packId);
+                break;
+            case 'close-modal':
+                window.closeModal();
+                break;
+            case 'close-modal-open-email':
+                window.closeModal();
+                window.openEmailModal();
+                break;
+            case 'close-modal-open-preview':
+                window.closeModal();
+                if (packId) window.openPreview(packId);
+                break;
+            case 'close-preview-open-email':
+                window.closePreview();
+                window.openEmailModal();
+                break;
+            case 'open-secure-checkout':
+                showToast('Opening secure checkout...', '🔒');
+                break;
+            case 'open-checkout':
+                showToast('Opening checkout...', '🔒');
+                break;
+            case 'copy-prompt': {
+                const prompt = decodeURIComponent(actionEl.dataset.prompt || '');
+                if (prompt) window.copyPrompt(prompt, actionEl);
+                break;
+            }
+            case 'fbt-open-product': {
+                if (!packId) break;
+                window.closeModal();
+                const delay = Number(actionEl.dataset.delay || '0');
+                if (delay > 0) {
+                    setTimeout(() => window.openProduct(packId), delay);
+                } else {
+                    window.openProduct(packId);
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const el = event.target.closest('[data-action="fbt-open-product"]');
+        if (!el || event.target !== el) return;
+        event.preventDefault();
+        el.click();
+    });
+});

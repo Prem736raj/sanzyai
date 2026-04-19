@@ -244,6 +244,78 @@ function initDomainFinder() {
         });
     }
 
+    document.getElementById('searchBtn')?.addEventListener('click', () => {
+        searchDomain();
+    });
+
+    document.getElementById('tldPills')?.addEventListener('click', (event) => {
+        const pill = event.target.closest('.tld-pill[data-tld]');
+        if (!pill) return;
+        window.selectTLD(pill, pill.dataset.tld);
+    });
+
+    document.getElementById('sortSelect')?.addEventListener('change', () => {
+        window.sortTable();
+    });
+
+    document.getElementById('tableViewBtn')?.addEventListener('click', () => {
+        window.switchView('table');
+    });
+
+    document.getElementById('cardViewBtn')?.addEventListener('click', () => {
+        window.switchView('cards');
+    });
+
+    document.querySelectorAll('.price-table thead th.sortable[data-col]').forEach((th) => {
+        th.addEventListener('click', () => {
+            const col = th.dataset.col;
+            if (col) {
+                window.sortByCol(col);
+            }
+        });
+    });
+
+    document.getElementById('bestDealBtn')?.addEventListener('click', () => {
+        showToast('Opening registrar checkout...', '🚀');
+    });
+
+    document.addEventListener('click', (event) => {
+        const actionEl = event.target.closest('[data-action]');
+        if (!actionEl) return;
+
+        const action = actionEl.dataset.action;
+        if (action === 'try-suggestion') {
+            const domain = actionEl.dataset.domainSuggestion;
+            if (domain) {
+                window.trySuggestion(domain);
+            }
+            return;
+        }
+
+        if (action === 'copy-code') {
+            const code = actionEl.dataset.code;
+            if (code) {
+                window.copyCode(code, actionEl);
+            }
+            return;
+        }
+
+        if (action === 'open-registrar') {
+            const registrarName = actionEl.dataset.registrarName;
+            if (registrarName) {
+                showToast(`Opening ${registrarName}...`, '🌐');
+            }
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const chip = event.target.closest('[data-action="try-suggestion"]');
+        if (!chip || event.target !== chip) return;
+        event.preventDefault();
+        chip.click();
+    });
+
     // Scroll To Top
     const scrollTopBtn = document.getElementById('scrollTop');
     if (scrollTopBtn) {
@@ -417,7 +489,7 @@ function showAvailStatus(status, domain) {
                 <div class="avail-title">${domain} is already taken</div>
                 <div class="avail-desc">This domain is already registered by someone else. You can try to purchase it on the aftermarket, or register one of these alternatives:</div>
                 <div class="avail-suggestions">
-                    ${alts.map(alt => `<span class="avail-sug-chip" onclick="trySuggestion('${alt}')">${alt}</span>`).join('')}
+                    ${alts.map((alt) => `<span class="avail-sug-chip" data-action="try-suggestion" data-domain-suggestion="${alt}" role="button" tabindex="0">${alt}</span>`).join('')}
                 </div>
             </div>
         `;
@@ -646,8 +718,7 @@ function renderTableRows() {
         const buyCell = currentAvailStatus === 'taken'
             ? `<button class="buy-btn disabled" disabled>Taken</button>`
             : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored" \
-                   class="buy-btn ${r.isBest ? 'best' : ''}"\
-                   onclick="showToast('Redirecting to ${r.name}...','🌐')">\
+                   class="buy-btn ${r.isBest ? 'best' : ''}" data-action="open-registrar" data-registrar-name="${r.name}">\
                     ${r.isBest ? '★ ' : ''}Buy Now ↗\
                 </a>`;
 
@@ -683,9 +754,9 @@ function renderTableRows() {
             </td>
             <td>
                 ${r.coupon
-                    ? `<div class="coupon-chip" onclick="copyCode('${r.coupon}', this)">
+                    ? `<button type="button" class="coupon-chip" data-action="copy-code" data-code="${r.coupon}">
                             🎫 ${r.coupon}
-                       </div>`
+                       </button>`
                     : `<span style="color:var(--text-dim);font-size:0.82rem;">${r.offer}</span>`
                 }
             </td>
@@ -714,7 +785,7 @@ function renderCards() {
             : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
                class="buy-btn ${r.isBest ? 'best' : ''}" 
                style="width:100%;justify-content:center;"
-               onclick="showToast('Opening ${r.name}...','🌐')">\
+               data-action="open-registrar" data-registrar-name="${r.name}">\
                 Buy at ${r.name} ↗
             </a>`;
 
@@ -747,15 +818,15 @@ function renderCards() {
                 </div>
             </div>
             ${r.coupon
-                ? `<div class="coupon-chip" style="width:100%;justify-content:center;margin-bottom:12px;" onclick="copyCode('${r.coupon}', this)">
+                ? `<button type="button" class="coupon-chip" style="width:100%;justify-content:center;margin-bottom:12px;" data-action="copy-code" data-code="${r.coupon}">
                         🎫 Coupon: ${r.coupon}
-                   </div>`
+                   </button>`
                 : `<div style="color:var(--text-dim);font-size:0.8rem;margin-bottom:12px;text-align:center;">${r.offer}</div>`
             }
                 <a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
                class="buy-btn ${r.isBest ? 'best' : ''}" 
                style="width:100%;justify-content:center;"
-               onclick="showToast('Opening ${r.name}...','🌐')">
+               data-action="open-registrar" data-registrar-name="${r.name}">
                 Buy at ${r.name} ↗
             </a>
         </div>`;
@@ -854,7 +925,7 @@ function renderCoupons() {
             </div>
             <div class="coupon-code-display">
                 <span class="coupon-code-text" id="code-${c.code}">${c.code}</span>
-                <button class="copy-btn" onclick="copyCode('${c.code}', this)" title="Copy code">📋</button>
+                <button type="button" class="copy-btn" data-action="copy-code" data-code="${c.code}" title="Copy code">📋</button>
             </div>
             <div class="coupon-desc">⚠️ ${c.desc}</div>
         </div>

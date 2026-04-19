@@ -127,7 +127,7 @@
                             autocomplete="off"
                             spellcheck="false"
                         >
-                        <button class="search-btn" id="searchBtn" onclick="searchDomain()">
+                        <button type="button" class="search-btn" id="searchBtn">
                             <span class="btn-text">🔍 Compare Prices</span>
                             <div class="spinner"></div>
                         </button>
@@ -137,13 +137,13 @@
                     <div class="tld-pills">
                         <span class="tld-label">Quick select:</span>
                         <div class="tld-pills-wrap" id="tldPills">
-                            <button class="tld-pill active" onclick="selectTLD(this, '.com')">.com</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.net')">.net</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.org')">.org</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.io')">.io</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.co')">.co</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.ai')">.ai</button>
-                            <button class="tld-pill" onclick="selectTLD(this, '.app')">.app</button>
+                            <button type="button" class="tld-pill active" data-tld=".com">.com</button>
+                            <button type="button" class="tld-pill" data-tld=".net">.net</button>
+                            <button type="button" class="tld-pill" data-tld=".org">.org</button>
+                            <button type="button" class="tld-pill" data-tld=".io">.io</button>
+                            <button type="button" class="tld-pill" data-tld=".co">.co</button>
+                            <button type="button" class="tld-pill" data-tld=".ai">.ai</button>
+                            <button type="button" class="tld-pill" data-tld=".app">.app</button>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                     <div class="best-deal-price" id="bestDealPrice">$8.88<span>/year</span></div>
                     <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;" id="bestDealName">Spaceship Registrar</div>
                 </div>
-                <a href="/domain-finder" class="btn btn-green" id="bestDealBtn" onclick="showToast('Opening Spaceship...','🚀')">
+                <a href="/domain-finder" class="btn btn-green" id="bestDealBtn">
                     Get This Deal →
                 </a>
             </div>
@@ -201,7 +201,7 @@
                     <span id="resultDomain" style="color:var(--secondary);">example.com</span>
                 </div>
                 <div class="controls-right">
-                    <select class="sort-select" id="sortSelect" onchange="sortTable()">
+                    <select class="sort-select" id="sortSelect">
                         <option value="register">Sort: Register Price ↑</option>
                         <option value="renewal">Sort: Renewal Price</option>
                         <option value="transfer">Sort: Transfer Price</option>
@@ -209,8 +209,8 @@
                         <option value="name">Sort: Name A-Z</option>
                     </select>
                     <div class="view-toggle">
-                        <button class="view-btn active" id="tableViewBtn" onclick="switchView('table')" title="Table view">☰</button>
-                        <button class="view-btn" id="cardViewBtn" onclick="switchView('cards')" title="Card view">⊞</button>
+                        <button type="button" class="view-btn active" id="tableViewBtn" title="Table view">☰</button>
+                        <button type="button" class="view-btn" id="cardViewBtn" title="Card view">⊞</button>
                     </div>
                 </div>
             </div>
@@ -222,13 +222,13 @@
                         <thead>
                             <tr>
                                 <th>Registrar</th>
-                                <th class="sortable sort-asc" onclick="sortByCol('register')" data-col="register">
+                                <th class="sortable sort-asc" data-col="register">
                                     Register (1yr)<span class="sort-icon"></span>
                                 </th>
-                                <th class="sortable" onclick="sortByCol('renewal')" data-col="renewal">
+                                <th class="sortable" data-col="renewal">
                                     Renewal<span class="sort-icon"></span>
                                 </th>
-                                <th class="sortable" onclick="sortByCol('transfer')" data-col="transfer">
+                                <th class="sortable" data-col="transfer">
                                     Transfer<span class="sort-icon"></span>
                                 </th>
                                 <th>Rating</th>

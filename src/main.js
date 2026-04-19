@@ -481,6 +481,10 @@ initDebugPanel();
 setActiveNav();
 initLaunchScoreMeter();
 
+document.getElementById('newsletterForm')?.addEventListener('submit', (event) => {
+    window.handleNewsletterSubmit(event);
+});
+
 // ============================================
 // FEATURE CARDS - MOUSE MOVE TILT EFFECT
 // ============================================
@@ -529,5 +533,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-console.log('%c🚀 SanzyAI - AI-Powered Hub', 'color: #6C35DE; font-size: 18px; font-weight: bold;');
-console.log('%cWebsite loaded successfully ✓', 'color: #00FF88; font-size: 14px;');

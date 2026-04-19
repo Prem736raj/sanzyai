@@ -12,7 +12,7 @@ import DOMPurify from 'dompurify';
         const widgetHTML = `
             <!-- Floating Button -->
             <div class="sanzy-btn-wrap">
-                <button class="sanzy-float-btn" id="sanzyFloatBtn" onclick="window.SanzyBot.toggle()" aria-label="Chat with Sanzy AI" aria-controls="sanzyWindow" aria-expanded="false" draggable="false">
+                <button class="sanzy-float-btn" id="sanzyFloatBtn" aria-label="Chat with Sanzy AI" aria-controls="sanzyWindow" aria-expanded="false" draggable="false">
                     🤖
                     <div class="sanzy-notif" id="sanzyNotif">1</div>
                 </button>
@@ -31,8 +31,8 @@ import DOMPurify from 'dompurify';
                             </div>
                     </div>
                     <div class="sanzy-header-btns">
-                        <button class="sanzy-hbtn" onclick="window.SanzyBot.restart()" title="Restart chat">↺</button>
-                        <button class="sanzy-hbtn" onclick="window.SanzyBot.close()" title="Close chat">✕</button>
+                        <button class="sanzy-hbtn" data-action="restart-chat" title="Restart chat">↺</button>
+                        <button class="sanzy-hbtn" data-action="close-chat" title="Close chat">✕</button>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@ import DOMPurify from 'dompurify';
                     </div>
                     <div class="sanzy-input-footer">
                         <div class="sanzy-powered">Powered by <span>SanzyAI</span></div>
-                        <button class="sanzy-restart" onclick="window.SanzyBot.restart()">↺ New chat</button>
+                        <button class="sanzy-restart" data-action="restart-chat">↺ New chat</button>
                     </div>
                 </div>
             </div>
@@ -442,6 +442,10 @@ I can help you with:
         },
 
         setupEventListeners() {
+            if (this.floatBtn) {
+                this.floatBtn.addEventListener('click', () => this.toggle());
+            }
+
             // Send on Enter
             this.input.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -452,6 +456,24 @@ I can help you with:
 
             // Send button click
             if (this.sendBtn) this.sendBtn.addEventListener('click', () => this.handleSend());
+
+            if (this.window) {
+                this.window.addEventListener('click', (e) => {
+                    const actionEl = e.target.closest('[data-action]');
+                    if (!actionEl) return;
+
+                    if (actionEl.dataset.action === 'restart-chat') {
+                        e.preventDefault();
+                        this.restart();
+                        return;
+                    }
+
+                    if (actionEl.dataset.action === 'close-chat') {
+                        e.preventDefault();
+                        this.close();
+                    }
+                });
+            }
 
             // Input changes
             if (this.input) {

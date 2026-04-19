@@ -101,13 +101,13 @@
         <div class="controls-grid">
             <div class="filter-chips" id="typeFilters"></div>
             <div class="control-row">
-                <input id="newsSearch" class="news-search" type="text" placeholder="Search AI news, company, model, policy..." oninput="applyNewsFilters()">
-                <select id="impactSort" class="news-select" onchange="applyNewsFilters()">
+                <input id="newsSearch" class="news-search" type="text" placeholder="Search AI news, company, model, policy...">
+                <select id="impactSort" class="news-select">
                     <option value="newest">Sort: Newest</option>
                     <option value="impact">Sort: Impact First</option>
                     <option value="opportunity">Sort: Opportunity</option>
                 </select>
-                <button id="refreshNewsBtn" class="news-select" type="button" onclick="refreshAiNews()">Refresh</button>
+                <button id="refreshNewsBtn" class="news-select" type="button">Refresh</button>
             </div>
             <div class="news-source-status" id="newsSourceStatus">Loading AI sources...</div>
         </div>
@@ -125,7 +125,7 @@
                 <div class="news-feed" id="newsFeed"></div>
                 <div class="feed-pager" id="feedPager" hidden>
                     <span id="feedProgress">Showing 0 of 0 stories</span>
-                    <button id="loadMoreNewsBtn" class="news-select" type="button" onclick="loadMoreNews()">Load More</button>
+                    <button id="loadMoreNewsBtn" class="news-select" type="button">Load More</button>
                 </div>
             </div>
 
@@ -150,7 +150,7 @@
     </div>
 </section>
 
-<div class="news-modal" id="newsModal" onclick="closeNewsModal(event)">
+<div class="news-modal" id="newsModal">
     <article class="news-modal-card" id="newsModalCard"></article>
 </div>
 

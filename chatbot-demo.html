@@ -106,7 +106,7 @@
     <div class="hero-label">🤖 AI Chatbot — Sanzy</div>
     <h1>Meet <span class="gradient-text">Sanzy</span>,<br>Your AI Assistant</h1>
     <p>Click the assistant button in the bottom-right corner to open the AI helper. Available on every page of SanzyAI.com — 24/7.</p>
-    <button class="demo-btn" onclick="window.SanzyBot && window.SanzyBot.open()">
+    <button type="button" class="demo-btn" id="openAssistantDemoBtn">
         🤖 Open Assistant Demo
     </button>
 </div>
@@ -138,31 +138,31 @@
     <div class="pages-title">Test Page-Specific <span class="gradient-text">Sanzy Messages</span></div>
     <div class="pages-sub">Sanzy adapts her message to the current page — click any page below to simulate</div>
     <div class="pages-grid">
-        <div class="page-card" onclick="simulatePage('home')">
+        <div class="page-card" data-page="home" role="button" tabindex="0">
             <span class="page-emoji">🏠</span>
             <div class="page-name">Homepage</div>
         </div>
-        <div class="page-card" onclick="simulatePage('domain')">
+        <div class="page-card" data-page="domain" role="button" tabindex="0">
             <span class="page-emoji">🌐</span>
             <div class="page-name">Domain Finder</div>
         </div>
-        <div class="page-card" onclick="simulatePage('tools')">
+        <div class="page-card" data-page="tools" role="button" tabindex="0">
             <span class="page-emoji">🤖</span>
             <div class="page-name">AI Tools</div>
         </div>
-        <div class="page-card" onclick="simulatePage('prompts')">
+        <div class="page-card" data-page="prompts" role="button" tabindex="0">
             <span class="page-emoji">💰</span>
             <div class="page-name">Prompt Store</div>
         </div>
-        <div class="page-card" onclick="simulatePage('services')">
+        <div class="page-card" data-page="services" role="button" tabindex="0">
             <span class="page-emoji">🚀</span>
             <div class="page-name">AI Services</div>
         </div>
-        <div class="page-card" onclick="simulatePage('learn')">
+        <div class="page-card" data-page="learn" role="button" tabindex="0">
             <span class="page-emoji">📚</span>
             <div class="page-name">Learn Free</div>
         </div>
-        <div class="page-card" onclick="simulatePage('blog')">
+        <div class="page-card" data-page="blog" role="button" tabindex="0">
             <span class="page-emoji">📰</span>
             <div class="page-name">AI News</div>
         </div>
@@ -205,6 +205,27 @@ function simulatePage(page) {
         }, 800);
     }
 }
+
+document.getElementById('openAssistantDemoBtn')?.addEventListener('click', () => {
+    if (window.SanzyBot) {
+        window.SanzyBot.open();
+    }
+});
+
+document.querySelectorAll('.page-card[data-page]').forEach((card) => {
+    const run = () => {
+        const page = card.getAttribute('data-page');
+        if (page) simulatePage(page);
+    };
+
+    card.addEventListener('click', run);
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            run();
+        }
+    });
+});
 </script>
 
 </body>

@@ -77,8 +77,8 @@
         </div>
 
         <div class="path-switch" role="tablist" aria-label="Learning mode">
-            <button class="path-btn active" id="freePathBtn" onclick="setPath('free')">Start Free Path</button>
-            <button class="path-btn" id="paidPathBtn" onclick="setPath('paid')">Start Paid Path</button>
+            <button type="button" class="path-btn active" id="freePathBtn">Start Free Path</button>
+            <button type="button" class="path-btn" id="paidPathBtn">Start Paid Path</button>
         </div>
 
         <div class="learn-progress-wrap">
@@ -141,7 +141,7 @@
         <div class="sim-grid">
             <div class="sim-card">
                 <label for="projectType">Project Type</label>
-                <select id="projectType" onchange="updateBudget()">
+                <select id="projectType">
                     <option value="portfolio">Portfolio</option>
                     <option value="blog">AI News</option>
                     <option value="store">Small Store</option>
@@ -149,11 +149,11 @@
                 </select>
 
                 <label for="trafficRange">Expected Visitors/Month</label>
-                <input type="range" id="trafficRange" min="100" max="50000" step="100" value="2500" oninput="updateBudget()">
+                <input type="range" id="trafficRange" min="100" max="50000" step="100" value="2500">
                 <div class="range-out" id="trafficOut">2,500 visitors</div>
 
                 <label for="aiUsage">AI Usage Intensity</label>
-                <select id="aiUsage" onchange="updateBudget()">
+                <select id="aiUsage">
                     <option value="light">Light</option>
                     <option value="medium" selected>Medium</option>
                     <option value="heavy">Heavy</option>
@@ -204,8 +204,8 @@
                     <option value="email">Email</option>
                 </select>
 
-                <button class="btn-main" onclick="generateSprintPlan()">Generate 30-Day Plan</button>
-                <button class="btn-main btn-secondary" id="savePlanPdfBtn" onclick="saveSprintPlanAsPdf()" disabled>
+                <button type="button" class="btn-main" id="generateSprintBtn">Generate 30-Day Plan</button>
+                <button type="button" class="btn-main btn-secondary" id="savePlanPdfBtn" disabled>
                     Save My Sprint Plan as PDF
                 </button>
             </div>

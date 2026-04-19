@@ -136,11 +136,11 @@
             <div class="filter-select-grid">
                 <div class="filter-field filter-search-field">
                     <span class="filter-label">Search:</span>
-                    <input type="text" class="filter-search" id="searchInput" placeholder="Search prompts e.g. python, email marketing" oninput="filterSearchInput()">
+                    <input type="text" class="filter-search" id="searchInput" placeholder="Search prompts e.g. python, email marketing">
                 </div>
                 <div class="filter-field">
                     <span class="filter-label">Platform:</span>
-                    <select class="sort-sel" id="platformSel" onchange="filterPlatformSelect()">
+                    <select class="sort-sel" id="platformSel">
                         <option value="all">🤖 All Prompts</option>
                         <option value="chatgpt">🤖 ChatGPT</option>
                         <option value="midjourney">🎨 Midjourney</option>
@@ -157,7 +157,7 @@
                 </div>
                 <div class="filter-field">
                     <span class="filter-label">Price:</span>
-                    <select class="sort-sel" id="priceSel" onchange="filterPriceSelect()">
+                    <select class="sort-sel" id="priceSel">
                         <option value="all">💵 All Prices</option>
                         <option value="free">🆓 Free</option>
                         <option value="1-5">$1–$5</option>
@@ -168,7 +168,7 @@
                 </div>
                 <div class="filter-field">
                     <span class="filter-label">Sort:</span>
-                    <select class="sort-sel" id="sortSel" onchange="sortPacks()">
+                    <select class="sort-sel" id="sortSel">
                         <option value="popular">🔥 Most Popular</option>
                         <option value="new">✨ Newest</option>
                         <option value="price-low">💵 Price: Low→High</option>
@@ -288,11 +288,11 @@
 ============================================ -->
 <div class="email-modal-overlay" id="emailModal">
     <div class="email-modal" style="position:relative;">
-        <button class="email-modal-close" onclick="closeEmailModal()">✕</button>
+        <button type="button" class="email-modal-close" id="emailModalCloseBtn">✕</button>
         <span class="email-modal-icon">🎁</span>
         <h2 class="email-modal-title">Get Your <span class="gradient-text">FREE Pack!</span></h2>
         <p class="email-modal-sub">Enter your email to instantly download the <strong>10 Starter ChatGPT Prompts</strong> — completely free, no credit card needed.</p>
-        <form onsubmit="handleFreeDownload(event)">
+        <form id="freeDownloadForm">
             <input type="email" class="email-modal-input" placeholder="Enter your email address..." required id="freePackEmail">
             <button type="submit" class="btn btn-green btn-lg" style="width:100%;justify-content:center;">
                 ✅ Send Me The Free Pack!
@@ -309,7 +309,7 @@
     <div class="preview-modal">
         <div class="preview-header">
             <span class="preview-title" id="previewTitle">Free Sample Prompts</span>
-            <button class="modal-close" onclick="closePreview()">✕</button>
+            <button type="button" class="modal-close" id="previewCloseBtn">✕</button>
         </div>
         <div class="preview-body" id="previewBody">
             <!-- Populated by JS -->

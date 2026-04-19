@@ -361,7 +361,7 @@
 
             <div class="quote-right">
                 <div class="form-title">📋 Request Free Quote</div>
-                <form class="quote-form" id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+                <form class="quote-form" id="quoteForm">
                     <div class="form-row">
                         <div class="fgrp">
                             <label class="flbl">Full Name *</label>
@@ -439,7 +439,7 @@
         <h2 class="success-title">Quote Request Sent!</h2>
         <p class="success-sub">Thank you! We've received your request and will send a detailed custom quote to your email within <strong>2 hours</strong> during business hours. Check your inbox (and spam folder just in case).</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-            <a href="/ai-services" class="btn btn-primary" onclick="document.getElementById('successOverlay').classList.remove('open')">← Back to Services</a>
+            <a href="/ai-services" class="btn btn-primary" id="successBackBtn">← Back to Services</a>
             <a href="/ai-tools" class="btn btn-outline">Browse AI Tools →</a>
         </div>
     </div>
@@ -449,7 +449,7 @@
     <div class="portfolio-modal-card">
         <div class="portfolio-modal-head">
             <h3>Portfolio Case Study</h3>
-            <button class="portfolio-close" onclick="closePortfolio()" aria-label="Close">✕</button>
+            <button type="button" class="portfolio-close" id="portfolioCloseBtn" aria-label="Close">✕</button>
         </div>
         <div id="portfolioModalBody"></div>
     </div>

@@ -114,6 +114,21 @@ function urlDomain(url) {
     }
 }
 
+function sanitizeExternalUrl(url = '') {
+    const raw = String(url || '').trim();
+    if (!raw) return '';
+
+    try {
+        const parsed = new URL(raw, window.location.origin);
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+            return '';
+        }
+        return parsed.href;
+    } catch {
+        return '';
+    }
+}
+
 function getFilteredNews() {
     const q = (document.getElementById('newsSearch')?.value || '').trim().toLowerCase();
     const sortMode = document.getElementById('impactSort')?.value || 'newest';
@@ -139,7 +154,7 @@ function renderTypeFilters() {
     if (!holder) return;
 
     holder.innerHTML = typeOrder.map((type) => `
-        <button class="type-chip ${type === activeType ? 'active' : ''}" onclick="setNewsType('${type.replace(/'/g, "\\'")}')">${escapeHtml(type)}</button>
+        <button type="button" class="type-chip ${type === activeType ? 'active' : ''}" data-action="set-news-type" data-news-type="${escapeHtml(type)}">${escapeHtml(type)}</button>
     `).join('');
 }
 
@@ -182,11 +197,12 @@ function renderNewsFeed() {
     }
 
     feed.innerHTML = visibleItems.map((item) => {
-        const sourceLink = item.sourceUrl ? `<a class="side-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Source: ${escapeHtml(urlDomain(item.sourceUrl) || item.source)} ↗</a>` : '';
-        const watchKey = escapeJsSingleQuote(item.storyKey);
+        const safeSourceUrl = sanitizeExternalUrl(item.sourceUrl);
+        const sourceLink = safeSourceUrl ? `<a class="side-link" href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">Source: ${escapeHtml(urlDomain(safeSourceUrl) || item.source)} ↗</a>` : '';
+        const watchKey = escapeHtml(item.storyKey);
         const isSaved = watchlist.has(item.storyKey);
         return `
-            <article class="news-card" onclick="openNews(${item.id})">
+            <article class="news-card" data-action="open-news" data-news-id="${item.id}" role="button" tabindex="0">
                 <div class="news-top">
                     <div class="news-type">${escapeHtml(item.type)}</div>
                     ${getUrgencyBadge(item.urgency)}
@@ -202,7 +218,7 @@ function renderNewsFeed() {
                 </div>
                 ${sourceLink}
                 <div class="news-actions">
-                    <button onclick="event.stopPropagation();toggleWatch('${watchKey}')" class="watch-btn ${isSaved ? 'on' : ''}">${isSaved ? '★ Saved' : '☆ Save'}</button>
+                    <button type="button" data-action="toggle-watch" data-story-key="${watchKey}" class="watch-btn ${isSaved ? 'on' : ''}">${isSaved ? '★ Saved' : '☆ Save'}</button>
                     <button class="read-btn">Open Analysis →</button>
                 </div>
             </article>
@@ -234,7 +250,7 @@ function renderTimeline() {
 
     const top = [...allNewsItems].sort((a, b) => b.impact - a.impact).slice(0, 6);
     box.innerHTML = top.map((item, idx) => `
-        <div class="time-item" onclick="openNews(${item.id})">
+        <div class="time-item" data-action="open-news" data-news-id="${item.id}" role="button" tabindex="0">
             <span class="time-dot">${idx + 1}</span>
             <div>
                 <strong>${escapeHtml(item.title)}</strong>
@@ -292,7 +308,7 @@ function renderWatchlist() {
     }
 
     box.innerHTML = items.map((item) => `
-        <button class="watch-item" onclick="openNews(${item.id})">${escapeHtml(item.title)}</button>
+        <button type="button" class="watch-item" data-action="open-news" data-news-id="${item.id}">${escapeHtml(item.title)}</button>
     `).join('');
 }
 
@@ -303,10 +319,11 @@ window.openNews = function(id) {
     if (!item || !modal || !card) return;
 
     const sourceType = labelForSourceType(item.sourceType);
-    const sourceDomain = urlDomain(item.sourceUrl);
+    const safeSourceUrl = sanitizeExternalUrl(item.sourceUrl);
+    const sourceDomain = urlDomain(safeSourceUrl);
 
     card.innerHTML = `
-        <button class="modal-close" onclick="closeNewsModal(event)">✕</button>
+        <button type="button" class="modal-close" data-action="close-news-modal">✕</button>
         <div class="modal-type">${escapeHtml(item.type)}</div>
         <h2>${escapeHtml(item.title)}</h2>
         <div class="modal-meta">
@@ -316,7 +333,7 @@ window.openNews = function(id) {
             <span>Impact ${Number(item.impact || 0)}</span>
             <span>Opportunity ${Number(item.opportunity || 0)}</span>
         </div>
-        ${item.sourceUrl ? `<p class="modal-summary"><strong>Original Link:</strong> <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(sourceDomain || item.sourceUrl)}</a></p>` : ''}
+        ${safeSourceUrl ? `<p class="modal-summary"><strong>Original Link:</strong> <a href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(sourceDomain || safeSourceUrl)}</a></p>` : ''}
         <p class="modal-summary">${escapeHtml(item.summary)}</p>
 
         <div class="modal-block">
@@ -332,7 +349,7 @@ window.openNews = function(id) {
         </div>
 
         <div class="modal-links">
-            ${item.sourceUrl ? `<a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open Original Source ↗</a>` : ''}
+            ${safeSourceUrl ? `<a href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">Open Original Source ↗</a>` : ''}
             <a href="/ai-tools">Find matching AI tools</a>
             <a href="/prompt-store">Get implementation prompts</a>
             <a href="/ai-services">Execute with AI services</a>
@@ -352,6 +369,77 @@ window.closeNewsModal = function(e) {
         document.body.style.overflow = '';
     }
 };
+
+function bindNewsControls() {
+    document.getElementById('newsSearch')?.addEventListener('input', () => {
+        window.applyNewsFilters();
+    });
+
+    document.getElementById('impactSort')?.addEventListener('change', () => {
+        window.applyNewsFilters();
+    });
+
+    document.getElementById('refreshNewsBtn')?.addEventListener('click', () => {
+        window.refreshAiNews();
+    });
+
+    document.getElementById('loadMoreNewsBtn')?.addEventListener('click', () => {
+        window.loadMoreNews();
+    });
+
+    document.getElementById('newsModal')?.addEventListener('click', (event) => {
+        if (event.target.id === 'newsModal') {
+            window.closeNewsModal(event);
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        const actionEl = event.target.closest('[data-action]');
+        if (!actionEl) return;
+
+        const action = actionEl.dataset.action;
+        if (action === 'set-news-type') {
+            const newsType = actionEl.dataset.newsType;
+            if (newsType) {
+                window.setNewsType(newsType);
+            }
+            return;
+        }
+
+        if (action === 'toggle-watch') {
+            event.stopPropagation();
+            const storyKey = actionEl.dataset.storyKey;
+            if (storyKey) {
+                window.toggleWatch(storyKey);
+            }
+            return;
+        }
+
+        if (action === 'open-news') {
+            if (event.target.closest('a,button')) return;
+            const id = Number(actionEl.dataset.newsId || '0');
+            if (id) {
+                window.openNews(id);
+            }
+            return;
+        }
+
+        if (action === 'close-news-modal') {
+            window.closeNewsModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const card = event.target.closest('[data-action="open-news"]');
+        if (!card || event.target !== card) return;
+        event.preventDefault();
+        const id = Number(card.dataset.newsId || '0');
+        if (id) {
+            window.openNews(id);
+        }
+    });
+}
 
 function updateHeroStats() {
     const statStories = document.getElementById('statStories');
@@ -510,6 +598,7 @@ document.addEventListener('keydown', (e) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     initNav();
+    bindNewsControls();
     allNewsItems = hydrateNewsItems(fallbackNewsItems);
     renderTypeFilters();
     renderTicker();
@@ -526,5 +615,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.refreshAiNews();
     }, 10 * 60 * 1000);
 });
-
-console.log('%cAI Newsroom Loaded', 'color:#6C35DE;font-weight:bold;font-size:16px;');
