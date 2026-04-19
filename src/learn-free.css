@@ -753,6 +753,12 @@ body.light-mode .path-btn {
     background: #f8fbff;
     border: 1px solid #94a3b8;
 }
+
+body.light-mode .path-btn:not(.active) {
+    color: #1e293b;
+    background: #eff4fb;
+    border-color: #94a3b8;
+}
 body.light-mode .path-btn:not(.active):hover {
     background: #edf3ff;
     color: #0f2d7a;
@@ -764,7 +770,9 @@ body.light-mode .path-btn#paidPathBtn:not(.active) {
 }
 body.light-mode .path-btn.active {
     color: #ffffff;
-    border-color: transparent;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border-color: #1e40af;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
 }
 
 /* Progress widget card visibility */
