@@ -6,6 +6,155 @@
 (function() {
     'use strict';
 
+    const SITE_ORIGIN = 'https://sanzyai.com';
+
+    const seoByPath = {
+        '/': {
+            title: 'SanzyAI - Domain Prices, AI Tools, Prompts & Free Learning Hub',
+            description: 'Compare domain prices from 10+ registrars, discover curated AI tools, buy AI prompts, hire AI services and learn website building for free.',
+            type: 'website',
+            schema: {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'SanzyAI',
+                url: `${SITE_ORIGIN}/`,
+                description: 'AI + domain growth hub with tools, prompts, services, and free learning resources.',
+            },
+        },
+        '/domain-finder': {
+            title: 'Compare Domain Prices - Find Cheapest Registrar | SanzyAI',
+            description: 'Compare domain registration and renewal prices across top registrars to find the best value quickly.',
+            type: 'website',
+        },
+        '/ai-tools': {
+            title: 'AI Tools Directory - Curated & Reviewed | SanzyAI',
+            description: 'Explore curated AI tools for writing, code, images, video, voice, and marketing with practical recommendations.',
+            type: 'website',
+        },
+        '/prompt-store': {
+            title: 'Buy AI Prompt Packs - ChatGPT, Claude, Gemini | SanzyAI',
+            description: 'Shop ready-to-use AI prompt packs with practical use cases, instant access, and lifetime updates.',
+            type: 'product.group',
+        },
+        '/ai-services': {
+            title: 'AI Services - Content, Brand, and Growth Ops | SanzyAI',
+            description: 'Done-for-you AI services for content, branding, automation, and growth with fast execution.',
+            type: 'website',
+        },
+        '/learn-free': {
+            title: 'Build Your Website From Zero to Launch | Learn Free Lab',
+            description: 'Interactive website growth lab with practical roadmaps, checklists, calculators, and sprint planning.',
+            type: 'course',
+            schema: {
+                '@context': 'https://schema.org',
+                '@type': 'Course',
+                name: 'SanzyAI Learn Free Interactive Lab',
+                provider: {
+                    '@type': 'Organization',
+                    name: 'SanzyAI',
+                    url: SITE_ORIGIN,
+                },
+                description: 'Free practical learning experience to launch and grow websites with AI workflows.',
+            },
+        },
+        '/blog': {
+            title: 'AI Newsroom - Live AI Updates, Releases & Market Signals',
+            description: 'Track model launches, policy changes, funding rounds, and practical AI opportunities in one newsroom.',
+            type: 'blog',
+            schema: {
+                '@context': 'https://schema.org',
+                '@type': 'Blog',
+                name: 'SanzyAI AI Newsroom',
+                url: `${SITE_ORIGIN}/blog`,
+                publisher: {
+                    '@type': 'Organization',
+                    name: 'SanzyAI',
+                    url: SITE_ORIGIN,
+                },
+            },
+        },
+        '/chatbot-demo': {
+            title: 'Sanzy AI Chatbot Demo | SanzyAI',
+            description: 'Try the Sanzy AI assistant demo and test prompts for growth, tools, domains, and services.',
+            type: 'website',
+        },
+        '/about': {
+            title: 'About SanzyAI - Mission, Vision, and Team',
+            description: 'Learn why SanzyAI exists and how we help founders and creators launch faster with AI and domain insights.',
+            type: 'profile',
+        },
+        '/contact': {
+            title: 'Contact SanzyAI - Support and Partnerships',
+            description: 'Reach SanzyAI for support, partnerships, and service inquiries.',
+            type: 'website',
+        },
+        '/help-center': {
+            title: 'Help Center | SanzyAI',
+            description: 'Find answers to common SanzyAI questions about tools, prompts, services, and account help.',
+            type: 'website',
+        },
+        '/careers': {
+            title: 'Careers at SanzyAI',
+            description: 'Explore open roles and collaboration opportunities at SanzyAI.',
+            type: 'website',
+        },
+        '/partners': {
+            title: 'Partners | SanzyAI',
+            description: 'See partnership opportunities and ecosystem collaborations with SanzyAI.',
+            type: 'website',
+        },
+        '/press-kit': {
+            title: 'Press Kit | SanzyAI',
+            description: 'Access official SanzyAI brand assets, logos, and media resources.',
+            type: 'website',
+        },
+        '/status': {
+            title: 'System Status | SanzyAI',
+            description: 'Live system and service availability updates for SanzyAI.',
+            type: 'website',
+        },
+        '/submit-tool': {
+            title: 'Submit Your AI Tool | SanzyAI',
+            description: 'Submit your AI product for review and potential listing in the SanzyAI tools directory.',
+            type: 'website',
+        },
+        '/affiliate-program': {
+            title: 'Affiliate Program | SanzyAI',
+            description: 'Join the SanzyAI affiliate program and earn commissions by promoting AI products and resources.',
+            type: 'website',
+        },
+        '/affiliate-disclosure': {
+            title: 'Affiliate Disclosure | SanzyAI',
+            description: 'Read SanzyAI affiliate disclosure and transparency commitments.',
+            type: 'article',
+        },
+        '/privacy-policy': {
+            title: 'Privacy Policy | SanzyAI',
+            description: 'Understand how SanzyAI collects, processes, and protects personal data.',
+            type: 'article',
+        },
+        '/terms-of-service': {
+            title: 'Terms of Service | SanzyAI',
+            description: 'Review the terms and conditions for using SanzyAI products and services.',
+            type: 'article',
+        },
+        '/refund-policy': {
+            title: 'Refund Policy | SanzyAI',
+            description: 'See refund eligibility, timelines, and support process for SanzyAI products.',
+            type: 'article',
+        },
+        '/cookie-policy': {
+            title: 'Cookie Policy | SanzyAI',
+            description: 'Learn how SanzyAI uses cookies, consent preferences, and tracking settings.',
+            type: 'article',
+        },
+        '/404': {
+            title: '404 - Page Not Found | SanzyAI',
+            description: 'The page could not be found. Explore SanzyAI tools, domains, and learning resources instead.',
+            type: 'website',
+        },
+    };
+
     const languageOptions = [
         { code: 'en', label: 'English' },
         { code: 'hi', label: 'Hindi' },
@@ -19,6 +168,165 @@
         { code: 'ko', label: 'Korean' },
         { code: 'zh-CN', label: 'Chinese' }
     ];
+
+    function currentPath() {
+        const path = window.location.pathname || '/';
+        if (path === '/index.html') return '/';
+        if (path.endsWith('.html')) return path.replace(/\.html$/i, '');
+        return path;
+    }
+
+    function getMetaConfig() {
+        const path = currentPath();
+        return seoByPath[path] || seoByPath['/'];
+    }
+
+    function setOrCreateMeta(attrName, attrValue, content) {
+        if (!content) return;
+        let node = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
+        if (!node) {
+            node = document.createElement('meta');
+            node.setAttribute(attrName, attrValue);
+            document.head.appendChild(node);
+        }
+        node.setAttribute('content', content);
+    }
+
+    function setCanonical(url) {
+        let link = document.head.querySelector('link[rel="canonical"]');
+        if (!link) {
+            link = document.createElement('link');
+            link.setAttribute('rel', 'canonical');
+            document.head.appendChild(link);
+        }
+        link.setAttribute('href', url);
+    }
+
+    function normalizeUrlPath(path) {
+        if (path === '/') return '/';
+        return path.replace(/\.html$/i, '');
+    }
+
+    function applySeoMetadata() {
+        const meta = getMetaConfig();
+        const path = normalizeUrlPath(window.location.pathname || '/');
+        const canonicalUrl = `${SITE_ORIGIN}${path === '/' ? '/' : path}`;
+
+        if (meta.title) document.title = meta.title;
+        setOrCreateMeta('name', 'description', meta.description);
+        setCanonical(canonicalUrl);
+
+        setOrCreateMeta('property', 'og:type', meta.type || 'website');
+        setOrCreateMeta('property', 'og:title', meta.title);
+        setOrCreateMeta('property', 'og:description', meta.description);
+        setOrCreateMeta('property', 'og:url', canonicalUrl);
+        setOrCreateMeta('property', 'og:site_name', 'SanzyAI');
+
+        setOrCreateMeta('name', 'twitter:card', 'summary_large_image');
+        setOrCreateMeta('name', 'twitter:title', meta.title);
+        setOrCreateMeta('name', 'twitter:description', meta.description);
+
+        if (meta.schema) {
+            let schemaScript = document.getElementById('sanzyDynamicSchema');
+            if (!schemaScript) {
+                schemaScript = document.createElement('script');
+                schemaScript.id = 'sanzyDynamicSchema';
+                schemaScript.type = 'application/ld+json';
+                document.head.appendChild(schemaScript);
+            }
+            schemaScript.textContent = JSON.stringify(meta.schema);
+        }
+    }
+
+    function getPreferredTheme() {
+        const savedTheme = localStorage.getItem('sanzy_theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            return savedTheme;
+        }
+
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        return prefersLight ? 'light' : 'dark';
+    }
+
+    function trackGlobalEvent(eventName, params = {}) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    }
+
+    function setupEngagementTracking() {
+        document.addEventListener('click', (event) => {
+            const el = event.target.closest('a,button,[data-track-event]');
+            if (!el) return;
+
+            const explicitEvent = el.getAttribute('data-track-event');
+            const href = el.getAttribute('href') || '';
+            const text = (el.textContent || '').trim().slice(0, 80);
+            const className = (el.className || '').toString().slice(0, 120);
+
+            if (explicitEvent) {
+                trackGlobalEvent(explicitEvent, { text, href, class_name: className, page: currentPath() });
+                return;
+            }
+
+            const isCta = el.matches('.btn,.buy-btn,.modal-buy-btn,.bot-link-btn,.hero-buttons a,.cta,.cta-btn');
+            if (isCta) {
+                trackGlobalEvent('cta_click', {
+                    text,
+                    href,
+                    class_name: className,
+                    page: currentPath(),
+                });
+            }
+        });
+
+        document.addEventListener('submit', (event) => {
+            const form = event.target;
+            if (!(form instanceof HTMLFormElement)) return;
+
+            const formId = form.id || form.getAttribute('name') || 'anonymous_form';
+            trackGlobalEvent('lead_form_submit', {
+                form_id: String(formId).slice(0, 80),
+                page: currentPath(),
+            });
+        });
+    }
+
+    function setupNavA11y() {
+        const menus = ['mobileMenu', 'mobileNav'];
+        const toggleButtons = document.querySelectorAll('.hamburger');
+
+        toggleButtons.forEach((btn) => {
+            const targetId = menus.find((id) => document.getElementById(id));
+            if (!targetId) return;
+
+            btn.setAttribute('aria-controls', targetId);
+            btn.setAttribute('aria-expanded', 'false');
+
+            btn.addEventListener('click', () => {
+                requestAnimationFrame(() => {
+                    const menu = document.getElementById(targetId);
+                    const isOpen = Boolean(menu && (menu.classList.contains('open') || menu.classList.contains('active')));
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            });
+        });
+    }
+
+    function injectSkipLink() {
+        if (document.querySelector('.skip-link')) return;
+
+        const skip = document.createElement('a');
+        skip.className = 'skip-link';
+        skip.href = '#main-content';
+        skip.textContent = 'Skip to main content';
+        document.body.insertAdjacentElement('afterbegin', skip);
+
+        const main = document.querySelector('main');
+        if (main && !main.id) {
+            main.id = 'main-content';
+        }
+    }
 
     function applyTheme(theme) {
         const useLight = theme === 'light';
@@ -61,7 +369,7 @@
     };
 
     window.toggleTheme = () => {
-        const currentTheme = localStorage.getItem('sanzy_theme') || 'dark';
+        const currentTheme = getPreferredTheme();
         const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('sanzy_theme', nextTheme);
         applyTheme(nextTheme);
@@ -159,24 +467,7 @@
         // Social proof popup removed: static/fabricated notifications were removed to
         // avoid misleading repeat visitors and to improve trustworthiness.
 
-        // 3. Newsletter Popup
-        if (!localStorage.getItem('sanzy_newsletter_subbed')) {
-            const nlHTML = `
-                <div class="nl-overlay" id="nlOverlay">
-                    <div class="nl-modal">
-                        <span class="nl-icon">📬</span>
-                        <h2>Get Weekly AI Tips & Deals</h2>
-                        <p>Join 10,000+ creators dominating the digital space with our free weekly insights.</p>
-                        <form class="nl-form" onsubmit="window.handleGlobalNL(event)">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe Free</button>
-                        </form>
-                        <button class="nl-close-btn" onclick="window.closeGlobalNL()">No thanks, I'll pass</button>
-                    </div>
-                </div>
-            `;
-            body.insertAdjacentHTML('beforeend', nlHTML);
-        }
+        // Newsletter popup removed permanently to keep page experience clean.
     }
 
     // ============================================
@@ -211,20 +502,11 @@
         window.gtag('config', gaId, { 'anonymize_ip': true });
     };
 
-    // Newsletter Functions
+    // Kept as no-op handlers for backward compatibility with any legacy inline handlers.
     window.handleGlobalNL = (e) => {
-        e.preventDefault();
-        const btn = e.target.querySelector('button');
-        btn.textContent = '✅ Subscribed!';
-        btn.style.background = '#00C851';
-        localStorage.setItem('sanzy_newsletter_subbed', 'true');
-        setTimeout(() => window.closeGlobalNL(), 2000);
+        if (e && typeof e.preventDefault === 'function') e.preventDefault();
     };
-    window.closeGlobalNL = () => {
-        document.getElementById('nlOverlay')?.classList.remove('show');
-        // Prevent showing again for this session if just closed, or forever if they want
-        sessionStorage.setItem('nl_closed_session', 'true');
-    };
+    window.closeGlobalNL = () => {};
 
     // Social proof logic removed to avoid misleading or static notifications.
 
@@ -232,10 +514,13 @@
     // INITIALIZATION
     // ============================================
     document.addEventListener('DOMContentLoaded', () => {
-        const savedTheme = localStorage.getItem('sanzy_theme') || 'dark';
-        applyTheme(savedTheme);
+        applySeoMetadata();
+        applyTheme(getPreferredTheme());
 
         injectGlobalElements();
+        injectSkipLink();
+        setupNavA11y();
+        setupEngagementTracking();
 
         const savedLang = localStorage.getItem('sanzy_lang') || 'en';
         const langSelect = document.getElementById('siteLangSelect');
@@ -264,13 +549,7 @@
             }
         });
 
-        // Schedule Newsletter (90 seconds — plenty of time to explore first)
-        setTimeout(() => {
-            if (!localStorage.getItem('sanzy_newsletter_subbed') && !sessionStorage.getItem('nl_closed_session')) {
-                const overlay = document.getElementById('nlOverlay');
-                if (overlay) overlay.classList.add('show');
-            }
-        }, 90000);
+        // Newsletter popup scheduling removed permanently.
 
         // Social proof toasts: DISABLED — they were overlapping content
         // Users found them intrusive; the trust bar already provides social proof

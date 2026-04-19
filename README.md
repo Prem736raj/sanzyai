@@ -39,3 +39,36 @@ npm run build
 ```
 
 Vite is configured as multi-page (`appType: mpa`) so all site HTML pages are emitted in `dist/`.
+
+## Security Hardening Added
+
+- Chat HTML output is sanitized on the client before rendering.
+- Backend CORS uses an allowlist (`CORS_ALLOW_ORIGINS`) instead of wildcard.
+- Per-route rate limiting for `/api/chat` and `/api/ai-news`.
+- Request body size limits for API endpoints.
+- AI news endpoint now uses cache + trust scoring to reduce abuse and improve content quality.
+- Security response headers are added to proxy responses.
+
+## Quality Gates
+
+Run these locally before deploy:
+
+```bash
+npm run quality:ci
+```
+
+This runs:
+
+- production build
+- HTML validation
+- Playwright smoke tests
+
+CI workflow (`.github/workflows/quality-gates.yml`) also runs Lighthouse and broken-link checks.
+
+## Page Scaffolding Helper
+
+Use a shared page template to avoid repeating boilerplate:
+
+```bash
+npm run scaffold:page -- my-new-page "My New Page | SanzyAI" "Meta description here"
+```

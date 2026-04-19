@@ -238,8 +238,61 @@ const packs = [
         ],
         fbt:[1,9],
         link:'https://gumroad.com/sanzyai'
+    },
+    {
+        id:11, name:'Claude Code Engineer Pack (120 Prompts)',
+        emoji:'🧠', bgColor:'linear-gradient(135deg,#12213A,#274A7A)',
+        price:1.99, origPrice:19, priceCategory:'1-5',
+        skipLaunchPromo:true,
+        platforms:['claude','chatgpt','gemini','business'],
+        count:120, category:'Claude / Coding',
+        rating:4.9, reviews:226, reviewCount:'226',
+        badge:'💻 Dev Bestseller', badgeClass:'badge-gold',
+        cardClass:'bestseller',
+        desc:'120 production-ready Claude coding prompts for debugging, error tracing, refactoring, feature implementation, testing, reviews, performance, security and architecture. Built for everyday developers who want faster, cleaner code shipping.',
+        included:[
+            'Debug any stack traces and runtime crashes',
+            'Find hidden logic bugs and edge-case regressions',
+            'Refactor legacy modules with safer migration plans',
+            'Add new features from rough product requirements',
+            'Generate unit, integration and E2E test prompts',
+            'Code review prompts for quality and maintainability',
+            'Performance profiling and optimization workflows',
+            'Security auditing prompts for web and API code',
+            'Database schema, query and indexing improvements',
+            'DevOps and CI prompts for release confidence'
+        ],
+        samples:[
+            { label:'Debug Any Error Fast', text:'You are a senior engineer. Debug this issue using root-cause analysis. Context: [STACK/FRAMEWORK], Error: [PASTE ERROR], Relevant code: [PASTE CODE]. Return: 1) probable root causes ranked by likelihood, 2) exact minimal fix patch, 3) explanation of why it fails, 4) tests to prevent recurrence, 5) quick rollback-safe fallback if fix cannot ship today.' },
+            { label:'Feature Builder From Product Ask', text:'Act as a staff engineer. Implement this feature from requirements: [FEATURE REQUEST]. Existing stack: [STACK], constraints: [PERFORMANCE/SECURITY/DEADLINE]. Return: 1) technical design, 2) updated data model, 3) API contract changes, 4) step-by-step code implementation plan, 5) complete code snippets, 6) migration notes, 7) test plan and acceptance checklist.' },
+            { label:'Refactor Without Breaking', text:'Refactor the following legacy code safely. Code: [PASTE CODE]. Goals: [READABILITY/MODULARITY/PERF]. Return: 1) anti-patterns found, 2) staged refactor steps, 3) transformed code, 4) backward compatibility notes, 5) risk matrix, 6) measurable before-vs-after quality improvements.' },
+            { label:'Code Review Beyond Style', text:'Perform a rigorous code review on this PR diff: [PASTE DIFF]. Focus on correctness, race conditions, error handling, security, test coverage, maintainability and performance. Output should include: critical issues first, suggested patch snippets, missing tests, and a merge recommendation with confidence score.' }
+        ],
+        reviews_data:[
+            { name:'Rohan P.', rating:5, text:'Best $1.99 I spent this year. The debug prompts alone saved me hours in production incidents.', date:'4 days ago' },
+            { name:'Elena S.', rating:5, text:'Feature prompts are excellent. I use this pack daily for backend and frontend tasks.', date:'1 week ago' },
+            { name:'Marco D.', rating:5, text:'Very practical for real developers, not generic fluff. Great coverage from errors to tests.', date:'2 weeks ago' }
+        ],
+        fbt:[1,3],
+        link:'https://gumroad.com/sanzyai'
     }
 ];
+
+function getPriceCategory(price) {
+    if (price === 0) return 'free';
+    if (price <= 5) return '1-5';
+    if (price <= 15) return '5-15';
+    if (price <= 30) return '15-30';
+    return '30+';
+}
+
+// Month-1 launch promo: all paid packs are 50% off.
+packs.forEach((pack) => {
+    if (pack.price > 0 && !pack.skipLaunchPromo) {
+        pack.price = Number((pack.price * 0.5).toFixed(2));
+        pack.priceCategory = getPriceCategory(pack.price);
+    }
+});
 
 // =============================================
 // STATE
@@ -250,6 +303,42 @@ let activeSort = 'popular';
 let searchQuery = '';
 let wishlist = new Set();
 let filteredPacks = [...packs];
+let activeModalEl = null;
+let lastFocusedEl = null;
+
+function getModalFocusableElements(modalEl) {
+    if (!modalEl) return [];
+    return Array.from(modalEl.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+        .filter((el) => !el.hasAttribute('disabled'));
+}
+
+function openModalDialog(modalEl) {
+    if (!modalEl) return;
+    lastFocusedEl = document.activeElement;
+    activeModalEl = modalEl;
+    modalEl.classList.add('open');
+    modalEl.setAttribute('role', 'dialog');
+    modalEl.setAttribute('aria-modal', 'true');
+    document.body.style.overflow = 'hidden';
+
+    const focusable = getModalFocusableElements(modalEl);
+    if (focusable.length) {
+        setTimeout(() => focusable[0].focus(), 0);
+    }
+}
+
+function closeModalDialog(modalEl) {
+    if (!modalEl) return;
+    modalEl.classList.remove('open');
+    document.body.style.overflow = '';
+    if (activeModalEl === modalEl) {
+        activeModalEl = null;
+    }
+
+    if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+        lastFocusedEl.focus();
+    }
+}
 
 // =============================================
 // RENDER PACKS
@@ -654,13 +743,11 @@ window.openProduct = function(id) {
         </div>` : ''}
     `;
 
-    document.getElementById('prodModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    openModalDialog(document.getElementById('prodModal'));
 }
 
 window.closeModal = function() {
-    document.getElementById('prodModal').classList.remove('open');
-    document.body.style.overflow = '';
+    closeModalDialog(document.getElementById('prodModal'));
 }
 
 // =============================================
@@ -694,13 +781,11 @@ window.openPreview = function(id) {
             }
         </div>`;
 
-    document.getElementById('previewModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    openModalDialog(document.getElementById('previewModal'));
 }
 
 window.closePreview = function() {
-    document.getElementById('previewModal').classList.remove('open');
-    document.body.style.overflow = '';
+    closeModalDialog(document.getElementById('previewModal'));
 }
 
 // =============================================
@@ -721,13 +806,11 @@ window.copyPrompt = function(text, btn) {
 // EMAIL MODAL (Free Pack)
 // =============================================
 window.openEmailModal = function() {
-    document.getElementById('emailModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    openModalDialog(document.getElementById('emailModal'));
 }
 
 window.closeEmailModal = function() {
-    document.getElementById('emailModal').classList.remove('open');
-    document.body.style.overflow = '';
+    closeModalDialog(document.getElementById('emailModal'));
 }
 
 window.handleFreeDownload = async function(e) {
@@ -838,6 +921,23 @@ document.getElementById('previewModal').addEventListener('click', function(e) {
 
 // Escape key
 document.addEventListener('keydown', e => {
+    if (e.key === 'Tab' && activeModalEl) {
+        const focusable = getModalFocusableElements(activeModalEl);
+        if (focusable.length) {
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+
+            if (e.shiftKey && active === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && active === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    }
+
     if (e.key === 'Escape') {
         closeModal();
         closePreview();

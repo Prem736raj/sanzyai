@@ -7,9 +7,20 @@
     "dev": "vite",
     "bot:proxy": "node server/groq-proxy.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scaffold:page": "node scripts/scaffold-page.mjs",
+    "test:smoke": "npx playwright install chromium && start-server-and-test \"vite preview --host 127.0.0.1 --port 4173\" http://127.0.0.1:4173 \"playwright test\"",
+    "validate:html": "html-validate \"*.html\"",
+    "quality:ci": "npm run build && npm run validate:html && npm run test:smoke"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "html-validate": "^10.13.1",
+    "start-server-and-test": "^3.0.2",
     "vite": "^8.0.4"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.0",
+    "jspdf": "^4.2.1"
   }
 }

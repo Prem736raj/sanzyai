@@ -4,6 +4,39 @@
 ============================================ */
 
 /* ============================================
+   ACCESSIBILITY BASELINE
+============================================ */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #111827;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    z-index: 1000000;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus-visible {
+    top: 12px;
+}
+
+:focus-visible {
+    outline: 3px solid #16a34a;
+    outline-offset: 2px;
+}
+
+body.light-mode :focus-visible {
+    outline-color: #0f766e;
+}
+
+/* ============================================
    LOADING SCREEN
 ============================================ */
 .global-loader {
@@ -461,7 +494,7 @@ body.light-mode {
     --border: rgba(15, 23, 42, 0.14);
     --border-s: rgba(15, 23, 42, 0.1);
     --border-subtle: rgba(15, 23, 42, 0.09);
-    background: #f4f7fb !important;
+    background: #f7fafc !important;
     color: #0f172a !important;
 }
 

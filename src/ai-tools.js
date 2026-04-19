@@ -304,6 +304,81 @@ const tools = [
     }
 ];
 
+const domainAlternatives = [
+    {
+        domain: 'Chat',
+        subtitle: 'Assistants and daily Q&A',
+        options: [
+            { tier: 'free', name: 'Gemini (Free)', link: 'https://gemini.google.com' },
+            { tier: 'paid', name: 'ChatGPT Plus', link: 'https://chat.openai.com' },
+            { tier: 'paid', name: 'Claude Pro', link: 'https://claude.ai' }
+        ]
+    },
+    {
+        domain: 'Code',
+        subtitle: 'Generation, debug and refactor',
+        options: [
+            { tier: 'free', name: 'Codeium', link: 'https://codeium.com' },
+            { tier: 'paid', name: 'GitHub Copilot', link: 'https://github.com/features/copilot' },
+            { tier: 'paid', name: 'Cursor Pro', link: 'https://cursor.com' }
+        ]
+    },
+    {
+        domain: 'Image Generation',
+        subtitle: 'Art, design and product creatives',
+        options: [
+            { tier: 'free', name: 'Stable Diffusion', link: 'https://stability.ai' },
+            { tier: 'paid', name: 'Midjourney', link: 'https://midjourney.com' },
+            { tier: 'paid', name: 'Adobe Firefly', link: 'https://firefly.adobe.com' }
+        ]
+    },
+    {
+        domain: 'Video',
+        subtitle: 'Text-to-video and AI edits',
+        options: [
+            { tier: 'free', name: 'CapCut AI Tools', link: 'https://www.capcut.com' },
+            { tier: 'paid', name: 'Runway', link: 'https://runwayml.com' },
+            { tier: 'paid', name: 'Synthesia', link: 'https://synthesia.io' }
+        ]
+    },
+    {
+        domain: 'Voice',
+        subtitle: 'Voiceover and speech synthesis',
+        options: [
+            { tier: 'free', name: 'Coqui TTS', link: 'https://coqui.ai' },
+            { tier: 'paid', name: 'ElevenLabs', link: 'https://elevenlabs.io' },
+            { tier: 'paid', name: 'Murf AI', link: 'https://murf.ai' }
+        ]
+    },
+    {
+        domain: 'SEO & Marketing',
+        subtitle: 'Planning, content and optimization',
+        options: [
+            { tier: 'free', name: 'Google Trends', link: 'https://trends.google.com' },
+            { tier: 'paid', name: 'Surfer SEO', link: 'https://surferseo.com' },
+            { tier: 'paid', name: 'Semrush', link: 'https://semrush.com' }
+        ]
+    },
+    {
+        domain: 'Research',
+        subtitle: 'Citations and deeper answers',
+        options: [
+            { tier: 'free', name: 'Consensus', link: 'https://consensus.app' },
+            { tier: 'paid', name: 'Perplexity Pro', link: 'https://perplexity.ai' },
+            { tier: 'paid', name: 'Elicit', link: 'https://elicit.com' }
+        ]
+    },
+    {
+        domain: 'Automation',
+        subtitle: 'Connect tools and workflows',
+        options: [
+            { tier: 'free', name: 'n8n (Self-hosted)', link: 'https://n8n.io' },
+            { tier: 'paid', name: 'Zapier', link: 'https://zapier.com' },
+            { tier: 'paid', name: 'Make', link: 'https://www.make.com' }
+        ]
+    }
+];
+
 // =============================================
 // STATE
 // =============================================
@@ -344,7 +419,7 @@ function renderTools() {
         const isSaved = savedTools.has(tool.id);
 
         return `
-        <div class="tool-card ${tool.featured ? 'featured' : ''}" data-id="${tool.id}">
+        <div class="tool-card ${tool.featured ? 'featured' : ''}" data-id="${tool.id}" role="button" tabindex="0" onclick="openToolDetails(${tool.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openToolDetails(${tool.id});}">
             <div class="card-top">
                 <div class="card-left">
                     <div class="tool-logo" style="background:${tool.logoBg};color:${tool.logoColor};">
@@ -357,7 +432,7 @@ function renderTools() {
                 </div>
                 <div class="card-actions-top">
                     <button class="bookmark-btn ${isSaved ? 'saved' : ''}" 
-                        onclick="toggleSave(${tool.id}, this)" 
+                        onclick="event.stopPropagation();toggleSave(${tool.id}, this)" 
                         title="${isSaved ? 'Remove from saved' : 'Save tool'}">
                         ${isSaved ? '❤️' : '🤍'}
                     </button>
@@ -385,10 +460,11 @@ function renderTools() {
             <div class="card-btns">
                 <a href="${tool.link}" target="_blank" rel="noopener sponsored"
                    class="visit-btn"
-                   onclick="showToast('Opening ${tool.name}...','🌐')">
+                   onclick="event.stopPropagation();showToast('Opening ${tool.name}...','🌐')"
+                   >
                     🔗 Visit Tool
                 </a>
-                <button class="review-btn" onclick="quickCompare(${tool.id})">
+                <button class="review-btn" onclick="event.stopPropagation();quickCompare(${tool.id})">
                     ⚖️ Compare
                 </button>
             </div>
@@ -396,6 +472,7 @@ function renderTools() {
             <div class="compare-wrap">
                 <input type="checkbox" class="compare-cb" id="cmp-${tool.id}"
                     ${isCompared ? 'checked' : ''}
+                    onclick="event.stopPropagation()"
                     onchange="toggleCompare(${tool.id}, this)">
                 <label class="compare-label" for="cmp-${tool.id}">
                     ⚖️ Add to Compare ${isCompared ? '(selected)' : ''}
@@ -403,6 +480,95 @@ function renderTools() {
             </div>
         </div>`;
     }).join('');
+}
+
+function renderAlternatives() {
+    const grid = document.getElementById('alternativesGrid');
+    if (!grid) return;
+
+    grid.innerHTML = domainAlternatives.map((group) => `
+        <article class="alt-card">
+            <div class="alt-head">
+                <h3 class="alt-domain">${group.domain}</h3>
+                <span class="alt-sub">${group.subtitle}</span>
+            </div>
+            <div class="alt-list">
+                ${group.options.map((option) => `
+                    <div class="alt-item">
+                        <div class="alt-left">
+                            <span class="alt-chip ${option.tier}">${option.tier}</span>
+                            <span class="alt-name">${option.name}</span>
+                        </div>
+                        <a class="alt-link" href="${option.link}" target="_blank" rel="noopener sponsored" onclick="showToast('Opening ${option.name}...','🌐')">Visit ↗</a>
+                    </div>
+                `).join('')}
+            </div>
+        </article>
+    `).join('');
+}
+
+function renderToolDeepDescription(tool) {
+    const categoryText = tool.category.toLowerCase();
+    return [
+        `${tool.name} is one of the strongest options in ${categoryText} right now, especially if you want dependable output quality and a fast onboarding path without heavy setup overhead.`,
+        `Teams usually adopt ${tool.name} for three reasons: it shortens production time, gives more predictable output quality than manual workflows, and scales from solo users to production teams with fewer process bottlenecks.`,
+        `If your goal is to ship faster while keeping quality high, this tool is a practical pick because it balances usability, feature depth, and clear day-to-day value.`
+    ];
+}
+
+function renderFeaturePills(tool) {
+    const flags = [
+        { key: 'freeplan', label: 'Free Plan' },
+        { key: 'api', label: 'API Access' },
+        { key: 'mobile', label: 'Mobile App' },
+        { key: 'team', label: 'Team Workspace' },
+        { key: 'offline', label: 'Offline Mode' }
+    ];
+
+    return flags
+        .filter((item) => tool.features[item.key])
+        .map((item) => `<span class="tool-detail-pill">${item.label}</span>`)
+        .join('');
+}
+
+window.openToolDetails = function(id) {
+    const tool = tools.find((t) => t.id === id);
+    const modal = document.getElementById('toolDetailModal');
+    const content = document.getElementById('toolDetailBody');
+    if (!tool || !modal || !content) return;
+
+    const description = renderToolDeepDescription(tool);
+
+    content.innerHTML = `
+        <div class="tool-detail-hero">
+            <div class="tool-detail-logo" style="background:${tool.logoBg};color:${tool.logoColor};">${tool.emoji}</div>
+            <div>
+                <h3 class="tool-detail-title">${tool.name}</h3>
+                <p class="tool-detail-sub">${tool.category} • ${tool.priceLabel} • Rated ${tool.rating}/5</p>
+            </div>
+        </div>
+        <div class="tool-detail-pills">${renderFeaturePills(tool)}</div>
+        <div class="tool-detail-content">
+            <p>${description[0]}</p>
+            <p>${description[1]}</p>
+            <p>${description[2]}</p>
+            <p>${tool.desc}</p>
+        </div>
+        <div class="tool-detail-actions">
+            <a href="${tool.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary" onclick="showToast('Opening ${tool.name}...','🌐')">🔗 Visit ${tool.name}</a>
+            <button class="btn btn-outline" onclick="closeToolDetails();quickCompare(${tool.id});">⚖️ Add To Compare</button>
+        </div>
+    `;
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+window.closeToolDetails = function() {
+    const modal = document.getElementById('toolDetailModal');
+    if (!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
 }
 
 // =============================================
@@ -771,6 +937,7 @@ window.addEventListener('DOMContentLoaded', () => {
     updateFilterCounts();
     sortToolsData();
     renderTools();
+    renderAlternatives();
 
     // Hamburger
     const ham = document.getElementById('ham');
@@ -795,6 +962,21 @@ window.addEventListener('DOMContentLoaded', () => {
             scrollTopBtn.classList.toggle('vis', window.scrollY > 400);
         });
     }
+
+    const toolModal = document.getElementById('toolDetailModal');
+    if (toolModal) {
+        toolModal.addEventListener('click', (event) => {
+            if (event.target === toolModal) {
+                window.closeToolDetails();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            window.closeToolDetails();
+        }
+    });
 });
 
 console.log('%c🤖 SanzyAI — AI Tools Directory', 'color:#6C35DE;font-weight:bold;font-size:16px;');

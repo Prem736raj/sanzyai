@@ -1,0 +1,16 @@
+SEO Starter Guide
+
+Step 1: Find one primary keyword per page.
+Step 2: Place keyword in title, H1 and first paragraph.
+Step 3: Keep URL short and descriptive.
+Step 4: Add one internal link to another useful page.
+Step 5: Add one external reference link where relevant.
+Step 6: Use image alt text with context.
+Step 7: Write a meta description under 160 chars.
+Step 8: Publish consistently and update pages monthly.
+
+Simple publishing rhythm:
+- Week 1: 2 pages
+- Week 2: 2 pages
+- Week 3: refresh top page
+- Week 4: add FAQ schema and improve CTA

@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 (function() {
     'use strict';
 
@@ -10,19 +12,19 @@
         const widgetHTML = `
             <!-- Floating Button -->
             <div class="sanzy-btn-wrap">
-                <button class="sanzy-float-btn" id="sanzyFloatBtn" onclick="window.SanzyBot.toggle()" aria-label="Chat with Sanzy AI" draggable="false">
+                <button class="sanzy-float-btn" id="sanzyFloatBtn" onclick="window.SanzyBot.toggle()" aria-label="Chat with Sanzy AI" aria-controls="sanzyWindow" aria-expanded="false" draggable="false">
                     🤖
                     <div class="sanzy-notif" id="sanzyNotif">1</div>
                 </button>
             </div>
 
             <!-- Chat Window -->
-            <div class="sanzy-window" id="sanzyWindow" role="dialog" aria-label="Sanzy AI Chat">
+            <div class="sanzy-window" id="sanzyWindow" role="dialog" aria-modal="true" aria-labelledby="sanzyDialogTitle" aria-label="Sanzy AI Chat" tabindex="-1">
                 <!-- Header -->
                 <div class="sanzy-header">
                     <div class="sanzy-avatar">🤖</div>
                     <div class="sanzy-header-info">
-                        <span class="sanzy-name">Sanzy — AI Assistant</span>
+                        <span class="sanzy-name" id="sanzyDialogTitle">Sanzy — AI Assistant</span>
                             <div class="sanzy-status">
                                 <span class="sanzy-status-dot" id="sanzyStatusDot"></span>
                                 <span id="sanzyStatusText">Demo mode · Simulated responses</span>
@@ -86,6 +88,7 @@
         currentPage: 'home',
         notifCount: 1,
         typingTimer: null,
+        lastFocusedEl: null,
 
         // ---- DOM REFS ----
         get window() { return document.getElementById('sanzyWindow'); },
@@ -456,6 +459,39 @@ I can help you with:
                     this.sendBtn.disabled = this.input.value.trim().length === 0;
                 });
             }
+
+            // Keep keyboard focus trapped while dialog is open.
+            document.addEventListener('keydown', (e) => {
+                if (!this.isOpen) return;
+
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    this.close();
+                    return;
+                }
+
+                if (e.key !== 'Tab') return;
+                const focusable = this.getFocusableElements();
+                if (!focusable.length) return;
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                const active = document.activeElement;
+
+                if (e.shiftKey && active === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && active === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            });
+        },
+
+        getFocusableElements() {
+            if (!this.window) return [];
+            return Array.from(this.window.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter((el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
         },
 
         setupAutoOpen() {
@@ -480,8 +516,10 @@ I can help you with:
         // =============================================
         open() {
             this.isOpen = true;
+            this.lastFocusedEl = document.activeElement;
             this.window.classList.add('open');
             this.floatBtn.classList.add('bot-open');
+            this.floatBtn.setAttribute('aria-expanded', 'true');
             this.floatBtn.textContent = '';
             this.floatBtn.innerHTML = '<span>✕</span>';
             this.notif.classList.add('hide');
@@ -500,7 +538,12 @@ I can help you with:
             this.isOpen = false;
             this.window.classList.remove('open');
             this.floatBtn.classList.remove('bot-open');
+            this.floatBtn.setAttribute('aria-expanded', 'false');
             this.floatBtn.innerHTML = '🤖<div class="sanzy-notif hide" id="sanzyNotif">1</div>';
+
+            if (this.lastFocusedEl && typeof this.lastFocusedEl.focus === 'function') {
+                this.lastFocusedEl.focus();
+            }
         },
 
         toggle() {
@@ -539,7 +582,7 @@ I can help you with:
             this.quickRepliesData.forEach(qr => {
                 const btn = document.createElement('button');
                 btn.className = 'qr-btn';
-                btn.innerHTML = `${qr.icon} ${qr.text}`;
+                btn.textContent = `${qr.icon} ${qr.text}`;
                 btn.onclick = () => {
                     this.sendUserMessage(qr.text);
                     this.processMessage(qr.query);
@@ -694,13 +737,14 @@ Still stuck? Email **hello@sanzyai.com** and a human will reply! 🙌`
         // ADD BOT MESSAGE
         // =============================================
         addBotMessage(text) {
+            const safeHtml = this.sanitizeBotHtml(this.formatMessage(text));
             const wrap = document.createElement('div');
             wrap.className = 'sanzy-msg-wrap';
             wrap.innerHTML = `
                 <div class="sanzy-msg-ava">🤖</div>
                 <div>
                     <div class="sanzy-bubble">
-                        <div class="sanzy-bubble-text">${this.formatMessage(text)}</div>
+                        <div class="sanzy-bubble-text">${safeHtml}</div>
                     </div>
                     <div class="sanzy-time">${this.getTime()}</div>
                 </div>
@@ -726,6 +770,16 @@ Still stuck? Email **hello@sanzyai.com** and a human will reply! 🙌`
                 .replace(/^([✅🌐🤖💰🚀📚🔥🎁📈💡⚡✍️🎨📱🥇🥈🥉📩💬🐦📅🔒🎓📧👋🤔😊💪😅🙌🗺️📋🤲👤]) (.+)$/gm, '<div style="display:flex;gap:7px;align-items:flex-start;margin:3px 0;"><span style="flex-shrink:0;">$1</span><span>$2</span></div>')
                 // Newlines to br
                 .replace(/\n/g, '<br>');
+        },
+
+        sanitizeBotHtml(html) {
+            return DOMPurify.sanitize(html, {
+                ALLOWED_TAGS: ['a', 'strong', 'em', 'br', 'div', 'span'],
+                ALLOWED_ATTR: ['href', 'class', 'style', 'target', 'rel'],
+                ALLOWED_URI_REGEXP: /^(?:(?:https?:|mailto:|\/|#).*)$/i,
+                FORBID_TAGS: ['script', 'style', 'iframe', 'object', 'embed'],
+                FORBID_ATTR: [/^on/i],
+            });
         },
 
         // =============================================

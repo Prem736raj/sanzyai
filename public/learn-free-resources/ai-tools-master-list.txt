@@ -1,0 +1,28 @@
+AI Tools Master List
+
+Planning
+- ChatGPT / Claude / Gemini
+- Notion AI
+
+Design + Visuals
+- Canva
+- Midjourney
+- Stable Diffusion
+
+Code + Build
+- GitHub Copilot
+- Cursor
+- Vercel AI SDK
+
+Marketing
+- Surfer SEO
+- Semrush
+- Perplexity
+
+Automation
+- Zapier
+- Make
+- n8n
+
+Rule:
+Choose one tool per category first. Avoid tool overload in first 30 days.

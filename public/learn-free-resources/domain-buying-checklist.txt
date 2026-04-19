@@ -1,0 +1,12 @@
+Domain Buying Checklist
+
+1. Pick one brandable and short name.
+2. Prefer .com when available.
+3. Avoid hyphens and numbers.
+4. Check trademark conflicts.
+5. Enable domain privacy.
+6. Set auto-renew to ON.
+7. Point DNS to hosting provider.
+8. Add CNAME for www.
+9. Verify SSL after DNS propagation.
+10. Save registrar and DNS login details.

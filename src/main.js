@@ -7,6 +7,63 @@ if (canvas) {
     ctx = canvas.getContext('2d');
 }
 
+const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isSmallScreen = window.innerWidth <= 768;
+const lowCpu = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4;
+const lowMemory = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
+const saveData = navigator.connection && navigator.connection.saveData;
+const isLowPowerMode = Boolean(prefersReducedMotion || saveData || (isSmallScreen && (lowCpu || lowMemory)));
+const DEBUG_MODE = new URLSearchParams(window.location.search).get('debug') === '1';
+
+let debugPanelBody = null;
+
+function initDebugPanel() {
+    if (!DEBUG_MODE || document.getElementById('debugPanel')) return;
+
+    const panel = document.createElement('aside');
+    panel.id = 'debugPanel';
+    panel.className = 'debug-panel';
+    panel.innerHTML = `
+        <div class="debug-panel-head">
+            <strong>Debug Events</strong>
+            <span>?debug=1</span>
+        </div>
+        <div class="debug-panel-body" id="debugPanelBody"></div>
+    `;
+    document.body.appendChild(panel);
+    debugPanelBody = document.getElementById('debugPanelBody');
+    debugLogEvent('debug_panel_ready', { page: 'home' });
+}
+
+function debugLogEvent(eventName, params = {}) {
+    if (!DEBUG_MODE || !debugPanelBody) return;
+
+    const now = new Date();
+    const ts = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    const item = document.createElement('div');
+    item.className = 'debug-item';
+
+    const payload = Object.keys(params).length ? JSON.stringify(params) : '{}';
+    item.innerHTML = `
+        <div class="debug-item-top"><span>${eventName}</span><time>${ts}</time></div>
+        <pre>${payload}</pre>
+    `;
+
+    debugPanelBody.prepend(item);
+
+    const maxItems = 20;
+    while (debugPanelBody.children.length > maxItems) {
+        debugPanelBody.removeChild(debugPanelBody.lastChild);
+    }
+}
+
+function trackEvent(eventName, params = {}) {
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, params);
+    }
+    debugLogEvent(eventName, params);
+}
+
 let particles = [];
 let animationId;
 
@@ -84,7 +141,9 @@ class Particle {
 function initParticles() {
     if (!canvas) return;
     particles = [];
-    const count = Math.min(120, Math.floor((canvas.width * canvas.height) / 12000));
+    const density = isLowPowerMode ? 24000 : 12000;
+    const maxCount = isLowPowerMode ? 45 : 120;
+    const count = Math.min(maxCount, Math.floor((canvas.width * canvas.height) / density));
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
     }
@@ -92,7 +151,7 @@ function initParticles() {
 
 function drawConnections() {
     if (!ctx) return;
-    const connectionDistance = 120;
+    const connectionDistance = isLowPowerMode ? 80 : 120;
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
@@ -129,7 +188,7 @@ function animateParticles() {
 }
 
 // Initialize particles if canvas exists
-if (canvas) {
+if (canvas && !isLowPowerMode) {
     const startParticles = () => {
         resizeCanvas();
         initParticles();
@@ -291,6 +350,86 @@ function initCounters() {
 }
 
 // ============================================
+// MINI LAUNCH SCORE METER
+// ============================================
+function initLaunchScoreMeter() {
+    const checks = document.querySelectorAll('.launch-input[type="checkbox"]');
+    const speed = document.getElementById('launchSpeedRange');
+    const speedValue = document.getElementById('launchSpeedValue');
+    const scoreValue = document.getElementById('launchScoreValue');
+    const scoreCircle = document.getElementById('launchScoreCircle');
+    const scoreStatus = document.getElementById('launchScoreStatus');
+    const scoreTip = document.getElementById('launchScoreTip');
+
+    if (!checks.length || !speed || !scoreValue || !scoreCircle || !scoreStatus || !scoreTip) {
+        return;
+    }
+
+    let lastBucket = null;
+
+    const compute = () => {
+        let total = Number(speed.value || 0);
+        let checkedCount = 0;
+        checks.forEach((check) => {
+            if (check.checked) {
+                total += Number(check.dataset.points || 0);
+                checkedCount += 1;
+            }
+        });
+
+        total = Math.max(0, Math.min(100, total));
+        scoreValue.textContent = String(total);
+        scoreCircle.style.background = `conic-gradient(var(--primary-light) ${total * 3.6}deg, rgba(255,255,255,0.08) 0deg)`;
+        if (speedValue) speedValue.textContent = `${speed.value} / 20`;
+
+        if (total >= 85) {
+            scoreStatus.textContent = 'Launch ready';
+            scoreStatus.style.color = '#00FF88';
+            scoreTip.textContent = 'Great job. Focus on distribution and conversion optimization now.';
+        } else if (total >= 60) {
+            scoreStatus.textContent = 'Almost there';
+            scoreStatus.style.color = '#FFB800';
+            scoreTip.textContent = 'Good base. Improve analytics, lead capture, and speed before launch.';
+        } else {
+            scoreStatus.textContent = 'Needs work';
+            scoreStatus.style.color = '#FF6B6B';
+            scoreTip.textContent = 'Start with mobile UX and analytics tracking for the fastest improvement.';
+        }
+
+        const bucket = total >= 85 ? 'ready' : total >= 60 ? 'almost_ready' : 'needs_work';
+
+        // Always show live launch-score state in debug mode.
+        debugLogEvent('homepage_launch_score_state', {
+            score: total,
+            bucket,
+            checked_items: checkedCount,
+            speed_score: Number(speed.value || 0)
+        });
+
+        if (bucket !== lastBucket) {
+            lastBucket = bucket;
+            trackEvent('homepage_launch_score_update', {
+                score: total,
+                bucket,
+                speed_score: Number(speed.value || 0)
+            });
+        }
+    };
+
+    checks.forEach((check) => check.addEventListener('change', () => {
+        trackEvent('homepage_launch_score_checkbox', {
+            points: Number(check.dataset.points || 0),
+            checked: check.checked
+        });
+        compute();
+    }));
+    speed.addEventListener('input', () => {
+        compute();
+    });
+    compute();
+}
+
+// ============================================
 // NEWSLETTER SUBMIT
 // ============================================
 window.handleNewsletterSubmit = function(e) {
@@ -338,35 +477,39 @@ function setActiveNav() {
 }
 
 // Run on load
+initDebugPanel();
 setActiveNav();
+initLaunchScoreMeter();
 
 // ============================================
 // FEATURE CARDS - MOUSE MOVE TILT EFFECT
 // ============================================
 const featureCards = document.querySelectorAll('.feature-card');
 
-featureCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
-        
-        card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+if (!isLowPowerMode) {
+    featureCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-        card.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
+            card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
 
-    card.addEventListener('mouseenter', () => {
-        card.style.transition = 'all 0.1s ease';
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'all 0.1s ease';
+        });
     });
-});
+}
 
 // ============================================
 // SMOOTH SCROLL FOR NAV LINKS

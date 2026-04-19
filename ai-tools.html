@@ -47,7 +47,7 @@
                 <li><a href="/prompt-store">Prompt Store</a></li>
                 <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free">Learn Free</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog">AI News</a></li>
             </ul>
             <div style="display:flex;align-items:center;gap:10px;">
                 <button class="hamburger" id="ham" aria-label="Menu">
@@ -67,7 +67,7 @@
         <li><a href="/prompt-store">💰 Prompt Store</a></li>
         <li><a href="/ai-services">🚀 AI Services</a></li>
         <li><a href="/learn-free">📚 Learn Free</a></li>
-        <li><a href="/blog">📰 Blog</a></li>
+        <li><a href="/blog">📰 AI News</a></li>
     </ul>
 </div>
 
@@ -201,6 +201,25 @@
         </div>
 
         <div class="tools-grid" id="toolsGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     ALTERNATIVES BY DOMAIN
+============================================ -->
+<section class="alternatives-section">
+    <div class="container">
+        <div class="sec-header">
+            <div class="sec-left">
+                <div class="sec-badge">🧭 Free vs Paid</div>
+                <h2 class="sec-title">Tool <span class="gradient-text">Alternatives By Domain</span></h2>
+            </div>
+            <span class="sec-count">Quick picks for chat, code, image generation and more</span>
+        </div>
+
+        <div class="alternatives-grid" id="alternativesGrid">
             <!-- Populated by JS -->
         </div>
     </div>
@@ -371,6 +390,16 @@
         </div>
     </div>
 </footer>
+
+<div class="tool-detail-modal" id="toolDetailModal" role="dialog" aria-label="Tool details">
+    <div class="tool-detail-card">
+        <div class="tool-detail-head">
+            <h3>Tool Overview</h3>
+            <button class="tool-detail-close" onclick="closeToolDetails()" aria-label="Close">✕</button>
+        </div>
+        <div id="toolDetailBody"></div>
+    </div>
+</div>
 
 <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
 

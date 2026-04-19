@@ -3,48 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Blog - Latest News, Tutorials & Tool Reviews | SanzyAI</title>
-    <meta name="description" content="Latest AI news, tutorials, tool reviews and guides. Learn how to use AI tools, make money online, and build websites with AI.">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI</title>
+    <meta name="description" content="Track AI news by type: model releases, product launches, policy, research, funding, and creator opportunities. Daily actionable AI updates.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://sanzyai.com/blog">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="AI Blog - Latest News, Tutorials & Tool Reviews | SanzyAI">
-        <meta property="og:description" content="Latest AI news, tutorials and growth guides with direct paths to tools, prompts and services.">
-        <meta property="og:url" content="https://sanzyai.com/blog">
-        <meta property="og:site_name" content="SanzyAI">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="AI Blog - Latest News, Tutorials & Tool Reviews | SanzyAI">
-        <meta name="twitter:description" content="Latest AI news, tutorials and growth guides with direct paths to tools, prompts and services.">
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "SanzyAI Blog",
-            "url": "https://sanzyai.com/blog",
-            "description": "AI news, tutorials, tool reviews, and growth guides.",
-            "publisher": {
-                "@type": "Organization",
-                "name": "SanzyAI"
-            }
-        }
-        </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI">
+    <meta property="og:description" content="Daily AI news feed with filters for model releases, product launches, policy, funding and research.">
+    <meta property="og:url" content="https://sanzyai.com/blog">
+    <meta property="og:site_name" content="SanzyAI">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "SanzyAI Newsroom",
+      "url": "https://sanzyai.com/blog",
+      "sameAs": ["https://sanzyai.com"]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./src/blog.css">
     <link rel="stylesheet" href="./src/chat.css">
-
-    <!-- Google Analytics (GA4) -->
-        <!-- Google Analytics is loaded only after user consent via globals.loadAnalytics() -->
-
     <link rel="stylesheet" href="./src/globals.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="container">
         <div class="nav-inner">
@@ -59,13 +48,9 @@
                 <li><a href="/prompt-store">Prompt Store</a></li>
                 <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free">Learn Free</a></li>
-                <li><a href="/blog" class="active">Blog</a></li>
+                <li><a href="/blog" class="active">AI News</a></li>
             </ul>
-            <div style="display:flex;align-items:center;gap:10px;">
-                <button class="hamburger" id="ham" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+            <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </div>
 </nav>
@@ -78,137 +63,95 @@
         <li><a href="/prompt-store">💰 Prompt Store</a></li>
         <li><a href="/ai-services">🚀 AI Services</a></li>
         <li><a href="/learn-free">📚 Learn Free</a></li>
-        <li><a href="/blog">📰 Blog</a></li>
+        <li><a href="/blog">📰 AI News</a></li>
     </ul>
 </div>
 
-<!-- BREADCRUMB -->
 <div class="breadcrumb">
     <div class="container">
         <div class="bc-inner">
             <a href="/">🏠 Home</a>
             <span class="bc-sep">›</span>
-            <span>AI Blog</span>
+            <span>AI Newsroom</span>
         </div>
     </div>
 </div>
 
-<!-- BLOG HERO -->
-<section class="blog-hero">
+<section class="news-hero">
     <div class="container">
-        <div class="blog-hero-inner">
-            <div class="blog-label">Updated Daily</div>
-            <h1>AI <span class="gradient-text">Blog</span> & Insights</h1>
-            <p>Latest AI news, tutorials, tool reviews, and guides to help you build, grow and earn with AI in 2025.</p>
-            <div class="blog-stats">
-                <div class="bstat"><span class="bstat-num">150+</span><span class="bstat-lbl">Articles</span></div>
-                <div class="bstat-div"></div>
-                <div class="bstat"><span class="bstat-num">12K+</span><span class="bstat-lbl">Readers</span></div>
-                <div class="bstat-div"></div>
-                <div class="bstat"><span class="bstat-num">Daily</span><span class="bstat-lbl">Updates</span></div>
-                <div class="bstat-div"></div>
-                <div class="bstat"><span class="bstat-num">7</span><span class="bstat-lbl">Categories</span></div>
-            </div>
-            <div class="filter-row" id="filterRow">
-                <button class="fchip active" onclick="filterPosts(this,'all')">📰 All Posts</button>
-                <button class="fchip" onclick="filterPosts(this,'AI Tools')">🤖 AI Tools</button>
-                <button class="fchip" onclick="filterPosts(this,'Domain')">🌐 Domain</button>
-                <button class="fchip" onclick="filterPosts(this,'Make Money')">💰 Make Money</button>
-                <button class="fchip" onclick="filterPosts(this,'Tutorial')">📚 Tutorial</button>
-                <button class="fchip" onclick="filterPosts(this,'Prompts')">💡 Prompts</button>
-                <button class="fchip" onclick="filterPosts(this,'SEO')">📈 SEO</button>
-                <button class="fchip" onclick="filterPosts(this,'Freelancing')">💼 Freelancing</button>
-            </div>
+        <div class="hero-badge">Live Feed • Updated Daily</div>
+        <h1>AI <span class="gradient-text">Newsroom</span></h1>
+        <p>Not just blog posts. This is a live AI intelligence feed organized by news type, urgency and business impact.</p>
+
+        <div class="hero-stats">
+            <div class="hstat"><strong id="statStories">32</strong><span>Stories Today</span></div>
+            <div class="hstat"><strong id="statCritical">7</strong><span>High Impact</span></div>
+            <div class="hstat"><strong id="statFunding">$2.4B</strong><span>Funding Tracked</span></div>
+            <div class="hstat"><strong>6</strong><span>News Types</span></div>
+        </div>
+
+        <div class="ticker-wrap">
+            <div class="ticker" id="breakingTicker"></div>
         </div>
     </div>
 </section>
 
-<section class="cluster-links">
+<section class="news-controls">
     <div class="container">
-        <div class="cluster-head">
-            <div class="sec-title">Topical Clusters That Lead To Results</div>
-            <div class="sec-count">Internal growth paths to our core money pages</div>
-        </div>
-        <div class="cluster-grid">
-            <a class="cluster-card" href="/domain-finder">
-                <span class="cluster-emoji">🌐</span>
-                <span class="cluster-title">Domain Research Cluster</span>
-                <span class="cluster-sub">Read domain pricing and launch guides, then compare real registrar prices.</span>
-            </a>
-            <a class="cluster-card" href="/prompt-store">
-                <span class="cluster-emoji">💰</span>
-                <span class="cluster-title">Prompt Monetization Cluster</span>
-                <span class="cluster-sub">Learn prompt engineering, see examples, then buy ready-made premium packs.</span>
-            </a>
-            <a class="cluster-card" href="/ai-services">
-                <span class="cluster-emoji">🚀</span>
-                <span class="cluster-title">Done-For-You AI Cluster</span>
-                <span class="cluster-sub">Read case studies and implementation guides, then request AI services.</span>
-            </a>
+        <div class="controls-grid">
+            <div class="filter-chips" id="typeFilters"></div>
+            <div class="control-row">
+                <input id="newsSearch" class="news-search" type="text" placeholder="Search AI news, company, model, policy..." oninput="applyNewsFilters()">
+                <select id="impactSort" class="news-select" onchange="applyNewsFilters()">
+                    <option value="newest">Sort: Newest</option>
+                    <option value="impact">Sort: Impact First</option>
+                    <option value="opportunity">Sort: Opportunity</option>
+                </select>
+                <button id="refreshNewsBtn" class="news-select" type="button" onclick="refreshAiNews()">Refresh</button>
+            </div>
+            <div class="news-source-status" id="newsSourceStatus">Loading AI sources...</div>
         </div>
     </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<div class="container">
-    <div class="blog-main">
-        <div class="posts-column">
-            <!-- Featured Post -->
-            <div class="featured-post" id="featuredPost" onclick="openPost(1)">
-                <div class="feat-img">
-                    <div class="feat-img-overlay"></div>
-                    <div class="feat-img-emojis">🤖💰📈</div>
-                    <div class="feat-img-bottom"></div>
-                    <div class="feat-badge-row">
-                        <span class="feat-badge fb-chatgpt">ChatGPT</span>
-                        <span class="feat-badge fb-money">Make Money</span>
-                    </div>
-                    <span class="feat-featured">⭐ Featured</span>
+<section class="news-main">
+    <div class="container">
+        <div class="news-layout">
+            <div>
+                <div class="section-head">
+                    <h2>Live AI News Feed</h2>
+                    <span id="feedCount">Showing 0 stories</span>
                 </div>
-                <div class="feat-body">
-                    <h2 class="feat-title">Complete Guide: How to Use ChatGPT to Make Money in 2025</h2>
-                    <div class="feat-meta">
-                        <span>👤 Sanzy</span>
-                        <span>📅 January 15, 2025</span>
-                        <span>⏱️ 8 min read</span>
-                        <span>👁️ 12.4K views</span>
-                    </div>
-                    <p class="feat-excerpt">Discover the proven strategies top creators are using to generate $1,000–$10,000/month with ChatGPT. From freelance writing and prompt engineering to building AI products — this comprehensive guide covers every income stream with step-by-step action plans.</p>
-                    <div class="feat-bottom">
-                        <div class="feat-tags">
-                            <span class="feat-tag">ChatGPT</span>
-                            <span class="feat-tag">Make Money</span>
-                            <span class="feat-tag">2025 Guide</span>
-                            <span class="feat-tag">Side Hustle</span>
-                        </div>
-                        <button class="read-full-btn" onclick="openPost(1)">Read Full Article →</button>
-                    </div>
+                <div class="news-feed" id="newsFeed"></div>
+                <div class="feed-pager" id="feedPager" hidden>
+                    <span id="feedProgress">Showing 0 of 0 stories</span>
+                    <button id="loadMoreNewsBtn" class="news-select" type="button" onclick="loadMoreNews()">Load More</button>
                 </div>
             </div>
 
-            <div class="sec-head">
-                <div class="sec-title">🔥 Latest Articles</div>
-                <div style="display:flex;align-items:center;gap:10px;">
-                    <span class="sec-count" id="postsCount">Showing 12 posts</span>
-                    <select id="sortSel" onchange="sortPosts()">
-                        <option value="new">Newest</option>
-                        <option value="popular">Most Popular</option>
-                        <option value="reading">Read Time</option>
-                    </select>
+            <aside class="news-side">
+                <div class="side-card">
+                    <h3>Impact Timeline</h3>
+                    <div class="timeline" id="impactTimeline"></div>
                 </div>
-            </div>
-
-            <div class="posts-grid" id="postsGrid"></div>
-            <div class="pagination" id="pagination"></div>
+                <div class="side-card">
+                    <h3>Watchlist</h3>
+                    <p class="side-sub">Bookmark stories to revisit in strategy meetings.</p>
+                    <div id="watchlistBox" class="watchlist-box">No saved items yet.</div>
+                </div>
+                <div class="side-card">
+                    <h3>Quick Actions</h3>
+                    <a class="side-link" href="/ai-tools">Find tools mentioned in news →</a>
+                    <a class="side-link" href="/prompt-store">Get implementation prompts →</a>
+                    <a class="side-link" href="/ai-services">Execute with done-for-you help →</a>
+                </div>
+            </aside>
         </div>
     </div>
-</div>
+</section>
 
-<!-- POST MODAL -->
-<div class="post-modal" id="postModal" onclick="handleModalClick(event)">
-    <div class="pm-inner">
-        <div class="pm-box" id="pmBox"></div>
-    </div>
+<div class="news-modal" id="newsModal" onclick="closeNewsModal(event)">
+    <article class="news-modal-card" id="newsModalCard"></article>
 </div>
 
 <footer class="footer">
@@ -219,11 +162,13 @@
                 <span class="logo-text">SanzyAI</span>
             </a>
             <div class="footer-links">
-                <a href="/about">About</a><a href="/contact">Contact</a>
-                <a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+                <a href="/privacy-policy">Privacy</a>
+                <a href="/terms-of-service">Terms</a>
             </div>
         </div>
-        <div class="footer-copy">© 2026 SanzyAI.com — AI Blog & Resources</div>
+        <div class="footer-copy">© 2026 SanzyAI.com — AI Newsroom</div>
     </div>
 </footer>
 
