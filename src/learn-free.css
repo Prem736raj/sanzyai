@@ -749,18 +749,18 @@ body.light-mode .path-switch {
     border-color: rgba(79, 121, 255, 0.38);
 }
 body.light-mode .path-btn {
-    color: #1f3a8a;
-    background: #f6f9ff;
-    border: 1px solid rgba(79, 121, 255, 0.35);
+    color: #0f172a;
+    background: #f8fbff;
+    border: 1px solid #94a3b8;
 }
 body.light-mode .path-btn:not(.active):hover {
     background: #edf3ff;
     color: #0f2d7a;
 }
 body.light-mode .path-btn#paidPathBtn:not(.active) {
-    color: #0f172a;
-    background: #e2e8f0;
-    border-color: #94a3b8;
+    color: #334155;
+    background: #dbe4f0;
+    border-color: #64748b;
 }
 body.light-mode .path-btn.active {
     color: #ffffff;
