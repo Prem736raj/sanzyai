@@ -1669,3 +1669,154 @@ body.js-ready .fade-up.visible {
         padding: 24px;
     }
 }
+
+/* ============================================
+   HOME PAGE LIGHT MODE FIXES
+============================================ */
+body.light-mode .hero {
+    background: linear-gradient(180deg, #f8fbff 0%, #f5f8ff 70%, #f8fbff 100%);
+}
+
+body.light-mode .hero-bg-orb {
+    opacity: 0.08;
+    filter: blur(90px);
+}
+
+body.light-mode .hero-badge {
+    background: #e9efff;
+    border-color: rgba(79, 121, 255, 0.45);
+    color: #1e3a8a;
+}
+
+body.light-mode .hero-badge .badge-dot {
+    background: #2563eb;
+}
+
+body.light-mode .hero-subtitle {
+    color: #334155;
+}
+
+body.light-mode .hero-stat-number {
+    background: none;
+    -webkit-text-fill-color: #1e3a8a;
+    color: #1e3a8a;
+}
+
+body.light-mode .hero-stat-label {
+    color: #334155;
+}
+
+body.light-mode .hero-stat-divider {
+    background: rgba(79, 121, 255, 0.28);
+}
+
+body.light-mode .trust-bar {
+    background: #eef4ff;
+    border-top-color: rgba(79, 121, 255, 0.22);
+    border-bottom-color: rgba(79, 121, 255, 0.22);
+}
+
+body.light-mode .trust-bar::before {
+    background: linear-gradient(90deg, #eef4ff, transparent);
+}
+
+body.light-mode .trust-bar::after {
+    background: linear-gradient(-90deg, #eef4ff, transparent);
+}
+
+body.light-mode .trust-item {
+    color: #0f172a;
+}
+
+body.light-mode .section-subtitle {
+    color: #334155;
+}
+
+body.light-mode .feature-card {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.26) !important;
+}
+
+body.light-mode .feature-card:hover {
+    background: #f8fbff;
+    border-color: rgba(79, 121, 255, 0.5) !important;
+    box-shadow: 0 18px 42px rgba(59, 130, 246, 0.16), 0 0 0 1px rgba(59, 130, 246, 0.1) !important;
+}
+
+body.light-mode .feature-title {
+    color: #0f172a;
+}
+
+body.light-mode .feature-description {
+    color: #334155;
+}
+
+body.light-mode .feature-list li {
+    color: #334155;
+}
+
+body.light-mode .feature-tag.tag-purple {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+body.light-mode .feature-tag.tag-blue {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+body.light-mode .feature-tag.tag-green {
+    background: #dcfce7;
+    color: #166534;
+}
+
+body.light-mode .feature-tag.tag-pink {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+body.light-mode .feature-tag.tag-orange {
+    background: #ffedd5;
+    color: #9a3412;
+}
+
+body.light-mode .feature-tag.tag-teal {
+    background: #ccfbf1;
+    color: #115e59;
+}
+
+body.light-mode .launch-meter-card {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.26);
+}
+
+body.light-mode .launch-sub,
+body.light-mode #launchSpeedValue,
+body.light-mode .score-tip {
+    color: #334155;
+}
+
+body.light-mode .launch-checks label,
+body.light-mode .launch-range-wrap label {
+    color: #0f172a;
+}
+
+body.light-mode .launch-right {
+    border-color: rgba(79, 121, 255, 0.3);
+    background: #f8fbff;
+}
+
+body.light-mode .score-circle::before {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.26);
+}
+
+body.light-mode .score-value,
+body.light-mode .score-label,
+body.light-mode .score-status {
+    color: #0f172a;
+}
+
+body.light-mode .launch-checks input[type='checkbox'] {
+    accent-color: #2563eb;
+}
