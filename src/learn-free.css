@@ -735,6 +735,155 @@ body.light-mode {
         var(--bg);
 }
 body.light-mode .navbar { background: rgba(248, 251, 255, 0.88); }
+
+/* Hero badge: improve contrast in day mode */
+body.light-mode .hero-badge {
+    background: #dcfce7;
+    border-color: #4ade80;
+    color: #166534;
+}
+
+/* Path switch and paid button visibility */
+body.light-mode .path-switch {
+    background: #e8efff;
+    border-color: rgba(79, 121, 255, 0.38);
+}
+body.light-mode .path-btn {
+    color: #1f3a8a;
+    background: #f6f9ff;
+    border: 1px solid rgba(79, 121, 255, 0.35);
+}
+body.light-mode .path-btn:not(.active):hover {
+    background: #edf3ff;
+    color: #0f2d7a;
+}
+body.light-mode .path-btn#paidPathBtn:not(.active) {
+    color: #0f172a;
+    background: #e2e8f0;
+    border-color: #94a3b8;
+}
+body.light-mode .path-btn.active {
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* Progress widget card visibility */
+body.light-mode .ring-card,
+body.light-mode .streak-card {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.34);
+}
+body.light-mode .ring-bg {
+    stroke: rgba(79, 121, 255, 0.22);
+}
+body.light-mode .ring-center strong {
+    color: #0f172a;
+}
+body.light-mode .ring-center span {
+    color: #334155;
+}
+body.light-mode .streak-item {
+    background: #f4f7ff;
+    border-color: rgba(79, 121, 255, 0.28);
+}
+body.light-mode .streak-item strong {
+    color: #0f172a;
+}
+body.light-mode .streak-item span {
+    color: #334155;
+}
+
+/* Roadmap list and cards visibility */
+body.light-mode .roadmap-track {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.3);
+}
+body.light-mode .stage-card {
+    background: #f8faff;
+    border-color: rgba(79, 121, 255, 0.26);
+}
+body.light-mode .stage-name {
+    color: #0f172a;
+}
+body.light-mode .stage-time {
+    color: #334155;
+}
+body.light-mode .stage-index {
+    color: #1e3a8a;
+    background: rgba(79, 121, 255, 0.18);
+}
+
+/* Right panel cards and meta pills */
+body.light-mode .stage-panel {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.3);
+}
+body.light-mode .stage-panel h3 {
+    color: #0f172a;
+}
+body.light-mode .stage-panel p,
+body.light-mode .panel-list li {
+    color: #334155;
+}
+body.light-mode .pill {
+    background: #f1f5ff;
+    border-color: rgba(79, 121, 255, 0.45);
+    color: #1e3a8a;
+}
+body.light-mode .stage-step {
+    background: #f8faff;
+    border-color: rgba(79, 121, 255, 0.28);
+}
+body.light-mode .stage-step-title {
+    color: #0f172a;
+}
+body.light-mode .stage-step-desc {
+    color: #334155;
+}
+
+/* Budget yearly labels */
+body.light-mode .sim-sub {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* Secondary action button visibility */
+body.light-mode .btn-main.btn-secondary {
+    background: #e8efff;
+    border-color: rgba(79, 121, 255, 0.48);
+    color: #1e3a8a;
+}
+body.light-mode .btn-main.btn-secondary:disabled {
+    background: #eef2f7;
+    color: #64748b;
+    border-color: #cbd5e1;
+}
+
+/* Launch checklist labels and checkbox visibility */
+body.light-mode .check-item {
+    border-color: rgba(79, 121, 255, 0.3);
+}
+body.light-mode .check-item span {
+    color: #0f172a;
+}
+body.light-mode .check-item input {
+    accent-color: #2563eb;
+}
+body.light-mode .check-item input[type='checkbox'] {
+    border: 1.5px solid #475569;
+    background: #ffffff;
+}
+
+/* Checklist progress text and track visibility */
+body.light-mode #checkProgressText {
+    color: #334155;
+    font-weight: 600;
+}
+body.light-mode .check-progress-bar {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+}
+
 body.light-mode .kpi,
 body.light-mode .roadmap-track,
 body.light-mode .stage-panel,
