@@ -1677,6 +1677,53 @@ body.light-mode .hero {
     background: linear-gradient(180deg, #f8fbff 0%, #f5f8ff 70%, #f8fbff 100%);
 }
 
+body.light-mode .navbar {
+    background: rgba(248, 251, 255, 0.9);
+    border-bottom: 1px solid rgba(79, 121, 255, 0.18);
+}
+
+body.light-mode .navbar.scrolled {
+    background: rgba(248, 251, 255, 0.96);
+    border-bottom-color: rgba(79, 121, 255, 0.24);
+}
+
+body.light-mode .logo-text {
+    background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-mode .nav-menu a {
+    color: #0f172a;
+}
+
+body.light-mode .nav-menu a:hover {
+    background: rgba(79, 121, 255, 0.12);
+}
+
+body.light-mode .nav-menu a.active {
+    color: #0f172a;
+    background: rgba(79, 121, 255, 0.18);
+}
+
+body.light-mode .hamburger span {
+    background: #0f172a;
+}
+
+body.light-mode .mobile-menu {
+    background: rgba(248, 251, 255, 0.98);
+    border-bottom-color: rgba(79, 121, 255, 0.22);
+}
+
+body.light-mode .mobile-menu a {
+    color: #0f172a;
+}
+
+body.light-mode .mobile-menu a:hover {
+    background: rgba(79, 121, 255, 0.14);
+}
+
 body.light-mode .hero-bg-orb {
     opacity: 0.08;
     filter: blur(90px);
@@ -1694,6 +1741,18 @@ body.light-mode .hero-badge .badge-dot {
 
 body.light-mode .hero-subtitle {
     color: #334155;
+}
+
+body.light-mode .btn-outline {
+    color: #1e3a8a;
+    border-color: rgba(79, 121, 255, 0.42);
+    background: rgba(255, 255, 255, 0.86);
+}
+
+body.light-mode .btn-outline:hover {
+    color: #0f172a;
+    background: rgba(79, 121, 255, 0.12);
+    border-color: rgba(79, 121, 255, 0.65);
 }
 
 body.light-mode .hero-stat-number {
@@ -1730,6 +1789,16 @@ body.light-mode .trust-item {
 
 body.light-mode .section-subtitle {
     color: #334155;
+}
+
+body.light-mode .section-label {
+    background: rgba(79, 121, 255, 0.12);
+    border-color: rgba(79, 121, 255, 0.32);
+    color: #1e3a8a;
+}
+
+body.light-mode .section-label::before {
+    background: #2563eb;
 }
 
 body.light-mode .feature-card {
@@ -1801,6 +1870,10 @@ body.light-mode .launch-range-wrap label {
     color: #0f172a;
 }
 
+body.light-mode #launchSpeedRange {
+    accent-color: #2563eb;
+}
+
 body.light-mode .launch-right {
     border-color: rgba(79, 121, 255, 0.3);
     background: #f8fbff;
@@ -1819,4 +1892,86 @@ body.light-mode .score-status {
 
 body.light-mode .launch-checks input[type='checkbox'] {
     accent-color: #2563eb;
+}
+
+body.light-mode .how-it-works .step-title {
+    color: #0f172a;
+}
+
+body.light-mode .how-it-works .step-description {
+    color: #334155;
+}
+
+body.light-mode .cta-card {
+    background: #ffffff;
+    border-color: rgba(79, 121, 255, 0.24);
+}
+
+body.light-mode .cta-subtitle,
+body.light-mode .footer-desc,
+body.light-mode .footer-copyright,
+body.light-mode .footer-bottom-links a,
+body.light-mode .footer-links a {
+    color: #334155;
+}
+
+body.light-mode .footer-links a:hover,
+body.light-mode .footer-bottom-links a:hover {
+    color: #1e3a8a;
+}
+
+body.light-mode .newsletter-input {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: rgba(79, 121, 255, 0.28);
+}
+
+body.light-mode .newsletter-input::placeholder {
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    body.light-mode .hero {
+        padding: 96px 0 54px;
+    }
+
+    body.light-mode .hero-badge {
+        font-size: 0.76rem;
+        line-height: 1.3;
+    }
+
+    body.light-mode .hero-subtitle {
+        font-size: 0.97rem;
+    }
+
+    body.light-mode .hero-stats {
+        gap: 16px;
+    }
+
+    body.light-mode .hero-stat-number {
+        font-size: 1.55rem;
+    }
+
+    body.light-mode .hero-stat-label {
+        font-size: 0.8rem;
+    }
+
+    body.light-mode .trust-bar {
+        padding: 30px 0;
+    }
+
+    body.light-mode .trust-item {
+        font-size: 0.88rem;
+    }
+
+    body.light-mode .launch-meter-card {
+        padding: 20px;
+    }
+
+    body.light-mode .launch-checks label,
+    body.light-mode .launch-range-wrap label,
+    body.light-mode #launchSpeedValue,
+    body.light-mode .score-tip {
+        color: #1e293b;
+    }
 }
