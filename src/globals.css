@@ -6,14 +6,30 @@
 /* ============================================
    ACCESSIBILITY BASELINE
 ============================================ */
+:root {
+    --ui-skip-bg: #111827;
+    --ui-skip-text: #ffffff;
+    --ui-overlay-bg: rgba(18, 18, 26, 0.95);
+    --ui-overlay-border: rgba(108, 53, 222, 0.3);
+    --ui-overlay-text: #ffffff;
+    --ui-overlay-muted: #9999bb;
+    --ui-overlay-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    --ui-muted-btn-bg: rgba(255, 255, 255, 0.1);
+    --ui-muted-btn-bg-hover: rgba(255, 255, 255, 0.2);
+    --ui-toast-bg: rgba(18, 18, 26, 0.95);
+    --ui-toast-border: rgba(0, 212, 255, 0.3);
+    --ui-toast-accent: #00d4ff;
+    --ui-tooltip-bg: rgba(0, 0, 0, 0.85);
+}
+
 .skip-link {
     position: fixed;
     top: -100px;
     left: 12px;
     padding: 10px 14px;
     border-radius: 10px;
-    background: #111827;
-    color: #ffffff;
+    background: var(--ui-skip-bg);
+    color: var(--ui-skip-text);
     font-family: 'Inter', sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
@@ -123,8 +139,8 @@ body.light-mode :focus-visible {
     bottom: 56px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0,0,0,0.85);
-    color: #fff;
+    background: var(--ui-tooltip-bg);
+    color: var(--ui-overlay-text);
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 0.72rem;
@@ -153,9 +169,9 @@ body.light-mode :focus-visible {
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(18,18,26,0.95);
+    background: var(--ui-overlay-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(108,53,222,0.3);
+    border: 1px solid var(--ui-overlay-border);
     padding: 16px 24px;
     border-radius: 16px 16px 0 0;
     z-index: 99997;
@@ -165,13 +181,13 @@ body.light-mode :focus-visible {
     transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     width: max-content;
     max-width: 90%;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+    box-shadow: var(--ui-overlay-shadow);
 }
 
 .cookie-banner.show { bottom: 0; }
 
 .cookie-text {
-    color: #fff;
+    color: var(--ui-overlay-text);
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
 }
@@ -196,10 +212,10 @@ body.light-mode :focus-visible {
 .cookie-btn.accept:hover { background: #8B5CF6; }
 
 .cookie-btn.decline {
-    background: rgba(255,255,255,0.1);
-    color: #9999BB;
+    background: var(--ui-muted-btn-bg);
+    color: var(--ui-overlay-muted);
 }
-.cookie-btn.decline:hover { background: rgba(255,255,255,0.2); color: #fff; }
+.cookie-btn.decline:hover { background: var(--ui-muted-btn-bg-hover); color: var(--ui-overlay-text); }
 
 @media (max-width: 600px) {
     .cookie-banner { flex-direction: column; width: 100%; border-radius: 0; text-align: center; }
@@ -212,10 +228,10 @@ body.light-mode :focus-visible {
     position: fixed;
     bottom: 24px;
     left: -400px;
-    background: rgba(18,18,26,0.95);
+    background: var(--ui-toast-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0,212,255,0.3);
-    border-left: 4px solid #00D4FF;
+    border: 1px solid var(--ui-toast-border);
+    border-left: 4px solid var(--ui-toast-accent);
     padding: 14px 18px;
     border-radius: 12px;
     z-index: 99996;
@@ -241,18 +257,18 @@ body.light-mode :focus-visible {
 .sp-text {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    color: #fff;
+    color: var(--ui-overlay-text);
     line-height: 1.4;
 }
 
 .sp-text span {
     font-weight: 700;
-    color: #00D4FF;
+    color: var(--ui-toast-accent);
 }
 
 .sp-time {
     font-size: 0.7rem;
-    color: #9999BB;
+    color: var(--ui-overlay-muted);
     display: block;
     margin-top: 2px;
 }
@@ -494,6 +510,19 @@ body.light-mode {
     --border: rgba(15, 23, 42, 0.14);
     --border-s: rgba(15, 23, 42, 0.1);
     --border-subtle: rgba(15, 23, 42, 0.09);
+    --ui-skip-bg: #0f3f7a;
+    --ui-skip-text: #ffffff;
+    --ui-overlay-bg: rgba(255, 255, 255, 0.98);
+    --ui-overlay-border: rgba(15, 23, 42, 0.16);
+    --ui-overlay-text: #0f172a;
+    --ui-overlay-muted: #475467;
+    --ui-overlay-shadow: 0 -10px 30px rgba(15, 23, 42, 0.12);
+    --ui-muted-btn-bg: rgba(15, 23, 42, 0.08);
+    --ui-muted-btn-bg-hover: rgba(15, 23, 42, 0.14);
+    --ui-toast-bg: rgba(255, 255, 255, 0.98);
+    --ui-toast-border: rgba(15, 23, 42, 0.15);
+    --ui-toast-accent: #0a63c9;
+    --ui-tooltip-bg: rgba(15, 23, 42, 0.92);
     background: #f7fafc !important;
     color: #0f172a !important;
 }

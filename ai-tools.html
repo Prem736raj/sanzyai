@@ -129,8 +129,8 @@
                 <span class="search-icon-el">🔍</span>
                 <input type="text" class="search-input-el" id="toolSearch"
                     placeholder="Search AI tools, categories, features..."
-                    oninput="handleSearch(this.value)" autocomplete="off">
-                <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+                    autocomplete="off">
+                <button type="button" class="search-clear" id="searchClear">✕</button>
             </div>
         </div>
     </div>
@@ -144,35 +144,35 @@
         <div class="filter-inner">
             <div class="filter-scroll" id="filterScroll">
                 <span class="filter-group-label">Pricing</span>
-                <button class="filter-btn active" onclick="applyFilter(this,'all')" data-filter="all">
+                <button type="button" class="filter-btn active" data-filter="all">
                     All Tools <span class="f-count" id="fc-all">20</span>
                 </button>
-                <button class="filter-btn" onclick="applyFilter(this,'free')" data-filter="free">
+                <button type="button" class="filter-btn" data-filter="free">
                     🆓 Free <span class="f-count" id="fc-free">6</span>
                 </button>
-                <button class="filter-btn" onclick="applyFilter(this,'freemium')" data-filter="freemium">
+                <button type="button" class="filter-btn" data-filter="freemium">
                     ✨ Freemium <span class="f-count" id="fc-freemium">8</span>
                 </button>
-                <button class="filter-btn" onclick="applyFilter(this,'paid')" data-filter="paid">
+                <button type="button" class="filter-btn" data-filter="paid">
                     💳 Paid <span class="f-count" id="fc-paid">6</span>
                 </button>
                 <div class="filter-divider"></div>
                 <span class="filter-group-label">Category</span>
-                <button class="filter-btn" onclick="applyFilter(this,'writing')" data-filter="writing">✍️ Writing</button>
-                <button class="filter-btn" onclick="applyFilter(this,'image')" data-filter="image">🎨 Image</button>
-                <button class="filter-btn" onclick="applyFilter(this,'video')" data-filter="video">🎬 Video</button>
-                <button class="filter-btn" onclick="applyFilter(this,'code')" data-filter="code">💻 Code</button>
-                <button class="filter-btn" onclick="applyFilter(this,'seo')" data-filter="seo">📈 SEO</button>
-                <button class="filter-btn" onclick="applyFilter(this,'chatbot')" data-filter="chatbot">💬 Chatbot</button>
-                <button class="filter-btn" onclick="applyFilter(this,'voice')" data-filter="voice">🎙️ Voice</button>
-                <button class="filter-btn" onclick="applyFilter(this,'design')" data-filter="design">🖌️ Design</button>
-                <button class="filter-btn" onclick="applyFilter(this,'business')" data-filter="business">💼 Business</button>
-                <button class="filter-btn" onclick="applyFilter(this,'marketing')" data-filter="marketing">📣 Marketing</button>
-                <button class="filter-btn" onclick="applyFilter(this,'education')" data-filter="education">📚 Education</button>
-                <button class="filter-btn" onclick="applyFilter(this,'research')" data-filter="research">🔬 Research</button>
-                <button class="filter-btn" onclick="applyFilter(this,'productivity')" data-filter="productivity">⚡ Productivity</button>
-                <button class="filter-btn" onclick="applyFilter(this,'automation')" data-filter="automation">🔁 Automation</button>
-                <button class="filter-btn" onclick="applyFilter(this,'music')" data-filter="music">🎵 Music</button>
+                <button type="button" class="filter-btn" data-filter="writing">✍️ Writing</button>
+                <button type="button" class="filter-btn" data-filter="image">🎨 Image</button>
+                <button type="button" class="filter-btn" data-filter="video">🎬 Video</button>
+                <button type="button" class="filter-btn" data-filter="code">💻 Code</button>
+                <button type="button" class="filter-btn" data-filter="seo">📈 SEO</button>
+                <button type="button" class="filter-btn" data-filter="chatbot">💬 Chatbot</button>
+                <button type="button" class="filter-btn" data-filter="voice">🎙️ Voice</button>
+                <button type="button" class="filter-btn" data-filter="design">🖌️ Design</button>
+                <button type="button" class="filter-btn" data-filter="business">💼 Business</button>
+                <button type="button" class="filter-btn" data-filter="marketing">📣 Marketing</button>
+                <button type="button" class="filter-btn" data-filter="education">📚 Education</button>
+                <button type="button" class="filter-btn" data-filter="research">🔬 Research</button>
+                <button type="button" class="filter-btn" data-filter="productivity">⚡ Productivity</button>
+                <button type="button" class="filter-btn" data-filter="automation">🔁 Automation</button>
+                <button type="button" class="filter-btn" data-filter="music">🎵 Music</button>
             </div>
         </div>
     </div>
@@ -190,7 +190,7 @@
             </div>
             <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
                 <span class="sec-count" id="toolCount">Showing 20 tools</span>
-                <select class="sort-sel" id="sortTools" onchange="sortTools()">
+                <select class="sort-sel" id="sortTools">
                     <option value="rating">Sort: Top Rated</option>
                     <option value="name">Sort: A-Z</option>
                     <option value="price-low">Sort: Price Low→High</option>
@@ -238,8 +238,8 @@
             <div class="compare-selected" id="compareChips"></div>
         </div>
         <div class="compare-bar-btns">
-            <button class="btn btn-outline btn-sm" onclick="clearCompare()">Clear All</button>
-            <button class="btn btn-primary btn-sm" onclick="openCompare()" id="compareBtn" disabled>
+            <button type="button" class="btn btn-outline btn-sm" id="clearCompareBtn">Clear All</button>
+            <button type="button" class="btn btn-primary btn-sm" id="compareBtn" disabled>
                 ⚖️ Compare Now
             </button>
         </div>
@@ -255,7 +255,7 @@
             <div class="sec-left">
                 <h2 class="sec-title">⚖️ Side-by-Side <span class="gradient-text">Comparison</span></h2>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="closeCompare()">✕ Close</button>
+            <button type="button" class="btn btn-outline btn-sm" id="closeCompareBtn">✕ Close</button>
         </div>
         <div class="compare-table-wrap">
             <div class="compare-scroll">
@@ -283,7 +283,7 @@
                     <span class="nl-badge">✅ 10,000+ readers</span>
                     <span class="nl-badge">✅ Weekly digest</span>
                 </div>
-                <form class="nl-form" onsubmit="handleNL(event)">
+                <form class="nl-form" id="nlForm">
                     <input type="email" class="nl-input" placeholder="Enter your email address..." required>
                     <button type="submit" class="btn btn-primary">
                         Subscribe 🚀
@@ -311,7 +311,7 @@
                     <div class="perk-item"><span class="perk-icon">🔗</span> Link included (subject to editorial review)</div>
                 </div>
             </div>
-            <form class="submit-form" onsubmit="handleSubmit(event)">
+            <form class="submit-form" id="submitToolForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">Tool Name *</label>
@@ -395,7 +395,7 @@
     <div class="tool-detail-card">
         <div class="tool-detail-head">
             <h3>Tool Overview</h3>
-            <button class="tool-detail-close" onclick="closeToolDetails()" aria-label="Close">✕</button>
+            <button type="button" class="tool-detail-close" id="toolDetailClose" aria-label="Close">✕</button>
         </div>
         <div id="toolDetailBody"></div>
     </div>

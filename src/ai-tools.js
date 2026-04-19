@@ -402,7 +402,7 @@ function renderTools() {
                 <div class="no-results-icon">🔍</div>
                 <h3>No tools found</h3>
                 <p>Try a different search term or filter category.</p>
-                <button class="btn btn-primary" style="margin-top:16px;" onclick="clearSearch();applyFilter(document.querySelector('[data-filter=all]'),'all')">
+                <button class="btn btn-primary" style="margin-top:16px;" data-action="reset-filters">
                     Show All Tools
                 </button>
             </div>`;
@@ -419,7 +419,7 @@ function renderTools() {
         const isSaved = savedTools.has(tool.id);
 
         return `
-        <div class="tool-card ${tool.featured ? 'featured' : ''}" data-id="${tool.id}" role="button" tabindex="0" onclick="openToolDetails(${tool.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openToolDetails(${tool.id});}">
+        <div class="tool-card ${tool.featured ? 'featured' : ''}" data-id="${tool.id}" role="button" tabindex="0" data-action="open-tool" data-tool-id="${tool.id}">
             <div class="card-top">
                 <div class="card-left">
                     <div class="tool-logo" style="background:${tool.logoBg};color:${tool.logoColor};">
@@ -432,7 +432,9 @@ function renderTools() {
                 </div>
                 <div class="card-actions-top">
                     <button class="bookmark-btn ${isSaved ? 'saved' : ''}" 
-                        onclick="event.stopPropagation();toggleSave(${tool.id}, this)" 
+                        type="button"
+                        data-action="toggle-save"
+                        data-tool-id="${tool.id}"
                         title="${isSaved ? 'Remove from saved' : 'Save tool'}">
                         ${isSaved ? '❤️' : '🤍'}
                     </button>
@@ -460,11 +462,12 @@ function renderTools() {
             <div class="card-btns">
                 <a href="${tool.link}" target="_blank" rel="noopener sponsored"
                    class="visit-btn"
-                   onclick="event.stopPropagation();showToast('Opening ${tool.name}...','🌐')"
+                   data-action="visit-tool"
+                   data-tool-name="${tool.name}"
                    >
                     🔗 Visit Tool
                 </a>
-                <button class="review-btn" onclick="event.stopPropagation();quickCompare(${tool.id})">
+                <button class="review-btn" type="button" data-action="quick-compare" data-tool-id="${tool.id}">
                     ⚖️ Compare
                 </button>
             </div>
@@ -472,8 +475,8 @@ function renderTools() {
             <div class="compare-wrap">
                 <input type="checkbox" class="compare-cb" id="cmp-${tool.id}"
                     ${isCompared ? 'checked' : ''}
-                    onclick="event.stopPropagation()"
-                    onchange="toggleCompare(${tool.id}, this)">
+                    data-action="toggle-compare"
+                    data-tool-id="${tool.id}">
                 <label class="compare-label" for="cmp-${tool.id}">
                     ⚖️ Add to Compare ${isCompared ? '(selected)' : ''}
                 </label>
@@ -499,7 +502,7 @@ function renderAlternatives() {
                             <span class="alt-chip ${option.tier}">${option.tier}</span>
                             <span class="alt-name">${option.name}</span>
                         </div>
-                        <a class="alt-link" href="${option.link}" target="_blank" rel="noopener sponsored" onclick="showToast('Opening ${option.name}...','🌐')">Visit ↗</a>
+                        <a class="alt-link" href="${option.link}" target="_blank" rel="noopener sponsored" data-action="visit-external" data-tool-name="${option.name}">Visit ↗</a>
                     </div>
                 `).join('')}
             </div>
@@ -555,8 +558,8 @@ window.openToolDetails = function(id) {
             <p>${tool.desc}</p>
         </div>
         <div class="tool-detail-actions">
-            <a href="${tool.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary" onclick="showToast('Opening ${tool.name}...','🌐')">🔗 Visit ${tool.name}</a>
-            <button class="btn btn-outline" onclick="closeToolDetails();quickCompare(${tool.id});">⚖️ Add To Compare</button>
+            <a href="${tool.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary" data-action="modal-visit" data-tool-name="${tool.name}">🔗 Visit ${tool.name}</a>
+            <button type="button" class="btn btn-outline" data-action="modal-compare" data-tool-id="${tool.id}">⚖️ Add To Compare</button>
         </div>
     `;
 
@@ -738,7 +741,7 @@ function updateCompareBar() {
             <div class="compare-chip">
                 <span>${t.emoji}</span>
                 <span>${t.name}</span>
-                <button class="compare-chip-remove" onclick="removeFromCompare(${t.id})">✕</button>
+                <button type="button" class="compare-chip-remove" data-action="remove-compare" data-tool-id="${t.id}">✕</button>
             </div>
         `).join('');
     }
@@ -848,7 +851,7 @@ function buildCompareTable() {
                 ${compareList.map(t => `
                     <td>
                         <a href="${t.link}" target="_blank" rel="noopener" class="btn btn-primary btn-xs"
-                           onclick="showToast('Opening ${t.name}...','🌐')">
+                           data-action="visit-external" data-tool-name="${t.name}">
                             Visit ↗
                         </a>
                     </td>
@@ -924,6 +927,168 @@ function updateFilterCounts() {
     if (fpaid) fpaid.textContent = tools.filter(t => t.pricing === 'paid').length;
 }
 
+function bindStaticControls() {
+    const searchInput = document.getElementById('toolSearch');
+    const searchClear = document.getElementById('searchClear');
+    const filterScroll = document.getElementById('filterScroll');
+    const sortSelect = document.getElementById('sortTools');
+    const clearCompareBtn = document.getElementById('clearCompareBtn');
+    const compareBtn = document.getElementById('compareBtn');
+    const closeCompareBtn = document.getElementById('closeCompareBtn');
+    const nlForm = document.getElementById('nlForm');
+    const submitToolForm = document.getElementById('submitToolForm');
+    const toolDetailClose = document.getElementById('toolDetailClose');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (event) => {
+            window.handleSearch(event.target.value);
+        });
+    }
+
+    if (searchClear) {
+        searchClear.addEventListener('click', () => {
+            window.clearSearch();
+        });
+    }
+
+    if (filterScroll) {
+        filterScroll.addEventListener('click', (event) => {
+            const btn = event.target.closest('.filter-btn');
+            if (!btn) return;
+            const { filter } = btn.dataset;
+            if (filter) {
+                window.applyFilter(btn, filter);
+            }
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            window.sortTools();
+        });
+    }
+
+    if (clearCompareBtn) {
+        clearCompareBtn.addEventListener('click', () => {
+            window.clearCompare();
+        });
+    }
+
+    if (compareBtn) {
+        compareBtn.addEventListener('click', () => {
+            window.openCompare();
+        });
+    }
+
+    if (closeCompareBtn) {
+        closeCompareBtn.addEventListener('click', () => {
+            window.closeCompare();
+        });
+    }
+
+    if (nlForm) {
+        nlForm.addEventListener('submit', (event) => {
+            window.handleNL(event);
+        });
+    }
+
+    if (submitToolForm) {
+        submitToolForm.addEventListener('submit', (event) => {
+            window.handleSubmit(event);
+        });
+    }
+
+    if (toolDetailClose) {
+        toolDetailClose.addEventListener('click', () => {
+            window.closeToolDetails();
+        });
+    }
+}
+
+function bindDynamicControls() {
+    document.addEventListener('click', (event) => {
+        const actionEl = event.target.closest('[data-action]');
+        if (!actionEl) return;
+
+        const { action, toolId, toolName } = actionEl.dataset;
+
+        if (action !== 'open-tool') {
+            event.stopPropagation();
+        }
+
+        switch (action) {
+            case 'reset-filters': {
+                window.clearSearch();
+                const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+                window.applyFilter(allBtn, 'all');
+                break;
+            }
+            case 'open-tool': {
+                if (event.target.closest('a,button,input,label,select,textarea')) return;
+                if (toolId) {
+                    window.openToolDetails(Number(toolId));
+                }
+                break;
+            }
+            case 'toggle-save': {
+                if (toolId) {
+                    window.toggleSave(Number(toolId), actionEl);
+                }
+                break;
+            }
+            case 'visit-tool':
+            case 'visit-external':
+            case 'modal-visit': {
+                if (toolName) {
+                    window.showToast(`Opening ${toolName}...`, '🌐');
+                }
+                break;
+            }
+            case 'quick-compare': {
+                if (toolId) {
+                    window.quickCompare(Number(toolId));
+                }
+                break;
+            }
+            case 'modal-compare': {
+                if (!toolId) return;
+                window.closeToolDetails();
+                window.quickCompare(Number(toolId));
+                break;
+            }
+            case 'remove-compare': {
+                if (toolId) {
+                    window.removeFromCompare(Number(toolId));
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    });
+
+    document.addEventListener('change', (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLInputElement)) return;
+        if (target.dataset.action !== 'toggle-compare') return;
+        const toolId = Number(target.dataset.toolId || '0');
+        if (!toolId) return;
+        window.toggleCompare(toolId, target);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const card = event.target.closest('.tool-card[data-action="open-tool"]');
+        if (!card) return;
+        if (event.target !== card) return;
+        event.preventDefault();
+        const toolId = Number(card.dataset.toolId || '0');
+        if (toolId) {
+            window.openToolDetails(toolId);
+        }
+    });
+}
+
 // =============================================
 // INIT
 // =============================================
@@ -938,6 +1103,8 @@ window.addEventListener('DOMContentLoaded', () => {
     sortToolsData();
     renderTools();
     renderAlternatives();
+    bindStaticControls();
+    bindDynamicControls();
 
     // Hamburger
     const ham = document.getElementById('ham');
@@ -978,5 +1145,3 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-console.log('%c🤖 SanzyAI — AI Tools Directory', 'color:#6C35DE;font-weight:bold;font-size:16px;');
