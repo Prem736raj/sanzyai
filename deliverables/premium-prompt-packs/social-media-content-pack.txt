@@ -1,0 +1,1405 @@
+SOCIAL MEDIA CONTENT PACK (40 PROMPTS)
+Pack ID: 4
+Standard: Premium Prompt Quality v1
+
+How to use:
+1) Replace all bracket placeholders before use.
+2) Run prompt once, then run a second pass with real data for refinement.
+3) Keep the Quality checks section in every run.
+1. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+2. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+3. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+4. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+5. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+6. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+7. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+8. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+9. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+10. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+11. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+12. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+13. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+14. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+15. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+16. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+17. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+18. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+19. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+20. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+21. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+22. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+23. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+24. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+25. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+26. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+27. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+28. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+29. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+30. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+31. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+32. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+33. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+34. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+35. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+36. ENGAGEMENT CAMPAIGN DESIGN - DISCOVERY WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need engagement campaign design under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a engagement campaign design plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) post set with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+37. CONTENT CALENDAR ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Posts get impressions but low engagement depth.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need content calendar architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a content calendar architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) hook library with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+38. HOOK TESTING MATRIX - EXECUTION WORKFLOW
+Problem solved: Content lacks a repeatable hook-to-CTA structure.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need hook testing matrix under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a hook testing matrix plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) CTA map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+39. COMMENT CONVERSION LOOP - OPTIMIZATION WORKFLOW
+Problem solved: Audience growth is inconsistent across weeks.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need comment conversion loop under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a comment conversion loop plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) platform adaptation notes with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+40. COMMUNITY GROWTH STRATEGY - QUALITY ASSURANCE WORKFLOW
+Problem solved: Social content does not translate into pipeline results.
+Best for: Creators, social managers, personal brands, and D2C teams.
+Use case: Deploy this when you need community growth strategy under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a performance social media strategist and conversion copywriter.
+Goal: Build a community growth strategy plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 7-day posting sprint with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.

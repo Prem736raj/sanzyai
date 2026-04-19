@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "scaffold:page": "node scripts/scaffold-page.mjs",
+    "generate:premium-packs": "node scripts/generate-premium-pack-files.mjs",
     "check:inline-handlers": "node scripts/check-inline-handlers.mjs",
     "test:smoke": "npx playwright install chromium && start-server-and-test \"vite preview --host 127.0.0.1 --port 4173\" http://127.0.0.1:4173 \"playwright test\"",
     "validate:html": "html-validate \"*.html\"",
