@@ -286,12 +286,63 @@ function getPriceCategory(price) {
     return '30+';
 }
 
+function inferPromptProblem(label, text) {
+    const hay = `${label} ${text}`.toLowerCase();
+    if (hay.includes('email')) return 'Low reply rate due to unclear or weak messaging.';
+    if (hay.includes('seo') || hay.includes('keyword')) return 'Content does not rank or attract qualified organic traffic.';
+    if (hay.includes('proposal') || hay.includes('freelance')) return 'Losing deals because offer positioning and pricing are weak.';
+    if (hay.includes('ad') || hay.includes('copy')) return 'Paid campaigns underperform due to weak angles and hooks.';
+    if (hay.includes('youtube') || hay.includes('hook') || hay.includes('script')) return 'Viewers drop early because openings are not compelling enough.';
+    if (hay.includes('image') || hay.includes('midjourney') || hay.includes('thumbnail')) return 'Inconsistent visual outputs and low creative conversion quality.';
+    if (hay.includes('product')) return 'Product messaging fails to convert visitors into buyers.';
+    return 'Unclear execution system causes inconsistent output quality and slower results.';
+}
+
+function inferPromptBestFor(pack) {
+    const cat = String(pack.category || '').toLowerCase();
+    if (cat.includes('freelanc')) return 'Freelancers, consultants, and service providers.';
+    if (cat.includes('seo')) return 'SEO writers, affiliate publishers, and niche-site operators.';
+    if (cat.includes('social')) return 'Creators, social media managers, and personal brands.';
+    if (cat.includes('video')) return 'YouTubers, educators, and content-led businesses.';
+    if (cat.includes('image') || cat.includes('art')) return 'Designers, ecommerce brands, and ad creatives.';
+    if (cat.includes('coding') || cat.includes('claude')) return 'Developers, technical founders, and product teams.';
+    if (cat.includes('business')) return 'Founders, marketers, and operators building revenue workflows.';
+    return 'Creators and operators who need practical AI execution prompts.';
+}
+
+function enrichPromptSample(sample, pack) {
+    const base = String(sample.text || '').trim();
+    const alreadyStructured = /problem solved:|best for:|output format:/i.test(base);
+    if (alreadyStructured) return sample;
+
+    const problem = inferPromptProblem(sample.label || '', base);
+    const bestFor = inferPromptBestFor(pack);
+
+    return {
+        ...sample,
+        text: [
+            `Problem solved: ${problem}`,
+            `Best for: ${bestFor}`,
+            'Use case: Run this prompt when you need practical output that can be deployed immediately.',
+            'Prompt:',
+            base,
+            'Output format required:',
+            '- Executive summary or strategy angle',
+            '- Step-by-step execution plan',
+            '- Final deliverable draft ready to use',
+            '- Quality checklist and 3 optimization suggestions',
+        ].join('\n')
+    };
+}
+
 // Month-1 launch promo: all paid packs are 50% off.
 packs.forEach((pack) => {
     if (pack.price > 0 && !pack.skipLaunchPromo) {
         pack.price = Number((pack.price * 0.5).toFixed(2));
         pack.priceCategory = getPriceCategory(pack.price);
     }
+
+    pack.samples = (pack.samples || []).map((sample) => enrichPromptSample(sample, pack));
 });
 
 // =============================================
