@@ -305,6 +305,154 @@ let wishlist = new Set();
 let filteredPacks = [...packs];
 let activeModalEl = null;
 let lastFocusedEl = null;
+let jspdfLoaderPromise;
+
+const FREE_PACK_TXT_PATH = '/free-starter-chatgpt-pack.txt';
+
+function prefetchJspdf() {
+    if (!jspdfLoaderPromise) {
+        jspdfLoaderPromise = import('jspdf');
+    }
+    return jspdfLoaderPromise;
+}
+
+function parseFreePackText(content = '') {
+    const lines = String(content).split(/\r?\n/);
+    const prompts = [];
+    let current = null;
+
+    for (const line of lines) {
+        const trimmed = line.trim();
+        const titleMatch = trimmed.match(/^(\d+)\)\s+(.+)$/);
+
+        if (titleMatch) {
+            if (current) prompts.push(current);
+            current = { title: titleMatch[2], body: '' };
+            continue;
+        }
+
+        if (!current) continue;
+        if (!trimmed) continue;
+        if (trimmed.toLowerCase().startsWith('download source:')) continue;
+
+        current.body = current.body ? `${current.body} ${trimmed}` : trimmed;
+    }
+
+    if (current) prompts.push(current);
+    return prompts;
+}
+
+function drawRoundedRect(doc, x, y, w, h, r, style = 'S') {
+    doc.roundedRect(x, y, w, h, r, r, style);
+}
+
+async function downloadFreePackPdf() {
+    showToast('Preparing your free prompt PDF...', '🎁');
+
+    try {
+        const [txtResponse, { jsPDF }] = await Promise.all([
+            fetch(FREE_PACK_TXT_PATH, { cache: 'no-store' }),
+            prefetchJspdf(),
+        ]);
+
+        if (!txtResponse.ok) {
+            throw new Error('Could not load free starter pack content.');
+        }
+
+        const rawText = await txtResponse.text();
+        const prompts = parseFreePackText(rawText);
+        if (!prompts.length) {
+            throw new Error('No prompts found in starter pack.');
+        }
+
+        const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const marginX = 42;
+        const contentWidth = pageWidth - marginX * 2;
+        let y = 56;
+
+        const addFooter = () => {
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            doc.setTextColor(99, 115, 129);
+            doc.text('SanzyAI • Free Starter ChatGPT Pack', marginX, pageHeight - 24);
+            doc.text(`${doc.getCurrentPageInfo().pageNumber}`, pageWidth - marginX, pageHeight - 24, { align: 'right' });
+        };
+
+        const ensureSpace = (neededHeight) => {
+            if (y + neededHeight <= pageHeight - 56) return;
+            addFooter();
+            doc.addPage();
+            y = 56;
+        };
+
+        // Cover / title block
+        doc.setFillColor(20, 27, 45);
+        drawRoundedRect(doc, marginX, y, contentWidth, 122, 16, 'F');
+        doc.setFillColor(65, 124, 255);
+        drawRoundedRect(doc, marginX + 18, y + 16, 172, 28, 10, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        doc.setTextColor(255, 255, 255);
+        doc.text('FREE DOWNLOAD', marginX + 28, y + 35);
+        doc.setFontSize(24);
+        doc.text('Starter ChatGPT Prompt Pack', marginX + 18, y + 72);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+        doc.setTextColor(214, 222, 255);
+        doc.text('10 practical prompts designed for creators, marketers, and beginners.', marginX + 18, y + 96);
+        y += 146;
+
+        for (let i = 0; i < prompts.length; i += 1) {
+            const p = prompts[i];
+            const title = `${i + 1}. ${p.title}`;
+            const bodyLines = doc.splitTextToSize(p.body, contentWidth - 30);
+            const cardHeight = 52 + bodyLines.length * 15;
+
+            ensureSpace(cardHeight + 12);
+
+            doc.setFillColor(i % 2 === 0 ? 245 : 239, i % 2 === 0 ? 248 : 245, 255);
+            doc.setDrawColor(213, 221, 255);
+            drawRoundedRect(doc, marginX, y, contentWidth, cardHeight, 12, 'FD');
+
+            doc.setFillColor(65, 124, 255);
+            drawRoundedRect(doc, marginX + 12, y + 11, 24, 24, 8, 'F');
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(12);
+            doc.setTextColor(255, 255, 255);
+            doc.text(String(i + 1), marginX + 20, y + 28);
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(12);
+            doc.setTextColor(20, 27, 45);
+            doc.text(title, marginX + 44, y + 28);
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10.5);
+            doc.setTextColor(51, 65, 85);
+            doc.text(bodyLines, marginX + 16, y + 50);
+
+            y += cardHeight + 12;
+        }
+
+        ensureSpace(64);
+        doc.setFillColor(235, 244, 255);
+        drawRoundedRect(doc, marginX, y, contentWidth, 44, 10, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.setTextColor(12, 74, 110);
+        doc.text('Tip: Replace bracketed placeholders like [NICHE], [AUDIENCE], [TOPIC] with your real context.', marginX + 14, y + 27);
+
+        addFooter();
+        doc.save('sanzyai-free-starter-chatgpt-pack.pdf');
+        showToast('Free starter pack downloaded as PDF', '📄');
+    } catch (error) {
+        showToast('Download failed. Please try again.', '⚠️');
+    }
+}
+
+window.downloadFreePackPdf = downloadFreePackPdf;
 
 function getModalFocusableElements(modalEl) {
     if (!modalEl) return [];
@@ -430,7 +578,7 @@ function renderPacks() {
                         👁️ Preview
                     </button>
                     <button type="button" class="buy-btn ${pack.isFree ? 'free-btn' : ''}"
-                        data-action="${pack.isFree ? 'open-email-modal' : 'open-product'}" ${pack.isFree ? '' : `data-pack-id="${pack.id}"`}>
+                        data-action="${pack.isFree ? 'download-free-pack' : 'open-product'}" ${pack.isFree ? '' : `data-pack-id="${pack.id}"`}>
                         ${pack.isFree ? '🎁 Get Free Pack' : `🛒 Buy Now — $${pack.price.toFixed(2)}`}
                     </button>
                 </div>
@@ -678,7 +826,7 @@ window.openProduct = function(id) {
                     <p class="mprice-label">📦 ${pack.count} prompts · Instant PDF download · Lifetime access</p>
 
                     ${pack.isFree
-                        ? `<button type="button" class="btn btn-green btn-lg modal-buy-btn" data-action="close-modal-open-email">
+                        ? `<button type="button" class="btn btn-green btn-lg modal-buy-btn" data-action="close-modal-download-free-pack">
                                 🎁 Get FREE Pack Now
                            </button>`
                         : `<a href="${pack.link}" target="_blank" rel="noopener sponsored"
@@ -772,7 +920,7 @@ window.openPreview = function(id) {
         <div style="text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border-s);">
             <p style="color:var(--muted);font-size:0.86rem;margin-bottom:16px;">Want all <strong>${pack.count} prompts</strong>? Get the full pack now.</p>
             ${pack.isFree
-                ? `<button type="button" class="btn btn-green btn-lg" data-action="close-preview-open-email">🎁 Get FREE Pack</button>`
+                ? `<button type="button" class="btn btn-green btn-lg" data-action="close-preview-download-free-pack">🎁 Get FREE Pack</button>`
                 : `<a href="${pack.link}" target="_blank" rel="noopener"
                        class="btn btn-primary btn-lg"
                        data-action="open-checkout">
@@ -815,51 +963,10 @@ window.closeEmailModal = function() {
 
 window.handleFreeDownload = async function(e) {
     e.preventDefault();
+    await window.downloadFreePackPdf();
+    window.closeEmailModal();
     const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const email = document.getElementById('freePackEmail').value;
-    const packUrl = `${window.location.origin}/free-starter-chatgpt-pack.txt`;
-
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
-    submitBtn.textContent = 'Sending...';
-
-    try {
-        const response = await fetch('https://formsubmit.co/ajax/hello@sanzyai.com', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                source: 'Prompt Store Free Pack',
-                message: `Send free pack to ${email}`,
-                free_pack_link: packUrl,
-                _subject: `Free Pack Request - ${email}`,
-                _captcha: 'false',
-                _template: 'table',
-                _autoresponse: `Thanks for joining SanzyAI. Your free starter pack is ready: ${packUrl}`
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Email provider returned non-200 response.');
-        }
-
-        closeEmailModal();
-        showToast('📬 Free pack email sent to ' + email, '✅');
-        window.open(packUrl, '_blank', 'noopener');
-    } catch (err) {
-        closeEmailModal();
-        showToast('⚠️ Email delayed. Download opened directly.', '⬇️');
-        window.open(packUrl, '_blank', 'noopener');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-        submitBtn.innerHTML = '✅ Send Me The Free Pack!';
-        form.reset();
-    }
+    form.reset();
 }
 
 // =============================================
@@ -991,7 +1098,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (packId) window.openPreview(packId);
                 break;
             case 'open-email-modal':
-                window.openEmailModal();
+                window.downloadFreePackPdf();
+                break;
+            case 'download-free-pack':
+                window.downloadFreePackPdf();
                 break;
             case 'open-product':
                 if (packId) window.openProduct(packId);
@@ -1001,7 +1111,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'close-modal-open-email':
                 window.closeModal();
-                window.openEmailModal();
+                window.downloadFreePackPdf();
+                break;
+            case 'close-modal-download-free-pack':
+                window.closeModal();
+                window.downloadFreePackPdf();
                 break;
             case 'close-modal-open-preview':
                 window.closeModal();
@@ -1009,7 +1123,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'close-preview-open-email':
                 window.closePreview();
-                window.openEmailModal();
+                window.downloadFreePackPdf();
+                break;
+            case 'close-preview-download-free-pack':
+                window.closePreview();
+                window.downloadFreePackPdf();
                 break;
             case 'open-secure-checkout':
                 showToast('Opening secure checkout...', '🔒');
