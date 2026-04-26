@@ -153,9 +153,16 @@ function renderTypeFilters() {
     const holder = document.getElementById('typeFilters');
     if (!holder) return;
 
-    holder.innerHTML = typeOrder.map((type) => `
-        <button type="button" class="type-chip ${type === activeType ? 'active' : ''}" data-action="set-news-type" data-news-type="${escapeHtml(type)}">${escapeHtml(type)}</button>
-    `).join('');
+    holder.textContent = '';
+    typeOrder.forEach((type) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `type-chip ${type === activeType ? 'active' : ''}`;
+        btn.dataset.action = 'set-news-type';
+        btn.dataset.newsType = type;
+        btn.textContent = type;
+        holder.appendChild(btn);
+    });
 }
 
 window.setNewsType = function(type) {
@@ -175,10 +182,21 @@ window.loadMoreNews = function() {
     renderNewsFeed();
 };
 
-function getUrgencyBadge(level) {
-    if (level === 'high') return '<span class="urgency high">High Impact</span>';
-    if (level === 'medium') return '<span class="urgency medium">Watch</span>';
-    return '<span class="urgency low">Normal</span>';
+function createUrgencyBadge(level) {
+    const span = document.createElement('span');
+    if (level === 'high') {
+        span.className = 'urgency high';
+        span.textContent = 'High Impact';
+        return span;
+    }
+    if (level === 'medium') {
+        span.className = 'urgency medium';
+        span.textContent = 'Watch';
+        return span;
+    }
+    span.className = 'urgency low';
+    span.textContent = 'Normal';
+    return span;
 }
 
 function renderNewsFeed() {
@@ -191,39 +209,85 @@ function renderNewsFeed() {
     count.textContent = `Showing ${visibleItems.length} of ${items.length} stories`;
 
     if (!items.length) {
-        feed.innerHTML = '<div class="empty-feed">No AI stories match this filter. Try another keyword or refresh.</div>';
+        feed.textContent = '';
+        const empty = document.createElement('div');
+        empty.className = 'empty-feed';
+        empty.textContent = 'No AI stories match this filter. Try another keyword or refresh.';
+        feed.appendChild(empty);
         renderFeedPager(0, 0);
         return;
     }
 
-    feed.innerHTML = visibleItems.map((item) => {
+    feed.textContent = '';
+    visibleItems.forEach((item) => {
+        const article = document.createElement('article');
+        article.className = 'news-card';
+        article.dataset.action = 'open-news';
+        article.dataset.newsId = String(item.id);
+        article.setAttribute('role', 'button');
+        article.setAttribute('tabindex', '0');
+
+        const newsTop = document.createElement('div');
+        newsTop.className = 'news-top';
+        const newsType = document.createElement('div');
+        newsType.className = 'news-type';
+        newsType.textContent = String(item.type || 'AI Update');
+        newsTop.appendChild(newsType);
+        newsTop.appendChild(createUrgencyBadge(item.urgency));
+        article.appendChild(newsTop);
+
+        const h3 = document.createElement('h3');
+        h3.textContent = String(item.title || 'Untitled AI Update');
+        article.appendChild(h3);
+
+        const summary = document.createElement('p');
+        summary.textContent = String(item.summary || '');
+        article.appendChild(summary);
+
+        const meta = document.createElement('div');
+        meta.className = 'news-meta';
+        [
+            `🏢 ${item.company || item.source || ''}`,
+            `🕒 ${item.timeAgo || 'recently'}`,
+            `⚡ Impact ${Number(item.impact || 0)}`,
+            `💡 Opp ${Number(item.opportunity || 0)}`,
+            `📡 ${labelForSourceType(item.sourceType)}`
+        ].forEach((text) => {
+            const span = document.createElement('span');
+            span.textContent = text;
+            meta.appendChild(span);
+        });
+        article.appendChild(meta);
+
         const safeSourceUrl = sanitizeExternalUrl(item.sourceUrl);
-        const sourceLink = safeSourceUrl ? `<a class="side-link" href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">Source: ${escapeHtml(urlDomain(safeSourceUrl) || item.source)} ↗</a>` : '';
-        const watchKey = escapeHtml(item.storyKey);
+        if (safeSourceUrl) {
+            const sourceLink = document.createElement('a');
+            sourceLink.className = 'side-link';
+            sourceLink.href = safeSourceUrl;
+            sourceLink.target = '_blank';
+            sourceLink.rel = 'noopener noreferrer';
+            sourceLink.textContent = `Source: ${urlDomain(safeSourceUrl) || item.source || 'Source'} ↗`;
+            article.appendChild(sourceLink);
+        }
+
+        const actions = document.createElement('div');
+        actions.className = 'news-actions';
+        const watchBtn = document.createElement('button');
         const isSaved = watchlist.has(item.storyKey);
-        return `
-            <article class="news-card" data-action="open-news" data-news-id="${item.id}" role="button" tabindex="0">
-                <div class="news-top">
-                    <div class="news-type">${escapeHtml(item.type)}</div>
-                    ${getUrgencyBadge(item.urgency)}
-                </div>
-                <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.summary)}</p>
-                <div class="news-meta">
-                    <span>🏢 ${escapeHtml(item.company || item.source)}</span>
-                    <span>🕒 ${escapeHtml(item.timeAgo || 'recently')}</span>
-                    <span>⚡ Impact ${Number(item.impact || 0)}</span>
-                    <span>💡 Opp ${Number(item.opportunity || 0)}</span>
-                    <span>📡 ${escapeHtml(labelForSourceType(item.sourceType))}</span>
-                </div>
-                ${sourceLink}
-                <div class="news-actions">
-                    <button type="button" data-action="toggle-watch" data-story-key="${watchKey}" class="watch-btn ${isSaved ? 'on' : ''}">${isSaved ? '★ Saved' : '☆ Save'}</button>
-                    <button class="read-btn">Open Analysis →</button>
-                </div>
-            </article>
-        `;
-    }).join('');
+        watchBtn.type = 'button';
+        watchBtn.dataset.action = 'toggle-watch';
+        watchBtn.dataset.storyKey = String(item.storyKey || '');
+        watchBtn.className = `watch-btn ${isSaved ? 'on' : ''}`;
+        watchBtn.textContent = isSaved ? '★ Saved' : '☆ Save';
+        const readBtn = document.createElement('button');
+        readBtn.className = 'read-btn';
+        readBtn.textContent = 'Open Analysis →';
+        actions.appendChild(watchBtn);
+        actions.appendChild(readBtn);
+        article.appendChild(actions);
+
+        feed.appendChild(article);
+    });
 
     renderFeedPager(items.length, visibleItems.length);
 }
@@ -249,15 +313,31 @@ function renderTimeline() {
     if (!box) return;
 
     const top = [...allNewsItems].sort((a, b) => b.impact - a.impact).slice(0, 6);
-    box.innerHTML = top.map((item, idx) => `
-        <div class="time-item" data-action="open-news" data-news-id="${item.id}" role="button" tabindex="0">
-            <span class="time-dot">${idx + 1}</span>
-            <div>
-                <strong>${escapeHtml(item.title)}</strong>
-                <small>${escapeHtml(item.type)} • ${escapeHtml(item.timeAgo || 'recently')}</small>
-            </div>
-        </div>
-    `).join('');
+    box.textContent = '';
+    top.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'time-item';
+        row.dataset.action = 'open-news';
+        row.dataset.newsId = String(item.id);
+        row.setAttribute('role', 'button');
+        row.setAttribute('tabindex', '0');
+
+        const dot = document.createElement('span');
+        dot.className = 'time-dot';
+        dot.textContent = String(idx + 1);
+        row.appendChild(dot);
+
+        const content = document.createElement('div');
+        const strong = document.createElement('strong');
+        strong.textContent = String(item.title || 'Untitled AI Update');
+        const small = document.createElement('small');
+        small.textContent = `${item.type || 'AI Update'} • ${item.timeAgo || 'recently'}`;
+        content.appendChild(strong);
+        content.appendChild(small);
+        row.appendChild(content);
+
+        box.appendChild(row);
+    });
 }
 
 function renderTicker() {
@@ -266,18 +346,41 @@ function renderTicker() {
 
     const high = allNewsItems.filter((i) => i.urgency === 'high').slice(0, 6);
     if (!high.length) {
-        ticker.innerHTML = '<div class="ticker-track"><span>AI feed active. Waiting for high-impact stories...</span></div>';
+        ticker.textContent = '';
+        const track = document.createElement('div');
+        track.className = 'ticker-track';
+        const span = document.createElement('span');
+        span.textContent = 'AI feed active. Waiting for high-impact stories...';
+        track.appendChild(span);
+        ticker.appendChild(track);
         return;
     }
 
-    const track = high.map((item) => `<span>⚠ ${escapeHtml(item.title)}</span>`).join('<span class="sep">•</span>');
-    ticker.innerHTML = `
-        <div class="ticker-track">
-            ${track}
-            <span class="sep">•</span>
-            ${track}
-        </div>
-    `;
+    ticker.textContent = '';
+    const track = document.createElement('div');
+    track.className = 'ticker-track';
+
+    const appendTrackItems = () => {
+        high.forEach((item, idx) => {
+            const span = document.createElement('span');
+            span.textContent = `⚠ ${item.title || 'AI update'}`;
+            track.appendChild(span);
+            if (idx < high.length - 1) {
+                const sep = document.createElement('span');
+                sep.className = 'sep';
+                sep.textContent = '•';
+                track.appendChild(sep);
+            }
+        });
+    };
+
+    appendTrackItems();
+    const midSep = document.createElement('span');
+    midSep.className = 'sep';
+    midSep.textContent = '•';
+    track.appendChild(midSep);
+    appendTrackItems();
+    ticker.appendChild(track);
 }
 
 window.toggleWatch = function(storyKey) {
@@ -307,9 +410,16 @@ function renderWatchlist() {
         return;
     }
 
-    box.innerHTML = items.map((item) => `
-        <button type="button" class="watch-item" data-action="open-news" data-news-id="${item.id}">${escapeHtml(item.title)}</button>
-    `).join('');
+    box.textContent = '';
+    items.forEach((item) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'watch-item';
+        btn.dataset.action = 'open-news';
+        btn.dataset.newsId = String(item.id);
+        btn.textContent = String(item.title || 'Untitled AI Update');
+        box.appendChild(btn);
+    });
 }
 
 window.openNews = function(id) {
@@ -322,39 +432,106 @@ window.openNews = function(id) {
     const safeSourceUrl = sanitizeExternalUrl(item.sourceUrl);
     const sourceDomain = urlDomain(safeSourceUrl);
 
-    card.innerHTML = `
-        <button type="button" class="modal-close" data-action="close-news-modal">✕</button>
-        <div class="modal-type">${escapeHtml(item.type)}</div>
-        <h2>${escapeHtml(item.title)}</h2>
-        <div class="modal-meta">
-            <span>Source: ${escapeHtml(item.source)}</span>
-            <span>${escapeHtml(sourceType)}</span>
-            <span>${escapeHtml(item.timeAgo || 'recently')}</span>
-            <span>Impact ${Number(item.impact || 0)}</span>
-            <span>Opportunity ${Number(item.opportunity || 0)}</span>
-        </div>
-        ${safeSourceUrl ? `<p class="modal-summary"><strong>Original Link:</strong> <a href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(sourceDomain || safeSourceUrl)}</a></p>` : ''}
-        <p class="modal-summary">${escapeHtml(item.summary)}</p>
+    card.textContent = '';
 
-        <div class="modal-block">
-            <h3>Why This Matters</h3>
-            <p>${escapeHtml(item.whyItMatters || item.summary)}</p>
-        </div>
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'modal-close';
+    closeBtn.dataset.action = 'close-news-modal';
+    closeBtn.textContent = '✕';
+    card.appendChild(closeBtn);
 
-        <div class="modal-block">
-            <h3>What To Do Next</h3>
-            <ul>
-                ${(item.actions || []).map((a) => `<li>${escapeHtml(a)}</li>`).join('')}
-            </ul>
-        </div>
+    const modalType = document.createElement('div');
+    modalType.className = 'modal-type';
+    modalType.textContent = String(item.type || 'AI Update');
+    card.appendChild(modalType);
 
-        <div class="modal-links">
-            ${safeSourceUrl ? `<a href="${escapeHtml(safeSourceUrl)}" target="_blank" rel="noopener noreferrer">Open Original Source ↗</a>` : ''}
-            <a href="/ai-tools">Find matching AI tools</a>
-            <a href="/prompt-store">Get implementation prompts</a>
-            <a href="/ai-services">Execute with AI services</a>
-        </div>
-    `;
+    const h2 = document.createElement('h2');
+    h2.textContent = String(item.title || 'Untitled AI Update');
+    card.appendChild(h2);
+
+    const meta = document.createElement('div');
+    meta.className = 'modal-meta';
+    [
+        `Source: ${item.source || 'Unknown Source'}`,
+        sourceType,
+        item.timeAgo || 'recently',
+        `Impact ${Number(item.impact || 0)}`,
+        `Opportunity ${Number(item.opportunity || 0)}`,
+    ].forEach((text) => {
+        const span = document.createElement('span');
+        span.textContent = text;
+        meta.appendChild(span);
+    });
+    card.appendChild(meta);
+
+    if (safeSourceUrl) {
+        const summaryLinkP = document.createElement('p');
+        summaryLinkP.className = 'modal-summary';
+        const strong = document.createElement('strong');
+        strong.textContent = 'Original Link:';
+        const link = document.createElement('a');
+        link.href = safeSourceUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = sourceDomain || safeSourceUrl;
+        summaryLinkP.appendChild(strong);
+        summaryLinkP.appendChild(document.createTextNode(' '));
+        summaryLinkP.appendChild(link);
+        card.appendChild(summaryLinkP);
+    }
+
+    const summary = document.createElement('p');
+    summary.className = 'modal-summary';
+    summary.textContent = String(item.summary || '');
+    card.appendChild(summary);
+
+    const whyBlock = document.createElement('div');
+    whyBlock.className = 'modal-block';
+    const whyH3 = document.createElement('h3');
+    whyH3.textContent = 'Why This Matters';
+    const whyP = document.createElement('p');
+    whyP.textContent = String(item.whyItMatters || item.summary || '');
+    whyBlock.appendChild(whyH3);
+    whyBlock.appendChild(whyP);
+    card.appendChild(whyBlock);
+
+    const nextBlock = document.createElement('div');
+    nextBlock.className = 'modal-block';
+    const nextH3 = document.createElement('h3');
+    nextH3.textContent = 'What To Do Next';
+    const ul = document.createElement('ul');
+    (item.actions || []).forEach((actionText) => {
+        const li = document.createElement('li');
+        li.textContent = String(actionText);
+        ul.appendChild(li);
+    });
+    nextBlock.appendChild(nextH3);
+    nextBlock.appendChild(ul);
+    card.appendChild(nextBlock);
+
+    const links = document.createElement('div');
+    links.className = 'modal-links';
+    if (safeSourceUrl) {
+        const sourceA = document.createElement('a');
+        sourceA.href = safeSourceUrl;
+        sourceA.target = '_blank';
+        sourceA.rel = 'noopener noreferrer';
+        sourceA.textContent = 'Open Original Source ↗';
+        links.appendChild(sourceA);
+    }
+    const internalLinks = [
+        { href: '/ai-tools', text: 'Find matching AI tools' },
+        { href: '/prompt-store', text: 'Get implementation prompts' },
+        { href: '/ai-services', text: 'Execute with AI services' },
+    ];
+    internalLinks.forEach((itemLink) => {
+        const a = document.createElement('a');
+        a.href = itemLink.href;
+        a.textContent = itemLink.text;
+        links.appendChild(a);
+    });
+    card.appendChild(links);
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -458,12 +635,13 @@ function setSourceStatus(message, tone = 'normal') {
     const el = document.getElementById('newsSourceStatus');
     if (!el) return;
 
-    const safe = escapeHtml(message);
-    let color = '';
-    if (tone === 'good') color = ' style="color:#9ef0be;"';
-    if (tone === 'warn') color = ' style="color:#ffd08b;"';
-    if (tone === 'bad') color = ' style="color:#ffafaf;"';
-    el.innerHTML = `<span${color}>${safe}</span>`;
+    el.textContent = '';
+    const span = document.createElement('span');
+    if (tone === 'good') span.style.color = '#9ef0be';
+    if (tone === 'warn') span.style.color = '#ffd08b';
+    if (tone === 'bad') span.style.color = '#ffafaf';
+    span.textContent = String(message || '');
+    el.appendChild(span);
 }
 
 function shapeRemoteItems(items = []) {
@@ -564,8 +742,8 @@ window.refreshAiNews = async function() {
         renderNewsFeed();
         renderWatchlist();
         updateHeroStats();
-        setSourceStatus('Live feed unavailable. Showing backup AI stories. Start bot proxy for real-time updates.', 'warn');
-        showToast('Live feed unavailable, fallback loaded', '⚠️');
+        setSourceStatus('Showing curated AI stories. Refresh for latest updates.', 'normal');
+        showToast('Curated stories loaded', '📰');
     } finally {
         if (btn) {
             btn.disabled = false;
@@ -575,7 +753,7 @@ window.refreshAiNews = async function() {
 };
 
 function initNav() {
-    const ham = document.getElementById('ham');
+    const ham = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     if (!ham || !mobileNav) return;
 

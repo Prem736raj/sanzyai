@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
     <title>SanzyAI - Domain Prices, AI Tools, Prompts & Free Learning Hub</title>
     <meta name="description" content="Compare domain prices from 10+ registrars, discover curated AI tools, buy AI prompts, hire AI services and learn website building for free.">
     <meta name="keywords" content="domain price comparison, AI tools, AI prompts, learn website free, sanzyai">
@@ -10,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/chat.css">
@@ -74,6 +75,7 @@
 
                 <!-- Right Side -->
                 <div class="nav-right">
+                    <a href="/prompt-store" class="btn btn-primary btn-sm nav-cta">Browse Store →</a>
                     <!-- Hamburger -->
                     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                         <span></span>
@@ -96,6 +98,9 @@
             <li><a href="/learn-free">📚 Learn Free</a></li>
             <li><a href="/blog">📰 AI News</a></li>
         </ul>
+        <div class="mobile-menu-cta">
+            <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
+        </div>
     </div>
 
     <!-- ============================================
@@ -112,57 +117,55 @@
             <div class="hero-bg-orb hero-bg-orb-3"></div>
         </div>
 
+        <!-- Floating Grid Pattern -->
+        <div class="hero-grid-pattern"></div>
+
         <div class="container">
             <div class="hero-content">
                 <!-- Badge -->
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Introducing SanzyAI — The AI-Powered Hub
+                    <span class="badge-pulse"></span>
+                    🔥 AI Tools, Prompts & Services for Creators
                 </div>
 
                 <!-- Title -->
                 <h1 class="hero-title">
-                    <span class="line-1">Everything AI & Domains</span>
-                    <span class="line-2">In One Place</span>
+                    <span class="line-1">AI-Powered Tools</span>
+                    <span class="line-2">That Grow Your Business</span>
                 </h1>
 
                 <!-- Subtitle -->
                 <p class="hero-subtitle">
-                    Compare domain prices, find AI tools, buy prompts, 
-                    hire AI services & learn for free — all powered by 
-                    intelligent AI at your fingertips.
+                    Premium AI prompts, domain price comparison, curated tools directory, 
+                    and done-for-you AI services — everything you need to scale with AI.
                 </p>
 
                 <!-- CTA Buttons -->
                 <div class="hero-buttons">
-                    <a href="#domain-finder" class="btn btn-primary">
-                        🌐 Find Domain Price
+                    <a href="/prompt-store" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                        Shop AI Prompts
                     </a>
-                    <a href="/ai-tools" class="btn btn-outline">
-                        🤖 Explore AI Tools
+                    <a href="/ai-services" class="btn btn-outline btn-lg">
+                        Hire AI Experts
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <!-- Stats -->
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-target="20">20</span>
-                        <span class="hero-stat-label">AI Tools Listed</span>
+                <!-- Trust Badges Row -->
+                <div class="hero-trust-row">
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Instant Delivery
                     </div>
-                    <div class="hero-stat-divider"></div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-target="10">10</span>
-                        <span class="hero-stat-label">Domain Registrars</span>
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Secure Checkout
                     </div>
-                    <div class="hero-stat-divider"></div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-target="10">10</span>
-                        <span class="hero-stat-label">Prompt Packs</span>
-                    </div>
-                    <div class="hero-stat-divider"></div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-target="10">10K+</span>
-                        <span class="hero-stat-label">Happy Users</span>
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Premium Quality
                     </div>
                 </div>
             </div>
@@ -170,38 +173,29 @@
     </section>
 
     <!-- ============================================
-         MINI WEBSITE LAUNCH SCORE METER
+         STATS BAR
     ============================================ -->
-    <section class="launch-meter" id="launchMeter">
+    <section class="stats-bar">
         <div class="container">
-            <div class="launch-meter-card fade-up">
-                <div class="launch-left">
-                    <div class="section-label">Launch Readiness</div>
-                    <h2 class="launch-title">Interactive Website Launch Score</h2>
-                    <p class="launch-sub">Answer a few quick checks and get your instant launch score with practical next actions.</p>
-
-                    <div class="launch-checks">
-                        <label><input class="launch-input" type="checkbox" data-points="20"> Clear offer above the fold</label>
-                        <label><input class="launch-input" type="checkbox" data-points="20"> Mobile-friendly navigation</label>
-                        <label><input class="launch-input" type="checkbox" data-points="20"> Analytics + Search Console setup</label>
-                        <label><input class="launch-input" type="checkbox" data-points="20"> Lead capture form present</label>
-                    </div>
-
-                    <div class="launch-range-wrap">
-                        <label for="launchSpeedRange">Page speed confidence</label>
-                        <input id="launchSpeedRange" class="launch-input" type="range" min="0" max="20" step="1" value="8" data-range="speed">
-                        <span id="launchSpeedValue">8 / 20</span>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-target="20">20+</span>
+                    <span class="stat-label">AI Tools Listed</span>
                 </div>
-
-                <div class="launch-right">
-                    <div class="score-circle" id="launchScoreCircle">
-                        <div class="score-value" id="launchScoreValue">8</div>
-                        <div class="score-label">/ 100</div>
-                    </div>
-                    <div class="score-status" id="launchScoreStatus">Needs work</div>
-                    <p class="score-tip" id="launchScoreTip">Start with mobile UX and analytics tracking for the fastest improvement.</p>
-                    <a href="/learn-free" class="btn btn-primary">Improve in Learn Free</a>
+                <div class="stat-divider"></div>
+                <div class="stat-item fade-up fade-up-delay-1">
+                    <span class="stat-number" data-target="10">10+</span>
+                    <span class="stat-label">Domain Registrars</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item fade-up fade-up-delay-2">
+                    <span class="stat-number" data-target="11">11</span>
+                    <span class="stat-label">Premium Prompt Packs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item fade-up fade-up-delay-3">
+                    <span class="stat-number" data-target="7">7</span>
+                    <span class="stat-label">Free Resources</span>
                 </div>
             </div>
         </div>
@@ -214,17 +208,105 @@
         <div class="trust-track" id="trustTrack">
             <!-- Items duplicated for infinite scroll -->
             <div class="trust-item"><span class="trust-item-icon">🔒</span> SSL Secured</div>
-            <div class="trust-item"><span class="trust-item-icon">👥</span> 10,000+ Users</div>
-            <div class="trust-item"><span class="trust-item-icon">⭐</span> 4.8/5 Rating</div>
-            <div class="trust-item"><span class="trust-item-icon">🌍</span> 50+ Countries</div>
-            <div class="trust-item"><span class="trust-item-icon">💯</span> Free to Start</div>
+            <div class="trust-item"><span class="trust-item-icon">⚡</span> Instant Delivery</div>
+            <div class="trust-item"><span class="trust-item-icon">💯</span> Lifetime Updates</div>
+            <div class="trust-item"><span class="trust-item-icon">🛡️</span> Secure Checkout via Gumroad</div>
+            <div class="trust-item"><span class="trust-item-icon">📦</span> 11 Premium Packs</div>
+            <div class="trust-item"><span class="trust-item-icon">🤖</span> 20+ AI Tools Curated</div>
             <div class="trust-item"><span class="trust-item-icon">🔒</span> SSL Secured</div>
-            <div class="trust-item"><span class="trust-item-icon">👥</span> 10,000+ Users</div>
-            <div class="trust-item"><span class="trust-item-icon">⭐</span> 4.8/5 Rating</div>
-            <div class="trust-item"><span class="trust-item-icon">🌍</span> 50+ Countries</div>
-            <div class="trust-item"><span class="trust-item-icon">💯</span> Free to Start</div>
+            <div class="trust-item"><span class="trust-item-icon">⚡</span> Instant Delivery</div>
+            <div class="trust-item"><span class="trust-item-icon">💯</span> Lifetime Updates</div>
+            <div class="trust-item"><span class="trust-item-icon">🛡️</span> Secure Checkout via Gumroad</div>
+            <div class="trust-item"><span class="trust-item-icon">📦</span> 11 Premium Packs</div>
+            <div class="trust-item"><span class="trust-item-icon">🤖</span> 20+ AI Tools Curated</div>
         </div>
     </div>
+
+    <!-- ============================================
+         FEATURED PRODUCTS (Best Sellers)
+    ============================================ -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-label">Best Sellers</div>
+                <h2 class="section-title">
+                    Our Most Popular <span class="gradient-text">AI Products</span>
+                </h2>
+                <p class="section-subtitle">
+                    Ready-to-use AI prompt packs crafted for marketers, creators, and founders. Instant download via Gumroad.
+                </p>
+            </div>
+
+            <div class="products-showcase">
+                <!-- Product 1 -->
+                <div class="product-card fade-up fade-up-delay-1">
+                    <div class="product-badge">🔥 Best Seller</div>
+                    <div class="product-icon-area">
+                        <div class="product-icon">🎯</div>
+                    </div>
+                    <h3 class="product-name">ChatGPT Marketing Pack</h3>
+                    <p class="product-desc">150+ battle-tested prompts for content marketing, copywriting, SEO, and social media growth.</p>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.9 (280+)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <span class="product-price">$9.99</span>
+                        <a href="/prompt-store" class="btn btn-primary btn-sm">Buy Now →</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-up fade-up-delay-2">
+                    <div class="product-badge product-badge-new">✨ New</div>
+                    <div class="product-icon-area">
+                        <div class="product-icon">🎨</div>
+                    </div>
+                    <h3 class="product-name">Midjourney Prompt Vault</h3>
+                    <p class="product-desc">200+ curated Midjourney prompts for stunning AI art, product photography, and brand visuals.</p>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.8 (190+)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <span class="product-price">$12.99</span>
+                        <a href="/prompt-store" class="btn btn-primary btn-sm">Buy Now →</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-up fade-up-delay-3">
+                    <div class="product-badge product-badge-popular">🏆 Popular</div>
+                    <div class="product-icon-area">
+                        <div class="product-icon">🤖</div>
+                    </div>
+                    <h3 class="product-name">AI Business Starter Kit</h3>
+                    <p class="product-desc">Complete prompt pack for business planning, automation, client management & revenue growth.</p>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">5.0 (150+)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <span class="product-price">$14.99</span>
+                        <a href="/prompt-store" class="btn btn-primary btn-sm">Buy Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-cta fade-up">
+                <a href="/prompt-store" class="btn btn-outline btn-lg">
+                    Browse All Products
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================
          FEATURES SECTION - 6 CARDS
@@ -398,6 +480,112 @@
         </div>
     </section>
 
+    <!-- ============================================
+         HOW IT WORKS
+    ============================================ -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-label">How It Works</div>
+                <h2 class="section-title">
+                    Get Started in <span class="gradient-text">3 Simple Steps</span>
+                </h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card fade-up fade-up-delay-1">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Browse & Discover</h3>
+                    <p class="step-description">Explore our curated collection of AI prompts, tools, and services built for real business needs.</p>
+                </div>
+                <div class="step-card fade-up fade-up-delay-2">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Purchase & Download</h3>
+                    <p class="step-description">Secure checkout via Gumroad. Get instant access to your digital products right after payment.</p>
+                </div>
+                <div class="step-card fade-up fade-up-delay-3">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Apply & Grow</h3>
+                    <p class="step-description">Use the prompts and tools to save 100+ hours, generate better content, and scale faster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS
+    ============================================ -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="section-label">Testimonials</div>
+                <h2 class="section-title">
+                    What Our <span class="gradient-text">Users Say</span>
+                </h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up fade-up-delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The domain price comparison tool is genuinely useful — I compared .ai domains and found a $12 difference between registrars I wouldn't have checked otherwise."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RP</div>
+                        <div>
+                            <div class="testimonial-name">Rahul P.</div>
+                            <div class="testimonial-role">Web Developer, India</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up fade-up-delay-2">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <p class="testimonial-text">"Bought the ChatGPT Marketing Pack. Some prompts needed minor tweaking for my niche, but the overall structure saved me hours of brainstorming. Good value for the price."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div>
+                            <div class="testimonial-name">Jessica M.</div>
+                            <div class="testimonial-role">Freelance Content Writer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up fade-up-delay-3">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The learn-free section is surprisingly detailed for something that's free. Helped me set up my first website from scratch without spending a rupee on courses."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div>
+                            <div class="testimonial-name">Aman K.</div>
+                            <div class="testimonial-role">Student & Aspiring Creator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+    ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card fade-up">
+                <div class="cta-card-inner">
+                    <h2 class="cta-title">Ready to <span class="gradient-text">10x Your Workflow</span> with AI?</h2>
+                    <p class="cta-subtitle">Browse our curated AI prompt packs, compare domain prices, and explore 20+ free AI tools — all in one platform.</p>
+                    <div class="cta-buttons">
+                        <a href="/prompt-store" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                            Shop AI Prompts
+                        </a>
+                        <a href="/ai-tools" class="btn btn-outline btn-lg">
+                            🤖 Explore Free Tools
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================
          FOOTER
@@ -474,23 +662,16 @@
                     <ul class="footer-links">
                         <li><a href="/about">About SanzyAI</a></li>
                         <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/press-kit">Press Kit</a></li>
-                        <li><a href="/partners">Partners</a></li>
-                        <li><a href="/affiliate-program">Affiliate Program</a></li>
                     </ul>
                 </div>
 
                 <!-- Legal / Support -->
                 <div>
-                    <h4 class="footer-col-title">Support & Legal</h4>
+                    <h4 class="footer-col-title">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="/help-center">Help Center</a></li>
                         <li><a href="/privacy-policy">Privacy Policy</a></li>
                         <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/cookie-policy">Cookie Policy</a></li>
                         <li><a href="/refund-policy">Refund Policy</a></li>
-                        <li><a href="/status">Status Page</a></li>
                     </ul>
                 </div>
             </div>

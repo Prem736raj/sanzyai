@@ -389,6 +389,16 @@ let savedTools = new Set();
 let compareList = [];
 let filteredTools = [...tools];
 
+function sanitizeExternalUrl(url = '') {
+    try {
+        const parsed = new URL(String(url || '').trim());
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return '';
+        return parsed.href;
+    } catch {
+        return '';
+    }
+}
+
 // =============================================
 // RENDER TOOLS
 // =============================================
@@ -396,118 +406,240 @@ function renderTools() {
     const grid = document.getElementById('toolsGrid');
     if (!grid) return;
 
+    grid.textContent = '';
+
     if (filteredTools.length === 0) {
-        grid.innerHTML = `
-            <div class="no-results" style="grid-column:1/-1;">
-                <div class="no-results-icon">🔍</div>
-                <h3>No tools found</h3>
-                <p>Try a different search term or filter category.</p>
-                <button class="btn btn-primary" style="margin-top:16px;" data-action="reset-filters">
-                    Show All Tools
-                </button>
-            </div>`;
+        const empty = document.createElement('div');
+        empty.className = 'no-results';
+        empty.style.gridColumn = '1/-1';
+
+        const icon = document.createElement('div');
+        icon.className = 'no-results-icon';
+        icon.textContent = '🔍';
+
+        const title = document.createElement('h3');
+        title.textContent = 'No tools found';
+
+        const msg = document.createElement('p');
+        msg.textContent = 'Try a different search term or filter category.';
+
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-primary';
+        btn.style.marginTop = '16px';
+        btn.dataset.action = 'reset-filters';
+        btn.textContent = 'Show All Tools';
+
+        empty.appendChild(icon);
+        empty.appendChild(title);
+        empty.appendChild(msg);
+        empty.appendChild(btn);
+        grid.appendChild(empty);
+
         document.getElementById('toolCount').textContent = '0 tools found';
         return;
     }
 
     document.getElementById('toolCount').textContent = `Showing ${filteredTools.length} tool${filteredTools.length !== 1 ? 's' : ''}`;
 
-    grid.innerHTML = filteredTools.map(tool => {
-        const stars = renderStars(tool.rating);
-        const priceBadge = getPriceBadge(tool.pricing, tool.priceLabel);
-        const isCompared = compareList.find(t => t.id === tool.id);
+    filteredTools.forEach((tool) => {
+        const isCompared = compareList.find((t) => t.id === tool.id);
         const isSaved = savedTools.has(tool.id);
 
-        return `
-        <div class="tool-card ${tool.featured ? 'featured' : ''}" data-id="${tool.id}" role="button" tabindex="0" data-action="open-tool" data-tool-id="${tool.id}">
-            <div class="card-top">
-                <div class="card-left">
-                    <div class="tool-logo" style="background:${tool.logoBg};color:${tool.logoColor};">
-                        ${tool.emoji}
-                    </div>
-                    <div class="tool-name-wrap">
-                        <span class="tool-name">${tool.name}</span>
-                        <span class="tool-cat">${tool.category}</span>
-                    </div>
-                </div>
-                <div class="card-actions-top">
-                    <button class="bookmark-btn ${isSaved ? 'saved' : ''}" 
-                        type="button"
-                        data-action="toggle-save"
-                        data-tool-id="${tool.id}"
-                        title="${isSaved ? 'Remove from saved' : 'Save tool'}">
-                        ${isSaved ? '❤️' : '🤍'}
-                    </button>
-                </div>
-            </div>
+        const card = document.createElement('div');
+        card.className = `tool-card ${tool.featured ? 'featured' : ''}`.trim();
+        card.dataset.id = String(tool.id);
+        card.dataset.action = 'open-tool';
+        card.dataset.toolId = String(tool.id);
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
 
-            <div class="card-badges">
-                ${priceBadge}
-                ${tool.tags.map((tag, i) => `
-                    <span class="tag-badge ${tool.tagStyle[i] || ''}">${tag}</span>
-                `).join('')}
-            </div>
+        const cardTop = document.createElement('div');
+        cardTop.className = 'card-top';
+        const cardLeft = document.createElement('div');
+        cardLeft.className = 'card-left';
+        const logo = document.createElement('div');
+        logo.className = 'tool-logo';
+        logo.style.background = tool.logoBg;
+        logo.style.color = tool.logoColor;
+        logo.textContent = tool.emoji;
+        const nameWrap = document.createElement('div');
+        nameWrap.className = 'tool-name-wrap';
+        const name = document.createElement('span');
+        name.className = 'tool-name';
+        name.textContent = tool.name;
+        const cat = document.createElement('span');
+        cat.className = 'tool-cat';
+        cat.textContent = tool.category;
+        nameWrap.appendChild(name);
+        nameWrap.appendChild(cat);
+        cardLeft.appendChild(logo);
+        cardLeft.appendChild(nameWrap);
 
-            <div class="card-rating">
-                <div class="stars-row">${stars}</div>
-                <span class="rating-val">${tool.rating}</span>
-            </div>
+        const actionsTop = document.createElement('div');
+        actionsTop.className = 'card-actions-top';
+        const bookmarkBtn = document.createElement('button');
+        bookmarkBtn.type = 'button';
+        bookmarkBtn.className = `bookmark-btn ${isSaved ? 'saved' : ''}`.trim();
+        bookmarkBtn.dataset.action = 'toggle-save';
+        bookmarkBtn.dataset.toolId = String(tool.id);
+        bookmarkBtn.title = isSaved ? 'Remove from saved' : 'Save tool';
+        bookmarkBtn.textContent = isSaved ? '❤️' : '🤍';
+        actionsTop.appendChild(bookmarkBtn);
 
-            <p class="tool-desc">${tool.desc}</p>
+        cardTop.appendChild(cardLeft);
+        cardTop.appendChild(actionsTop);
+        card.appendChild(cardTop);
 
-            <div class="tool-price">
-                💰 Starting at: <strong>${tool.priceLabel}</strong>
-            </div>
+        const badges = document.createElement('div');
+        badges.className = 'card-badges';
+        const price = document.createElement('span');
+        if (tool.pricing === 'free') {
+            price.className = 'price-badge price-free';
+            price.textContent = `🆓 ${tool.priceLabel}`;
+        } else if (tool.pricing === 'freemium') {
+            price.className = 'price-badge price-freemium';
+            price.textContent = `✨ ${tool.priceLabel}`;
+        } else {
+            price.className = 'price-badge price-paid';
+            price.textContent = `💳 ${tool.priceLabel}`;
+        }
+        badges.appendChild(price);
+        tool.tags.forEach((tag, i) => {
+            const tagEl = document.createElement('span');
+            tagEl.className = `tag-badge ${tool.tagStyle[i] || ''}`.trim();
+            tagEl.textContent = tag;
+            badges.appendChild(tagEl);
+        });
+        card.appendChild(badges);
 
-            <div class="card-btns">
-                <a href="${tool.link}" target="_blank" rel="noopener sponsored"
-                   class="visit-btn"
-                   data-action="visit-tool"
-                   data-tool-name="${tool.name}"
-                   >
-                    🔗 Visit Tool
-                </a>
-                <button class="review-btn" type="button" data-action="quick-compare" data-tool-id="${tool.id}">
-                    ⚖️ Compare
-                </button>
-            </div>
+        const ratingRow = document.createElement('div');
+        ratingRow.className = 'card-rating';
+        const stars = document.createElement('div');
+        stars.className = 'stars-row';
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('span');
+            if (i <= Math.floor(tool.rating)) star.className = 'star';
+            else if (i - 0.5 <= tool.rating) star.className = 'star half';
+            else star.className = 'star empty';
+            star.textContent = '★';
+            stars.appendChild(star);
+        }
+        const ratingVal = document.createElement('span');
+        ratingVal.className = 'rating-val';
+        ratingVal.textContent = String(tool.rating);
+        ratingRow.appendChild(stars);
+        ratingRow.appendChild(ratingVal);
+        card.appendChild(ratingRow);
 
-            <div class="compare-wrap">
-                <input type="checkbox" class="compare-cb" id="cmp-${tool.id}"
-                    ${isCompared ? 'checked' : ''}
-                    data-action="toggle-compare"
-                    data-tool-id="${tool.id}">
-                <label class="compare-label" for="cmp-${tool.id}">
-                    ⚖️ Add to Compare ${isCompared ? '(selected)' : ''}
-                </label>
-            </div>
-        </div>`;
-    }).join('');
+        const desc = document.createElement('p');
+        desc.className = 'tool-desc';
+        desc.textContent = tool.desc;
+        card.appendChild(desc);
+
+        const toolPrice = document.createElement('div');
+        toolPrice.className = 'tool-price';
+        toolPrice.appendChild(document.createTextNode('💰 Starting at: '));
+        const strong = document.createElement('strong');
+        strong.textContent = tool.priceLabel;
+        toolPrice.appendChild(strong);
+        card.appendChild(toolPrice);
+
+        const btns = document.createElement('div');
+        btns.className = 'card-btns';
+        const visit = document.createElement('a');
+        visit.className = 'visit-btn';
+        visit.dataset.action = 'visit-tool';
+        visit.dataset.toolName = tool.name;
+        visit.target = '_blank';
+        visit.rel = 'noopener sponsored';
+        visit.href = sanitizeExternalUrl(tool.link) || '#';
+        visit.textContent = '🔗 Visit Tool';
+        const compareBtn = document.createElement('button');
+        compareBtn.className = 'review-btn';
+        compareBtn.type = 'button';
+        compareBtn.dataset.action = 'quick-compare';
+        compareBtn.dataset.toolId = String(tool.id);
+        compareBtn.textContent = '⚖️ Compare';
+        btns.appendChild(visit);
+        btns.appendChild(compareBtn);
+        card.appendChild(btns);
+
+        const compareWrap = document.createElement('div');
+        compareWrap.className = 'compare-wrap';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'compare-cb';
+        cb.id = `cmp-${tool.id}`;
+        cb.dataset.action = 'toggle-compare';
+        cb.dataset.toolId = String(tool.id);
+        cb.checked = Boolean(isCompared);
+        const label = document.createElement('label');
+        label.className = 'compare-label';
+        label.setAttribute('for', `cmp-${tool.id}`);
+        label.textContent = `⚖️ Add to Compare ${isCompared ? '(selected)' : ''}`;
+        compareWrap.appendChild(cb);
+        compareWrap.appendChild(label);
+        card.appendChild(compareWrap);
+
+        grid.appendChild(card);
+    });
 }
 
 function renderAlternatives() {
     const grid = document.getElementById('alternativesGrid');
     if (!grid) return;
 
-    grid.innerHTML = domainAlternatives.map((group) => `
-        <article class="alt-card">
-            <div class="alt-head">
-                <h3 class="alt-domain">${group.domain}</h3>
-                <span class="alt-sub">${group.subtitle}</span>
-            </div>
-            <div class="alt-list">
-                ${group.options.map((option) => `
-                    <div class="alt-item">
-                        <div class="alt-left">
-                            <span class="alt-chip ${option.tier}">${option.tier}</span>
-                            <span class="alt-name">${option.name}</span>
-                        </div>
-                        <a class="alt-link" href="${option.link}" target="_blank" rel="noopener sponsored" data-action="visit-external" data-tool-name="${option.name}">Visit ↗</a>
-                    </div>
-                `).join('')}
-            </div>
-        </article>
-    `).join('');
+    grid.textContent = '';
+    domainAlternatives.forEach((group) => {
+        const card = document.createElement('article');
+        card.className = 'alt-card';
+
+        const head = document.createElement('div');
+        head.className = 'alt-head';
+        const h3 = document.createElement('h3');
+        h3.className = 'alt-domain';
+        h3.textContent = group.domain;
+        const sub = document.createElement('span');
+        sub.className = 'alt-sub';
+        sub.textContent = group.subtitle;
+        head.appendChild(h3);
+        head.appendChild(sub);
+
+        const list = document.createElement('div');
+        list.className = 'alt-list';
+        group.options.forEach((option) => {
+            const item = document.createElement('div');
+            item.className = 'alt-item';
+
+            const left = document.createElement('div');
+            left.className = 'alt-left';
+            const chip = document.createElement('span');
+            chip.className = `alt-chip ${option.tier}`;
+            chip.textContent = option.tier;
+            const name = document.createElement('span');
+            name.className = 'alt-name';
+            name.textContent = option.name;
+            left.appendChild(chip);
+            left.appendChild(name);
+
+            const link = document.createElement('a');
+            link.className = 'alt-link';
+            link.href = sanitizeExternalUrl(option.link) || '#';
+            link.target = '_blank';
+            link.rel = 'noopener sponsored';
+            link.dataset.action = 'visit-external';
+            link.dataset.toolName = option.name;
+            link.textContent = 'Visit ↗';
+
+            item.appendChild(left);
+            item.appendChild(link);
+            list.appendChild(item);
+        });
+
+        card.appendChild(head);
+        card.appendChild(list);
+        grid.appendChild(card);
+    });
 }
 
 function renderToolDeepDescription(tool) {
@@ -530,8 +662,7 @@ function renderFeaturePills(tool) {
 
     return flags
         .filter((item) => tool.features[item.key])
-        .map((item) => `<span class="tool-detail-pill">${item.label}</span>`)
-        .join('');
+        .map((item) => item.label);
 }
 
 window.openToolDetails = function(id) {
@@ -542,26 +673,66 @@ window.openToolDetails = function(id) {
 
     const description = renderToolDeepDescription(tool);
 
-    content.innerHTML = `
-        <div class="tool-detail-hero">
-            <div class="tool-detail-logo" style="background:${tool.logoBg};color:${tool.logoColor};">${tool.emoji}</div>
-            <div>
-                <h3 class="tool-detail-title">${tool.name}</h3>
-                <p class="tool-detail-sub">${tool.category} • ${tool.priceLabel} • Rated ${tool.rating}/5</p>
-            </div>
-        </div>
-        <div class="tool-detail-pills">${renderFeaturePills(tool)}</div>
-        <div class="tool-detail-content">
-            <p>${description[0]}</p>
-            <p>${description[1]}</p>
-            <p>${description[2]}</p>
-            <p>${tool.desc}</p>
-        </div>
-        <div class="tool-detail-actions">
-            <a href="${tool.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary" data-action="modal-visit" data-tool-name="${tool.name}">🔗 Visit ${tool.name}</a>
-            <button type="button" class="btn btn-outline" data-action="modal-compare" data-tool-id="${tool.id}">⚖️ Add To Compare</button>
-        </div>
-    `;
+    content.textContent = '';
+
+    const hero = document.createElement('div');
+    hero.className = 'tool-detail-hero';
+    const logo = document.createElement('div');
+    logo.className = 'tool-detail-logo';
+    logo.style.background = tool.logoBg;
+    logo.style.color = tool.logoColor;
+    logo.textContent = tool.emoji;
+    const heroRight = document.createElement('div');
+    const title = document.createElement('h3');
+    title.className = 'tool-detail-title';
+    title.textContent = tool.name;
+    const sub = document.createElement('p');
+    sub.className = 'tool-detail-sub';
+    sub.textContent = `${tool.category} • ${tool.priceLabel} • Rated ${tool.rating}/5`;
+    heroRight.appendChild(title);
+    heroRight.appendChild(sub);
+    hero.appendChild(logo);
+    hero.appendChild(heroRight);
+    content.appendChild(hero);
+
+    const pills = document.createElement('div');
+    pills.className = 'tool-detail-pills';
+    renderFeaturePills(tool).forEach((label) => {
+        const pill = document.createElement('span');
+        pill.className = 'tool-detail-pill';
+        pill.textContent = label;
+        pills.appendChild(pill);
+    });
+    content.appendChild(pills);
+
+    const body = document.createElement('div');
+    body.className = 'tool-detail-content';
+    [description[0], description[1], description[2], tool.desc].forEach((paragraph) => {
+        const p = document.createElement('p');
+        p.textContent = paragraph;
+        body.appendChild(p);
+    });
+    content.appendChild(body);
+
+    const actions = document.createElement('div');
+    actions.className = 'tool-detail-actions';
+    const visit = document.createElement('a');
+    visit.className = 'btn btn-primary';
+    visit.dataset.action = 'modal-visit';
+    visit.dataset.toolName = tool.name;
+    visit.target = '_blank';
+    visit.rel = 'noopener sponsored';
+    visit.href = sanitizeExternalUrl(tool.link) || '#';
+    visit.textContent = `🔗 Visit ${tool.name}`;
+    const compare = document.createElement('button');
+    compare.type = 'button';
+    compare.className = 'btn btn-outline';
+    compare.dataset.action = 'modal-compare';
+    compare.dataset.toolId = String(tool.id);
+    compare.textContent = '⚖️ Add To Compare';
+    actions.appendChild(visit);
+    actions.appendChild(compare);
+    content.appendChild(actions);
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1107,7 +1278,7 @@ window.addEventListener('DOMContentLoaded', () => {
     bindDynamicControls();
 
     // Hamburger
-    const ham = document.getElementById('ham');
+    const ham = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     if (ham && mobileNav) {
         ham.addEventListener('click', () => {

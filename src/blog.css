@@ -63,7 +63,7 @@ body {
     padding: 12px 0;
 }
 
-.nav-inner {
+.navbar-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,14 +94,14 @@ body {
     color: #dff3ff;
 }
 
-.nav-links {
+.nav-menu {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.nav-links a {
+.nav-menu a {
     text-decoration: none;
     color: var(--news-muted);
     font-family: 'Space Grotesk', sans-serif;
@@ -112,8 +112,8 @@ body {
     transition: var(--ease);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-menu a:hover,
+.nav-menu a.active {
     color: #f4fbff;
     background: rgba(55, 227, 255, 0.12);
 }
@@ -860,12 +860,12 @@ body.light-mode .logo-text {
     color: #0f172a;
 }
 
-body.light-mode .nav-links a {
+body.light-mode .nav-menu a {
     color: #334155;
 }
 
-body.light-mode .nav-links a:hover,
-body.light-mode .nav-links a.active {
+body.light-mode .nav-menu a:hover,
+body.light-mode .nav-menu a.active {
     color: #0f172a;
     background: rgba(59, 130, 246, 0.14);
 }
@@ -1090,7 +1090,7 @@ body.light-mode .footer-links a:hover {
 }
 
 @media (max-width: 920px) {
-    .nav-links {
+    .nav-menu {
         display: none;
     }
 

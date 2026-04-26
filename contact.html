@@ -3,17 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact SanzyAI</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Contact SanzyAI — Get in Touch</title>
+  <meta name="description" content="Contact the SanzyAI team for support, business inquiries, or feedback. We typically respond within 24 hours.">
   <link rel="stylesheet" href="./src/style.css">
   <link rel="stylesheet" href="./src/globals.css">
 </head>
 <body>
-  <main style="max-width:900px;margin:40px auto;padding:20px;line-height:1.7;">
-    <h1>Contact</h1>
-    <p>Email: hello@sanzyai.com</p>
-    <p>Support requests are answered during business hours.</p>
-    <p><a href="/">Return to Home</a></p>
-  </main>
-  <script type="module" src="./src/globals.js"></script>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">AI News</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="legal-page">
+    <div class="container">
+        <div class="legal-hero">
+            <div class="section-label">Contact</div>
+            <h1>Get in <span class="gradient-text">Touch</span></h1>
+            <p class="legal-hero-sub">Have a question, feedback, or business inquiry? Reach out and we'll get back to you within 24 hours.</p>
+        </div>
+
+        <div class="legal-content">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrap">
+                    <h2>Send a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <select id="contact-subject">
+                                <option value="general">General Question</option>
+                                <option value="support">Product Support</option>
+                                <option value="refund">Refund Request</option>
+                                <option value="services">AI Services Inquiry</option>
+                                <option value="partnership">Partnership / Collaboration</option>
+                                <option value="bug">Report a Bug</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message →</button>
+                    </form>
+                    <p class="form-note">We typically respond within 24 hours during business days.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrap">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>For general inquiries and support:</p>
+                        <a href="mailto:hello@sanzyai.com" class="contact-link">hello@sanzyai.com</a>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">🛒</div>
+                        <h3>Purchase Issues</h3>
+                        <p>All purchases are processed through Gumroad. For payment or download issues:</p>
+                        <a href="https://customers.gumroad.com/article/192-requesting-a-refund" target="_blank" rel="noopener" class="contact-link">Gumroad Help Center →</a>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">💬</div>
+                        <h3>Quick Help</h3>
+                        <p>Try our AI assistant for instant answers to common questions:</p>
+                        <p class="contact-link" style="cursor:pointer" onclick="document.querySelector('.sanzy-chat-toggle')?.click()">Open Chat Assistant →</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer" style="padding: 32px 0; border-top: 1px solid rgba(108,53,222,0.15);">
+    <div class="container">
+        <div class="footer-bottom" style="border:none; padding:0;">
+            <p class="footer-copyright">© 2026 SanzyAI.com — All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/chat.js"></script>
 </body>
 </html>

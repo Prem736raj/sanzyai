@@ -3,16 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About SanzyAI</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>About SanzyAI — AI Tools, Prompts & Services Platform</title>
+  <meta name="description" content="Learn about SanzyAI — an AI-powered platform offering premium prompts, domain comparison, curated tools, and done-for-you AI services.">
   <link rel="stylesheet" href="./src/style.css">
   <link rel="stylesheet" href="./src/globals.css">
 </head>
 <body>
-  <main style="max-width:900px;margin:40px auto;padding:20px;line-height:1.7;">
-    <h1>About SanzyAI</h1>
-    <p>SanzyAI is a practical hub for domains, AI tools, prompts, services, and free learning resources.</p>
-    <p><a href="/">Return to Home</a></p>
-  </main>
-  <script type="module" src="./src/globals.js"></script>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">AI News</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="legal-page">
+    <div class="container">
+        <!-- Hero Header -->
+        <div class="legal-hero">
+            <div class="section-label">About Us</div>
+            <h1>About <span class="gradient-text">SanzyAI</span></h1>
+            <p class="legal-hero-sub">We build practical AI tools and curated resources to help creators, marketers, and founders work smarter.</p>
+        </div>
+
+        <div class="legal-content">
+            <!-- Mission -->
+            <section class="about-section">
+                <h2>Our Mission</h2>
+                <p>SanzyAI exists to make AI accessible and practical for everyday creators and small businesses. We don't chase hype — we build tools that save real time and money.</p>
+                <p>Whether you're a freelance writer looking for better ChatGPT prompts, a startup founder comparing domain prices, or a student learning to build your first website — SanzyAI has something for you.</p>
+            </section>
+
+            <!-- What We Offer -->
+            <section class="about-section">
+                <h2>What We Offer</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-card-icon">🔍</div>
+                        <h3>Domain Price Finder</h3>
+                        <p>Compare domain prices across 10+ registrars in one search. Find the cheapest option for any TLD.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">🤖</div>
+                        <h3>AI Tools Directory</h3>
+                        <p>A curated list of 20+ AI tools, reviewed and categorized by use case — writing, images, video, code, and more.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">📦</div>
+                        <h3>Prompt Store</h3>
+                        <p>Premium prompt packs for ChatGPT, Claude, Gemini, and Midjourney. Ready-to-use, instant download via Gumroad.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">🚀</div>
+                        <h3>AI Services</h3>
+                        <p>Done-for-you AI solutions — custom chatbots, content automation, and workflow optimization for businesses.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">📚</div>
+                        <h3>Free Learning Hub</h3>
+                        <p>Step-by-step guides to help you build an online business from scratch — domain setup, SEO, monetization, all free.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">📰</div>
+                        <h3>AI Newsroom</h3>
+                        <p>Curated AI news, model releases, and industry trends — organized by urgency and business impact.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How We're Different -->
+            <section class="about-section">
+                <h2>How We're Different</h2>
+                <ul class="about-list">
+                    <li><strong>No fluff.</strong> Every tool and resource on SanzyAI is built for practical, real-world use — not for showcasing fancy demos.</li>
+                    <li><strong>Honest pricing.</strong> Our prompt packs are priced for individual creators, not enterprise budgets. Free resources stay free.</li>
+                    <li><strong>All-in-one.</strong> Instead of juggling 10 different sites, find domains, tools, prompts, services, and learning in one place.</li>
+                    <li><strong>Secure payments.</strong> All purchases go through Gumroad — a trusted platform handling checkout, delivery, and refunds.</li>
+                </ul>
+            </section>
+
+            <!-- Contact CTA -->
+            <section class="about-section about-cta">
+                <h2>Get in Touch</h2>
+                <p>Have questions, feedback, or a business inquiry? We'd love to hear from you.</p>
+                <a href="/contact" class="btn btn-primary">Contact Us →</a>
+            </section>
+        </div>
+    </div>
+</main>
+
+<!-- Simple Footer -->
+<footer class="footer" style="padding: 32px 0; border-top: 1px solid rgba(108,53,222,0.15);">
+    <div class="container">
+        <div class="footer-bottom" style="border:none; padding:0;">
+            <p class="footer-copyright">© 2026 SanzyAI.com — All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/chat.js"></script>
 </body>
 </html>

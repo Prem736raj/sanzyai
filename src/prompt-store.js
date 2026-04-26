@@ -1042,7 +1042,7 @@ window.handleSellApply = function(e) {
 // =============================================
 // HAMBURGER
 // =============================================
-const ham = document.getElementById('ham');
+const ham = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 if (ham && mobileNav) {
     ham.addEventListener('click', () => {

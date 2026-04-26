@@ -5,6 +5,7 @@ export default defineConfig({
   appType: 'mpa',
   server: {
     host: true,
+    port: 5173,
     proxy: {
       '/api': {
         target: 'http://localhost:8787',

@@ -749,7 +749,7 @@ window.toggleChecklist = function(index, checked) {
 };
 
 function setupMobileNav() {
-    const ham = document.getElementById('ham');
+    const ham = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     if (!ham || !mobileNav) return;
 

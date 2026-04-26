@@ -355,6 +355,16 @@ body.light-mode :focus-visible {
 }
 
 /* ============================================
+   STANDARDIZED NAV-RIGHT (all pages)
+============================================ */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* ============================================
    GLOBAL USER CONTROLS (LANG + THEME)
 ============================================ */
 .site-controls {
@@ -390,41 +400,44 @@ body.light-mode :focus-visible {
 }
 
 .site-control-btn {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
     border-radius: 999px;
-    border: 1.5px solid rgba(157, 123, 255, 0.65);
-    background: #f8f9ff;
+    border: 1.5px solid rgba(108, 53, 222, 0.35);
+    background: rgba(15, 15, 30, 0.8);
     color: #fff;
     cursor: pointer;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(108, 53, 222, 0.2);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: none;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .site-control-btn:hover {
     transform: translateY(-1px);
-    border-color: rgba(108, 53, 222, 0.95);
-    box-shadow: 0 6px 16px rgba(108, 53, 222, 0.28);
+    border-color: rgba(108, 53, 222, 0.7);
+    background: rgba(108, 53, 222, 0.15);
 }
 
 .language-panel {
     position: absolute;
     top: 48px;
     right: 48px;
-    min-width: 190px;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(108, 53, 222, 0.35);
-    background: rgba(18, 18, 26, 0.97);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    min-width: 200px;
+    max-height: 360px;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(108, 53, 222, 0.3);
+    background: rgba(14, 14, 22, 0.98);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
 }
 
 .language-panel.open {
@@ -434,23 +447,71 @@ body.light-mode :focus-visible {
 }
 
 .language-panel-title {
-    color: #d9ddff;
+    color: rgba(255, 255, 255, 0.6);
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
-.site-lang-select {
+.language-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 280px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(108, 53, 222, 0.3) transparent;
+}
+
+.language-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.language-list::-webkit-scrollbar-thumb {
+    background: rgba(108, 53, 222, 0.3);
+    border-radius: 2px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
+    padding: 9px 12px;
+    border: none;
     border-radius: 8px;
-    border: 1px solid rgba(108, 53, 222, 0.4);
-    background: rgba(10, 10, 15, 0.95);
-    color: #f3f5ff;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
     font-family: 'Inter', sans-serif;
     font-size: 0.84rem;
-    padding: 8px 10px;
-    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: left;
+}
+
+.lang-btn:hover {
+    background: rgba(108, 53, 222, 0.12);
+    color: #fff;
+}
+
+.lang-btn.active {
+    background: rgba(108, 53, 222, 0.18);
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+
+.lang-btn.active::after {
+    content: '✓';
+    position: absolute;
+    right: 12px;
+    font-size: 0.75rem;
+    color: #8B5CF6;
 }
 
 .translate-hidden {
@@ -460,6 +521,45 @@ body.light-mode :focus-visible {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+/* ============================================
+   HIDE GOOGLE TRANSLATE TOOLBAR
+   Prevents the confusing top bar from appearing.
+   Users control language through our custom panel.
+============================================ */
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+/* Google Translate injects an iframe banner; hide it */
+iframe.goog-te-banner-frame {
+    display: none !important;
+    height: 0 !important;
+}
+
+/* Hide the "Translated to" bar that GT sometimes injects inline */
+.skiptranslate.goog-te-gadget,
+#google_translate_element .skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+    display: none !important;
+    height: 0 !important;
 }
 
 @media (max-width: 768px) {
@@ -790,12 +890,26 @@ body.light-mode .site-controls {
 
 body.light-mode .language-panel {
     background: #ffffff;
-    border-color: rgba(108, 53, 222, 0.35);
+    border-color: rgba(108, 53, 222, 0.2);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
-body.light-mode .language-panel select,
 body.light-mode .language-panel-title {
-    color: #0f172a !important;
+    color: #64748b !important;
+}
+
+body.light-mode .lang-btn {
+    color: #334155;
+}
+
+body.light-mode .lang-btn:hover {
+    background: rgba(108, 53, 222, 0.06);
+    color: #0f172a;
+}
+
+body.light-mode .lang-btn.active {
+    background: rgba(108, 53, 222, 0.1);
+    color: #0f172a;
 }
 
 body.light-mode .language-panel-title,

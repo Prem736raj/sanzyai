@@ -145,8 +145,7 @@ body {
 }
 
 .nav-menu a:hover,
-.nav-menu a.active { color: var(--text); background: rgba(108, 53, 222, 0.12); }
-.nav-menu a.active { color: var(--primary-light); }
+.nav-menu a.active { color: var(--text); background: rgba(108, 53, 222, 0.15); border: 1px solid rgba(108, 53, 222, 0.25); }
 
 .btn {
     display: inline-flex;
@@ -212,6 +211,15 @@ body {
 .btn-green:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 200, 81, 0.5);
+}
+
+
+/* Nav Right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 /* Hamburger */

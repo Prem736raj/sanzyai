@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
     <title>AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI</title>
     <meta name="description" content="Track AI news by type: model releases, product launches, policy, research, funding, and creator opportunities. Daily actionable AI updates.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -34,14 +35,14 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <div class="container">
-        <div class="nav-inner">
+        <div class="navbar-inner">
             <a href="/" class="logo">
                 <div class="logo-icon">⚡</div>
                 <span class="logo-text">SanzyAI</span>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
@@ -50,7 +51,9 @@
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog" class="active">AI News</a></li>
             </ul>
-            <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </div>
 </nav>

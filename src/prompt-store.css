@@ -54,14 +54,14 @@ body{background:var(--bg);color:var(--text)}
     background:rgba(10,10,15,0.96);backdrop-filter:blur(20px);
     border-bottom:1px solid var(--border);padding:13px 0;
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0}
 .logo-icon{width:36px;height:36px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 14px rgba(108,53,222,0.5)}
 .logo-text{font-family:var(--fh);font-weight:700;font-size:1.28rem;background:linear-gradient(135deg,var(--primary-light),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
-.nav-links a{display:block;padding:7px 12px;color:var(--muted);text-decoration:none;font-family:var(--fh);font-weight:500;font-size:0.87rem;border-radius:var(--rs);transition:var(--ease)}
-.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(108,53,222,0.12)}
-.nav-links a.active{color:var(--primary-light)}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{display:block;padding:7px 12px;color:var(--muted);text-decoration:none;font-family:var(--fh);font-weight:500;font-size:0.87rem;border-radius:var(--rs);transition:var(--ease)}
+.nav-menu a:hover,.nav-menu a.active{color:var(--text);background:rgba(108,53,222,0.12)}
+.nav-menu a.active{color:var(--primary-light)}
 
 .btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:var(--rs);font-family:var(--fh);font-weight:600;font-size:0.88rem;cursor:pointer;transition:var(--ease);text-decoration:none;border:none;outline:none;white-space:nowrap}
 .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 4px 16px rgba(108,53,222,0.4)}
@@ -450,7 +450,7 @@ body{background:var(--bg);color:var(--text)}
    RESPONSIVE
 ============================================ */
 @media(max-width:1024px){
-    .nav-links{display:none}
+    .nav-menu{display:none}
     .hamburger{display:flex}
     .sell-card{grid-template-columns:1fr}
     .modal-body{grid-template-columns:1fr}

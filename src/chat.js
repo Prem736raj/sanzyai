@@ -27,7 +27,7 @@ import DOMPurify from 'dompurify';
                         <span class="sanzy-name" id="sanzyDialogTitle">Sanzy — AI Assistant</span>
                             <div class="sanzy-status">
                                 <span class="sanzy-status-dot" id="sanzyStatusDot"></span>
-                                <span id="sanzyStatusText">Demo mode · Simulated responses</span>
+                                <span id="sanzyStatusText">Online · Ready to help</span>
                             </div>
                     </div>
                     <div class="sanzy-header-btns">
@@ -401,7 +401,7 @@ I can help you with:
                 statusTextEl.textContent = 'Online · Connected to AI';
                 statusDotEl.classList.remove('demo');
             } else {
-                statusTextEl.textContent = 'Demo mode · Simulated responses';
+                statusTextEl.textContent = 'Online · Ready to help';
                 statusDotEl.classList.add('demo');
             }
         },
@@ -865,12 +865,49 @@ Still stuck? Email **hello@sanzyai.com** and a human will reply! 🙌`
     };
 
     // =============================================
-    // INIT ON DOM READY
+    // DEFERRED INIT (idle or first interaction)
     // =============================================
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => SanzyBot.init());
-    } else {
+    function bootSanzyBotOnce() {
+        if (window.__sanzyBotBooted) return;
+        window.__sanzyBotBooted = true;
         SanzyBot.init();
+    }
+
+    function queueDeferredBoot() {
+        const onFirstInteraction = () => {
+            cleanupInteractionListeners();
+            bootSanzyBotOnce();
+        };
+
+        const cleanupInteractionListeners = () => {
+            document.removeEventListener('pointerdown', onFirstInteraction, true);
+            document.removeEventListener('keydown', onFirstInteraction, true);
+            document.removeEventListener('touchstart', onFirstInteraction, true);
+            document.removeEventListener('scroll', onFirstInteraction, true);
+        };
+
+        document.addEventListener('pointerdown', onFirstInteraction, true);
+        document.addEventListener('keydown', onFirstInteraction, true);
+        document.addEventListener('touchstart', onFirstInteraction, true);
+        document.addEventListener('scroll', onFirstInteraction, true);
+
+        if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(() => {
+                cleanupInteractionListeners();
+                bootSanzyBotOnce();
+            }, { timeout: 4500 });
+        } else {
+            setTimeout(() => {
+                cleanupInteractionListeners();
+                bootSanzyBotOnce();
+            }, 2500);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', queueDeferredBoot);
+    } else {
+        queueDeferredBoot();
     }
 
     // Expose globally

@@ -156,17 +156,17 @@
     };
 
     const languageOptions = [
-        { code: 'en', label: 'English' },
-        { code: 'hi', label: 'Hindi' },
-        { code: 'es', label: 'Spanish' },
-        { code: 'fr', label: 'French' },
-        { code: 'de', label: 'German' },
-        { code: 'ar', label: 'Arabic' },
-        { code: 'pt', label: 'Portuguese' },
-        { code: 'ru', label: 'Russian' },
-        { code: 'ja', label: 'Japanese' },
-        { code: 'ko', label: 'Korean' },
-        { code: 'zh-CN', label: 'Chinese' }
+        { code: 'en', label: 'English', flag: '🇬🇧' },
+        { code: 'hi', label: 'हिन्दी', flag: '🇮🇳' },
+        { code: 'es', label: 'Español', flag: '🇪🇸' },
+        { code: 'fr', label: 'Français', flag: '🇫🇷' },
+        { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+        { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+        { code: 'pt', label: 'Português', flag: '🇧🇷' },
+        { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+        { code: 'ja', label: '日本語', flag: '🇯🇵' },
+        { code: 'ko', label: '한국어', flag: '🇰🇷' },
+        { code: 'zh-CN', label: '中文', flag: '🇨🇳' }
     ];
 
     function currentPath() {
@@ -351,22 +351,29 @@
     }
 
     function loadGoogleTranslateScript() {
-        if (document.getElementById('googleTranslateScript')) return;
+        return new Promise((resolve) => {
+            if (document.getElementById('googleTranslateScript')) {
+                resolve();
+                return;
+            }
 
-        const script = document.createElement('script');
-        script.id = 'googleTranslateScript';
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.head.appendChild(script);
+            window.googleTranslateElementInit = function() {
+                if (!window.google || !window.google.translate) { resolve(); return; }
+                new window.google.translate.TranslateElement(
+                    { pageLanguage: 'en', autoDisplay: false },
+                    'google_translate_element'
+                );
+                resolve();
+            };
+
+            const script = document.createElement('script');
+            script.id = 'googleTranslateScript';
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.async = true;
+            script.onerror = resolve;
+            document.head.appendChild(script);
+        });
     }
-
-    window.googleTranslateElementInit = function() {
-        if (!window.google || !window.google.translate) return;
-        new window.google.translate.TranslateElement(
-            { pageLanguage: 'en', autoDisplay: false },
-            'google_translate_element'
-        );
-    };
 
     window.toggleTheme = () => {
         const currentTheme = getPreferredTheme();
@@ -383,8 +390,13 @@
         panel.setAttribute('aria-hidden', panel.classList.contains('open') ? 'false' : 'true');
     };
 
-    window.setSiteLanguage = (langCode) => {
+    window.setSiteLanguage = async (langCode) => {
         localStorage.setItem('sanzy_lang', langCode);
+
+        // Update active button state immediately
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === langCode);
+        });
 
         if (langCode === 'en') {
             clearTranslateCookies();
@@ -393,28 +405,39 @@
         }
 
         setTranslateCookies(langCode);
-        loadGoogleTranslateScript();
+        await loadGoogleTranslateScript();
+
+        // Wait a tick for the widget to initialize, then trigger translation
         setTimeout(() => {
-            window.location.reload();
-        }, 120);
+            // Try to programmatically select the language in the Google Translate widget
+            const selectEl = document.querySelector('.goog-te-combo');
+            if (selectEl) {
+                selectEl.value = langCode;
+                selectEl.dispatchEvent(new Event('change'));
+            } else {
+                // Fallback: reload with cookie set
+                window.location.reload();
+            }
+        }, 500);
     };
 
     // Build the markup for all global elements
     function injectGlobalElements() {
         const body = document.body;
+        const savedLang = localStorage.getItem('sanzy_lang') || 'en';
 
-        const optionsHtml = languageOptions
-            .map((lang) => `<option value="${lang.code}">${lang.label}</option>`)
+        const langButtonsHtml = languageOptions
+            .map((lang) => `<button class="lang-btn${lang.code === savedLang ? ' active' : ''}" data-lang="${lang.code}">${lang.flag} ${lang.label}</button>`)
             .join('');
 
         // Only show language controls when multiple languages are configured.
         const langControlHtml = (languageOptions && languageOptions.length > 1) ? `
                 <button class="site-control-btn" id="langToggleBtn" aria-label="Change language" title="Change language">🌐</button>
                 <div class="language-panel" id="languagePanel" aria-hidden="true">
-                    <div class="language-panel-title">Choose language</div>
-                    <select id="siteLangSelect" class="site-lang-select">
-                        ${optionsHtml}
-                    </select>
+                    <div class="language-panel-title">Choose Language</div>
+                    <div class="language-list" id="languageList">
+                        ${langButtonsHtml}
+                    </div>
                 </div>
             ` : '';
 
@@ -436,14 +459,6 @@
         if (controls && navControlHost && !navControlHost.contains(controls)) {
             controls.classList.add('in-navbar');
             navControlHost.appendChild(controls);
-        }
-
-        // If the language select ended up with only one option (English), remove the
-        // language toggle to avoid showing a non-functional UI element.
-        const _langSelect = document.getElementById('siteLangSelect');
-        if (_langSelect && _langSelect.options.length <= 1) {
-            document.getElementById('langToggleBtn')?.remove();
-            document.getElementById('languagePanel')?.remove();
         }
 
         // 1. Cookie Consent Banner
@@ -468,8 +483,20 @@
             window.toggleLangPanel();
         });
 
-        document.getElementById('siteLangSelect')?.addEventListener('change', (event) => {
-            window.setSiteLanguage(event.target.value);
+        // Handle language button clicks
+        document.getElementById('languageList')?.addEventListener('click', (event) => {
+            const btn = event.target.closest('.lang-btn');
+            if (!btn) return;
+            const langCode = btn.dataset.lang;
+            if (langCode) {
+                window.setSiteLanguage(langCode);
+                // Close language panel
+                const panel = document.getElementById('languagePanel');
+                if (panel) {
+                    panel.classList.remove('open');
+                    panel.setAttribute('aria-hidden', 'true');
+                }
+            }
         });
 
         document.getElementById('themeToggleBtn')?.addEventListener('click', () => {
@@ -543,11 +570,8 @@
         setupEngagementTracking();
 
         const savedLang = localStorage.getItem('sanzy_lang') || 'en';
-        const langSelect = document.getElementById('siteLangSelect');
-        if (langSelect) {
-            langSelect.value = savedLang;
-        }
         if (savedLang !== 'en') {
+            setTranslateCookies(savedLang);
             loadGoogleTranslateScript();
         }
 

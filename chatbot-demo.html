@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
     <title>Sanzy AI Chatbot - Demo | SanzyAI</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,13 +37,13 @@
 
         .navbar{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(10,10,15,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(108,53,222,0.22);padding:13px 0}
         .container{max-width:1280px;margin:0 auto;padding:0 24px}
-        .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+        .navbar-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
         .logo{display:flex;align-items:center;gap:9px;text-decoration:none}
         .logo-icon{width:36px;height:36px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 14px rgba(108,53,222,0.5)}
         .logo-text{font-family:var(--fh);font-weight:700;font-size:1.28rem;background:linear-gradient(135deg,var(--primary-light),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
-        .nav-links a{display:block;padding:7px 12px;color:var(--muted);text-decoration:none;font-family:var(--fh);font-weight:500;font-size:0.87rem;border-radius:8px;transition:all 0.25s}
-        .nav-links a:hover{color:var(--text);background:rgba(108,53,222,0.12)}
+        .nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+        .nav-menu a{display:block;padding:7px 12px;color:var(--muted);text-decoration:none;font-family:var(--fh);font-weight:500;font-size:0.87rem;border-radius:8px;transition:all 0.25s}
+        .nav-menu a:hover{color:var(--text);background:rgba(108,53,222,0.12)}
 
         .hero-demo{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:80px 24px 40px;position:relative;overflow:hidden}
         .hero-demo::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(108,53,222,0.12),transparent 65%)}
@@ -70,7 +71,7 @@
         .page-name{font-family:var(--fh);font-weight:600;font-size:0.85rem}
 
         @media(max-width:768px){
-            .nav-links{display:none}
+            .nav-menu{display:none}
             .hero-demo h1{font-size:2.2rem}
             .features-grid{grid-template-columns:1fr 1fr}
         }
@@ -82,21 +83,25 @@
 <body>
 
 <!-- NAVBAR (demo page) -->
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <div class="container">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">
+        <div class="navbar-inner">
+            <a href="/" class="logo">
                 <div class="logo-icon">⚡</div>
                 <span class="logo-text">SanzyAI</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="domain-finder.html">Domain Finder</a></li>
-                <li><a href="ai-tools.html">AI Tools</a></li>
-                <li><a href="prompt-store.html">Prompt Store</a></li>
-                <li><a href="learn-free.html">Learn Free</a></li>
-                <li><a href="blog.html">AI News</a></li>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">AI News</a></li>
             </ul>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </div>
 </nav>

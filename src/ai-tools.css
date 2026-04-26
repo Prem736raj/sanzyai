@@ -74,7 +74,7 @@ body {
     border-bottom: 1px solid var(--border);
     padding: 13px 0;
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.navbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .logo-icon {
     width: 36px; height: 36px;
@@ -89,15 +89,15 @@ body {
     background: linear-gradient(135deg, var(--primary-light), var(--secondary));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
-.nav-links a {
+.nav-menu { display: flex; align-items: center; gap: 2px; list-style: none; }
+.nav-menu a {
     display: block; padding: 7px 12px;
     color: var(--text-muted); text-decoration: none;
     font-family: var(--font-h); font-weight: 500; font-size: 0.87rem;
     border-radius: var(--r-sm); transition: var(--ease);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(108,53,222,0.12); }
-.nav-links a.active { color: var(--primary-light); }
+.nav-menu a:hover, .nav-menu a.active { color: var(--text); background: rgba(108,53,222,0.12); }
+.nav-menu a.active { color: var(--primary-light); }
 
 .btn {
     display: inline-flex; align-items: center; gap: 7px;
@@ -866,7 +866,7 @@ body {
    RESPONSIVE
 ============================================ */
 @media (max-width: 1024px) {
-    .nav-links { display: none; }
+    .nav-menu { display: none; }
     .hamburger { display: flex; }
     .tools-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
     .submit-card { grid-template-columns: 1fr; }

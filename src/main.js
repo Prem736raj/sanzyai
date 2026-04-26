@@ -330,7 +330,7 @@ function animateCounter(el, target, suffix) {
 
 function initCounters() {
     if (countersStarted) return;
-    const stats = document.querySelectorAll('.hero-stat-number');
+    const stats = document.querySelectorAll('.hero-stat-number, .stat-number');
     if (stats.length === 0) return;
     countersStarted = true;
     
@@ -488,7 +488,7 @@ document.getElementById('newsletterForm')?.addEventListener('submit', (event) =>
 // ============================================
 // FEATURE CARDS - MOUSE MOVE TILT EFFECT
 // ============================================
-const featureCards = document.querySelectorAll('.feature-card');
+const featureCards = document.querySelectorAll('.feature-card, .product-card');
 
 if (!isLowPowerMode) {
     featureCards.forEach(card => {
