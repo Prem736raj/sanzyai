@@ -25,7 +25,10 @@ Use this map to attach the correct upgraded delivery file to each paid Gumroad p
 5. Viral X/LinkedIn Ghostwriter
 - `deliverables/premium-prompt-packs/viral-x-linkedin-ghostwriter.zip`
 
-6. Freelance High-Ticket Closer
+6. Claude Vibe Coding Architect
+- `deliverables/premium-prompt-packs/claude-vibe-coding-architect.zip`
+
+7. Freelance High-Ticket Closer
 - `deliverables/premium-prompt-packs/freelance-high-ticket-closer.zip`
 
 ## Fast Upload Steps

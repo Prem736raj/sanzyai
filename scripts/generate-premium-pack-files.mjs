@@ -10,6 +10,7 @@ const packs = [
   { id: 2, key: 'midjourney-ecommerce', name: 'Midjourney for Amazon Etsy', count: 100 },
   { id: 3, key: 'seo-content', name: 'SEO Content Writer Pack', count: 50 },
   { id: 4, key: 'viral-social', name: 'Viral X LinkedIn Ghostwriter', count: 65 },
+  { id: 5, key: 'claude-coder', name: 'Claude Vibe Coding Architect', count: 85 },
   { id: 6, key: 'freelance-closer', name: 'Freelance High-Ticket Closer', count: 45 }
 ];
 
@@ -85,6 +86,18 @@ const blueprints = {
     bestFor: 'Freelancers, independent consultants, and solo-agencies.',
     objective: ['value-based pricing defense', 'discovery call scripting', 'objection handling', 'proposal restructuring'],
     deliverables: ['objection response script', '3-tier pricing proposal', 'lead qualification checklist', 're-engagement email sequence']
+  },
+  'claude-coder': {
+    role: 'Staff-level Software Architect and elite debugging specialist',
+    problems: [
+      'AI coding assistants hallucinate non-existent libraries.',
+      'Cursor/Claude gets stuck in endless debugging loops.',
+      'Context boundaries overflow, causing the AI to forget early rules.',
+      'Vibe coding results in spaghetti architecture.'
+    ],
+    bestFor: 'Cursor users, full-stack developers, and technical founders.',
+    objective: ['app scaffold generation', 'context-injection drafting', 'deep state debugging', 'component test coverage'],
+    deliverables: ['file-tree architecture', 'root-cause analysis patch', 'strict-typed component file', 'regression test suite']
   }
 };
 

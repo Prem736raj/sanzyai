@@ -176,6 +176,35 @@ const packs = [
         ],
         fbt:[1,4],
         link:'https://sanzyai.gumroad.com/l/freelance-high-ticket-closer'
+    },
+    {
+        id:5, name:'Claude Vibe Coding Architect',
+        image:'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#131E17,#1A241F)',
+        price:3.99, origPrice:19, priceCategory:'1-5',
+        platforms:['claude','chatgpt','business'],
+        count:85, category:'Claude / Coding',
+        rating:4.9, reviews:212, reviewCount:'212',
+        badge:'🧠 Vibe Coding', badgeClass:'badge-new',
+        cardClass:'',
+        desc:'Stop fighting with AI hallucinations and endless loops. 85 elite prompt architectures for cursor/claude users executing "Vibe Coding" to quickly build web apps, debug complex trace logs, and write rock-solid test coverage.',
+        included:[
+            'The "Context-Injection" app scaffold generator',
+            'Root-cause analysis prompts for deep debugging',
+            'React/Vue component generator with strict typing',
+            'Database schema and ORM optimization prompts',
+            'Automated unit testing generation framework'
+        ],
+        samples:[
+            { label:'App Scaffold Generator', text:'Act as a Senior Staff Engineer. I want to build a [APP DESCRIPTION] using [TECH STACK]. Before writing any code, give me a complete file-tree architecture. For each core entity, define its schema and primary relationships. Ask me 3 clarifying questions about edge-cases before we begin implementation. Do not write any components yet.' },
+            { label:'Root-Cause Analysis', text:'Act as an elite debugging architect. I am getting this error: [PASTE ERROR]. My current file is: [PASTE CODE]. Do not just give me a patch. First, explain the exact execution path that led to the crash. Second, identify any underlying architectural flaws. Third, provide the safest minimal patch to fix the issue without causing regressions elsewhere.' }
+        ],
+        reviews_data:[
+            { name:'Jordan K.', rating:5, text:'These prompts completely changed how I use Cursor. No more wild hallucinations.', date:'2 days ago' },
+            { name:'Sam M.', rating:5, text:'The debugging prompt alone is worth $100. Saves me hours of headache.', date:'1 week ago' }
+        ],
+        fbt:[1,2],
+        link:'https://sanzyai.gumroad.com/l/claude-vibe-coding-architect'
     }
 ];
 
