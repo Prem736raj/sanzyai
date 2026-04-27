@@ -24,7 +24,7 @@ const packs = [
             { name:'Priya R.', rating:4, text:'Really comprehensive pack. Could use a few more niche-specific prompts but overall excellent.', date:'3 weeks ago' }
         ],
         fbt:[2,3],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/ultimate-business-chatgpt-pack'
     },
     {
         id:2, name:'Midjourney Art Masterpack',
@@ -48,7 +48,7 @@ const packs = [
             { name:'Tom B.', rating:4, text:'Great variety. Some prompts work better in v5 but overall amazing pack.', date:'1 month ago' }
         ],
         fbt:[1,5],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/midjourney-art-masterpack'
     },
     {
         id:3, name:'SEO Content Writer Pack',
@@ -71,7 +71,7 @@ const packs = [
             { name:'Nina K.', rating:4, text:'Really solid SEO prompts. The blog writer prompt is my daily go-to.', date:'1 month ago' }
         ],
         fbt:[1,4],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/seo-content-writer-pack'
     },
     {
         id:4, name:'Social Media Content Pack',
@@ -95,7 +95,7 @@ const packs = [
             { name:'Lisa P.', rating:4, text:'Great variety across all platforms. The content calendar prompt is amazing.', date:'1 month ago' }
         ],
         fbt:[1,3],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/social-media-content-pack'
     },
     {
         id:5, name:'YouTube Script Writing Pack',
@@ -118,7 +118,7 @@ const packs = [
             { name:'Sophie L.', rating:5, text:'Worth every cent. The full script writer is incredibly detailed.', date:'2 weeks ago' }
         ],
         fbt:[4,1],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/youtube-script-writing-pack'
     },
     {
         id:6, name:'Freelancer Income Pack',
@@ -141,7 +141,7 @@ const packs = [
             { name:'Anita B.', rating:4, text:'The rate negotiation script alone is worth $22. Raised my rates by 40%.', date:'1 month ago' }
         ],
         fbt:[1,3],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/freelancer-income-pack'
     },
     {
         id:7, name:'E-commerce Product Pack',
@@ -164,7 +164,7 @@ const packs = [
             { name:'Chen W.', rating:4, text:'Great prompts for Amazon sellers. The listing optimizer is spot on.', date:'1 month ago' }
         ],
         fbt:[1,4],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/e-commerce-product-pack'
     },
     {
         id:8, name:'FREE Starter ChatGPT Pack',
@@ -189,7 +189,7 @@ const packs = [
             { name:'Creator Chris', rating:4, text:'Solid free pack. The content idea generator alone is super valuable.', date:'1 month ago' }
         ],
         fbt:[1,4],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/free-starter-chatgpt-pack'
     },
     {
         id:9, name:'Gemini Image Prompt Pro Pack',
@@ -213,7 +213,7 @@ const packs = [
             { name:'Leo P.', rating:4, text:'Great pack overall. Character consistency prompts are especially useful.', date:'3 weeks ago' }
         ],
         fbt:[2,10],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/gemini-image-prompt-pro-pack'
     },
     {
         id:10, name:'ChatGPT Image Direction Pack',
@@ -237,7 +237,7 @@ const packs = [
             { name:'Daniel K.', rating:5, text:'The iteration prompts helped me fix image outputs without guesswork.', date:'1 month ago' }
         ],
         fbt:[1,9],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/chatgpt-image-direction-pack'
     },
     {
         id:11, name:'Claude Code Engineer Pack (120 Prompts)',
@@ -274,7 +274,7 @@ const packs = [
             { name:'Marco D.', rating:5, text:'Very practical for real developers, not generic fluff. Great coverage from errors to tests.', date:'2 weeks ago' }
         ],
         fbt:[1,3],
-        link:'https://gumroad.com/sanzyai'
+        link:'https://sanzyai.gumroad.com/l/claude-code-engineer-pack'
     }
 ];
 

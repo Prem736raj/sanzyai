@@ -38,6 +38,126 @@ const fallbackNewsItems = [
             'Tag AI-generated assets in your publishing workflow.',
             'Review legal guidance for client campaigns.'
         ]
+    },
+    {
+        id: 3,
+        type: 'Product Launch',
+        urgency: 'medium',
+        title: 'Google launches Gemini 2.5 Pro with native image generation',
+        source: 'Google Blog',
+        sourceType: 'official',
+        sourceUrl: 'https://blog.google/technology/ai/',
+        timeAgo: '2 days ago',
+        impact: 90,
+        opportunity: 82,
+        company: 'Google',
+        summary: 'Gemini 2.5 Pro now supports native image generation alongside text, code, and reasoning. The model combines multimodal understanding with creation capabilities, making it a direct competitor to GPT-4o for creative workflows.',
+        whyItMatters: 'Creators and marketers can now use a single model for both understanding and generating visual content.',
+        actions: [
+            'Test Gemini image generation for ad creative workflows.',
+            'Compare output quality with Midjourney and DALL-E for your use case.',
+            'Update prompt templates for multimodal outputs.'
+        ]
+    },
+    {
+        id: 4,
+        type: 'Research',
+        urgency: 'medium',
+        title: 'Anthropic publishes research on AI agent safety benchmarks',
+        source: 'Anthropic Research',
+        sourceType: 'official',
+        sourceUrl: 'https://www.anthropic.com/research',
+        timeAgo: '3 days ago',
+        impact: 76,
+        opportunity: 65,
+        company: 'Anthropic',
+        summary: 'New safety benchmarks for autonomous AI agents evaluate tool use, code execution, and multi-step reasoning. The framework provides practical guardrails for teams deploying AI agents in production environments.',
+        whyItMatters: 'Safety benchmarks will shape how enterprises evaluate and adopt AI agent solutions.',
+        actions: [
+            'Review the benchmark criteria for your AI agent use cases.',
+            'Implement safety logging for any autonomous workflows.',
+            'Share findings with your engineering team.'
+        ]
+    },
+    {
+        id: 5,
+        type: 'Funding',
+        urgency: 'low',
+        title: 'AI video startup raises $150M to compete with Runway and Sora',
+        source: 'TechCrunch',
+        sourceType: 'news',
+        sourceUrl: 'https://techcrunch.com/category/artificial-intelligence/',
+        timeAgo: '4 days ago',
+        impact: 68,
+        opportunity: 72,
+        company: 'Startup Watch',
+        summary: 'A new AI video generation platform has secured $150M in Series B funding, promising faster rendering, better consistency, and commercial-grade output quality for advertising and content production.',
+        whyItMatters: 'More competition in AI video means better tools and lower costs for content creators.',
+        actions: [
+            'Monitor beta access for early adopter advantages.',
+            'Compare pricing with your current video AI tools.',
+            'Test for specific use cases like product demos or ads.'
+        ]
+    },
+    {
+        id: 6,
+        type: 'Creator Economy',
+        urgency: 'medium',
+        title: 'Etsy sellers report 3x revenue using AI-generated product photography',
+        source: 'Creator Report',
+        sourceType: 'news',
+        sourceUrl: 'https://www.etsy.com/',
+        timeAgo: '5 days ago',
+        impact: 74,
+        opportunity: 91,
+        company: 'Etsy Sellers',
+        summary: 'A growing number of Etsy sellers are replacing traditional product photography with AI-generated images, reporting significant revenue increases. The trend highlights how AI tools are becoming essential for small business e-commerce.',
+        whyItMatters: 'Low-cost AI photography is leveling the playing field for small sellers against large brands.',
+        actions: [
+            'Test AI product photography for your top-selling items.',
+            'Compare conversion rates between AI and traditional photos.',
+            'Explore SanzyAI Midjourney prompts for product shots.'
+        ]
+    },
+    {
+        id: 7,
+        type: 'AI Update',
+        urgency: 'medium',
+        title: 'Claude adds built-in web search and file analysis to free tier',
+        source: 'Anthropic Blog',
+        sourceType: 'official',
+        sourceUrl: 'https://www.anthropic.com/news',
+        timeAgo: '6 days ago',
+        impact: 80,
+        opportunity: 77,
+        company: 'Anthropic',
+        summary: 'Claude now includes web search and document analysis capabilities in its free tier, making advanced research and analysis accessible to all users without paid subscriptions.',
+        whyItMatters: 'Free-tier improvements lower the barrier for individuals and small teams to leverage AI for research.',
+        actions: [
+            'Update your AI tool comparison guide.',
+            'Test Claude free tier for client research workflows.',
+            'Consider recommending Claude for budget-conscious clients.'
+        ]
+    },
+    {
+        id: 8,
+        type: 'Product Launch',
+        urgency: 'high',
+        title: 'Canva integrates real-time AI design assistant for brand consistency',
+        source: 'Canva Blog',
+        sourceType: 'official',
+        sourceUrl: 'https://www.canva.com/newsroom/',
+        timeAgo: '1 week ago',
+        impact: 72,
+        opportunity: 85,
+        company: 'Canva',
+        summary: 'Canva launched an AI-powered design assistant that maintains brand consistency across all creatives. The tool automatically applies brand colors, fonts, and style guidelines to new designs.',
+        whyItMatters: 'Brand consistency at scale becomes accessible to non-designers and small marketing teams.',
+        actions: [
+            'Set up your brand kit in Canva to leverage the new feature.',
+            'Test the AI assistant for social media content batching.',
+            'Compare output quality with dedicated brand tools.'
+        ]
     }
 ];
 

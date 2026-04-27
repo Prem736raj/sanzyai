@@ -438,21 +438,32 @@ window.handleNewsletterSubmit = function(e) {
     const btn = e.target.querySelector('button');
     if (!input || !btn) return;
 
-    const email = input.value;
+    const email = input.value.trim();
+    if (!email) return;
+
+    // Store email locally (future: send to Beehiiv/Buttondown API)
+    const stored = JSON.parse(localStorage.getItem('sanzyai_subscribers') || '[]');
+    if (!stored.includes(email)) {
+        stored.push(email);
+        localStorage.setItem('sanzyai_subscribers', JSON.stringify(stored));
+    }
     
-    // Simulate submission
     const originalText = btn.textContent;
     btn.textContent = '✓ Subscribed!';
     btn.style.background = 'linear-gradient(135deg, #00FF88, #00C870)';
     btn.style.boxShadow = '0 4px 20px rgba(0, 255, 136, 0.4)';
     input.value = '';
     input.disabled = true;
+    btn.disabled = true;
     
+    trackEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
+
     setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
         btn.style.boxShadow = '';
         input.disabled = false;
+        btn.disabled = false;
     }, 3000);
 }
 
@@ -480,6 +491,21 @@ function setActiveNav() {
 initDebugPanel();
 setActiveNav();
 initLaunchScoreMeter();
+
+// Promo bar dismiss
+(function() {
+    const promoBanner = document.getElementById('promoBanner');
+    const promoClose = document.getElementById('promoClose');
+    if (promoBanner && sessionStorage.getItem('promo_closed')) {
+        promoBanner.classList.add('hidden');
+    }
+    if (promoClose) {
+        promoClose.addEventListener('click', () => {
+            promoBanner.classList.add('hidden');
+            sessionStorage.setItem('promo_closed', '1');
+        });
+    }
+})();
 
 document.getElementById('newsletterForm')?.addEventListener('submit', (event) => {
     window.handleNewsletterSubmit(event);
