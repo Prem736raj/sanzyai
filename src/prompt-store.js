@@ -15,268 +15,183 @@ const packs = [
         included:['Business plan generator prompts','Professional email writing templates','High-converting marketing copy','Sales scripts & objection handlers','Customer service response prompts'],
         samples:[
             { label:'Business Plan Generator', text:'Create a comprehensive business plan for [BUSINESS TYPE] targeting [TARGET AUDIENCE] in [LOCATION]. Include: executive summary, market analysis, competitive landscape, revenue model, marketing strategy, and 12-month financial projections. Format as a professional document.' },
-            { label:'Cold Email Writer', text:'Write a personalized cold email to [PROSPECT NAME] at [COMPANY] about [VALUE PROPOSITION]. Make it under 150 words, include a compelling subject line, focus on their pain point [PAIN POINT], and end with a soft CTA for a 15-minute call.' },
-            { label:'Marketing Copy Generator', text:'Write 5 variations of ad copy for [PRODUCT/SERVICE] targeting [AUDIENCE]. Each variation should use a different psychological trigger: urgency, social proof, curiosity, fear of missing out, and authority. Keep each under 100 words.' }
+const packs = [
+    {
+        id:7, name:'The Mastery Vault: 10,000+ AI Prompts',
+        image:'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#1A1A24,#2D1B4B)',
+        price:49, origPrice:199, priceCategory:'15-50',
+        platforms:['chatgpt','midjourney','claude','gemini'],
+        count:10000, category:'Bundles / Everything',
+        rating:5.0, reviews:842, reviewCount:'842',
+        badge:'👑 Ultimate Value', badgeClass:'badge-gold',
+        cardClass:'bestseller',
+        desc:'The last prompt pack you will ever need. Unlock 10,000+ battle-tested prompts across 50+ niches: business scaling, marketing, copywriting, SEO, midjourney art, coding, and productivity.',
+        included:[
+            'Access to the entire prompt library (10k+ prompts)',
+            'Lifetime updates (New prompts added monthly)',
+            'The "Virtual CMO" mega-prompt framework',
+            'Prompt engineering cheat sheets & PDF guides',
+            'Private Discord community access'
+        ],
+        samples:[
+            { label:'The Virtual CMO Prompt', text:'Act as a fractional CMO for my [NICHE] business. Review my current revenue model: [MODEL]. Give me a 30-day aggressive growth plan focusing on 1) Zero-cost acquisition channels, 2) Optimizing my landing page conversion rate, and 3) An email automation sequence to recover abandoned carts. Format the plan into a daily checklist.' },
+            { label:'100x Content Repurposer', text:'Take this core piece of content: [PASTE CONTENT]. Repurpose it into: 1) A viral 12-tweet thread with hooks, 2) A 300-word LinkedIn thought leadership post, 3) A 60-second TikTok script, 4) A 5-email onboarding sequence, and 5) 3 SEO-focused blog post titles.' }
         ],
         reviews_data:[
-            { name:'Sarah M.', rating:5, text:'These prompts saved me 20+ hours a week. The business plan generator is incredible!', date:'2 weeks ago' },
-            { name:'James K.', rating:5, text:'Worth every penny. My email response rates went up by 40% using the email prompts.', date:'1 month ago' },
-            { name:'Priya R.', rating:4, text:'Really comprehensive pack. Could use a few more niche-specific prompts but overall excellent.', date:'3 weeks ago' }
+            { name:'Michael T.', rating:5, text:'I literally fired my marketing agency after buying this. The Virtual CMO prompt is insane.', date:'2 days ago' },
+            { name:'Sarah K.', rating:5, text:'$49 is a steal for 10,000 prompts. I use it every single day for my e-com brand.', date:'1 week ago' }
         ],
-        fbt:[2,3],
-        link:'https://sanzyai.gumroad.com/l/ultimate-business-chatgpt-pack'
+        fbt:[1,3],
+        link:'https://sanzyai.gumroad.com/l/the-mastery-vault'
     },
     {
-        id:2, name:'Midjourney Art Masterpack',
-        emoji:'🎨', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B4B)',
-        price:12, origPrice:45, priceCategory:'5-15',
-        platforms:['midjourney','art','stable-diffusion'],
-        count:100, category:'Midjourney / Art',
-        rating:4.8, reviews:89, reviewCount:'89',
-        badge:'⭐ Most Popular', badgeClass:'badge-gold',
+        id:1, name:'ChatGPT for Solo-Founders',
+        image:'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#101820,#1A2A3A)',
+        price:12.5, origPrice:45, priceCategory:'5-15',
+        platforms:['chatgpt','business'],
+        count:150, category:'ChatGPT / Business',
+        rating:4.9, reviews:215, reviewCount:'215',
+        badge:'💼 Business Bestseller', badgeClass:'badge-trending',
         cardClass:'',
-        desc:'100 professionally crafted Midjourney prompts covering every art style, mood and subject. Create stunning AI art that stands out — from photorealistic portraits to fantasy landscapes and commercial product shots.',
-        included:['Photorealistic portrait prompts','Epic landscape & scenery prompts','Logo & brand design prompts','Product photography prompts','Fantasy & concept art prompts'],
+        desc:'Stop working *in* your business and start working *on* it. 150 elite ChatGPT prompts designed specifically for Solo-Founders and bootstrappers to automate marketing, sales, and operations.',
+        included:[
+            'The 150-word Cold Email template that books 5+ demos a week',
+            'One-click business plan & financial projector',
+            'Automated customer support response macros',
+            'SaaS pricing model & tiered offering calculators',
+            'Investor pitch deck outline generator'
+        ],
         samples:[
-            { label:'Cinematic Portrait', text:'Portrait of a [ETHNICITY] [GENDER] in their 30s, golden hour lighting, shallow depth of field, shot on Hasselblad 500C, f/2.8, 85mm lens, editorial fashion photography, Vogue magazine style, ultra sharp, 8K --ar 2:3 --v 6 --style raw' },
-            { label:'Epic Fantasy Landscape', text:'Breathtaking aerial view of a floating crystal palace above the clouds, bioluminescent waterfalls, twin moons rising, painted by Thomas Kinkade meets Greg Rutkowski, dramatic volumetric lighting, ultra detailed, 8K UHD --ar 16:9 --v 6 --q 2' },
-            { label:'Minimal Logo Design', text:'Minimalist logo for a tech startup called "[COMPANY NAME]", geometric design, purple and cyan gradient, white background, vector style, clean lines, modern typography, professional, scalable design --ar 1:1 --v 6 --style raw --no text blur' }
+            { label:'Cold Email Writer', text:'Write a highly personalized cold email to [PROSPECT NAME] at [COMPANY]. Make it under 150 words. The hook must reference their recent achievement: [ACHIEVEMENT]. Do not talk about my company until the 3rd sentence. Focus on their pain point: [PAIN POINT]. End with a low-friction 15-minute call CTA.' },
+            { label:'Pricing Strategy Matrix', text:'Act as a SaaS pricing expert. My product does [FUNCTION] for [AUDIENCE]. Suggest 3 pricing tiers (Basic, Pro, Enterprise). For each tier, give me: The monthly price, 3 anchor features, psychological pricing justification, and the exact naming convention to use to drive users to the middle tier.' }
         ],
         reviews_data:[
-            { name:'Alex T.', rating:5, text:'My Etsy AI art store doubled in revenue after using these prompts!', date:'1 week ago' },
-            { name:'Maria S.', rating:5, text:'The portrait prompts alone are worth $24. Absolute gold.', date:'2 weeks ago' },
-            { name:'Tom B.', rating:4, text:'Great variety. Some prompts work better in v5 but overall amazing pack.', date:'1 month ago' }
+            { name:'David R.', rating:5, text:'The cold email prompts tripled my response rate in one week.', date:'4 days ago' },
+            { name:'Priya M.', rating:5, text:'Saved me 20 hours a week on operations. Essential for any solopreneur.', date:'2 weeks ago' }
         ],
-        fbt:[1,5],
-        link:'https://sanzyai.gumroad.com/l/midjourney-art-masterpack'
+        fbt:[7,4],
+        link:'https://sanzyai.gumroad.com/l/solo-founder-chatgpt-pack'
+    },
+    {
+        id:2, name:'Midjourney for Amazon/Etsy',
+        image:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#231515,#421A1A)',
+        price:14.99, origPrice:60, priceCategory:'5-15',
+        platforms:['midjourney','art','business'],
+        count:100, category:'Midjourney / E-commerce',
+        rating:4.8, reviews:142, reviewCount:'142',
+        badge:'📸 High-Converting', badgeClass:'badge-hot',
+        cardClass:'',
+        desc:'Never pay for expensive professional photography or 3D mockups again. 100 copy-paste Midjourney prompts that generate photorealistic lifestyle shots, pure white backgrounds, and infographic assets for physical products.',
+        included:[
+            'Pure white background (Amazon compliant) product prompts',
+            'High-end lifestyle setting & environmental prompts',
+            'Photorealistic shadow and ray-tracing adjustments',
+            'Packaging mockup generators (Boxes, Bottles, Tubes)',
+            'Infographic element generators'
+        ],
+        samples:[
+            { label:'Lifestyle Product Shot', text:'Commercial photography of a [PRODUCT TYPE] sitting on a marble countertop in a modern, sunlit kitchen. Depth of field, blurred background, morning sunlight streaming through a window, highly detailed, photorealistic, shot on Sony A7R IV, 85mm lens, f/1.8 --ar 16:9 --style raw --v 6' },
+            { label:'Amazon Pure White', text:'Studio photography of a [PRODUCT TYPE], pure white background rgb(255,255,255), bright even studio lighting, soft shadows, front angle, clear branding, sharp edges, 8k resolution, commercial product photography --ar 1:1 --v 6' }
+        ],
+        reviews_data:[
+            { name:'Alex W.', rating:5, text:'My Etsy click-through rate doubled. The lifestyle prompts are indistinguishable from real photos.', date:'1 week ago' },
+            { name:'Jenna B.', rating:4, text:'Takes a bit of tweaking to get the text right on packaging, but the lighting is incredible.', date:'2 weeks ago' }
+        ],
+        fbt:[1,3],
+        link:'https://sanzyai.gumroad.com/l/midjourney-ecommerce-pack'
     },
     {
         id:3, name:'SEO Content Writer Pack',
-        emoji:'📝', bgColor:'linear-gradient(135deg,#1E2E1E,#1B6B35)',
-        price:7.5, origPrice:25, priceCategory:'5-15',
+        image:'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#1E2E1E,#1B6B35)',
+        price:9.99, origPrice:35, priceCategory:'5-15',
         platforms:['chatgpt','seo'],
-        count:30, category:'ChatGPT / SEO',
-        rating:4.7, reviews:64, reviewCount:'64',
-        badge:'🌶️ Hot', badgeClass:'badge-hot',
+        count:50, category:'ChatGPT / SEO',
+        rating:4.7, reviews:89, reviewCount:'89',
+        badge:'📈 Traffic Driver', badgeClass:'badge-new',
         cardClass:'',
-        desc:'30 powerful SEO-focused ChatGPT prompts that help you rank on Google. Create blog posts, optimize meta tags, craft compelling titles and perform competitor keyword analysis — all with AI.',
-        included:['Full blog post writer (2000+ words)','Meta description optimizer','SEO title tag generator','Content outline creator','Keyword research & clustering prompts'],
+        desc:'Stop writing articles that nobody reads. 50 advanced SEO-focused ChatGPT prompts that generate Rank-1 content, optimize meta tags, and perform deep competitor cluster analysis.',
+        included:[
+            'The 2,000+ word "Skyscraper" blog post generator',
+            'LSI keyword & semantic entity integrator',
+            'High-CTR Meta Description optimizer (under 160 chars)',
+            'Competitor topical gap analysis frameworks',
+            'Internal linking architecture strategies'
+        ],
         samples:[
-            { label:'SEO Blog Post Writer', text:'Write a comprehensive, SEO-optimized blog post about "[TOPIC]" targeting the keyword "[PRIMARY KEYWORD]". The post should be 1500+ words, include an engaging intro, 5-7 H2 headers with H3 subheadings, naturally incorporate the keyword every 200 words, include a FAQ section, and end with a strong CTA. Tone: [TONE].' },
-            { label:'Meta Description Writer', text:'Write 5 compelling meta descriptions for a page about "[PAGE TOPIC]" targeting keyword "[KEYWORD]". Each should be under 160 characters, include the keyword naturally, communicate clear value, and have a subtle CTA. Rank them by estimated CTR.' },
-            { label:'Content Outline Creator', text:'Create a detailed content outline for an ultimate guide about "[TOPIC]". Include: title, intro hook, 8-10 main sections with H2s, 3-4 H3 subsections each, estimated word count per section, internal link opportunities, and suggested images/infographics. Target keyword: "[KEYWORD]".' }
+            { label:'Skyscraper Article Generator', text:'Write a 2000-word comprehensive guide about "[TOPIC]". Primary Keyword: "[KEY]". Secondary Keywords: [LIST]. You must structure it with 1x H1, 5-7x H2s, and bulleted lists. The tone must be authoritative but accessible. Include a "Key Takeaways" summary box at the top, and answer the following PAA (People Also Ask) queries in an FAQ section at the bottom: [PAA LIST].' },
+            { label:'Topical Authority Cluster', text:'Act as an elite SEO Strategist. I want to build topical authority for the silo: "[CORE TOPIC]". Give me a content cluster strategy including 1 Pillar Page title and 10 supporting cluster article titles. For each, provide the primary long-tail keyword, search intent (informational/transactional), and naturally suggest internal link anchor text pointing back to the pillar.' }
         ],
         reviews_data:[
-            { name:'David L.', rating:5, text:'My articles now rank on page 1 consistently. These prompts are gold!', date:'3 weeks ago' },
-            { name:'Nina K.', rating:4, text:'Really solid SEO prompts. The blog writer prompt is my daily go-to.', date:'1 month ago' }
+            { name:'Leo K.', rating:5, text:'My tech blog finally hit page 1 for my main keyword. The topical cluster prompt is genius.', date:'3 weeks ago' },
+            { name:'Rachel S.', rating:5, text:'I cancelled my $99/mo AI writing tool. These prompts combined with ChatGPT Plus are way better.', date:'1 month ago' }
         ],
-        fbt:[1,4],
+        fbt:[4,1],
         link:'https://sanzyai.gumroad.com/l/seo-content-writer-pack'
     },
     {
-        id:4, name:'Social Media Content Pack',
-        emoji:'📲', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B5A)',
-        price:6, origPrice:20, priceCategory:'5-15',
+        id:4, name:'Viral X/LinkedIn Ghostwriter',
+        image:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#1A2436,#1D3A5F)',
+        price:8.5, origPrice:29, priceCategory:'5-15',
         platforms:['chatgpt','social'],
-        count:40, category:'ChatGPT / Social Media',
-        rating:4.8, reviews:201, reviewCount:'201',
-        badge:'📈 Trending', badgeClass:'badge-trending',
+        count:65, category:'ChatGPT / Social Media',
+        rating:4.8, reviews:156, reviewCount:'156',
+        badge:'🗣️ High Engagement', badgeClass:'badge-money',
         cardClass:'',
-        desc:'40 viral-ready social media prompts for Instagram, Twitter/X, LinkedIn, TikTok and Facebook. Create engaging captions, hooks, carousels and content calendars that grow your following.',
-        included:['Instagram caption writer (all niches)','Viral Twitter/X thread creator','LinkedIn thought leadership posts','TikTok hook & script generator','30-day content calendar creator'],
+        desc:'Turn your social profiles into lead-generation machines. 65 highly-engineered prompts to generate viral Twitter/X threads, engaging LinkedIn thought-leadership, and algorithmic short-form hooks.',
+        included:[
+            'The "Justin Welsh" LinkedIn post structure template',
+            '10-Tweet viral thread generator with cliffhanger hooks',
+            'Storytelling frameworks for personal branding',
+            'Counter-narrative & controversial angle generators',
+            '30-Day automated content calendar planner'
+        ],
         samples:[
-            { label:'Viral Instagram Caption', text:'Write 5 Instagram caption options for a photo of [DESCRIBE PHOTO] for a [NICHE] account with [FOLLOWER COUNT] followers. Include: an attention-grabbing first line, storytelling middle, emotional connection, 3-5 relevant hashtags, and a question CTA. Tone: [CASUAL/PROFESSIONAL/INSPIRATIONAL].' },
-            { label:'Twitter Thread Creator', text:'Create a viral Twitter/X thread about "[TOPIC]" with 10-15 tweets. Start with a bold hook tweet that creates curiosity, include data/statistics, use short punchy sentences, add a relatable analogy, include practical tips, and end with a strong CTA to follow. Format each tweet with a number and emoji.' },
-            { label:'LinkedIn Post Writer', text:'Write a thought-leadership LinkedIn post about "[PROFESSIONAL TOPIC]" for someone who works in [INDUSTRY]. Include a bold opening hook, personal story/observation, 3 key insights with bullet points, and a question to drive comments. Aim for 200-300 words. Professional but conversational tone.' }
+            { label:'The Contrarian Hook', text:'Take this widely accepted industry belief: "[BELIEF]". Write a LinkedIn post arguing the exact opposite. Start with a short, punchy 1-sentence hook that shocks the reader. Follow with 3 bullet points proving why the common belief is actually holding people back. Conclude with your counter-framework. Keep formatting extremely spacious (1 sentence per line).' },
+            { label:'Viral Thread Creator', text:'Create a 10-tweet Twitter thread about "[TOPIC]". Tweet 1 must be a hook combining a large number/metric and a specific timeline. Tweet 2 must establish credibility. Tweets 3-8 deliver actionable steps using bullet points. Tweet 9 summarizes. Tweet 10 is the CTA to follow and retweet. Use minimal emojis and a direct, authoritative tone.' }
         ],
         reviews_data:[
-            { name:'Emma R.', rating:5, text:'Grew my Instagram from 500 to 8k followers in 2 months using these prompts!', date:'1 week ago' },
-            { name:'Carlos M.', rating:5, text:'The LinkedIn post prompt got me 50K impressions on my first try!', date:'2 weeks ago' },
-            { name:'Lisa P.', rating:4, text:'Great variety across all platforms. The content calendar prompt is amazing.', date:'1 month ago' }
+            { name:'Mark J.', rating:5, text:'Got 120k impressions on my first LinkedIn post using the contrarian framework.', date:'5 days ago' },
+            { name:'Emily C.', rating:4, text:'Great prompts. Sometimes ChatGPT uses too many emojis, but the structures are perfect.', date:'2 weeks ago' }
         ],
-        fbt:[1,3],
+        fbt:[1,6],
         link:'https://sanzyai.gumroad.com/l/social-media-content-pack'
     },
     {
-        id:5, name:'YouTube Script Writing Pack',
-        emoji:'🎬', bgColor:'linear-gradient(135deg,#2E1E1E,#6B1B1B)',
-        price:8.5, origPrice:29, priceCategory:'5-15',
-        platforms:['chatgpt','business'],
-        count:25, category:'ChatGPT / Video',
-        rating:4.9, reviews:45, reviewCount:'45',
-        badge:'✨ New', badgeClass:'badge-new',
-        cardClass:'',
-        desc:'25 YouTube-optimized script writing prompts that help you create engaging videos from hook to CTA. Write scripts for tutorials, vlogs, educational videos and shorts that keep viewers watching.',
-        included:['Full YouTube video script writer','Hook & intro writer (first 30 secs)','YouTube Shorts script creator','Video title & thumbnail optimizer','End screen & CTA script templates'],
-        samples:[
-            { label:'Full Video Script Writer', text:'Write a complete YouTube script for a [LENGTH]-minute video about "[TOPIC]" targeting [AUDIENCE]. Include: a pattern-interrupt hook (first 30 seconds), problem setup, promise of value, 3-5 main content sections with smooth transitions, b-roll suggestions in [brackets], natural speech patterns, and a strong CTA. Channel tone: [TONE].' },
-            { label:'Viral Video Hook Creator', text:'Generate 10 different video hook options for a YouTube video about "[TOPIC]". Each hook should be under 15 seconds when read aloud, use a different psychological trigger (curiosity gap, controversy, shocking stat, relatable problem, bold claim, etc.), and start with an action or question to prevent the skip. Rate each by virality potential 1-10.' },
-            { label:'YouTube Shorts Script', text:'Write 5 YouTube Shorts scripts (under 60 seconds each) about "[TOPIC]" for [NICHE] creators. Each should have: an immediate hook in the first 2 seconds, fast-paced delivery, a pattern interrupt at 15 seconds, value delivery, and a CTA. Format with visual cues and speaking pace notes.' }
-        ],
-        reviews_data:[
-            { name:'Ryan T.', rating:5, text:'My watch time went from 35% to 68% after using the hook prompts!', date:'5 days ago' },
-            { name:'Sophie L.', rating:5, text:'Worth every cent. The full script writer is incredibly detailed.', date:'2 weeks ago' }
-        ],
-        fbt:[4,1],
-        link:'https://sanzyai.gumroad.com/l/youtube-script-writing-pack'
-    },
-    {
-        id:6, name:'Freelancer Income Pack',
-        emoji:'💵', bgColor:'linear-gradient(135deg,#1E2E1A,#2B5A1B)',
+        id:6, name:'Freelance High-Ticket Closer',
+        image:'https://images.unsplash.com/photo-1554774853-719586f82d77?auto=format&fit=crop&w=600&q=80',
+        bgColor:'linear-gradient(135deg,#142416,#1B4222)',
         price:11, origPrice:39, priceCategory:'5-15',
         platforms:['chatgpt','business','freelance'],
-        count:60, category:'ChatGPT / Freelancing',
-        rating:4.7, reviews:33, reviewCount:'33',
-        badge:'🏆 Top Earner', badgeClass:'badge-money',
+        count:45, category:'ChatGPT / Freelancing',
+        rating:4.9, reviews:92, reviewCount:'92',
+        badge:'💰 ROI Focused', badgeClass:'badge-gold',
         cardClass:'',
-        desc:'60 income-generating prompts for freelancers, consultants and solopreneurs. Win more clients, write better proposals, set premium prices and automate your freelance business with AI.',
-        included:['Winning project proposal writer','Client outreach & pitch emails','Freelance contract clause generator','Upwork & Fiverr profile optimizer','Rate negotiation scripts & tactics'],
-        samples:[
-            { label:'Winning Project Proposal', text:'Write a professional project proposal for a [PROJECT TYPE] worth $[BUDGET] to [CLIENT TYPE]. Include: executive summary with clear understanding of their needs, proposed solution & methodology, timeline with milestones, team/skills overview, relevant case study, pricing breakdown with ROI justification, and next steps. Make it persuasive without being salesy.' },
-            { label:'Client Outreach Email', text:'Write a cold outreach email to potential [CLIENT TYPE] clients for my [SERVICE] freelance business. I help clients achieve [RESULT] using [METHOD]. The email should: feel personalized and researched, reference a specific pain point of their industry, briefly show my credibility, and propose a no-risk first step. Keep under 200 words.' },
-            { label:'Rate Negotiation Script', text:'Help me negotiate my freelance rate from $[CURRENT RATE] to $[DESIRED RATE] with a client who says "your rate is too high." Give me: the exact words to say, 3 ways to justify my rate using value not hours, how to handle "we have a smaller budget," and when to walk away. Role play the conversation with objections and responses.' }
-        ],
-        reviews_data:[
-            { name:'Mike D.', rating:5, text:'Landed a $8,000 project using the proposal prompt on my first try!', date:'2 weeks ago' },
-            { name:'Anita B.', rating:4, text:'The rate negotiation script alone is worth $22. Raised my rates by 40%.', date:'1 month ago' }
-        ],
-        fbt:[1,3],
-        link:'https://sanzyai.gumroad.com/l/freelancer-income-pack'
-    },
-    {
-        id:7, name:'E-commerce Product Pack',
-        emoji:'🛍️', bgColor:'linear-gradient(135deg,#1E1E2E,#1B4B6B)',
-        price:7, origPrice:24, priceCategory:'5-15',
-        platforms:['chatgpt','business'],
-        count:35, category:'ChatGPT / E-commerce',
-        rating:4.6, reviews:78, reviewCount:'78',
-        badge:'📦 Value Pack', badgeClass:'badge-trending',
-        cardClass:'',
-        desc:'35 e-commerce focused prompts that help you write killer product descriptions, optimize your store and create high-converting ad copy. Perfect for Shopify, Amazon and Etsy sellers.',
-        included:['High-converting product descriptions','Amazon listing optimizer','Facebook & Instagram ad copy','Customer review response templates','Abandoned cart email sequences'],
-        samples:[
-            { label:'Product Description Writer', text:'Write a high-converting product description for [PRODUCT NAME] priced at $[PRICE]. Target customer: [DESCRIBE IDEAL BUYER]. Include: an emotional hook, key features as benefits, sensory language, social proof element, scarcity/urgency if applicable, and a CTA. Write versions for: website PDP (300 words), Amazon listing (500 words), and Instagram caption (100 words).' },
-            { label:'Amazon Listing Optimizer', text:'Create an optimized Amazon listing for [PRODUCT] in the [CATEGORY] category. Include: keyword-rich title (under 200 chars), 5 bullet points highlighting key benefits, compelling product description (1000 words), backend search terms, and A+ content outline. Primary keyword: [KEYWORD]. Competitor to beat: [ASIN/PRODUCT NAME].' },
-            { label:'Abandoned Cart Email', text:'Write a 3-email abandoned cart sequence for [PRODUCT TYPE] priced at $[PRICE]. Email 1 (1 hour after): friendly reminder, no discount. Email 2 (24 hours): add social proof + 10% discount code [CODE]. Email 3 (48 hours): urgency + last chance. Each email: subject line, preview text, body under 200 words, clear CTA button text.' }
-        ],
-        reviews_data:[
-            { name:'Jordan P.', rating:5, text:'My product page conversion rate jumped from 2.1% to 4.8%!', date:'3 weeks ago' },
-            { name:'Chen W.', rating:4, text:'Great prompts for Amazon sellers. The listing optimizer is spot on.', date:'1 month ago' }
-        ],
-        fbt:[1,4],
-        link:'https://sanzyai.gumroad.com/l/e-commerce-product-pack'
-    },
-    {
-        id:8, name:'FREE Starter ChatGPT Pack',
-        emoji:'🎁', bgColor:'linear-gradient(135deg,#1A2E1A,#1B5A35)',
-        price:0, origPrice:null, priceCategory:'free',
-        platforms:['chatgpt'],
-        count:10, category:'ChatGPT / Starter',
-        rating:4.7, reviews:312, reviewCount:'312',
-        badge:'✅ 100% Free', badgeClass:'badge-free',
-        cardClass:'free-card',
-        isFree:true,
-        desc:'10 beginner-friendly ChatGPT prompts to kick-start your AI journey — completely free, no credit card needed. Perfect if you are new to AI prompts and want to see what is possible.',
-        included:['Content idea generator prompt','Email writer template','Meeting agenda creator','Daily planning assistant','Creative story starter prompts'],
-        samples:[
-            { label:'Content Idea Generator', text:'Generate 20 unique content ideas for a [NICHE] blog/YouTube channel targeting [AUDIENCE]. For each idea, include: title, content format (video/blog/podcast), estimated search volume potential (high/medium/low), content angle, and one key insight to include. Organize by content pillar: [PILLAR 1], [PILLAR 2], [PILLAR 3].' },
-            { label:'Professional Email Writer', text:'Rewrite this email to sound [MORE PROFESSIONAL/FRIENDLY/CONCISE]: "[PASTE YOUR EMAIL]". Fix the tone, improve clarity, strengthen the subject line, and make the CTA clearer. Provide 2 versions: one formal and one conversational.' },
-            { label:'Meeting Agenda Creator', text:'Create a structured agenda for a [LENGTH]-minute meeting about [TOPIC] with [NUMBER] attendees. Include: pre-meeting prep items, time-boxed agenda items with clear objectives, discussion questions for each item, decision points, action item template, and a parking lot section. Meeting goal: [GOAL].' }
-        ],
-        reviews_data:[
-            { name:'Beginner Barb', rating:5, text:'Perfect introduction to AI prompts! Downloaded in seconds and they actually work.', date:'1 week ago' },
-            { name:'Student Sam', rating:5, text:'Great for starting out. So useful I bought the Business Pack too!', date:'3 weeks ago' },
-            { name:'Creator Chris', rating:4, text:'Solid free pack. The content idea generator alone is super valuable.', date:'1 month ago' }
-        ],
-        fbt:[1,4],
-        link:'https://sanzyai.gumroad.com/l/free-starter-chatgpt-pack'
-    },
-    {
-        id:9, name:'Gemini Image Prompt Pro Pack',
-        emoji:'🖼️', bgColor:'linear-gradient(135deg,#1C2338,#214D6C)',
-        price:10.5, origPrice:39, priceCategory:'5-15',
-        platforms:['gemini','art'],
-        count:80, category:'Gemini / Image Generation',
-        rating:4.8, reviews:54, reviewCount:'54',
-        badge:'🧪 New Gemini Pack', badgeClass:'badge-new',
-        cardClass:'',
-        desc:'80 production-ready Gemini prompts for product shots, ad creatives, social thumbnails, cinematic scenes and consistent brand visuals. Designed for creators and marketers who want high quality image outputs quickly.',
-        included:['Photoreal product image prompts','Ad creative + text-safe composition prompts','Character consistency workflows','Food, fashion and lifestyle campaign prompts','Thumbnail and poster prompt frameworks'],
-        samples:[
-            { label:'E-commerce Product Hero', text:'Generate a premium product hero image of [PRODUCT] on a minimal studio set, soft-box lighting from left and top, realistic reflections, shallow depth of field, clean white and slate background, 4K detail, commercial photography style, leave negative space on right for headline text.' },
-            { label:'Cinematic Brand Scene', text:'Create a cinematic scene for [BRAND TYPE] showing [SUBJECT] in [LOCATION], golden-hour volumetric lighting, subtle film grain, teal-orange grade, realistic skin texture, high dynamic range, emotionally aspirational mood, suitable for a homepage hero banner 16:9.' },
-            { label:'Social Carousel Visual Set', text:'Produce a 5-image visual series for Instagram carousel about [TOPIC], consistent art direction and palette [COLORS], each frame with one focal subject, bold composition, editorial style, modern shadows, high clarity, ready for text overlays.' }
-        ],
-        reviews_data:[
-            { name:'Ava N.', rating:5, text:'The product-shot prompts are insanely good. My ad creatives look agency-level now.', date:'1 week ago' },
-            { name:'Harsh V.', rating:5, text:'Gemini outputs became much more consistent after using these templates.', date:'2 weeks ago' },
-            { name:'Leo P.', rating:4, text:'Great pack overall. Character consistency prompts are especially useful.', date:'3 weeks ago' }
-        ],
-        fbt:[2,10],
-        link:'https://sanzyai.gumroad.com/l/gemini-image-prompt-pro-pack'
-    },
-    {
-        id:10, name:'ChatGPT Image Direction Pack',
-        emoji:'📸', bgColor:'linear-gradient(135deg,#2A1F3A,#4A2D63)',
-        price:9, origPrice:34, priceCategory:'5-15',
-        platforms:['chatgpt','art'],
-        count:70, category:'ChatGPT / Image Prompting',
-        rating:4.7, reviews:47, reviewCount:'47',
-        badge:'🎯 Creator Favorite', badgeClass:'badge-trending',
-        cardClass:'',
-        desc:'70 advanced ChatGPT prompt blueprints to plan, refine and iterate image outputs for logos, branding, concept art, storyboards and social content. Built to help you get clearer, higher-converting visuals.',
-        included:['Prompt frameworks for multiple image styles','Visual moodboard and art-direction templates','Shot-list and scene breakdown prompts','Brand style consistency prompts','Iteration prompts for fixing image errors'],
-        samples:[
-            { label:'Art Direction Blueprint', text:'Act as a senior art director. Build a detailed image prompt for [CAMPAIGN GOAL] with style [STYLE], color palette [COLORS], subject [SUBJECT], camera angle [ANGLE], lighting [LIGHTING], and composition rules. Return final prompt + 3 alternate variations for testing.' },
-            { label:'Character Consistency Prompt', text:'Create a reusable image prompt template that keeps the same character identity across 10 scenes. Character profile: [PROFILE]. Keep face shape, hair, clothing motifs and color palette consistent while changing background, camera distance and pose.' },
-            { label:'Thumbnail CTR Prompt', text:'Write 6 thumbnail-generation prompts for a YouTube video about [TOPIC]. Each prompt should target one CTR trigger: curiosity, contrast, urgency, authority, emotion and transformation. Keep designs clean with one focal point and safe text placement.' }
-        ],
-        reviews_data:[
-            { name:'Noah G.', rating:5, text:'This pack made my thumbnail ideation 3x faster. Super practical prompts.', date:'5 days ago' },
-            { name:'Mina R.', rating:4, text:'Excellent for brand visuals and storyboard planning with ChatGPT.', date:'2 weeks ago' },
-            { name:'Daniel K.', rating:5, text:'The iteration prompts helped me fix image outputs without guesswork.', date:'1 month ago' }
-        ],
-        fbt:[1,9],
-        link:'https://sanzyai.gumroad.com/l/chatgpt-image-direction-pack'
-    },
-    {
-        id:11, name:'Claude Code Engineer Pack (120 Prompts)',
-        emoji:'🧠', bgColor:'linear-gradient(135deg,#12213A,#274A7A)',
-        price:1.99, origPrice:19, priceCategory:'1-5',
-        skipLaunchPromo:true,
-        platforms:['claude','chatgpt','gemini','business'],
-        count:120, category:'Claude / Coding',
-        rating:4.9, reviews:226, reviewCount:'226',
-        badge:'💻 Dev Bestseller', badgeClass:'badge-gold',
-        cardClass:'bestseller',
-        desc:'120 production-ready Claude coding prompts for debugging, error tracing, refactoring, feature implementation, testing, reviews, performance, security and architecture. Built for everyday developers who want faster, cleaner code shipping.',
+        desc:'Stop competing on price. 45 psychology-backed prompts for freelancers and agencies to write winning proposals, handle pricing objections, and close $5k-$10k retainers effortlessly.',
         included:[
-            'Debug any stack traces and runtime crashes',
-            'Find hidden logic bugs and edge-case regressions',
-            'Refactor legacy modules with safer migration plans',
-            'Add new features from rough product requirements',
-            'Generate unit, integration and E2E test prompts',
-            'Code review prompts for quality and maintainability',
-            'Performance profiling and optimization workflows',
-            'Security auditing prompts for web and API code',
-            'Database schema, query and indexing improvements',
-            'DevOps and CI prompts for release confidence'
+            'The "Value-Based" project proposal writer',
+            'Objection handling scripts ("You are too expensive")',
+            'Discovery call question generators to expose pain points',
+            'Upwork/Fiverr profile optimizer for premium clients',
+            'Automated client onboarding & boundary setting emails'
         ],
         samples:[
-            { label:'Debug Any Error Fast', text:'You are a senior engineer. Debug this issue using root-cause analysis. Context: [STACK/FRAMEWORK], Error: [PASTE ERROR], Relevant code: [PASTE CODE]. Return: 1) probable root causes ranked by likelihood, 2) exact minimal fix patch, 3) explanation of why it fails, 4) tests to prevent recurrence, 5) quick rollback-safe fallback if fix cannot ship today.' },
-            { label:'Feature Builder From Product Ask', text:'Act as a staff engineer. Implement this feature from requirements: [FEATURE REQUEST]. Existing stack: [STACK], constraints: [PERFORMANCE/SECURITY/DEADLINE]. Return: 1) technical design, 2) updated data model, 3) API contract changes, 4) step-by-step code implementation plan, 5) complete code snippets, 6) migration notes, 7) test plan and acceptance checklist.' },
-            { label:'Refactor Without Breaking', text:'Refactor the following legacy code safely. Code: [PASTE CODE]. Goals: [READABILITY/MODULARITY/PERF]. Return: 1) anti-patterns found, 2) staged refactor steps, 3) transformed code, 4) backward compatibility notes, 5) risk matrix, 6) measurable before-vs-after quality improvements.' },
-            { label:'Code Review Beyond Style', text:'Perform a rigorous code review on this PR diff: [PASTE DIFF]. Focus on correctness, race conditions, error handling, security, test coverage, maintainability and performance. Output should include: critical issues first, suggested patch snippets, missing tests, and a merge recommendation with confidence score.' }
+            { label:'The Value-Based Proposal', text:'Write a project proposal for a [SERVICE] project. The client\'s stated problem is [PROBLEM]. Do not price by the hour. Price based on the value delivered. Structure: 1) Executive Summary confirming their pain, 2) The Proposed Solution, 3) 3-Tiered Pricing Matrix (Small, Medium, Premium), 4) Timeline, 5) Next Steps to sign. Tone: Confident elite expert.' },
+            { label:'Price Objection Handler', text:'A client just replied to my proposal saying: "We love your work, but we found someone cheaper." Write a professional, unbothered response. Acknowledge their budget constraints, but pivot the conversation to the *cost of doing it wrong* and the specific ROI/reliability they get with me. End by asking if they want to adjust the scope to fit the budget, rather than lowering my rate.' }
         ],
         reviews_data:[
-            { name:'Rohan P.', rating:5, text:'Best $1.99 I spent this year. The debug prompts alone saved me hours in production incidents.', date:'4 days ago' },
-            { name:'Elena S.', rating:5, text:'Feature prompts are excellent. I use this pack daily for backend and frontend tasks.', date:'1 week ago' },
-            { name:'Marco D.', rating:5, text:'Very practical for real developers, not generic fluff. Great coverage from errors to tests.', date:'2 weeks ago' }
+            { name:'Chris D.', rating:5, text:'The objection handler prompt literally saved a $6,000 contract for me yesterday. Best $11 I ever spent.', date:'1 week ago' },
+            { name:'Sam T.', rating:5, text:'I completely rewrote my Upwork profile using this and got two Enterprise invites this week.', date:'2 weeks ago' }
         ],
-        fbt:[1,3],
-        link:'https://sanzyai.gumroad.com/l/claude-code-engineer-pack'
+        fbt:[1,4],
+        link:'https://sanzyai.gumroad.com/l/freelance-high-ticket-closer'
     }
 ];
+
 
 function getPriceCategory(price) {
     if (price === 0) return 'free';
@@ -569,9 +484,8 @@ function renderPacks() {
         return `
         <div class="prod-card ${pack.cardClass}" data-id="${pack.id}">
             <!-- Thumbnail -->
-            <div class="prod-thumb" style="background:${pack.bgColor};">
-                <div class="prod-thumb-emoji">${pack.emoji}</div>
-
+            <div class="prod-thumb" style="background:${pack.image ? `url('${pack.image}') center/cover` : pack.bgColor};">
+                ${pack.emoji ? `<div class="prod-thumb-emoji">${pack.emoji}</div>` : ''}
                 ${pack.badge ? `
                 <div class="thumb-badge">
                     <span class="pack-badge ${pack.badgeClass}">${pack.badge}</span>
@@ -808,16 +722,16 @@ window.openProduct = function(id) {
 
     modal.innerHTML = `
         <div class="modal-header">
-            <span class="modal-title">${pack.emoji} ${pack.name}</span>
+            <span class="modal-title">${pack.emoji ? pack.emoji + ' ' : ''}${pack.name}</span>
             <button type="button" class="modal-close" data-action="close-modal">✕</button>
         </div>
 
         <div class="modal-body">
             <div class="modal-left">
                 <!-- Thumb -->
-                <div class="modal-thumb" style="background:${pack.bgColor};">
-                    <span style="font-size:4rem;">${pack.emoji}</span>
-                    <div style="position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.7);padding:5px 12px;border-radius:6px;font-family:var(--fh);font-size:0.76rem;font-weight:700;color:var(--muted);">📦 ${pack.count} Prompts Included</div>
+                <div class="modal-thumb" style="background:${pack.image ? `url('${pack.image}') center/cover` : pack.bgColor};">
+                    ${pack.emoji ? `<span style="font-size:4rem; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));">${pack.emoji}</span>` : ''}
+                    <div style="position:absolute;bottom:10px;right:10px;background:#FFF;padding:6px 12px;border-radius:6px;font-family:var(--fh);font-size:0.76rem;font-weight:700;color:#1A1A24;box-shadow:0 4px 12px rgba(0,0,0,0.15);">📦 ${pack.count} Prompts Included</div>
                 </div>
 
                 <!-- Badges -->
