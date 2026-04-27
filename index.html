@@ -762,27 +762,6 @@
         <button class="skip-link" id="exitPopupSkip">No thanks, I'll pass</button>
     </div>
 </div>
-<script>
-(function() {
-    let shown = false;
-    function showPopup() {
-        if (shown || sessionStorage.getItem('exit_popup_shown')) return;
-        shown = true;
-        sessionStorage.setItem('exit_popup_shown', '1');
-        document.getElementById('exitPopup').classList.add('active');
-    }
-    function hidePopup() {
-        document.getElementById('exitPopup').classList.remove('active');
-    }
-    document.addEventListener('mouseout', function(e) {
-        if (!e.relatedTarget && e.clientY < 5) showPopup();
-    });
-    document.getElementById('exitPopupClose')?.addEventListener('click', hidePopup);
-    document.getElementById('exitPopupSkip')?.addEventListener('click', hidePopup);
-    document.getElementById('exitPopup')?.addEventListener('click', function(e) {
-        if (e.target === this) hidePopup();
-    });
-})();
-</script>
+
 </body>
 </html>

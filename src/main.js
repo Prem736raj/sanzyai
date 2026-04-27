@@ -563,3 +563,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ============================================
+// EXIT INTENT POPUP
+// ============================================
+(function() {
+    let shown = false;
+    function showPopup() {
+        if (shown || sessionStorage.getItem('exit_popup_shown')) return;
+        shown = true;
+        sessionStorage.setItem('exit_popup_shown', '1');
+        const popup = document.getElementById('exitPopup');
+        if (popup) popup.classList.add('active');
+    }
+    function hidePopup() {
+        const popup = document.getElementById('exitPopup');
+        if (popup) popup.classList.remove('active');
+    }
+    document.addEventListener('mouseout', function(e) {
+        if (!e.relatedTarget && e.clientY < 5) showPopup();
+    });
+    const closeBtn = document.getElementById('exitPopupClose');
+    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+    const skipBtn = document.getElementById('exitPopupSkip');
+    if (skipBtn) skipBtn.addEventListener('click', hidePopup);
+    const popupFrame = document.getElementById('exitPopup');
+    if (popupFrame) {
+        popupFrame.addEventListener('click', function(e) {
+            if (e.target === this) hidePopup();
+        });
+    }
+})();
+

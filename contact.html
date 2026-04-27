@@ -95,7 +95,7 @@
                         <div class="contact-info-icon">💬</div>
                         <h3>Quick Help</h3>
                         <p>Try our AI assistant for instant answers to common questions:</p>
-                        <p class="contact-link" style="cursor:pointer" onclick="document.querySelector('.sanzy-chat-toggle')?.click()">Open Chat Assistant →</p>
+                        <p class="contact-link" style="cursor:pointer" id="openChatAssistantInfoBtn">Open Chat Assistant →</p>
                     </div>
                 </div>
             </div>
@@ -113,43 +113,6 @@
 
 <script type="module" src="./src/globals.js"></script>
 <script type="module" src="./src/chat.js"></script>
-<script>
-document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('contact-name').value.trim();
-    const email = document.getElementById('contact-email').value.trim();
-    const subject = document.getElementById('contact-subject').value;
-    const message = document.getElementById('contact-message').value.trim();
-    
-    const subjectMap = {
-        general: 'General Question',
-        support: 'Product Support',
-        refund: 'Refund Request',
-        services: 'AI Services Inquiry',
-        partnership: 'Partnership / Collaboration',
-        bug: 'Bug Report'
-    };
-    
-    const mailSubject = encodeURIComponent('[SanzyAI] ' + (subjectMap[subject] || 'Contact'));
-    const mailBody = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Subject: ' + (subjectMap[subject] || subject) + '\n\n' +
-        message
-    );
-    
-    window.open('mailto:hello@sanzyai.com?subject=' + mailSubject + '&body=' + mailBody);
-    
-    const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Opening email client...';
-    btn.style.background = 'linear-gradient(135deg, #00FF88, #00C870)';
-    
-    setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        this.reset();
-    }, 3000);
-});
-</script>
+<script type="module" src="./src/contact.js"></script>
 </body>
 </html>
