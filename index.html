@@ -156,9 +156,8 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                         Shop AI Prompts
                     </a>
-                    <a href="/ai-services" class="btn btn-outline btn-lg">
-                        Hire AI Experts
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <a href="/prompt-store#free" class="btn btn-outline btn-lg">
+                        🎁 Get 10 Free Prompts
                     </a>
                 </div>
 
@@ -230,6 +229,23 @@
             <div class="trust-item"><span class="trust-item-icon">🤖</span> 20+ AI Tools Curated</div>
         </div>
     </div>
+
+    <!-- ============================================
+         WORKS WITH — AI PLATFORM LOGOS
+    ============================================ -->
+    <section class="works-with-section">
+        <div class="container">
+            <p class="works-with-label">Prompts designed for</p>
+            <div class="works-with-logos">
+                <div class="ww-logo">🤖 <span>ChatGPT</span></div>
+                <div class="ww-logo">🎨 <span>Midjourney</span></div>
+                <div class="ww-logo">🧠 <span>Claude</span></div>
+                <div class="ww-logo">✨ <span>Gemini</span></div>
+                <div class="ww-logo">🌊 <span>Stable Diffusion</span></div>
+                <div class="ww-logo">📸 <span>DALL·E</span></div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================
          FEATURED PRODUCTS (Best Sellers)
@@ -698,5 +714,39 @@
     <script type="module" src="./src/main.js"></script>
 <script type="module" src="./src/globals.js"></script>
 <script type="module" src="./src/chat.js"></script>
+
+<!-- Exit-Intent Popup -->
+<div class="exit-popup-overlay" id="exitPopup">
+    <div class="exit-popup">
+        <button class="exit-popup-close" id="exitPopupClose">✕</button>
+        <div class="exit-popup-emoji">🎁</div>
+        <h3>Wait! Grab 10 Free Prompts</h3>
+        <p>Get our starter ChatGPT prompt pack — completely free. No signup, no credit card.</p>
+        <a href="/prompt-store#free" class="btn btn-primary btn-lg">Download Free Pack →</a>
+        <button class="skip-link" id="exitPopupSkip">No thanks, I'll pass</button>
+    </div>
+</div>
+<script>
+(function() {
+    let shown = false;
+    function showPopup() {
+        if (shown || sessionStorage.getItem('exit_popup_shown')) return;
+        shown = true;
+        sessionStorage.setItem('exit_popup_shown', '1');
+        document.getElementById('exitPopup').classList.add('active');
+    }
+    function hidePopup() {
+        document.getElementById('exitPopup').classList.remove('active');
+    }
+    document.addEventListener('mouseout', function(e) {
+        if (!e.relatedTarget && e.clientY < 5) showPopup();
+    });
+    document.getElementById('exitPopupClose')?.addEventListener('click', hidePopup);
+    document.getElementById('exitPopupSkip')?.addEventListener('click', hidePopup);
+    document.getElementById('exitPopup')?.addEventListener('click', function(e) {
+        if (e.target === this) hidePopup();
+    });
+})();
+</script>
 </body>
 </html>
