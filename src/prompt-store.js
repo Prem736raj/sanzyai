@@ -1,23 +1,10 @@
 // =============================================
 // PROMPT PACKS DATA
 // =============================================
+
 const packs = [
     {
-        id:1, name:'Ultimate Business ChatGPT Pack',
-        emoji:'✨', bgColor:'linear-gradient(135deg,#1E1E2E,#2D1B6B)',
-        price:9.5, origPrice:35, priceCategory:'5-15',
-        platforms:['chatgpt','business'],
-        count:50, category:'ChatGPT / Business',
-        rating:4.9, reviews:127, reviewCount:'127',
-        badge:'🔥 Bestseller', badgeClass:'badge-gold',
-        cardClass:'bestseller',
-        desc:'The ultimate collection of 50 battle-tested ChatGPT prompts for entrepreneurs, founders and business professionals. From business planning to customer service — everything you need to run a smarter business with AI.',
-        included:['Business plan generator prompts','Professional email writing templates','High-converting marketing copy','Sales scripts & objection handlers','Customer service response prompts'],
-        samples:[
-            { label:'Business Plan Generator', text:'Create a comprehensive business plan for [BUSINESS TYPE] targeting [TARGET AUDIENCE] in [LOCATION]. Include: executive summary, market analysis, competitive landscape, revenue model, marketing strategy, and 12-month financial projections. Format as a professional document.' },
-const packs = [
-    {
-        id:7, name:'The Mastery Vault: 10,000+ AI Prompts',
+        id:0, name:'The Mastery Vault: 10,000+ AI Prompts',
         image:'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=600&q=80',
         bgColor:'linear-gradient(135deg,#1A1A24,#2D1B4B)',
         price:49, origPrice:199, priceCategory:'15-50',

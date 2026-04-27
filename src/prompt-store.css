@@ -564,3 +564,67 @@ body{background:var(--bg);color:var(--text)}
     .preview-btn,.buy-btn{width:100%;justify-content:center}
     .modal-body{padding:18px}
 }
+
+/* ============================================
+   COMPARISON TABLE
+============================================ */
+.compare-table-wrap{
+    width:100%;
+    overflow-x:auto;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--rl);
+    margin-top:40px;
+    box-shadow:var(--sh-card);
+}
+.compare-table{
+    width:100%;
+    border-collapse:collapse;
+    text-align:left;
+    font-size:0.9rem;
+}
+.compare-table th{
+    background:var(--surface2);
+    padding:16px 20px;
+    font-family:var(--fh);
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    border-bottom:1px solid var(--border);
+    white-space:nowrap;
+}
+.compare-table td{
+    padding:16px 20px;
+    border-bottom:1px solid var(--border-s);
+    color:#C9CCE4;
+    transition:var(--ease);
+}
+.compare-table tbody tr:hover td{
+    background:rgba(108,53,222,0.04);
+}
+.compare-table tbody tr:last-child td{
+    border-bottom:none;
+}
+.compare-table .pack-name-cell{
+    font-family:var(--fh);
+    font-weight:600;
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.compare-table .rating-cell{
+    color:var(--yellow);
+    font-family:var(--fh);
+    font-weight:600;
+}
+.compare-table .price-cell{
+    font-family:var(--fh);
+    font-weight:700;
+}
+.compare-table .free-price{
+    color:var(--green);
+}
+
