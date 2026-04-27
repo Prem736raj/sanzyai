@@ -1315,10 +1315,13 @@ body {
 }
 
 .tld-table-wrap {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    background: rgba(22, 22, 31, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
 .tld-scroll { overflow-x: auto; }
@@ -1348,12 +1351,15 @@ body {
 .tld-table thead th:first-child { text-align: left; }
 
 .tld-table tbody tr {
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: var(--transition);
 }
 
 .tld-table tbody tr:last-child { border-bottom: none; }
-.tld-table tbody tr:hover { background: var(--card-bg-hover); }
+.tld-table tbody tr:hover { 
+    background: rgba(108, 53, 222, 0.08);
+    box-shadow: inset 0 -2px 0 rgba(108, 53, 222, 0.5);
+}
 
 .tld-table td {
     padding: 14px 18px;

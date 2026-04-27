@@ -403,10 +403,12 @@ function sanitizeExternalUrl(url = '') {
 // RENDER TOOLS
 // =============================================
 function renderTools() {
-    const grid = document.getElementById('toolsGrid');
-    if (!grid) return;
+    const featuredGrid = document.getElementById('featuredToolsGrid');
+    const allGrid = document.getElementById('toolsGrid');
+    if (!featuredGrid || !allGrid) return;
 
-    grid.textContent = '';
+    featuredGrid.textContent = '';
+    allGrid.textContent = '';
 
     if (filteredTools.length === 0) {
         const empty = document.createElement('div');
@@ -433,7 +435,7 @@ function renderTools() {
         empty.appendChild(title);
         empty.appendChild(msg);
         empty.appendChild(btn);
-        grid.appendChild(empty);
+        allGrid.appendChild(empty);
 
         document.getElementById('toolCount').textContent = '0 tools found';
         return;
@@ -581,8 +583,22 @@ function renderTools() {
         compareWrap.appendChild(label);
         card.appendChild(compareWrap);
 
-        grid.appendChild(card);
+        if (tool.featured) {
+            featuredGrid.appendChild(card);
+        } else {
+            allGrid.appendChild(card);
+        }
     });
+    
+    // Hide featured section entirely if no featured tools match current filters
+    const featuredSection = featuredGrid.previousElementSibling;
+    if (featuredGrid.children.length === 0) {
+        featuredGrid.style.display = 'none';
+        if (featuredSection) featuredSection.style.display = 'none';
+    } else {
+        featuredGrid.style.display = 'grid';
+        if (featuredSection) featuredSection.style.display = 'flex';
+    }
 }
 
 function renderAlternatives() {
