@@ -107,7 +107,7 @@ function renderServices() {
                         `).join('')}
                     </div>
                     <div class="pkg-content" id="pkg-${svc.id}">
-                        ${renderPkgContent(pkg)}
+                        ${renderPkgContent(pkg, 0)}
                     </div>
                 </div>
 
@@ -124,12 +124,17 @@ function renderServices() {
     }).join('');
 }
 
-function renderPkgContent(pkg) {
+function renderPkgContent(pkg, idx) {
+    const isPopular = pkg.name === 'Standard' || idx === 1;
     return `
-        <div class="pkg-name">${pkg.name} — <span class="pkg-price">${pkg.price}</span></div>
-        <div style="font-size:0.76rem;color:var(--dim);margin-bottom:8px;">${pkg.desc}</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <div class="pkg-name">${pkg.name}</div>
+            ${isPopular ? `<div style="background:var(--primary);color:#fff;font-size:0.65rem;padding:2px 8px;border-radius:100px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;box-shadow:0 0 10px rgba(108,53,222,0.4);">🔥 Most Popular</div>` : ''}
+        </div>
+        <div class="pkg-price">${pkg.price}</div>
+        <div style="font-size:0.76rem;color:var(--dim);margin-bottom:12px;line-height:1.5;">${pkg.desc}</div>
         <div class="pkg-features">
-            ${pkg.features.slice(0,4).map(f => `<div class="pkg-feat">${f}</div>`).join('')}
+            ${pkg.features.map(f => `<div class="pkg-feat">${f}</div>`).join('')}
         </div>`;
 }
 
@@ -142,7 +147,7 @@ window.switchPkg = function(svcId, pkgIdx) {
     tabs.forEach((t,i) => t.classList.toggle('active', i === pkgIdx));
 
     // Update content
-    document.getElementById(`pkg-${svcId}`).innerHTML = renderPkgContent(svc.packages[pkgIdx]);
+    document.getElementById(`pkg-${svcId}`).innerHTML = renderPkgContent(svc.packages[pkgIdx], pkgIdx);
 }
 
 // =============================================
