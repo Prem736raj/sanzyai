@@ -10,35 +10,23 @@ Use this map to attach the correct upgraded delivery file to each paid Gumroad p
 
 ## Product -> File Mapping
 
-1. Ultimate Business ChatGPT Pack
-- `deliverables/premium-prompt-packs/ultimate-business-chatgpt-pack.zip`
+1. The Mastery Vault: 10,000+ AI Prompts
+- `deliverables/premium-prompt-packs/the-mastery-vault-10000-ai-prompts.zip`
 
-2. Midjourney Art Masterpack
-- `deliverables/premium-prompt-packs/midjourney-art-masterpack.zip`
+2. ChatGPT for Solo-Founders
+- `deliverables/premium-prompt-packs/chatgpt-for-solo-founders.zip`
 
-3. SEO Content Writer Pack
+3. Midjourney for Amazon/Etsy
+- `deliverables/premium-prompt-packs/midjourney-for-amazon-etsy.zip`
+
+4. SEO Content Writer Pack
 - `deliverables/premium-prompt-packs/seo-content-writer-pack.zip`
 
-4. Social Media Content Pack
-- `deliverables/premium-prompt-packs/social-media-content-pack.zip`
+5. Viral X/LinkedIn Ghostwriter
+- `deliverables/premium-prompt-packs/viral-x-linkedin-ghostwriter.zip`
 
-5. YouTube Script Writing Pack
-- `deliverables/premium-prompt-packs/youtube-script-writing-pack.zip`
-
-6. Freelancer Income Pack
-- `deliverables/premium-prompt-packs/freelancer-income-pack.zip`
-
-7. E-commerce Product Pack
-- `deliverables/premium-prompt-packs/e-commerce-product-pack.zip`
-
-8. Gemini Image Prompt Pro Pack
-- `deliverables/premium-prompt-packs/gemini-image-prompt-pro-pack.zip`
-
-9. ChatGPT Image Direction Pack
-- `deliverables/premium-prompt-packs/chatgpt-image-direction-pack.zip`
-
-10. Claude Code Engineer Pack
-- `deliverables/premium-prompt-packs/claude-code-engineer-pack.zip`
+6. Freelance High-Ticket Closer
+- `deliverables/premium-prompt-packs/freelance-high-ticket-closer.zip`
 
 ## Fast Upload Steps
 

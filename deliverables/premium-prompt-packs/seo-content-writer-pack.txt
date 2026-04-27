@@ -1,4 +1,4 @@
-SEO CONTENT WRITER PACK (30 PROMPTS)
+SEO CONTENT WRITER PACK (50 PROMPTS)
 Pack ID: 3
 Standard: Premium Prompt Quality v1
 
@@ -6,10 +6,10 @@ How to use:
 1) Replace all bracket placeholders before use.
 2) Run prompt once, then run a second pass with real data for refinement.
 3) Keep the Quality checks section in every run.
-1. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+1. TOPICAL CLUSTER ARCHITECTURE - DISCOVERY WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -19,15 +19,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -41,10 +41,10 @@ Quality checks:
 
 ---
 
-2. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+2. SKYSCRAPER CONTENT BRIEF - STRATEGY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -54,15 +54,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -76,10 +76,10 @@ Quality checks:
 
 ---
 
-3. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+3. INTERNAL LINKING MAPPING - EXECUTION WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -89,15 +89,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -111,10 +111,10 @@ Quality checks:
 
 ---
 
-4. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+4. HIGH CTR META DATA - OPTIMIZATION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -124,15 +124,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -146,10 +146,10 @@ Quality checks:
 
 ---
 
-5. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+5. TOPICAL CLUSTER ARCHITECTURE - QUALITY ASSURANCE WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -159,15 +159,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -181,10 +181,10 @@ Quality checks:
 
 ---
 
-6. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+6. SKYSCRAPER CONTENT BRIEF - DISCOVERY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -194,15 +194,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -216,10 +216,10 @@ Quality checks:
 
 ---
 
-7. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+7. INTERNAL LINKING MAPPING - STRATEGY WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -229,15 +229,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -251,10 +251,10 @@ Quality checks:
 
 ---
 
-8. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+8. HIGH CTR META DATA - EXECUTION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -264,15 +264,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -286,10 +286,10 @@ Quality checks:
 
 ---
 
-9. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+9. TOPICAL CLUSTER ARCHITECTURE - OPTIMIZATION WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -299,15 +299,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -321,10 +321,10 @@ Quality checks:
 
 ---
 
-10. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+10. SKYSCRAPER CONTENT BRIEF - QUALITY ASSURANCE WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -334,15 +334,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -356,10 +356,10 @@ Quality checks:
 
 ---
 
-11. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+11. INTERNAL LINKING MAPPING - DISCOVERY WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -369,15 +369,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -391,10 +391,10 @@ Quality checks:
 
 ---
 
-12. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+12. HIGH CTR META DATA - STRATEGY WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -404,15 +404,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -426,10 +426,10 @@ Quality checks:
 
 ---
 
-13. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+13. TOPICAL CLUSTER ARCHITECTURE - EXECUTION WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -439,15 +439,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -461,10 +461,10 @@ Quality checks:
 
 ---
 
-14. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+14. SKYSCRAPER CONTENT BRIEF - OPTIMIZATION WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -474,15 +474,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -496,10 +496,10 @@ Quality checks:
 
 ---
 
-15. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+15. INTERNAL LINKING MAPPING - QUALITY ASSURANCE WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -509,15 +509,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -531,10 +531,10 @@ Quality checks:
 
 ---
 
-16. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+16. HIGH CTR META DATA - DISCOVERY WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -544,15 +544,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -566,10 +566,10 @@ Quality checks:
 
 ---
 
-17. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+17. TOPICAL CLUSTER ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -579,15 +579,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -601,10 +601,10 @@ Quality checks:
 
 ---
 
-18. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+18. SKYSCRAPER CONTENT BRIEF - EXECUTION WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -614,15 +614,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -636,10 +636,10 @@ Quality checks:
 
 ---
 
-19. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+19. INTERNAL LINKING MAPPING - OPTIMIZATION WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -649,15 +649,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -671,10 +671,10 @@ Quality checks:
 
 ---
 
-20. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+20. HIGH CTR META DATA - QUALITY ASSURANCE WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -684,15 +684,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -706,10 +706,10 @@ Quality checks:
 
 ---
 
-21. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+21. TOPICAL CLUSTER ARCHITECTURE - DISCOVERY WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -719,15 +719,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -741,10 +741,10 @@ Quality checks:
 
 ---
 
-22. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+22. SKYSCRAPER CONTENT BRIEF - STRATEGY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -754,15 +754,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -776,10 +776,10 @@ Quality checks:
 
 ---
 
-23. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+23. INTERNAL LINKING MAPPING - EXECUTION WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -789,15 +789,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -811,10 +811,10 @@ Quality checks:
 
 ---
 
-24. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+24. HIGH CTR META DATA - OPTIMIZATION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -824,15 +824,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -846,10 +846,10 @@ Quality checks:
 
 ---
 
-25. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+25. TOPICAL CLUSTER ARCHITECTURE - QUALITY ASSURANCE WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -859,15 +859,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -881,10 +881,10 @@ Quality checks:
 
 ---
 
-26. PILLAR PAGE PLANNING - DISCOVERY WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need pillar page planning under real delivery constraints.
+26. SKYSCRAPER CONTENT BRIEF - DISCOVERY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -894,15 +894,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a pillar page planning plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) SEO brief with step-by-step actions
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -916,10 +916,10 @@ Quality checks:
 
 ---
 
-27. INTENT MAPPING - STRATEGY WORKFLOW
-Problem solved: Traffic arrives but does not convert to leads or sales.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need intent mapping under real delivery constraints.
+27. INTERNAL LINKING MAPPING - STRATEGY WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -929,15 +929,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a intent mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) outline architecture with step-by-step actions
+2) competitor gap analysis with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -951,10 +951,10 @@ Quality checks:
 
 ---
 
-28. SERP GAP ANALYSIS - EXECUTION WORKFLOW
-Problem solved: Keyword cannibalization is reducing topical authority.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need SERP gap analysis under real delivery constraints.
+28. HIGH CTR META DATA - EXECUTION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -964,15 +964,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a SERP gap analysis plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) internal linking map with step-by-step actions
+2) schema markup logic with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -986,10 +986,10 @@ Quality checks:
 
 ---
 
-29. CONVERSION-FOCUSED ARTICLE BRIEF - OPTIMIZATION WORKFLOW
-Problem solved: Pages fail to rank despite publishing consistently.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need conversion-focused article brief under real delivery constraints.
+29. TOPICAL CLUSTER ARCHITECTURE - OPTIMIZATION WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -999,15 +999,15 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a conversion-focused article brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) schema notes with step-by-step actions
+2) topical map with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria
@@ -1021,10 +1021,10 @@ Quality checks:
 
 ---
 
-30. CLUSTER OPTIMIZATION - QUALITY ASSURANCE WORKFLOW
-Problem solved: Content structure does not match search intent.
-Best for: SEO writers, niche site builders, affiliate teams, B2B content teams.
-Use case: Deploy this when you need cluster optimization under real delivery constraints.
+30. SKYSCRAPER CONTENT BRIEF - QUALITY ASSURANCE WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
 Inputs to replace:
 - [BUSINESS_CONTEXT]
 - [TARGET_AUDIENCE]
@@ -1034,15 +1034,715 @@ Inputs to replace:
 - [SUCCESS_METRIC]
 
 Master prompt:
-Act as a senior SEO content strategist and editorial planner.
-Goal: Build a cluster optimization plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
 Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
 Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
 Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
 
 Output format required:
 1) Executive summary (max 180 words)
-2) refresh cycle plan with step-by-step actions
+2) 2000-word article outline with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+31. INTERNAL LINKING MAPPING - DISCOVERY WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) competitor gap analysis with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+32. HIGH CTR META DATA - STRATEGY WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) schema markup logic with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+33. TOPICAL CLUSTER ARCHITECTURE - EXECUTION WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) topical map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+34. SKYSCRAPER CONTENT BRIEF - OPTIMIZATION WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 2000-word article outline with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+35. INTERNAL LINKING MAPPING - QUALITY ASSURANCE WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) competitor gap analysis with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+36. HIGH CTR META DATA - DISCOVERY WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) schema markup logic with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+37. TOPICAL CLUSTER ARCHITECTURE - STRATEGY WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) topical map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+38. SKYSCRAPER CONTENT BRIEF - EXECUTION WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 2000-word article outline with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+39. INTERNAL LINKING MAPPING - OPTIMIZATION WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) competitor gap analysis with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+40. HIGH CTR META DATA - QUALITY ASSURANCE WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) schema markup logic with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+41. TOPICAL CLUSTER ARCHITECTURE - DISCOVERY WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) topical map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+42. SKYSCRAPER CONTENT BRIEF - STRATEGY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 2000-word article outline with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+43. INTERNAL LINKING MAPPING - EXECUTION WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) competitor gap analysis with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+44. HIGH CTR META DATA - OPTIMIZATION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) schema markup logic with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+45. TOPICAL CLUSTER ARCHITECTURE - QUALITY ASSURANCE WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) topical map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+46. SKYSCRAPER CONTENT BRIEF - DISCOVERY WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 2000-word article outline with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+47. INTERNAL LINKING MAPPING - STRATEGY WORKFLOW
+Problem solved: Content lacks semantic depth and LSI keywords.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need internal linking mapping under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a internal linking mapping plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) competitor gap analysis with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+48. HIGH CTR META DATA - EXECUTION WORKFLOW
+Problem solved: Meta tags do not convert impressions into clicks.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need high CTR meta data under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a high CTR meta data plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) schema markup logic with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+49. TOPICAL CLUSTER ARCHITECTURE - OPTIMIZATION WORKFLOW
+Problem solved: Blog posts get published but never reach page 1.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need topical cluster architecture under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a topical cluster architecture plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) topical map with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+50. SKYSCRAPER CONTENT BRIEF - QUALITY ASSURANCE WORKFLOW
+Problem solved: Keyword cannibalization occurs across the site.
+Best for: SEO marketers, niche bloggers, and content directors.
+Use case: Deploy this when you need skyscraper content brief under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a senior SEO content strategist and semantic cluster expert.
+Goal: Build a skyscraper content brief plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) 2000-word article outline with step-by-step actions
 3) Prioritized action table (impact, effort, owner, deadline)
 4) Risk register with mitigation plan
 5) Quality checklist with pass/fail criteria

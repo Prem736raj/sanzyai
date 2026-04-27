@@ -1,0 +1,3505 @@
+MIDJOURNEY FOR AMAZON ETSY (100 PROMPTS)
+Pack ID: 2
+Standard: Premium Prompt Quality v1
+
+How to use:
+1) Replace all bracket placeholders before use.
+2) Run prompt once, then run a second pass with real data for refinement.
+3) Keep the Quality checks section in every run.
+1. PURE WHITE ECOMMERCE SHOTS - DISCOVERY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+2. LIFESTYLE IN-SITU RENDERS - STRATEGY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+3. PACKAGING MOCKUP VARIATION - EXECUTION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+4. AD CREATIVE ASSET GENERATION - OPTIMIZATION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+5. PURE WHITE ECOMMERCE SHOTS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+6. LIFESTYLE IN-SITU RENDERS - DISCOVERY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+7. PACKAGING MOCKUP VARIATION - STRATEGY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+8. AD CREATIVE ASSET GENERATION - EXECUTION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+9. PURE WHITE ECOMMERCE SHOTS - OPTIMIZATION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+10. LIFESTYLE IN-SITU RENDERS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+11. PACKAGING MOCKUP VARIATION - DISCOVERY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+12. AD CREATIVE ASSET GENERATION - STRATEGY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+13. PURE WHITE ECOMMERCE SHOTS - EXECUTION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+14. LIFESTYLE IN-SITU RENDERS - OPTIMIZATION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+15. PACKAGING MOCKUP VARIATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+16. AD CREATIVE ASSET GENERATION - DISCOVERY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+17. PURE WHITE ECOMMERCE SHOTS - STRATEGY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+18. LIFESTYLE IN-SITU RENDERS - EXECUTION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+19. PACKAGING MOCKUP VARIATION - OPTIMIZATION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+20. AD CREATIVE ASSET GENERATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+21. PURE WHITE ECOMMERCE SHOTS - DISCOVERY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+22. LIFESTYLE IN-SITU RENDERS - STRATEGY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+23. PACKAGING MOCKUP VARIATION - EXECUTION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+24. AD CREATIVE ASSET GENERATION - OPTIMIZATION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+25. PURE WHITE ECOMMERCE SHOTS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+26. LIFESTYLE IN-SITU RENDERS - DISCOVERY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+27. PACKAGING MOCKUP VARIATION - STRATEGY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+28. AD CREATIVE ASSET GENERATION - EXECUTION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+29. PURE WHITE ECOMMERCE SHOTS - OPTIMIZATION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+30. LIFESTYLE IN-SITU RENDERS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+31. PACKAGING MOCKUP VARIATION - DISCOVERY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+32. AD CREATIVE ASSET GENERATION - STRATEGY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+33. PURE WHITE ECOMMERCE SHOTS - EXECUTION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+34. LIFESTYLE IN-SITU RENDERS - OPTIMIZATION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+35. PACKAGING MOCKUP VARIATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+36. AD CREATIVE ASSET GENERATION - DISCOVERY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+37. PURE WHITE ECOMMERCE SHOTS - STRATEGY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+38. LIFESTYLE IN-SITU RENDERS - EXECUTION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+39. PACKAGING MOCKUP VARIATION - OPTIMIZATION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+40. AD CREATIVE ASSET GENERATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+41. PURE WHITE ECOMMERCE SHOTS - DISCOVERY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+42. LIFESTYLE IN-SITU RENDERS - STRATEGY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+43. PACKAGING MOCKUP VARIATION - EXECUTION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+44. AD CREATIVE ASSET GENERATION - OPTIMIZATION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+45. PURE WHITE ECOMMERCE SHOTS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+46. LIFESTYLE IN-SITU RENDERS - DISCOVERY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+47. PACKAGING MOCKUP VARIATION - STRATEGY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+48. AD CREATIVE ASSET GENERATION - EXECUTION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+49. PURE WHITE ECOMMERCE SHOTS - OPTIMIZATION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+50. LIFESTYLE IN-SITU RENDERS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+51. PACKAGING MOCKUP VARIATION - DISCOVERY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+52. AD CREATIVE ASSET GENERATION - STRATEGY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+53. PURE WHITE ECOMMERCE SHOTS - EXECUTION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+54. LIFESTYLE IN-SITU RENDERS - OPTIMIZATION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+55. PACKAGING MOCKUP VARIATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+56. AD CREATIVE ASSET GENERATION - DISCOVERY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+57. PURE WHITE ECOMMERCE SHOTS - STRATEGY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+58. LIFESTYLE IN-SITU RENDERS - EXECUTION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+59. PACKAGING MOCKUP VARIATION - OPTIMIZATION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+60. AD CREATIVE ASSET GENERATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+61. PURE WHITE ECOMMERCE SHOTS - DISCOVERY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+62. LIFESTYLE IN-SITU RENDERS - STRATEGY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+63. PACKAGING MOCKUP VARIATION - EXECUTION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+64. AD CREATIVE ASSET GENERATION - OPTIMIZATION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+65. PURE WHITE ECOMMERCE SHOTS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+66. LIFESTYLE IN-SITU RENDERS - DISCOVERY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+67. PACKAGING MOCKUP VARIATION - STRATEGY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+68. AD CREATIVE ASSET GENERATION - EXECUTION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+69. PURE WHITE ECOMMERCE SHOTS - OPTIMIZATION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+70. LIFESTYLE IN-SITU RENDERS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+71. PACKAGING MOCKUP VARIATION - DISCOVERY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+72. AD CREATIVE ASSET GENERATION - STRATEGY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+73. PURE WHITE ECOMMERCE SHOTS - EXECUTION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+74. LIFESTYLE IN-SITU RENDERS - OPTIMIZATION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+75. PACKAGING MOCKUP VARIATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+76. AD CREATIVE ASSET GENERATION - DISCOVERY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+77. PURE WHITE ECOMMERCE SHOTS - STRATEGY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+78. LIFESTYLE IN-SITU RENDERS - EXECUTION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+79. PACKAGING MOCKUP VARIATION - OPTIMIZATION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+80. AD CREATIVE ASSET GENERATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+81. PURE WHITE ECOMMERCE SHOTS - DISCOVERY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+82. LIFESTYLE IN-SITU RENDERS - STRATEGY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+83. PACKAGING MOCKUP VARIATION - EXECUTION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+84. AD CREATIVE ASSET GENERATION - OPTIMIZATION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+85. PURE WHITE ECOMMERCE SHOTS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+86. LIFESTYLE IN-SITU RENDERS - DISCOVERY WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+87. PACKAGING MOCKUP VARIATION - STRATEGY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+88. AD CREATIVE ASSET GENERATION - EXECUTION WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+89. PURE WHITE ECOMMERCE SHOTS - OPTIMIZATION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+90. LIFESTYLE IN-SITU RENDERS - QUALITY ASSURANCE WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+91. PACKAGING MOCKUP VARIATION - DISCOVERY WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+92. AD CREATIVE ASSET GENERATION - STRATEGY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+93. PURE WHITE ECOMMERCE SHOTS - EXECUTION WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+94. LIFESTYLE IN-SITU RENDERS - OPTIMIZATION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+95. PACKAGING MOCKUP VARIATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.
+
+---
+
+96. AD CREATIVE ASSET GENERATION - DISCOVERY WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the discovery phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be concise and decision-focused.
+
+---
+
+97. PURE WHITE ECOMMERCE SHOTS - STRATEGY WORKFLOW
+Problem solved: Product photography is too expensive and slow.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need pure white ecommerce shots under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a pure white ecommerce shots plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the strategy phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) raw image prompt with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be analytical with practical examples.
+
+---
+
+98. LIFESTYLE IN-SITU RENDERS - EXECUTION WORKFLOW
+Problem solved: Amazon listings lack white-background compliance.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need lifestyle in-situ renders under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a lifestyle in-situ renders plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the execution phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) V6 parameter tuning with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be operator-level and implementation ready.
+
+---
+
+99. PACKAGING MOCKUP VARIATION - OPTIMIZATION WORKFLOW
+Problem solved: Lifestyle shots do not elicit emotional desire.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need packaging mockup variation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a packaging mockup variation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the optimization phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) lighting angle instructions with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be high-conversion and outcome-oriented.
+
+---
+
+100. AD CREATIVE ASSET GENERATION - QUALITY ASSURANCE WORKFLOW
+Problem solved: Packaging mockups look fake or unprofessional.
+Best for: Amazon FBA sellers, Etsy shop owners, and Shopify merchants.
+Use case: Deploy this when you need ad creative asset generation under real delivery constraints.
+Inputs to replace:
+- [BUSINESS_CONTEXT]
+- [TARGET_AUDIENCE]
+- [PRIMARY_GOAL]
+- [CONSTRAINTS]
+- [TIMEFRAME]
+- [SUCCESS_METRIC]
+
+Master prompt:
+Act as a commercial product photographer and 3D mockup artist.
+Goal: Build a ad creative asset generation plan for [BUSINESS_CONTEXT] targeting [TARGET_AUDIENCE] with success metric [SUCCESS_METRIC].
+Context and constraints: [CONSTRAINTS]. Delivery window: [TIMEFRAME].
+Work through the quality assurance phase first, then produce implementation assets that can be used immediately by an operator team.
+Force high specificity: include assumptions, dependencies, risks, and fallback options where uncertainty exists.
+
+Output format required:
+1) Executive summary (max 180 words)
+2) camera/lens specs with step-by-step actions
+3) Prioritized action table (impact, effort, owner, deadline)
+4) Risk register with mitigation plan
+5) Quality checklist with pass/fail criteria
+6) Optimization suggestions (minimum 3)
+
+Quality checks:
+- Avoid generic advice and avoid repeating obvious best practices.
+- Every recommendation must map to a measurable business/user outcome.
+- Highlight what to do first if time is limited to 20% of full scope.
+- Writing style must be structured for team handoff.

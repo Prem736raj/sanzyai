@@ -5,139 +5,87 @@ const root = process.cwd();
 const outDir = path.join(root, 'deliverables', 'premium-prompt-packs');
 
 const packs = [
-  { id: 1, key: 'business', name: 'Ultimate Business ChatGPT Pack', count: 50 },
-  { id: 2, key: 'midjourney', name: 'Midjourney Art Masterpack', count: 100 },
-  { id: 3, key: 'seo', name: 'SEO Content Writer Pack', count: 30 },
-  { id: 4, key: 'social', name: 'Social Media Content Pack', count: 40 },
-  { id: 5, key: 'youtube', name: 'YouTube Script Writing Pack', count: 25 },
-  { id: 6, key: 'freelance', name: 'Freelancer Income Pack', count: 60 },
-  { id: 7, key: 'ecommerce', name: 'E-commerce Product Pack', count: 35 },
-  { id: 9, key: 'gemini-image', name: 'Gemini Image Prompt Pro Pack', count: 80 },
-  { id: 10, key: 'chatgpt-image', name: 'ChatGPT Image Direction Pack', count: 70 },
-  { id: 11, key: 'claude-code', name: 'Claude Code Engineer Pack', count: 120 },
+  { id: 0, key: 'mastery', name: 'The Mastery Vault 10000+ AI Prompts', count: 10000 },
+  { id: 1, key: 'solofounder', name: 'ChatGPT for Solo-Founders', count: 150 },
+  { id: 2, key: 'midjourney-ecommerce', name: 'Midjourney for Amazon Etsy', count: 100 },
+  { id: 3, key: 'seo-content', name: 'SEO Content Writer Pack', count: 50 },
+  { id: 4, key: 'viral-social', name: 'Viral X LinkedIn Ghostwriter', count: 65 },
+  { id: 6, key: 'freelance-closer', name: 'Freelance High-Ticket Closer', count: 45 }
 ];
 
 const blueprints = {
-  business: {
-    role: 'senior business strategist and growth operator',
+  mastery: {
+    role: 'elite AI polymath and digital operations architect',
     problems: [
-      'Revenue is flat because offers are not positioned clearly.',
-      'Conversion is weak due to unclear value messaging.',
-      'Execution is slow because operations are not systemized.',
-      'Decision-making is reactive because data priorities are unclear.',
+      'Lack of systemic AI use across the business.',
+      'Silos between marketing, coding, and design tasks.',
+      'Slow execution speed from manual work.',
+      'Missing advanced prompt-engineering frameworks.'
     ],
-    bestFor: 'Founders, consultants, agency operators, and growth teams.',
-    objective: ['offer architecture', 'pricing strategy', 'acquisition plan', 'retention workflow', 'sales process'],
-    deliverables: ['strategy brief', 'execution roadmap', 'risk map', 'KPI dashboard spec', '30-day sprint plan'],
+    bestFor: 'Entrepreneurs, agencies, and full-stack business operators.',
+    objective: ['cross-department strategy', 'full-funnel optimization', 'creative/technical hybrid workflow', 'automation pipeline setup'],
+    deliverables: ['omni-channel strategy', 'GTM plan', 'cost-reduction blueprint', 'AI integration roadmap']
   },
-  midjourney: {
-    role: 'expert Midjourney prompt director for commercial-grade visuals',
+  solofounder: {
+    role: 'fractional CMO and solo-business operator',
     problems: [
-      'Image outputs look generic and non-brandable.',
-      'Generated visuals are inconsistent across campaign assets.',
-      'Creative teams lose time iterating unclear image prompts.',
-      'Visual quality does not match premium ad standards.',
+      'Founders are stuck working IN the business, not ON it.',
+      'Operations are manual and unscalable.',
+      'Cold outreach emails have low conversion.',
+      'Pricing models are leaving money on the table.'
     ],
-    bestFor: 'Brand designers, visual artists, ad creatives, and content studios.',
-    objective: ['hero concept generation', 'campaign art direction', 'character consistency', 'thumbnail optimization', 'product visual storytelling'],
-    deliverables: ['primary prompt set', 'variation tree', 'negative prompt list', 'style lock sheet', 'production checklist'],
+    bestFor: 'Solo-founders, bootstrappers, and indie-hackers.',
+    objective: ['scale operations', 'pitch deck refinement', 'SaaS pricing optimization', 'automated acquisition'],
+    deliverables: ['cold email sequence', 'pricing matrix', 'product-market fit survey', 'automated workflow diagram']
   },
-  seo: {
-    role: 'senior SEO content strategist and editorial planner',
+  'midjourney-ecommerce': {
+    role: 'commercial product photographer and 3D mockup artist',
     problems: [
-      'Pages fail to rank despite publishing consistently.',
-      'Content structure does not match search intent.',
-      'Traffic arrives but does not convert to leads or sales.',
-      'Keyword cannibalization is reducing topical authority.',
+      'Product photography is too expensive and slow.',
+      'Amazon listings lack white-background compliance.',
+      'Lifestyle shots do not elicit emotional desire.',
+      'Packaging mockups look fake or unprofessional.'
     ],
-    bestFor: 'SEO writers, niche site builders, affiliate teams, B2B content teams.',
-    objective: ['pillar page planning', 'intent mapping', 'SERP gap analysis', 'conversion-focused article brief', 'cluster optimization'],
-    deliverables: ['SEO brief', 'outline architecture', 'internal linking map', 'schema notes', 'refresh cycle plan'],
+    bestFor: 'Amazon FBA sellers, Etsy shop owners, and Shopify merchants.',
+    objective: ['pure white ecommerce shots', 'lifestyle in-situ renders', 'packaging mockup variation', 'ad creative asset generation'],
+    deliverables: ['raw image prompt', 'V6 parameter tuning', 'lighting angle instructions', 'camera/lens specs']
   },
-  social: {
-    role: 'performance social media strategist and conversion copywriter',
+  'seo-content': {
+    role: 'senior SEO content strategist and semantic cluster expert',
     problems: [
-      'Posts get impressions but low engagement depth.',
-      'Content lacks a repeatable hook-to-CTA structure.',
-      'Audience growth is inconsistent across weeks.',
-      'Social content does not translate into pipeline results.',
+      'Blog posts get published but never reach page 1.',
+      'Keyword cannibalization occurs across the site.',
+      'Content lacks semantic depth and LSI keywords.',
+      'Meta tags do not convert impressions into clicks.'
     ],
-    bestFor: 'Creators, social managers, personal brands, and D2C teams.',
-    objective: ['engagement campaign design', 'content calendar architecture', 'hook testing matrix', 'comment conversion loop', 'community growth strategy'],
-    deliverables: ['post set', 'hook library', 'CTA map', 'platform adaptation notes', '7-day posting sprint'],
+    bestFor: 'SEO marketers, niche bloggers, and content directors.',
+    objective: ['topical cluster architecture', 'skyscraper content brief', 'internal linking mapping', 'high CTR meta data'],
+    deliverables: ['topical map', '2000-word article outline', 'competitor gap analysis', 'schema markup logic']
   },
-  youtube: {
-    role: 'YouTube retention strategist and narrative script architect',
+  'viral-social': {
+    role: 'viral thread architect and ghostwriter for personal brands',
     problems: [
-      'Viewers drop early because hooks are weak.',
-      'Scripts are informative but not engaging enough.',
-      'Content output is inconsistent and hard to scale.',
-      'Videos get clicks but low watch-time completion.',
+      'Content gets lost in the feed algorithm.',
+      'Hooks fail to stop the scroll.',
+      'Follower growth does not translate into newsletter subs.',
+      'Personal stories lack professional context.'
     ],
-    bestFor: 'YouTubers, educators, storytellers, and content-led businesses.',
-    objective: ['hook engineering', 'retention script design', 'format optimization', 'episode pipeline planning', 'CTA performance tuning'],
-    deliverables: ['opening variants', 'full script draft', 'b-roll map', 'retention checkpoints', 'thumbnail-title sync brief'],
+    bestFor: 'Founders on Twitter/X, LinkedIn creators, and thought leaders.',
+    objective: ['viral hook generation', 'contrarian storytelling framing', 'audience retention mechanics', 'CTA conversion tuning'],
+    deliverables: ['10-tweet thread', 'LinkedIn carousel script', '30-day content calendar', 'engagement reply scripts']
   },
-  freelance: {
-    role: 'freelance growth advisor focused on client acquisition and profitability',
+  'freelance-closer': {
+    role: 'elite high-ticket freelance closer and pricing negotiator',
     problems: [
-      'Freelancers lose deals because proposals sound generic.',
-      'Rates stay low due to weak value framing.',
-      'Client pipeline is unstable month to month.',
-      'Projects overrun because expectations are not scoped clearly.',
+      'Clients aggressively push back on high project fees.',
+      'Proposals focus on tasks rather than business outcomes/ROI.',
+      'The pipeline is feast or famine.',
+      'Freelancers get ghosted after sending the first quote.'
     ],
-    bestFor: 'Freelancers, consultants, solo agencies, and independent operators.',
-    objective: ['proposal optimization', 'lead outreach system', 'rate negotiation strategy', 'client onboarding workflow', 'scope control framework'],
-    deliverables: ['client-ready draft', 'objection matrix', 'negotiation script', 'onboarding checklist', 'weekly pipeline plan'],
-  },
-  ecommerce: {
-    role: 'ecommerce conversion strategist and lifecycle copy specialist',
-    problems: [
-      'Product pages get traffic but conversion is poor.',
-      'Paid ads do not align with on-site message match.',
-      'AOV is low because bundle and upsell logic is weak.',
-      'Retention suffers due to weak post-purchase communication.',
-    ],
-    bestFor: 'Shopify operators, D2C teams, Amazon sellers, and growth marketers.',
-    objective: ['PDP copy optimization', 'offer stack design', 'lifecycle email flow', 'ad-to-page message match', 'checkout conversion tuning'],
-    deliverables: ['copy set', 'offer matrix', 'A/B test plan', 'email sequence draft', 'conversion scorecard'],
-  },
-  'gemini-image': {
-    role: 'Gemini image generation director for brand-consistent commercial visuals',
-    problems: [
-      'Image sets are inconsistent across campaign touchpoints.',
-      'Creative intent is lost due to vague image prompting.',
-      'Visual outputs lack conversion-focused composition.',
-      'Production teams waste time on prompt trial-and-error.',
-    ],
-    bestFor: 'Brand teams, media buyers, ecommerce creatives, and visual agencies.',
-    objective: ['campaign scene design', 'ad creative generation', 'brand style consistency', 'product hero imaging', 'social visual sequencing'],
-    deliverables: ['hero prompt', 'variant prompts', 'composition instructions', 'lighting guide', 'QA review checklist'],
-  },
-  'chatgpt-image': {
-    role: 'image prompt planner using ChatGPT for ideation, direction, and iteration control',
-    problems: [
-      'Image ideation lacks direction and strategic constraints.',
-      'Teams cannot maintain consistent visual identity.',
-      'Prompt iterations fail to fix recurring output flaws.',
-      'Creative production is slow because decision criteria are unclear.',
-    ],
-    bestFor: 'Design leads, creator teams, brand storytellers, and growth marketers.',
-    objective: ['art direction briefing', 'prompt iteration framework', 'thumbnail and hero planning', 'visual consistency system', 'creative QA optimization'],
-    deliverables: ['brief template', 'prompt stack', 'iteration fixes', 'visual rubric', 'handoff notes'],
-  },
-  'claude-code': {
-    role: 'staff-level software engineer specializing in debugging, architecture, and release safety',
-    problems: [
-      'Bugs recur because root cause analysis is shallow.',
-      'Feature delivery is delayed by unclear technical planning.',
-      'Legacy refactors break behavior due to missing safeguards.',
-      'Code quality drops under deadline pressure.',
-    ],
-    bestFor: 'Developers, tech leads, founders, and product engineering teams.',
-    objective: ['bug triage workflow', 'feature implementation planning', 'refactor safety design', 'test strategy architecture', 'performance and security hardening'],
-    deliverables: ['diagnostic report', 'implementation patch plan', 'test suite blueprint', 'risk mitigation checklist', 'release readiness criteria'],
-  },
+    bestFor: 'Freelancers, independent consultants, and solo-agencies.',
+    objective: ['value-based pricing defense', 'discovery call scripting', 'objection handling', 'proposal restructuring'],
+    deliverables: ['objection response script', '3-tier pricing proposal', 'lead qualification checklist', 're-engagement email sequence']
+  }
 };
 
 const phasePool = [

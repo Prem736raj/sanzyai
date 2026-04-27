@@ -4,18 +4,14 @@ Generated files ready for external delivery upload (e.g., Gumroad).
 
 Packs generated:
 
-- Ultimate Business ChatGPT Pack -> ultimate-business-chatgpt-pack.txt (50 prompts)
-- Midjourney Art Masterpack -> midjourney-art-masterpack.txt (100 prompts)
-- SEO Content Writer Pack -> seo-content-writer-pack.txt (30 prompts)
-- Social Media Content Pack -> social-media-content-pack.txt (40 prompts)
-- YouTube Script Writing Pack -> youtube-script-writing-pack.txt (25 prompts)
-- Freelancer Income Pack -> freelancer-income-pack.txt (60 prompts)
-- E-commerce Product Pack -> e-commerce-product-pack.txt (35 prompts)
-- Gemini Image Prompt Pro Pack -> gemini-image-prompt-pro-pack.txt (80 prompts)
-- ChatGPT Image Direction Pack -> chatgpt-image-direction-pack.txt (70 prompts)
-- Claude Code Engineer Pack -> claude-code-engineer-pack.txt (120 prompts)
+- The Mastery Vault 10000+ AI Prompts -> the-mastery-vault-10000-ai-prompts.txt (10000 prompts)
+- ChatGPT for Solo-Founders -> chatgpt-for-solo-founders.txt (150 prompts)
+- Midjourney for Amazon Etsy -> midjourney-for-amazon-etsy.txt (100 prompts)
+- SEO Content Writer Pack -> seo-content-writer-pack.txt (50 prompts)
+- Viral X LinkedIn Ghostwriter -> viral-x-linkedin-ghostwriter.txt (65 prompts)
+- Freelance High-Ticket Closer -> freelance-high-ticket-closer.txt (45 prompts)
 
-Total prompts generated: 610
+Total prompts generated: 10410
 
 Quality baseline: each prompt includes Problem solved, Best for, Inputs, Master prompt, Output format, and Quality checks.
 
