@@ -826,7 +826,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBudget();
     renderChecklist();
     setupMobileNav();
+    const hasExistingActivity = getVisitedStages().size > 0;
     const firstStage = roadmapByPath[activePath][0];
-    if (firstStage) setVisitedStage(`${activePath}:${firstStage.id}`);
+    if (firstStage && hasExistingActivity) setVisitedStage(`${activePath}:${firstStage.id}`);
     updateLearnProgressUI();
 });

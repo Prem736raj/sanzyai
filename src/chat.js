@@ -221,7 +221,7 @@ I'll get back to you within 24 hours! ⚡`
                 keywords: ['learn','course','tutorial','free course','website','build website','hosting','seo learn','how to','guide','beginner','start','domain learn','make money learn','certificate'],
                 response: `Our Free Learning Hub covers EVERYTHING! 📚
 
-**8 modules with 50+ lessons:**
+**7 stages with step-by-step guidance:**
 ✅ Module 1 — Domain basics
 ✅ Module 2 — Hosting & servers
 ✅ Module 3 — Build with AI tools
@@ -231,11 +231,11 @@ I'll get back to you within 24 hours! ⚡`
 ✅ Module 7 — Make money online
 🎁 Bonus — AI Tools Mastery
 
-**All completely FREE — including certificate!**
+**All completely FREE — no credit card required!**
 
 <a class="bot-link-btn" href="learn-free.html">📚 Start Learning Free →</a>
 
-Over 12,000 students have enrolled already!
+Covers everything from domain setup to making money online.
 **Total course time: 12+ hours** 🎓`
             },
             money: {
