@@ -570,7 +570,6 @@ function renderPacks() {
         <div class="prod-card ${pack.cardClass}" data-id="${pack.id}">
             <!-- Thumbnail -->
             <div class="prod-thumb" style="background:${pack.bgColor};">
-                <div class="prod-thumb-bg" style="background:${pack.bgColor};"></div>
                 <div class="prod-thumb-emoji">${pack.emoji}</div>
 
                 ${pack.badge ? `
