@@ -630,7 +630,7 @@ function renderPacks() {
                     </button>
                     ${pack.isFree
                         ? `<button type="button" class="buy-btn free-btn" data-action="download-free-pack">🎁 Get Free Pack</button>`
-                        : `<a href="${pack.link}" class="buy-btn gumroad-button" data-gumroad-single-product="true">🛒 Buy Now — $${pack.price.toFixed(2)}</a>`
+                        : `<a href="${pack.link}" target="_blank" rel="noopener sponsored" class="buy-btn">🛒 Buy Now — $${pack.price.toFixed(2)}</a>`
                     }
                 </div>
             </div>
@@ -880,7 +880,7 @@ window.openProduct = function(id) {
                         ? `<button type="button" class="btn btn-green btn-lg modal-buy-btn" data-action="close-modal-download-free-pack">
                                 🎁 Get FREE Pack Now
                            </button>`
-                        : `<a href="${pack.link}" class="btn btn-primary btn-lg modal-buy-btn gumroad-button" data-gumroad-single-product="true">
+                        : `<a href="${pack.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary btn-lg modal-buy-btn">
                                 🛒 Buy Now — $${pack.price}
                            </a>`
                     }
@@ -1227,7 +1227,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td class="rating-cell">★ ${p.rating}</td>
                 <td class="buy-cell">${p.isFree
                     ? '<button class="btn btn-green btn-xs" data-action="download-free-pack">🎁 Free</button>'
-                    : `<a href="${p.link}" class="btn btn-primary btn-xs gumroad-button" data-gumroad-single-product="true">Buy</a>`
+                    : `<a href="${p.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary btn-xs">Buy</a>`
                 }</td>
             </tr>
         `).join('');
