@@ -1636,6 +1636,145 @@ body {
 }
 
 /* ============================================
+   YOUTUBE CTA
+============================================ */
+.yt-cta-section { padding: 20px 0; }
+.yt-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.08), rgba(255, 0, 0, 0.02));
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    padding: 24px 28px;
+}
+.yt-cta-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.yt-icon { font-size: 2.2rem; }
+.yt-cta-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.yt-cta-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+@media(max-width:768px) {
+    .yt-cta-card { flex-direction: column; text-align: center; }
+    .yt-cta-left { flex-direction: column; }
+}
+
+/* ============================================
+   AFFILIATE BANNER
+============================================ */
+.affiliate-banner-section { padding: 20px 0 40px; }
+.affiliate-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(0, 200, 81, 0.02));
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: var(--border-radius);
+    padding: 24px 28px;
+}
+.affiliate-banner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.affiliate-banner p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+@media(max-width:768px) {
+    .affiliate-banner { flex-direction: column; text-align: center; }
+}
+
+/* ============================================
+   PROMPT PLAYGROUND
+============================================ */
+.playground-section { padding: 60px 0; }
+.playground-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-lg);
+    padding: 36px;
+}
+.playground-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.playground-card .pg-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+.pg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.pg-input-area, .pg-output-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.pg-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+.pg-textarea {
+    background: var(--surface, #0D0D14);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-sm);
+    color: var(--text);
+    padding: 16px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    min-height: 200px;
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s;
+}
+.pg-textarea:focus { border-color: var(--primary-light); }
+.pg-output {
+    background: var(--surface, #0D0D14);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    min-height: 200px;
+    color: var(--text-muted);
+    white-space: pre-wrap;
+}
+.pg-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+@media(max-width:768px) {
+    .pg-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
    WORKS WITH — AI PLATFORM LOGOS
 ============================================ */
 .works-with-section {

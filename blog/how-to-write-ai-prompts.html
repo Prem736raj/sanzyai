@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>How to Write AI Prompts That Actually Work | SanzyAI</title>
+  <meta name="description" content="Learn the proven framework for writing effective AI prompts. The ROLE-TASK-FORMAT method works for ChatGPT, Claude, Midjourney, and every AI tool.">
+  <meta name="keywords" content="how to write AI prompts, prompt engineering guide, chatgpt prompt tips, AI prompt framework">
+  <link rel="canonical" href="https://sanzyai.com/blog/how-to-write-ai-prompts">
+  <link rel="stylesheet" href="../src/style.css">
+  <link rel="stylesheet" href="../src/globals.css">
+  <style>
+    .blog-article { max-width: 760px; margin: 0 auto; padding: 100px 24px 60px; }
+    .blog-article h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+    .blog-meta { display: flex; gap: 16px; color: #8888AA; font-size: 0.85rem; margin-bottom: 32px; flex-wrap: wrap; }
+    .blog-article h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 36px 0 12px; color: #F0F0FF; }
+    .blog-article h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; }
+    .blog-article p { color: #BBBBDD; line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
+    .blog-article ol, .blog-article ul { color: #BBBBDD; padding-left: 24px; margin-bottom: 16px; line-height: 1.8; }
+    .prompt-example { background: #111119; border: 1px solid rgba(108,53,222,0.2); border-radius: 12px; padding: 16px 20px; margin: 16px 0; font-family: monospace; font-size: 0.85rem; color: #C9CCE4; line-height: 1.6; white-space: pre-wrap; }
+    .bad-prompt { border-color: rgba(255,68,68,0.3); }
+    .good-prompt { border-color: rgba(0,255,136,0.3); }
+    .example-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .example-label.bad { color: #FF6B6B; }
+    .example-label.good { color: #00FF88; }
+    .blog-cta { background: linear-gradient(135deg, rgba(108,53,222,0.12), rgba(0,212,255,0.05)); border: 1px solid rgba(108,53,222,0.3); border-radius: 16px; padding: 28px; text-align: center; margin: 40px 0; }
+    .blog-cta h3 { color: #F0F0FF; margin-bottom: 12px; }
+    .blog-cta p { margin-bottom: 16px; }
+    .framework-box { background: rgba(108,53,222,0.08); border: 1px solid rgba(108,53,222,0.25); border-radius: 16px; padding: 24px; margin: 20px 0; }
+    .framework-box h3 { color: #8B5CF6; margin-top: 0; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="/" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">SanzyAI</span></a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/blog">AI News</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<article class="blog-article">
+    <div class="section-label">Guide · 15 min read</div>
+    <h1>How to Write AI Prompts That Actually Work</h1>
+    <div class="blog-meta">
+        <span>📅 April 2026</span>
+        <span>✍️ SanzyAI Team</span>
+        <span>📂 Tutorial / AI</span>
+    </div>
+
+    <p>Most people get disappointing results from AI because they prompt like they're Googling: short, vague, and context-free. Good prompting is a skill, and once you learn the framework, every AI tool — ChatGPT, Claude, Midjourney, Gemini — gives dramatically better results.</p>
+
+    <p>This guide teaches you the <strong>ROLE-TASK-FORMAT</strong> framework that professional prompt engineers use.</p>
+
+    <h2>The Problem: Why Most Prompts Fail</h2>
+
+    <div class="example-label bad">❌ Bad Prompt</div>
+    <div class="prompt-example bad-prompt">Write me a marketing plan</div>
+
+    <div class="example-label good">✅ Good Prompt</div>
+    <div class="prompt-example good-prompt">Act as a senior digital marketing strategist with 10 years of experience in SaaS. Create a 90-day marketing plan for a B2B project management tool targeting remote teams of 10-50 people. Include: channel strategy, content calendar, budget allocation for $5K/month, KPIs, and a weekly reporting template. Format as a structured document with clear sections and action items.</div>
+
+    <p>The difference? <strong>Context, specificity, and structure</strong>. The good prompt tells the AI exactly who to be, what to do, and how to format the output.</p>
+
+    <h2>The ROLE-TASK-FORMAT Framework</h2>
+
+    <div class="framework-box">
+        <h3>🎭 R — Role</h3>
+        <p>Tell the AI who it is. "Act as a..." gives the AI a perspective and expertise level.</p>
+        <p><em>Examples: "Act as a senior copywriter", "You are a data scientist", "Behave like a UX researcher"</em></p>
+    </div>
+
+    <div class="framework-box">
+        <h3>📋 T — Task</h3>
+        <p>Be specific about what you want. Include context, constraints, and the exact deliverable.</p>
+        <p><em>Bad: "Write an email" → Good: "Write a follow-up email to a prospect who attended our webinar but didn't book a demo"</em></p>
+    </div>
+
+    <div class="framework-box">
+        <h3>📐 F — Format</h3>
+        <p>Tell the AI exactly how to structure the output. Tables, bullet points, specific length, tone.</p>
+        <p><em>Examples: "Format as a table", "Keep under 200 words", "Use a professional but friendly tone"</em></p>
+    </div>
+
+    <h2>5 Power Techniques</h2>
+
+    <h3>1. Chain Prompting</h3>
+    <p>Break complex tasks into steps. Use the output of prompt 1 as input for prompt 2.</p>
+    <div class="prompt-example">Step 1: "List 10 blog post ideas about AI productivity"
+Step 2: "Take idea #3 and create a detailed outline with H2/H3 structure"
+Step 3: "Write the introduction section using the outline above"</div>
+
+    <h3>2. Few-Shot Examples</h3>
+    <p>Show the AI examples of what you want before asking for the output.</p>
+    <div class="prompt-example">Write product descriptions in this style:
+
+Example 1: "The CloudPen writes itself. Voice-to-text in 12 languages, 8-hour battery, weighs less than your keys."
+
+Example 2: "SleepPod. White noise meets smart alarm. Learns your sleep cycle. Wakes you in your lightest phase."
+
+Now write one for: A portable espresso maker that uses USB-C charging</div>
+
+    <h3>3. Constraint Setting</h3>
+    <p>Tell the AI what NOT to do. Constraints improve quality.</p>
+    <div class="prompt-example">Write a landing page headline for a time tracking app.
+Constraints:
+- Maximum 8 words
+- No clichés like "revolutionize" or "game-changing"
+- Must include a specific benefit
+- Target audience: freelancers</div>
+
+    <h3>4. Output Formatting Control</h3>
+    <p>Be extremely specific about format to get consistent, usable results.</p>
+    <div class="prompt-example">Respond in this exact JSON format:
+{
+  "headline": "...",
+  "subheadline": "...",
+  "cta_button": "...",
+  "social_proof": "..."
+}</div>
+
+    <h3>5. Iterative Refinement</h3>
+    <p>Follow up with improvement prompts instead of starting over.</p>
+    <div class="prompt-example">Follow-up prompts:
+→ "Make this more concise"
+→ "Add more specific examples"
+→ "Rewrite in a conversational tone"
+→ "What's missing from this plan?"</div>
+
+    <div class="blog-cta">
+        <h3>Skip the Learning Curve</h3>
+        <p>Get 500+ professionally crafted prompts that already use these frameworks. Copy, paste, customize, and get results instantly.</p>
+        <a href="/prompt-store" class="btn btn-primary btn-lg">Browse Prompt Store →</a>
+    </div>
+
+    <h2>Try It Yourself</h2>
+    <p>We built a free <a href="/playground" style="color:#8B5CF6;">Prompt Playground</a> where you can paste any prompt and get an instant quality analysis. It scores your prompt on role clarity, specificity, formatting, and more.</p>
+
+    <p><a href="/playground" class="btn btn-outline">Try Prompt Playground →</a></p>
+</article>
+
+<footer class="footer" style="padding: 32px 0; border-top: 1px solid rgba(108,53,222,0.15);">
+    <div class="container">
+        <div class="footer-bottom" style="border:none; padding:0;">
+            <p class="footer-copyright">© 2026 SanzyAI.com — All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="../src/globals.js"></script>
+<script type="module" src="../src/chat.js"></script>
+</body>
+</html>

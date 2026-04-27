@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Prompt Playground — Try AI Prompts Free | SanzyAI</title>
+  <meta name="description" content="Try AI prompts interactively. Paste a prompt, customize variables, and see the expected output structure. Free tool by SanzyAI.">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/globals.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">AI News</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="playground-section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:32px;">
+                <div class="section-label">Interactive Demo</div>
+                <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;">Prompt <span class="gradient-text">Playground</span></h1>
+                <p style="color:#8888AA;max-width:560px;margin:12px auto 0;line-height:1.7;">Paste a prompt, fill in the [variables], and see how professional AI prompts are structured. Try it free!</p>
+            </div>
+
+            <div class="playground-card">
+                <div class="pg-grid">
+                    <div class="pg-input-area">
+                        <span class="pg-label">📝 Your Prompt</span>
+                        <textarea class="pg-textarea" id="pgInput" placeholder="Paste or type a prompt here...
+
+Example:
+Act as a [ROLE]. Write a [TYPE] about [TOPIC] for [AUDIENCE]. Include [NUMBER] key points and use a [TONE] tone.">Act as a senior marketing strategist. Write a social media content plan about [TOPIC] for [AUDIENCE]. Include [NUMBER] post ideas and use a [TONE] tone.
+
+Topic: AI tools for small business
+Audience: Solopreneurs
+Number: 7
+Tone: conversational and actionable</textarea>
+                    </div>
+                    <div class="pg-output-area">
+                        <span class="pg-label">✨ Structured Output Preview</span>
+                        <div class="pg-output" id="pgOutput">Click "Analyze Prompt" to see the structure breakdown...</div>
+                    </div>
+                </div>
+                <div class="pg-actions">
+                    <button class="btn btn-primary" id="pgAnalyze">🔍 Analyze Prompt</button>
+                    <button class="btn btn-outline" id="pgCopy">📋 Copy Prompt</button>
+                    <a href="/prompt-store" class="btn btn-outline">🛒 Browse Premium Prompts</a>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;padding:24px;background:rgba(108,53,222,0.06);border:1px solid rgba(108,53,222,0.15);border-radius:16px;">
+                <p style="font-size:0.95rem;color:#8888AA;margin-bottom:12px;">💡 <strong style="color:#F0F0FF;">Want 500+ professionally crafted prompts like this?</strong></p>
+                <a href="/prompt-store" class="btn btn-primary">Browse Prompt Store →</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" style="padding: 32px 0; border-top: 1px solid rgba(108,53,222,0.15);">
+    <div class="container">
+        <div class="footer-bottom" style="border:none; padding:0;">
+            <p class="footer-copyright">© 2026 SanzyAI.com — All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/chat.js"></script>
+<script>
+document.getElementById('pgAnalyze')?.addEventListener('click', function() {
+    const input = document.getElementById('pgInput').value.trim();
+    const output = document.getElementById('pgOutput');
+    if (!input) {
+        output.textContent = '⚠️ Please enter a prompt first.';
+        return;
+    }
+
+    // Detect variables
+    const vars = [...new Set(input.match(/\[[A-Z_]+\]/g) || [])];
+    
+    // Detect role
+    const roleMatch = input.match(/act as (?:a |an )?(.+?)[\.\,\n]/i);
+    const role = roleMatch ? roleMatch[1].trim() : 'Not specified';
+
+    // Count words
+    const wordCount = input.split(/\s+/).length;
+    
+    // Detect structure keywords
+    const hasSteps = /step|include|list|provide|write/i.test(input);
+    const hasTone = /tone|style|voice|format/i.test(input);
+    const hasAudience = /audience|for|target/i.test(input);
+
+    let analysis = `📊 PROMPT ANALYSIS\n${'─'.repeat(40)}\n\n`;
+    analysis += `📏 Word Count: ${wordCount}\n`;
+    analysis += `🎭 Role: ${role}\n`;
+    analysis += `🎯 Variables: ${vars.length > 0 ? vars.join(', ') : 'None detected'}\n`;
+    analysis += `📐 Has Structure: ${hasSteps ? '✅ Yes' : '❌ No'}\n`;
+    analysis += `🎨 Has Tone: ${hasTone ? '✅ Yes' : '❌ No'}\n`;
+    analysis += `👥 Has Audience: ${hasAudience ? '✅ Yes' : '❌ No'}\n`;
+    
+    // Score
+    let score = 0;
+    if (wordCount > 20) score += 20;
+    if (wordCount > 50) score += 10;
+    if (role !== 'Not specified') score += 20;
+    if (vars.length > 0) score += 15;
+    if (hasSteps) score += 15;
+    if (hasTone) score += 10;
+    if (hasAudience) score += 10;
+    
+    analysis += `\n⭐ PROMPT QUALITY SCORE: ${score}/100\n\n`;
+    
+    if (score >= 80) {
+        analysis += `✅ Excellent! This prompt is well-structured.\n`;
+    } else if (score >= 50) {
+        analysis += `🟡 Good base. Try adding:\n`;
+        if (!roleMatch) analysis += `  → A specific role (e.g., "Act as a...")\n`;
+        if (!hasTone) analysis += `  → A desired tone or format\n`;
+        if (vars.length === 0) analysis += `  → Customizable [VARIABLES]\n`;
+    } else {
+        analysis += `🔴 Needs improvement. Tips:\n`;
+        analysis += `  → Start with "Act as a [ROLE]"\n`;
+        analysis += `  → Add specific instructions\n`;
+        analysis += `  → Include [VARIABLES] for customization\n`;
+        analysis += `  → Specify output format and tone\n`;
+    }
+    
+    analysis += `\n💡 Want premium prompts with 90+ scores?\n→ Browse our Prompt Store for expert-crafted packs`;
+    
+    output.textContent = analysis;
+});
+
+document.getElementById('pgCopy')?.addEventListener('click', function() {
+    const input = document.getElementById('pgInput').value;
+    navigator.clipboard?.writeText(input).then(() => {
+        this.textContent = '✅ Copied!';
+        setTimeout(() => this.textContent = '📋 Copy Prompt', 2000);
+    });
+});
+</script>
+</body>
+</html>

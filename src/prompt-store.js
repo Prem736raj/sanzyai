@@ -628,10 +628,10 @@ function renderPacks() {
                     <button type="button" class="preview-btn" data-action="open-preview" data-pack-id="${pack.id}">
                         👁️ Preview
                     </button>
-                    <button type="button" class="buy-btn ${pack.isFree ? 'free-btn' : ''}"
-                        data-action="${pack.isFree ? 'download-free-pack' : 'open-product'}" ${pack.isFree ? '' : `data-pack-id="${pack.id}"`}>
-                        ${pack.isFree ? '🎁 Get Free Pack' : `🛒 Buy Now — $${pack.price.toFixed(2)}`}
-                    </button>
+                    ${pack.isFree
+                        ? `<button type="button" class="buy-btn free-btn" data-action="download-free-pack">🎁 Get Free Pack</button>`
+                        : `<a href="${pack.link}" class="buy-btn gumroad-button" data-gumroad-single-product="true">🛒 Buy Now — $${pack.price.toFixed(2)}</a>`
+                    }
                 </div>
             </div>
         </div>`;
@@ -880,9 +880,7 @@ window.openProduct = function(id) {
                         ? `<button type="button" class="btn btn-green btn-lg modal-buy-btn" data-action="close-modal-download-free-pack">
                                 🎁 Get FREE Pack Now
                            </button>`
-                        : `<a href="${pack.link}" target="_blank" rel="noopener sponsored"
-                               class="btn btn-primary btn-lg modal-buy-btn"
-                               data-action="open-secure-checkout">
+                        : `<a href="${pack.link}" class="btn btn-primary btn-lg modal-buy-btn gumroad-button" data-gumroad-single-product="true">
                                 🛒 Buy Now — $${pack.price}
                            </a>`
                     }
@@ -1214,4 +1212,70 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         el.click();
     });
+
+    // =============================================
+    // COMPARISON TABLE
+    // =============================================
+    const compareContainer = document.getElementById('compareTable');
+    if (compareContainer) {
+        const rows = packs.map(p => `
+            <tr>
+                <td class="name-cell">${p.emoji} ${p.name}</td>
+                <td>${p.count}</td>
+                <td>${p.platforms.slice(0,2).map(pl => getPlatformLabel(pl)).join(', ')}</td>
+                <td class="price-cell ${p.price === 0 ? 'free' : ''}">${p.price === 0 ? 'FREE' : '$' + p.price.toFixed(2)}</td>
+                <td class="rating-cell">★ ${p.rating}</td>
+                <td class="buy-cell">${p.isFree
+                    ? '<button class="btn btn-green btn-xs" data-action="download-free-pack">🎁 Free</button>'
+                    : `<a href="${p.link}" class="btn btn-primary btn-xs gumroad-button" data-gumroad-single-product="true">Buy</a>`
+                }</td>
+            </tr>
+        `).join('');
+
+        compareContainer.innerHTML = `
+            <div class="compare-table-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Pack Name</th>
+                            <th>Prompts</th>
+                            <th>Platform</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
+        `;
+    }
+
+    // =============================================
+    // UPSELL AFTER FREE DOWNLOAD
+    // =============================================
+    const origDownload = window.downloadFreePackPdf;
+    window.downloadFreePackPdf = async function() {
+        await origDownload();
+        // Show upsell after 2 seconds
+        setTimeout(() => {
+            const bestSeller = packs.find(p => p.id === 1);
+            if (!bestSeller) return;
+            showToast(`Loved the free pack? Get ${bestSeller.name} for just $${bestSeller.price}!`, '⭐');
+        }, 2000);
+    };
+
+    // =============================================
+    // HASH HANDLER — scroll to free pack
+    // =============================================
+    if (window.location.hash === '#free') {
+        activePriceFilter = 'free';
+        const priceSel = document.getElementById('priceSel');
+        if (priceSel) priceSel.value = 'free';
+        applyAllFilters();
+        setTimeout(() => {
+            const freeCard = document.querySelector('.free-card');
+            if (freeCard) freeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+    }
 });

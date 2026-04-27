@@ -441,12 +441,15 @@ window.handleNewsletterSubmit = function(e) {
     const email = input.value.trim();
     if (!email) return;
 
-    // Store email locally (future: send to Beehiiv/Buttondown API)
+    // Store email locally as backup
     const stored = JSON.parse(localStorage.getItem('sanzyai_subscribers') || '[]');
     if (!stored.includes(email)) {
         stored.push(email);
         localStorage.setItem('sanzyai_subscribers', JSON.stringify(stored));
     }
+
+    // Also subscribe via Gumroad follow (real email capture)
+    window.open(`https://sanzyai.gumroad.com/follow?email=${encodeURIComponent(email)}`, '_blank', 'width=600,height=400');
     
     const originalText = btn.textContent;
     btn.textContent = '✓ Subscribed!';
@@ -457,6 +460,7 @@ window.handleNewsletterSubmit = function(e) {
     btn.disabled = true;
     
     trackEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
+    if (window.trackConversion) window.trackConversion('newsletter_signup', { method: 'gumroad_follow' });
 
     setTimeout(() => {
         btn.textContent = originalText;

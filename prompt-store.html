@@ -42,6 +42,8 @@
         <!-- Google Analytics is loaded only after user consent via globals.loadAnalytics() -->
 
     <link rel="stylesheet" href="./src/globals.css">
+    <!-- Gumroad overlay checkout -->
+    <script src="https://gumroad.com/js/gumroad.js" defer></script>
 </head>
 <body>
 
@@ -124,6 +126,24 @@
                 <span class="stat-val">Weekly</span>
                 <span class="stat-lbl">Prompt Updates</span>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     BUNDLE DEAL
+============================================ -->
+<section class="bundle-deal" id="bundleDeal">
+    <div class="container">
+        <div class="bundle-card">
+            <div class="bundle-badge">🔥 SAVE 40%</div>
+            <div class="bundle-content">
+                <h3>Bundle Deal: Pick Any 3 Packs for $9.99</h3>
+                <p>Mix & match any 3 prompt packs and save big. Perfect for creators who work across multiple platforms.</p>
+            </div>
+            <a href="https://sanzyai.gumroad.com/l/bundle-3-packs" class="btn btn-primary btn-lg gumroad-button" data-gumroad-single-product="true">
+                Grab Bundle — $9.99
+            </a>
         </div>
     </div>
 </section>
@@ -243,6 +263,21 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ============================================
+     COMPARE ALL PACKS
+============================================ -->
+<section class="compare-section">
+    <div class="container">
+        <div class="sec-head">
+            <div>
+                <div class="sec-badge">📊 Compare</div>
+                <h2 class="sec-title">Compare All <span class="gradient-text">Prompt Packs</span></h2>
+            </div>
+        </div>
+        <div id="compareTable"><!-- Populated by JS --></div>
     </div>
 </section>
 

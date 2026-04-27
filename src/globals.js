@@ -8,6 +8,16 @@
 
     const SITE_ORIGIN = 'https://sanzyai.com';
 
+    // GA4 Measurement ID — replace with your real ID from analytics.google.com
+    window.SANZY_GA_ID = 'G-XXXXXXXXXX';
+
+    // Conversion tracking helper
+    window.trackConversion = function(eventName, params = {}) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    };
+
     const seoByPath = {
         '/': {
             title: 'SanzyAI - Domain Prices, AI Tools, Prompts & Free Learning Hub',
