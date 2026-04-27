@@ -1034,17 +1034,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!actionEl) return;
 
         const action = actionEl.dataset.action;
-        const packId = Number(actionEl.dataset.packId || '0');
+        const packIdAttr = actionEl.dataset.packId;
+        const packId = (packIdAttr !== undefined && packIdAttr !== null) ? Number(packIdAttr) : null;
 
         switch (action) {
             case 'reset-filters':
                 window.resetFilters();
                 break;
             case 'toggle-wish':
-                if (packId) window.toggleWish(packId, actionEl);
+                if (packId !== null) window.toggleWish(packId, actionEl);
                 break;
             case 'open-preview':
-                if (packId) window.openPreview(packId);
+                if (packId !== null) window.openPreview(packId);
                 break;
             case 'open-email-modal':
                 window.downloadFreePackPdf();
