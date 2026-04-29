@@ -31,7 +31,32 @@ body {
     padding-top: 72px;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(6, 8, 21, 0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+}
+.navbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+.logo { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    box-shadow: 0 8px 24px rgba(79, 121, 255, 0.35);
+}
+.logo-text { font-family: var(--font-h); font-weight: 700; font-size: 1.22rem; }
+
+.nav-menu { display: flex; list-style: none; margin: 0; padding: 0; gap: 6px; }
 .nav-menu a {
     color: var(--muted);
     text-decoration: none;
@@ -45,7 +70,16 @@ body {
 .nav-menu a.active {
     color: var(--ink);
     background: rgba(79, 121, 255, 0.2);
-}
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--ink);
+    padding: 8px;
+    cursor: pointer;
+}
 .hamburger span {
     display: block;
     width: 20px;
@@ -53,7 +87,18 @@ body {
     border-radius: 2px;
     background: var(--ink);
     margin: 4px 0;
-}
+}
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 12, 28, 0.98);
+    border-bottom: 1px solid var(--line);
+    z-index: 900;
+    padding: 10px 16px 16px;
+}
 .mobile-nav.open { display: block; }
 .mobile-nav ul { list-style: none; margin: 0; padding: 0; }
 .mobile-nav a {
@@ -862,7 +907,9 @@ html.light-mode body input[type='range'] {
     color: #12172a;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) {
+    .nav-menu { display: none; }
+    .hamburger { display: block; }
     .hero-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .roadmap-layout,
     .sim-grid,

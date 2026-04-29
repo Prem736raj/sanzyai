@@ -38,7 +38,8 @@ body {
     line-height: 1.65;
 }
 
-.container { max-width: 1200px;
+.container {
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -48,7 +49,57 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(6, 17, 27, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--news-line);
+    padding: 12px 0;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2b7fff, #37e3ff);
+    box-shadow: 0 6px 20px rgba(32, 124, 255, 0.35);
+}
+
+.logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.22rem;
+    color: #dff3ff;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
 .nav-menu a {
     text-decoration: none;
@@ -65,14 +116,36 @@ body {
 .nav-menu a.active {
     color: #f4fbff;
     background: rgba(55, 227, 255, 0.12);
-}
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 4px;
+}
 
 .hamburger span {
     width: 22px;
     height: 2px;
     border-radius: 4px;
     background: #dff3ff;
-}
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(8, 22, 35, 0.98);
+    border-bottom: 1px solid var(--news-line);
+    padding: 14px 20px;
+}
 
 .mobile-nav.open {
     display: block;
@@ -979,7 +1052,14 @@ html.light-mode body .footer-links a:hover {
     color: #0f172a;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 920px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 
     .hero-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
