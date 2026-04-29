@@ -120,7 +120,7 @@ body {
 /* ============================================
    HERO
 ============================================ */
-.hero{padding:64px 0 72px;position:relative;overflow:hidden}
+.hero{padding:120px 0 72px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse,rgba(108,53,222,0.1),transparent 65%);pointer-events:none}
 
 /* Floating particles */
@@ -376,7 +376,7 @@ body {
 }
 @media(max-width:768px){
     .container{padding:0 16px}
-    .hero{padding:44px 0 52px}
+    .hero{padding:90px 0 52px}
     .sec-pad{padding:56px 0}
     .testi-grid{grid-template-columns:1fr}
     .why-grid{grid-template-columns:1fr}
