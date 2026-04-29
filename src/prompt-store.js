@@ -650,18 +650,18 @@ function applyAllFilters() {
 }
 
 window.sortPacks = function() {
-    activeSort = document.getElementById('sortSel').value;
+    activeSort = document.getElementById('sortSel')?.value || 'popular';
     sortPacksData();
     renderPacks();
 }
 
 window.filterPlatformSelect = function() {
-    activePlatform = document.getElementById('platformSel').value;
+    activePlatform = document.getElementById('platformSel')?.value || 'all';
     applyAllFilters();
 }
 
 window.filterPriceSelect = function() {
-    activePriceFilter = document.getElementById('priceSel').value;
+    activePriceFilter = document.getElementById('priceSel')?.value || 'all';
     applyAllFilters();
 }
 
@@ -970,7 +970,7 @@ window.handleSellApply = function(e) {
 // HAMBURGER
 // =============================================
 const ham = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
+const mobileNav = document.getElementById('mobileMenu');
 if (ham && mobileNav) {
     ham.addEventListener('click', () => {
         ham.classList.toggle('active');
@@ -1143,43 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.click();
     });
 
-    // =============================================
-    // COMPARISON TABLE
-    // =============================================
-    const compareContainer = document.getElementById('compareTable');
-    if (compareContainer) {
-        const rows = packs.map(p => `
-            <tr>
-                <td class="name-cell">${p.emoji} ${p.name}</td>
-                <td>${p.count}</td>
-                <td>${p.platforms.slice(0,2).map(pl => getPlatformLabel(pl)).join(', ')}</td>
-                <td class="price-cell ${p.price === 0 ? 'free' : ''}">${p.price === 0 ? 'FREE' : '$' + p.price.toFixed(2)}</td>
-                <td class="rating-cell">★ ${p.rating}</td>
-                <td class="buy-cell">${p.isFree
-                    ? '<button class="btn btn-green btn-xs" data-action="download-free-pack">🎁 Free</button>'
-                    : `<a href="${p.link}" target="_blank" rel="noopener sponsored" class="btn btn-primary btn-xs">Buy</a>`
-                }</td>
-            </tr>
-        `).join('');
 
-        compareContainer.innerHTML = `
-            <div class="compare-table-wrap">
-                <table class="compare-table">
-                    <thead>
-                        <tr>
-                            <th>Pack Name</th>
-                            <th>Prompts</th>
-                            <th>Platform</th>
-                            <th>Price</th>
-                            <th>Rating</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>${rows}</tbody>
-                </table>
-            </div>
-        `;
-    }
 
     // =============================================
     // UPSELL AFTER FREE DOWNLOAD

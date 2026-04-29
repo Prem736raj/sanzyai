@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>((t)=>{if(t==="light")document.documentElement.classList.add("light-mode")})(localStorage.getItem("sanzy_theme")||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -45,15 +46,17 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="container">
         <div class="navbar-inner">
+            <!-- Logo -->
             <a href="/" class="logo">
                 <div class="logo-icon">⚡</div>
                 <span class="logo-text">SanzyAI</span>
             </a>
-            <ul class="nav-menu">
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
@@ -62,16 +65,23 @@
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog">AI News</a></li>
             </ul>
+
+            <!-- Right Side -->
             <div class="nav-right">
+                <a href="/prompt-store" class="btn btn-primary btn-sm nav-cta">Browse Store →</a>
+                <!-- Hamburger -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="mobile-nav" id="mobileNav">
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
     <ul>
         <li><a href="/">🏠 Home</a></li>
         <li><a href="/domain-finder">🌐 Domain Finder</a></li>
@@ -81,17 +91,28 @@
         <li><a href="/learn-free">📚 Learn Free</a></li>
         <li><a href="/blog">📰 AI News</a></li>
     </ul>
-</div>
-
-<div class="breadcrumb">
-    <div class="container">
-        <div class="bc-inner">
-            <a href="/">🏠 Home</a>
-            <span class="bc-sep">›</span>
-            <span>Prompt Store</span>
-        </div>
+    <div class="mobile-menu-cta">
+        <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
     </div>
 </div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 AI News</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+        <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
+    </div>
+</div>
+
+
 
 <!-- ============================================
      HERO
@@ -146,58 +167,6 @@
     </div>
 </section>
 
-<!-- ============================================
-     FILTER BAR
-============================================ -->
-<div class="filter-bar">
-    <div class="container">
-        <div class="filter-inner">
-            <div class="filter-select-grid">
-                <div class="filter-field filter-search-field">
-                    <span class="filter-label">Search:</span>
-                    <input type="text" class="filter-search" id="searchInput" placeholder="Search prompts e.g. python, email marketing">
-                </div>
-                <div class="filter-field">
-                    <span class="filter-label">Platform:</span>
-                    <select class="sort-sel" id="platformSel">
-                        <option value="all">🤖 All Prompts</option>
-                        <option value="chatgpt">🤖 ChatGPT</option>
-                        <option value="midjourney">🎨 Midjourney</option>
-                        <option value="claude">🧠 Claude</option>
-                        <option value="gemini">✨ Gemini</option>
-
-                        <option value="business">💼 Business</option>
-                        <option value="seo">📈 SEO</option>
-                        <option value="social">📱 Social Media</option>
-                        <option value="art">🖼️ Art</option>
-                        <option value="freelance">💰 Freelancing</option>
-                    </select>
-                </div>
-                <div class="filter-field">
-                    <span class="filter-label">Price:</span>
-                    <select class="sort-sel" id="priceSel">
-                        <option value="all">💵 All Prices</option>
-                        <option value="free">🆓 Free</option>
-                        <option value="1-5">$1–$5</option>
-                        <option value="5-15">$5–$15</option>
-                        <option value="15-30">$15–$30</option>
-                        <option value="30+">$30+</option>
-                    </select>
-                </div>
-                <div class="filter-field">
-                    <span class="filter-label">Sort:</span>
-                    <select class="sort-sel" id="sortSel">
-                        <option value="popular">🔥 Most Popular</option>
-                        <option value="new">✨ Newest</option>
-                        <option value="price-low">💵 Price: Low→High</option>
-                        <option value="price-high">💰 Price: High→Low</option>
-                        <option value="rating">⭐ Top Rated</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- ============================================
      MAIN PRODUCTS
@@ -263,20 +232,7 @@
     </div>
 </section>
 
-<!-- ============================================
-     COMPARE ALL PACKS
-============================================ -->
-<section class="compare-section">
-    <div class="container">
-        <div class="sec-head">
-            <div>
-                <div class="sec-badge">📊 Compare</div>
-                <h2 class="sec-title">Compare All <span class="gradient-text">Prompt Packs</span></h2>
-            </div>
-        </div>
-        <div id="compareTable"><!-- Populated by JS --></div>
-    </div>
-</section>
+
 
 <!-- ============================================
      FOOTER

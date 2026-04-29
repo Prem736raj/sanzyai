@@ -298,7 +298,7 @@ window.handleQuoteSubmit = async function(e) {
 // HAMBURGER
 // =============================================
 const ham = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
+const mobileNav = document.getElementById('mobileMenu');
 if(ham && mobileNav) {
     ham.addEventListener('click', () => {
         ham.classList.toggle('active');

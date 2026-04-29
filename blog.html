@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>((t)=>{if(t==="light")document.documentElement.classList.add("light-mode")})(localStorage.getItem("sanzy_theme")||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -38,11 +39,14 @@
 <nav class="navbar" id="navbar">
     <div class="container">
         <div class="navbar-inner">
+            <!-- Logo -->
             <a href="/" class="logo">
                 <div class="logo-icon">⚡</div>
                 <span class="logo-text">SanzyAI</span>
             </a>
-            <ul class="nav-menu">
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
@@ -51,14 +55,23 @@
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog" class="active">AI News</a></li>
             </ul>
+
+            <!-- Right Side -->
             <div class="nav-right">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+                <a href="/prompt-store" class="btn btn-primary btn-sm nav-cta">Browse Store →</a>
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="mobile-nav" id="mobileNav">
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
     <ul>
         <li><a href="/">🏠 Home</a></li>
         <li><a href="/domain-finder">🌐 Domain Finder</a></li>
@@ -68,17 +81,12 @@
         <li><a href="/learn-free">📚 Learn Free</a></li>
         <li><a href="/blog">📰 AI News</a></li>
     </ul>
-</div>
-
-<div class="breadcrumb">
-    <div class="container">
-        <div class="bc-inner">
-            <a href="/">🏠 Home</a>
-            <span class="bc-sep">›</span>
-            <span>AI Newsroom</span>
-        </div>
+    <div class="mobile-menu-cta">
+        <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
     </div>
 </div>
+
+
 
 <section class="news-hero">
     <div class="container">

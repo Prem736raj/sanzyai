@@ -75,77 +75,6 @@ body {
 
 .hidden { display: none !important; }
 
-/* ============================================
-   NAVIGATION
-============================================ */
-.navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    padding: 14px 0;
-    background: rgba(10, 10, 15, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-}
-
-.navbar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.logo-icon {
-    width: 36px; height: 36px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 0 16px rgba(108, 53, 222, 0.5);
-}
-
-.logo-text {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.3rem;
-    background: linear-gradient(135deg, var(--primary-light), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    list-style: none;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 7px 12px;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-family: var(--font-heading);
-    font-weight: 500;
-    font-size: 0.88rem;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-}
-
-.nav-menu a:hover,
-.nav-menu a.active { color: var(--text); background: rgba(108, 53, 222, 0.15); border: 1px solid rgba(108, 53, 222, 0.25); }
 
 .btn {
     display: inline-flex;
@@ -214,59 +143,7 @@ body {
 }
 
 
-/* Nav Right */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 8px;
-    background: none;
-    border: none;
-}
-
-.hamburger span {
-    display: block;
-    width: 22px; height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: var(--transition);
-}
-
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 65px; left: 0; right: 0;
-    background: rgba(12, 12, 20, 0.98);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px 24px;
-    z-index: 999;
-}
-
-.mobile-menu.open { display: block; }
-.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-.mobile-menu a {
-    display: block; padding: 11px 14px;
-    color: var(--text-muted); text-decoration: none;
-    font-family: var(--font-heading); font-weight: 500;
-    border-radius: var(--radius-sm); transition: var(--transition);
-}
-.mobile-menu a:hover { color: var(--text); background: rgba(108, 53, 222, 0.12); }
-.mobile-menu-cta { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
-.mobile-menu-cta .btn { width: 100%; justify-content: center; }
 
 /* ============================================
    UTILITIES
@@ -332,7 +209,7 @@ body {
    HERO SECTION
 ============================================ */
 .page-hero {
-    padding: 60px 0 80px;
+    padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
 }

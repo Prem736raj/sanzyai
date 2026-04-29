@@ -750,7 +750,7 @@ window.toggleChecklist = function(index, checked) {
 
 function setupMobileNav() {
     const ham = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileNav = document.getElementById('mobileMenu');
     if (!ham || !mobileNav) return;
 
     ham.addEventListener('click', () => {

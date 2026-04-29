@@ -340,6 +340,7 @@
 
     function applyTheme(theme) {
         const useLight = theme === 'light';
+        document.documentElement.classList.toggle('light-mode', useLight);
         document.body.classList.toggle('light-mode', useLight);
 
         const themeBtn = document.getElementById('themeToggleBtn');

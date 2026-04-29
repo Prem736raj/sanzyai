@@ -874,7 +874,7 @@ window.refreshAiNews = async function() {
 
 function initNav() {
     const ham = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileNav = document.getElementById('mobileMenu');
     if (!ham || !mobileNav) return;
 
     ham.addEventListener('click', () => {

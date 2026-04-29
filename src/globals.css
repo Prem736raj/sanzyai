@@ -48,7 +48,7 @@
     outline-offset: 2px;
 }
 
-body.light-mode :focus-visible {
+html.light-mode body :focus-visible {
     outline-color: #0f766e;
 }
 
@@ -355,16 +355,6 @@ body.light-mode :focus-visible {
 }
 
 /* ============================================
-   STANDARDIZED NAV-RIGHT (all pages)
-============================================ */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-/* ============================================
    GLOBAL USER CONTROLS (LANG + THEME)
 ============================================ */
 .site-controls {
@@ -589,10 +579,14 @@ body:not(.light-mode) .site-controls {
     border-color: rgba(108, 53, 222, 0.35);
 }
 
-/* ============================================
-   LIGHT MODE OVERRIDES
-============================================ */
-body.light-mode {
+/* Early flash prevention — html gets class before body parses */
+html.light-mode {
+    background: #f7fafc;
+    color-scheme: light;
+}
+
+html.light-mode body,
+html.light-mode body {
     --background: #f4f7fb;
     --bg: #f4f7fb;
     --card: #ffffff;
@@ -627,333 +621,333 @@ body.light-mode {
     color: #0f172a !important;
 }
 
-body.light-mode .global-loader {
+html.light-mode body .global-loader {
     background: #f4f7fb !important;
 }
 
-body.light-mode .loader-logo {
+html.light-mode body .loader-logo {
     box-shadow: 0 0 20px rgba(108, 53, 222, 0.28);
 }
 
-body.light-mode .loader-text {
+html.light-mode body .loader-text {
     -webkit-text-fill-color: #334155;
     background: none;
 }
 
-body.light-mode,
-body.light-mode p,
-body.light-mode li,
-body.light-mode td,
-body.light-mode th,
-body.light-mode label,
-body.light-mode .article-body,
-body.light-mode .pm-meta,
-body.light-mode .feat-meta,
-body.light-mode .pmeta,
-body.light-mode .comment-text,
-body.light-mode .bc-inner,
-body.light-mode .hero p,
-body.light-mode .section-sub,
-body.light-mode .sec-sub,
-body.light-mode .results-info,
-body.light-mode .tool-desc,
-body.light-mode .cat-num,
-body.light-mode .pop-meta,
-body.light-mode .trust-sub,
-body.light-mode .stat-lbl,
-body.light-mode .avail-desc,
-body.light-mode .notice-box,
-body.light-mode .footer-copy,
-body.light-mode .loader-text {
+html.light-mode body,
+html.light-mode body p,
+html.light-mode body li,
+html.light-mode body td,
+html.light-mode body th,
+html.light-mode body label,
+html.light-mode body .article-body,
+html.light-mode body .pm-meta,
+html.light-mode body .feat-meta,
+html.light-mode body .pmeta,
+html.light-mode body .comment-text,
+html.light-mode body .bc-inner,
+html.light-mode body .hero p,
+html.light-mode body .section-sub,
+html.light-mode body .sec-sub,
+html.light-mode body .results-info,
+html.light-mode body .tool-desc,
+html.light-mode body .cat-num,
+html.light-mode body .pop-meta,
+html.light-mode body .trust-sub,
+html.light-mode body .stat-lbl,
+html.light-mode body .avail-desc,
+html.light-mode body .notice-box,
+html.light-mode body .footer-copy,
+html.light-mode body .loader-text {
     color: #334155 !important;
 }
 
-body.light-mode input,
-body.light-mode select,
-body.light-mode textarea,
-body.light-mode .search-inp,
-body.light-mode .nl-inp,
-body.light-mode .modal-nl-inp,
-body.light-mode .cf-inp,
-body.light-mode .cf-area,
-body.light-mode .search-input,
-body.light-mode .site-lang-select {
+html.light-mode body input,
+html.light-mode body select,
+html.light-mode body textarea,
+html.light-mode body .search-inp,
+html.light-mode body .nl-inp,
+html.light-mode body .modal-nl-inp,
+html.light-mode body .cf-inp,
+html.light-mode body .cf-area,
+html.light-mode body .search-input,
+html.light-mode body .site-lang-select {
     background: #ffffff !important;
     color: #0f172a !important;
     border-color: rgba(15, 23, 42, 0.18) !important;
 }
 
-body.light-mode input::placeholder,
-body.light-mode textarea::placeholder {
+html.light-mode body input::placeholder,
+html.light-mode body textarea::placeholder {
     color: #64748b !important;
 }
 
-body.light-mode .btn-outline,
-body.light-mode a.btn-outline {
+html.light-mode body .btn-outline,
+html.light-mode body a.btn-outline {
     color: #334155 !important;
     border-color: rgba(15, 23, 42, 0.28) !important;
 }
 
-body.light-mode .trust-item {
+html.light-mode body .trust-item {
     color: #334155 !important;
 }
 
-body.light-mode .trust-bar::before {
+html.light-mode body .trust-bar::before {
     background: linear-gradient(90deg, #f4f7fb, transparent) !important;
 }
 
-body.light-mode .trust-bar::after {
+html.light-mode body .trust-bar::after {
     background: linear-gradient(-90deg, #f4f7fb, transparent) !important;
 }
 
-body.light-mode .hstat,
-body.light-mode .stats-bar,
-body.light-mode .prod-card,
-body.light-mode .tool-card,
-body.light-mode .compare-table-wrap,
-body.light-mode .modal,
-body.light-mode .preview-modal,
-body.light-mode .email-modal,
-body.light-mode .newsletter-card,
-body.light-mode .submit-card {
+html.light-mode body .hstat,
+html.light-mode body .stats-bar,
+html.light-mode body .prod-card,
+html.light-mode body .tool-card,
+html.light-mode body .compare-table-wrap,
+html.light-mode body .modal,
+html.light-mode body .preview-modal,
+html.light-mode body .email-modal,
+html.light-mode body .newsletter-card,
+html.light-mode body .submit-card {
     background: #ffffff !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
 }
 
-body.light-mode .tool-card:hover,
-body.light-mode .prod-card:hover {
+html.light-mode body .tool-card:hover,
+html.light-mode body .prod-card:hover {
     background: #f7f9ff !important;
 }
 
-body.light-mode .filter-bar,
-body.light-mode .compare-bar,
-body.light-mode .fbt-section {
+html.light-mode body .filter-bar,
+html.light-mode body .compare-bar,
+html.light-mode body .fbt-section {
     background: rgba(255, 255, 255, 0.96) !important;
     border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
-body.light-mode .filter-btn,
-body.light-mode .fbtn,
-body.light-mode .sort-sel,
-body.light-mode .review-btn,
-body.light-mode .preview-btn,
-body.light-mode .filter-search,
-body.light-mode .search-bar,
-body.light-mode .search-input-el,
-body.light-mode .search-clear {
+html.light-mode body .filter-btn,
+html.light-mode body .fbtn,
+html.light-mode body .sort-sel,
+html.light-mode body .review-btn,
+html.light-mode body .preview-btn,
+html.light-mode body .filter-search,
+html.light-mode body .search-bar,
+html.light-mode body .search-input-el,
+html.light-mode body .search-clear {
     color: #1e293b !important;
     background: #ffffff !important;
     border-color: rgba(15, 23, 42, 0.16) !important;
 }
 
-body.light-mode .filter-group-label,
-body.light-mode .filter-label,
-body.light-mode .tool-cat,
-body.light-mode .rating-count,
-body.light-mode .compare-label,
-body.light-mode .nl-note,
-body.light-mode .review-cnt,
-body.light-mode .trust-sub,
-body.light-mode .hstat-label {
+html.light-mode body .filter-group-label,
+html.light-mode body .filter-label,
+html.light-mode body .tool-cat,
+html.light-mode body .rating-count,
+html.light-mode body .compare-label,
+html.light-mode body .nl-note,
+html.light-mode body .review-cnt,
+html.light-mode body .trust-sub,
+html.light-mode body .hstat-label {
     color: #64748b !important;
 }
 
-body.light-mode .tool-name,
-body.light-mode .card-title,
-body.light-mode .rating-val,
-body.light-mode .price-main,
-body.light-mode .trust-main,
-body.light-mode .hstat-num,
-body.light-mode .sec-title,
-body.light-mode .modal-title,
-body.light-mode .preview-title,
-body.light-mode .samples-title,
-body.light-mode .reviewer-name {
+html.light-mode body .tool-name,
+html.light-mode body .card-title,
+html.light-mode body .rating-val,
+html.light-mode body .price-main,
+html.light-mode body .trust-main,
+html.light-mode body .hstat-num,
+html.light-mode body .sec-title,
+html.light-mode body .modal-title,
+html.light-mode body .preview-title,
+html.light-mode body .samples-title,
+html.light-mode body .reviewer-name {
     color: #0f172a !important;
 }
 
-body.light-mode .tool-desc,
-body.light-mode .modal-desc,
-body.light-mode .included-item,
-body.light-mode .review-text,
-body.light-mode .sample-prompt-text,
-body.light-mode .mprice-label,
-body.light-mode .tool-price,
-body.light-mode .tool-price strong,
-body.light-mode .sec-count,
-body.light-mode .bc-inner,
-body.light-mode .hero p,
-body.light-mode .page-hero p,
-body.light-mode .nl-sub,
-body.light-mode .submit-left p,
-body.light-mode .perk-item,
-body.light-mode .footer-links a,
-body.light-mode .footer-links-row a,
-body.light-mode .fbt-title,
-body.light-mode .fbt-price,
-body.light-mode .compare-feature {
+html.light-mode body .tool-desc,
+html.light-mode body .modal-desc,
+html.light-mode body .included-item,
+html.light-mode body .review-text,
+html.light-mode body .sample-prompt-text,
+html.light-mode body .mprice-label,
+html.light-mode body .tool-price,
+html.light-mode body .tool-price strong,
+html.light-mode body .sec-count,
+html.light-mode body .bc-inner,
+html.light-mode body .hero p,
+html.light-mode body .page-hero p,
+html.light-mode body .nl-sub,
+html.light-mode body .submit-left p,
+html.light-mode body .perk-item,
+html.light-mode body .footer-links a,
+html.light-mode body .footer-links-row a,
+html.light-mode body .fbt-title,
+html.light-mode body .fbt-price,
+html.light-mode body .compare-feature {
     color: #334155 !important;
 }
 
-body.light-mode .modal-header,
-body.light-mode .preview-header,
-body.light-mode .compare-wrap,
-body.light-mode .footer-copy {
+html.light-mode body .modal-header,
+html.light-mode body .preview-header,
+html.light-mode body .compare-wrap,
+html.light-mode body .footer-copy {
     border-color: rgba(15, 23, 42, 0.1) !important;
 }
 
-body.light-mode .search-input-el::placeholder,
-body.light-mode .filter-search::placeholder {
+html.light-mode body .search-input-el::placeholder,
+html.light-mode body .filter-search::placeholder {
     color: #64748b !important;
 }
 
-body.light-mode .btn-outline:hover,
-body.light-mode a.btn-outline:hover {
+html.light-mode body .btn-outline:hover,
+html.light-mode body a.btn-outline:hover {
     background: rgba(108, 53, 222, 0.08) !important;
     color: #1e293b !important;
 }
 
-body.light-mode .navbar,
-body.light-mode .mobile-nav,
-body.light-mode .mobile-menu,
-body.light-mode .footer,
-body.light-mode .sw,
-body.light-mode .featured-post,
-body.light-mode .post-card,
-body.light-mode .table-wrapper,
-body.light-mode .registrar-card,
-body.light-mode .calculator-card,
-body.light-mode .coupons-card,
-body.light-mode .tld-table-wrap,
-body.light-mode .cookie-banner,
-body.light-mode .social-proof,
-body.light-mode .nl-modal {
+html.light-mode body .navbar,
+html.light-mode body .mobile-nav,
+html.light-mode body .mobile-menu,
+html.light-mode body .footer,
+html.light-mode body .sw,
+html.light-mode body .featured-post,
+html.light-mode body .post-card,
+html.light-mode body .table-wrapper,
+html.light-mode body .registrar-card,
+html.light-mode body .calculator-card,
+html.light-mode body .coupons-card,
+html.light-mode body .tld-table-wrap,
+html.light-mode body .cookie-banner,
+html.light-mode body .social-proof,
+html.light-mode body .nl-modal {
     background: #ffffff !important;
     color: #0f172a !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
 }
 
-body.light-mode .nav-links a,
-body.light-mode .nav-menu a,
-body.light-mode .mobile-nav a,
-body.light-mode .mobile-menu a,
-body.light-mode .footer-links a,
-body.light-mode .footer-links-row a,
-body.light-mode .post-excerpt,
-body.light-mode .feat-excerpt,
-body.light-mode .bstat-lbl,
-body.light-mode .sec-count,
-body.light-mode .tld-avg,
-body.light-mode .coupon-desc,
-body.light-mode .cookie-text,
-body.light-mode .sp-time,
-body.light-mode .nl-modal p {
+html.light-mode body .nav-links a,
+html.light-mode body .nav-menu a,
+html.light-mode body .mobile-nav a,
+html.light-mode body .mobile-menu a,
+html.light-mode body .footer-links a,
+html.light-mode body .footer-links-row a,
+html.light-mode body .post-excerpt,
+html.light-mode body .feat-excerpt,
+html.light-mode body .bstat-lbl,
+html.light-mode body .sec-count,
+html.light-mode body .tld-avg,
+html.light-mode body .coupon-desc,
+html.light-mode body .cookie-text,
+html.light-mode body .sp-time,
+html.light-mode body .nl-modal p {
     color: #475467 !important;
 }
 
-body.light-mode .nav-links a,
-body.light-mode .mobile-nav a,
-body.light-mode .mobile-menu a {
+html.light-mode body .nav-links a,
+html.light-mode body .mobile-nav a,
+html.light-mode body .mobile-menu a {
     color: #334155 !important;
 }
 
-body.light-mode .nav-links a.active,
-body.light-mode .mobile-nav a.active,
-body.light-mode .mobile-menu a.active {
+html.light-mode body .nav-links a.active,
+html.light-mode body .mobile-nav a.active,
+html.light-mode body .mobile-menu a.active {
     color: #0f172a !important;
 }
 
-body.light-mode .wish-btn,
-body.light-mode .prompt-count-badge {
+html.light-mode body .wish-btn,
+html.light-mode body .prompt-count-badge {
     background: #ffffff !important;
     color: #334155 !important;
     border-color: rgba(15, 23, 42, 0.16) !important;
 }
 
-body.light-mode .wish-btn:hover,
-body.light-mode .wish-btn.active {
+html.light-mode body .wish-btn:hover,
+html.light-mode body .wish-btn.active {
     color: #e11d48 !important;
     border-color: rgba(225, 29, 72, 0.45) !important;
     background: rgba(255, 241, 245, 0.95) !important;
 }
 
-body.light-mode .site-control-btn {
+html.light-mode body .site-control-btn {
     background: #ffffff;
     color: #0f172a;
     border-color: rgba(108, 53, 222, 0.45);
 }
 
-body.light-mode .site-controls {
+html.light-mode body .site-controls {
     background: rgba(255, 255, 255, 0.94);
     border-color: rgba(15, 23, 42, 0.16);
 }
 
-body.light-mode .language-panel {
+html.light-mode body .language-panel {
     background: #ffffff;
     border-color: rgba(108, 53, 222, 0.2);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
-body.light-mode .language-panel-title {
+html.light-mode body .language-panel-title {
     color: #64748b !important;
 }
 
-body.light-mode .lang-btn {
+html.light-mode body .lang-btn {
     color: #334155;
 }
 
-body.light-mode .lang-btn:hover {
+html.light-mode body .lang-btn:hover {
     background: rgba(108, 53, 222, 0.06);
     color: #0f172a;
 }
 
-body.light-mode .lang-btn.active {
+html.light-mode body .lang-btn.active {
     background: rgba(108, 53, 222, 0.1);
     color: #0f172a;
 }
 
-body.light-mode .language-panel-title,
-body.light-mode .nl-head,
-body.light-mode .tool-name,
-body.light-mode .pop-title,
-body.light-mode .post-title,
-body.light-mode .feat-title,
-body.light-mode .section-title,
-body.light-mode .results-info,
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3,
-body.light-mode h4 {
+html.light-mode body .language-panel-title,
+html.light-mode body .nl-head,
+html.light-mode body .tool-name,
+html.light-mode body .pop-title,
+html.light-mode body .post-title,
+html.light-mode body .feat-title,
+html.light-mode body .section-title,
+html.light-mode body .results-info,
+html.light-mode body h1,
+html.light-mode body h2,
+html.light-mode body h3,
+html.light-mode body h4 {
     color: #0f172a !important;
 }
 
 /* Chat readability in light mode */
-body.light-mode .sanzy-window {
+html.light-mode body .sanzy-window {
     background: #ffffff !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
 }
 
-body.light-mode .sanzy-messages {
+html.light-mode body .sanzy-messages {
     background: #f8fafc !important;
 }
 
-body.light-mode .sanzy-bubble {
+html.light-mode body .sanzy-bubble {
     background: #eef3fb !important;
     border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
-body.light-mode .sanzy-bubble-text {
+html.light-mode body .sanzy-bubble-text {
     color: #0f172a !important;
 }
 
-body.light-mode .sanzy-divider,
-body.light-mode .sanzy-status,
-body.light-mode .sanzy-time,
-body.light-mode .sanzy-input::placeholder {
+html.light-mode body .sanzy-divider,
+html.light-mode body .sanzy-status,
+html.light-mode body .sanzy-time,
+html.light-mode body .sanzy-input::placeholder {
     color: #64748b !important;
 }
 
-body.light-mode .sanzy-input {
+html.light-mode body .sanzy-input {
     background: #ffffff !important;
     color: #0f172a !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
@@ -967,4 +961,287 @@ body:not(.light-mode) .section-sub,
 body:not(.light-mode) .cookie-text,
 body:not(.light-mode) .footer-copy {
     color: #a8adcc !important;
+}
+
+
+/* ============================================
+   UNIFIED NAVIGATION BAR
+   Single source of truth for navbar styles.
+   All page-specific navbar CSS has been removed.
+============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(6, 6, 11, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(108, 53, 222, 0.18);
+}
+
+.navbar.scrolled {
+    background: rgba(6, 6, 11, 0.96);
+    padding: 8px 0;
+    border-bottom-color: rgba(108, 53, 222, 0.25);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6C35DE, #00D4FF);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(108, 53, 222, 0.4);
+}
+
+.logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    background: linear-gradient(135deg, #fff, #d4d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Nav Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 8px 14px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+    background: rgba(108, 53, 222, 0.08);
+}
+
+.nav-menu a.active {
+    color: #fff;
+    background: rgba(108, 53, 222, 0.15);
+    border: 1px solid rgba(108, 53, 222, 0.25);
+}
+
+/* Nav Right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #6C35DE, #8B5CF6);
+    color: white;
+    box-shadow: 0 4px 20px rgba(108, 53, 222, 0.4);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(108, 53, 222, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #F0F0FF;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(6, 6, 11, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(108, 53, 222, 0.18);
+    padding: 20px 24px;
+    z-index: 999;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 14px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu a:hover {
+    color: #F0F0FF;
+    background: rgba(108, 53, 222, 0.12);
+}
+
+.mobile-menu-cta {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(108, 53, 222, 0.18);
+}
+
+.mobile-menu-cta .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive: show hamburger, hide desktop nav */
+@media (max-width: 1024px) {
+    .nav-menu { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* LIGHT MODE NAVBAR */
+html.light-mode body .navbar {
+    background: rgba(250, 250, 255, 0.85);
+    border-bottom: 1px solid rgba(108, 53, 222, 0.12);
+}
+
+html.light-mode body .navbar.scrolled {
+    background: rgba(250, 250, 255, 0.96);
+    border-bottom-color: rgba(108, 53, 222, 0.18);
+}
+
+html.light-mode body .logo-text {
+    background: linear-gradient(135deg, #1e293b, #6C35DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+html.light-mode body .nav-menu a {
+    color: #334155;
+}
+
+html.light-mode body .nav-menu a:hover {
+    color: #0f172a;
+    background: rgba(108, 53, 222, 0.08);
+}
+
+html.light-mode body .nav-menu a.active {
+    color: #0f172a;
+    background: rgba(108, 53, 222, 0.1);
+    border-color: rgba(108, 53, 222, 0.2);
+}
+
+html.light-mode body .hamburger span {
+    background: #0f172a;
+}
+
+html.light-mode body .mobile-menu {
+    background: rgba(250, 250, 255, 0.98);
+    border-bottom-color: rgba(108, 53, 222, 0.15);
+}
+
+html.light-mode body .mobile-menu a {
+    color: #1e293b;
 }

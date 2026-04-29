@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>((t)=>{if(t==='light')document.documentElement.classList.add('light-mode')})(localStorage.getItem('sanzy_theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -47,97 +48,54 @@
 <body>
 
 <!-- ============================================
-     NAVBAR
-============================================ -->
-<nav class="navbar" id="navbar">
-    <div class="container">
-        <div class="navbar-inner">
-            <a href="/" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">SanzyAI</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/domain-finder">Domain Finder</a></li>
-                <li><a href="/ai-tools">AI Tools</a></li>
-                <li><a href="/prompt-store">Prompt Store</a></li>
-                <li><a href="/ai-services" class="active">AI Services</a></li>
-                <li><a href="/learn-free">Learn Free</a></li>
-                <li><a href="/blog">AI News</a></li>
-            </ul>
-            <div class="nav-right">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-    <ul>
-        <li><a href="/">🏠 Home</a></li>
-        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
-        <li><a href="/ai-tools">🤖 AI Tools</a></li>
-        <li><a href="/prompt-store">💰 Prompt Store</a></li>
-        <li><a href="/ai-services">🚀 AI Services</a></li>
-        <li><a href="/learn-free">📚 Learn Free</a></li>
-        <li><a href="/blog">📰 AI News</a></li>
-    </ul>
-</div>
-
-<!-- Breadcrumb -->
-<div class="breadcrumb">
-    <div class="container">
-        <div class="bc-inner">
-            <a href="/">🏠 Home</a>
-            <span class="bc-sep">›</span>
-            <span>AI Services</span>
-        </div>
-    </div>
-</div>
-
-<!-- ============================================
      HERO SECTION
 ============================================ -->
 <section class="hero">
     <div class="hero-particles" id="heroParticles"></div>
-    <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <div class="hero-label" style="display:inline-block; margin-bottom: 24px;">🚀 AI-Powered Agency Services</div>
-        <h1 class="hero-title" style="margin-bottom: 24px;">
-            Professional AI Services<br>
-            <span class="gradient-text">For Your Business</span>
-        </h1>
-        <p class="hero-sub" style="margin-bottom: 32px;">Get high-quality AI-powered work delivered fast at affordable prices. We focus on two services only: AI Content Writing and AI Logo & Brand Design.</p>
-
-        <div class="hero-btns" style="justify-content: center; margin-bottom: 48px;">
-            <a href="#quote-form" class="btn btn-primary btn-lg" style="box-shadow: 0 4px 20px rgba(108,53,222,0.5);">📋 Request Consultation</a>
-            <a href="#portfolio" class="btn btn-outline btn-lg">👁️ View Our Work</a>
-        </div>
-    </div>
-    
     <div class="container">
-        <div class="stats-bar" style="margin-top: 20px;">
-            <div class="stat-item">
-                <span class="stat-icon">✅</span>
-                <span class="stat-val">2</span>
-                <span class="stat-lbl">Core Services</span>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-label">🚀 AI-Powered Agency Services</div>
+                <h1 class="hero-title">
+                    Professional AI Services<br>
+                    <span class="gradient-text">For Your Business</span>
+                </h1>
+                <p class="hero-sub">Get high-quality AI-powered work delivered fast at affordable prices. We focus on two services only: AI Content Writing and AI Logo & Brand Design.</p>
+                
+                <div class="hero-trust">
+                    <div class="trust-item-sm"><span class="ti-icon">⚡</span> 24h Delivery</div>
+                    <div class="trust-item-sm"><span class="ti-icon">🔄</span> Unlimited Revisions</div>
+                    <div class="trust-item-sm"><span class="ti-icon">⭐</span> Top Quality</div>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#quote-form" class="btn btn-primary btn-lg">📋 Request Consultation</a>
+                    <a href="#portfolio" class="btn btn-outline btn-lg">👁️ View Our Work</a>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-icon">💰</span>
-                <span class="stat-val">$19</span>
-                <span class="stat-lbl">Starting Price</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-icon">⚡</span>
-                <span class="stat-val">24h</span>
-                <span class="stat-lbl">Avg. Delivery</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-icon">🔄</span>
-                <span class="stat-val">∞</span>
-                <span class="stat-lbl">Unlimited Revisions</span>
+            
+            <div class="hero-right">
+                <div class="hero-stats-card">
+                    <div class="hsc-title">Why Choose Us?</div>
+                    <div class="hsc-grid">
+                        <div class="hsc-item">
+                            <span class="hsc-num">2</span>
+                            <span class="hsc-lbl">Core Services</span>
+                        </div>
+                        <div class="hsc-item">
+                            <span class="hsc-num">$19</span>
+                            <span class="hsc-lbl">Starting Price</span>
+                        </div>
+                    </div>
+                    <div class="hsc-badges">
+                        <div class="hsc-badge">
+                            <span class="hsc-badge-icon">⚡</span> 24h Avg. Delivery
+                        </div>
+                        <div class="hsc-badge">
+                            <span class="hsc-badge-icon">🔄</span> Unlimited Revisions
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

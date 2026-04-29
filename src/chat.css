@@ -723,7 +723,7 @@
 /* ============================================
    CHATBOT LIGHT MODE FIXES
 ============================================ */
-body.light-mode {
+html.light-mode body {
     --bot-bg: #ffffff;
     --bot-card: #f8fbff;
     --bot-surface: #ffffff;
@@ -734,43 +734,43 @@ body.light-mode {
     --bot-border: rgba(59, 130, 246, 0.28);
 }
 
-body.light-mode .sanzy-window {
+html.light-mode body .sanzy-window {
     box-shadow: 0 18px 52px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(59, 130, 246, 0.12);
 }
 
-body.light-mode .sanzy-divider {
+html.light-mode body .sanzy-divider {
     color: #64748b;
 }
 
-body.light-mode .sanzy-msg-wrap.user .sanzy-msg-ava {
+html.light-mode body .sanzy-msg-wrap.user .sanzy-msg-ava {
     border-color: rgba(59, 130, 246, 0.22);
 }
 
-body.light-mode .sanzy-input-row {
+html.light-mode body .sanzy-input-row {
     background: #ffffff;
     border-color: rgba(59, 130, 246, 0.28);
 }
 
-body.light-mode .sanzy-input {
+html.light-mode body .sanzy-input {
     color: #0f172a;
 }
 
-body.light-mode .sanzy-input::placeholder {
+html.light-mode body .sanzy-input::placeholder {
     color: #64748b;
 }
 
-body.light-mode .sanzy-restart,
-body.light-mode .sanzy-powered {
+html.light-mode body .sanzy-restart,
+html.light-mode body .sanzy-powered {
     color: #64748b;
 }
 
-body.light-mode .qr-btn {
+html.light-mode body .qr-btn {
     color: #334155;
     background: #f8fbff;
     border-color: rgba(59, 130, 246, 0.26);
 }
 
-body.light-mode .sug-chip {
+html.light-mode body .sug-chip {
     color: #334155;
     background: #f3f7ff;
     border-color: rgba(59, 130, 246, 0.24);

@@ -403,9 +403,17 @@ window.searchDomain = function() {
     // Show loading
     const btn = document.getElementById('searchBtn');
     const loadingBar = document.getElementById('loadingBar');
+    const comparisonContainer = document.getElementById('comparisonContainer');
+    const bestBanner = document.getElementById('bestDealBanner');
+    const featuresSection = document.getElementById('featuresSection');
     
     if (btn) btn.classList.add('loading');
     if (loadingBar) loadingBar.classList.add('active');
+    
+    // Hide old results while checking
+    if (comparisonContainer) comparisonContainer.style.display = 'none';
+    if (bestBanner) bestBanner.style.display = 'none';
+    if (featuresSection) featuresSection.style.display = 'none';
 
     // Show "checking" state immediately
     showAvailStatus('checking', domain);
@@ -640,6 +648,7 @@ function showResults(domain, availStatus) {
     const bestSub = document.getElementById('bestDealSub');
     const bestBtn = document.getElementById('bestDealBtn');
     const bestBanner = document.getElementById('bestDealBanner');
+    const comparisonContainer = document.getElementById('comparisonContainer');
 
     // Extract TLD for context
     const dotIdx = domain.lastIndexOf('.');
@@ -647,19 +656,21 @@ function showResults(domain, availStatus) {
     const tld_info = tldData.find(t => t.ext === tld);
     const avgPrice = tld_info ? tld_info.avg : '$10.50';
 
+    const resultsSection = document.getElementById('resultsSection');
+    const featuresSection = document.getElementById('featuresSection');
+
     if (availStatus === 'taken') {
-        if (bestBanner) bestBanner.style.opacity = '0.6';
-        if (bestPrice) bestPrice.innerHTML = `$${best.register.toFixed(2)}<span>/year</span>`;
-        if (bestName) bestName.textContent = `${best.name} — Registration price (domain is taken)`;
-        if (bestSub) bestSub.textContent = `This domain is already registered. Prices shown are for new ${tld} registrations.`;
-        if (bestBtn) {
-            bestBtn.textContent = `Visit ${best.name} →`;
-            bestBtn.href = getRegistrarSearchLink(best, domain);
-            bestBtn.target = '_blank';
-            bestBtn.rel = 'noopener sponsored';
-        }
+        if (bestBanner) bestBanner.style.display = 'none';
+        if (comparisonContainer) comparisonContainer.style.display = 'none';
+        if (featuresSection) featuresSection.style.display = 'none';
     } else {
-        if (bestBanner) bestBanner.style.opacity = '1';
+        if (bestBanner) {
+            bestBanner.style.display = 'flex';
+            bestBanner.style.opacity = '1';
+        }
+        if (comparisonContainer) comparisonContainer.style.display = 'block';
+        if (featuresSection) featuresSection.style.display = 'block';
+
         if (bestPrice) bestPrice.innerHTML = `$${best.register.toFixed(2)}<span>/year</span>`;
         if (bestName) bestName.textContent = `${best.name} — Best for ${tld} domains`;
         if (bestSub) bestSub.textContent = `Save vs. average ${tld} price of ${avgPrice}/year`;
@@ -675,12 +686,8 @@ function showResults(domain, availStatus) {
     sortTableData();
     renderTableRows();
     renderCards();
-
-    const resultsSection = document.getElementById('resultsSection');
-    const featuresSection = document.getElementById('featuresSection');
     
     if (resultsSection) resultsSection.classList.add('visible');
-    if (featuresSection) featuresSection.style.display = 'block';
 
     // Smooth scroll to results
     setTimeout(() => {

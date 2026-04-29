@@ -304,80 +304,6 @@ const tools = [
     }
 ];
 
-const domainAlternatives = [
-    {
-        domain: 'Chat',
-        subtitle: 'Assistants and daily Q&A',
-        options: [
-            { tier: 'free', name: 'Gemini (Free)', link: 'https://gemini.google.com' },
-            { tier: 'paid', name: 'ChatGPT Plus', link: 'https://chat.openai.com' },
-            { tier: 'paid', name: 'Claude Pro', link: 'https://claude.ai' }
-        ]
-    },
-    {
-        domain: 'Code',
-        subtitle: 'Generation, debug and refactor',
-        options: [
-            { tier: 'free', name: 'Codeium', link: 'https://codeium.com' },
-            { tier: 'paid', name: 'GitHub Copilot', link: 'https://github.com/features/copilot' },
-            { tier: 'paid', name: 'Cursor Pro', link: 'https://cursor.com' }
-        ]
-    },
-    {
-        domain: 'Image Generation',
-        subtitle: 'Art, design and product creatives',
-        options: [
-            { tier: 'free', name: 'Stable Diffusion', link: 'https://stability.ai' },
-            { tier: 'paid', name: 'Midjourney', link: 'https://midjourney.com' },
-            { tier: 'paid', name: 'Adobe Firefly', link: 'https://firefly.adobe.com' }
-        ]
-    },
-    {
-        domain: 'Video',
-        subtitle: 'Text-to-video and AI edits',
-        options: [
-            { tier: 'free', name: 'CapCut AI Tools', link: 'https://www.capcut.com' },
-            { tier: 'paid', name: 'Runway', link: 'https://runwayml.com' },
-            { tier: 'paid', name: 'Synthesia', link: 'https://synthesia.io' }
-        ]
-    },
-    {
-        domain: 'Voice',
-        subtitle: 'Voiceover and speech synthesis',
-        options: [
-            { tier: 'free', name: 'Coqui TTS', link: 'https://coqui.ai' },
-            { tier: 'paid', name: 'ElevenLabs', link: 'https://elevenlabs.io' },
-            { tier: 'paid', name: 'Murf AI', link: 'https://murf.ai' }
-        ]
-    },
-    {
-        domain: 'SEO & Marketing',
-        subtitle: 'Planning, content and optimization',
-        options: [
-            { tier: 'free', name: 'Google Trends', link: 'https://trends.google.com' },
-            { tier: 'paid', name: 'Surfer SEO', link: 'https://surferseo.com' },
-            { tier: 'paid', name: 'Semrush', link: 'https://semrush.com' }
-        ]
-    },
-    {
-        domain: 'Research',
-        subtitle: 'Citations and deeper answers',
-        options: [
-            { tier: 'free', name: 'Consensus', link: 'https://consensus.app' },
-            { tier: 'paid', name: 'Perplexity Pro', link: 'https://perplexity.ai' },
-            { tier: 'paid', name: 'Elicit', link: 'https://elicit.com' }
-        ]
-    },
-    {
-        domain: 'Automation',
-        subtitle: 'Connect tools and workflows',
-        options: [
-            { tier: 'free', name: 'n8n (Self-hosted)', link: 'https://n8n.io' },
-            { tier: 'paid', name: 'Zapier', link: 'https://zapier.com' },
-            { tier: 'paid', name: 'Make', link: 'https://www.make.com' }
-        ]
-    }
-];
 
 // =============================================
 // STATE
@@ -601,62 +527,6 @@ function renderTools() {
     }
 }
 
-function renderAlternatives() {
-    const grid = document.getElementById('alternativesGrid');
-    if (!grid) return;
-
-    grid.textContent = '';
-    domainAlternatives.forEach((group) => {
-        const card = document.createElement('article');
-        card.className = 'alt-card';
-
-        const head = document.createElement('div');
-        head.className = 'alt-head';
-        const h3 = document.createElement('h3');
-        h3.className = 'alt-domain';
-        h3.textContent = group.domain;
-        const sub = document.createElement('span');
-        sub.className = 'alt-sub';
-        sub.textContent = group.subtitle;
-        head.appendChild(h3);
-        head.appendChild(sub);
-
-        const list = document.createElement('div');
-        list.className = 'alt-list';
-        group.options.forEach((option) => {
-            const item = document.createElement('div');
-            item.className = 'alt-item';
-
-            const left = document.createElement('div');
-            left.className = 'alt-left';
-            const chip = document.createElement('span');
-            chip.className = `alt-chip ${option.tier}`;
-            chip.textContent = option.tier;
-            const name = document.createElement('span');
-            name.className = 'alt-name';
-            name.textContent = option.name;
-            left.appendChild(chip);
-            left.appendChild(name);
-
-            const link = document.createElement('a');
-            link.className = 'alt-link';
-            link.href = sanitizeExternalUrl(option.link) || '#';
-            link.target = '_blank';
-            link.rel = 'noopener sponsored';
-            link.dataset.action = 'visit-external';
-            link.dataset.toolName = option.name;
-            link.textContent = 'Visit ↗';
-
-            item.appendChild(left);
-            item.appendChild(link);
-            list.appendChild(item);
-        });
-
-        card.appendChild(head);
-        card.appendChild(list);
-        grid.appendChild(card);
-    });
-}
 
 function renderToolDeepDescription(tool) {
     const categoryText = tool.category.toLowerCase();
@@ -1289,13 +1159,12 @@ window.addEventListener('DOMContentLoaded', () => {
     updateFilterCounts();
     sortToolsData();
     renderTools();
-    renderAlternatives();
     bindStaticControls();
     bindDynamicControls();
 
     // Hamburger
     const ham = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileNav = document.getElementById('mobileMenu');
     if (ham && mobileNav) {
         ham.addEventListener('click', () => {
             ham.classList.toggle('active');
