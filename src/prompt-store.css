@@ -41,7 +41,7 @@
 }
 
 /* Base Styles */
-.container { max-width: 1200px;margin:0 auto;padding:0 24px}
+
 .gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .gold-text{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 body{background:var(--bg);color:var(--text)}
