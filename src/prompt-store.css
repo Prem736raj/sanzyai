@@ -41,7 +41,7 @@
 }
 
 /* Base Styles */
-.container{max-width:1340px;margin:0 auto;padding:0 24px}
+.container { max-width: 1200px;margin:0 auto;padding:0 24px}
 .gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .gold-text{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 body{background:var(--bg);color:var(--text)}
@@ -574,9 +574,7 @@ body{background:var(--bg);color:var(--text)}
 /* ============================================
    RESPONSIVE
 ============================================ */
-@media(max-width:1024px){
-    .nav-menu{display:none}
-    .hamburger{display:flex}
+@media(max-width:1024px){
     .sell-card{grid-template-columns:1fr}
     .modal-body{grid-template-columns:1fr}
 }

@@ -1,4 +1,13 @@
 /* ============================================
+   GLOBAL CONTAINER
+============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================
    GLOBAL & DYNAMIC ELEMENTS STYLES
    (Loading, Popups, Announce, Whatsapp, etc.)
 ============================================ */
