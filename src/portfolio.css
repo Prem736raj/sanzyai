@@ -186,7 +186,6 @@ body {
     justify-content: center;
     opacity: 0;
     transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
 }
 
 .project-card:hover .card-overlay { opacity: 1; }

@@ -41,6 +41,8 @@ export default defineConfig({
         termsOfService: resolve(__dirname, 'terms-of-service.html'),
         affiliate: resolve(__dirname, 'affiliate.html'),
         playground: resolve(__dirname, 'playground.html'),
+        portfolio: resolve(__dirname, 'portfolio.html'),
+        wellnessAppShowcase: resolve(__dirname, 'wellness-app-showcase.html'),
         blogBusiness: resolve(__dirname, 'blog/best-chatgpt-prompts-business.html'),
         blogMidjourney: resolve(__dirname, 'blog/midjourney-product-photography.html'),
         blogPromptGuide: resolve(__dirname, 'blog/how-to-write-ai-prompts.html'),

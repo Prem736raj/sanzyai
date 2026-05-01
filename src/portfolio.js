@@ -147,7 +147,7 @@ const portfolioProjects = [
         category: "Design",
         tag: "Logo Design",
         title: "Wellness App Logo Pack",
-        subtitle: "Complete Logo System + App Icon",
+        subtitle: "100+ Unique Concepts (Click to View Vault)",
         client: "MindBloom",
         industry: "Health & Wellness",
         duration: "12 Hours",
@@ -155,18 +155,18 @@ const portfolioProjects = [
         price: "$48",
         image: "/assets/portfolio/wellness.png",
         stats: [
-            { label: "Logo Concepts", value: "10" },
-            { label: "Variations", value: "25" },
+            { label: "Logo Concepts", value: "100+" },
+            { label: "Variations", value: "Infinite" },
             { label: "Formats", value: "SVG/PNG/PDF" },
             { label: "Revisions", value: "Unlimited" },
         ],
-        description: "Logo design for a meditation and wellness app. The client needed something calming, modern, and App Store-ready. We delivered 10 concepts in 12 hours.",
+        description: "Explore our massive vault of 100+ unique, high-quality logos generated for a wellness brand. Each logo is professional, modern, and ready for launch.",
         deliverables: [
-            "10 logo concepts",
+            "100+ unique logo concepts",
+            "Full prompt vault access",
             "App icon (all sizes)",
             "Light & dark versions",
             "Monochrome version",
-            "Social media avatar",
             "Commercial license",
         ],
         tools: ["Midjourney V6", "Adobe Illustrator", "Figma"],
@@ -482,9 +482,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.getElementById('portfolioGrid');
     grid.addEventListener('click', (e) => {
+        console.log('Portfolio grid click detected', e.target);
         const card = e.target.closest('.project-card');
         if (card) {
-            openCaseStudy(card.dataset.slug);
+            const slug = card.dataset.slug;
+            console.log('Project card clicked:', slug);
+            if (slug === 'wellness-app-logo') {
+                console.log('Redirecting to wellness showcase...');
+                window.location.href = '/wellness-app-showcase.html';
+                return;
+            }
+            openCaseStudy(slug);
         }
     });
 

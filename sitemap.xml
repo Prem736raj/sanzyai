@@ -84,4 +84,10 @@
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
+   <url>
+      <loc>https://sanzyai.com/wellness-app-showcase</loc>
+      <lastmod>2026-05-02</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
 </urlset>
