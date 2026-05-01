@@ -1674,7 +1674,7 @@ function showToast(msg, type = 'success') {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(null); if(e.key==='Escape'){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}});
 
 // Init
-renderLogos();
+</script>
     <!-- ===== PREMIUM FOOTER ===== -->
     <footer style="background: #1e293b; color: white; padding: 60px 20px; margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.1);">
         <div style="max-width: 1200px; margin: 0 auto;">
@@ -1709,6 +1709,11 @@ renderLogos();
             </div>
         </div>
     </footer>
+
+<script>
+// Logic was already there, just ensuring it's wrapped correctly.
+// Re-rendering logos to ensure logic executes.
+renderLogos();
 </script>
 </body>
 </html>
