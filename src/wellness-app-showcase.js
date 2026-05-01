@@ -1,24 +1,67 @@
 const icons = [
-    // Lotus
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,22C12,22 4,16 4,10C4,5.58 7.58,2 12,2C16.42,2 20,5.58 20,10C20,16 12,22 12,22M12,4C8.69,4 6,6.69 6,10C6,13.79 10.42,18.38 12,20.03C13.58,18.37 18,13.77 18,10C18,6.69 15.31,4 12,4Z"/></svg>',
-    // Leaf
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>',
-    // Sun
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,7C14.76,7 17,9.24 17,12C17,14.76 14.76,17 12,17C9.24,17 7,14.76 7,12C7,9.24 9.24,7 12,7M12,9C10.34,9 9,10.34 9,12C9,13.66 10.34,15 12,15C13.66,15 15,13.66 15,12C15,10.34 13.66,9 12,9M12,2L14.39,5.42L18.35,4.35L17.28,8.31L20.7,10.7L17.28,13.09L18.35,17.05L14.39,15.98L12,19.4L9.61,15.98L5.65,17.05L6.72,13.09L3.3,10.7L6.72,8.31L5.65,4.35L9.61,5.42L12,2Z"/></svg>',
-    // Heart
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg>',
-    // Sparkle
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2L14.5,9.5L22,12L14.5,14.5L12,22L9.5,14.5L2,12L9.5,9.5L12,2Z"/></svg>',
-    // Moon
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4.03L13.5,1L14.56,4.03L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C18.39,15.92 17.77,15.96 17.12,16.07C11.73,17.01 8.1,22.06 9,27.44C9.12,28.16 9.32,28.84 9.6,29.47C4.07,27.25 1.34,21.03 3.56,15.5C5.78,9.97 12,7.24 17.53,9.46C19.33,10.18 20.73,11.5 21.6,13.13C20.87,12.69 20,12.5 19.1,12.5C18.89,12.5 18.68,12.52 18.47,12.55C18.61,13.66 18.78,14.8 18.97,15.95Z"/></svg>',
-    // Mountain
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14,6L10.25,11L13.1,14.8L11.5,16C9.81,13.75 7,10 7,10L1,18H23L14,6Z"/></svg>',
-    // Tree
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11,21V18.12C8.61,17.72 6.5,16.22 5.31,14.07C4.12,11.93 4,9.36 5,7.25C5.43,6.34 6.03,5.53 6.78,4.87C7.53,4.21 8.42,3.71 9.38,3.41C10.34,3.11 11.36,3 12.38,3.1C13.4,3.2 14.4,3.5 15.31,4C17.22,5 18.53,6.8 18.9,8.87C19.27,10.94 18.66,13.08 17.25,14.69C16.8,15.2 16.27,15.63 15.68,15.96C15.09,16.29 14.45,16.51 13.78,16.63L13,21H11Z"/></svg>',
-    // Wave
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,8C9.79,8 8,9.79 8,12C8,14.21 9.79,16 12,16C14.21,16 16,14.21 16,12C16,9.79 14.21,8 12,8M12,4V2C17.5,2 22,6.5 22,12S17.5,22 12,22V20C16.42,20 20,16.42 20,12S16.42,4 12,4M12,4C7.58,4 4,7.58 4,12S7.58,20 12,20V22C6.5,22 2,17.5 2,12S6.5,2 12,2V4Z"/></svg>',
-    // Drops
-    '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2C12,2 6,8.39 6,12.75C6,16.75 8.69,20 12,20C15.31,20 18,16.75 18,12.75C18,8.39 12,2 12,2M12,18C9.79,18 8,16.21 8,14C8,14 8,13 12,9C16,13 16,14 16,14C16,16.21 14.21,18 12,18Z"/></svg>'
+    // 0: Elegant Lotus (Layered)
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 20C50 20 35 45 35 60C35 75 50 85 50 85C50 85 65 75 65 60C65 45 50 20 50 20Z" fill="currentColor" opacity="0.9"/>
+        <path d="M50 30C50 30 20 50 20 70C20 85 45 90 50 90" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M50 30C50 30 80 50 80 70C80 85 55 90 50 90" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+        <circle cx="50" cy="65" r="5" fill="white" opacity="0.3"/>
+    </svg>`,
+    // 1: Abstract Zen Brush Circle
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 10C27.9 10 10 27.9 10 50C10 72.1 27.9 90 50 90C72.1 90 90 72.1 90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none" stroke-dasharray="200 50"/>
+        <path d="M40 40Q50 30 60 40Q70 50 50 70" stroke="currentColor" stroke-width="4" fill="none" opacity="0.7"/>
+    </svg>`,
+    // 2: Organic Intertwined Leaves
+    `<svg viewBox="0 0 100 100">
+        <path d="M30 80C30 80 10 60 10 40C10 20 30 10 50 40C70 10 90 20 90 40C90 60 70 80 50 60C30 80 30 80 30 80Z" fill="currentColor" opacity="0.8"/>
+        <path d="M50 40L50 90" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <path d="M30 65L50 55" stroke="white" stroke-width="1.5" opacity="0.4"/>
+        <path d="M70 65L50 55" stroke="white" stroke-width="1.5" opacity="0.4"/>
+    </svg>`,
+    // 3: Minimalist Yoga Figure
+    `<svg viewBox="0 0 100 100">
+        <circle cx="50" cy="25" r="8" fill="currentColor"/>
+        <path d="M50 35C40 35 25 45 20 65M50 35C60 35 75 45 80 65" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M50 35L50 75M50 75L30 95M50 75L70 95" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+    </svg>`,
+    // 4: Geometric Mountain & Sun
+    `<svg viewBox="0 0 100 100">
+        <circle cx="70" cy="30" r="15" fill="currentColor" opacity="0.3"/>
+        <path d="M10 80L40 30L65 80" fill="currentColor" opacity="0.9"/>
+        <path d="M45 80L70 45L95 80" fill="currentColor" opacity="0.6"/>
+        <rect x="10" y="85" width="80" height="2" rx="1" fill="currentColor" opacity="0.4"/>
+    </svg>`,
+    // 5: Abstract Wave Harmony
+    `<svg viewBox="0 0 100 100">
+        <path d="M10 50Q30 30 50 50T90 50" stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path d="M10 70Q30 50 50 70T90 70" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <path d="M10 30Q30 10 50 30T90 30" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.3"/>
+    </svg>`,
+    // 6: Crystalline Energy
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 10L85 40L50 90L15 40Z" fill="currentColor" opacity="0.8"/>
+        <path d="M50 10L50 90" stroke="white" stroke-width="1" opacity="0.5"/>
+        <path d="M15 40L85 40" stroke="white" stroke-width="1" opacity="0.5"/>
+        <path d="M15 40L50 55L85 40" fill="white" opacity="0.2"/>
+    </svg>`,
+    // 7: Modern Infinity Petal
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 50C20 20 10 50 50 80C90 50 80 20 50 50Z" fill="currentColor"/>
+        <path d="M50 50C80 80 90 50 50 20C10 50 20 80 50 50Z" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="50" r="4" fill="white"/>
+    </svg>`,
+    // 8: Abstract Shield of Peace
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 10C50 10 85 20 85 50C85 80 50 90 50 90C50 90 15 80 15 50C15 20 50 10 50 10Z" stroke="currentColor" stroke-width="4" fill="none"/>
+        <path d="M30 45Q50 35 70 45Q50 75 30 45" fill="currentColor" opacity="0.7"/>
+        <path d="M50 25L50 75" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+    </svg>`,
+    // 9: Organic Vine Flourish
+    `<svg viewBox="0 0 100 100">
+        <path d="M50 90C50 90 20 60 20 40C20 20 40 20 50 40C60 20 80 20 80 40C80 60 50 90 50 90Z" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="50" cy="45" r="12" fill="currentColor" opacity="0.4"/>
+        <path d="M35 45Q50 60 65 45" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>`
 ];
 
 const styles = ["Minimal", "Abstract", "Organic", "Symbolic", "Modern", "Geometric", "Hand-drawn", "Sleek", "Bold", "Gradient"];
