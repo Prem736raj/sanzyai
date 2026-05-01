@@ -91,17 +91,17 @@ function generateVault() {
         const icon = icons[iconIndex];
 
         const id = i.toString().padStart(3, '0');
-        const prompt = `A professional ${style.toLowerCase()} logo for a wellness and meditation app, featuring a ${color.name.toLowerCase()} color palette. Central icon is a stylized ${iconIndex === 0 ? 'lotus' : iconIndex === 1 ? 'leaf' : 'wellness symbol'}. Minimalist, high-quality, 4k, vector style, white background, trending on Dribbble. --v 6.0`;
+        const prompt = `A professional ${style.toLowerCase()} logo for 'Aurora', a wellness and meditation app. Featuring a ${color.name.toLowerCase()} color palette. Central icon is a stylized ${iconIndex === 0 ? 'lotus' : iconIndex === 1 ? 'leaf' : 'wellness symbol'}. Minimalist, high-quality, 4k, vector style, white background, trending on Dribbble. --v 6.0`;
         
         generatedLogos.push({
             id: `#${id}`,
-            title: `Wellness Logo ${id}`,
+            title: `Aurora Logo ${id}`,
             style: style,
             category: style.toLowerCase().includes("minimal") ? "minimal" : style.toLowerCase().includes("abstract") ? "abstract" : style.toLowerCase().includes("organic") ? "organic" : "symbolic",
             color: color,
             icon: icon,
             prompt: prompt,
-            tags: [style, color.name, "Wellness", "AI Gen"]
+            tags: ["Aurora", style, color.name, "Wellness"]
         });
     }
 }
