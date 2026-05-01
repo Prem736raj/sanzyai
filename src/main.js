@@ -57,12 +57,7 @@ function debugLogEvent(eventName, params = {}) {
     }
 }
 
-function trackEvent(eventName, params = {}) {
-    if (typeof window.gtag === 'function') {
-        window.gtag('event', eventName, params);
-    }
-    debugLogEvent(eventName, params);
-}
+const trackEvent = (name, params) => window.trackEvent?.(name, params);
 
 let particles = [];
 let animationId;
@@ -430,70 +425,11 @@ function initLaunchScoreMeter() {
 }
 
 // ============================================
-// NEWSLETTER SUBMIT
+// NEWSLETTER SUBMIT handling removed, moved to globals.js
 // ============================================
-window.handleNewsletterSubmit = function(e) {
-    e.preventDefault();
-    const input = e.target.querySelector('input');
-    const btn = e.target.querySelector('button');
-    if (!input || !btn) return;
-
-    const email = input.value.trim();
-    if (!email) return;
-
-    // Store email locally as backup
-    const stored = JSON.parse(localStorage.getItem('sanzyai_subscribers') || '[]');
-    if (!stored.includes(email)) {
-        stored.push(email);
-        localStorage.setItem('sanzyai_subscribers', JSON.stringify(stored));
-    }
-
-    // Also subscribe via Gumroad follow (real email capture)
-    window.open(`https://sanzyai.gumroad.com/follow?email=${encodeURIComponent(email)}`, '_blank', 'width=600,height=400');
-    
-    const originalText = btn.textContent;
-    btn.textContent = '✓ Subscribed!';
-    btn.style.background = 'linear-gradient(135deg, #00FF88, #00C870)';
-    btn.style.boxShadow = '0 4px 20px rgba(0, 255, 136, 0.4)';
-    input.value = '';
-    input.disabled = true;
-    btn.disabled = true;
-    
-    trackEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
-    if (window.trackConversion) window.trackConversion('newsletter_signup', { method: 'gumroad_follow' });
-
-    setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.style.boxShadow = '';
-        input.disabled = false;
-        btn.disabled = false;
-    }, 3000);
-}
-
-// ============================================
-// ACTIVE NAV LINK
-// ============================================
-function setActiveNav() {
-    const path = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        
-        // Exact match for home page
-        if ((path === '/' || path === '/index.html' || path === '') && (href === '/' || href === '/index.html')) {
-            link.classList.add('active');
-        } else if (href !== '/' && path.includes(href)) {
-            link.classList.add('active');
-        }
-    });
-}
 
 // Run on load
 initDebugPanel();
-setActiveNav();
 initLaunchScoreMeter();
 
 // Promo bar dismiss
@@ -510,10 +446,6 @@ initLaunchScoreMeter();
         });
     }
 })();
-
-document.getElementById('newsletterForm')?.addEventListener('submit', (event) => {
-    window.handleNewsletterSubmit(event);
-});
 
 // ============================================
 // FEATURE CARDS - MOUSE MOVE TILT EFFECT

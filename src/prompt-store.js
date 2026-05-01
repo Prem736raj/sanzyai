@@ -4,16 +4,16 @@
 
 const packs = [
     {
-        id:0, name:'The Mastery Vault: 10,000+ AI Prompts',
+        id:0, name:'Ultimate Premium Prompt Bundle',
         image:'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=600&q=80',
         bgColor:'linear-gradient(135deg,#1A1A24,#2D1B4B)',
         price:9.99, origPrice:49, priceCategory:'5-15',
         platforms:['chatgpt','midjourney','claude','gemini'],
         count:10000, category:'Bundles / Everything',
         rating:5.0, reviews:842, reviewCount:'842',
-        badge:'👑 Ultimate Value', badgeClass:'badge-gold',
+        badge:'👑 Premium All-Access', badgeClass:'badge-gold',
         cardClass:'bestseller',
-        desc:'The last prompt pack you will ever need. Unlock 10,000+ battle-tested prompts across 50+ niches: business scaling, marketing, copywriting, SEO, midjourney art, coding, and productivity.',
+        desc:'Gain complete access to our entire premium library. Includes over 10,000 professional-grade prompts for business, marketing, SEO, coding, and creative arts. Updated monthly.',
         included:[
             'Access to the entire prompt library (10k+ prompts)',
             'Lifetime updates (New prompts added monthly)',
@@ -62,7 +62,7 @@ const packs = [
         link:'https://sanzyai.gumroad.com/l/solo-founder-chatgpt-pack'
     },
     {
-        id:2, name:'Midjourney for Amazon/Etsy',
+        id:2, name:'Midjourney E-Commerce Seller Pack',
         image:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80',
         bgColor:'linear-gradient(135deg,#231515,#421A1A)',
         price:3.49, origPrice:20, priceCategory:'1-5',
@@ -120,7 +120,7 @@ const packs = [
         link:'https://sanzyai.gumroad.com/l/seo-content-writer-pack'
     },
     {
-        id:4, name:'Viral X/LinkedIn Ghostwriter',
+        id:4, name:'Go Viral: Social Media AI Pack',
         image:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80',
         bgColor:'linear-gradient(135deg,#1A2436,#1D3A5F)',
         price:1.99, origPrice:10, priceCategory:'1-5',
@@ -149,7 +149,7 @@ const packs = [
         link:'https://sanzyai.gumroad.com/l/social-media-content-pack'
     },
     {
-        id:6, name:'Freelance High-Ticket Closer',
+        id:6, name:'Close More Deals: AI Freelancer Pack',
         image:'https://images.unsplash.com/photo-1554774853-719586f82d77?auto=format&fit=crop&w=600&q=80',
         bgColor:'linear-gradient(135deg,#142416,#1B4222)',
         price:2.49, origPrice:12, priceCategory:'1-5',
@@ -205,6 +205,42 @@ const packs = [
         ],
         fbt:[1,2],
         link:'https://sanzyai.gumroad.com/l/claude-vibe-coding-architect'
+    },
+    {
+        id:8, name:'YouTube Growth Engine Pack',
+        image:'/youtube-pack.png',
+        bgColor:'linear-gradient(135deg,#FF0000,#8B0000)',
+        price:1.99, origPrice:20, priceCategory:'1-5',
+        platforms:['chatgpt','social','video'],
+        count:75, category:'ChatGPT / YouTube',
+        rating:4.9, reviews:0, reviewCount:'New',
+        badge:'🔥 Creator\'s Choice', badgeClass:'badge-orange',
+        cardClass:'',
+        desc:'The complete system to grow your YouTube channel with AI. 75 high-quality prompts for viral titles, hooks, scripts, SEO descriptions, and thumbnail design.',
+        included:[
+            'Viral video title & hook generator',
+            'Script writer for any niche',
+            'YouTube description SEO optimizer',
+            'Thumbnail idea generator',
+            'Community building engagement scripts'
+        ],
+        samples:[
+            { 
+                label:'Curiosity Gap Title Generator', 
+                text:'You are a viral YouTube title expert. I will give you my video topic and you will generate 10 high-CTR YouTube titles using the curiosity gap formula.\n\nMy video topic: [TOPIC]\nMy target audience: [AUDIENCE]\nMy niche: [NICHE]\n\nRules:\n- Use numbers when possible\n- Create curiosity without clickbait\n- Keep titles under 60 characters\n- Use power words (Secret, Proven, Never, Finally, Warning)\n- Include the main keyword naturally\n\nOutput: 10 titles ranked from most clickable to least, with a brief reason why each works.' 
+            },
+            { 
+                label:'Hook Script Generator (First 30 Seconds)', 
+                text:'You are a YouTube hook specialist. Write a powerful 30-second hook script for my video.\n\nVideo Topic: [TOPIC]\nTarget Audience: [AUDIENCE]\nMain Pain Point I Solve: [PAIN POINT]\n\nCreate the hook using this structure:\n1. Pattern Interrupt (shocking statement or question) - 5 seconds\n2. Agitate the problem - 10 seconds  \n3. Promise the solution - 10 seconds\n4. Tease what\'s coming - 5 seconds\n\nMake it conversational, energetic, and impossible to skip. Output the full script with [PAUSE] and [EMPHASIS] markers.' 
+            },
+            { 
+                label:'YouTube Shorts Script Writer', 
+                text:'Write a punchy YouTube Shorts script (under 60 seconds).\n\nTopic: [TOPIC]\nKey Message: [ONE MAIN POINT]\nTarget Viewer: [AUDIENCE]\nDesired Action After Watching: [FOLLOW/SAVE/SHARE/VISIT]\n\nScript rules:\n- Hook in first 1-2 seconds (start mid-action or with shocking statement)\n- No long intros\n- One point only, explained clearly\n- End with a question or CTA to comment\n- Exactly 150-200 words\n\nWrite the complete script with [ON SCREEN TEXT] cues and [TRANSITION] markers. Also suggest the background music vibe.' 
+            }
+        ],
+        reviews_data:[],
+        fbt:[0,4],
+        link:'https://sanzyai.gumroad.com/l/youtube-growth-engine-pack'
     }
 ];
 
@@ -234,7 +270,7 @@ function inferPromptBestFor(pack) {
     if (cat.includes('freelanc')) return 'Freelancers, consultants, and service providers.';
     if (cat.includes('seo')) return 'SEO writers, affiliate publishers, and niche-site operators.';
     if (cat.includes('social')) return 'Creators, social media managers, and personal brands.';
-    if (cat.includes('video')) return 'YouTubers, educators, and content-led businesses.';
+    if (cat.includes('video')) return 'YouTubers, creators, and video marketers.';
     if (cat.includes('image') || cat.includes('art')) return 'Designers, ecommerce brands, and ad creatives.';
     if (cat.includes('coding') || cat.includes('claude')) return 'Developers, technical founders, and product teams.';
     if (cat.includes('business')) return 'Founders, marketers, and operators building revenue workflows.';
@@ -283,7 +319,7 @@ let activePlatform = 'all';
 let activePriceFilter = 'all';
 let activeSort = 'popular';
 let searchQuery = '';
-let wishlist = new Set();
+let wishlist = new Set(window.getWishlist());
 let filteredPacks = [...packs];
 let activeModalEl = null;
 let lastFocusedEl = null;
@@ -574,7 +610,7 @@ function getPlatformLabel(p) {
         'stable-diffusion':'🌊 SD', runway:'🎬 Runway',
         business:'💼 Business', seo:'📈 SEO',
         social:'📣 Social', art:'🖼️ Art',
-        freelance:'💼 Freelance'
+        freelance:'💼 Freelance', video:'🎬 YouTube'
     };
     return labels[p] || p;
 }
@@ -712,18 +748,23 @@ window.resetFilters = function() {
 // WISHLIST
 // =============================================
 window.toggleWish = function(id, btn) {
-    if (wishlist.has(id)) {
-        wishlist.delete(id);
-        btn.textContent = '🤍';
-        btn.classList.remove('active');
-        showToast('Removed from wishlist','💔');
-    } else {
+    const isAdded = window.toggleWishlistItem(id);
+    if (isAdded) {
         wishlist.add(id);
         btn.textContent = '❤️';
         btn.classList.add('active');
-        showToast('Added to wishlist! ❤️','✅');
+    } else {
+        wishlist.delete(id);
+        btn.textContent = '🤍';
+        btn.classList.remove('active');
     }
 }
+
+// Sync wishlist on global update
+window.addEventListener('wishlistUpdated', (e) => {
+    wishlist = new Set(e.detail);
+    renderPacks();
+});
 
 // =============================================
 // PRODUCT DETAIL MODAL

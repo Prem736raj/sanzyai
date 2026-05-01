@@ -266,6 +266,7 @@ body{background:var(--bg);color:var(--text)}
 .badge-new{background:rgba(108,53,222,0.3);color:#FFF}
 .badge-trending{background:rgba(0,212,255,0.2);color:#FFF}
 .badge-money{background:rgba(0,200,81,0.2);color:#FFF}
+.badge-orange{background:rgba(255,107,53,0.2);color:#FFF}
 .badge-free{background:rgba(0,200,81,0.2);color:#FFF}
 
 .wish-btn{

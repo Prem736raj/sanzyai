@@ -57,7 +57,6 @@
 
             <!-- Right Side -->
             <div class="nav-right">
-                <a href="/prompt-store" class="btn btn-primary btn-sm nav-cta">Browse Store →</a>
                 <!-- Hamburger -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span>
@@ -273,30 +272,6 @@
 <!-- ============================================
      NEWSLETTER
 ============================================ -->
-<section class="newsletter-sec">
-    <div class="container">
-        <div class="newsletter-card">
-            <div class="newsletter-inner">
-                <span class="nl-icon">📬</span>
-                <h2 class="nl-title">Get Weekly AI Tool <span class="gradient-text">Recommendations</span></h2>
-                <p class="nl-sub">Get curated AI tool discoveries, honest reviews, and exclusive deals delivered to your inbox — every week.</p>
-                <div class="nl-badges">
-                    <span class="nl-badge">✅ No spam, ever</span>
-                    <span class="nl-badge">✅ Unsubscribe anytime</span>
-                    <span class="nl-badge">✅ Curated weekly</span>
-                    <span class="nl-badge">✅ Weekly digest</span>
-                </div>
-                <form class="nl-form" id="nlForm">
-                    <input type="email" class="nl-input" placeholder="Enter your email address..." required>
-                    <button type="submit" class="btn btn-primary">
-                        Subscribe 🚀
-                    </button>
-                </form>
-                <p class="nl-note">🔒 We respect your privacy. Your email is never shared or sold.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ============================================
      SUBMIT A TOOL
@@ -372,25 +347,21 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
+<!-- Compact Footer -->
+<footer class="footer-compact">
     <div class="container">
-        <div class="footer-row">
-            <a href="/" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">SanzyAI</span>
-            </a>
-            <div class="footer-links-row">
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-                <a href="/submit-tool">Submit Tool</a>
-                <a href="/privacy-policy">Privacy</a>
-                <a href="/terms-of-service">Terms</a>
-                <a href="/affiliate-disclosure">Affiliate Disclosure</a>
-            </div>
-        </div>
-        <div class="footer-copy">
-            © 2026 SanzyAI.com — All Rights Reserved | AI Tools Directory updated daily
-        </div>
+        <a href="/" class="footer-compact-brand">
+            <div class="logo-icon">⚡</div>
+            <span class="logo-text">SanzyAI</span>
+        </a>
+        <ul class="footer-compact-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+            <li><a href="/terms-of-service">Terms</a></li>
+            <li><a href="/refund-policy">Refunds</a></li>
+        </ul>
+        <p class="footer-compact-copy">© 2026 SanzyAI</p>
     </div>
 </footer>
 
@@ -406,8 +377,8 @@
 
 <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
 
-<script type="module" src="./src/ai-tools.js"></script>
 <script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/ai-tools.js"></script>
 <script type="module" src="./src/chat.js"></script>
 </body>
 </html>

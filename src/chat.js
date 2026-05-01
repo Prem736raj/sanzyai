@@ -344,7 +344,7 @@ Feel free to ask me anything anytime! 💪`
 
 **Response times:**
 • Email — within 24 hours
-• Discord/Telegram — usually within 2 hours!
+• Discord/Telegram — usually within 24 hours!
 
 Or keep chatting with me — I can answer most questions right here! 😊
 

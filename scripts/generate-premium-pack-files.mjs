@@ -5,7 +5,7 @@ const root = process.cwd();
 const outDir = path.join(root, 'deliverables', 'premium-prompt-packs');
 
 const packs = [
-  { id: 0, key: 'mastery', name: 'The Mastery Vault 10000+ AI Prompts', count: 10000 },
+  { id: 0, key: 'mastery', name: 'Ultimate Premium Prompt Bundle', count: 10000 },
   { id: 1, key: 'solofounder', name: 'ChatGPT for Solo-Founders', count: 150 },
   { id: 2, key: 'midjourney-ecommerce', name: 'Midjourney for Amazon Etsy', count: 100 },
   { id: 3, key: 'seo-content', name: 'SEO Content Writer Pack', count: 50 },

@@ -6,14 +6,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
   <title>Submit Tool | SanzyAI</title>
+  <meta name="description" content="Submit your AI tool to the SanzyAI directory.">
   <link rel="stylesheet" href="./src/style.css">
   <link rel="stylesheet" href="./src/globals.css">
 </head>
 <body>
-  <main style="max-width:900px;margin:40px auto;padding:20px;line-height:1.7;">
-    <h1>Submit an AI Tool</h1>
-    <p>Send your tool details to hello@sanzyai.com with name, URL, category, and short description.</p>
-  </main>
-  <script type="module" src="./src/globals.js"></script>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog">AI News</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="nav-right">
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+        <li><a href="/ai-tools">🤖 AI Tools</a></li>
+        <li><a href="/prompt-store">💰 Prompt Store</a></li>
+        <li><a href="/ai-services">🚀 AI Services</a></li>
+        <li><a href="/learn-free">📚 Learn Free</a></li>
+        <li><a href="/blog">📰 AI News</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+        <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
+    </div>
+</div>
+
+<main class="legal-page">
+    <div class="container">
+        <div class="legal-hero">
+            <h1>Submit an <span class="gradient-text">AI Tool</span></h1>
+            <p class="legal-hero-sub">Get your AI product in front of thousands of creators and founders.</p>
+        </div>
+        <div class="legal-content">
+            <section class="legal-section">
+                <p>We are currently accepting tool submissions via email to ensure quality and relevance. Please send the following details to:</p>
+                <div style="text-align:center;padding:24px;background:rgba(108,53,222,0.06);border:1px solid rgba(108,53,222,0.15);border-radius:16px;margin:24px 0;">
+                    <a href="mailto:hello@sanzyai.com" style="font-size:1.4rem;font-weight:700;color:var(--primary-light);text-decoration:none;">hello@sanzyai.com</a>
+                </div>
+                <h3 style="margin-top:24px;">Submission Checklist:</h3>
+                <ul class="about-list">
+                    <li><strong>Tool Name:</strong> The official name of your AI product.</li>
+                    <li><strong>Website URL:</strong> Link to your homepage or landing page.</li>
+                    <li><strong>Category:</strong> e.g. Writing, Image Gen, Coding, Marketing, etc.</li>
+                    <li><strong>Short Description:</strong> 1-2 sentences explaining what it does.</li>
+                    <li><strong>Pricing Model:</strong> Free, Freemium, or Paid.</li>
+                </ul>
+                <p style="margin-top:24px;">Our team reviews submissions weekly. If your tool is a good fit, we'll add it to the <a href="/ai-tools">AI Tools Directory</a> for free. For priority listing or sponsored spots, please mention "Sponsorship" in your subject line.</p>
+            </section>
+        </div>
+    </div>
+</main>
+
+<!-- Compact Footer -->
+<footer class="footer-compact">
+    <div class="container">
+        <a href="/" class="footer-compact-brand">
+            <div class="logo-icon">⚡</div>
+            <span class="logo-text">SanzyAI</span>
+        </a>
+        <ul class="footer-compact-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+            <li><a href="/terms-of-service">Terms</a></li>
+            <li><a href="/refund-policy">Refunds</a></li>
+        </ul>
+        <p class="footer-compact-copy">© 2026 SanzyAI</p>
+    </div>
+</footer>
+
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/chat.js"></script>
 </body>
 </html>

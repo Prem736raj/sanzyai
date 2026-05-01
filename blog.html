@@ -58,7 +58,6 @@
 
             <!-- Right Side -->
             <div class="nav-right">
-                <a href="/prompt-store" class="btn btn-primary btn-sm nav-cta">Browse Store →</a>
                 <!-- Hamburger -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span>
@@ -165,28 +164,28 @@
     <article class="news-modal-card" id="newsModalCard"></article>
 </div>
 
-<footer class="footer">
+<!-- Compact Footer -->
+<footer class="footer-compact">
     <div class="container">
-        <div class="footer-row">
-            <a href="/" class="logo">
-                <div class="logo-icon">⚡</div>
-                <span class="logo-text">SanzyAI</span>
-            </a>
-            <div class="footer-links">
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-                <a href="/privacy-policy">Privacy</a>
-                <a href="/terms-of-service">Terms</a>
-            </div>
-        </div>
-        <div class="footer-copy">© 2026 SanzyAI.com — AI Newsroom</div>
+        <a href="/" class="footer-compact-brand">
+            <div class="logo-icon">⚡</div>
+            <span class="logo-text">SanzyAI</span>
+        </a>
+        <ul class="footer-compact-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+            <li><a href="/terms-of-service">Terms</a></li>
+            <li><a href="/refund-policy">Refunds</a></li>
+        </ul>
+        <p class="footer-compact-copy">© 2026 SanzyAI</p>
     </div>
 </footer>
 
 <div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">Done!</span></div>
 
-<script type="module" src="./src/blog.js"></script>
 <script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/blog.js"></script>
 <script type="module" src="./src/chat.js"></script>
 </body>
 </html>

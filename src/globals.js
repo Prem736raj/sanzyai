@@ -18,6 +18,152 @@
         }
     };
 
+    window.trackEvent = function(eventName, params = {}) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    };
+
+    window.handleNewsletterSubmit = function(e) {
+        e.preventDefault();
+        const input = e.target.querySelector('input');
+        const btn = e.target.querySelector('button');
+        if (!input || !btn) return;
+
+        const email = input.value.trim();
+        if (!email) return;
+
+        // Store email locally as backup
+        const stored = JSON.parse(localStorage.getItem('sanzyai_subscribers') || '[]');
+        if (!stored.includes(email)) {
+            stored.push(email);
+            localStorage.setItem('sanzyai_subscribers', JSON.stringify(stored));
+        }
+
+        // Also subscribe via Gumroad follow (real email capture)
+        window.open(`https://sanzyai.gumroad.com/follow?email=${encodeURIComponent(email)}`, '_blank', 'width=600,height=400');
+        
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Subscribed!';
+        btn.style.background = 'linear-gradient(135deg, #00FF88, #00C870)';
+        btn.style.boxShadow = '0 4px 20px rgba(0, 255, 136, 0.4)';
+        input.value = '';
+        input.disabled = true;
+        btn.disabled = true;
+        
+        window.trackEvent('newsletter_subscribe', { email_domain: email.split('@')[1] });
+        if (window.trackConversion) window.trackConversion('newsletter_signup', { method: 'gumroad_follow' });
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.boxShadow = '';
+            input.disabled = false;
+            btn.disabled = false;
+        }, 3000);
+    }
+
+    // Wishlist logic
+    const WISHLIST_KEY = 'sanzy_wishlist';
+    window.getWishlist = () => {
+        try {
+            return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
+        } catch (e) {
+            return [];
+        }
+    };
+
+    window.saveWishlist = (list) => {
+        localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+        window.dispatchEvent(new CustomEvent('wishlistUpdated', { detail: list }));
+        updateWishlistUI();
+    };
+
+    window.toggleWishlistItem = (id) => {
+        let list = window.getWishlist();
+        const index = list.indexOf(id);
+        if (index > -1) {
+            list.splice(index, 1);
+            showToast('Removed from wishlist', '💔');
+        } else {
+            list.push(id);
+            showToast('Added to wishlist!', '❤️');
+        }
+        window.saveWishlist(list);
+        return index === -1; // true if added
+    };
+
+    window.isInWishlist = (id) => window.getWishlist().includes(id);
+
+    function updateWishlistUI() {
+        const list = window.getWishlist();
+        const counts = document.querySelectorAll('.wishlist-count');
+        counts.forEach(c => {
+            c.textContent = list.length;
+            c.style.display = list.length > 0 ? 'flex' : 'none';
+        });
+
+        const drawerList = document.getElementById('wishlistDrawerItems');
+        if (drawerList) {
+            if (list.length === 0) {
+                drawerList.innerHTML = `
+                    <div class="wishlist-empty">
+                        <div class="wish-empty-icon">❤️</div>
+                        <p>Your wishlist is empty</p>
+                        <a href="/prompt-store" class="btn btn-primary btn-sm">Browse Prompts</a>
+                    </div>
+                `;
+            } else {
+                // Try to get packs from window.packs (if on prompt-store)
+                // or fallback to basic item info.
+                const packs = window.packs || [];
+                drawerList.innerHTML = list.map(id => {
+                    const pack = packs.find(p => p.id === id);
+                    const name = pack ? pack.name : `AI Prompt Pack #${id}`;
+                    const price = pack ? (pack.price > 0 ? '$' + pack.price.toFixed(2) : 'FREE') : 'View Price';
+                    
+                    return `
+                        <div class="wishlist-item" data-id="${id}">
+                            <div class="wi-info">
+                                <div class="wi-name">${name}</div>
+                                <div class="wi-price">${price}</div>
+                            </div>
+                            <div class="wi-actions">
+                                <a href="/prompt-store" class="wi-btn wi-view" title="View Product">👁️</a>
+                                <button class="wi-btn wi-remove" data-wish-id="${id}" title="Remove">✕</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Add listeners to remove buttons in drawer
+                drawerList.querySelectorAll('.wi-remove').forEach(btn => {
+                    btn.onclick = () => {
+                        window.toggleWishlistItem(parseInt(btn.dataset.wishId));
+                    };
+                });
+            }
+        }
+    }
+
+    window.toggleWishlistDrawer = () => {
+        const drawer = document.getElementById('wishlistDrawer');
+        const overlay = document.getElementById('wishlistOverlay');
+        if (!drawer) return;
+
+        const isOpen = drawer.classList.contains('open');
+        if (isOpen) {
+            drawer.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        } else {
+            updateWishlistUI();
+            drawer.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
     const seoByPath = {
         '/': {
             title: 'SanzyAI - Domain Prices, AI Tools, Prompts & Free Learning Hub',
@@ -454,20 +600,38 @@
 
         const controlsHTML = `
             <div class="site-controls" id="siteControls">
+                <button class="site-control-btn wishlist-toggle-btn" id="wishlistBtn" aria-label="View Wishlist" title="Your Wishlist">
+                    ❤️ <span class="wishlist-count">0</span>
+                </button>
                 ${langControlHtml}
                 <button class="site-control-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
             </div>
             <div id="google_translate_element" class="translate-hidden" aria-hidden="true"></div>
+            
+            <div class="wishlist-overlay" id="wishlistOverlay"></div>
+            <div class="wishlist-drawer" id="wishlistDrawer">
+                <div class="wish-drawer-header">
+                    <h3>My Wishlist <span class="wishlist-count">0</span></h3>
+                    <button class="wish-drawer-close" id="wishlistClose">✕</button>
+                </div>
+                <div class="wish-drawer-body" id="wishlistDrawerItems">
+                    <!-- Wishlist items go here -->
+                </div>
+                <div class="wish-drawer-footer">
+                    <a href="/prompt-store" class="btn btn-primary btn-block">Go to Prompt Store →</a>
+                </div>
+            </div>
         `;
         body.insertAdjacentHTML('beforeend', controlsHTML);
 
         const controls = document.getElementById('siteControls');
+        
         const navControlHost =
             document.querySelector('.navbar .nav-right') ||
             document.querySelector('.navbar .nav-inner > div:last-child') ||
             document.querySelector('.navbar .navbar-inner > div:last-child');
 
-        if (controls && navControlHost && !navControlHost.contains(controls)) {
+        if (controls && navControlHost) {
             controls.classList.add('in-navbar');
             navControlHost.appendChild(controls);
         }
@@ -522,6 +686,25 @@
             window.declineCookies();
         });
 
+        // Wishlist Drawer Events
+        document.getElementById('wishlistBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.toggleWishlistDrawer();
+        });
+
+        document.getElementById('wishlistClose')?.addEventListener('click', () => {
+            window.toggleWishlistDrawer();
+        });
+
+        document.getElementById('wishlistOverlay')?.addEventListener('click', () => {
+            window.toggleWishlistDrawer();
+        });
+
+        // Replace any existing Browse Store button in navbar with Wishlist if needed
+        // but our current injectGlobalElements might already be doing it via site-controls
+        
+        updateWishlistUI();
+
         // Social proof popup removed: static/fabricated notifications were removed to
         // avoid misleading repeat visitors and to improve trustworthiness.
 
@@ -568,17 +751,43 @@
 
     // Social proof logic removed to avoid misleading or static notifications.
 
+    function setActiveNav() {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-menu a, .mobile-menu a');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            
+            link.classList.remove('active');
+            
+            // Exact match for home page
+            if ((path === '/' || path === '/index.html' || path === '') && (href === '/' || href === '/index.html')) {
+                link.classList.add('active');
+            } else if (href !== '/' && href !== '/index.html' && path.includes(href)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
     // ============================================
     // INITIALIZATION
     // ============================================
+    
+    // Core UI Injection (Run immediately to avoid flicker/delay)
+    injectGlobalElements();
+    injectSkipLink();
+    applyTheme(getPreferredTheme());
+    setActiveNav();
+
     document.addEventListener('DOMContentLoaded', () => {
         applySeoMetadata();
-        applyTheme(getPreferredTheme());
 
-        injectGlobalElements();
-        injectSkipLink();
         setupNavA11y();
         setupEngagementTracking();
+
+        // Footer Newsletter form handling
+        document.getElementById('newsletterForm')?.addEventListener('submit', window.handleNewsletterSubmit);
 
         const savedLang = localStorage.getItem('sanzy_lang') || 'en';
         if (savedLang !== 'en') {
@@ -603,11 +812,6 @@
                 panel.setAttribute('aria-hidden', 'true');
             }
         });
-
-        // Newsletter popup scheduling removed permanently.
-
-        // Social proof toasts: DISABLED — they were overlapping content
-        // Users found them intrusive; the trust bar already provides social proof
     });
 
 })();
