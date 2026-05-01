@@ -335,9 +335,7 @@ function renderPortfolio() {
                 <img src="${p.image}" alt="${p.title}" class="card-img">
                 <span class="card-tag">${p.tag}</span>
                 <span class="card-result">${p.result}</span>
-                <div class="card-overlay">
-                    <span class="view-label">View Case Study</span>
-                </div>
+                <div class="card-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="project-title">${p.title}</h3>
@@ -482,16 +480,6 @@ function openCaseStudy(slug) {
 document.addEventListener('DOMContentLoaded', () => {
     renderPortfolio();
 
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            filterTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            activeFilter = tab.dataset.filter;
-            renderPortfolio();
-        });
-    });
-
     const grid = document.getElementById('portfolioGrid');
     grid.addEventListener('click', (e) => {
         const card = e.target.closest('.project-card');
@@ -512,30 +500,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.remove('open');
                 document.body.style.overflow = '';
             }
-        });
-    }
-
-    // Smart Hide Filter Bar on Scroll
-    let lastScroll = 0;
-    const filterBar = document.querySelector('.filter-bar');
-    
-    if (filterBar) {
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 100) {
-                filterBar.classList.remove('scroll-hidden');
-                return;
-            }
-            
-            if (currentScroll > lastScroll && !filterBar.classList.contains('scroll-hidden')) {
-                // Scroll down
-                filterBar.classList.add('scroll-hidden');
-            } else if (currentScroll < lastScroll && filterBar.classList.contains('scroll-hidden')) {
-                // Scroll up
-                filterBar.classList.remove('scroll-hidden');
-            }
-            lastScroll = currentScroll;
         });
     }
 });
