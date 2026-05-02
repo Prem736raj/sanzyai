@@ -1,0 +1,300 @@
+:root {
+    --energy-primary: #6C35DE;
+    --energy-secondary: #00D4FF;
+    --energy-accent: #FF8C00;
+    --bg-deep: #020205;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-deep);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+/* ===== IMMERSIVE BACKGROUND ===== */
+.energy-field {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+#energy-canvas {
+    width: 100%;
+    height: 100%;
+    filter: blur(1px);
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(2, 2, 5, 0.8) 100%);
+    pointer-events: none;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at 50% 50%, white, transparent);
+    pointer-events: none;
+}
+
+/* ===== VIEWPORT LAYOUT ===== */
+.motivation-viewport {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* ===== ENERGY HUB ===== */
+.energy-hub-wrap {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.energy-core-system {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.energy-core-system:hover {
+    transform: scale(1.1) rotateY(15deg) rotateX(10deg);
+}
+
+.core-sphere {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--energy-primary), var(--energy-secondary));
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px var(--energy-primary),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.sphere-inner {
+    font-size: 4rem;
+    color: var(--energy-accent);
+    filter: drop-shadow(0 0 15px var(--energy-accent));
+    animation: glyphFloat 3s infinite ease-in-out;
+}
+
+@keyframes glyphFloat {
+    0%, 100% { transform: translateY(0) scale(1); filter: brightness(1); }
+    50% { transform: translateY(-10px) scale(1.1); filter: brightness(1.3); }
+}
+
+.sphere-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, var(--energy-secondary), transparent 70%);
+    opacity: 0.3;
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+    from { opacity: 0.2; transform: scale(1); }
+    to { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* RINGS - Multi-layered Chromatic Orbitals */
+.core-rings {
+    position: absolute;
+    inset: -150px;
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
+
+.ring {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    animation: ringSpin 10s infinite linear;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.ring.r1 { transform: rotateX(75deg); animation-duration: 6s; border-color: #00D4FF; }
+.ring.r2 { transform: rotateX(75deg) rotateY(45deg); animation-duration: 9s; border-color: #6C35DE; box-shadow: 0 0 20px rgba(108, 53, 222, 0.2); }
+.ring.r3 { transform: rotateX(75deg) rotateY(-45deg); animation-duration: 12s; border-color: #FF8C00; }
+.ring.r4 { transform: rotateX(45deg) rotateY(90deg); animation-duration: 15s; border-color: rgba(255, 255, 255, 0.2); border-style: dashed; }
+
+@keyframes ringSpin {
+    from { transform: rotateX(75deg) rotateZ(0deg); }
+    to { transform: rotateX(75deg) rotateZ(360deg); }
+}
+
+/* ===== TYPOGRAPHY ===== */
+.typography-layer {
+    margin-top: 80px;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 40px;
+}
+
+.quote-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quote-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    background: linear-gradient(135deg, #fff, #b294ff, #00d4ff, #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 15px 50px rgba(108, 53, 222, 0.4);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.quote-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote-author {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--energy-secondary);
+    opacity: 0;
+    transition: all 1s ease 0.5s;
+}
+
+.quote-author.active {
+    opacity: 0.6;
+}
+
+/* ===== CONTROLS ===== */
+.back-btn {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+    border-color: var(--energy-secondary);
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    transition: transform 0.4s;
+}
+
+.back-btn:hover .back-icon {
+    transform: translateX(-5px);
+}
+
+/* ===== HINTS ===== */
+.interaction-hint {
+    position: fixed;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.interaction-hint p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hint-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: mouseScroll 1.5s infinite;
+}
+
+@keyframes mouseScroll {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+    .typography-layer {
+        margin-top: 40px;
+    }
+    
+    .quote-text {
+        font-size: 2rem;
+    }
+    
+    .back-btn {
+        top: 20px;
+        left: 20px;
+        padding: 10px 18px;
+    }
+}
+
+/* Immersion Mode Hacks */
+#siteControls, 
+#chat-widget-container,
+.cookie-banner {
+    display: none !important;
+}

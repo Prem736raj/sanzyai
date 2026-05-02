@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Motivation | SanzyAI</title>
+    <meta name="description" content="Fuel your creativity with SanzyAI's motivational hub. Experience the energy of AI innovation.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/globals.css">
+    <link rel="stylesheet" href="./src/motivation.css">
+</head>
+<body>
+
+    <!-- Immersive Background Layers -->
+    <div class="energy-field">
+        <canvas id="energy-canvas"></canvas>
+        <div class="gradient-overlay"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- UI Controls -->
+    <main class="motivation-viewport">
+        <!-- Central Interactive Energy Hub -->
+        <div class="energy-hub-wrap">
+            <div class="energy-core-system" id="energyCore" onclick="triggerInteraction()">
+                <div class="core-rings">
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                    <div class="ring r3"></div>
+                </div>
+                <div class="core-sphere">
+                    <div class="sphere-inner">
+                        <span class="energy-glyph">⚡</span>
+                    </div>
+                    <div class="sphere-glow"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography Layer -->
+        <div class="typography-layer">
+            <div class="quote-stage">
+                <div id="quote-text" class="quote-text">"AI isn't the finish line, it's the jet fuel for your imagination."</div>
+                <div id="quote-author" class="quote-author">— SanzyAI</div>
+            </div>
+        </div>
+
+        <!-- Footer/Hint (Optional) -->
+    </main>
+
+    <!-- Ambient Audio (Hidden by default, triggered by user) -->
+    <audio id="ambient-audio" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibe-130.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script type="module" src="./src/globals.js"></script>
+    <script type="module" src="./src/motivation.js"></script>
+    <script type="module" src="./src/chat.js"></script>
+</body>
+</html>

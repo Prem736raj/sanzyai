@@ -1069,7 +1069,7 @@ body:not(.light-mode) .footer-copy {
     transition: none !important; /* Force static */
 }
 
-.navbar *, .navbar *::before, .navbar *::after {
+.navbar *:not(.logo-icon):not(.logo-text), .navbar *::before, .navbar *::after {
     box-sizing: border-box !important;
     transition: none !important; /* Force static */
 }
@@ -1113,8 +1113,30 @@ body:not(.light-mode) .footer-copy {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #FF8C00; /* Premium Orange Bolt */
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
     box-shadow: 0 0 20px rgba(108, 53, 222, 0.4);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    cursor: pointer;
+    text-decoration: none; /* Added */
+}
+
+.logo-icon:hover {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.motivation-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin: 0 5px;
+}
+
+.motivation-icon-link:hover {
+    transform: scale(1.2) rotate(-5deg);
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
 }
 
 .logo-text {
@@ -1126,6 +1148,14 @@ body:not(.light-mode) .footer-copy {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1 !important;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none; /* Added */
+}
+
+.logo-text:hover {
+    transform: scale(1.08) translateX(2px);
 }
 
 /* Nav Menu */
