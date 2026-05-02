@@ -98,6 +98,7 @@ const portfolioProjects = [
             "SEO title suggestions",
         ],
         tools: ["GPT-4", "VidIQ", "TubeBuddy"],
+        targetPage: "/video-scripts-portfolio.html",
         testimonial: {
             text: "One script hit 800K views. Never thought AI could write this well.",
             author: "Alex R.",
@@ -170,6 +171,7 @@ const portfolioProjects = [
             "Commercial license",
         ],
         tools: ["Midjourney V6", "Adobe Illustrator", "Figma"],
+        targetPage: "/wellness-app-showcase.html",
         testimonial: {
             text: "Got featured by Apple App Store within 2 weeks of launch. The logo was a big part.",
             author: "Sophia L.",
@@ -330,7 +332,7 @@ function renderPortfolio() {
         : portfolioProjects.filter(p => p.category === activeFilter);
 
     grid.innerHTML = filtered.map(p => `
-        <div class="project-card" data-slug="${p.slug}">
+        <${p.targetPage ? `a href="${p.targetPage}"` : 'div'} class="project-card" data-slug="${p.slug}">
             <div class="card-visual">
                 <img src="${p.image}" alt="${p.title}" class="card-img">
                 <span class="card-tag">${p.tag}</span>
@@ -362,7 +364,7 @@ function renderPortfolio() {
                     </div>
                 </div>
             </div>
-        </div>
+        </${p.targetPage ? 'a' : 'div'}>
     `).join('');
 
     updateCounts();
@@ -482,16 +484,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.getElementById('portfolioGrid');
     grid.addEventListener('click', (e) => {
-        console.log('Portfolio grid click detected', e.target);
         const card = e.target.closest('.project-card');
-        if (card) {
+        if (card && !card.href) {
             const slug = card.dataset.slug;
-            console.log('Project card clicked:', slug);
-            if (slug === 'wellness-app-logo') {
-                console.log('Redirecting to wellness showcase...');
-                window.location.href = '/wellness-app-showcase.html';
-                return;
-            }
             openCaseStudy(slug);
         }
     });

@@ -43,6 +43,7 @@ export default defineConfig({
         playground: resolve(__dirname, 'playground.html'),
         portfolio: resolve(__dirname, 'portfolio.html'),
         wellnessAppShowcase: resolve(__dirname, 'wellness-app-showcase.html'),
+        videoScriptsPortfolio: resolve(__dirname, 'video-scripts-portfolio.html'),
         blogBusiness: resolve(__dirname, 'blog/best-chatgpt-prompts-business.html'),
         blogMidjourney: resolve(__dirname, 'blog/midjourney-product-photography.html'),
         blogPromptGuide: resolve(__dirname, 'blog/how-to-write-ai-prompts.html'),
