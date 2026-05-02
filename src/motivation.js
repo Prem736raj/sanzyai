@@ -176,7 +176,7 @@ core.addEventListener('pointerdown', (e) => { // Use pointerdown for multi-devic
 });
 
 // Direct function to handle interaction
-function triggerInteraction() {
+window.triggerInteraction = function() {
     // Start audio on first interaction
     if (audio.paused) {
         audio.volume = 0.3;
