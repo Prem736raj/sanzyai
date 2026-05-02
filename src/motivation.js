@@ -1,216 +1,186 @@
-/**
- * SanzyAI Immersive Motivation Hub
- * High-performance animation and interaction logic
- */
-
-const quotes = [
-    { text: "AI isn't the finish line, it's the jet fuel for your imagination.", author: "SanzyAI" },
-    { text: "We don't just build tools; we build the future you've always imagined.", author: "The Developer" },
-    { text: "The best way to predict the future is to build it with AI.", author: "Modern Creator" },
-    { text: "Your creativity is infinite. AI is just the multiplier.", author: "Future Thinker" },
+// Configuration
+const QUOTES = [
     { text: "Great things never came from comfort zones. Start building today.", author: "The Developer" },
-    { text: "Don't just watch the AI revolution. Lead it.", author: "SanzyAI" },
-    { text: "The only limit to AI is the boundary of our own curiosity.", author: "Visionary" }
+    { text: "AI isn't the finish line, it's the jet fuel for your imagination.", author: "SanzyAI" },
+    { text: "Your creativity is infinite. AI is just the multiplier.", author: "Future Thinker" },
+    { text: "We don't just build tools; we build the future you've always imagined.", author: "The Developer" },
+    { text: "Don't just watch the AI revolution. Lead it.", author: "SanzyAI" }
 ];
 
-let currentQuoteIndex = 0;
-const quoteEl = document.getElementById('quote-text');
-const authorEl = document.getElementById('quote-author');
+const COLORS = ["#6C63FF", "#3B82F6", "#F97316", "#EC4899", "#10B981"];
+const SPARKS = [
+    { emoji: "⚡", x: -80, y: -70 },
+    { emoji: "✨", x: 80, y: -60 },
+    { emoji: "🚀", x: -90, y: 20 },
+    { emoji: "💡", x: 90, y: 30 },
+    { emoji: "🔥", x: 0, y: -100 },
+    { emoji: "⭐", x: -60, y: 80 },
+    { emoji: "💫", x: 70, y: 80 },
+    { emoji: "🎯", x: 0, y: 100 }
+];
 
-function updateQuote() {
-    quoteEl.classList.remove('active');
-    authorEl.classList.remove('active');
+const RINGS = [
+    { size: 70, duration: 0.6, color: "#6C63FF", delay: 0 },
+    { size: 100, duration: 0.8, color: "#3B82F6", delay: 0.1 },
+    { size: 130, duration: 1.0, color: "#F97316", delay: 0.2 }
+];
 
+// Elements
+const logoContainer = document.getElementById('logoAnimation');
+const mainLogo = document.getElementById('mainLogo');
+const logoImg = mainLogo.querySelector('.logo-official-img');
+const innerGlow = document.getElementById('innerGlow');
+const brandName = document.getElementById('brandName');
+const logoTooltip = document.getElementById('logoTooltip');
+
+const ringLayer = document.getElementById('ring-layer');
+const dotLayer = document.getElementById('dot-layer');
+const sparkLayer = document.getElementById('spark-layer');
+const shockwaveLayer = document.getElementById('shockwave-layer');
+
+const quoteText = document.getElementById('quoteText');
+const quoteAuthor = document.getElementById('quoteAuthor');
+
+let isAnimating = false;
+let currentQuoteIdx = 0;
+
+// Functions
+const triggerBurst = () => {
+    // 1. Triple Rings
+    ringLayer.innerHTML = '';
+    RINGS.forEach(r => {
+        const ring = document.createElement('div');
+        ring.className = 'magnetic-ring';
+        ring.style.width = `${r.size}px`;
+        ring.style.height = `${r.size}px`;
+        ring.style.borderColor = r.color;
+        ring.style.animation = `ringBurst ${r.duration}s ease-out forwards ${r.delay}s`;
+        ringLayer.appendChild(ring);
+    });
+
+    // 2. Dot Particles (16)
+    dotLayer.innerHTML = '';
+    for (let i = 0; i < 16; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'magnetic-dot';
+        const angle = (i * 360) / 16;
+        const radian = (angle * Math.PI) / 180;
+        const distance = 100 + Math.random() * 20;
+        const x = Math.cos(radian) * distance;
+        const y = Math.sin(radian) * distance;
+        const size = Math.random() * 6 + 3;
+        const color = COLORS[i % COLORS.length];
+
+        dot.style.width = `${size}px`;
+        dot.style.height = `${size}px`;
+        dot.style.backgroundColor = color;
+        dot.style.boxShadow = `0 0 10px ${color}, 0 0 20px ${color}`;
+        dot.style.setProperty('--x', `${x}px`);
+        dot.style.setProperty('--y', `${y}px`);
+        dot.style.animation = `dotBurst 0.9s ease-out forwards ${i * 0.02}s`;
+        dotLayer.appendChild(dot);
+    }
+
+    // 3. Emoji Sparks
+    sparkLayer.innerHTML = '';
+    SPARKS.forEach((s, i) => {
+        const spark = document.createElement('div');
+        spark.className = 'emoji-spark';
+        spark.textContent = s.emoji;
+        spark.style.setProperty('--x', `${s.x}px`);
+        spark.style.setProperty('--y', `${s.y}px`);
+        spark.style.animation = `sparkFly 1s ease-out forwards ${i * 0.05}s`;
+        sparkLayer.appendChild(spark);
+    });
+
+    // 4. Shockwave
+    shockwaveLayer.innerHTML = '';
+    const shock = document.createElement('div');
+    shock.className = 'shockwave';
+    shock.style.animation = 'shockwaveFlash 0.5s ease-out forwards';
+    shockwaveLayer.appendChild(shock);
+};
+
+const cycleQuote = () => {
+    quoteText.classList.remove('active');
+    quoteAuthor.classList.remove('active');
+    
     setTimeout(() => {
-        const quote = quotes[currentQuoteIndex];
-        quoteEl.textContent = `"${quote.text}"`;
-        authorEl.textContent = `— ${quote.author}`;
+        currentQuoteIdx = (currentQuoteIdx + 1) % QUOTES.length;
+        quoteText.textContent = QUOTES[currentQuoteIdx].text;
+        quoteAuthor.textContent = `— ${QUOTES[currentQuoteIdx].author}`;
         
-        quoteEl.classList.add('active');
-        authorEl.classList.add('active');
-        
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-    }, 400); // Reduced delay for faster initial appearance
-}
+        quoteText.classList.add('active');
+        quoteAuthor.classList.add('active');
+    }, 1000);
+};
 
-// Cycle quotes
-updateQuote();
-let quoteInterval = setInterval(updateQuote, 7000);
+const handleLogoClick = () => {
+    if (isAnimating) return;
+    isAnimating = true;
 
-/* ===== HIGH-END CANVAS PARTICLE ENGINE ===== */
+    // Show Tooltip
+    logoTooltip.classList.add('active');
+
+    // Visual Burst
+    triggerBurst();
+
+    // Button & Text Animations
+    mainLogo.classList.add('animating-btn');
+    logoImg.classList.add('animating-img');
+    innerGlow.classList.add('animating-glow');
+    brandName.classList.add('animating-brand');
+
+    // Cycle Quote
+    cycleQuote();
+
+    // Reset
+    setTimeout(() => {
+        isAnimating = false;
+        logoTooltip.classList.remove('active');
+        mainLogo.classList.remove('animating-btn');
+        logoImg.classList.remove('animating-img');
+        innerGlow.classList.remove('animating-glow');
+        brandName.classList.remove('animating-brand');
+    }, 1500);
+};
+
+// Event Listeners
+logoContainer.addEventListener('click', handleLogoClick);
+
+// Background Canvas
 const canvas = document.getElementById('energy-canvas');
 const ctx = canvas.getContext('2d');
+let particles_bg = [];
 
-let particles = [];
-let mouse = { x: -1000, y: -1000, active: false };
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
-});
-
-window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-    mouse.active = true;
-});
-
-window.addEventListener('mouseleave', () => {
-    mouse.active = false;
-});
-
-class Particle {
-    constructor(isExplosion = false, x, y) {
-        this.isExplosion = isExplosion;
-        this.init(x, y);
+class BackgroundParticle {
+    constructor() { this.reset(); }
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.size = Math.random() * 1.5;
+        this.opacity = Math.random() * 0.3;
     }
-
-    init(x, y) {
-        this.x = x || Math.random() * canvas.width;
-        this.y = y || Math.random() * canvas.height;
-        this.size = this.isExplosion ? Math.random() * 4 + 2 : Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * (this.isExplosion ? 10 : 1.5);
-        this.speedY = (Math.random() - 0.5) * (this.isExplosion ? 10 : 1.5);
-        this.color = Math.random() > 0.5 ? '#6C35DE' : '#00D4FF';
-        if (this.isExplosion) this.color = '#FF8C00';
-        this.opacity = Math.random() * 0.5 + 0.2;
-        this.life = this.isExplosion ? 1.0 : -1; // -1 means infinite
-    }
-
     update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.life !== -1) {
-            this.life -= 0.02;
-            this.size *= 0.98;
-        }
-
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-
-        // Mouse interaction
-        if (mouse.active) {
-            const dx = mouse.x - this.x;
-            const dy = mouse.y - this.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 150) {
-                const force = (150 - distance) / 150;
-                this.x -= dx * force * 0.02;
-                this.y -= dy * force * 0.02;
-            }
-        }
+        this.x += this.vx; this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
     }
-
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = Math.max(0, this.opacity * (this.life === -1 ? 1 : this.life));
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Add a small glow to explosion particles
-        if (this.isExplosion) {
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = this.color;
-        } else {
-            ctx.shadowBlur = 0;
-        }
+        ctx.fillStyle = `rgba(108, 99, 255, ${this.opacity})`;
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
     }
 }
 
-function initParticles() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    particles = [];
-    // Ambient particles
-    for (let i = 0; i < 150; i++) {
-        particles.push(new Particle());
-    }
-}
-
-function animate() {
+const resize = () => {
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    particles_bg = Array.from({ length: 80 }, () => new BackgroundParticle());
+};
+const animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Connect particles with lines if they are close
-    ctx.strokeStyle = 'rgba(0, 212, 255, 0.05)';
-    ctx.lineWidth = 0.5;
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 100 && !particles[i].isExplosion && !particles[j].isExplosion) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.stroke();
-            }
-        }
-    }
-
-    for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.update();
-        p.draw();
-        
-        if (p.life !== -1 && (p.life <= 0 || p.size <= 0.1)) {
-            particles.splice(i, 1);
-        }
-    }
-    
+    particles_bg.forEach(p => { p.update(); p.draw(); });
     requestAnimationFrame(animate);
-}
-
-initParticles();
-animate();
-
-/* ===== CORE INTERACTION ===== */
-const core = document.getElementById('energyCore');
-const audio = document.getElementById('ambient-audio');
-
-core.addEventListener('pointerdown', (e) => { // Use pointerdown for multi-device support
-    e.preventDefault();
-    triggerInteraction();
-});
-
-// Direct function to handle interaction
-window.triggerInteraction = function() {
-    // Start audio on first interaction
-    if (audio.paused) {
-        audio.volume = 0.3;
-        audio.play().catch(() => {});
-    }
-
-    // Trigger Quote update manually
-    clearInterval(quoteInterval);
-    updateQuote();
-    quoteInterval = setInterval(updateQuote, 7000);
-
-    // Create massive explosion
-    const rect = core.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    for (let i = 0; i < 60; i++) {
-        particles.push(new Particle(true, centerX, centerY));
-    }
-
-    // Screen Shake effect
-    document.body.style.animation = 'none';
-    void document.body.offsetWidth; // trigger reflow
-    document.body.style.animation = 'screenShake 0.5s cubic-bezier(.36,.07,.19,.97) both';
-}
-
-// Add screen shake keyframes dynamically
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes screenShake {
-  10%, 90% { transform: translate3d(-1px, 0, 0); }
-  20%, 80% { transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-  40%, 60% { transform: translate3d(4px, 0, 0); }
-}
-`;
-document.head.appendChild(style);
+};
+window.addEventListener('resize', resize);
+resize(); animate();

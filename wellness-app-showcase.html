@@ -1,1768 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>((t)=>{if(t==='light')document.documentElement.classList.add('light-mode')})(localStorage.getItem('sanzy_theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness App Logo Pack – 100+ Unique Concepts | SanzyAI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Wellness App Logo Pack - 100+ Unique Concepts | SanzyAI</title>
+    <meta name="description" content="Explore 100+ premium AI-generated wellness app logos. Download SVGs, copy prompts, and build your brand in minutes.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/globals.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --accent: #2563eb;
-            --surface-1: #ffffff;
-            --surface-2: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border: #e2e8f0;
-            --bg-primary: #f1f5f9;
-        }
-
-        [data-theme="dark"] {
-            --surface-1: #1e293b;
-            --surface-2: #0f172a;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --border: #334155;
-            --bg-primary: #0f172a;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            overflow-x: hidden;
-        }
-
-        /* ===== NAVBAR ===== */
-        /* ===== ONLINEPDFPRO STYLE HEADER ===== */
-        .header {
-            background: #1e293b;
-            padding: 0 20px;
-            height: 64px;
-            display: flex;
-            align-items: center;
+        .showcase-filters {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 30px;
             position: sticky;
-            top: 0;
-            z-index: 1000;
-            color: white;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: 800;
-            font-size: 20px;
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #6C35DE, #00D4FF);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: #FF8C00; /* Premium Orange Bolt */
-            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
-            box-shadow: 0 0 20px rgba(108, 53, 222, 0.4);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .logo-icon:hover {
-            transform: scale(1.2) rotate(8deg);
-        }
-
-        .motivation-icon-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            margin: 0 5px;
-            text-decoration: none;
-        }
-
-        .motivation-icon-link:hover {
-            transform: scale(1.2) rotate(-5deg);
-            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
-        }
-
-        .logo-text {
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            display: inline-block;
-        }
-
-        .logo-text:hover {
-            transform: scale(1.08) translateX(2px);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover { color: white; }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 20px;
-            color: var(--dark);
-            text-decoration: none;
-        }
-
-        .nav-logo-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, #7c3aed, #06b6d4);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--gray);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover { color: var(--primary); }
-
-        .nav-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .btn-nav {
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-1px);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 100px 40px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            color: #a5f3fc;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 28px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 5vw, 64px);
-            font-weight: 900;
-            color: white;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #a78bfa, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            position: relative;
-            z-index: 1;
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            text-align: center;
-        }
-
-        .hero-stat-num {
-            font-size: 32px;
-            font-weight: 800;
-            color: white;
-        }
-
-        .hero-stat-label {
-            font-size: 13px;
-            color: #64748b;
-            margin-top: 4px;
-        }
-
-        /* ===== FILTERS ===== */
-        .filters-section {
-            background: white;
-            padding: 24px 40px;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 70px;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .filters-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .filter-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--gray);
-            white-space: nowrap;
+            top: 80px;
+            z-index: 90;
+            box-shadow: var(--shadow-sm);
         }
 
         .filter-tabs {
             display: flex;
             gap: 8px;
-            flex-wrap: wrap;
-            flex: 1;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scrollbar-width: none;
         }
+        .filter-tabs::-webkit-scrollbar { display: none; }
 
         .filter-tab {
-            padding: 7px 16px;
-            border-radius: 50px;
-            border: 1.5px solid var(--border);
-            background: white;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-muted);
             font-size: 13px;
             font-weight: 500;
+            white-space: nowrap;
             cursor: pointer;
-            transition: all 0.2s;
-            color: var(--gray);
+            transition: var(--transition);
         }
 
-        .filter-tab:hover, .filter-tab.active {
+        html.light-mode .filter-tab {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .filter-tab:hover {
             background: var(--primary);
+            color: white;
             border-color: var(--primary);
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
             color: white;
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-purple);
         }
 
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg);
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            padding: 8px 16px;
-            min-width: 220px;
-        }
-
-        .search-box input {
-            border: none;
-            background: none;
-            font-size: 14px;
-            color: var(--dark);
-            outline: none;
-            width: 100%;
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        .main-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 40px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 32px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .logo-count {
-            background: linear-gradient(135deg, var(--primary), var(--cyan));
-            color: white;
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* ===== LOGO GRID ===== */
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .logo-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+        .search-wrap {
+            margin-top: 4px;
             position: relative;
         }
 
-        .logo-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        .search-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 16px 12px 40px;
+            color: var(--text);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        html.light-mode .search-input {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-input:focus {
+            background: var(--card-bg-hover);
             border-color: var(--primary);
+            outline: none;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-purple);
+            background: var(--card-bg-hover);
         }
 
         .logo-card-img {
             width: 100%;
-            height: 200px;
+            max-width: 160px;
+            aspect-ratio: 1;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            margin-bottom: 16px;
         }
 
         .logo-card-img svg {
-            width: 140px;
-            height: 140px;
-            transition: transform 0.3s;
+            width: 85%;
+            height: 85%;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+            transition: var(--transition);
         }
 
-        .logo-card:hover .logo-card-img svg {
-            transform: scale(1.08);
-        }
-
-        .logo-card-overlay {
+        .badge-new {
             position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s;
-            opacity: 0;
-        }
-
-        .logo-card:hover .logo-card-overlay {
-            background: rgba(0,0,0,0.4);
-            opacity: 1;
-        }
-
-        .overlay-btn {
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .overlay-btn.download {
-            background: var(--primary);
-            color: white;
-        }
-
-        .overlay-btn.prompt {
-            background: white;
-            color: var(--dark);
-        }
-
-        .overlay-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-card-body {
-            padding: 18px;
-            border-top: 1px solid var(--border);
-        }
-
-        .logo-card-name {
-            font-size: 15px;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: #06060B;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 10px;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 4px;
+            z-index: 2;
         }
 
-        .logo-card-style {
-            font-size: 12px;
-            color: var(--gray);
-            margin-bottom: 14px;
-        }
-
-        .logo-card-tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-bottom: 14px;
-        }
-
-        .tag {
-            padding: 3px 10px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 500;
-        }
-
-        .logo-card-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-download {
-            flex: 1;
-            padding: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        .badge-pro {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            z-index: 2;
         }
 
-        .btn-download:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(124,58,237,0.4);
-        }
-
-        .btn-copy-prompt {
-            padding: 10px 14px;
-            background: var(--bg);
-            color: var(--dark);
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .btn-copy-prompt:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-copy-prompt.copied {
-            background: #d1fae5;
-            border-color: var(--green);
-            color: var(--green);
-        }
-
-        /* ===== PROMPT MODAL ===== */
+        /* Modal */
         .modal-overlay {
             position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(8px);
-            z-index: 9999;
+            z-index: 2000;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
+        .modal-overlay.active { display: flex; }
 
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: white;
+        .modal-content {
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
             border-radius: 24px;
+            max-width: 600px;
             width: 100%;
-            max-width: 680px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+            position: relative;
+            padding: 32px;
         }
 
-        .modal-header {
-            padding: 28px 32px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .modal-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .modal-close {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--bg);
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .modal-close:hover { background: #fecaca; }
-
-        .modal-body {
-            padding: 28px 32px;
-        }
-
-        .modal-logo-preview {
+        .modal-preview {
             width: 100%;
-            height: 220px;
+            aspect-ratio: 16/9;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
         }
-
-        .modal-logo-preview svg {
-            width: 160px;
-            height: 160px;
-        }
-
-        .prompt-box-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--gray);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        
+        .modal-preview svg {
+            width: 180px;
+            height: 180px;
         }
 
         .prompt-box {
-            background: #0f172a;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 20px;
-            position: relative;
-            margin-bottom: 20px;
+            padding: 16px;
+            margin-top: 12px;
         }
 
-        .prompt-text {
-            color: #a5f3fc;
-            font-size: 13px;
-            line-height: 1.7;
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-
-        .prompt-copy-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 6px 14px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .prompt-copy-btn:hover { background: var(--primary-light); }
-        .prompt-copy-btn.copied { background: var(--green); }
-
-        .modal-footer {
-            padding: 20px 32px 28px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .modal-download-btn {
-            flex: 1;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--primary), var(--cyan));
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .modal-download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(124,58,237,0.4);
-        }
-
-        /* ===== TOAST ===== */
         .toast {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #0f172a;
-            color: white;
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 99999;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .toast.success { border-left: 4px solid var(--green); }
-        .toast.info { border-left: 4px solid var(--cyan); }
-
-        /* ===== FEATURED BANNER ===== */
-        .featured-banner {
-            background: linear-gradient(135deg, #1e1b4b, #0f172a);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-banner::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);
-            right: -50px;
-            top: -50px;
-        }
-
-        .featured-banner-text h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .featured-banner-text p {
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .featured-banner-actions {
-            display: flex;
-            gap: 12px;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-white {
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--surface);
+            border: 1px solid var(--accent);
             padding: 12px 24px;
-            background: white;
-            color: var(--dark);
-            border: none;
             border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,255,255,0.2); }
-
-        .btn-outline-white {
-            padding: 12px 24px;
-            background: transparent;
             color: white;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-outline-white:hover { border-color: white; }
-
-        /* ===== NEW BADGE ===== */
-        .new-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: linear-gradient(135deg, var(--green), #059669);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .premium-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 10px;
-            font-weight: 700;
-        }
-
-        /* ===== LOAD MORE ===== */
-        .load-more-section {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .btn-load-more {
-            padding: 16px 48px;
-            background: linear-gradient(135deg, var(--primary), var(--cyan));
-            color: white;
-            border: none;
-            border-radius: 14px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-load-more:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(124,58,237,0.4);
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), #1d4ed8);
-            border-radius: 24px;
-            padding: 60px 40px;
-            text-align: center;
-            margin: 40px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            top: -100px;
-            right: -100px;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.8);
-            font-size: 17px;
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-btns {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            nav { padding: 0 20px; }
-            .nav-links { display: none; }
-            .hero { padding: 60px 20px 40px; }
-            .hero-stats { gap: 30px; }
-            .filters-section { padding: 16px 20px; }
-            .main-content { padding: 24px 20px; }
-            .logo-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-            .featured-banner { flex-direction: column; padding: 28px; }
-            .featured-banner-actions { flex-direction: column; width: 100%; }
-            .modal-body { padding: 20px; }
-            .modal-footer { padding: 16px 20px 24px; flex-direction: column; }
-        }
-
-        /* Scroll animation */
-        .logo-card {
-            animation: fadeInUp 0.5s ease forwards;
+            z-index: 3000;
+            transition: var(--transition);
             opacity: 0;
         }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Stagger animation */
-        .logo-card:nth-child(1) { animation-delay: 0.05s; }
-        .logo-card:nth-child(2) { animation-delay: 0.1s; }
-        .logo-card:nth-child(3) { animation-delay: 0.15s; }
-        .logo-card:nth-child(4) { animation-delay: 0.2s; }
-        .logo-card:nth-child(5) { animation-delay: 0.25s; }
-        .logo-card:nth-child(6) { animation-delay: 0.3s; }
-        .logo-card:nth-child(7) { animation-delay: 0.35s; }
-        .logo-card:nth-child(8) { animation-delay: 0.4s; }
-        .logo-card:nth-child(9) { animation-delay: 0.45s; }
-        .logo-card:nth-child(10) { animation-delay: 0.5s; }
-        .logo-card:nth-child(n+11) { animation-delay: 0.55s; }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     </style>
 </head>
 <body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+                    <a href="motivation.html" class="logo-icon-wrap">
+                        <img src="./public/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+                    </a>
+                    <a href="index.html" class="logo-text" style="font-weight: 700;">SanzyAI</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/domain-finder">Domain Finder</a></li>
+                    <li><a href="/ai-tools">AI Tools</a></li>
+                    <li><a href="/prompt-store">Prompt Store</a></li>
+                    <li><a href="/ai-services">AI Services</a></li>
+                    <li><a href="/learn-free">Learn Free</a></li>
+                    <li><a href="/blog">AI News</a></li>
+                </ul>
+                <div class="nav-right">
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<!-- ===== ONLINEPDFPRO STYLE HEADER ===== -->
-<header class="header" style="background: #1e293b; color: white; height: 64px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0 20px;">
-    <div class="header-content" style="max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between;">
-        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
-            <a href="motivation.html" class="logo-icon" title="Get Inspired">⚡</a>
-            <a href="motivation.html" class="motivation-icon-link" title="Creative Energy">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V9L13 2Z" fill="#3B82F6"/>
-                    <path d="M13 2V9H20L13 2Z" fill="#2563EB"/>
-                    <path d="M17 14.5C18.3807 14.5 19.5 15.6193 19.5 17C19.5 18.3807 18.3807 19.5 17 19.5C15.6193 19.5 14.5 18.3807 14.5 17C14.5 16.5 14.7 16 15 15.6M15 15.6V17M15 15.6H16.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-            <a href="index.html" class="logo-text" style="color: white; text-decoration: none; font-weight: 700;">SanzyAI Tools</a>
-        </div>
-        <nav class="nav-links" style="display: flex; gap: 24px;">
-            <a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s;">Home</a>
-            <a href="portfolio.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s;">Portfolio</a>
-            <a href="ai-tools.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s;">AI Tools</a>
-            <a href="prompt-store.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s;">Prompts</a>
-        </nav>
-        <div class="header-actions">
-            <button style="padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Get Premium</button>
-        </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="/domain-finder">🌐 Domain Finder</a></li>
+            <li><a href="/ai-tools">🤖 AI Tools</a></li>
+            <li><a href="/prompt-store">💰 Prompt Store</a></li>
+            <li><a href="/ai-services">🚀 AI Services</a></li>
+            <li><a href="/learn-free">📚 Learn Free</a></li>
+            <li><a href="/blog">📰 AI News</a></li>
+        </ul>
     </div>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-badge">
-        🌿 Wellness App Logo Pack — Premium Vault
-    </div>
-    <h1>100+ <span>Unique Wellness</span><br>App Logos</h1>
-    <p>Each logo is AI-generated with a unique prompt. Download the SVG, copy the prompt, and build your brand in minutes.</p>
-    <div class="hero-stats">
-        <div class="hero-stat">
-            <div class="hero-stat-num">100+</div>
-            <div class="hero-stat-label">Unique Logos</div>
+    <section class="hero" style="min-height: auto !important; display: block !important; padding: 70px 0 10px !important; text-align: center;">
+        <div class="container">
+            <div class="hero-badge" style="margin: 0 auto 8px; display: inline-flex;">
+                <span class="badge-dot"></span>
+                🌿 Wellness App Logo Pack
+            </div>
+            <h1 class="hero-title" style="margin-bottom: 6px; line-height: 1.1;">100+ Premium <span class="gradient-text">Wellness Logos</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto 10px; max-width: 600px;">
+                Download SVG concepts and copy the AI prompts to build your health brand instantly.
+            </p>
         </div>
-        <div class="hero-stat">
-            <div class="hero-stat-num">SVG</div>
-            <div class="hero-stat-label">Format Ready</div>
-        </div>
-        <div class="hero-stat">
-            <div class="hero-stat-num">Free</div>
-            <div class="hero-stat-label">To Download</div>
-        </div>
-        <div class="hero-stat">
-            <div class="hero-stat-num">∞</div>
-            <div class="hero-stat-label">Prompt Variations</div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- FILTERS -->
-<div class="filters-section">
-    <div class="filters-inner">
-        <span class="filter-label">Filter:</span>
-        <div class="filter-tabs">
-            <button class="filter-tab active" onclick="filterLogos('all', this)">All</button>
-            <button class="filter-tab" onclick="filterLogos('minimal', this)">Minimal</button>
-            <button class="filter-tab" onclick="filterLogos('geometric', this)">Geometric</button>
-            <button class="filter-tab" onclick="filterLogos('nature', this)">Nature</button>
-            <button class="filter-tab" onclick="filterLogos('abstract', this)">Abstract</button>
-            <button class="filter-tab" onclick="filterLogos('meditation', this)">Meditation</button>
-            <button class="filter-tab" onclick="filterLogos('fitness', this)">Fitness</button>
-            <button class="filter-tab" onclick="filterLogos('mental', this)">Mental Health</button>
-            <button class="filter-tab" onclick="filterLogos('nutrition', this)">Nutrition</button>
-        </div>
-        <div class="search-box">
-            <span>🔍</span>
-            <input type="text" placeholder="Search logos..." oninput="searchLogos(this.value)">
-        </div>
-    </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main-content">
-
-    <!-- FEATURED BANNER -->
-    <div class="featured-banner">
-        <div class="featured-banner-text" style="position:relative;z-index:1">
-            <h2>🎯 Want a Custom Logo Made For You?</h2>
-            <p>Our AI + Human experts will craft a unique wellness brand identity in 24 hours. Starting at just $5.</p>
-        </div>
-        <div class="featured-banner-actions">
-            <button class="btn-white" onclick="showToast('Redirecting to AI Services...', 'info')">Get Custom Logo →</button>
-            <button class="btn-outline-white" onclick="showToast('Opening Prompt Store...', 'info')">Browse Prompts</button>
+    <div class="container">
+        <div class="showcase-filters">
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" onclick="filterLogos('all', this)">All</button>
+                <button class="filter-tab" onclick="filterLogos('minimal', this)">Minimal</button>
+                <button class="filter-tab" onclick="filterLogos('geometric', this)">Geometric</button>
+                <button class="filter-tab" onclick="filterLogos('nature', this)">Nature</button>
+                <button class="filter-tab" onclick="filterLogos('abstract', this)">Abstract</button>
+                <button class="filter-tab" onclick="filterLogos('meditation', this)">Meditation</button>
+                <button class="filter-tab" onclick="filterLogos('fitness', this)">Fitness</button>
+                <button class="filter-tab" onclick="filterLogos('mental', this)">Mental Health</button>
+                <button class="filter-tab" onclick="filterLogos('nutrition', this)">Nutrition</button>
+            </div>
+            <div class="search-wrap">
+                <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--text-muted);">🔍</span>
+                <input type="text" class="search-input" placeholder="Search logos..." oninput="searchLogos(this.value)">
+            </div>
         </div>
     </div>
 
-    <!-- SECTION HEADER -->
-    <div class="section-header">
-        <div class="section-title">🌿 Wellness Logo Collection</div>
-        <div class="logo-count" id="logoCount">100 Logos</div>
-    </div>
-
-    <!-- LOGO GRID -->
-    <div class="logo-grid" id="logoGrid">
-        <!-- Logos generated by JavaScript below -->
-    </div>
-
-    <!-- LOAD MORE -->
-    <div class="load-more-section" id="loadMoreSection">
-        <p style="color:var(--gray);margin-bottom:16px;font-size:14px">Showing <span id="shownCount">40</span> of <span id="totalCount">100</span> logos</p>
-        <button class="btn-load-more" onclick="loadMore()">
-            ✨ Load More Logos
-        </button>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-section">
-        <h2>Ready to Build Your Wellness Brand?</h2>
-        <p>Use these prompts with Midjourney, DALL-E, or Stable Diffusion to generate infinite logo variations.</p>
-        <div class="cta-btns">
-            <button class="btn-white" onclick="showToast('Opening Prompt Store!', 'info')">🛒 Shop All AI Prompts</button>
-            <button class="btn-outline-white" onclick="showToast('Booking AI Service!', 'info')">🎨 Get Custom Design</button>
+    <section style="padding-bottom: 80px;">
+        <div class="container">
+            <div id="logoGrid" class="logo-grid"></div>
+            <div id="loadMoreSection" style="text-align: center; margin-top: 60px;">
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 14px;">
+                    Showing <span id="shownCount">0</span> of <span id="totalCount">0</span> logos
+                </p>
+                <button class="btn btn-primary btn-lg" onclick="loadMore()">✨ Load More Logos</button>
+            </div>
         </div>
-    </div>
+    </section>
 
-</div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-    <div class="modal" onclick="event.stopPropagation()">
-        <div class="modal-header">
-            <div class="modal-title" id="modalTitle">Logo Name</div>
-            <button class="modal-close" onclick="closeModal()">✕</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-logo-preview" id="modalPreview"></div>
-            <div class="prompt-box-label">🤖 AI Generation Prompt</div>
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:24px; cursor:pointer;">✕</button>
+            <h2 id="modalTitle" style="font-size: 24px; margin-bottom: 24px;">Logo Name</h2>
+            <div id="modalPreview" class="modal-preview"></div>
+            <label style="color: var(--accent); font-size: 12px; font-weight: 700;">AI PROMPT</label>
             <div class="prompt-box">
-                <pre class="prompt-text" id="modalPrompt"></pre>
-                <button class="prompt-copy-btn" id="modalCopyBtn" onclick="copyModalPrompt()">Copy</button>
+                <p id="modalPrompt" style="color:var(--text-muted); font-size:14px; margin:0; line-height:1.5; font-family: monospace;"></p>
+                <button onclick="copyModalPrompt()" class="btn btn-primary" style="margin-top:16px; width:100%;">Copy Prompt</button>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-                <div style="background:var(--bg);border-radius:10px;padding:14px">
-                    <div style="font-size:11px;color:var(--gray);margin-bottom:4px">STYLE</div>
-                    <div style="font-size:13px;font-weight:600;" id="modalStyle"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px;">
+                    <small style="color:var(--text-muted);">STYLE</small><div id="modalStyle" style="font-weight:600;"></div>
                 </div>
-                <div style="background:var(--bg);border-radius:10px;padding:14px">
-                    <div style="font-size:11px;color:var(--gray);margin-bottom:4px">AI TOOL</div>
-                    <div style="font-size:13px;font-weight:600;" id="modalTool"></div>
+                <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px;">
+                    <small style="color:var(--text-muted);">TOOL</small><div id="modalTool" style="font-weight:600;"></div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <button class="modal-download-btn" onclick="downloadCurrentLogo()">
-                ⬇️ Download SVG Logo
-            </button>
+            <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 32px;" onclick="downloadCurrentLogo()">⬇️ Download SVG</button>
         </div>
     </div>
-</div>
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-    <span id="toastIcon">✅</span>
-    <span id="toastMsg">Copied!</span>
-</div>
+    <div id="toast" class="toast">Action successful</div>
 
-<script>
-// ===== ALL 100 LOGO DATA =====
-const allLogos = [
-    {
-        id: 1, name: "ZenFlow", style: "Minimal", category: "meditation",
-        bg: "linear-gradient(135deg, #667eea, #764ba2)",
-        tags: ["minimal", "purple", "calm"],
-        tool: "Midjourney v6",
-        prompt: `A minimalist wellness app logo for "ZenFlow". Features a flowing zen circle made of thin elegant lines, gradient from lavender to deep purple. Clean sans-serif typography below. White background with soft shadow. Vector style, professional, suitable for app icon. --ar 1:1 --style raw --v 6`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g1)"/>
-            <circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
-            <path d="M70 30 C70 30 95 50 95 70 C95 90 70 110 70 110 C70 110 45 90 45 70 C45 50 70 30 70 30Z" stroke="white" stroke-width="2.5" fill="none"/>
-            <circle cx="70" cy="70" r="8" fill="white"/>
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 2, name: "LotusLife", style: "Nature", category: "nature",
-        bg: "linear-gradient(135deg, #f093fb, #f5576c)",
-        tags: ["lotus", "pink", "floral"],
-        tool: "DALL-E 3",
-        prompt: `Professional app logo "LotusLife" wellness brand. A blooming lotus flower with layered petals, gradient from soft pink to rose red. Geometric precision, symmetrical design. Clean modern typeface. Suitable for health & meditation app. Vector illustration, transparent background. --quality 2`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g2)"/>
-            <ellipse cx="70" cy="72" rx="10" ry="22" fill="rgba(255,255,255,0.9)"/>
-            <ellipse cx="55" cy="76" rx="9" ry="20" transform="rotate(-25 55 76)" fill="rgba(255,255,255,0.8)"/>
-            <ellipse cx="85" cy="76" rx="9" ry="20" transform="rotate(25 85 76)" fill="rgba(255,255,255,0.8)"/>
-            <ellipse cx="43" cy="84" rx="8" ry="17" transform="rotate(-45 43 84)" fill="rgba(255,255,255,0.65)"/>
-            <ellipse cx="97" cy="84" rx="8" ry="17" transform="rotate(45 97 84)" fill="rgba(255,255,255,0.65)"/>
-            <ellipse cx="70" cy="95" rx="25" ry="6" fill="rgba(255,255,255,0.3)"/>
-            <defs><linearGradient id="g2" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f093fb"/><stop offset="100%" stop-color="#f5576c"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 3, name: "MindPure", style: "Abstract", category: "mental",
-        bg: "linear-gradient(135deg, #4facfe, #00f2fe)",
-        tags: ["mind", "blue", "abstract"],
-        tool: "Midjourney v6",
-        prompt: `Minimalist mental wellness logo "MindPure". Abstract brain shape formed by infinite loop/ribbon, cyan to blue gradient. Ultra-clean, modern, app icon quality. White icon on dark background. Swiss design influence, geometric. Vector SVG format. --ar 1:1 --v 6 --style raw`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g3)"/>
-            <path d="M50 60 C50 48 62 40 70 40 C78 40 85 46 85 54 C85 68 65 70 65 82 C65 90 72 96 80 96 C88 96 95 90 95 82" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
-            <path d="M50 60 C50 72 65 74 65 82" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <circle cx="50" cy="60" r="5" fill="white"/>
-            <circle cx="95" cy="82" r="5" fill="white"/>
-            <defs><linearGradient id="g3" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#4facfe"/><stop offset="100%" stop-color="#00f2fe"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 4, name: "VitaCore", style: "Geometric", category: "fitness",
-        bg: "linear-gradient(135deg, #43e97b, #38f9d7)",
-        tags: ["green", "geometric", "energy"],
-        tool: "Stable Diffusion XL",
-        prompt: `Bold geometric fitness wellness logo "VitaCore". Hexagonal core with dynamic energy lines radiating outward, vivid green to teal gradient. Strong and powerful aesthetic, gym & health brand. Clean vector shapes, no gradients in shapes only background. App icon ready. Professional logo design.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g4)"/>
-            <polygon points="70,35 97,52.5 97,87.5 70,105 43,87.5 43,52.5" stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.15)"/>
-            <polygon points="70,48 88,58.5 88,79.5 70,90 52,79.5 52,58.5" fill="rgba(255,255,255,0.25)"/>
-            <line x1="70" y1="35" x2="70" y2="20" stroke="white" stroke-width="2" opacity="0.7"/>
-            <line x1="97" y1="52.5" x2="112" y2="44" stroke="white" stroke-width="2" opacity="0.7"/>
-            <line x1="97" y1="87.5" x2="112" y2="96" stroke="white" stroke-width="2" opacity="0.7"/>
-            <line x1="70" y1="105" x2="70" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
-            <line x1="43" y1="87.5" x2="28" y2="96" stroke="white" stroke-width="2" opacity="0.7"/>
-            <line x1="43" y1="52.5" x2="28" y2="44" stroke="white" stroke-width="2" opacity="0.7"/>
-            <circle cx="70" cy="69" r="10" fill="white"/>
-            <defs><linearGradient id="g4" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#43e97b"/><stop offset="100%" stop-color="#38f9d7"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 5, name: "SerenSpace", style: "Minimal", category: "meditation",
-        bg: "linear-gradient(135deg, #fa709a, #fee140)",
-        tags: ["sunset", "calm", "minimal"],
-        tool: "Midjourney v6",
-        prompt: `Elegant minimal wellness logo "SerenSpace". Stylized mountain silhouette with a rising sun, warm sunset gradient from coral pink to golden yellow. Ultra-thin lines, airy and peaceful. Suitable for meditation and mindfulness app. Clean vector, icon + wordmark layout. --v 6 --ar 1:1`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g5)"/>
-            <path d="M20 95 L50 55 L70 75 L90 45 L120 95 Z" fill="rgba(255,255,255,0.3)"/>
-            <path d="M20 95 L50 55 L70 75 L90 45 L120 95" stroke="white" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-            <circle cx="70" cy="42" r="12" fill="rgba(255,255,255,0.85)"/>
-            <line x1="70" y1="22" x2="70" y2="16" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <line x1="54" y1="28" x2="50" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <line x1="86" y1="28" x2="90" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <defs><linearGradient id="g5" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fa709a"/><stop offset="100%" stop-color="#fee140"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 6, name: "NutriBloom", style: "Nature", category: "nutrition",
-        bg: "linear-gradient(135deg, #a8edea, #fed6e3)",
-        tags: ["leaf", "nutrition", "soft"],
-        tool: "DALL-E 3",
-        prompt: `Fresh clean nutrition app logo "NutriBloom". A sprouting seedling/leaf emerging from a bowl shape, soft mint green and blush pink gradient. Friendly, approachable, health-conscious aesthetic. Modern icon with rounded shapes. White background. Perfect for diet and nutrition tracking app. Vector logo.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g6)"/>
-            <path d="M35 90 Q70 75 105 90" stroke="rgba(100,150,100,0.8)" stroke-width="3" fill="none"/>
-            <path d="M35 90 Q35 108 70 108 Q105 108 105 90" fill="rgba(100,180,100,0.3)" stroke="rgba(100,150,100,0.6)" stroke-width="2"/>
-            <line x1="70" y1="88" x2="70" y2="52" stroke="rgba(80,140,80,0.9)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M70 72 C70 72 50 60 48 44 C62 44 72 58 70 72" fill="rgba(80,160,80,0.7)"/>
-            <path d="M70 60 C70 60 88 50 92 36 C78 34 68 48 70 60" fill="rgba(100,180,80,0.7)"/>
-            <defs><linearGradient id="g6" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#a8edea"/><stop offset="100%" stop-color="#fed6e3"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 7, name: "PulseZen", style: "Geometric", category: "fitness",
-        bg: "linear-gradient(135deg, #f7971e, #ffd200)",
-        tags: ["pulse", "energy", "yellow"],
-        tool: "Midjourney v6",
-        prompt: `Dynamic fitness wellness logo "PulseZen". EKG/heartbeat line morphing into a zen circle at the end, electric yellow to orange gradient. High energy meets inner peace concept. Bold modern design. App icon perfect. Vector style clean edges. --v 6 --ar 1:1 --style raw --quality 2`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g7)"/>
-            <path d="M18 70 L38 70 L48 48 L60 92 L72 58 L80 78 L92 70 L115 70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="115" cy="70" r="10" stroke="white" stroke-width="2.5" fill="none"/>
-            <defs><linearGradient id="g7" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f7971e"/><stop offset="100%" stop-color="#ffd200"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 8, name: "AuraWell", style: "Abstract", category: "mental",
-        bg: "linear-gradient(135deg, #30cfd0, #330867)",
-        tags: ["aura", "dark", "mystical"],
-        tool: "Stable Diffusion XL",
-        prompt: `Mystical wellness brand logo "AuraWell". Abstract concentric aura rings emanating from center, deep teal to dark purple gradient. Cosmic spiritual aesthetic. Sacred geometry influence. Glow effects on rings. Dark luxury branding. App icon suitable. Premium wellness brand. Vector artwork.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g8)"/>
-            <circle cx="70" cy="70" r="45" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
-            <circle cx="70" cy="70" r="36" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
-            <circle cx="70" cy="70" r="27" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/>
-            <circle cx="70" cy="70" r="18" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none"/>
-            <circle cx="70" cy="70" r="9" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/>
-            <circle cx="70" cy="70" r="3" fill="white"/>
-            <defs><linearGradient id="g8" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#30cfd0"/><stop offset="100%" stop-color="#330867"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 9, name: "BreathEase", style: "Minimal", category: "meditation",
-        bg: "linear-gradient(135deg, #89f7fe, #66a6ff)",
-        tags: ["breath", "blue", "air"],
-        tool: "Midjourney v6",
-        prompt: `Ultra-minimalist breathing app logo "BreathEase". Expanding concentric circles suggesting breath/inhale-exhale, sky blue to electric blue gradient. Extreme whitespace. Clean sans-serif "BreathEase" text. App icon friendly. Swiss minimalism style. --v 6 --ar 1:1 --no text --style raw`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g9)"/>
-            <circle cx="70" cy="70" r="14" fill="rgba(255,255,255,0.9)"/>
-            <circle cx="70" cy="70" r="24" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
-            <circle cx="70" cy="70" r="34" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
-            <circle cx="70" cy="70" r="44" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
-            <circle cx="70" cy="70" r="54" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
-            <defs><linearGradient id="g9" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#89f7fe"/><stop offset="100%" stop-color="#66a6ff"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 10, name: "RootedSoul", style: "Nature", category: "nature",
-        bg: "linear-gradient(135deg, #56ab2f, #a8e063)",
-        tags: ["tree", "green", "earth"],
-        tool: "DALL-E 3",
-        prompt: `Grounded wellness logo "RootedSoul". A stylized tree with roots mirroring branches above, lush green gradient. Concept of balance above and below. Flat vector style, bold line art. Deep roots = deep wellness. App icon + horizontal lockup. Nature-inspired, organic shapes. Vector illustration logo.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g10)"/>
-            <line x1="70" y1="35" x2="70" y2="105" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/>
-            <line x1="70" y1="52" x2="48" y2="35" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="70" y1="52" x2="92" y2="35" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="70" y1="62" x2="38" y2="50" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="70" y1="62" x2="102" y2="50" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="70" y1="88" x2="48" y2="105" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="70" y1="88" x2="92" y2="105" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="70" y1="78" x2="38" y2="90" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="70" y1="78" x2="102" y2="90" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/>
-            <defs><linearGradient id="g10" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#56ab2f"/><stop offset="100%" stop-color="#a8e063"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 11, name: "CalmNest", style: "Minimal", category: "mental",
-        bg: "linear-gradient(135deg, #ffecd2, #fcb69f)",
-        tags: ["peach", "cozy", "soft"],
-        tool: "Midjourney v6",
-        prompt: `Cozy mental wellness app logo "CalmNest". Abstract nest/crescent moon shape cradling a small star/dot, warm peach to terracotta gradient. Soft rounded edges, nurturing feel. Light, airy, calming aesthetic. Perfect for sleep & mood tracking app. Minimalist vector icon. --v 6`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g11)"/>
-            <path d="M35 78 Q35 42 70 42 Q105 42 105 78" stroke="rgba(150,80,50,0.7)" stroke-width="3" fill="rgba(255,255,255,0.2)" stroke-linecap="round"/>
-            <path d="M28 82 Q28 100 70 100 Q112 100 112 82" stroke="rgba(150,80,50,0.5)" stroke-width="2.5" fill="rgba(255,255,255,0.1)" stroke-linecap="round"/>
-            <circle cx="70" cy="60" r="8" fill="rgba(255,255,255,0.9)"/>
-            <defs><linearGradient id="g11" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#ffecd2"/><stop offset="100%" stop-color="#fcb69f"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 12, name: "FlowState", style: "Abstract", category: "fitness",
-        bg: "linear-gradient(135deg, #6a11cb, #2575fc)",
-        tags: ["flow", "purple", "wave"],
-        tool: "Stable Diffusion XL",
-        prompt: `Athletic flow state wellness logo "FlowState". Abstract fluid wave morphing into human figure in yoga/flow pose, deep purple to electric blue gradient. Dynamic motion lines, premium sports brand feel. Bold modern typography. App icon quality. Vector file with clean paths. Professional fitness brand.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g12)"/>
-            <path d="M20 80 C35 60 50 90 70 70 C90 50 105 80 120 60" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-            <path d="M20 90 C35 70 50 100 70 80 C90 60 105 90 120 70" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M20 70 C35 50 50 80 70 60 C90 40 105 70 120 50" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <defs><linearGradient id="g12" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#6a11cb"/><stop offset="100%" stop-color="#2575fc"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 13, name: "TerraHeal", style: "Nature", category: "nature",
-        bg: "linear-gradient(135deg, #11998e, #38ef7d)",
-        tags: ["earth", "teal", "heal"],
-        tool: "Midjourney v6",
-        prompt: `Earthy healing wellness logo "TerraHeal". Globe/earth cross-section with sprouting roots and leaves, teal to emerald green gradient. Grounding and healing energy. Sacred geometry circle border. App icon + stacked typography. Holistic health brand. Flat vector style. --v 6 --ar 1:1`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g13)"/>
-            <circle cx="70" cy="70" r="38" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.1)"/>
-            <path d="M70 32 C70 32 85 50 85 70 C85 90 70 108 70 108" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="none"/>
-            <path d="M32 70 C32 70 50 55 70 55 C90 55 108 70 108 70" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="none"/>
-            <path d="M70 55 L70 28 M62 30 L70 24 L78 30" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-            <defs><linearGradient id="g13" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#11998e"/><stop offset="100%" stop-color="#38ef7d"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 14, name: "SolarSelf", style: "Geometric", category: "meditation",
-        bg: "linear-gradient(135deg, #f6d365, #fda085)",
-        tags: ["sun", "warm", "energy"],
-        tool: "DALL-E 3",
-        prompt: `Radiant self-care logo "SolarSelf". Geometric sun mandala with 12 symmetrical rays, golden yellow to warm coral gradient. Sacred geometry, precision circles and angles. Luxury wellness branding. Intricate but clean icon. Suitable for premium yoga & meditation platform. Vector SVG.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g14)"/>
-            <circle cx="70" cy="70" r="28" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
-            <circle cx="70" cy="70" r="18" fill="rgba(255,255,255,0.85)"/>
-            ${Array.from({length:12},(_,i)=>{const a=i*30*Math.PI/180;const x1=70+32*Math.cos(a);const y1=70+32*Math.sin(a);const x2=70+48*Math.cos(a);const y2=70+48*Math.sin(a);return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="white" stroke-width="2.5" stroke-linecap="round"/>`}).join('')}
-            <defs><linearGradient id="g14" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f6d365"/><stop offset="100%" stop-color="#fda085"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 15, name: "InnerArc", style: "Abstract", category: "mental",
-        bg: "linear-gradient(135deg, #4776e6, #8e54e9)",
-        tags: ["arc", "indigo", "modern"],
-        tool: "Midjourney v6",
-        prompt: `Modern psychology wellness app logo "InnerArc". Three concentric arcs representing layers of consciousness, indigo to violet gradient. Clean geometric forms, Bauhaus inspired. Premium mental health platform. Bold weight arcs with precise spacing. Icon + wordmark. --v 6 --ar 1:1 --style raw`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g15)"/>
-            <path d="M30 90 A45 45 0 0 1 110 90" stroke="rgba(255,255,255,0.4)" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M40 90 A35 35 0 0 1 100 90" stroke="rgba(255,255,255,0.65)" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M50 90 A25 25 0 0 1 90 90" stroke="rgba(255,255,255,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <circle cx="70" cy="90" r="5" fill="white"/>
-            <defs><linearGradient id="g15" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#4776e6"/><stop offset="100%" stop-color="#8e54e9"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 16, name: "PetalPath", style: "Nature", category: "nutrition",
-        bg: "linear-gradient(135deg, #fddb92, #d1fdff)",
-        tags: ["petal", "light", "flower"],
-        tool: "Stable Diffusion XL",
-        prompt: `Delicate wellness nutrition logo "PetalPath". Abstract 6-petal flower where each petal is a different superfood icon (leaf, drop, seed etc), soft yellow to pale cyan gradient. Very light feminine aesthetic. Holistic nutrition brand. Clean flat vector with fine line details. App icon.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g16)"/>
-            ${Array.from({length:6},(_,i)=>{const a=i*60*Math.PI/180;const cx=70+26*Math.cos(a);const cy=70+26*Math.sin(a);return `<ellipse cx="${cx}" cy="${cy}" rx="12" ry="20" transform="rotate(${i*60} ${cx} ${cy})" fill="rgba(100,150,100,0.5)" stroke="rgba(80,130,80,0.7)" stroke-width="1.5"/>`}).join('')}
-            <circle cx="70" cy="70" r="10" fill="rgba(255,200,100,0.9)" stroke="rgba(200,150,50,0.8)" stroke-width="1.5"/>
-            <defs><linearGradient id="g16" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fddb92"/><stop offset="100%" stop-color="#d1fdff"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 17, name: "ChakraSync", style: "Geometric", category: "meditation",
-        bg: "linear-gradient(135deg, #ee0979, #ff6a00)",
-        tags: ["chakra", "fire", "energy"],
-        tool: "Midjourney v6",
-        prompt: `Spiritual wellness logo "ChakraSync". Seven stacked geometric shapes (circle, triangle, square etc) aligned vertically representing chakras, vivid red to orange fire gradient. Sacred geometry, precise alignment. Spiritual tech brand. Flat vector with gold accent lines. Premium icon design. --v 6`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g17)"/>
-            <circle cx="70" cy="30" r="7" fill="rgba(255,255,255,0.9)"/>
-            <polygon points="70,42 80,58 60,58" fill="rgba(255,255,255,0.8)"/>
-            <rect x="61" y="62" width="18" height="14" rx="2" fill="rgba(255,255,255,0.75)"/>
-            <polygon points="62,80 78,80 82,94 58,94" fill="rgba(255,255,255,0.7)"/>
-            <path d="M55 97 Q70 107 85 97 Q85 115 70 115 Q55 115 55 97" fill="rgba(255,255,255,0.65)"/>
-            <defs><linearGradient id="g17" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#ee0979"/><stop offset="100%" stop-color="#ff6a00"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 18, name: "MoonRise", style: "Minimal", category: "mental",
-        bg: "linear-gradient(135deg, #243949, #517fa4)",
-        tags: ["moon", "night", "sleep"],
-        tool: "DALL-E 3",
-        prompt: `Sleep wellness app logo "MoonRise". Crescent moon cradling small stars in a dark navy to steel blue gradient. Ultra minimal line art style. Night time, rest, and recovery concept. Premium sleep tracking app icon. Thin elegant lines, luxury feel. Clean vector. One icon, no clutter.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g18)"/>
-            <path d="M85 45 A35 35 0 1 0 85 95 A25 25 0 1 1 85 45Z" fill="rgba(255,255,255,0.9)"/>
-            <circle cx="95" cy="40" r="2.5" fill="rgba(255,255,255,0.9)"/>
-            <circle cx="108" cy="55" r="2" fill="rgba(255,255,255,0.7)"/>
-            <circle cx="100" cy="68" r="1.5" fill="rgba(255,255,255,0.6)"/>
-            <circle cx="90" cy="32" r="1.5" fill="rgba(255,255,255,0.6)"/>
-            <circle cx="112" cy="40" r="1" fill="rgba(255,255,255,0.5)"/>
-            <defs><linearGradient id="g18" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#243949"/><stop offset="100%" stop-color="#517fa4"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 19, name: "KineticYou", style: "Abstract", category: "fitness",
-        bg: "linear-gradient(135deg, #fc4a1a, #f7b733)",
-        tags: ["kinetic", "orange", "motion"],
-        tool: "Midjourney v6",
-        prompt: `Dynamic fitness brand logo "KineticYou". Abstract human figure in explosive motion, fragments radiating outward, fiery orange to golden yellow gradient. Energy, power, transformation. Sports app icon. Bold chunky shapes with velocity lines. Extreme sports aesthetic. Vector logo. --v 6 --ar 1:1`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g19)"/>
-            <circle cx="70" cy="42" r="9" fill="rgba(255,255,255,0.9)"/>
-            <path d="M70 51 L60 72 L50 65 M70 51 L80 72 L90 65 M60 72 L58 95 M80 72 L82 95" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <line x1="30" y1="58" x2="48" y2="63" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="110" y1="58" x2="92" y2="63" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="32" y1="75" x2="50" y2="74" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="108" y1="75" x2="90" y2="74" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <defs><linearGradient id="g19" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fc4a1a"/><stop offset="100%" stop-color="#f7b733"/></linearGradient></defs>
-        </svg>`
-    },
-    {
-        id: 20, name: "EtherBliss", style: "Abstract", category: "meditation",
-        bg: "linear-gradient(135deg, #a18cd1, #fbc2eb)",
-        tags: ["ethereal", "lavender", "bliss"],
-        tool: "Stable Diffusion XL",
-        prompt: `Ethereal meditation wellness logo "EtherBliss". Floating abstract orbs/bubbles connected by delicate lines, soft lavender to blush pink gradient. Dreamlike, floating sensation. Premium mindfulness app. Bokeh-inspired icon design. Soft light vector shapes. Elegant and feminine. Luxury brand logo.`,
-        svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="70" cy="70" r="65" fill="url(#g20)"/>
-            <circle cx="70" cy="70" r="22" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-            <circle cx="38" cy="50" r="12" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <circle cx="102" cy="50" r="15" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-            <circle cx="50" cy="100" r="10" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <circle cx="95" cy="98" r="8" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-            <line x1="50" y1="58" x2="58" y2="62" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <line x1="87" y1="57" x2="82" y2="62" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <line x1="58" y1="82" x2="53" y2="92" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <line x1="83" y1="85" x2="89" y2="92" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-            <defs><linearGradient id="g20" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#a18cd1"/><stop offset="100%" stop-color="#fbc2eb"/></linearGradient></defs>
-        </svg>`
-    }
-];
-
-// Generate additional logos (21-100) programmatically
-const extraLogos = [
-    {id:21, name:"PranaLife", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#0f3460,#16213e)", tags:["prana","dark","sacred"], tool:"Midjourney v6", prompt:`Sacred geometry wellness logo "PranaLife". Intricate Sri Yantra inspired triangular mandala, deep navy to midnight blue. Gold/white thin line art. Premium spiritual brand. Precision geometric forms. App icon quality. Vector artwork. --v 6 --ar 1:1`},
-    {id:22, name:"GlowPath", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#f8ceec,#a29bfe)", tags:["glow","pink","path"], tool:"DALL-E 3", prompt:`Soft glow wellness path logo "GlowPath". Abstract winding path with soft light/glow effect, pastel pink to soft purple gradient. Journey of healing concept. Ultra-soft edges, dreamy aesthetic. Mental wellness app icon. Clean minimal vector.`},
-    {id:23, name:"VerdantMe", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#2d6a4f,#52b788)", tags:["forest","deep green","organic"], tool:"Stable Diffusion XL", prompt:`Forest wellness brand "VerdantMe". Dense stylized fern/leaf cluster forming letter V shape, deep forest green to bright green. Organic growth concept. Natural health brand. Bold icon with fine leaf details. Flat vector SVG.`},
-    {id:24, name:"TranquilAI", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#00b4db,#0083b0)", tags:["ai","ocean","calm"], tool:"Midjourney v6", prompt:`AI-powered wellness logo "TranquilAI". Neural network nodes arranged in calming mandala pattern, ocean blue gradient. Tech meets wellness. Premium AI mental health app. Circuit-meets-nature aesthetic. Clean vector.--v 6`},
-    {id:25, name:"EmberYoga", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#c94b4b,#4b134f)", tags:["yoga","fire","deep"], tool:"DALL-E 3", prompt:`Hot yoga brand logo "EmberYoga". Silhouetted figure in warrior pose surrounded by subtle flame aura, deep crimson to dark purple gradient. Intense power and inner fire. Premium yoga studio brand. Clean silhouette vector icon.`},
-    {id:26, name:"NovaMind", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)", tags:["space","mind","cosmic"], tool:"Stable Diffusion XL", prompt:`Cosmic mental wellness logo "NovaMind". Star cluster forming brain shape, deep space navy with bright star dots. Galaxy-inspired mind wellness. Premium app icon. Scattered star points connected by fine lines. Dark luxury brand.`},
-    {id:27, name:"AquaBalance", style:"Abstract", category:"nature", bg:"linear-gradient(135deg,#2193b0,#6dd5ed)", tags:["water","aqua","flow"], tool:"Midjourney v6", prompt:`Water wellness logo "AquaBalance". Two water drops merging into perfect balance scale, sky blue to light cyan gradient. Balance through hydration concept. Clean minimal vector shapes. Nutrition/hydration app icon. --v 6`},
-    {id:28, name:"HearthWell", style:"Minimal", category:"nutrition", bg:"linear-gradient(135deg,#f12711,#f5af19)", tags:["warm","home","nourish"], tool:"DALL-E 3", prompt:`Nourishing home wellness logo "HearthWell". Stylized house shape with leafy plant inside it, warm orange to gold gradient. Home nourishment concept. Family wellness brand. Rounded friendly shapes. Flat vector logo.`},
-    {id:29, name:"CrystalPath", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#e0c3fc,#8ec5fc)", tags:["crystal","violet","clarity"], tool:"Midjourney v6", prompt:`Crystal clarity wellness logo "CrystalPath". Geometric crystal/diamond shape with internal light refraction lines, soft violet to sky blue gradient. Clarity of mind concept. Premium meditation app icon. Faceted vector shapes. --v 6`},
-    {id:30, name:"ZephyrFit", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#00c6ff,#0072ff)", tags:["wind","blue","swift"], tool:"Stable Diffusion XL", prompt:`Swift fitness logo "ZephyrFit". Abstract wind/air streams forming Z shape, electric blue gradient. Speed, agility, freshness. Running & cardio app icon. Dynamic flowing lines, aerodynamic shapes. Bold modern brand. Vector.`},
-    {id:31, name:"FernRoot", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#134e5e,#71b280)", tags:["fern","depth","nature"], tool:"DALL-E 3", prompt:`Deep nature wellness logo "FernRoot". Unfurling fern frond (fiddlehead) in elegant spiral, deep teal to soft green gradient. New beginnings, growth concept. Organic spiral vector shapes. Botanical wellness brand.`},
-    {id:32, name:"SilkBreath", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#fdcbf1,#e6dee9)", tags:["silk","soft","breathe"], tool:"Midjourney v6", prompt:`Silk smooth meditation logo "SilkBreath". Ultra-minimal single brushstroke circle (enso style), soft blush to lilac gradient. Japanese Zen influenced. Single confident stroke. Premium mindfulness app. --v 6 --ar 1:1`},
-    {id:33, name:"CoreFlux", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#373b44,#4286f4)", tags:["core","flux","tech"], tool:"Stable Diffusion XL", prompt:`Tech fitness brand "CoreFlux". Abstract atom/nucleus with orbiting rings representing core strength, dark charcoal to electric blue. Scientific approach to fitness. Clean technical vector shapes. Premium gym app icon.`},
-    {id:34, name:"SproutMind", style:"Nature", category:"mental", bg:"linear-gradient(135deg,#acb6e5,#86fde8)", tags:["sprout","grow","mind"], tool:"DALL-E 3", prompt:`Mental growth wellness logo "SproutMind". Brain shape outlined by sprouting seedlings/leaves, soft periwinkle to mint gradient. Mind-nature connection. Psychology meets nature brand. Illustrated vector style. Mental health app.`},
-    {id:35, name:"ZenithPeak", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#f7f8f8,#acbb78)", tags:["peak","achievement","green"], tool:"Midjourney v6", prompt:`Peak performance wellness logo "ZenithPeak". Three geometric mountain peaks with rising sun arc, olive to natural green gradient. Achievement and summit concept. Outdoor wellness brand. Bold flat vector shapes. --v 6`},
-    {id:36, name:"BioHarmon", style:"Abstract", category:"nutrition", bg:"linear-gradient(135deg,#4ecdc4,#556270)", tags:["biome","harmony","teal"], tool:"Stable Diffusion XL", prompt:`Gut wellness brand logo "BioHarmon". Abstract microbiome cell cluster forming circular pattern, teal to slate gradient. Gut health = mind health. Medical-friendly yet approachable. Scientific vector illustration. Nutrition app.`},
-    {id:37, name:"StellaRest", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#1c1c2e,#2c3e50)", tags:["stars","sleep","dark"], tool:"DALL-E 3", prompt:`Luxury sleep wellness logo "StellaRest". Constellation of stars forming pillow/cloud outline, deep space dark navy gradient. Luxury sleep tech brand. Fine dot-and-line star art. Gold star accent. Premium dark icon.`},
-    {id:38, name:"OakHeal", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#8B4513,#228B22)", tags:["oak","sturdy","earthy"], tool:"Midjourney v6", prompt:`Strong earthy wellness logo "OakHeal". Mighty oak tree silhouette with expansive canopy, rich brown to forest green gradient. Strength, longevity, healing concept. Bold nature brand icon. Flat vector clean shapes. --v 6`},
-    {id:39, name:"PrismaWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#f093fb,#f5576c,#4facfe)", tags:["prism","rainbow","spectrum"], tool:"Stable Diffusion XL", prompt:`Full-spectrum wellness logo "PrismaWell". Geometric prism splitting white light into rainbow spectrum, vibrant gradient. Complete holistic health concept. Colorful premium brand. Clean geometric vector shapes. Wellness platform icon.`},
-    {id:40, name:"TideFlow", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#0052d4,#4364f7,#6fb1fc)", tags:["tide","ocean","minimal"], tool:"DALL-E 3", prompt:`Ocean meditation logo "TideFlow". Minimal wave line with circular moon above, deep ocean blue to light sky blue gradient. Tide and breath rhythm concept. Ultra-clean 2-element design. Meditation app icon. Premium minimalism.`},
-    {id:41, name:"VibeRise", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#eb3349,#f45c43)", tags:["vibe","rise","red"], tool:"Midjourney v6", prompt:`High vibe fitness logo "VibeRise". Sound wave visualization morphing into rising arrow shape, bold red to coral gradient. Raise your vibration concept. High energy brand. Audio/fitness app. Bold geometric waves. --v 6`},
-    {id:42, name:"SageWise", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#B7D461,#529c3e)", tags:["sage","herb","wise"], tool:"Stable Diffusion XL", prompt:`Herbal wisdom wellness logo "SageWise". Elegant sage/herb sprig with detailed leaf texture, yellow-green to forest green gradient. Ancient herbal wisdom meets modern design. Nutrition supplement brand. Fine botanical illustration vector.`},
-    {id:43, name:"SpiralWell", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#dba98c,#a4508b)", tags:["spiral","golden","mystical"], tool:"DALL-E 3", prompt:`Golden spiral wellness logo "SpiralWell". Fibonacci golden spiral with gradient fill, warm earth tone to mystical purple. Sacred mathematics in healing. Holistic therapy brand. Precision vector golden ratio spiral.`},
-    {id:44, name:"SwiftZen", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#09203f,#537895)", tags:["swift","dark","zen"], tool:"Midjourney v6", prompt:`Minimalist performance logo "SwiftZen". Single lightning bolt morphing into lotus flower at base, dark midnight navy gradient. Speed with inner peace. Athletic mindfulness brand. Premium dark icon. Clean lines, --v 6`},
-    {id:45, name:"DewDrop", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#d4fc79,#96e6a1)", tags:["dew","fresh","morning"], tool:"Stable Diffusion XL", prompt:`Fresh morning wellness logo "DewDrop". Crystal clear water droplet with leaf reflection inside, fresh lime to mint green gradient. Morning wellness ritual. Hydration + nature brand. Photorealistic vector droplet icon.`},
-    {id:46, name:"ArcLight", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#f8f9fa,#6c757d)", tags:["arc","light","clarity"], tool:"DALL-E 3", prompt:`Light therapy wellness logo "ArcLight". Rainbow arc of clean geometric color bands, light silver to charcoal background. Spectrum light therapy concept. Scientific wellness brand. Pure minimal geometric arcs. Premium mental health app.`},
-    {id:47, name:"PureAxis", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#141e30,#243b55)", tags:["axis","dark","pure"], tool:"Midjourney v6", prompt:`Elite fitness logo "PureAxis". Abstract X/axis intersection with radiating energy lines, deep dark navy gradient with sharp white highlights. Precision training concept. Premium dark fitness brand. Technical vector icon. --v 6`},
-    {id:48, name:"BloomEra", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#ff9a9e,#fad0c4,#ffecd2)", tags:["bloom","pastel","spring"], tool:"Stable Diffusion XL", prompt:`Spring wellness brand logo "BloomEra". Cherry blossom branch with 5 blooms arranged in sacred circle, soft pink to peach gradient. Seasonal renewal, Japanese-inspired. Elegant nature brand. Fine petal vector illustration.`},
-    {id:49, name:"IndigoFlow", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#4b0082,#8a2be2)", tags:["indigo","deep","spiritual"], tool:"DALL-E 3", prompt:`Deep spiritual wellness logo "IndigoFlow". Minimal third eye/all-seeing eye outline with flowing energy streams, deep indigo to violet gradient. Intuition and spiritual awareness. Premium meditation brand. Clean line art vector.`},
-    {id:50, name:"VelaWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#2c3e50,#3498db)", tags:["vela","sail","journey"], tool:"Midjourney v6", prompt:`Journey wellness logo "VelaWell". Abstract sailing boat/journey metaphor with constellation compass, dark charcoal to ocean blue. Life navigation concept. Mental clarity through direction. Premium lifestyle brand. Vector icon. --v 6`},
-    {id:51, name:"TeakRoot", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#7B3F00,#C19A6B)", tags:["teak","wood","earthy"], tool:"Stable Diffusion XL", prompt:`Grounded nutrition logo "TeakRoot". Cross-section of tree trunk showing growth rings, rich wood-brown to tan gradient. Deep nourishment concept. Organic nutrition brand. Natural wood texture vector illustration. Earthy premium design.`},
-    {id:52, name:"HaloRun", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#48c6ef,#6f86d6)", tags:["halo","run","sky"], tool:"DALL-E 3", prompt:`Running wellness brand "HaloRun". Circular track/halo shape with running figure at top, sky blue to periwinkle gradient. Track running meets holistic health. Clean geometric shapes. Sports app icon. Flat modern vector logo.`},
-    {id:53, name:"QiSource", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#c31432,#240b36)", tags:["qi","chi","dark red"], tool:"Midjourney v6", prompt:`Ancient energy wellness logo "QiSource". Yin-yang reimagined with flowing qi energy streams, deep crimson to dark purple gradient. Eastern philosophy meets modern design. Tai chi/qigong app icon. Abstract energy flow vector. --v 6`},
-    {id:54, name:"RosePetal", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#ff9a9e,#feada6)", tags:["rose","self-love","pink"], tool:"Stable Diffusion XL", prompt:`Self-love wellness logo "RosePetal". Single unfurling rose viewed from above (flat lay), soft blush pink gradient. Self-care and self-love concept. Beauty wellness brand. Botanical fine art illustration. Minimal elegant vector.`},
-    {id:55, name:"IronFlora", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#232526,#414345)", tags:["iron","dark","strong"], tool:"DALL-E 3", prompt:`Dark luxury fitness logo "IronFlora". Barbell with lotus flowers growing from each end, dark charcoal to gunmetal gradient. Strength through softness. Premium luxury gym brand. Contrast of hard and soft design elements. Sleek vector.`},
-    {id:56, name:"TurqWave", style:"Abstract", category:"nature", bg:"linear-gradient(135deg,#1a9e5c,#00cdac)", tags:["turquoise","wave","refresh"], tool:"Midjourney v6", prompt:`Refreshing wellness logo "TurqWave". Abstract ocean wave cross-section with coral and seaweed visible, turquoise to emerald gradient. Ocean therapy concept. Marine wellness brand. Artistic wave vector illustration. --v 6`},
-    {id:57, name:"SkyPillar", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#e0eafc,#cfdef3)", tags:["sky","pillar","clarity"], tool:"Stable Diffusion XL", prompt:`Mental clarity wellness logo "SkyPillar". Three tall vertical pillars (like clouds or columns) with sun peeking through, pale sky blue gradient. Mental fortitude concept. Calm productivity brand. Minimalist geometric vector. Soft professional look.`},
-    {id:58, name:"GrapeVine", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#614385,#516395)", tags:["grape","vine","rich"], tool:"DALL-E 3", prompt:`Antioxidant nutrition logo "GrapeVine". Elegant grape vine spiral with circular grape cluster, deep purple to slate blue gradient. Antioxidant wellness brand. Wine & wellness crossover. Fine botanical line illustration vector.`},
-    {id:59, name:"AtomicYou", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#f7971e,#ffd200,#21d4fd)", tags:["atomic","science","energy"], tool:"Midjourney v6", prompt:`Science-backed fitness logo "AtomicYou". Atom structure with electron orbits forming human figure silhouette, vibrant multicolor gradient. Every cell optimized concept. Tech-fitness brand. Scientific yet approachable vector icon. --v 6`},
-    {id:60, name:"CoralRest", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#ff7043,#ff8a65)", tags:["coral","warmth","rest"], tool:"Stable Diffusion XL", prompt:`Warm recovery wellness logo "CoralRest". Simple crescent moon with tiny coral sprout growing from tip, warm coral orange gradient. Rest and regeneration concept. Recovery app icon. Minimal two-element design. Friendly vector style.`},
-];
-
-// Generate 40 more logos (61-100)
-const moreLogos = [
-    {id:61, name:"WillowWell", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#a8c5a0,#5a8a5a)", tags:["willow","flow","gentle"], tool:"Midjourney v6", prompt:`Gentle willow wellness logo "WillowWell". Weeping willow tree silhouette with flowing branch curtain, soft sage to forest green. Gentle resilience concept. Counseling/wellness brand. Flowing vector lines mimicking willow branches. --v 6`},
-    {id:62, name:"PixelZen", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#434343,#000000)", tags:["pixel","dark","minimal"], tool:"DALL-E 3", prompt:`Minimalist dark wellness logo "PixelZen". 8-bit style pixelated lotus flower, dark charcoal to black gradient. Digital wellness concept. Tech-forward meditation app. Retro pixel art meets mindfulness. Clean pixel grid vector.`},
-    {id:63, name:"AloeSoft", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#c8f6d3,#68d391)", tags:["aloe","soothing","green"], tool:"Stable Diffusion XL", prompt:`Soothing nutrition logo "AloeSoft". Stylized aloe vera plant with gel droplet, fresh light green to emerald gradient. Healing plant medicine. Natural supplement brand. Botanical vector illustration with clean flat style.`},
-    {id:64, name:"StoneEdge", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#667db6,#0082c8,#0082c8,#667db6)", tags:["stone","balance","rock"], tool:"Midjourney v6", prompt:`Zen balance fitness logo "StoneEdge". Three perfectly balanced stacked stones, gradient blue background. Balance, focus, core strength. Mindful fitness brand. Ultra-minimal two-element composition. Premium clean vector. --v 6`},
-    {id:65, name:"GarnetCore", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#cb2d3e,#ef473a)", tags:["garnet","gem","strength"], tool:"DALL-E 3", prompt:`Gem-powered fitness logo "GarnetCore". Faceted gemstone (garnet) shape with internal depth and light rays, deep ruby to bright red gradient. Precious strength concept. Premium fitness brand. Multi-faceted vector gem icon.`},
-    {id:66, name:"FrostMind", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#e0f7fa,#b2ebf2,#80deea)", tags:["frost","cold","clear"], tool:"Stable Diffusion XL", prompt:`Crisp mental wellness logo "FrostMind". Abstract snowflake with brain hemisphere overlay, ice blue to crystal clear gradient. Cold clarity concept. Mental performance app. Geometric snowflake precision. Minimalist vector icon.`},
-    {id:67, name:"ZestLife", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#f9d423,#ff4e50)", tags:["zest","citrus","vibrant"], tool:"Midjourney v6", prompt:`Vibrant nutrition logo "ZestLife". Cross-section of bright citrus fruit (lemon/orange) with star pattern, vivid yellow to coral gradient. Zestful living concept. Vitamin C wellness brand. Geometric citrus slice vector icon. --v 6`},
-    {id:68, name:"WhisperWell", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#f5f7fa,#c3cfe2)", tags:["whisper","soft","cloud"], tool:"DALL-E 3", prompt:`Ultra-soft meditation logo "WhisperWell". Minimal cloud shape with one small raindrop, pale sky to soft grey-blue gradient. Letting go concept. Grief and healing wellness app. Featherlight design. Ultra-minimal clean vector.`},
-    {id:69, name:"BronzeAge", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#c97b2b,#8B6914)", tags:["bronze","ancient","warrior"], tool:"Stable Diffusion XL", prompt:`Ancient warrior fitness logo "BronzeAge". Greek/Roman shield with olive branch cross motif, warm bronze to gold gradient. Ancient strength concept. Historical fitness brand. Shield emblem vector with classical proportions.`},
-    {id:70, name:"LimeLift", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#b9e937,#5cb500)", tags:["lime","lift","bright"], tool:"Midjourney v6", prompt:`Energy boost fitness logo "LimeLift". Abstract rocket/arrow shape with lime green energy trail, bright lime to forest green gradient. Boost your performance. Pre-workout/supplement brand. Dynamic upward motion vector icon. --v 6`},
-    {id:71, name:"ThistleMed", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#7c3aed,#a78bfa)", tags:["thistle","purple","herb"], tool:"DALL-E 3", prompt:`Herbal medicine wellness logo "ThistleMed". Milk thistle botanical illustration in detailed line art, purple to lavender gradient. Liver wellness/detox brand. Premium herbal supplement. Fine botanical line drawing vector style.`},
-    {id:72, name:"GeminiWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#0f0c29,#302b63,#24243e)", tags:["duality","dark","balance"], tool:"Stable Diffusion XL", prompt:`Duality wellness logo "GeminiWell". Two abstract human faces/profiles forming one unified face, deep cosmic navy to dark purple gradient. Integration of self concept. Psychology and therapy brand. Negative space art vector.`},
-    {id:73, name:"RadiancePath", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#fffbd5,#b20a2c)", tags:["radiance","golden","path"], tool:"Midjourney v6", prompt:`Golden radiance meditation logo "RadiancePath". Single illuminated path/road leading to distant light, warm golden yellow to deep horizon red. Journey to enlightenment. Premium spiritual wellness. Landscape icon, minimal elements. --v 6`},
-    {id:74, name:"NectarSip", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#f7ce68,#fbab7e)", tags:["nectar","honey","sweet"], tool:"DALL-E 3", prompt:`Honey wellness nutrition logo "NectarSip". Honeycomb hexagonal pattern with honey drip and bee silhouette, warm golden amber gradient. Natural sweetness concept. Raw honey wellness brand. Geometric hex pattern vector with organic drip.`},
-    {id:75, name:"CobaltMind", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#003973,#e5e5be)", tags:["cobalt","clarity","blue"], tool:"Stable Diffusion XL", prompt:`Deep focus wellness logo "CobaltMind". Abstract brain as circuit board with organized geometric pathways, cobalt blue to warm beige gradient. Organized mind concept. Productivity + wellness brand. Technical precision vector icon.`},
-    {id:76, name:"FeatherSoft", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#d4a8c7,#9e6b9e)", tags:["feather","light","gentle"], tool:"Midjourney v6", prompt:`Gentle therapy wellness logo "FeatherSoft". Single delicate feather in line art style, soft dusty rose to muted purple gradient. Lightness of being concept. Therapy and counseling brand. Fine detail feather vector illustration. --v 6`},
-    {id:77, name:"BoldRoot", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#56CCF2,#2F80ED)", tags:["bold","root","blue"], tool:"DALL-E 3", prompt:`Bold herbal wellness logo "BoldRoot". Strong root system viewed from underground upward, vibrant sky blue gradient. Foundation of health concept. Root vegetable nutrition brand. Dynamic downward root vector illustration.`},
-    {id:78, name:"OmniWell", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#1a1a2e,#e94560)", tags:["omni","complete","red"], tool:"Stable Diffusion XL", prompt:`Complete wellness logo "OmniWell". Perfect circle divided into 8 wellness sectors (sleep, nutrition, etc.), dark navy to vivid red gradient. 360° wellness concept. Comprehensive health platform icon. Pie/wheel vector with clean sector divisions.`},
-    {id:79, name:"GoldenHour", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#f4d03f,#16a085)", tags:["golden","hour","sunset"], tool:"Midjourney v6", prompt:`Magical hour wellness logo "GoldenHour". Minimal horizon line with sun half-risen, golden yellow to teal gradient. Golden hour gratitude concept. Morning wellness ritual app. Minimal 3-element composition. Elegant vector. --v 6`},
-    {id:80, name:"MarigoldMe", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#f5a623,#e8680a)", tags:["marigold","orange","bright"], tool:"DALL-E 3", prompt:`Bright floral wellness logo "MarigoldMe". Geometric marigold/daisy top-down view with layered petals, vivid orange to amber gradient. Joy and brightness concept. Herbal wellness brand. Symmetrical petal vector illustration.`},
-    {id:81, name:"TerraceSpa", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#d4b896,#8B6914)", tags:["terrace","spa","warm"], tool:"Stable Diffusion XL", prompt:`Luxury spa wellness logo "TerraceSpa". Art deco geometric fountain/terrace archway, warm terracotta to antique gold gradient. Luxury retreat brand. 1920s glamour meets wellness. Symmetrical art deco vector ornament.`},
-    {id:82, name:"NightBloom", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#090909,#4a0080)", tags:["night","bloom","dark"], tool:"Midjourney v6", prompt:`Nocturnal wellness logo "NightBloom". Bioluminescent flower blooming in darkness, deep black to electric purple gradient. Night blooming concept. Sleep and recovery brand. Glowing outline vector with ethereal light effect. --v 6`},
-    {id:83, name:"SpineSpark", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#59C173,#a17fe0,#5D26C1)", tags:["spine","spark","align"], tool:"DALL-E 3", prompt:`Chiropractic wellness logo "SpineSpark". Stylized spine column with spark/lightning bolt alignment indicator, gradient from green to purple. Spine alignment concept. Chiro/physical therapy brand. Medical-friendly geometric vector icon.`},
-    {id:84, name:"JadeTemple", style:"Nature", category:"meditation", bg:"linear-gradient(135deg,#11998e,#38ef7d)", tags:["jade","temple","ancient"], tool:"Stable Diffusion XL", prompt:`Ancient jade wellness logo "JadeTemple". Stylized pagoda/temple outline with jade green stone texture overlay, rich emerald gradient. Eastern wellness wisdom. Feng shui / traditional medicine brand. Architectural line art vector.`},
-    {id:85, name:"PerlaMind", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#e8eaf6,#b39ddb)", tags:["pearl","wisdom","soft"], tool:"Midjourney v6", prompt:`Pearl wisdom wellness logo "PerlaMind". Single pearl forming inside oyster shell, pearlescent soft lavender gradient. Wisdom through experience concept. Premium therapy brand. Minimal oyster + pearl vector illustration. --v 6`},
-    {id:86, name:"CedaFit", style:"Nature", category:"fitness", bg:"linear-gradient(135deg,#355c7d,#68828a,#c06c84)", tags:["cedar","strong","outdoor"], tool:"DALL-E 3", prompt:`Outdoor fitness logo "CedaFit". Tall cedar/pine tree with fitness trail path wrapping around trunk, steel blue to rose gradient. Outdoor strength training. Trail fitness brand. Illustrated vector tree with detailed bark texture.`},
-    {id:87, name:"EquinoxMe", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#2c2c54,#474787)", tags:["equinox","balance","dark"], tool:"Stable Diffusion XL", prompt:`Equinox balance wellness logo "EquinoxMe". Perfect scales of balance with sun and moon on each side, deep space purple gradient. Light-dark balance concept. Seasonal wellness brand. Precise symmetrical vector scales icon.`},
-    {id:88, name:"TurmericLife", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#F7971E,#FFD200)", tags:["turmeric","spice","gold"], tool:"Midjourney v6", prompt:`Golden spice wellness logo "TurmericLife". Turmeric root with powder cloud abstract, vivid saffron yellow to deep gold gradient. Anti-inflammatory wellness. Ayurvedic nutrition brand. Illustrated botanical root vector. --v 6`},
-    {id:89, name:"PinnacleWell", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#1d2671,#c33764)", tags:["pinnacle","peak","dark"], tool:"DALL-E 3", prompt:`Peak achievement fitness logo "PinnacleWell". Abstract human figure reaching upward connecting to star, deep navy to vivid rose gradient. Reaching pinnacle of health. Premium performance brand. Aspirational vector illustration.`},
-    {id:90, name:"SaltAir", style:"Minimal", category:"nature", bg:"linear-gradient(135deg,#a8c0ff,#3f2b96)", tags:["salt","air","coastal"], tool:"Stable Diffusion XL", prompt:`Coastal wellness logo "SaltAir". Minimal salt crystal geometric hex with tiny wave inside, periwinkle to deep ocean violet gradient. Ocean air therapy concept. Coastal wellness retreat. Geometric mineral vector icon.`},
-    {id:91, name:"NebulaMind", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#0f2027,#203a43,#2c5364)", tags:["nebula","cosmic","deep"], tool:"Midjourney v6", prompt:`Cosmic mind wellness logo "NebulaMind". Swirling galaxy nebula forming brain shape, deep space black to cosmic teal gradient. Infinite mind concept. Premium neuroscience/wellness brand. Abstract cosmic vector art. --v 6`},
-    {id:92, name:"WarmEarth", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#C8956C,#8C5A3C)", tags:["earth","clay","warm"], tool:"DALL-E 3", prompt:`Warm earth nutrition logo "WarmEarth". Clay pot with herbs growing inside, rich terracotta to dark earth gradient. Ancient nourishment concept. Traditional food wellness. Hand-thrown pottery illustration vector style.`},
-    {id:93, name:"SilverLining", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#bdc3c7,#2c3e50)", tags:["silver","hope","modern"], tool:"Stable Diffusion XL", prompt:`Hope wellness logo "SilverLining". Cloud with silver/gold lining and sun ray emerging, silver to dark charcoal gradient. Every cloud has silver lining. Mental resilience app. Clean cloud + ray geometric vector icon.`},
-    {id:94, name:"TerraBright", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#5f2c82,#49a09d)", tags:["terra","bright","balance"], tool:"Midjourney v6", prompt:`Bright earth fitness logo "TerraBright". Abstract globe with running figure racing around equator, purple to teal gradient. World of fitness concept. Global wellness brand. Spherical wireframe vector with dynamic figure. --v 6`},
-    {id:95, name:"PristineYou", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#f5f5f5,#e0e0e0)", tags:["pristine","clean","white"], tool:"DALL-E 3", prompt:`Pure clean wellness logo "PristineYou". Minimal water ripple on white surface with single lotus petal, ultra-pure white to soft grey gradient. Absolute purity concept. Premium clean beauty wellness. Zen minimal vector.`},
-    {id:96, name:"ThunderFlow", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#373b44,#4286f4)", tags:["thunder","power","dark"], tool:"Stable Diffusion XL", prompt:`Power flow fitness logo "ThunderFlow". Lightning bolt morphing into flowing water stream, dark charcoal to electric blue gradient. Explosive energy meets fluid movement. Combat sports wellness brand. Dynamic vector icon.`},
-    {id:97, name:"OliveGrove", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#6B8E23,#556B2F)", tags:["olive","mediterranean","health"], tool:"Midjourney v6", prompt:`Mediterranean wellness logo "OliveGrove". Olive branch with 7 olives arranged symmetrically, deep olive to forest green gradient. Mediterranean diet brand. Ancient health wisdom. Classic botanical illustration vector. --v 6`},
-    {id:98, name:"ClearLight", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#fdfcfb,#e2d1c3)", tags:["clear","light","minimal"], tool:"DALL-E 3", prompt:`Clarity meditation logo "ClearLight". Simple diamond prism casting pure white light beams, warm cream to soft beige gradient. Crystal clear consciousness. Premium mindfulness brand. Geometric prism vector with precise light ray lines.`},
-    {id:99, name:"PinnacleSoul", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#fc5c7d,#6a3093)", tags:["pinnacle","soul","vibrant"], tool:"Stable Diffusion XL", prompt:`Soul peak wellness logo "PinnacleSoul". Abstract human silhouette with chakra energy columns rising upward, vivid pink to deep purple gradient. Soul elevation concept. Holistic therapy platform. Energy field vector visualization.`},
-    {id:100, name:"AlphaWell", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#0f0c29,#302b63,#24243e)", tags:["alpha","elite","dark"], tool:"Midjourney v6", prompt:`Elite alpha wellness logo "AlphaWell". Bold Greek letter Alpha with fitness track circle, deep midnight navy gradient. Alpha performance concept. Elite fitness brand. Strong geometric letterform vector icon. Premium dark branding. --v 6`},
-];
-
-// Combine all logos
-const logos = [...allLogos, ...extraLogos, ...moreLogos];
-
-// Add SVG to extra logos
-const gradients = [
-    ["#0f3460","#16213e"], ["#f8ceec","#a29bfe"], ["#2d6a4f","#52b788"],
-    ["#00b4db","#0083b0"], ["#c94b4b","#4b134f"], ["#1a1a2e","#16213e"],
-    ["#2193b0","#6dd5ed"], ["#f12711","#f5af19"], ["#e0c3fc","#8ec5fc"],
-    ["#00c6ff","#0072ff"], ["#134e5e","#71b280"], ["#fdcbf1","#e6dee9"],
-    ["#373b44","#4286f4"], ["#acb6e5","#86fde8"], ["#f7f8f8","#acbb78"],
-    ["#4ecdc4","#556270"], ["#1c1c2e","#2c3e50"], ["#8B4513","#228B22"],
-    ["#f093fb","#4facfe"], ["#0052d4","#6fb1fc"], ["#eb3349","#f45c43"],
-    ["#B7D461","#529c3e"], ["#dba98c","#a4508b"], ["#09203f","#537895"],
-    ["#d4fc79","#96e6a1"], ["#f5f7fa","#c3cfe2"], ["#141e30","#243b55"],
-    ["#ff9a9e","#fad0c4"], ["#4b0082","#8a2be2"], ["#2c3e50","#3498db"],
-    ["#7B3F00","#C19A6B"], ["#48c6ef","#6f86d6"], ["#c31432","#240b36"],
-    ["#ff9a9e","#feada6"], ["#232526","#414345"], ["#1a9e5c","#00cdac"],
-    ["#e0f7fa","#80deea"], ["#614385","#516395"], ["#f7971e","#21d4fd"],
-    ["#ff7043","#ff8a65"]
-];
-
-function makeSimpleSVG(i, c1, c2) {
-    const shapes = [
-        // Shape group A - diamond
-        `<polygon points="70,25 110,70 70,115 30,70" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/><circle cx="70" cy="70" r="15" fill="rgba(255,255,255,0.9)"/>`,
-        // Shape group B - triangle in circle
-        `<circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.1)"/><polygon points="70,30 105,90 35,90" stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.3)"/>`,
-        // Shape group C - cross/plus
-        `<rect x="60" y="30" width="20" height="80" rx="10" fill="rgba(255,255,255,0.9)"/><rect x="30" y="60" width="80" height="20" rx="10" fill="rgba(255,255,255,0.9)"/>`,
-        // Shape group D - yin yang simplified
-        `<circle cx="70" cy="70" r="40" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/><semicircle/><path d="M70 30 A20 20 0 0 1 70 70 A20 20 0 0 0 70 110 A40 40 0 0 1 70 30" fill="rgba(255,255,255,0.7)"/><circle cx="70" cy="50" r="6" fill="rgba(255,255,255,0.95)"/><circle cx="70" cy="90" r="6" fill="rgba(255,255,255,0.2)"/>`,
-        // Shape group E - star
-        `<polygon points="70,22 80,55 115,55 88,76 98,110 70,89 42,110 52,76 25,55 60,55" fill="rgba(255,255,255,0.85)" stroke="rgba(255,255,255,0.9)" stroke-width="1"/>`,
-        // Shape group F - heart
-        `<path d="M70 100 C70 100 25 72 25 48 C25 34 36 26 48 26 C58 26 66 32 70 38 C74 32 82 26 92 26 C104 26 115 34 115 48 C115 72 70 100 70 100" fill="rgba(255,255,255,0.85)"/>`,
-        // Shape group G - infinity
-        `<path d="M38 70 C38 55 48 45 58 45 C68 45 70 55 70 70 C70 85 72 95 82 95 C92 95 102 85 102 70 C102 55 92 45 82 45 C72 45 70 55 70 70 C70 85 68 95 58 95 C48 95 38 85 38 70Z" stroke="white" stroke-width="3" fill="none"/>`,
-        // Shape group H - shield
-        `<path d="M70 25 L105 40 L105 75 C105 93 90 108 70 115 C50 108 35 93 35 75 L35 40 Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/><circle cx="70" cy="70" r="14" fill="rgba(255,255,255,0.9)"/>`,
-        // Shape group I - target
-        `<circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="30" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="18" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="7" fill="rgba(255,255,255,0.95)"/>`,
-        // Shape group J - arrow up
-        `<polygon points="70,20 105,70 85,70 85,115 55,115 55,70 35,70" fill="rgba(255,255,255,0.85)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>`,
-    ];
-    const idx = i % shapes.length;
-    return `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="70" cy="70" r="65" fill="url(#eg${i})"/>
-        ${shapes[idx]}
-        <defs><linearGradient id="eg${i}" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs>
-    </svg>`;
-}
-
-// Add SVGs to extra and more logos
-[...extraLogos, ...moreLogos].forEach((logo, idx) => {
-    if (!logo.svg) {
-        const gIdx = idx % gradients.length;
-        logo.svg = makeSimpleSVG(idx + 21, gradients[gIdx][0], gradients[gIdx][1]);
-    }
-});
-
-// State
-let currentFilter = 'all';
-let currentSearch = '';
-let shownCount = 40;
-let currentModalLogo = null;
-
-function getFilteredLogos() {
-    return logos.filter(logo => {
-        const matchFilter = currentFilter === 'all' || logo.category === currentFilter;
-        const matchSearch = !currentSearch || logo.name.toLowerCase().includes(currentSearch.toLowerCase()) || logo.style.toLowerCase().includes(currentSearch.toLowerCase()) || logo.tags.some(t => t.includes(currentSearch.toLowerCase()));
-        return matchFilter && matchSearch;
-    });
-}
-
-function renderLogos() {
-    const grid = document.getElementById('logoGrid');
-    const filtered = getFilteredLogos();
-    const visible = filtered.slice(0, shownCount);
-    
-    document.getElementById('logoCount').textContent = filtered.length + ' Logos';
-    document.getElementById('shownCount').textContent = visible.length;
-    document.getElementById('totalCount').textContent = filtered.length;
-    document.getElementById('loadMoreSection').style.display = visible.length >= filtered.length ? 'none' : 'block';
-
-    grid.innerHTML = visible.map((logo, i) => `
-        <div class="logo-card" data-id="${logo.id}" data-category="${logo.category}" onclick="openModal(${logo.id})" style="animation-delay:${Math.min(i * 0.05, 0.5)}s">
-            ${i < 5 ? '<div class="new-badge">NEW</div>' : ''}
-            ${logo.style === 'Geometric' ? '<div class="premium-badge">⭐ PRO</div>' : ''}
-            <div class="logo-card-img" style="background:${logo.bg}">
-                ${logo.svg}
-                <div class="logo-card-overlay">
-                    <button class="overlay-btn download" onclick="event.stopPropagation();downloadLogo(${logo.id})">⬇ Download</button>
-                    <button class="overlay-btn prompt" onclick="event.stopPropagation();openModal(${logo.id})">📋 Prompt</button>
-                </div>
-            </div>
-            <div class="logo-card-body">
-                <div class="logo-card-name">${logo.name}</div>
-                <div class="logo-card-style">${logo.style} Style • ${logo.tool}</div>
-                <div class="logo-card-tags">
-                    ${logo.tags.map(t => `<span class="tag" style="background:#f1f5f9;color:#475569">#${t}</span>`).join('')}
-                </div>
-                <div class="logo-card-actions">
-                    <button class="btn-download" onclick="event.stopPropagation();downloadLogo(${logo.id})">⬇ Download SVG</button>
-                    <button class="btn-copy-prompt" id="cp-${logo.id}" onclick="event.stopPropagation();copyPrompt(${logo.id})">📋 Prompt</button>
-                </div>
-            </div>
-        </div>
-    `).join('');
-}
-
-function filterLogos(filter, btn) {
-    currentFilter = filter;
-    shownCount = 40;
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    renderLogos();
-}
-
-function searchLogos(val) {
-    currentSearch = val;
-    shownCount = 40;
-    renderLogos();
-}
-
-function loadMore() {
-    shownCount += 20;
-    renderLogos();
-    showToast('20 more logos loaded!', 'success');
-}
-
-function openModal(id) {
-    const logo = logos.find(l => l.id === id);
-    if (!logo) return;
-    currentModalLogo = logo;
-    document.getElementById('modalTitle').textContent = logo.name;
-    document.getElementById('modalPreview').style.background = logo.bg;
-    document.getElementById('modalPreview').innerHTML = logo.svg;
-    document.getElementById('modalPreview').querySelector('svg').style.width = '180px';
-    document.getElementById('modalPreview').querySelector('svg').style.height = '180px';
-    document.getElementById('modalPrompt').textContent = logo.prompt;
-    document.getElementById('modalStyle').textContent = logo.style;
-    document.getElementById('modalTool').textContent = logo.tool;
-    document.getElementById('modalCopyBtn').textContent = 'Copy';
-    document.getElementById('modalCopyBtn').className = 'prompt-copy-btn';
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal(e) {
-    if (!e || e.target === document.getElementById('modalOverlay')) {
-        document.getElementById('modalOverlay').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-function copyModalPrompt() {
-    if (!currentModalLogo) return;
-    navigator.clipboard.writeText(currentModalLogo.prompt);
-    const btn = document.getElementById('modalCopyBtn');
-    btn.textContent = '✓ Copied!';
-    btn.className = 'prompt-copy-btn copied';
-    setTimeout(() => { btn.textContent = 'Copy'; btn.className = 'prompt-copy-btn'; }, 2500);
-    showToast('Prompt copied! Paste in Midjourney or DALL-E ✨', 'success');
-}
-
-function copyPrompt(id) {
-    const logo = logos.find(l => l.id === id);
-    if (!logo) return;
-    navigator.clipboard.writeText(logo.prompt);
-    const btn = document.getElementById(`cp-${id}`);
-    if (btn) { btn.textContent = '✓ Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '📋 Prompt'; btn.classList.remove('copied'); }, 2500); }
-    showToast('Prompt copied! Use in Midjourney / DALL-E ✨', 'success');
-}
-
-function downloadLogo(id) {
-    const logo = logos.find(l => l.id === id);
-    if (!logo) return;
-    const svgContent = `<?xml version="1.0" encoding="UTF-8"?>\n${logo.svg}`;
-    const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${logo.name.toLowerCase()}-logo-sanzyai.svg`;
-    a.click();
-    URL.revokeObjectURL(url);
-    showToast(`${logo.name} SVG downloaded! ✅`, 'success');
-}
-
-function downloadCurrentLogo() {
-    if (currentModalLogo) downloadLogo(currentModalLogo.id);
-}
-
-function showToast(msg, type = 'success') {
-    const toast = document.getElementById('toast');
-    document.getElementById('toastMsg').textContent = msg;
-    document.getElementById('toastIcon').textContent = type === 'success' ? '✅' : 'ℹ️';
-    toast.className = `toast ${type} show`;
-    setTimeout(() => toast.classList.remove('show'), 3200);
-}
-
-// Keyboard close
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(null); if(e.key==='Escape'){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}});
-
-// Init
-</script>
-    <!-- ===== PREMIUM FOOTER ===== -->
-    <footer style="background: #1e293b; color: white; padding: 60px 20px; margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+    <footer class="footer-compact" style="border-top: 1px solid var(--border); padding: 60px 0;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px;">
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">SanzyAI</h3>
-                    <p style="color: #94a3b8; font-size: 14px; line-height: 1.6;">Premium logo concepts and AI resources for modern builders. High-quality designs, delivered instantly.</p>
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <img src="./public/logo-official.png" alt="SanzyAI Logo" style="width: 24px; height: 24px; object-fit: contain;">
+                        <span class="logo-text" style="font-size: 18px;">SanzyAI</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; max-width: 300px;">Premium AI-generated resources for the next generation of digital builders.</p>
                 </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 15px; font-size: 16px;">Product</h4>
+                <div style="display: flex; gap: 40px;">
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Wellness Logos</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Prompt Store</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">AI Services</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/about" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">About</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/contact" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Contact</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 15px; font-size: 16px;">Support</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Help Center</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Contact Us</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: #94a3b8; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-                <p style="color: #64748b; font-size: 13px;">© 2026 SanzyAI. All rights reserved.</p>
-                <div style="display: flex; gap: 15px;">
-                    <span style="padding: 6px 12px; background: rgba(37,99,235,0.1); border-radius: 20px; font-size: 12px; color: #60a5fa;">🔒 Secure Checkout</span>
-                    <span style="padding: 6px 12px; background: rgba(16,185,129,0.1); border-radius: 20px; font-size: 12px; color: #4ade80;">⚡ Instant Delivery</span>
+                    <p style="color: var(--text-muted); font-size: 13px;">© 2026 SanzyAI. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-<script>
-renderLogos();
-</script>
-<script type="module" src="./src/globals.js"></script>
-<script type="module" src="./src/chat.js"></script>
+    <script>
+        // ===== LOGO DATA (FROM USER REQUEST) =====
+        const allLogos = [
+            {
+                id: 1, name: "ZenFlow", style: "Minimal", category: "meditation",
+                bg: "linear-gradient(135deg, #667eea, #764ba2)",
+                tags: ["minimal", "purple", "calm"],
+                tool: "Midjourney v6",
+                prompt: `A minimalist wellness app logo for "ZenFlow". Features a flowing zen circle made of thin elegant lines, gradient from lavender to deep purple. Clean sans-serif typography below. White background with soft shadow. Vector style, professional, suitable for app icon. --ar 1:1 --style raw --v 6`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g1)"/><circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/><path d="M70 30 C70 30 95 50 95 70 C95 90 70 110 70 110 C70 110 45 90 45 70 C45 50 70 30 70 30Z" stroke="white" stroke-width="2.5" fill="none"/><circle cx="70" cy="70" r="8" fill="white"/><defs><linearGradient id="g1" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 2, name: "LotusLife", style: "Nature", category: "nature",
+                bg: "linear-gradient(135deg, #f093fb, #f5576c)",
+                tags: ["lotus", "pink", "floral"],
+                tool: "DALL-E 3",
+                prompt: `Professional app logo "LotusLife" wellness brand. A blooming lotus flower with layered petals, gradient from soft pink to rose red. Geometric precision, symmetrical design. Clean modern typeface. Suitable for health & meditation app. Vector illustration, transparent background. --quality 2`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g2)"/><ellipse cx="70" cy="72" rx="10" ry="22" fill="rgba(255,255,255,0.9)"/><ellipse cx="55" cy="76" rx="9" ry="20" transform="rotate(-25 55 76)" fill="rgba(255,255,255,0.8)"/><ellipse cx="85" cy="76" rx="9" ry="20" transform="rotate(25 85 76)" fill="rgba(255,255,255,0.8)"/><ellipse cx="43" cy="84" rx="8" ry="17" transform="rotate(-45 43 84)" fill="rgba(255,255,255,0.65)"/><ellipse cx="97" cy="84" rx="8" ry="17" transform="rotate(45 97 84)" fill="rgba(255,255,255,0.65)"/><ellipse cx="70" cy="95" rx="25" ry="6" fill="rgba(255,255,255,0.3)"/><defs><linearGradient id="g2" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f093fb"/><stop offset="100%" stop-color="#f5576c"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 3, name: "MindPure", style: "Abstract", category: "mental",
+                bg: "linear-gradient(135deg, #4facfe, #00f2fe)",
+                tags: ["mind", "blue", "abstract"],
+                tool: "Midjourney v6",
+                prompt: `Minimalist mental wellness logo "MindPure". Abstract brain shape formed by infinite loop/ribbon, cyan to blue gradient. Ultra-clean, modern, app icon quality. White icon on dark background. Swiss design influence, geometric. Vector SVG format. --ar 1:1 --v 6 --style raw`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g3)"/><path d="M50 60 C50 48 62 40 70 40 C78 40 85 46 85 54 C85 68 65 70 65 82 C65 90 72 96 80 96 C88 96 95 90 95 82" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M50 60 C50 72 65 74 65 82" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/><circle cx="50" cy="60" r="5" fill="white"/><circle cx="95" cy="82" r="5" fill="white"/><defs><linearGradient id="g3" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#4facfe"/><stop offset="100%" stop-color="#00f2fe"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 4, name: "VitaCore", style: "Geometric", category: "fitness",
+                bg: "linear-gradient(135deg, #43e97b, #38f9d7)",
+                tags: ["green", "geometric", "energy"],
+                tool: "Stable Diffusion XL",
+                prompt: `Bold geometric fitness wellness logo "VitaCore". Hexagonal core with dynamic energy lines radiating outward, vivid green to teal gradient. Strong and powerful aesthetic, gym & health brand. Clean vector shapes, no gradients in shapes only background. App icon ready. Professional logo design.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g4)"/><polygon points="70,35 97,52.5 97,87.5 70,105 43,87.5 43,52.5" stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.15)"/><polygon points="70,48 88,58.5 88,79.5 70,90 52,79.5 52,58.5" fill="rgba(255,255,255,0.25)"/><circle cx="70" cy="69" r="10" fill="white"/><defs><linearGradient id="g4" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#43e97b"/><stop offset="100%" stop-color="#38f9d7"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 5, name: "SerenSpace", style: "Minimal", category: "meditation",
+                bg: "linear-gradient(135deg, #fa709a, #fee140)",
+                tags: ["sunset", "calm", "minimal"],
+                tool: "Midjourney v6",
+                prompt: `Elegant minimal wellness logo "SerenSpace". Stylized mountain silhouette with a rising sun, warm sunset gradient from coral pink to golden yellow. Ultra-thin lines, airy and peaceful. Suitable for meditation and mindfulness app. Clean vector, icon + wordmark layout. --v 6 --ar 1:1`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g5)"/><path d="M20 95 L50 55 L70 75 L90 45 L120 95 Z" fill="rgba(255,255,255,0.3)"/><path d="M20 95 L50 55 L70 75 L90 45 L120 95" stroke="white" stroke-width="2.5" stroke-linejoin="round" fill="none"/><circle cx="70" cy="42" r="12" fill="rgba(255,255,255,0.85)"/><defs><linearGradient id="g5" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fa709a"/><stop offset="100%" stop-color="#fee140"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 6, name: "NutriBloom", style: "Nature", category: "nutrition",
+                bg: "linear-gradient(135deg, #a8edea, #fed6e3)",
+                tags: ["leaf", "nutrition", "soft"],
+                tool: "DALL-E 3",
+                prompt: `Fresh clean nutrition app logo "NutriBloom". A sprouting seedling/leaf emerging from a bowl shape, soft mint green and blush pink gradient. Friendly, approachable, health-conscious aesthetic. Modern icon with rounded shapes. White background. Perfect for diet and nutrition tracking app. Vector logo.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g6)"/><path d="M35 90 Q70 75 105 90" stroke="rgba(100,150,100,0.8)" stroke-width="3" fill="none"/><path d="M70 72 C70 72 50 60 48 44 C62 44 72 58 70 72" fill="rgba(80,160,80,0.7)"/><defs><linearGradient id="g6" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#a8edea"/><stop offset="100%" stop-color="#fed6e3"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 7, name: "PulseZen", style: "Geometric", category: "fitness",
+                bg: "linear-gradient(135deg, #f7971e, #ffd200)",
+                tags: ["pulse", "energy", "yellow"],
+                tool: "Midjourney v6",
+                prompt: `Dynamic fitness wellness logo "PulseZen". EKG/heartbeat line morphing into a zen circle at the end, electric yellow to orange gradient. High energy meets inner peace concept. Bold modern design. App icon perfect. Vector style clean edges. --v 6 --ar 1:1 --style raw --quality 2`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g7)"/><path d="M18 70 L38 70 L48 48 L60 92 L72 58 L80 78 L92 70 L115 70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="115" cy="70" r="10" stroke="white" stroke-width="2.5" fill="none"/><defs><linearGradient id="g7" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f7971e"/><stop offset="100%" stop-color="#ffd200"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 8, name: "AuraWell", style: "Abstract", category: "mental",
+                bg: "linear-gradient(135deg, #30cfd0, #330867)",
+                tags: ["aura", "dark", "mystical"],
+                tool: "Stable Diffusion XL",
+                prompt: `Mystical wellness brand logo "AuraWell". Abstract concentric aura rings emanating from center, deep teal to dark purple gradient. Cosmic spiritual aesthetic. Sacred geometry influence. Glow effects on rings. Dark luxury branding. App icon suitable. Premium wellness brand. Vector artwork.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g8)"/><circle cx="70" cy="70" r="45" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/><circle cx="70" cy="70" r="9" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none"/><circle cx="70" cy="70" r="3" fill="white"/><defs><linearGradient id="g8" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#30cfd0"/><stop offset="100%" stop-color="#330867"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 9, name: "BreathEase", style: "Minimal", category: "meditation",
+                bg: "linear-gradient(135deg, #89f7fe, #66a6ff)",
+                tags: ["breath", "blue", "air"],
+                tool: "Midjourney v6",
+                prompt: `Ultra-minimalist breathing app logo "BreathEase". Expanding concentric circles suggesting breath/inhale-exhale, sky blue to electric blue gradient. Extreme whitespace. Clean sans-serif "BreathEase" text. App icon friendly. Swiss minimalism style. --v 6 --ar 1:1 --no text --style raw`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g9)"/><circle cx="70" cy="70" r="14" fill="rgba(255,255,255,0.9)"/><circle cx="70" cy="70" r="44" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/><defs><linearGradient id="g9" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#89f7fe"/><stop offset="100%" stop-color="#66a6ff"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 10, name: "RootedSoul", style: "Nature", category: "nature",
+                bg: "linear-gradient(135deg, #56ab2f, #a8e063)",
+                tags: ["tree", "green", "earth"],
+                tool: "DALL-E 3",
+                prompt: `Grounded wellness logo "RootedSoul". A stylized tree with roots mirroring branches above, lush green gradient. Concept of balance above and below. Flat vector style, bold line art. Deep roots = deep wellness. App icon + horizontal lockup. Nature-inspired, organic shapes. Vector illustration logo.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g10)"/><line x1="70" y1="35" x2="70" y2="105" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/><path d="M70 52 L48 35 M70 52 L92 35" stroke="white" stroke-width="2"/><defs><linearGradient id="g10" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#56ab2f"/><stop offset="100%" stop-color="#a8e063"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 11, name: "CalmNest", style: "Minimal", category: "mental",
+                bg: "linear-gradient(135deg, #ffecd2, #fcb69f)",
+                tags: ["peach", "cozy", "soft"],
+                tool: "Midjourney v6",
+                prompt: `Cozy mental wellness app logo "CalmNest". Abstract nest/crescent moon shape cradling a small star/dot, warm peach to terracotta gradient. Soft rounded edges, nurturing feel. Light, airy, calming aesthetic. Perfect for sleep & mood tracking app. Minimalist vector icon. --v 6`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g11)"/><path d="M35 78 Q35 42 70 42 Q105 42 105 78" stroke="rgba(150,80,50,0.7)" stroke-width="3" fill="rgba(255,255,255,0.2)" stroke-linecap="round"/><circle cx="70" cy="60" r="8" fill="rgba(255,255,255,0.9)"/><defs><linearGradient id="g11" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#ffecd2"/><stop offset="100%" stop-color="#fcb69f"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 12, name: "FlowState", style: "Abstract", category: "fitness",
+                bg: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                tags: ["flow", "purple", "wave"],
+                tool: "Stable Diffusion XL",
+                prompt: `Athletic flow state wellness logo "FlowState". Abstract fluid wave morphing into human figure in yoga/flow pose, deep purple to electric blue gradient. Dynamic motion lines, premium sports brand feel. Bold modern typography. App icon quality. Vector file with clean paths. Professional fitness brand.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g12)"/><path d="M20 80 C35 60 50 90 70 70 C90 50 105 80 120 60" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" stroke-linecap="round" fill="none"/><defs><linearGradient id="g12" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#6a11cb"/><stop offset="100%" stop-color="#2575fc"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 13, name: "TerraHeal", style: "Nature", category: "nature",
+                bg: "linear-gradient(135deg, #11998e, #38ef7d)",
+                tags: ["earth", "teal", "heal"],
+                tool: "Midjourney v6",
+                prompt: `Earthy healing wellness logo "TerraHeal". Globe/earth cross-section with sprouting roots and leaves, teal to emerald green gradient. Grounding and healing energy. Sacred geometry circle border. App icon + stacked typography. Holistic health brand. Flat vector style. --v 6 --ar 1:1`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g13)"/><circle cx="70" cy="70" r="38" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.1)"/><defs><linearGradient id="g13" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#11998e"/><stop offset="100%" stop-color="#38ef7d"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 14, name: "SolarSelf", style: "Geometric", category: "meditation",
+                bg: "linear-gradient(135deg, #f6d365, #fda085)",
+                tags: ["sun", "warm", "energy"],
+                tool: "DALL-E 3",
+                prompt: `Radiant self-care logo "SolarSelf". Geometric sun mandala with 12 symmetrical rays, golden yellow to warm coral gradient. Sacred geometry, precision circles and angles. Luxury wellness branding. Intricate but clean icon. Suitable for premium yoga & meditation platform. Vector SVG.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g14)"/><circle cx="70" cy="70" r="28" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.8)" stroke-width="2"/><circle cx="70" cy="70" r="18" fill="rgba(255,255,255,0.85)"/><defs><linearGradient id="g14" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#f6d365"/><stop offset="100%" stop-color="#fda085"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 15, name: "InnerArc", style: "Abstract", category: "mental",
+                bg: "linear-gradient(135deg, #4776e6, #8e54e9)",
+                tags: ["arc", "indigo", "modern"],
+                tool: "Midjourney v6",
+                prompt: `Modern psychology wellness app logo "InnerArc". Three concentric arcs representing layers of consciousness, indigo to violet gradient. Clean geometric forms, Bauhaus inspired. Premium mental health platform. Bold weight arcs with precise spacing. Icon + wordmark. --v 6 --ar 1:1 --style raw`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g15)"/><path d="M30 90 A45 45 0 0 1 110 90" stroke="rgba(255,255,255,0.4)" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M40 90 A35 35 0 0 1 100 90" stroke="rgba(255,255,255,0.65)" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M50 90 A25 25 0 0 1 90 90" stroke="rgba(255,255,255,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/><defs><linearGradient id="g15" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#4776e6"/><stop offset="100%" stop-color="#8e54e9"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 16, name: "PetalPath", style: "Nature", category: "nutrition",
+                bg: "linear-gradient(135deg, #fddb92, #d1fdff)",
+                tags: ["petal", "light", "flower"],
+                tool: "Stable Diffusion XL",
+                prompt: `Delicate wellness nutrition logo "PetalPath". Abstract 6-petal flower where each petal is a different superfood icon (leaf, drop, seed etc), soft yellow to pale cyan gradient. Very light feminine aesthetic. Holistic nutrition brand. Clean flat vector with fine line details. App icon.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g16)"/><circle cx="70" cy="70" r="10" fill="rgba(255,200,100,0.9)" stroke="rgba(200,150,50,0.8)" stroke-width="1.5"/><defs><linearGradient id="g16" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fddb92"/><stop offset="100%" stop-color="#d1fdff"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 17, name: "ChakraSync", style: "Geometric", category: "meditation",
+                bg: "linear-gradient(135deg, #ee0979, #ff6a00)",
+                tags: ["chakra", "fire", "energy"],
+                tool: "Midjourney v6",
+                prompt: `Spiritual wellness logo "ChakraSync". Seven stacked geometric shapes (circle, triangle, square etc) aligned vertically representing chakras, vivid red to orange fire gradient. Sacred geometry, precise alignment. Spiritual tech brand. Flat vector with gold accent lines. Premium icon design. --v 6`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g17)"/><circle cx="70" cy="30" r="7" fill="rgba(255,255,255,0.9)"/><defs><linearGradient id="g17" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#ee0979"/><stop offset="100%" stop-color="#ff6a00"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 18, name: "MoonRise", style: "Minimal", category: "mental",
+                bg: "linear-gradient(135deg, #243949, #517fa4)",
+                tags: ["moon", "night", "sleep"],
+                tool: "DALL-E 3",
+                prompt: `Sleep wellness app logo "MoonRise". Crescent moon cradling small stars in a dark navy to steel blue gradient. Ultra minimal line art style. Night time, rest, and recovery concept. Premium sleep tracking app icon. Thin elegant lines, luxury feel. Clean vector. One icon, no clutter.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g18)"/><path d="M85 45 A35 35 0 1 0 85 95 A25 25 0 1 1 85 45Z" fill="rgba(255,255,255,0.9)"/><defs><linearGradient id="g18" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#243949"/><stop offset="100%" stop-color="#517fa4"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 19, name: "KineticYou", style: "Abstract", category: "fitness",
+                bg: "linear-gradient(135deg, #fc4a1a, #f7b733)",
+                tags: ["kinetic", "orange", "motion"],
+                tool: "Midjourney v6",
+                prompt: `Dynamic fitness brand logo "KineticYou". Abstract human figure in explosive motion, fragments radiating outward, fiery orange to golden yellow gradient. Energy, power, transformation. Sports app icon. Bold chunky shapes with velocity lines. Extreme sports aesthetic. Vector logo. --v 6 --ar 1:1`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g19)"/><circle cx="70" cy="42" r="9" fill="rgba(255,255,255,0.9)"/><defs><linearGradient id="g19" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#fc4a1a"/><stop offset="100%" stop-color="#f7b733"/></linearGradient></defs></svg>`
+            },
+            {
+                id: 20, name: "EtherBliss", style: "Abstract", category: "meditation",
+                bg: "linear-gradient(135deg, #a18cd1, #fbc2eb)",
+                tags: ["ethereal", "lavender", "bliss"],
+                tool: "Stable Diffusion XL",
+                prompt: `Ethereal meditation wellness logo "EtherBliss". Floating abstract orbs/bubbles connected by delicate lines, soft lavender to blush pink gradient. Dreamlike, floating sensation. Premium mindfulness app. Bokeh-inspired icon design. Soft light vector shapes. Elegant and feminine. Luxury brand logo.`,
+                svg: `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="70" r="65" fill="url(#g20)"/><circle cx="70" cy="70" r="22" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><defs><linearGradient id="g20" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="#a18cd1"/><stop offset="100%" stop-color="#fbc2eb"/></linearGradient></defs></svg>`
+            }
+        ];
+
+        const extraLogos = [
+            {id:21, name:"PranaLife", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#0f3460,#16213e)", tags:["prana","dark","sacred"], tool:"Midjourney v6", prompt:`Sacred geometry wellness logo "PranaLife". Intricate Sri Yantra inspired triangular mandala, deep navy to midnight blue. Gold/white thin line art. Premium spiritual brand. Precision geometric forms. App icon quality. Vector artwork. --v 6 --ar 1:1`},
+            {id:22, name:"GlowPath", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#f8ceec,#a29bfe)", tags:["glow","pink","path"], tool:"DALL-E 3", prompt:`Soft glow wellness path logo "GlowPath". Abstract winding path with soft light/glow effect, pastel pink to soft purple gradient. Journey of healing concept. Ultra-soft edges, dreamy aesthetic. Mental wellness app icon. Clean minimal vector.`},
+            {id:23, name:"VerdantMe", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#2d6a4f,#52b788)", tags:["forest","deep green","organic"], tool:"Stable Diffusion XL", prompt:`Forest wellness brand "VerdantMe". Dense stylized fern/leaf cluster forming letter V shape, deep forest green to bright green. Organic growth concept. Natural health brand. Bold icon with fine leaf details. Flat vector SVG.`},
+            {id:24, name:"TranquilAI", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#00b4db,#0083b0)", tags:["ai","ocean","calm"], tool:"Midjourney v6", prompt:`AI-powered wellness logo "TranquilAI". Neural network nodes arranged in calming mandala pattern, ocean blue gradient. Tech meets wellness. Premium AI mental health app. Circuit-meets-nature aesthetic. Clean vector.--v 6`},
+            {id:25, name:"EmberYoga", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#c94b4b,#4b134f)", tags:["yoga","fire","deep"], tool:"DALL-E 3", prompt:`Hot yoga brand logo "EmberYoga". Silhouetted figure in warrior pose surrounded by subtle flame aura, deep crimson to dark purple gradient. Intense power and inner fire. Premium yoga studio brand. Clean silhouette vector icon.`},
+            {id:26, name:"NovaMind", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)", tags:["space","mind","cosmic"], tool:"Stable Diffusion XL", prompt:`Cosmic mental wellness logo "NovaMind". Star cluster forming brain shape, deep space navy with bright star dots. Galaxy-inspired mind wellness. Premium app icon. Scattered star points connected by fine lines. Dark luxury brand.`},
+            {id:27, name:"AquaBalance", style:"Abstract", category:"nature", bg:"linear-gradient(135deg,#2193b0,#6dd5ed)", tags:["water","aqua","flow"], tool:"Midjourney v6", prompt:`Water wellness logo "AquaBalance". Two water drops merging into perfect balance scale, sky blue to light cyan gradient. Balance through hydration concept. Clean minimal vector shapes. Nutrition/hydration app icon. --v 6`},
+            {id:28, name:"HearthWell", style:"Minimal", category:"nutrition", bg:"linear-gradient(135deg,#f12711,#f5af19)", tags:["warm","home","nourish"], tool:"DALL-E 3", prompt:`Nourishing home wellness logo "HearthWell". Stylized house shape with leafy plant inside it, warm orange to gold gradient. Home nourishment concept. Family wellness brand. Rounded friendly shapes. Flat vector logo.`},
+            {id:29, name:"CrystalPath", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#e0c3fc,#8ec5fc)", tags:["crystal","violet","clarity"], tool:"Midjourney v6", prompt:`Crystal clarity wellness logo "CrystalPath". Geometric crystal/diamond shape with internal light refraction lines, soft violet to sky blue gradient. Clarity of mind concept. Premium meditation app icon. Faceted vector shapes. --v 6`},
+            {id:30, name:"ZephyrFit", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#00c6ff,#0072ff)", tags:["wind","blue","swift"], tool:"Stable Diffusion XL", prompt:`Swift fitness logo "ZephyrFit". Abstract wind/air streams forming Z shape, electric blue gradient. Speed, agility, freshness. Running & cardio app icon. Dynamic flowing lines, aerodynamic shapes. Bold modern brand. Vector.`},
+            {id:31, name:"FernRoot", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#134e5e,#71b280)", tags:["fern","depth","nature"], tool:"DALL-E 3", prompt:`Deep nature wellness logo "FernRoot". Unfurling fern frond (fiddlehead) in elegant spiral, deep teal to soft green gradient. New beginnings, growth concept. Organic spiral vector shapes. Botanical wellness brand.`},
+            {id:32, name:"SilkBreath", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#fdcbf1,#e6dee9)", tags:["silk","soft","breathe"], tool:"Midjourney v6", prompt:`Silk smooth meditation logo "SilkBreath". Ultra-minimal single brushstroke circle (enso style), soft blush to lilac gradient. Japanese Zen influenced. Single confident stroke. Premium mindfulness app. --v 6 --ar 1:1`},
+            {id:33, name:"CoreFlux", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#373b44,#4286f4)", tags:["core","flux","tech"], tool:"Stable Diffusion XL", prompt:`Tech fitness brand "CoreFlux". Abstract atom/nucleus with orbiting rings representing core strength, dark charcoal to electric blue. Scientific approach to fitness. Clean technical vector shapes. Premium gym app icon.`},
+            {id:34, name:"SproutMind", style:"Nature", category:"mental", bg:"linear-gradient(135deg,#acb6e5,#86fde8)", tags:["sprout","grow","mind"], tool:"DALL-E 3", prompt:`Mental growth wellness logo "SproutMind". Brain shape outlined by sprouting seedlings/leaves, soft periwinkle to mint gradient. Mind-nature connection. Psychology meets nature brand. Illustrated vector style. Mental health app.`},
+            {id:35, name:"ZenithPeak", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#f7f8f8,#acbb78)", tags:["peak","achievement","green"], tool:"Midjourney v6", prompt:`Peak performance wellness logo "ZenithPeak". Three geometric mountain peaks with rising sun arc, olive to natural green gradient. Achievement and summit concept. Outdoor wellness brand. Bold flat vector shapes. --v 6`},
+            {id:36, name:"BioHarmon", style:"Abstract", category:"nutrition", bg:"linear-gradient(135deg,#4ecdc4,#556270)", tags:["biome","harmony","teal"], tool:"Stable Diffusion XL", prompt:`Gut wellness brand logo "BioHarmon". Abstract microbiome cell cluster forming circular pattern, teal to slate gradient. Gut health = mind health. Medical-friendly yet approachable. Scientific vector illustration. Nutrition app.`},
+            {id:37, name:"StellaRest", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#1c1c2e,#2c3e50)", tags:["stars","sleep","dark"], tool:"DALL-E 3", prompt:`Luxury sleep wellness logo "StellaRest". Constellation of stars forming pillow/cloud outline, deep space dark navy gradient. Luxury sleep tech brand. Fine dot-and-line star art. Gold star accent. Premium dark icon.`},
+            {id:38, name:"OakHeal", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#8B4513,#228B22)", tags:["oak","sturdy","earthy"], tool:"Midjourney v6", prompt:`Strong earthy wellness logo "OakHeal". Mighty oak tree silhouette with expansive canopy, rich brown to forest green gradient. Strength, longevity, healing concept. Bold nature brand icon. Flat vector clean shapes. --v 6`},
+            {id:39, name:"PrismaWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#f093fb,#f5576c,#4facfe)", tags:["prism","rainbow","spectrum"], tool:"Stable Diffusion XL", prompt:`Full-spectrum wellness logo "PrismaWell". Geometric prism splitting white light into rainbow spectrum, vibrant gradient. Complete holistic health concept. Colorful premium brand. Clean geometric vector shapes. Wellness platform icon.`},
+            {id:40, name:"TideFlow", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#0052d4,#4364f7,#6fb1fc)", tags:["tide","ocean","minimal"], tool:"DALL-E 3", prompt:`Ocean meditation logo "TideFlow". Minimal wave line with circular moon above, deep ocean blue to light sky blue gradient. Tide and breath rhythm concept. Ultra-clean 2-element design. Meditation app icon. Premium minimalism.`},
+            {id:41, name:"VibeRise", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#eb3349,#f45c43)", tags:["vibe","rise","red"], tool:"Midjourney v6", prompt:`High vibe fitness logo "VibeRise". Sound wave visualization morphing into rising arrow shape, bold red to coral gradient. Raise your vibration concept. High energy brand. Audio/fitness app. Bold geometric waves. --v 6`},
+            {id:42, name:"SageWise", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#B7D461,#529c3e)", tags:["sage","herb","wise"], tool:"Stable Diffusion XL", prompt:`Herbal wisdom wellness logo "SageWise". Elegant sage/herb sprig with detailed leaf texture, yellow-green to forest green gradient. Ancient herbal wisdom meets modern design. Nutrition supplement brand. Fine botanical illustration vector.`},
+            {id:43, name:"SpiralWell", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#dba98c,#a4508b)", tags:["spiral","golden","mystical"], tool:"DALL-E 3", prompt:`Golden spiral wellness logo "SpiralWell". Fibonacci golden spiral with gradient fill, warm earth tone to mystical purple. Sacred mathematics in healing. Holistic therapy brand. Precision vector golden spiral.`},
+            {id:44, name:"SwiftZen", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#09203f,#537895)", tags:["swift","dark","zen"], tool:"Midjourney v6", prompt:`Minimalist performance logo "SwiftZen". Single lightning bolt morphing into lotus flower at base, dark midnight navy gradient. Speed with inner peace. Athletic mindfulness brand. Premium dark icon. Clean lines, --v 6`},
+            {id:45, name:"DewDrop", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#d4fc79,#96e6a1)", tags:["dew","fresh","morning"], tool:"Stable Diffusion XL", prompt:`Fresh morning wellness logo "DewDrop". Crystal clear water droplet with leaf reflection inside, fresh lime to mint green gradient. Morning wellness ritual. Hydration + nature brand. Photorealistic vector droplet icon.`},
+            {id:46, name:"ArcLight", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#f8f9fa,#6c757d)", tags:["arc","light","clarity"], tool:"DALL-E 3", prompt:`Light therapy wellness logo "ArcLight". Rainbow arc of clean geometric color bands, light silver to charcoal background. Spectrum light therapy concept. Scientific wellness brand. Pure minimal geometric arcs. Premium mental health app.`},
+            {id:47, name:"PureAxis", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#141e30,#243b55)", tags:["axis","dark","pure"], tool:"Midjourney v6", prompt:`Elite fitness logo "PureAxis". Abstract X/axis intersection with radiating energy lines, deep dark navy gradient with sharp white highlights. Precision training concept. Premium dark fitness brand. Technical vector icon. --v 6`},
+            {id:48, name:"BloomEra", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#ff9a9e,#fad0c4,#ffecd2)", tags:["bloom","pastel","spring"], tool:"Stable Diffusion XL", prompt:`Spring wellness brand logo "BloomEra". Cherry blossom branch with 5 blooms arranged in sacred circle, soft pink to peach gradient. Seasonal renewal, Japanese-inspired. Elegant nature brand. Fine petal vector illustration.`},
+            {id:49, name:"IndigoFlow", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#4b0082,#8a2be2)", tags:["indigo","deep","spiritual"], tool:"DALL-E 3", prompt:`Deep spiritual wellness logo "IndigoFlow". Minimal third eye/all-seeing eye outline with flowing energy streams, deep indigo to violet gradient. Intuition and spiritual awareness. Premium meditation brand. Clean line art vector.`},
+            {id:50, name:"VelaWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#2c3e50,#3498db)", tags:["vela","sail","journey"], tool:"Midjourney v6", prompt:`Journey wellness logo "VelaWell". Abstract sailing boat/journey metaphor with constellation compass, dark charcoal to ocean blue. Life navigation concept. Mental clarity through direction. Premium lifestyle brand. Vector icon. --v 6`},
+            {id:51, name:"TeakRoot", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#7B3F00,#C19A6B)", tags:["teak","wood","earthy"], tool:"Stable Diffusion XL", prompt:`Grounded nutrition logo "TeakRoot". Cross-section of tree trunk showing growth rings, rich wood-brown to tan gradient. Deep nourishment concept. Organic nutrition brand. Natural wood texture vector illustration. Earthy premium design.`},
+            {id:52, name:"HaloRun", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#48c6ef,#6f86d6)", tags:["halo","run","sky"], tool:"DALL-E 3", prompt:`Running wellness brand "HaloRun". Circular track/halo shape with running figure at top, sky blue to periwinkle gradient. Track running meets holistic health. Clean geometric shapes. Sports app icon. Flat modern vector logo.`},
+            {id:53, name:"QiSource", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#c31432,#240b36)", tags:["qi","chi","dark red"], tool:"Midjourney v6", prompt:`Ancient energy wellness logo "QiSource". Yin-yang reimagined with flowing qi energy streams, deep crimson to dark purple gradient. Eastern philosophy meets modern design. Tai chi/qigong app icon. Abstract energy flow vector. --v 6`},
+            {id:54, name:"RosePetal", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#ff9a9e,#feada6)", tags:["rose","self-love","pink"], tool:"Stable Diffusion XL", prompt:`Self-love wellness logo "RosePetal". Single unfurling rose viewed from above (flat lay), soft blush pink gradient. Self-care and self-love concept. Beauty wellness brand. Botanical fine art illustration. Minimal elegant vector.`},
+            {id:55, name:"IronFlora", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#232526,#414345)", tags:["iron","dark","strong"], tool:"DALL-E 3", prompt:`Dark luxury fitness logo "IronFlora". Barbell with lotus flowers growing from each end, dark charcoal to gunmetal gradient. Strength through softness. Premium luxury gym brand. Contrast of hard and soft design elements. Sleek vector.`},
+            {id:56, name:"TurqWave", style:"Abstract", category:"nature", bg:"linear-gradient(135deg,#1a9e5c,#00cdac)", tags:["turquoise","wave","refresh"], tool:"Midjourney v6", prompt:`Refreshing wellness logo "TurqWave". Abstract ocean wave cross-section with coral and seaweed visible, turquoise to emerald gradient. Ocean therapy concept. Marine wellness brand. Artistic wave vector illustration. --v 6`},
+            {id:57, name:"SkyPillar", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#e0eafc,#cfdef3)", tags:["sky","pillar","clarity"], tool:"Stable Diffusion XL", prompt:`Mental clarity wellness logo "SkyPillar". Three tall vertical pillars (like clouds or columns) with sun peeking through, pale sky blue gradient. Mental fortitude concept. Calm productivity brand. Minimalist geometric vector. Soft professional look.`},
+            {id:58, name:"GrapeVine", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#614385,#516395)", tags:["grape","vine","rich"], tool:"DALL-E 3", prompt:`Antioxidant nutrition logo "GrapeVine". Elegant grape vine spiral with circular grape cluster, deep purple to slate blue gradient. Antioxidant wellness brand. Wine & wellness crossover. Fine botanical line illustration vector.`},
+            {id:59, name:"AtomicYou", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#f7971e,#ffd200,#21d4fd)", tags:["atomic","science","energy"], tool:"Midjourney v6", prompt:`Science-backed fitness logo "AtomicYou". Atom structure with electron orbits forming human figure silhouette, vibrant multicolor gradient. Every cell optimized concept. Tech-fitness brand. Scientific yet approachable vector icon. --v 6`},
+            {id:60, name:"CoralRest", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#ff7043,#ff8a65)", tags:["coral","warmth","rest"], tool:"Stable Diffusion XL", prompt:`Warm recovery wellness logo "CoralRest". Simple crescent moon with tiny coral sprout growing from tip, warm coral orange gradient. Rest and regeneration concept. Recovery app icon. Minimal two-element design. Friendly vector style.`},
+        ];
+
+        const moreLogos = [
+            {id:61, name:"WillowWell", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#a8c5a0,#5a8a5a)", tags:["willow","flow","gentle"], tool:"Midjourney v6", prompt:`Gentle willow wellness logo "WillowWell". Weeping willow tree silhouette with flowing branch curtain, soft sage to forest green. Gentle resilience concept. Counseling/wellness brand. Flowing vector lines mimicking willow branches. --v 6`},
+            {id:62, name:"PixelZen", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#434343,#000000)", tags:["pixel","dark","minimal"], tool:"DALL-E 3", prompt:`Minimalist dark wellness logo "PixelZen". 8-bit style pixelated lotus flower, dark charcoal to black gradient. Digital wellness concept. Tech-forward meditation app. Retro pixel art meets mindfulness. Clean pixel grid vector.`},
+            {id:63, name:"AloeSoft", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#c8f6d3,#68d391)", tags:["aloe","soothing","green"], tool:"Stable Diffusion XL", prompt:`Soothing nutrition logo "AloeSoft". Stylized aloe vera plant with gel droplet, fresh light green to emerald gradient. Healing plant medicine. Natural supplement brand. Botanical vector illustration with clean flat style.`},
+            {id:64, name:"StoneEdge", style:"Minimal", category:"fitness", bg:"linear-gradient(135deg,#667db6,#0082c8,#0082c8,#667db6)", tags:["stone","balance","rock"], tool:"Midjourney v6", prompt:`Zen balance fitness logo "StoneEdge". Three perfectly balanced stacked stones, gradient blue background. Balance, focus, core strength. Mindful fitness brand. Ultra-minimal two-element composition. Premium clean vector. --v 6`},
+            {id:65, name:"GarnetCore", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#cb2d3e,#ef473a)", tags:["garnet","gem","strength"], tool:"DALL-E 3", prompt:`Gem-powered fitness logo "GarnetCore". Faceted gemstone (garnet) shape with internal depth and light rays, deep ruby to bright red gradient. Precious strength concept. Premium fitness brand. Multi-faceted vector gem icon.`},
+            {id:66, name:"FrostMind", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#e0f7fa,#b2ebf2,#80deea)", tags:["frost","cold","clear"], tool:"Stable Diffusion XL", prompt:`Crisp mental wellness logo "FrostMind". Abstract snowflake with brain hemisphere overlay, ice blue to crystal clear gradient. Cold clarity concept. Mental performance app. Geometric snowflake precision. Minimalist vector icon.`},
+            {id:67, name:"ZestLife", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#f9d423,#ff4e50)", tags:["zest","citrus","vibrant"], tool:"Midjourney v6", prompt:`Vibrant nutrition logo "ZestLife". Cross-section of bright citrus fruit (lemon/orange) with star pattern, vivid yellow to coral gradient. Zestful living concept. Vitamin C wellness brand. Geometric citrus slice vector icon. --v 6`},
+            {id:68, name:"WhisperWell", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#f5f7fa,#c3cfe2)", tags:["whisper","soft","cloud"], tool:"DALL-E 3", prompt:`Ultra-soft meditation logo "WhisperWell". Minimal cloud shape with one small raindrop, pale sky to soft grey-blue gradient. Letting go concept. Grief and healing wellness app. Featherlight design. Ultra-minimal clean vector.`},
+            {id:69, name:"BronzeAge", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#c97b2b,#8B6914)", tags:["bronze","ancient","warrior"], tool:"Stable Diffusion XL", prompt:`Ancient warrior fitness logo "BronzeAge". Greek/Roman shield with olive branch cross motif, warm bronze to gold gradient. Ancient strength concept. Historical fitness brand. Shield emblem vector with classical proportions.`},
+            {id:70, name:"LimeLift", style:"Abstract", category:"fitness", bg:"linear-gradient(135deg,#b9e937,#5cb500)", tags:["lime","lift","bright"], tool:"Midjourney v6", prompt:`Energy boost fitness logo "LimeLift". Abstract rocket/arrow shape with lime green energy trail, bright lime to forest green gradient. Boost your performance. Pre-workout/supplement brand. Dynamic upward motion vector icon. --v 6`},
+            {id:71, name:"ThistleMed", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#7c3aed,#a78bfa)", tags:["thistle","purple","herb"], tool:"DALL-E 3", prompt:`Herbal medicine wellness logo "ThistleMed". Milk thistle botanical illustration in detailed line art, purple to lavender gradient. Liver wellness/detox brand. Premium herbal supplement. Fine botanical line drawing vector style.`},
+            {id:72, name:"GeminiWell", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#0f0c29,#302b63,#24243e)", tags:["duality","dark","balance"], tool:"Stable Diffusion XL", prompt:`Duality wellness logo "GeminiWell". Two abstract human faces/profiles forming one unified face, deep cosmic navy to dark purple gradient. Integration of self concept. Psychology and therapy brand. Negative space art vector.`},
+            {id:73, name:"RadiancePath", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#fffbd5,#b20a2c)", tags:["radiance","golden","path"], tool:"Midjourney v6", prompt:`Golden radiance meditation logo "RadiancePath". Single illuminated path/road leading to distant light, warm golden yellow to deep horizon red. Journey to enlightenment. Premium spiritual wellness. Landscape icon, minimal elements. --v 6`},
+            {id:74, name:"NectarSip", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#f7ce68,#fbab7e)", tags:["nectar","honey","sweet"], tool:"DALL-E 3", prompt:`Honey wellness nutrition logo "NectarSip". Honeycomb hexagonal pattern with honey drip and bee silhouette, warm golden amber gradient. Natural sweetness concept. Raw honey wellness brand. Geometric hex pattern vector with organic drip.`},
+            {id:75, name:"CobaltMind", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#003973,#e5e5be)", tags:["cobalt","clarity","blue"], tool:"Stable Diffusion XL", prompt:`Deep focus wellness logo "CobaltMind". Abstract brain as circuit board with organized geometric pathways, cobalt blue to warm beige gradient. Organized mind concept. Productivity + wellness brand. Technical precision vector icon.`},
+            {id:76, name:"FeatherSoft", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#d4a8c7,#9e6b9e)", tags:["feather","light","gentle"], tool:"Midjourney v6", prompt:`Gentle therapy wellness logo "FeatherSoft". Single delicate feather in line art style, soft dusty rose to muted purple gradient. Lightness of being concept. Therapy and counseling brand. Fine detail feather vector illustration. --v 6`},
+            {id:77, name:"BoldRoot", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#56CCF2,#2F80ED)", tags:["bold","root","blue"], tool:"DALL-E 3", prompt:`Bold herbal wellness logo "BoldRoot". Strong root system viewed from underground upward, vibrant sky blue gradient. Foundation of health concept. Root vegetable nutrition brand. Dynamic downward root vector illustration.`},
+            {id:78, name:"OmniWell", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#1a1a2e,#e94560)", tags:["omni","complete","red"], tool:"Stable Diffusion XL", prompt:`Complete wellness logo "OmniWell". Perfect circle divided into 8 wellness sectors (sleep, nutrition, etc.), dark navy to vivid red gradient. 360° wellness concept. Comprehensive health platform icon. Pie/wheel vector with clean sector divisions.`},
+            {id:79, name:"GoldenHour", style:"Minimal", category:"meditation", bg:"linear-gradient(135deg,#f4d03f,#16a085)", tags:["golden","hour","sunset"], tool:"Midjourney v6", prompt:`Magical hour wellness logo "GoldenHour". Minimal horizon line with sun half-risen, golden yellow to teal gradient. Golden hour gratitude concept. Morning wellness ritual app. Minimal 3-element composition. Elegant vector. --v 6`},
+            {id:80, name:"MarigoldMe", style:"Nature", category:"nature", bg:"linear-gradient(135deg,#f5a623,#e8680a)", tags:["marigold","orange","bright"], tool:"DALL-E 3", prompt:`Bright floral wellness logo "MarigoldMe". Geometric marigold/daisy top-down view with layered petals, vivid orange to amber gradient. Joy and brightness concept. Herbal wellness brand. Symmetrical petal vector illustration.`},
+            {id:81, name:"TerraceSpa", style:"Geometric", category:"mental", bg:"linear-gradient(135deg,#d4b896,#8B6914)", tags:["terrace","spa","warm"], tool:"Stable Diffusion XL", prompt:`Luxury spa wellness logo "TerraceSpa". Art deco geometric fountain/terrace archway, warm terracotta to antique gold gradient. Luxury retreat brand. 1920s glamour meets wellness. Symmetrical art deco vector ornament.`},
+            {id:82, name:"NightBloom", style:"Abstract", category:"meditation", bg:"linear-gradient(135deg,#090909,#4a0080)", tags:["night","bloom","dark"], tool:"Midjourney v6", prompt:`Nocturnal wellness logo "NightBloom". Bioluminescent flower blooming in darkness, deep black to electric purple gradient. Night blooming concept. Sleep and recovery brand. Glowing outline vector with ethereal light effect. --v 6`},
+            {id:83, name:"SpineSpark", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#59C173,#a17fe0,#5D26C1)", tags:["spine","spark","align"], tool:"DALL-E 3", prompt:`Chiropractic wellness logo "SpineSpark". Stylized spine column with spark/lightning bolt alignment indicator, gradient from green to purple. Spine alignment concept. Chiro/physical therapy brand. Medical-friendly geometric vector icon.`},
+            {id:84, name:"JadeTemple", style:"Nature", category:"meditation", bg:"linear-gradient(135deg,#11998e,#38ef7d)", tags:["jade","temple","ancient"], tool:"Stable Diffusion XL", prompt:`Ancient jade wellness logo "JadeTemple". Stylized pagoda/temple outline with jade green stone texture overlay, rich emerald gradient. Eastern wellness wisdom. Feng shui / traditional medicine brand. Architectural line art vector.`},
+            {id:85, name:"PerlaMind", style:"Minimal", category:"mental", bg:"linear-gradient(135deg,#e8eaf6,#b39ddb)", tags:["pearl","wisdom","soft"], tool:"Midjourney v6", prompt:`Pearl wisdom wellness logo "PerlaMind". Single pearl forming inside oyster shell, pearlescent soft lavender gradient. Wisdom through experience concept. Premium therapy brand. Minimal oyster + pearl vector illustration. --v 6`},
+            {id:86, name:"CedaFit", style:"Nature", category:"fitness", bg:"linear-gradient(135deg,#355c7d,#68828a,#c06c84)", tags:["cedar","strong","outdoor"], tool:"DALL-E 3", prompt:`Outdoor fitness logo "CedaFit". Tall cedar/pine tree with fitness trail path wrapping around trunk, steel blue to rose gradient. Outdoor strength training. Trail fitness brand. Illustrated vector tree with detailed bark texture.`},
+            {id:87, name:"EquinoxMe", style:"Geometric", category:"meditation", bg:"linear-gradient(135deg,#2c2c54,#474787)", tags:["equinox","balance","dark"], tool:"Stable Diffusion XL", prompt:`Equinox balance wellness logo "EquinoxMe". Perfect scales of balance with sun and moon on each side, deep space purple gradient. Light-dark balance concept. Seasonal wellness brand. Precise symmetrical vector scales icon.`},
+            {id:88, name:"TurmericLife", style:"Nature", category:"nutrition", bg:"linear-gradient(135deg,#F7971E,#FFD200)", tags:["turmeric","spice","gold"], tool:"Midjourney v6", prompt:`Golden spice wellness logo "TurmericLife". Turmeric root with powder cloud abstract, vivid saffron yellow to deep gold gradient. Anti-inflammatory wellness. Ayurvedic nutrition brand. Illustrated botanical root vector. --v 6`},
+            {id:89, name:"PinnacleSoul", style:"Abstract", category:"mental", bg:"linear-gradient(135deg,#fc5c7d,#6a3093)", tags:["pinnacle","soul","vibrant"], tool:"Stable Diffusion XL", prompt:`Soul peak wellness logo "PinnacleSoul". Abstract human silhouette with chakra energy columns rising upward, vivid pink to deep purple gradient. Soul elevation concept. Holistic therapy platform. Energy field vector visualization.`},
+            {id:100, name:"AlphaWell", style:"Geometric", category:"fitness", bg:"linear-gradient(135deg,#0f0c29,#302b63,#24243e)", tags:["alpha","elite","dark"], tool:"Midjourney v6", prompt:`Elite alpha wellness logo "AlphaWell". Bold Greek letter Alpha with fitness track circle, deep midnight navy gradient. Alpha performance concept. Elite fitness brand. Strong geometric letterform vector icon. Premium dark branding. --v 6`},
+        ];
+
+        // Combine all logos
+        const logos = [...allLogos, ...extraLogos, ...moreLogos];
+
+        function makeSimpleSVG(i, c1, c2) {
+            const shapes = [
+                // Shape group A - diamond
+                `<polygon points="70,25 110,70 70,115 30,70" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/><circle cx="70" cy="70" r="15" fill="rgba(255,255,255,0.9)"/>`,
+                // Shape group B - triangle in circle
+                `<circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.1)"/><polygon points="70,30 105,90 35,90" stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.3)"/>`,
+                // Shape group C - cross/plus
+                `<rect x="60" y="30" width="20" height="80" rx="10" fill="rgba(255,255,255,0.9)"/><rect x="30" y="60" width="80" height="20" rx="10" fill="rgba(255,255,255,0.9)"/>`,
+                // Shape group D - yin yang simplified
+                `<circle cx="70" cy="70" r="40" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/><path d="M70 30 A20 20 0 0 1 70 70 A20 20 0 0 0 70 110 A40 40 0 0 1 70 30" fill="rgba(255,255,255,0.7)"/><circle cx="70" cy="50" r="6" fill="rgba(255,255,255,0.95)"/><circle cx="70" cy="90" r="6" fill="rgba(255,255,255,0.2)"/>`,
+                // Shape group E - star
+                `<polygon points="70,22 80,55 115,55 88,76 98,110 70,89 42,110 52,76 25,55 60,55" fill="rgba(255,255,255,0.85)" stroke="rgba(255,255,255,0.9)" stroke-width="1"/>`,
+                // Shape group F - heart
+                `<path d="M70 100 C70 100 25 72 25 48 C25 34 36 26 48 26 C58 26 66 32 70 38 C74 32 82 26 92 26 C104 26 115 34 115 48 C115 72 70 100 70 100" fill="rgba(255,255,255,0.85)"/>`,
+                // Shape group G - infinity
+                `<path d="M38 70 C38 55 48 45 58 45 C68 45 70 55 70 70 C70 85 72 95 82 95 C92 95 102 85 102 70 C102 55 92 45 82 45 C72 45 70 55 70 70 C70 85 68 95 58 95 C48 95 38 85 38 70Z" stroke="white" stroke-width="3" fill="none"/>`,
+                // Shape group H - shield
+                `<path d="M70 25 L105 40 L105 75 C105 93 90 108 70 115 C50 108 35 93 35 75 L35 40 Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/><circle cx="70" cy="70" r="14" fill="rgba(255,255,255,0.9)"/>`,
+                // Shape group I - target
+                `<circle cx="70" cy="70" r="42" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="30" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="18" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/><circle cx="70" cy="70" r="7" fill="rgba(255,255,255,0.95)"/>`,
+                // Shape group J - arrow up
+                `<polygon points="70,20 105,70 85,70 85,115 55,115 55,70 35,70" fill="rgba(255,255,255,0.85)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>`,
+            ];
+            const idx = i % shapes.length;
+            return `<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="70" cy="70" r="65" fill="url(#eg${i})"/>
+                ${shapes[idx]}
+                <defs><linearGradient id="eg${i}" x1="0" y1="0" x2="140" y2="140"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs>
+            </svg>`;
+        }
+
+        // Apply SVGs to all logos
+        const logoGradients = [
+            ["#0f3460","#16213e"], ["#f8ceec","#a29bfe"], ["#2d6a4f","#52b788"],
+            ["#00b4db","#0083b0"], ["#c94b4b","#4b134f"], ["#1a1a2e","#16213e"],
+            ["#2193b0","#6dd5ed"], ["#f12711","#f5af19"], ["#e0c3fc","#8ec5fc"],
+            ["#00c6ff","#0072ff"]
+        ];
+
+        logos.forEach((l, idx) => {
+            if (!l.svg) {
+                const g = logoGradients[idx % logoGradients.length];
+                l.svg = makeSimpleSVG(idx, g[0], g[1]);
+            }
+        });
+
+        // UI State
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let shownCount = 20;
+
+        function renderLogos() {
+            const grid = document.getElementById('logoGrid');
+            const filtered = logos.filter(l => 
+                (currentFilter === 'all' || l.category === currentFilter) && 
+                (!currentSearch || l.name.toLowerCase().includes(currentSearch.toLowerCase()))
+            );
+            const visible = filtered.slice(0, shownCount);
+            
+            document.getElementById('shownCount').textContent = visible.length;
+            document.getElementById('totalCount').textContent = filtered.length;
+            document.getElementById('loadMoreSection').style.display = visible.length >= filtered.length ? 'none' : 'block';
+
+            grid.innerHTML = visible.map((l, i) => `
+                <div class="glass-card" onclick="openModal(${l.id})" style="animation: fadeInUp 0.5s ease forwards; animation-delay: ${Math.min(i*0.05, 0.4)}s;">
+                    <div class="logo-card-img" style="background: ${l.bg}">${l.svg}</div>
+                    <h3 style="font-size:18px; margin-bottom:4px;">${l.name}</h3>
+                    <p style="color:var(--text-muted); font-size:12px;">${l.style} • ${l.tool}</p>
+                </div>
+            `).join('');
+        }
+
+        function filterLogos(f, btn) { 
+            currentFilter = f; 
+            shownCount = 20; 
+            document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active')); 
+            btn.classList.add('active'); 
+            renderLogos(); 
+        }
+
+        function searchLogos(v) { 
+            currentSearch = v; 
+            shownCount = 20; 
+            renderLogos(); 
+        }
+
+        function loadMore() { 
+            shownCount += 20; 
+            renderLogos(); 
+        }
+
+        function openModal(id) {
+            const l = logos.find(x => x.id === id);
+            document.getElementById('modalTitle').textContent = l.name;
+            document.getElementById('modalPreview').style.background = l.bg;
+            document.getElementById('modalPreview').innerHTML = l.svg;
+            document.getElementById('modalPrompt').textContent = l.prompt;
+            document.getElementById('modalStyle').textContent = l.style;
+            document.getElementById('modalTool').textContent = l.tool;
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            window.currentL = l;
+        }
+
+        function closeModal() { 
+            document.getElementById('modalOverlay').classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        }
+
+        function copyModalPrompt() { 
+            navigator.clipboard.writeText(window.currentL.prompt); 
+            showToast('Prompt Copied!'); 
+        }
+
+        function downloadCurrentLogo() {
+            const blob = new Blob([window.currentL.svg], {type:'image/svg+xml'});
+            const a = document.createElement('a'); 
+            a.href = URL.createObjectURL(blob); 
+            a.download = window.currentL.name+'-logo.svg'; 
+            a.click();
+            showToast('Downloading SVG...');
+        }
+
+        function showToast(m) {
+            const t = document.getElementById('toast');
+            t.textContent = m;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        renderLogos();
+    </script>
+    <script type="module" src="./src/globals.js"></script>
+    <script type="module" src="./src/chat.js"></script>
 </body>
 </html>

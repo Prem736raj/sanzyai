@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>((t)=>{if(t==='light')document.documentElement.classList.add('light-mode')})(localStorage.getItem('sanzy_theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'))</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Fintech Design Portfolio – 50+ Premium Brand Systems | SanzyAI</title>
+    <meta name="description" content="Explore our premium collection of 50+ Fintech brand identities and UI systems. Built for the future of finance.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/globals.css">
+    <link rel="stylesheet" href="./src/chat.css">
+
+    <style>
+        .showcase-filters { background: var(--surface); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 30px; position: sticky; top: 80px; z-index: 90; box-shadow: var(--shadow-sm); }
+        .filter-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+        .filter-tab { padding: 8px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; transition: var(--transition); }
+        html.light-mode .filter-tab { background: #f1f5f9; color: #475569; }
+        .filter-tab:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .filter-tab.active { background: var(--primary); color: white; border-color: var(--primary-light); box-shadow: var(--shadow-purple); }
+        .search-wrap { margin-top: 4px; position: relative; }
+        .search-input { width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px 12px 40px; color: var(--text); font-size: 14px; transition: var(--transition); }
+        html.light-mode .search-input { background: #f8fafc; color: #1e293b; }
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-input:focus { background: var(--card-bg-hover); border-color: var(--primary); outline: none; }
+
+        .scripts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; width: 100%; }
+        .glass-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; position: relative; }
+        .glass-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--shadow-purple); background: var(--card-bg-hover); }
+        .card-cover { position: relative; height: 180px; overflow: hidden; }
+        .card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); }
+        .card-cat { position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: white; padding: 4px 10px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.1); }
+        .card-rating { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #fbbf24; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+        .card-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+        .card-sub { color: var(--primary-light); font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .stat-item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 12px; text-align: center; }
+        .stat-val { font-weight: 800; color: var(--text); font-size: 1.1rem; }
+        .stat-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); margin-top: auto; }
+        .client-info { display: flex; flex-direction: column; }
+        .client-name { font-size: 0.85rem; color: var(--text); font-weight: 700; }
+        .value-amt { font-size: 1rem; color: var(--primary-light); font-weight: 800; }
+
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 28px; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+        .modal-header { position: relative; height: 260px; }
+        .modal-header img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); color: white; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: var(--transition); }
+        .modal-close:hover { background: var(--primary); }
+        .modal-body { padding: 40px; }
+        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .modal-sub { color: var(--primary-light); font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
+        .content-preview-box { background: #06060B; border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 32px; color: var(--text); }
+        .content-excerpt { line-height: 1.8; opacity: 0.9; font-size: 1.05rem; white-space: pre-line; }
+        .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+        .deliv-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.95rem; }
+        .deliv-icon { color: var(--accent); font-weight: 800; }
+        .featured-banner { background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(108, 53, 222, 0.1)); border: 1px solid var(--border-strong); border-radius: 24px; padding: 40px; margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; overflow: hidden; position: relative; }
+        .banner-content h2 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: white; margin-bottom: 12px; }
+        .banner-btn { background: white; color: black; padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+
+        @media (max-width: 768px) { .modal-body { padding: 24px; } .modal-title { font-size: 1.6rem; } .deliverables-grid { grid-template-columns: 1fr; } .featured-banner { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+                    <a href="index.html" class="logo-icon-wrap">
+                        <img src="./public/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+                    </a>
+                    <a href="index.html" class="logo-text" style="color: white; text-decoration: none; font-weight: 700;">SanzyAI</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="fintech-portfolio.html" class="active">Fintech</a></li>
+                </ul>
+                <div class="nav-right">
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="portfolio.html">📂 Portfolio Hub</a></li>
+            <li><a href="fintech-portfolio.html">💳 Fintech</a></li>
+        </ul>
+    </div>
+
+    <section class="hero" style="min-height: auto !important; display: block !important; padding: 70px 0 10px !important; text-align: center;">
+        <div class="container">
+            <div class="hero-badge" style="margin: 0 auto 8px; display: inline-flex;">
+                <span class="badge-dot"></span>
+                💳 Fintech Branding Portfolio
+            </div>
+            <h1 class="hero-title" style="margin-bottom: 6px; line-height: 1.1;">50+ Modern <span class="gradient-text">Fintech Brands</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto 10px; max-width: 600px;">
+                Visual identities that build trust and signal innovation. Logos, UI systems, and brand guides.
+            </p>
+        </div>
+    </section>
+
+    <main class="container" style="padding-bottom: 100px;">
+        
+        <div class="featured-banner">
+            <div class="banner-content">
+                <h2>Full Brand Identity</h2>
+                <p>Need a complete visual system for your new fintech startup? We deliver full brand guidelines in 48 hours.</p>
+            </div>
+            <a href="/hire-us" class="banner-btn">Start My Brand</a>
+        </div>
+
+        <div class="showcase-filters">
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" onclick="filterContent('all', this)">All Projects</button>
+                <button class="filter-tab" onclick="filterContent('logo', this)">Logo Suites</button>
+                <button class="filter-tab" onclick="filterContent('ui', this)">UI Systems</button>
+                <button class="filter-tab" onclick="filterContent('crypto', this)">Crypto & Web3</button>
+                <button class="filter-tab" onclick="filterContent('banking', this)">Neo-Banking</button>
+            </div>
+            <div class="search-wrap">
+                <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: 0.5;">🔍</span>
+                <input type="text" class="search-input" id="contentSearch" placeholder="Search brands, styles, or niches..." onkeyup="searchContent()">
+            </div>
+        </div>
+
+        <div class="scripts-grid" id="contentGrid">
+            <!-- Rendered by JS -->
+        </div>
+
+        <div id="loadMoreWrap" style="text-align: center; margin-top: 48px;">
+            <button class="btn btn-outline btn-lg" onclick="loadMore()" style="margin: 0 auto; min-width: 200px;">Load More Brands</button>
+        </div>
+    </main>
+
+    <footer class="footer-compact">
+        <div class="container">
+            <a href="/" class="footer-compact-brand">
+                <img src="./public/logo-official.png" alt="Logo" style="width: 24px; height: 24px;">
+                <span style="font-weight: 700; color: white;">SanzyAI</span>
+            </a>
+            <ul class="footer-compact-links">
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/terms">Terms</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <p class="footer-compact-copy">© 2026 SanzyAI Platform. Elite Fintech Design.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <img id="modalCoverImg" src="" alt="Cover">
+                <div class="card-overlay"></div>
+                <div style="position: absolute; bottom: 30px; left: 40px; right: 40px;">
+                    <div id="modalCat" class="card-cat" style="position: static; display: inline-block; margin-bottom: 12px;">Category</div>
+                    <h2 id="modalTitle" class="modal-title">Brand Title</h2>
+                    <p id="modalSub" class="modal-sub">Subtitle goes here</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="card-stats" id="modalStats" style="border-top: none; padding-top: 0; margin-bottom: 32px; grid-template-columns: repeat(4, 1fr);">
+                    <!-- Stats Rendered -->
+                </div>
+
+                <div class="content-preview-box">
+                    <div style="font-size: 0.8rem; color: var(--primary-light); font-weight: 800; margin-bottom: 16px; letter-spacing: 1px;">BRAND PHILOSOPHY</div>
+                    <div id="modalExcerpt" class="content-excerpt">Philosophy goes here...</div>
+                </div>
+
+                <div style="margin-bottom: 32px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 12px; color: var(--text);">Design Deliverables</h3>
+                    <div class="deliverables-grid" id="modalDeliverables">
+                        <!-- Deliverables Rendered -->
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <button class="btn btn-primary" onclick="showToast('Brand PDF Guideline Link Copied!')" style="justify-content: center; padding: 16px;">📁 View Full Guidelines</button>
+                    <button class="btn btn-outline" onclick="showToast('Asset Pack Downloaded')" style="justify-content: center; padding: 16px;">📥 Download Asset Pack</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <span id="toastMsg">Action Successful!</span>
+    </div>
+
+    <script src="./src/globals.js"></script>
+    <script>
+        const covers = [
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+            "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
+            "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&q=80",
+            "https://images.unsplash.com/photo-1642104704074-907c0698bcd9?w=800&q=80",
+        ];
+
+        const allContent = [
+            {
+                id: 1, category: "banking", title: "NovaPay Neo-Bank",
+                subtitle: "Complete Visual Identity System",
+                desc: "A bold, modern brand for a European neo-bank. Focused on clarity, security, and a 'digital-first' aesthetic.",
+                cover: 0, result: "Funded $500K Seed", rating: "5.0",
+                stats: [{v:"20",l:"Concepts"},{v:"8",l:"Colors"},{v:"30pg",l:"Guide"},{v:"$180",l:"Value"}],
+                excerpt: "NovaPay needed to look like a $10M company before they even had a website. We built a brand system centered around the 'Electric Cobalt' palette—signaling both stability and technological speed. \n\nThe logo utilizes a custom-weighted 'N' that doubles as a payment flow indicator, perfect for micro-animations in the mobile app.",
+                deliverables: ["Primary & Secondary Logos", "30-Page Brand Guide", "App Icon System", "Custom Typography Set"],
+                client: "NovaPay", value: "$180"
+            },
+            {
+                id: 2, category: "crypto", title: "Aether Protocol",
+                subtitle: "Web3 Brand & UI Kit",
+                desc: "High-end visual system for a decentralized finance protocol. Used a 'Dark Matter' theme with vibrant glassmorphism accents.",
+                cover: 1, result: "Featured on CoinDesk", rating: "5.0",
+                stats: [{v:"15",l:"UI Screens"},{v:"1",l:"3D Logo"},{v:"12h",l:"Delivery"},{v:"5.0★",l:"Rating"}],
+                excerpt: "Aether required an aesthetic that bridged the gap between complex blockchain tech and everyday accessibility. We leveraged a deep purple-to-teal gradient system and ultra-modern glassmorphism cards. \n\nThe final result was a UI kit that allowed their devs to build a functional dashboard in under a week.",
+                deliverables: ["3D Animated Logo", "Figma Design System", "Component Library", "Social Media Templates"],
+                client: "Aether Labs", value: "$150"
+            }
+        ];
+
+        // Fill to 52
+        const cats = ["logo", "ui", "crypto", "banking"];
+        for(let i=3; i<=52; i++){
+            const c = cats[i % cats.length];
+            allContent.push({
+                id: i, category: c, title: `Premium Fintech ${c.charAt(0).toUpperCase()+c.slice(1)} Pack #${i}`,
+                subtitle: `Professional Design for ${c} Startups`,
+                desc: `A comprehensive design system for a ${c} firm. High-end, scalable, and modern.`,
+                cover: i % 5, result: "Launch-Ready Brand", rating: (4.9 + Math.random()*0.1).toFixed(1),
+                stats:[{v:Math.floor(Math.random()*15+5).toString(),l:"Files"},{v:(Math.random()*100).toFixed(0)+"%",l:"Quality"},{v:"48h",l:"Dur"},{v:"$100+",l:"Value"}],
+                excerpt: `Our approach to ${c} design is rooted in the intersection of trust and innovation. We ensure every pixel serves a purpose, from the kerning of the wordmark to the accessibility of the UI components. \n\nThis pack represents the gold standard of modern fintech aesthetics...`,
+                deliverables: ["Source Files (AI/Figma)", "Vector Exports", "Brand Palette", "Mockup Previews"],
+                client: "Anonymous Startup", value: "$" + (Math.floor(Math.random()*50+80))
+            });
+        }
+
+        let currentFilter = 'all';
+        let shownCount = 12;
+
+        function renderContent() {
+            const grid = document.getElementById('contentGrid');
+            const filtered = allContent.filter(s => currentFilter === 'all' || s.category === currentFilter);
+            const visible = filtered.slice(0, shownCount);
+            document.getElementById('loadMoreWrap').style.display = shownCount >= filtered.length ? 'none' : 'block';
+            grid.innerHTML = visible.map((s, idx) => `
+                <div class="glass-card" style="animation: fadeUp 0.5s ease forwards ${idx * 0.05}s;" onclick="openModal(${s.id})">
+                    <div class="card-cover">
+                        <img src="${covers[s.cover]}" alt="${s.title}">
+                        <div class="card-overlay"></div>
+                        <div class="card-cat">${s.category}</div>
+                        <div class="card-rating">⭐ ${s.rating}</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-sub">${s.subtitle}</div>
+                        <h3 class="card-title">${s.title}</h3>
+                        <p class="card-desc">${s.desc}</p>
+                        <div class="card-stats">
+                            <div class="stat-item"><div class="stat-val">${s.stats[0].v}</div><div class="stat-lab">${s.stats[0].l}</div></div>
+                            <div class="stat-item"><div class="stat-val">${s.result.split(' ')[0]}</div><div class="stat-lab">IMPACT</div></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="client-info"><span class="client-lab">CLIENT</span><span class="client-name">${s.client}</span></div>
+                            <div class="value-info"><span class="value-lab">VALUE</span><div class="value-amt">${s.value}</div></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterContent(cat, el) { currentFilter = cat; document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); shownCount = 12; renderContent(); }
+        function searchContent() {
+            const query = document.getElementById('contentSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').innerText.toLowerCase();
+                const desc = card.querySelector('.card-desc').innerText.toLowerCase();
+                card.style.display = (title.includes(query) || desc.includes(query)) ? 'flex' : 'none';
+            });
+        }
+        function loadMore() { shownCount += 12; renderContent(); }
+        function openModal(id) {
+            const s = allContent.find(x => x.id === id);
+            if (!s) return;
+            document.getElementById('modalCoverImg').src = covers[s.cover];
+            document.getElementById('modalCat').innerText = s.category;
+            document.getElementById('modalTitle').innerText = s.title;
+            document.getElementById('modalSub').innerText = s.subtitle;
+            document.getElementById('modalExcerpt').innerText = s.excerpt;
+            document.getElementById('modalStats').innerHTML = s.stats.map(st => `<div class="stat-item"><div class="stat-val">${st.v}</div><div class="stat-lab">${st.l}</div></div>`).join('');
+            document.getElementById('modalDeliverables').innerHTML = s.deliverables.map(d => `<div class="deliv-item"><span class="deliv-icon">✓</span>${d}</div>`).join('');
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.style.overflow = ''; }
+        function handleOverlayClick(e) { if (e.target.id === 'modalOverlay') closeModal(); }
+        function showToast(msg) { const toast = document.getElementById('toast'); document.getElementById('toastMsg').innerText = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 3000); }
+        renderContent();
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+</html>
