@@ -312,7 +312,6 @@ function renderServices() {
     if (!grid) return;
 
     grid.innerHTML = services.map(svc => {
-        const activePlanName = "Basic";
         const pkg = svc.packages[0];
         return `
         <div class="svc-card theme-${svc.color}" id="svc-${svc.id}">
@@ -329,16 +328,14 @@ function renderServices() {
                 </div>
                 <p class="svc-desc">${svc.desc}</p>
 
-                <!-- Package Tabs -->
-                <div class="pkg-section">
-                    <div class="pkg-tabs" id="tabs-${svc.id}">
-                        ${svc.packages.map((p, i) => `
-                            <button type="button" class="pkg-tab ${i === 0 ? 'active' : ''}" data-action="switch-pkg" data-svc-id="${svc.id}" data-pkg-index="${i}">${p.name}</button>
-                        `).join('')}
-                    </div>
-                    <div class="pkg-content-box" id="pkg-${svc.id}">
-                        ${renderPkgContent(svc, pkg, 0)}
-                    </div>
+                <div class="pkg-features" style="margin-bottom: 24px; background: var(--surface2); padding: 16px; border-radius: 16px; border: 1px solid var(--border-s);">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px;">What's Included:</div>
+                    ${pkg.features.map(f => `
+                        <div class="pkg-feat">
+                            <span class="feat-check">✓</span>
+                            ${f}
+                        </div>
+                    `).join('')}
                 </div>
 
                 <div class="svc-cta">
@@ -352,36 +349,6 @@ function renderServices() {
             </div>
         </div>`;
     }).join('');
-}
-
-function renderPkgContent(svc, pkg, idx) {
-    const isPopular = pkg.name === 'Standard' || idx === 1;
-    return `
-        <div class="pkg-meta">
-            <div class="pkg-name">${pkg.name}</div>
-            <div class="pkg-price-val">${pkg.price}</div>
-        </div>
-        <div class="pkg-desc-sm">${pkg.desc}</div>
-        <div class="pkg-features">
-            ${pkg.features.map(f => `
-                <div class="pkg-feat">
-                    <span class="feat-check">✓</span>
-                    ${f}
-                </div>
-            `).join('')}
-        </div>`;
-}
-
-window.switchPkg = function(svcId, pkgIdx) {
-    const svc = services.find(s => s.id === svcId);
-    if (!svc) return;
-
-    // Update tabs
-    const tabs = document.querySelectorAll(`#tabs-${svcId} .pkg-tab`);
-    tabs.forEach((t,i) => t.classList.toggle('active', i === pkgIdx));
-
-    // Update content
-    document.getElementById(`pkg-${svcId}`).innerHTML = renderPkgContent(svc.packages[pkgIdx], pkgIdx);
 }
 
 // =============================================
@@ -625,14 +592,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!actionEl) return;
 
         const action = actionEl.dataset.action;
-        if (action === 'switch-pkg') {
-            const svcId = Number(actionEl.dataset.svcId || '0');
-            const pkgIndex = Number(actionEl.dataset.pkgIndex || '0');
-            if (svcId) {
-                window.switchPkg(svcId, pkgIndex);
-            }
-            return;
-        }
 
         if (action === 'scroll-quote') {
             const serviceName = actionEl.dataset.serviceName || '';

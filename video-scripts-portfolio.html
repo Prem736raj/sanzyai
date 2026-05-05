@@ -334,12 +334,13 @@
             font-family: var(--font-heading);
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--text);
+            color: #ffffff !important;
             margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .modal-sub {
-            color: var(--primary-light);
+            color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 20px;
@@ -361,7 +362,7 @@
         }
 
         .script-box {
-            background: #06060B;
+            background: var(--surface2);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 30px;
@@ -682,117 +683,126 @@
                 cover:0, result:"2.1M Views in 30 Days", rating:"5.0",
                 stats:[{v:"12",l:"Scripts"},{v:"2.1M",l:"Total Views"},{v:"11 min",l:"Avg Duration"},{v:"+8.4K",l:"Subscribers"}],
                 script:[
-                    {role:"hook",label:"HOOK",text:'"You\'ve been lied to about how money works — and your bank is counting on you never finding out."'},
-                    {role:"intro",label:"INTRO",text:'"In this video I\'m going to show you the exact 5-step system I used to go from $0 savings to $50K in under 18 months — starting with just $200."'},
-                    {role:"body",label:"BODY — STEP 1",text:'"The first thing you HAVE to do is kill what I call the \'debt vampire\' — that silent interest charge draining your account every single month..."'},
-                    {role:"cta",label:"CTA",text:'"If this opened your eyes, subscribe NOW because next week I\'m revealing the credit card hack banks spend millions trying to hide."'},
+                    {role:"hook",label:"HOOK",text:'"You\'ve been lied to about how money works — and your bank is counting on you never finding out. While you\'re worrying about interest rates, the ultra-wealthy are using a completely different system to compound their wealth in the shadows."'},
+                    {role:"intro",label:"INTRO",text:'"In this video I\'m going to show you the exact 5-step system I used to go from $0 savings to $50K in under 18 months — starting with just $200 and a WiFi connection. This isn\'t some get-rich-quick scheme; it\'s about radical financial transparency."'},
+                    {role:"body",label:"BODY — STEP 1",text:'"The first thing you HAVE to do is kill what I call the \'debt vampire\' — those silent interest charges draining your account every single month while you sleep. We\'re going to use the snowball method to eliminate high-interest liabilities before moving into high-yield assets."'},
+                    {role:"cta",label:"CTA",text:'"If this opened your eyes, subscribe NOW because next week I\'m revealing the credit card hack banks spend millions trying to hide. Don\'t let them keep profiting off your ignorance."'},
                 ],
                 deliverables:["12 full-length scripts (10–13 min each)","Viral hook variations (3 per script)","SEO-optimized titles + descriptions","Thumbnail text suggestions","B-roll shot list per script"],
                 tags:["#Finance","#YouTube","#Viral","#PersonalFinance","#Budgeting"],
                 client:"FinanceWithAlex", value:"$84"
+                id: 1, category: "documentary", title: "The Silicon Valley Untold",
+                subtitle: "A 10-Minute Narrative Mini-Doc",
+                desc: "A cinematic documentary script exploring the hidden psychological toll of the startup hustle. High retention and emotional depth.",
+                cover: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+                result: "1.2M YouTube Views", rating: "5.0",
+                stats: [{v:"1.2M",l:"Views"},{v:"45K",l:"Likes"},{v:"10 min",l:"Duration"},{v:"5.0★",l:"Rating"}],
+                script: [
+                    {role:"hook",label:"COLD OPEN",text:'"They tell you that the valley is built on code. But if you look closer, at the burnout rates and the empty office chairs at midnight, you realize it’s actually built on something much more fragile: Expectation."'},
+                    {role:"intro",label:"THE CONFLICT",text:'"In this 10-minute deep-dive, we deconstruct the \'Hero Myth\' of the founder. We interview psychologists and ex-founders who reached the $100M exit only to find that the void they were trying to fill was still there. It’s a story about the cost of ambition."'},
+                    {role:"body",label:"TECHNICAL PACING",text:'"The script uses a \'Dilation-Compression\' pacing model. We use long, contemplative shots for the emotional beats and rapid-fire, high-information sequences for the industry data. It\'s designed to keep the viewer hooked for the full 10-minute duration."'},
+                    {role:"cta",label:"PROVOCATIVE CTA",text:'"Is the hustle worth the heart? Watch the full documentary on our channel and join the 5,000+ people in the comments discussing the future of tech culture. ✨"'}
+                ],
+                deliverables: ["Full 10-Min Script", "Visual Storyboard", "B-Roll Shot List", "Music Cue Sheet"],
+                client: "Visionary Docs", value: "$150"
             },
             {
-                id:2, category:"tech", title:"AI Tools Explainer Series",
-                subtitle:"8 Long-Form Tech Review Scripts",
-                desc:"Complete script series for a tech YouTuber reviewing AI tools. Each script opened with a bold claim, walked through a live demo narrative, and ended with affiliate-optimized CTAs. Channel average CTR jumped from 3.2% to 7.8% within 2 weeks.",
-                cover:3, result:"+7.8% CTR Boost", rating:"5.0",
-                stats:[{v:"8",l:"Scripts"},{v:"3.4M",l:"Total Views"},{v:"14 min",l:"Avg Duration"},{v:"+12K",l:"Subscribers"}],
-                script:[
-                    {role:"hook",label:"HOOK",text:'"This AI tool replaced my $5,000/month design team — and I\'m showing you exactly how in the next 12 minutes."'},
-                    {role:"intro",label:"INTRO",text:'"Hey, welcome back. Today we\'re doing a full breakdown of [Tool Name] — I tested it for 30 days straight so you don\'t have to."'},
-                    {role:"body",label:"DEMO WALKTHROUGH",text:'"Open the dashboard. First thing you\'ll notice is the interface is insanely clean. Click \'New Project\' and you\'re immediately inside the AI workspace..."'},
-                    {role:"cta",label:"CTA",text:'"Link is in the description — and if you use my code SANZYAI you get 30% off. Hit subscribe because I\'m testing 5 more tools this month."'},
+                id: 2, category: "education", title: "Physics of the Future",
+                subtitle: "The 'Quantum-Simple' Video Series",
+                desc: "A 30-day educational video series that makes complex quantum physics concepts accessible to a mainstream audience.",
+                cover: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+                result: "+500% Subscriber Growth", rating: "5.0",
+                stats: [{v:"+500%",l:"Growth"},{v:"30",l:"Videos"},{v:"12K",l:"Shares"},{v:"5.0★",l:"Rating"}],
+                script: [
+                    {role:"hook",label:"ANALOGY HOOK",text:'"Imagine if your cat could be in the kitchen and the living room at the exact same time. 🐈‍⬛ That’s not magic; that’s Superposition. And it’s the fundamental logic of the universe."'},
+                    {role:"intro",label:"CONCEPT BREAKDOWN",text:'"In this series, we simplify the complex. We use the \'Macro-to-Micro\' framework. We take a familiar object—like a cup of coffee—and zoom in until the laws of classical physics break down and the quantum world takes over. We explain entanglement as a \'Cosmic Wi-Fi\' that connects everything."'},
+                    {role:"body",label:"ENGAGEMENT LOOP",text:'"Every video ends with a \'Quantum Question\' that encourages viewers to speculate in the comments. This drove our engagement rate to 18%, far above the industry average for educational content."'},
+                    {role:"cta",label:"MASTERCLASS CTA",text:'"Ready to see the world differently? Subscribe to the \'Physics of the Future\' series and get your first week of \'Quantum Blueprints\' for free. 🚀"'}
                 ],
-                deliverables:["8 full scripts with demo narration","Affiliate CTA sections for each tool","YouTube chapter timestamps","Competitor comparison talking points","Hook A/B test variations"],
-                tags:["#TechYouTube","#AITools","#Review","#Tutorial","#SaaS"],
-                client:"TechWithMike", value:"$64"
-            },
-            {
-                id:3, category:"health", title:"Wellness Podcast Script Pack",
-                subtitle:"6 Episode Scripts for Health Podcast",
-                desc:"Six full podcast episode scripts for a wellness brand. Each episode ran 25–35 minutes with expert interview questions, monologue sections, sponsor reads, and audience engagement prompts. The series hit #4 in Apple Podcasts Health category.",
-                cover:1, result:"#4 Apple Podcasts Health", rating:"4.9",
-                stats:[{v:"6",l:"Episodes"},{v:"280K",l:"Downloads"},{v:"28 min",l:"Avg Duration"},{v:"4.9★",l:"Rating"}],
-                script:[
-                    {role:"hook",label:"COLD OPEN",text:'"What if I told you the \'healthy\' breakfast you eat every morning is actually the reason you crash by 11am? Today\'s guest has the science to prove it."'},
-                    {role:"intro",label:"HOST INTRO",text:'"Welcome to The Wellness Code — I\'m your host. Today Dr. Sarah Chen joins us to dismantle everything we thought we knew about morning nutrition."'},
-                    {role:"body",label:"INTERVIEW — Q1",text:'"Dr. Chen, let\'s start with the gut-brain axis. Most people think this is fringe science, but your research says otherwise. Walk us through what you found..."'},
-                    {role:"cta",label:"OUTRO + SPONSOR",text:'"That\'s a wrap on today\'s episode. Before you go — this show is powered by AG1. Use code WELLNESS30 for 30 free travel packs with your first order."'},
-                ],
-                deliverables:["6 full episode scripts (25–35 min)","Interview question bank (30 questions)","Sponsor read scripts (3 versions each)","Social media clip timestamps","Show notes + descriptions"],
-                tags:["#Podcast","#Health","#Wellness","#Nutrition","#Interview"],
-                client:"TheWellnessCode", value:"$72"
-            },
-            {
-                id:4, category:"business", title:"SaaS Product Launch Scripts",
-                subtitle:"5 Launch Campaign Video Scripts",
-                desc:"End-to-end launch video scripts for a B2B SaaS startup. Included a brand film, 3 feature explainer videos, and a customer testimonial framework script. The launch generated $140K ARR in the first 45 days.",
-                cover:9, result:"$140K ARR in 45 Days", rating:"5.0",
-                stats:[{v:"5",l:"Videos"},{v:"$140K",l:"ARR Generated"},{v:"45 days",l:"Launch Period"},{v:"5.0★",l:"Rating"}],
-                script:[
-                    {role:"hook",label:"BRAND FILM OPEN",text:'"Every day, 10,000 hours of work disappear into broken workflows. We built [Product] to give that time back."'},
-                    {role:"intro",label:"PROBLEM SCENE",text:'"Your team is smart. Your product is great. But between Slack, spreadsheets, and disconnected tools — something always falls through the cracks."'},
-                    {role:"body",label:"SOLUTION REVEAL",text:'"[Product] brings your entire workflow into one intelligent workspace. Set it up in 4 minutes. Watch your team actually collaborate."'},
-                    {role:"cta",label:"CLOSING CTA",text:'"Start free. No credit card. No onboarding call. Just click the link and see what your team looks like when everything works."'},
-                ],
-                deliverables:["Brand film script (90 sec)","3 feature explainer scripts (60–90 sec each)","Customer testimonial framework","Paid ad script variations (15s, 30s, 60s)","Email nurture video scripts"],
-                tags:["#SaaS","#B2B","#ProductLaunch","#StartupMarketing","#VideoMarketing"],
-                client:"FlowDesk Pro", value:"$120"
-            },
-            {
-                id:5, category:"lifestyle", title:"Luxury Travel Vlog Scripts",
-                subtitle:"10 High-End Travel Vlog Narratives",
-                desc:"Ten cinematic vlog scripts for a luxury travel creator. Each script included atmospheric narration, on-camera host dialogue, voiceover sections, and b-roll direction notes. The series became the client's most-viewed playlist with 4.8M combined views.",
-                cover:7, result:"4.8M Playlist Views", rating:"5.0",
-                stats:[{v:"10",l:"Vlogs"},{v:"4.8M",l:"Combined Views"},{v:"18 min",l:"Avg Duration"},{v:"+22K",l:"Subscribers"}],
-                script:[
-                    {role:"hook",label:"COLD OPEN",text:'"[Shot: Aerial over Santorini at golden hour] This suite costs $4,800 a night. I\'m going to tell you exactly if it was worth every penny."'},
-                    {role:"intro",label:"HOST ON CAMERA",text:'"We landed in Santorini at 6AM after a red-eye from New York. The driver was waiting, the villa smelled like jasmine, and I immediately forgot about the flight."'},
-                    {role:"body",label:"EXPERIENCE WALKTHROUGH",text:'"[Shot: infinity pool] The pool is 47 feet long and overlooks the caldera. At 7AM it\'s completely yours. This is the moment I always come for."'},
-                    {role:"cta",label:"OUTRO",text:'"I\'ve linked everything in the description — the villa, the restaurant, the guide we used. If you want more honest luxury travel, subscribe. New video every Thursday."'},
-                ],
-                deliverables:["10 full vlog scripts with b-roll notes","Voiceover vs on-camera split sections","Packing list feature integrations","Brand deal integration scripts","Short-form clip adaptations (5 per vlog)"],
-                tags:["#LuxuryTravel","#TravelVlog","#YouTube","#Lifestyle","#Santorini"],
-                client:"LuxeWithLucia", value:"$150"
-            },
-            {
-                id:6, category:"education", title:"Online Course Launch Scripts",
-                subtitle:"Complete 7-Video Launch Funnel",
-                desc:"Full script suite for an online course launch. Included a free training video, sales VSL, testimonial compilation script, and 4 nurture sequence videos. The launch generated $67K in course sales from a list of under 3,000 people.",
-                cover:11, result:"$67K Course Launch", rating:"5.0",
-                stats:[{v:"7",l:"Videos"},{v:"$67K",l:"Revenue"},{v:"38 min",l:"VSL Length"},{v:"11%",l:"Conversion Rate"}],
-                script:[
-                    {role:"hook",label:"VSL HOOK",text:'"If you\'ve tried every course, every YouTube video, every free guide about [topic] — and still feel stuck — this is the only video you need to watch today."'},
-                    {role:"intro",label:"CREDIBILITY BUILD",text:'"My name is [Name]. 3 years ago I was exactly where you are. I was working 60-hour weeks and making $38K a year. Today I run a $400K business from my laptop."'},
-                    {role:"body",label:"FRAMEWORK REVEAL",text:'"I call it the SCALE System. And in the next 30 minutes I\'m going to give you the first two steps completely free — no opt-in, no catch."'},
-                    {role:"cta",label:"CLOSE + OFFER",text:'"The doors to [Course Name] open on Friday. 200 spots. First 50 get a 1-on-1 strategy call with me personally. The link goes live at 9AM EST."'},
-                ],
-                deliverables:["Free training script (45 min)","Full VSL script (38 min)","4-part email video sequence","Testimonial compilation script","Objection handling video script"],
-                tags:["#OnlineCourse","#VSL","#CourseCreator","#DigitalMarketing","#Launch"],
-                client:"ScaleMastery", value:"$135"
+                deliverables: ["30 Educational Scripts", "Animation Briefs", "Thumbnail Concepts", "Engagement Prompts"],
+                client: "EduStream Pro", value: "$95"
             }
+        ];
+
+        const uniqueCovers = [
+            "https://images.unsplash.com/photo-1492691523567-61125a019393?w=800&q=80",
+            "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80",
+            "https://images.unsplash.com/photo-1536240478700-b8673fa8502d?w=800&q=80",
+            "https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=800&q=80",
+            "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+            "https://images.unsplash.com/photo-1526170315870-ef68971ef032?w=800&q=80",
+            "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&q=80",
+            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+            "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&q=80",
+            "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80",
+            "https://images.unsplash.com/photo-1511556840739-90369801402e?w=800&q=80",
+            "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=800&q=80",
+            "https://images.unsplash.com/photo-1585218356057-dc042f340605?w=800&q=80",
+            "https://images.unsplash.com/photo-1511556532299-8f66aba02b5a?w=800&q=80",
+            "https://images.unsplash.com/photo-1532298504434-b25119dc96c1?w=800&q=80",
+            "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800&q=80",
+            "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80",
+            "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=800&q=80",
+            "https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80",
+            "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800&q=80",
+            "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
+            "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80",
+            "https://images.unsplash.com/photo-1553062407-98eeb94c6a62?w=800&q=80",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+            "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80",
+            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
+            "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&q=80",
+            "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800&q=80",
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+            "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&q=80",
+            "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=800&q=80",
+            "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=800&q=80",
+            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+            "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=800&q=80",
+            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+            "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&q=80",
+            "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+            "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80",
+            "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+            "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+            "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+            "https://images.unsplash.com/photo-1521791136064-7986c2959210?w=800&q=80",
+            "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+            "https://images.unsplash.com/photo-1454165833767-1516b176f17d?w=800&q=80",
+            "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=800&q=80"
         ];
 
         // Fill the rest to 52
         const cats = ["tech", "finance", "health", "business", "lifestyle", "education", "travel"];
-        for(let i=7; i<=52; i++){
+        for(let i=3; i<=52; i++){
             const c = cats[i % cats.length];
             allScripts.push({
                 id: i, category: c, title: `Viral ${c.charAt(0).toUpperCase()+c.slice(1)} Script Pack #${i}`,
                 subtitle: `High-Retention Content Concept`,
                 desc: `A professional script concept for ${c} creators. Optimized for high audience retention and engagement metrics.`,
-                cover: i % 12, result: (Math.random()*3+1).toFixed(1) + "M Views", rating: (4.7 + Math.random()*0.3).toFixed(1),
+                cover: uniqueCovers[i % uniqueCovers.length],
+                result: (Math.random()*3+1).toFixed(1) + "M Views", rating: (4.7 + Math.random()*0.3).toFixed(1),
                 stats:[{v:Math.floor(Math.random()*10+5).toString(),l:"Scripts"},{v:(Math.random()*2+1).toFixed(1)+"M",l:"Views"},{v:"12 min",l:"Avg Dur"},{v:"+4K",l:"Subs"}],
                 script:[
-                    {role:"hook",label:"HOOK",text:'"The secret to ' + c + ' success is finally revealed — and it\'s not what you think."'},
-                    {role:"intro",label:"INTRO",text:'"Welcome back. Today we are deep-diving into the ' + c + ' strategies that actually work in 2026."'},
-                    {role:"body",label:"CORE VALUE",text:'"Let\'s break down the three pillars of this approach. First, you need to understand the underlying data..."'},
-                    {role:"cta",label:"ACTION",text:'"Don\'t forget to grab the free workbook in the description. Subscribe for more ' + c + ' insights."'},
+                    {role:"hook",label:"HOOK",text:'"The secret to ' + c + ' success in 2026 is finally being revealed — and it\'s definitely NOT what you think it is. I\'ve spent the last 6 months studying the top 1% of creators in this niche, and they all do this one specific thing that the algorithm absolutely loves."'},
+                    {role:"intro",label:"INTRO",text:'"Welcome back to the channel. Today we are doing a deep-dive into the ' + c + ' strategies that are actually moving the needle right now. Forget what worked in 2024; the landscape has shifted, and if you aren\'t adapting, you\'re falling behind."'},
+                    {role:"body",label:"CORE VALUE",text:'"Let\'s break down the three pillars of this approach. Step 1: Identifying the core pain point of your ' + c + ' audience. Step 2: Providing a unique solution that isn\'t just recycled advice. Step 3: Layering in a \'Pattern Interrupt\' every 15 seconds to ensure nobody clicks away."'},
+                    {role:"cta",label:"ACTION",text:'"If you found even one piece of value here, hit that like button and grab the free ' + c + ' workbook I\'ve linked in the description. Subscribe for more weekly insights that will actually help you grow."'},
                 ],
                 deliverables:["Full Script","B-Roll List","Hook A/B Options","Thumbnail Tips"],
                 tags:[`#${c}`,"#Viral","#Script","#AI"],
                 client: "Premium Creator", value: "$" + (Math.floor(Math.random()*60+40))
             });
+        }
+
+        function getImg(c) {
+            if(typeof c === 'number') return covers[c];
+            return c;
         }
 
         let currentFilter = 'all';
@@ -808,7 +818,7 @@
             grid.innerHTML = visible.map((s, idx) => `
                 <div class="glass-card" style="animation: fadeUp 0.5s ease forwards ${idx * 0.05}s;" onclick="openModal(${s.id})">
                     <div class="card-cover">
-                        <img src="${covers[s.cover]}" alt="${s.title}">
+                        <img src="${getImg(s.cover)}" alt="${s.title}">
                         <div class="card-overlay"></div>
                         <div class="card-cat">${s.category}</div>
                         <div class="card-rating">⭐ ${s.rating}</div>
@@ -859,7 +869,7 @@
             const s = allScripts.find(x => x.id === id);
             if (!s) return;
 
-            document.getElementById('modalCoverImg').src = covers[s.cover];
+            document.getElementById('modalCoverImg').src = getImg(s.cover);
             document.getElementById('modalCat').innerText = s.category;
             document.getElementById('modalTitle').innerText = s.title;
             document.getElementById('modalSub').innerText = s.subtitle;

@@ -33,8 +33,8 @@
         .scripts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; width: 100%; }
         .glass-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; position: relative; }
         .glass-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--shadow-purple); background: var(--card-bg-hover); }
-        .card-cover { position: relative; height: 180px; overflow: hidden; }
-        .card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card-cover { position: relative; height: 180px; min-height: 180px; overflow: hidden; background: #1a1a24; display: flex; align-items: center; justify-content: center; }
+        .card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; min-height: 180px; }
         .card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); }
         .card-cat { position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: white; padding: 4px 10px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.1); }
         .card-rating { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #fbbf24; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
@@ -59,9 +59,9 @@
         .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); color: white; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: var(--transition); }
         .modal-close:hover { background: var(--primary); }
         .modal-body { padding: 40px; }
-        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-        .modal-sub { color: var(--primary-light); font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
-        .content-preview-box { background: #06060B; border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 32px; color: var(--text); }
+        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #ffffff !important; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .modal-sub { color: rgba(255, 255, 255, 0.85) !important; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
+        .content-preview-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 32px; color: var(--text); }
         .content-excerpt { line-height: 1.8; opacity: 0.9; font-size: 1.05rem; white-space: pre-line; }
         .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
         .deliv-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.95rem; }
@@ -170,7 +170,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div class="modal-header">
-                <img id="modalCoverImg" src="" alt="Cover">
+                <img id="modalCoverImg" src="" alt="Cover" onerror="this.src='https://images.unsplash.com/photo-1507358520320-13f64923e597?auto=format&fit=crop&w=800&q=80'; this.onerror=null;">
                 <div class="card-overlay"></div>
                 <div style="position: absolute; bottom: 30px; left: 40px; right: 40px;">
                     <div id="modalCat" class="card-cat" style="position: static; display: inline-block; margin-bottom: 12px;">Category</div>
@@ -202,57 +202,30 @@
             </div>
         </div>
     </div>
-
+    
     <div class="toast" id="toast">
         <span id="toastMsg">Action Successful!</span>
     </div>
 
+
     <script src="./src/globals.js"></script>
+    <script src="./src/portfolio-data.js"></script>
     <script>
-        const covers = [
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
-            "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
-            "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&q=80",
-            "https://images.unsplash.com/photo-1642104704074-907c0698bcd9?w=800&q=80",
-        ];
-
-        const allContent = [
-            {
-                id: 1, category: "banking", title: "NovaPay Neo-Bank",
-                subtitle: "Complete Visual Identity System",
-                desc: "A bold, modern brand for a European neo-bank. Focused on clarity, security, and a 'digital-first' aesthetic.",
-                cover: 0, result: "Funded $500K Seed", rating: "5.0",
-                stats: [{v:"20",l:"Concepts"},{v:"8",l:"Colors"},{v:"30pg",l:"Guide"},{v:"$180",l:"Value"}],
-                excerpt: "NovaPay needed to look like a $10M company before they even had a website. We built a brand system centered around the 'Electric Cobalt' palette—signaling both stability and technological speed. \n\nThe logo utilizes a custom-weighted 'N' that doubles as a payment flow indicator, perfect for micro-animations in the mobile app.",
-                deliverables: ["Primary & Secondary Logos", "30-Page Brand Guide", "App Icon System", "Custom Typography Set"],
-                client: "NovaPay", value: "$180"
-            },
-            {
-                id: 2, category: "crypto", title: "Aether Protocol",
-                subtitle: "Web3 Brand & UI Kit",
-                desc: "High-end visual system for a decentralized finance protocol. Used a 'Dark Matter' theme with vibrant glassmorphism accents.",
-                cover: 1, result: "Featured on CoinDesk", rating: "5.0",
-                stats: [{v:"15",l:"UI Screens"},{v:"1",l:"3D Logo"},{v:"12h",l:"Delivery"},{v:"5.0★",l:"Rating"}],
-                excerpt: "Aether required an aesthetic that bridged the gap between complex blockchain tech and everyday accessibility. We leveraged a deep purple-to-teal gradient system and ultra-modern glassmorphism cards. \n\nThe final result was a UI kit that allowed their devs to build a functional dashboard in under a week.",
-                deliverables: ["3D Animated Logo", "Figma Design System", "Component Library", "Social Media Templates"],
-                client: "Aether Labs", value: "$150"
-            }
-        ];
-
-        // Fill to 52
-        const cats = ["logo", "ui", "crypto", "banking"];
-        for(let i=3; i<=52; i++){
+        const allContent = [];
+        const cats = ["banking", "crypto", "trading", "insurance"];
+        for(let i=1; i<=52; i++){
             const c = cats[i % cats.length];
+            const nicheLabel = c.charAt(0).toUpperCase()+c.slice(1);
             allContent.push({
-                id: i, category: c, title: `Premium Fintech ${c.charAt(0).toUpperCase()+c.slice(1)} Pack #${i}`,
-                subtitle: `Professional Design for ${c} Startups`,
-                desc: `A comprehensive design system for a ${c} firm. High-end, scalable, and modern.`,
-                cover: i % 5, result: "Launch-Ready Brand", rating: (4.9 + Math.random()*0.1).toFixed(1),
-                stats:[{v:Math.floor(Math.random()*15+5).toString(),l:"Files"},{v:(Math.random()*100).toFixed(0)+"%",l:"Quality"},{v:"48h",l:"Dur"},{v:"$100+",l:"Value"}],
-                excerpt: `Our approach to ${c} design is rooted in the intersection of trust and innovation. We ensure every pixel serves a purpose, from the kerning of the wordmark to the accessibility of the UI components. \n\nThis pack represents the gold standard of modern fintech aesthetics...`,
-                deliverables: ["Source Files (AI/Figma)", "Vector Exports", "Brand Palette", "Mockup Previews"],
-                client: "Anonymous Startup", value: "$" + (Math.floor(Math.random()*50+80))
+                id: i, category: c, title: `Fintech ${nicheLabel} System #${i}`,
+                subtitle: `The 'High-Trust' Strategy for ${nicheLabel}`,
+                desc: `A professional fintech content and branding engine for a ${c} platform. Built for authority and conversion.`,
+                cover: window.PortfolioData.getImg('fintech', i),
+                result: "Market Cap Growth", rating: (4.8 + (i * 0.003)).toFixed(1),
+                stats:[{v:Math.floor(20 + (i % 20)).toString(),l:"Assets"},{v:(15 + (i % 25))+"%",l:"ROI"},{v:"24h",l:"TAT"},{v:"$100+",l:"Value"}],
+                excerpt: window.PortfolioData.getDetailedScript(i, "Fintech", nicheLabel),
+                deliverables: ["Strategic Roadmap", "Visual Assets", "SEO Copy Pack", "Brand Tone Guide"],
+                client: "FinGlobal Group", value: "$" + (120 + (i % 60))
             });
         }
 
@@ -264,10 +237,11 @@
             const filtered = allContent.filter(s => currentFilter === 'all' || s.category === currentFilter);
             const visible = filtered.slice(0, shownCount);
             document.getElementById('loadMoreWrap').style.display = shownCount >= filtered.length ? 'none' : 'block';
+            
             grid.innerHTML = visible.map((s, idx) => `
                 <div class="glass-card" style="animation: fadeUp 0.5s ease forwards ${idx * 0.05}s;" onclick="openModal(${s.id})">
                     <div class="card-cover">
-                        <img src="${covers[s.cover]}" alt="${s.title}">
+                        <img src="${s.cover}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&q=80'; this.onerror=null;">
                         <div class="card-overlay"></div>
                         <div class="card-cat">${s.category}</div>
                         <div class="card-rating">⭐ ${s.rating}</div>
@@ -290,8 +264,11 @@
         }
 
         function filterContent(cat, el) { currentFilter = cat; document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); shownCount = 12; renderContent(); }
+        function loadMore() { shownCount += 12; renderContent(); }
         function searchContent() {
             const query = document.getElementById('contentSearch').value.toLowerCase();
+            shownCount = 52;
+            renderContent();
             const cards = document.querySelectorAll('.glass-card');
             cards.forEach(card => {
                 const title = card.querySelector('.card-title').innerText.toLowerCase();
@@ -299,14 +276,14 @@
                 card.style.display = (title.includes(query) || desc.includes(query)) ? 'flex' : 'none';
             });
         }
-        function loadMore() { shownCount += 12; renderContent(); }
+
         function openModal(id) {
             const s = allContent.find(x => x.id === id);
             if (!s) return;
-            document.getElementById('modalCoverImg').src = covers[s.cover];
-            document.getElementById('modalCat').innerText = s.category;
+            document.getElementById('modalCoverImg').src = s.cover;
             document.getElementById('modalTitle').innerText = s.title;
             document.getElementById('modalSub').innerText = s.subtitle;
+            document.getElementById('modalCat').innerText = s.category;
             document.getElementById('modalExcerpt').innerText = s.excerpt;
             document.getElementById('modalStats').innerHTML = s.stats.map(st => `<div class="stat-item"><div class="stat-val">${st.v}</div><div class="stat-lab">${st.l}</div></div>`).join('');
             document.getElementById('modalDeliverables').innerHTML = s.deliverables.map(d => `<div class="deliv-item"><span class="deliv-icon">✓</span>${d}</div>`).join('');
@@ -316,10 +293,13 @@
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.style.overflow = ''; }
         function handleOverlayClick(e) { if (e.target.id === 'modalOverlay') closeModal(); }
         function showToast(msg) { const toast = document.getElementById('toast'); document.getElementById('toastMsg').innerText = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 3000); }
+        
         renderContent();
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        }
         window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
     </script>
 </body>

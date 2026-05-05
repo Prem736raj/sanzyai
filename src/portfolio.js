@@ -11,7 +11,8 @@ const portfolioProjects = [
         duration: "7 Days",
         result: "+340% Organic Traffic",
         price: "$105",
-        image: "/assets/portfolio/saas.png",
+        image: window.PortfolioData.getImg('saas', 0),
+        targetPage: "saas-content-portfolio.html",
         stats: [
             { label: "Articles", value: "15" },
             { label: "Avg Words", value: "1,200" },
@@ -46,7 +47,8 @@ const portfolioProjects = [
         duration: "3 Days",
         result: "+28% Conversion Rate",
         price: "$120",
-        image: "/assets/portfolio/ecommerce.png",
+        image: window.PortfolioData.getImg('ecommerce', 0),
+        targetPage: "ecommerce-portfolio.html",
         stats: [
             { label: "Products", value: "50" },
             { label: "Conv. Boost", value: "+28%" },
@@ -81,7 +83,7 @@ const portfolioProjects = [
         duration: "5 Days",
         result: "2.1M Views in 30 Days",
         price: "$84",
-        image: "/assets/portfolio/youtube.png",
+        image: window.PortfolioData.getImg('tiktok', 10),
         stats: [
             { label: "Scripts", value: "12" },
             { label: "Total Views", value: "2.1M" },
@@ -98,7 +100,7 @@ const portfolioProjects = [
             "SEO title suggestions",
         ],
         tools: ["GPT-4", "VidIQ", "TubeBuddy"],
-        targetPage: "/video-scripts-portfolio.html",
+        targetPage: "video-scripts-portfolio.html",
         testimonial: {
             text: "One script hit 800K views. Never thought AI could write this well.",
             author: "Alex R.",
@@ -117,7 +119,8 @@ const portfolioProjects = [
         duration: "48 Hours",
         result: "Funded $500K Seed Round",
         price: "$180",
-        image: "/assets/portfolio/fintech.png",
+        image: window.PortfolioData.getImg('fintech', 0),
+        targetPage: "fintech-portfolio.html",
         stats: [
             { label: "Logo Concepts", value: "20" },
             { label: "Brand Colors", value: "8" },
@@ -154,7 +157,7 @@ const portfolioProjects = [
         duration: "12 Hours",
         result: "App Store Featured",
         price: "$48",
-        image: "/assets/portfolio/wellness.png",
+        image: window.PortfolioData.getImg('fitness', 0),
         stats: [
             { label: "Logo Concepts", value: "100+" },
             { label: "Variations", value: "Infinite" },
@@ -171,7 +174,7 @@ const portfolioProjects = [
             "Commercial license",
         ],
         tools: ["Midjourney V6", "Adobe Illustrator", "Figma"],
-        targetPage: "/wellness-app-showcase.html",
+        targetPage: "wellness-app-showcase.html",
         testimonial: {
             text: "Got featured by Apple App Store within 2 weeks of launch. The logo was a big part.",
             author: "Sophia L.",
@@ -190,7 +193,8 @@ const portfolioProjects = [
         duration: "24 Hours",
         result: "+45% Dine-In Bookings",
         price: "$65",
-        image: "/assets/portfolio/restaurant.png",
+        image: window.PortfolioData.getImg('restaurant', 0),
+        targetPage: "restaurant-portfolio.html",
         stats: [
             { label: "Menu Pages", value: "8" },
             { label: "Social Templates", value: "15" },
@@ -225,7 +229,8 @@ const portfolioProjects = [
         duration: "24 Hours",
         result: "+12K Instagram Followers",
         price: "$72",
-        image: "/assets/portfolio/fitness.png",
+        image: window.PortfolioData.getImg('fitness', 1),
+        targetPage: "fitness-portfolio.html",
         stats: [
             { label: "Captions", value: "90" },
             { label: "New Followers", value: "+12K" },
@@ -261,7 +266,8 @@ const portfolioProjects = [
         duration: "48 Hours",
         result: "500K+ Post Impressions",
         price: "$96",
-        image: "/assets/portfolio/linkedin.png",
+        image: window.PortfolioData.getImg('fintech', 10),
+        targetPage: "linkedin-portfolio.html",
         stats: [
             { label: "Posts", value: "60" },
             { label: "Impressions", value: "500K+" },
@@ -296,7 +302,8 @@ const portfolioProjects = [
         duration: "24 Hours",
         result: "3 Videos Hit 1M+ Views",
         price: "$60",
-        image: "/assets/portfolio/tiktok.png",
+        image: window.PortfolioData.getImg('tiktok', 0),
+        targetPage: "tiktok-portfolio.html",
         stats: [
             { label: "Scripts", value: "30" },
             { label: "Viral Videos", value: "3" },
@@ -331,8 +338,8 @@ function renderPortfolio() {
         ? portfolioProjects 
         : portfolioProjects.filter(p => p.category === activeFilter);
 
-    grid.innerHTML = filtered.map(p => `
-        <${p.targetPage ? `a href="${p.targetPage}"` : 'div'} class="project-card" data-slug="${p.slug}">
+    grid.innerHTML = filtered.map(p => {
+        const cardInner = `
             <div class="card-visual">
                 <img src="${p.image}" alt="${p.title}" class="card-img">
                 <span class="card-tag">${p.tag}</span>
@@ -364,8 +371,14 @@ function renderPortfolio() {
                     </div>
                 </div>
             </div>
-        </${p.targetPage ? 'a' : 'div'}>
-    `).join('');
+        `;
+
+        if (p.targetPage) {
+            return `<a href="${p.targetPage}" class="project-card" data-slug="${p.slug}">${cardInner}</a>`;
+        } else {
+            return `<div class="project-card" data-slug="${p.slug}">${cardInner}</div>`;
+        }
+    }).join('');
 
     updateCounts();
 }
@@ -479,30 +492,30 @@ function openCaseStudy(slug) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderPortfolio();
+renderPortfolio();
 
-    const grid = document.getElementById('portfolioGrid');
+const grid = document.getElementById('portfolioGrid');
+if (grid) {
     grid.addEventListener('click', (e) => {
         const card = e.target.closest('.project-card');
-        if (card && !card.href) {
-            const slug = card.dataset.slug;
-            openCaseStudy(slug);
-        }
-    });
+        if (!card || card.tagName === 'A') return;
 
-    const modal = document.getElementById('modalOverlay');
-    const closeBtn = document.getElementById('modalClose');
-    if (closeBtn && modal) {
-        closeBtn.addEventListener('click', () => {
+        const slug = card.dataset.slug;
+        openCaseStudy(slug);
+    });
+}
+
+const modal = document.getElementById('modalOverlay');
+const closeBtn = document.getElementById('modalClose');
+if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
             modal.classList.remove('open');
             document.body.style.overflow = '';
-        });
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-});
+        }
+    });
+}

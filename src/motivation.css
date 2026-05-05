@@ -80,8 +80,11 @@ body.motivation-page {
 }
 
 .main-logo-button:hover {
-    transform: scale(1.12) rotate(-5deg);
     box-shadow: 0 8px 30px rgba(108, 99, 255, 0.6);
+}
+
+.logo-animation-container:hover .logo-official-img {
+    animation: logoSpinContinuous 10s linear infinite;
 }
 
 .logo-official-img {
@@ -216,6 +219,11 @@ body.motivation-page {
     0% { transform: scale(1) rotate(0deg); }
     50% { transform: scale(1.6) rotate(180deg); }
     100% { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes logoSpinContinuous {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .animating-btn { animation: buttonMorph 0.7s ease-in-out; }

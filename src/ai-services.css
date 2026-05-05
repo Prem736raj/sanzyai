@@ -51,6 +51,10 @@ html.light-mode {
     --border-s: rgba(0,0,0,0.05);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
    background: var(--bg);
    color: var(--text);
@@ -342,15 +346,6 @@ html.light-mode .hsc-title {
 .svc-label-sm { font-size: 0.75rem; color: var(--muted); margin-left: 4px; }
 .svc-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
 
-.pkg-section { margin-bottom: 24px; }
-.pkg-tabs { display: flex; gap: 4px; background: var(--surface2); padding: 4px; border-radius: 12px; margin-bottom: 16px; }
-.pkg-tab { flex: 1; padding: 8px; border: none; background: transparent; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--muted); cursor: pointer; transition: all 0.2s ease; }
-.pkg-tab.active { background: var(--accent); color: #fff; }
-.pkg-content-box { background: var(--surface2); border: 1px solid var(--border-s); border-radius: 16px; padding: 16px; }
-.pkg-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-.pkg-name { font-weight: 700; font-size: 0.9rem; color: var(--text); }
-.pkg-price-val { font-weight: 800; font-size: 1.2rem; color: var(--accent); }
-.pkg-desc-sm { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
 .pkg-feat { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text); margin-bottom: 6px; }
 .feat-check { color: var(--accent); font-weight: 800; }
 

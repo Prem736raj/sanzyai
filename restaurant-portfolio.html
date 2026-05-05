@@ -33,8 +33,8 @@
         .scripts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; width: 100%; }
         .glass-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; position: relative; }
         .glass-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--shadow-purple); background: var(--card-bg-hover); }
-        .card-cover { position: relative; height: 180px; overflow: hidden; }
-        .card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card-cover { position: relative; height: 180px; min-height: 180px; overflow: hidden; background: #1a1a24; display: flex; align-items: center; justify-content: center; }
+        .card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; min-height: 180px; }
         .card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); }
         .card-cat { position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: white; padding: 4px 10px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.1); }
         .card-rating { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #fbbf24; padding: 4px 8px; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
@@ -59,9 +59,9 @@
         .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); color: white; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: var(--transition); }
         .modal-close:hover { background: var(--primary); }
         .modal-body { padding: 40px; }
-        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-        .modal-sub { color: var(--primary-light); font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
-        .content-preview-box { background: #06060B; border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 32px; color: var(--text); }
+        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #ffffff !important; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .modal-sub { color: rgba(255, 255, 255, 0.85) !important; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
+        .content-preview-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin-bottom: 32px; color: var(--text); }
         .content-excerpt { line-height: 1.8; opacity: 0.9; font-size: 1.05rem; white-space: pre-line; font-style: italic; }
         .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
         .deliv-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.95rem; }
@@ -170,7 +170,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div class="modal-header">
-                <img id="modalCoverImg" src="" alt="Cover">
+                <img id="modalCoverImg" src="" alt="Cover" onerror="this.src='https://images.unsplash.com/photo-1507358520320-13f64923e597?auto=format&fit=crop&w=800&q=80'; this.onerror=null;">
                 <div class="card-overlay"></div>
                 <div style="position: absolute; bottom: 30px; left: 40px; right: 40px;">
                     <div id="modalCat" class="card-cat" style="position: static; display: inline-block; margin-bottom: 12px;">Category</div>
@@ -204,55 +204,25 @@
     </div>
 
     <div class="toast" id="toast">
-        <span id="toastMsg">Action Successful!</span>
-    </div>
-
+        <span id="toastMsg">Action Succe
     <script src="./src/globals.js"></script>
+    <script src="./src/portfolio-data.js"></script>
     <script>
-        const covers = [
-            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
-            "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
-            "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80",
-            "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&q=80",
-        ];
-
-        const allContent = [
-            {
-                id: 1, category: "fine-dining", title: "Saffron Kitchen",
-                subtitle: "Luxury Fusion Brand Rebrand",
-                desc: "Complete visual rebrand for a fine dining restaurant. New logo, full menu redesign, and social media templates.",
-                cover: 0, result: "+45% Dine-In Bookings", rating: "5.0",
-                stats: [{v:"8",l:"Menu Pgs"},{v:"15",l:"Templates"},{v:"24h",l:"Delivery"},{v:"+45%",l:"Bookings"}],
-                excerpt: "Saffron Kitchen needed an identity that reflected its modern take on traditional spices. We chose a 'Burned Saffron' and 'Deep Obsidian' color palette to communicate richness and exclusivity. \n\nThe menu design utilizes an elegant serif typeface and generous whitespace, allowing the photography of the dishes to take center stage.",
-                deliverables: ["New Logo Suite", "8-Page Print Menu", "Canva Social Templates", "Brand Guidelines PDF"],
-                client: "Saffron Kitchen", value: "$65"
-            },
-            {
-                id: 2, category: "cafe", title: "The Daily Grind",
-                subtitle: "Artisan Café Brand Identity",
-                desc: "Minimalist, welcoming brand for a local coffee shop. Focused on organic textures and hand-drawn elements.",
-                cover: 1, result: "Most Photogenic Café", rating: "4.9",
-                stats: [{v:"1",l:"Logo"},{v:"10",l:"Posts"},{v:"12h",l:"Delivery"},{v:"4.9★",l:"Rating"}],
-                excerpt: "For The Daily Grind, we wanted to capture the feeling of a neighborhood sanctuary. The brand uses earth tones and recycled-paper textures. \n\nThe logo is a simple, hand-drawn cup that feels personal and approachable, perfectly suited for stamped coffee sleeves and tote bags.",
-                deliverables: ["Hand-Drawn Logo", "Packaging Labels", "Instagram Story Set", "Wall Mural Design"],
-                client: "The Daily Grind", value: "$45"
-            }
-        ];
-
-        // Fill to 52
-        const cats = ["fine-dining", "cafe", "fast-food", "bar"];
-        for(let i=3; i<=52; i++){
+        const allContent = [];
+        const cats = ["fine-dining", "cafe", "fast-casual", "bar"];
+        for(let i=1; i<=52; i++){
             const c = cats[i % cats.length];
+            const nicheLabel = c.charAt(0).toUpperCase()+c.slice(1);
             allContent.push({
-                id: i, category: c, title: `Premium ${c.charAt(0).toUpperCase()+c.slice(1)} Brand #${i}`,
-                subtitle: `High-End Design for ${c} Niche`,
-                desc: `A professional branding package for a ${c} business. Includes logo, menu, and social assets.`,
-                cover: i % 5, result: "Boosted Brand Appeal", rating: (4.7 + Math.random()*0.3).toFixed(1),
-                stats:[{v:Math.floor(Math.random()*6+2).toString(),l:"Pages"},{v:(Math.random()*50+20).toFixed(0)+"%",l:"Growth"},{v:"24h",l:"Dur"},{v:"$40+",l:"Value"}],
-                excerpt: `Our design philosophy for ${c} is centered on the customer journey. From the first social media post they see to the menu in their hands, we ensure a cohesive and delightful experience. \n\nEvery element is crafted to reinforce your brand's unique story and culinary excellence...`,
-                deliverables: ["Vector Logo", "Menu Design", "Social Kit", "Digital Mockups"],
-                client: "Anonymous Eatery", value: "$" + (Math.floor(Math.random()*40+30))
+                id: i, category: c, title: `Hospitality ${nicheLabel} System #${i}`,
+                subtitle: `The 'High-Guest-Value' Strategy for ${nicheLabel}`,
+                desc: `A professional hospitality content engine for a ${c} brand. Built for community loyalty and peak-time bookings.`,
+                cover: window.PortfolioData.getImg('restaurant', i),
+                result: "Organic Booking Capture", rating: (4.7 + (i * 0.003)).toFixed(1),
+                stats:[{v:Math.floor(20 + (i % 20)).toString(),l:"Scripts"},{v:(30 + (i % 40))+"%",l:"Reach"},{v:"24h",l:"Dur"},{v:"$80+",l:"Value"}],
+                excerpt: window.PortfolioData.getDetailedScript(i, "Restaurant", nicheLabel),
+                deliverables: ["Guest-Facing Copy", "Social Scripts", "Loyalty Templates", "Menu Roadmap"],
+                client: "Confidential Client", value: "$" + (75 + (i % 45))
             });
         }
 
@@ -264,10 +234,11 @@
             const filtered = allContent.filter(s => currentFilter === 'all' || s.category === currentFilter);
             const visible = filtered.slice(0, shownCount);
             document.getElementById('loadMoreWrap').style.display = shownCount >= filtered.length ? 'none' : 'block';
+            
             grid.innerHTML = visible.map((s, idx) => `
                 <div class="glass-card" style="animation: fadeUp 0.5s ease forwards ${idx * 0.05}s;" onclick="openModal(${s.id})">
                     <div class="card-cover">
-                        <img src="${covers[s.cover]}" alt="${s.title}">
+                        <img src="${s.cover}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&q=80'; this.onerror=null;">
                         <div class="card-overlay"></div>
                         <div class="card-cat">${s.category}</div>
                         <div class="card-rating">⭐ ${s.rating}</div>
@@ -278,7 +249,7 @@
                         <p class="card-desc">${s.desc}</p>
                         <div class="card-stats">
                             <div class="stat-item"><div class="stat-val">${s.stats[0].v}</div><div class="stat-lab">${s.stats[0].l}</div></div>
-                            <div class="stat-item"><div class="stat-val">${s.result.split(' ')[0]}</div><div class="stat-lab">OUTCOME</div></div>
+                            <div class="stat-item"><div class="stat-val">${s.result.split(' ')[0]}</div><div class="stat-lab">IMPACT</div></div>
                         </div>
                         <div class="card-footer">
                             <div class="client-info"><span class="client-lab">CLIENT</span><span class="client-name">${s.client}</span></div>
@@ -290,8 +261,11 @@
         }
 
         function filterContent(cat, el) { currentFilter = cat; document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active')); el.classList.add('active'); shownCount = 12; renderContent(); }
+        function loadMore() { shownCount += 12; renderContent(); }
         function searchContent() {
             const query = document.getElementById('contentSearch').value.toLowerCase();
+            shownCount = 52;
+            renderContent();
             const cards = document.querySelectorAll('.glass-card');
             cards.forEach(card => {
                 const title = card.querySelector('.card-title').innerText.toLowerCase();
@@ -299,14 +273,14 @@
                 card.style.display = (title.includes(query) || desc.includes(query)) ? 'flex' : 'none';
             });
         }
-        function loadMore() { shownCount += 12; renderContent(); }
+
         function openModal(id) {
             const s = allContent.find(x => x.id === id);
             if (!s) return;
-            document.getElementById('modalCoverImg').src = covers[s.cover];
-            document.getElementById('modalCat').innerText = s.category;
+            document.getElementById('modalCoverImg').src = s.cover;
             document.getElementById('modalTitle').innerText = s.title;
             document.getElementById('modalSub').innerText = s.subtitle;
+            document.getElementById('modalCat').innerText = s.category;
             document.getElementById('modalExcerpt').innerText = s.excerpt;
             document.getElementById('modalStats').innerHTML = s.stats.map(st => `<div class="stat-item"><div class="stat-val">${st.v}</div><div class="stat-lab">${st.l}</div></div>`).join('');
             document.getElementById('modalDeliverables').innerHTML = s.deliverables.map(d => `<div class="deliv-item"><span class="deliv-icon">✓</span>${d}</div>`).join('');
@@ -316,11 +290,18 @@
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.style.overflow = ''; }
         function handleOverlayClick(e) { if (e.target.id === 'modalOverlay') closeModal(); }
         function showToast(msg) { const toast = document.getElementById('toast'); document.getElementById('toastMsg').innerText = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 3000); }
+        
         renderContent();
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        }
         window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+</html>
+e') closeModal(); });
     </script>
 </body>
 </html>
