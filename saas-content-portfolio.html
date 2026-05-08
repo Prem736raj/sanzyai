@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script>((t)=>{if(t==='light')document.documentElement.classList.add('light-mode')})(localStorage.getItem('sanzy_theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <title>SaaS Content Portfolio – 50+ SEO-Optimized Articles | SanzyAI</title>
+    <title>SaaS Content Portfolio � 50+ SEO-Optimized Articles | SanzyAI</title>
     <meta name="description" content="Explore our premium collection of 50+ high-ranking SaaS content pieces. From technical whitepapers to viral blog series.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,7 +178,7 @@
             <div class="navbar-inner">
                 <div class="logo" style="display: flex; align-items: center; gap: 12px;">
                     <a href="index.html" class="logo-icon-wrap">
-                        <img src="./public/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+                        <img src="/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; object-fit: contain;">
                     </a>
                     <a href="index.html" class="logo-text" style="color: white; text-decoration: none; font-weight: 700;">SanzyAI</a>
                 </div>
@@ -196,9 +196,9 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="/">🏠 Home</a></li>
-            <li><a href="portfolio.html">📂 Portfolio Hub</a></li>
-            <li><a href="saas-content-portfolio.html">📝 SaaS Content</a></li>
+            <li><a href="/">?? Home</a></li>
+            <li><a href="portfolio.html">?? Portfolio Hub</a></li>
+            <li><a href="saas-content-portfolio.html">?? SaaS Content</a></li>
         </ul>
     </div>
 
@@ -206,7 +206,7 @@
         <div class="container">
             <div class="hero-badge" style="margin: 0 auto 8px; display: inline-flex;">
                 <span class="badge-dot"></span>
-                📝 SaaS Content Portfolio
+                ?? SaaS Content Portfolio
             </div>
             <h1 class="hero-title" style="margin-bottom: 6px; line-height: 1.1;">50+ Expert <span class="gradient-text">SaaS Articles</span></h1>
             <p class="hero-subtitle" style="margin: 0 auto 10px; max-width: 600px;">
@@ -234,7 +234,7 @@
                 <button class="filter-tab" onclick="filterContent('case-study', this)">Case Studies</button>
             </div>
             <div class="search-wrap">
-                <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: 0.5;">🔍</span>
+                <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: 0.5;">??</span>
                 <input type="text" class="search-input" id="contentSearch" placeholder="Search by topic, keyword, or client..." onkeyup="searchContent()">
             </div>
         </div>
@@ -251,7 +251,7 @@
     <footer class="footer-compact">
         <div class="container">
             <a href="/" class="footer-compact-brand">
-                <img src="./public/logo-official.png" alt="Logo" style="width: 24px; height: 24px;">
+                <img src="/logo-official.png" alt="Logo" style="width: 24px; height: 24px;">
                 <span style="font-weight: 700; color: white;">SanzyAI</span>
             </a>
             <ul class="footer-compact-links">
@@ -259,14 +259,14 @@
                 <li><a href="/terms">Terms</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
-            <p class="footer-compact-copy">© 2026 SanzyAI Platform. High-End SaaS Content.</p>
+            <p class="footer-compact-copy">� 2026 SanzyAI Platform. High-End SaaS Content.</p>
         </div>
     </footer>
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
+            <button class="modal-close" onclick="closeModal()">�</button>
             <div class="modal-header">
                 <img id="modalCoverImg" src="" alt="Cover" onerror="this.src='https://images.unsplash.com/photo-1507358520320-13f64923e597?auto=format&fit=crop&w=800&q=80'; this.onerror=null;">
                 <div class="card-overlay"></div>
@@ -294,8 +294,8 @@
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <button class="btn btn-primary" onclick="showToast('Link to full article copied!')" style="justify-content: center; padding: 16px;">🔗 View Live Article</button>
-                    <button class="btn btn-outline" onclick="showToast('Content Framework Downloaded')" style="justify-content: center; padding: 16px;">📥 Download Framework</button>
+                    <button class="btn btn-primary" onclick="showToast('Link to full article copied!')" style="justify-content: center; padding: 16px;">?? View Live Article</button>
+                    <button class="btn btn-outline" onclick="showToast('Content Framework Downloaded')" style="justify-content: center; padding: 16px;">?? Download Framework</button>
                 </div>
             </div>
         </div>
@@ -341,7 +341,7 @@
                         <img src="${s.cover}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&q=80'; this.onerror=null;">
                         <div class="card-overlay"></div>
                         <div class="card-cat">${s.category}</div>
-                        <div class="card-rating">⭐ ${s.rating}</div>
+                        <div class="card-rating">? ${s.rating}</div>
                     </div>
                     <div class="card-content">
                         <div class="card-sub">${s.subtitle}</div>
@@ -383,7 +383,7 @@
             document.getElementById('modalCat').innerText = s.category;
             document.getElementById('modalExcerpt').innerText = s.excerpt;
             document.getElementById('modalStats').innerHTML = s.stats.map(st => `<div class="stat-item"><div class="stat-val">${st.v}</div><div class="stat-lab">${st.l}</div></div>`).join('');
-            document.getElementById('modalDeliverables').innerHTML = s.deliverables.map(d => `<div class="deliv-item"><span class="deliv-icon">✓</span>${d}</div>`).join('');
+            document.getElementById('modalDeliverables').innerHTML = s.deliverables.map(d => `<div class="deliv-item"><span class="deliv-icon">?</span>${d}</div>`).join('');
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
