@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script>((t)=>{if(t==="light")document.documentElement.classList.add("light-mode")})(localStorage.getItem("sanzy_theme")||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))</script>
@@ -25,7 +25,7 @@
         <div class="navbar-inner">
             <!-- Logo -->
             <a href="/" class="logo">
-                <div class="logo-icon">⚡</div>
+                <div class="logo-icon-wrap"><img src="/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; display: block; object-fit: contain;"></div>
                 <span class="logo-text">SanzyAI</span>
             </a>
 
@@ -84,6 +84,39 @@
             <div class="kpi"><strong>Practical</strong><span>Real Templates</span></div>
         </div>
 
+        <div class="path-quiz-section" id="pathQuiz">
+            <div class="quiz-card">
+                <h3>Not sure which path? Take the 30-second Quiz</h3>
+                <div class="quiz-questions">
+                    <div class="quiz-q active" data-q="1">
+                        <p>What is your primary goal?</p>
+                        <div class="quiz-opts">
+                            <button class="btn btn-outline btn-sm" onclick="nextQuiz(1, 'free')">Learning & Hobby</button>
+                            <button class="btn btn-outline btn-sm" onclick="nextQuiz(1, 'paid')">Professional Business</button>
+                        </div>
+                    </div>
+                    <div class="quiz-q" data-q="2">
+                        <p>What is your monthly budget for tools?</p>
+                        <div class="quiz-opts">
+                            <button class="btn btn-outline btn-sm" onclick="nextQuiz(2, 'free')">$0 (Zero)</button>
+                            <button class="btn btn-outline btn-sm" onclick="nextQuiz(2, 'paid')">$20 - $100+</button>
+                        </div>
+                    </div>
+                    <div class="quiz-q" data-q="3">
+                        <p>How much time can you commit weekly?</p>
+                        <div class="quiz-opts">
+                            <button class="btn btn-outline btn-sm" onclick="finishQuiz('free')">3-5 Hours</button>
+                            <button class="btn btn-outline btn-sm" onclick="finishQuiz('paid')">10+ Hours</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-result" id="quizResult" hidden>
+                    <p id="quizResultMsg"></p>
+                    <button class="btn btn-primary btn-sm" onclick="resetQuiz()">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+
         <div class="path-switch" role="tablist" aria-label="Learning mode">
             <button type="button" class="path-btn active" id="freePathBtn">Start Free Path</button>
             <button type="button" class="path-btn" id="paidPathBtn">Start Paid Path</button>
@@ -106,14 +139,91 @@
                     <span>Day Streak</span>
                 </div>
                 <div class="streak-item">
-                    <strong id="tasksDone">0/10</strong>
+                    <strong id="tasksDone">0/16</strong>
                     <span>Checklist Done</span>
                 </div>
                 <div class="streak-item">
-                    <strong id="stagesSeen">0/7</strong>
+                    <strong id="stagesSeen">0/8</strong>
                     <span>Stages Explored</span>
                 </div>
             </div>
+        </div>
+
+        <div class="badges-container" id="badgeList">
+            <div class="badge-item locked" id="badge-niche" title="Niche Explorer: Finish Phase 1">🔍</div>
+            <div class="badge-item locked" id="badge-stack" title="Tech Architect: Finish Phase 3">🏗️</div>
+            <div class="badge-item locked" id="badge-content" title="Content King: Finish Phase 5">✍️</div>
+            <div class="badge-item locked" id="badge-hero" title="Website Hero: Finish 100%">🏆</div>
+        </div>
+    </div>
+</section>
+
+<section class="intro-guide">
+    <div class="container">
+        <div class="section-head">
+            <h2>The Beginner's Guide: Zero to Hero</h2>
+            <p>If you've never built a website before, start here. We break down the absolute basics.</p>
+        </div>
+        <div class="intro-grid">
+            <div class="intro-card">
+                <h3>1. What is a Website?</h3>
+                <p>Think of it as your digital house. Your <strong>Domain</strong> is your address (e.g., mysite.com), and your <strong>Hosting</strong> is the land where your house sits.</p>
+            </div>
+            <div class="intro-card">
+                <h3>2. Free vs Paid: The Reality</h3>
+                <p><strong>Free</strong> is great for learning and small projects. <strong>Paid</strong> is for professional businesses that need speed, reliability, and full control.</p>
+            </div>
+            <div class="intro-card">
+                <h3>3. The Zero to Hero Journey</h3>
+                <p>This roadmap will take you from picking an idea to launching and growing your traffic. No coding experience required.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="comparison-section">
+    <div class="container">
+        <div class="section-head">
+            <h2>Free vs Paid: Which Path?</h2>
+            <p>Compare the two strategies to see which fits your goals and budget.</p>
+        </div>
+        <div class="table-wrapper">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free Path</th>
+                        <th>Paid Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Domain</strong></td>
+                        <td>Subdomain (mysite.vercel.app)</td>
+                        <td>Custom .com (mysite.com)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hosting</strong></td>
+                        <td>Shared Free Tiers</td>
+                        <td>Managed Premium Servers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ads</strong></td>
+                        <td>Sometimes Required</td>
+                        <td>Ad-Free Experience</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Speed</strong></td>
+                        <td>Standard</td>
+                        <td>Ultra-Fast (CDN + Cache)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monetization</strong></td>
+                        <td>Limited</td>
+                        <td>Unlimited Potential</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
@@ -287,7 +397,7 @@
 <footer class="footer-compact">
     <div class="container">
         <a href="/" class="footer-compact-brand">
-            <div class="logo-icon">⚡</div>
+            <div class="logo-icon-wrap"><img src="/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; display: block; object-fit: contain;"></div>
             <span class="logo-text">SanzyAI</span>
         </a>
         <ul class="footer-compact-links">

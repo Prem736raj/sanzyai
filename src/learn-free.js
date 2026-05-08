@@ -1,276 +1,284 @@
 const roadmapByPath = {
     free: [
         {
-            id: 'idea',
-            title: 'Define Niche + Offer',
-            duration: 'Day 1',
-            tools: 'Google Trends, Reddit, Notion',
-            outcome: 'One clear audience + one offer',
+            id: 'niche',
+            title: 'Phase 1: Zero-Cost Niche Selection',
+            duration: 'Day 1-2',
+            tools: 'Google Trends, Reddit, AnswerThePublic, Exploding Topics, Ubersuggest, Keyword Sheeter',
+            outcome: 'A validated niche with zero upfront spend',
+            mistake: 'Picking a niche "just for money" that you have zero interest in. You will burn out before Phase 5.',
             tasks: [
-                'Pick one narrow audience and one painful problem.',
-                'Write your one-line value promise.',
-                'Collect 20 keywords people already search for.'
+                'Analyze 5 niche ideas using Google Trends and Pinterest Trends.',
+                'Find 30 "pain point" questions on Reddit, Quora, and niche forums.',
+                'Use Ubersuggest (Free Tier) to find 10 low-competition keywords.',
+                'Draft your "Minimum Viable Message" (MVM) headline.'
             ]
         },
         {
-            id: 'domain',
-            title: 'Domain + Free Hosting Setup',
-            duration: 'Day 2',
-            tools: 'Namecheap, Cloudflare Pages / Vercel',
-            outcome: 'Live domain connected to free hosting',
+            id: 'plan',
+            title: 'Phase 2: Architecture & Planning',
+            duration: 'Day 3',
+            tools: 'Notion, Excalidraw, Miro (Free), Draw.io, sitemap.xml generators',
+            outcome: 'Complete site structure and user flow',
+            mistake: 'Trying to plan a 50-page site. Stick to 1 Home page and 5 Pillar pages to start.',
             tasks: [
-                'Buy a short domain and enable privacy.',
-                'Connect DNS records to your host.',
-                'Turn on SSL and verify HTTPS.'
+                'Draw your site map (Home, 5 Pillars, Legal, Contact) in Draw.io.',
+                'Plan your user journey: where do they land, where do they click?',
+                'Define your "Conversion Goal" (e.g., Email Signup or Link Click).'
             ]
         },
         {
-            id: 'build',
-            title: 'Build MVP Website',
-            duration: 'Day 3-5',
-            tools: 'HTML/CSS, Vite, GitHub',
-            outcome: 'Homepage + core pages + responsive UI',
+            id: 'stack',
+            title: 'Phase 3: The Free Tech Stack',
+            duration: 'Day 4',
+            tools: 'GitHub, Vercel, Cloudflare, Netlify, InfinityFree, Surge.sh, 000webhost',
+            outcome: 'Live site on global edge network for $0',
+            mistake: 'Paying for premium hosting before you even have 100 visitors. Use free edge tiers first.',
             tasks: [
-                'Publish Home, About, Contact, Privacy pages.',
-                'Optimize navigation for mobile first.',
-                'Set clear CTA above the fold.'
+                'Create a GitHub repo and connect it to Vercel/Cloudflare Pages.',
+                'Configure a free subdomain (e.g., .vercel.app) or use Surge.sh for CLI deployment.',
+                'Verify SSL/HTTPS is active (automatic on most free hosts).'
+            ]
+        },
+        {
+            id: 'design',
+            title: 'Phase 4: Visuals & Brand (Free)',
+            duration: 'Day 5-7',
+            tools: 'Canva, Figma (Free), Color Hunt, Fontjoy, Pixlr, Unsplash, Google Fonts, FontAwesome, Flaticon',
+            outcome: 'A professional-looking high-trust identity',
+            mistake: 'Spending 20+ hours on a logo. Your content and speed matter 10x more than your icon.',
+            tasks: [
+                'Design a logo and favicon in Canva or Figma.',
+                'Pick a 2-color palette using Color Hunt and 2-font system using Fontjoy.',
+                'Select 10 high-quality, legal-to-use images from Unsplash/Pexels.'
             ]
         },
         {
             id: 'content',
-            title: 'Create SEO Content Base',
+            title: 'Phase 5: Content Strategy for $0',
             duration: 'Week 2',
-            tools: 'Search Console, Claude/ChatGPT free',
-            outcome: '5 useful pages targeting real keywords',
+            tools: 'ChatGPT (Free), Claude (Free), Hemingway, Grammarly Free, Quillbot, Copy.ai (Free)',
+            outcome: '5 SEO-optimized pillar articles',
+            mistake: 'Copy-pasting raw AI text. Google rewards "Human-in-the-loop" content. Always edit.',
             tasks: [
-                'Write 5 pages that solve one user problem each.',
-                'Add title, meta description, and internal links.',
-                'Submit sitemap to Search Console.'
+                'Draft 5 "Ultimate Guide" articles targeting niche problems.',
+                'Use AI for structure, then edit for your unique voice.',
+                'Add images with descriptive ALT tags for search engines.'
             ]
         },
         {
-            id: 'growth',
-            title: 'Organic Growth Engine',
+            id: 'seo-speed',
+            title: 'Phase 6: Performance & Tech SEO',
             duration: 'Week 3',
-            tools: 'Reddit, LinkedIn, X, Email capture',
-            outcome: 'First 100 targeted visitors',
+            tools: 'PageSpeed Insights, Squoosh.app, Microsoft Clarity, Ahrefs Free SEO Toolbar, Screaming Frog (Free)',
+            outcome: 'Perfect Lighthouse scores and indexed pages',
+            mistake: 'Uploading 5MB images. One heavy image can kill your SEO rankings. Always compress.',
             tasks: [
-                'Share one practical post daily for 7 days.',
-                'Offer one free template to capture emails.',
-                'Reply to 15 relevant conversations per week.'
+                'Compress all images using Squoosh to <100KB.',
+                'Install Microsoft Clarity for 100% free heatmaps and session recordings.',
+                'Submit your sitemap to Google Search Console.'
+            ]
+        },
+        {
+            id: 'traffic',
+            title: 'Phase 7: Organic Growth (No Ads)',
+            duration: 'Week 4',
+            tools: 'Reddit, LinkedIn, Twitter/X, Buffer Free, Mailchimp Free, ManyChat Free',
+            outcome: 'First 500 organic visitors',
+            mistake: 'Buying "backlinks" or fake traffic. It will get your site banned from Google permanently.',
+            tasks: [
+                'Post 3 "Value Bombs" in subreddits without being "spammy".',
+                'Set up a free newsletter and add a signup box to your site.',
+                'Reach out to 5 other sites for a "guest post" exchange.'
             ]
         },
         {
             id: 'monetize',
-            title: 'Monetize Early',
-            duration: 'Week 4',
-            tools: 'Affiliate links, Gumroad, Stripe links',
-            outcome: 'First revenue signal',
-            tasks: [
-                'Add one starter offer on your top page.',
-                'Create one affiliate recommendation block.',
-                'Track clicks on CTA and revenue links.'
-            ]
-        },
-        {
-            id: 'iterate',
-            title: 'Improve Weekly',
+            title: 'Phase 8: First $1 (Free Tools)',
             duration: 'Ongoing',
-            tools: 'Analytics + user feedback',
-            outcome: 'Higher conversion each month',
+            tools: 'Gumroad, Amazon Associates, Ko-fi, BuyMeACoffee, Stripe Links',
+            outcome: 'Setup your first revenue stream',
+            mistake: 'Waiting for "perfect" traffic before adding links. Start monetizing from day 1.',
             tasks: [
-                'Keep only pages that bring visits or revenue.',
-                'Rewrite weak headlines and CTAs.',
-                'Double down on best traffic channels.'
+                'Add Amazon affiliate links to your top guides.',
+                'Create a $0-5 digital product on Gumroad.',
+                'Add a "Support" button for your most loyal readers.'
             ]
         }
     ],
     paid: [
         {
-            id: 'idea',
-            title: 'Niche Validation Sprint',
-            duration: 'Day 1',
-            tools: 'Ahrefs/Semrush, SparkToro',
-            outcome: 'Validated demand + competitor gap',
+            id: 'market',
+            title: 'Phase 1: High-Intent Market Analysis',
+            duration: 'Day 1-2',
+            tools: 'Ahrefs, Semrush, SparkToro, Facebook Ad Library, SpyFu, SimilarWeb',
+            outcome: 'Calculated market entry strategy',
+            mistake: 'Picking keywords with high volume but low commercial intent. You want buyers, not just browsers.',
             tasks: [
-                'Find low-competition high-intent keywords.',
-                'Analyze competitor positioning and offers.',
-                'Pick your clear positioning angle.'
+                'Find "Money Keywords" with high volume and low KD.',
+                'Analyze competitor traffic sources using SimilarWeb.',
+                'Spy on active ads in your niche to see what sells.'
             ]
         },
         {
-            id: 'stack',
-            title: 'Premium Stack Setup',
-            duration: 'Day 2',
-            tools: 'Domain, managed host, paid templates',
-            outcome: 'Fast, stable, conversion-ready stack',
+            id: 'strategy',
+            title: 'Phase 2: Funnel Architecture',
+            duration: 'Day 3',
+            tools: 'Funnelytics, LucidChart, ClickUp, Monday.com, Hotjar',
+            outcome: 'Optimized sales funnel blueprint',
+            mistake: 'Making a funnel too complex. Start with Ad -> Landing Page -> Email -> Sale. Skip the 10 upsells.',
             tasks: [
-                'Set managed hosting with CDN + backups.',
-                'Install analytics and heatmaps.',
-                'Configure business email + DNS correctly.'
+                'Map your High-Ticket conversion path in Funnelytics.',
+                'Define your "Lead Magnet" and "Tripwire" offer.',
+                'Plan your automated email drip sequence.'
+            ]
+        },
+        {
+            id: 'hosting',
+            title: 'Phase 3: Premium Infrastructure',
+            duration: 'Day 4',
+            tools: 'WP Engine, Kinsta, Cloudways, DigitalOcean, Namecheap Premium, Cloudflare Pro',
+            outcome: 'Lightning-fast, secure business foundation',
+            mistake: 'Buying the most expensive dedicated server for a new site. Start with Managed WP or a basic Cloudways.',
+            tasks: [
+                'Purchase a high-trust .com domain.',
+                'Setup managed hosting with daily backups and staging.',
+                'Configure a premium WAF (Firewall) and CDN.'
             ]
         },
         {
             id: 'design',
-            title: 'Brand + UX Build',
-            duration: 'Day 3-5',
-            tools: 'Framer/Webflow, paid UI kit',
-            outcome: 'Professional, high-trust design',
+            title: 'Phase 4: High-Conversion Design',
+            duration: 'Day 5-7',
+            tools: 'Elementor Pro, Webflow, Framer, Envato Elements, Adobe CC, Figma Team',
+            outcome: 'Premium brand identity and UI',
+            mistake: 'Ignoring mobile design. 80%+ of your paid traffic will be on phones. Build mobile-first.',
             tasks: [
-                'Build pages with consistent visual system.',
-                'Improve readability and CTA hierarchy.',
-                'Test responsiveness across breakpoints.'
+                'Install a high-perf framework or theme.',
+                'Create custom, branded assets and icons.',
+                'Setup Hotjar for advanced user recording.'
             ]
         },
         {
-            id: 'content',
-            title: 'AI Content Production',
+            id: 'content-scale',
+            title: 'Phase 5: Content Authority Scaling',
             duration: 'Week 2',
-            tools: 'Claude Pro, image tools, editor',
-            outcome: '10 optimized pages quickly',
+            tools: 'Claude Pro, SurferSEO, Jasper, MarketMuse, Midjourney, Frase',
+            outcome: '20+ SEO-perfect articles',
+            mistake: 'Focusing on quantity over quality. One #1 ranking article is worth 100 articles on Page 5.',
             tasks: [
-                'Create conversion-focused content briefs.',
-                'Ship optimized pages with schema markup.',
-                'Add lead magnets and comparison tables.'
+                'Produce 20 data-driven articles using AI editors.',
+                'Generate custom AI art for every blog post.',
+                'Optimize all content for #1 ranking potential.'
             ]
         },
         {
-            id: 'acquisition',
-            title: 'Traffic Acceleration',
+            id: 'perf-audit',
+            title: 'Phase 6: Enterprise Performance',
             duration: 'Week 3',
-            tools: 'SEO + paid social + retargeting',
-            outcome: 'Predictable traffic inflow',
+            tools: 'GTmetrix Premium, Screaming Frog Paid, SEMrush Audit, WebPageTest',
+            outcome: 'Sub-1s load times and 0 tech errors',
+            mistake: 'Optimizing for speed but ignoring security. A fast site that gets hacked is a dead site.',
             tasks: [
-                'Launch one narrow ad campaign for key page.',
-                'Retarget site visitors with lead offer.',
-                'Measure CAC and stop weak creatives fast.'
+                'Run a full crawl to fix broken links and redirects.',
+                'Optimize Core Web Vitals to the extreme.',
+                'Implement advanced Schema Markup (JSON-LD).'
             ]
         },
         {
-            id: 'funnel',
-            title: 'Sales Funnel + Email',
+            id: 'ads',
+            title: 'Phase 7: Paid Acquisition (The Gas)',
             duration: 'Week 4',
-            tools: 'ConvertKit/Beehiiv, checkout tool',
-            outcome: 'Lead capture and conversion pipeline',
+            tools: 'Google Ads, Meta Ads, TikTok Ads, AdEspresso, WordStream',
+            outcome: 'Predictable, scalable traffic',
+            mistake: 'Scaling a losing ad. If it doesn\'t convert at $10/day, it won\'t convert at $1000/day. Fix the offer.',
             tasks: [
-                'Create welcome sequence with 5 emails.',
-                'Design one entry offer and one upsell.',
-                'Track funnel drop-off points.'
+                'Launch a lead-gen ad campaign with $20/day.',
+                'Setup Retargeting for anyone who visits the site.',
+                'A/B test 3 different ad headlines and images.'
             ]
         },
         {
-            id: 'scale',
-            title: 'Scale With Data',
+            id: 'automation',
+            title: 'Phase 8: Revenue Automation',
             duration: 'Ongoing',
-            tools: 'A/B testing + dashboard',
-            outcome: 'Compounding growth',
+            tools: 'ConvertKit, Zapier, Make.com, Stripe, ActiveCampaign, HubSpot',
+            outcome: 'Passive income machine',
+            mistake: 'Automating a broken process. Automate things only AFTER you have done them manually and they work.',
             tasks: [
-                'Run one A/B test per week on high traffic pages.',
-                'Improve offer, headline, and proof blocks.',
-                'Automate reporting and weekly decisions.'
+                'Automate your sales funnel from Lead -> Sale.',
+                'Connect Stripe for global, multi-currency payments.',
+                'Setup monthly automated performance reporting.'
             ]
         }
     ]
 };
 
 const stageDetailMap = {
-    'free:idea': [
-        { title: 'Audience Snapshot', desc: 'Write who you serve, what they struggle with, and what outcome they want in one sentence.' },
-        { title: 'Problem Validation', desc: 'Check Reddit, Quora, and search suggestions. Save 10 real user questions as proof of demand.' },
-        { title: 'Micro Offer Draft', desc: 'Define one core offer: free tool, guide, service, or product. Keep it narrow and specific.' },
-        { title: 'Message Test', desc: 'Post your value line in one community and measure replies/clicks before building full site.' },
-        { title: 'Decision Rule', desc: 'If people respond positively, move to domain setup. If not, refine audience and repeat.' }
+    'free:niche': [
+        { title: 'The 3-Circle Rule', desc: 'Find where your Passion, Skill, and Market Demand overlap. Use Google Trends to confirm the niche isn\'t dying.' },
+        { title: 'Reddit Mining', desc: 'Go to subreddits in your niche. Filter by "Top" and "All Time". Look for questions starting with "How do I..." or "Why is it so hard to...".' },
+        { title: 'Ubersuggest (Free)', desc: 'Neil Patel\'s tool gives you 3 free searches a day. Use them to find keywords with KD (Keyword Difficulty) under 20.' }
     ],
-    'free:domain': [
-        { title: 'Name Criteria', desc: 'Pick a short, easy-to-spell domain. Avoid numbers and hyphens for stronger recall.' },
-        { title: 'Registrar Compare', desc: 'Compare first-year and renewal prices. Renewal cost matters more than discount year one.' },
-        { title: 'Buy + Protect', desc: 'Enable WHOIS privacy and auto-renew. Save registrar and DNS access in a secure note.' },
-        { title: 'DNS Connect', desc: 'Point A/CNAME records to your hosting. Wait for propagation and verify SSL lock.' },
-        { title: 'Brand Consistency', desc: 'Use the same name across email, social handle, and website title for trust.' }
+    'free:plan': [
+        { title: 'Draw.io Sitemap', desc: 'Use Draw.io for a professional, free way to draw site architectures. Export as PNG and save in your Notion docs.' },
+        { title: 'User Pathing', desc: 'Landing Page -> Value Proposition -> Call to Action. Every page must have ONE goal.' }
     ],
-    'free:build': [
-        { title: 'Structure First', desc: 'Create core pages: Home, About, Contact, Privacy. Keep menu simple and clear.' },
-        { title: 'Hero Outcome', desc: 'Write a homepage hero that explains what users get in 5 seconds.' },
-        { title: 'CTA Placement', desc: 'Add one primary CTA above the fold and repeat it after key proof sections.' },
-        { title: 'Mobile Pass', desc: 'Test 360px and 768px widths. Fix overflow, button spacing, and tap targets.' },
-        { title: 'Publish MVP', desc: 'Ship version 1 quickly. Real feedback beats perfect design in early stage.' }
+    'free:stack': [
+        { title: 'GitHub for Non-Coders', desc: 'Think of GitHub as a "folder in the cloud" that stores your website files and keeps track of changes.' },
+        { title: 'Vercel vs Netlify', desc: 'Both are free. Vercel is often faster for static sites, while Netlify has great form handling built-in.' }
+    ],
+    'free:design': [
+        { title: 'Color Hunt (Palettes)', desc: 'Don\'t guess colors. Browse thousands of curated color palettes and find one that fits your brand emotion.' },
+        { title: 'Fontjoy (Pairings)', desc: 'Uses AI to find perfect font pairings. Pick one for headings and one for body text for instant pro design.' }
     ],
     'free:content': [
-        { title: 'Keyword to Page Map', desc: 'Assign one primary search intent per page to avoid cannibalization.' },
-        { title: 'Useful Content Blocks', desc: 'Use problem, process, examples, and checklist sections for practical value.' },
-        { title: 'On-page Basics', desc: 'Set title, H1, meta description, and internal links between related pages.' },
-        { title: 'Indexing Setup', desc: 'Submit sitemap and inspect URLs in Search Console after publishing.' },
-        { title: 'Weekly Refresh', desc: 'Update top pages every 2-4 weeks with better examples and clearer CTAs.' }
+        { title: 'AI Brainstorming', desc: 'Ask ChatGPT: "What are 10 questions a beginner in [Niche] would ask?". These are your first 10 blog posts.' },
+        { title: 'Hemingway App', desc: 'Paste your text here. It tells you if your sentences are too hard to read. Aim for Grade 6-8.' }
     ],
-    'free:growth': [
-        { title: 'Channel Focus', desc: 'Pick one main traffic source for 30 days instead of spreading across everything.' },
-        { title: 'Distribution Habit', desc: 'Repurpose one article into thread, carousel, and short post every day.' },
-        { title: 'Lead Capture', desc: 'Offer one free checklist/template and collect email with clear benefit.' },
-        { title: 'Community Loop', desc: 'Answer real questions where your audience hangs out and link useful resources.' },
-        { title: 'Measure Weekly', desc: 'Track sessions, CTR, and signups weekly. Double down where numbers move.' }
+    'free:seo-speed': [
+        { title: 'Squoosh Image Prep', desc: 'A free tool by Google. Convert JPGs to WebP. It can reduce image size by 90% with zero quality loss.' },
+        { title: 'Microsoft Clarity (100% Free)', desc: 'Unlike Hotjar (which limits you), Clarity is 100% free forever for unlimited heatmaps and recordings.' }
+    ],
+    'free:traffic': [
+        { title: 'ManyChat (Free)', desc: 'Automate your Instagram/Facebook replies. Send people to your landing page automatically when they comment.' },
+        { title: 'Buffer Free Tier', desc: 'Schedule your social posts for the whole week in one hour. Stay consistent without being on your phone all day.' }
     ],
     'free:monetize': [
-        { title: 'Monetization Path', desc: 'Choose affiliate, product, or service model based on your audience intent.' },
-        { title: 'Offer Packaging', desc: 'Create one simple entry offer with clear deliverable and price.' },
-        { title: 'Trust Layer', desc: 'Add proof: examples, testimonials, or measurable outcomes.' },
-        { title: 'Checkout Simplicity', desc: 'Reduce friction with one clear CTA and easy checkout flow.' },
-        { title: 'Revenue Tracking', desc: 'Track clicks and sales source by page to know what actually converts.' }
+        { title: 'Amazon Associates', desc: 'The easiest way to start. Link to products you use. You get a commission on anything they buy in 24 hours.' },
+        { title: 'Stripe Payment Links', desc: 'Create a direct payment link in Stripe for a service or digital item. No complex checkout needed.' }
     ],
-    'free:iterate': [
-        { title: 'Page Performance Review', desc: 'Identify top traffic pages and low-performing pages using analytics.' },
-        { title: 'Improve Winners', desc: 'Upgrade winning pages with stronger CTA and better examples.' },
-        { title: 'Cut Noise', desc: 'Remove or merge weak pages that add maintenance but no traffic.' },
-        { title: 'Test One Change', desc: 'Run one change at a time so you know what caused improvement.' },
-        { title: 'Monthly System', desc: 'Use a monthly cycle: review data, refine content, improve conversion.' }
+    'paid:market': [
+        { title: 'Ahrefs Deep Dive', desc: 'Find keywords with "High Volume" but "Low Competition". This is the shortcut to ranking #1.' },
+        { title: 'SparkToro Audience', desc: 'Find exactly what podcasts your audience listens to and what social accounts they follow.' }
     ],
-    'paid:idea': [
-        { title: 'Demand Scan', desc: 'Use paid tools to quantify volume, trend, and intent for each keyword cluster.' },
-        { title: 'Competitor Gap', desc: 'Find what competitors miss: format, angle, or audience segment.' },
-        { title: 'Offer Positioning', desc: 'Create one sharp positioning statement based on measurable differentiator.' },
-        { title: 'Validation Campaign', desc: 'Run a small ad test to validate message before full build investment.' },
-        { title: 'Go/No-Go Decision', desc: 'Proceed only when cost per signal is within your target range.' }
+    'paid:strategy': [
+        { title: 'Funnelytics Mapping', desc: 'Draw your funnel properly. See where people "drop off" so you can fix the leaks.' },
+        { title: 'The High-Ticket Path', desc: 'Plan how to move a user from a $10 ebook to a $1000 coaching or software subscription.' }
     ],
-    'paid:stack': [
-        { title: 'Domain Strategy', desc: 'Choose domain with long-term brand potential and clean renewals.' },
-        { title: 'Infrastructure Setup', desc: 'Configure managed hosting, CDN, backups, and monitoring from day one.' },
-        { title: 'Security Baseline', desc: 'Enable SSL, security headers, bot protection, and admin hardening.' },
-        { title: 'Business Email', desc: 'Set branded email and SPF/DKIM/DMARC for delivery trust.' },
-        { title: 'Performance Baseline', desc: 'Record initial CWV metrics and set improvement thresholds.' }
+    'paid:hosting': [
+        { title: 'WP Engine/Kinsta', desc: 'Managed WordPress hosting. They handle speed, security, and updates. You focus on your business.' },
+        { title: 'DigitalOcean Droplets', desc: 'For the tech-savvy. High-performance VPS for a fraction of the cost of managed hosting.' }
     ],
     'paid:design': [
-        { title: 'Visual System', desc: 'Define typography, color system, spacing, and card patterns before page design.' },
-        { title: 'Conversion UX', desc: 'Design pages around one CTA hierarchy and reduced cognitive load.' },
-        { title: 'Proof Architecture', desc: 'Add credibility blocks where decisions happen: hero, pricing, checkout.' },
-        { title: 'Responsive QA', desc: 'Test interaction quality on mobile gestures and keyboard navigation.' },
-        { title: 'Polish Pass', desc: 'Refine microcopy and motion for clarity, not decoration.' }
+        { title: 'Elementor Pro / Divi', desc: 'Drag-and-drop design for WordPress. Build any design you can imagine without code.' },
+        { title: 'Webflow/Framer', desc: 'The future of web design. Professional-grade interactions and animations.' }
     ],
-    'paid:content': [
-        { title: 'Editorial Plan', desc: 'Map content by funnel stage: awareness, consideration, conversion.' },
-        { title: 'AI Draft + Human Edit', desc: 'Use AI for first drafts, then add examples, opinions, and proof.' },
-        { title: 'Schema Coverage', desc: 'Apply FAQ/Article schema where relevant for richer SERP presence.' },
-        { title: 'Internal Link Network', desc: 'Connect content clusters so authority flows to money pages.' },
-        { title: 'Refresh Cadence', desc: 'Refresh high-value content monthly with updated data and insights.' }
+    'paid:content-scale': [
+        { title: 'Claude/GPT Pro', desc: 'The advanced models have better reasoning and writing. They are worth the $20/mo subscription.' },
+        { title: 'SurferSEO / Frase', desc: 'Data-driven tools that tell you exactly how many words and headers you need to rank.' }
     ],
-    'paid:acquisition': [
-        { title: 'Channel Split', desc: 'Allocate traffic budget by expected CAC and conversion rate assumptions.' },
-        { title: 'Creative Testing', desc: 'Test multiple hooks and creatives early; kill weak variants quickly.' },
-        { title: 'Retargeting Layer', desc: 'Retarget visitors by page intent with tailored offer sequence.' },
-        { title: 'Attribution Hygiene', desc: 'Use UTM standards and dashboard views for trustworthy reporting.' },
-        { title: 'Scale Rule', desc: 'Increase spend only on channels meeting profitability targets.' }
+    'paid:perf-audit': [
+        { title: 'Screaming Frog SEO', desc: 'The industry standard for technical audits. Find every broken link, redirect, and missing tag.' },
+        { title: 'GTmetrix Deep Audit', desc: 'Detailed waterfall charts that show you exactly what file is slowing down your site.' }
     ],
-    'paid:funnel': [
-        { title: 'Lead Magnet Fit', desc: 'Create one lead magnet aligned with your highest-intent audience segment.' },
-        { title: 'Email Sequence', desc: 'Build a 5-email sequence: educate, prove, invite, handle objections, close.' },
-        { title: 'Offer Ladder', desc: 'Structure entry offer, core offer, and optional upsell logically.' },
-        { title: 'Checkout Optimization', desc: 'Reduce fields, clarify guarantee, and improve trust signals.' },
-        { title: 'Funnel Analytics', desc: 'Track open, click, conversion, and drop-off by step.' }
+    'paid:ads': [
+        { title: 'Google Ads Search', desc: 'Bid on high-intent keywords to appear at the very top of Google instantly.' },
+        { title: 'Retargeting Pixels', desc: 'Show ads to people who visited your site but didn\'t buy. It\'s the highest ROI in advertising.' }
     ],
-    'paid:scale': [
-        { title: 'Weekly Experiment', desc: 'Run one controlled test per week on top traffic pages.' },
-        { title: 'Segment Insights', desc: 'Analyze behavior by device, channel, and returning users.' },
-        { title: 'Automation Layer', desc: 'Automate reporting and notification triggers for key KPI shifts.' },
-        { title: 'Team SOPs', desc: 'Document repeatable content, ad, and conversion workflows.' },
-        { title: 'Compounding Loop', desc: 'Reinvest wins into content, distribution, and product quality.' }
+    'paid:automation': [
+        { title: 'Zapier / Make.com', desc: 'Connect your website to your email, CRM, and accounting. Run your business on autopilot.' },
+        { title: 'ActiveCampaign CRM', desc: 'Advanced email automation that sends different messages based on what the user does.' }
     ]
 };
 
@@ -280,9 +288,15 @@ const launchChecklist = [
     'Contact form tested end-to-end',
     'Privacy policy + terms linked in footer',
     'Sitemap submitted to Google Search Console',
-    'Page speed tested and optimized',
+    'Page speed tested (Desktop/Mobile > 90)',
     'Analytics events tracking CTA clicks',
-    'One lead magnet added',
+    'Custom Favicon and Brand Colors set',
+    'Open Graph (OG) tags for social sharing',
+    'Robots.txt file correctly configured',
+    'Broken link check (0 errors)',
+    'Image ALT tags for all visuals',
+    'One high-value Lead Magnet added',
+    'Email Signup form integrated',
     'One monetization path enabled',
     'Weekly growth task scheduled'
 ];
@@ -293,54 +307,12 @@ let currentSprintPlan = null;
 let jspdfLoaderPromise = null;
 const DEBUG_MODE = new URLSearchParams(window.location.search).get('debug') === '1';
 
-let debugPanelBody = null;
-
 const ACTIVITY_KEY = 'learnfree_activity_days';
 const VISITED_KEY = 'learnfree_visited_stages';
 
 function trackEvent(eventName, params = {}) {
     if (typeof window.gtag === 'function') {
         window.gtag('event', eventName, params);
-    }
-    debugLogEvent(eventName, params);
-}
-
-function initDebugPanel() {
-    if (!DEBUG_MODE || document.getElementById('debugPanel')) return;
-
-    const panel = document.createElement('aside');
-    panel.id = 'debugPanel';
-    panel.className = 'debug-panel';
-    panel.innerHTML = `
-        <div class="debug-panel-head">
-            <strong>Debug Events</strong>
-            <span>?debug=1</span>
-        </div>
-        <div class="debug-panel-body" id="debugPanelBody"></div>
-    `;
-    document.body.appendChild(panel);
-    debugPanelBody = document.getElementById('debugPanelBody');
-}
-
-function debugLogEvent(eventName, params = {}) {
-    if (!DEBUG_MODE || !debugPanelBody) return;
-
-    const now = new Date();
-    const ts = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-    const item = document.createElement('div');
-    item.className = 'debug-item';
-
-    const payload = Object.keys(params).length ? JSON.stringify(params) : '{}';
-    item.innerHTML = `
-        <div class="debug-item-top"><span>${eventName}</span><time>${ts}</time></div>
-        <pre>${payload}</pre>
-    `;
-
-    debugPanelBody.prepend(item);
-
-    const maxItems = 20;
-    while (debugPanelBody.children.length > maxItems) {
-        debugPanelBody.removeChild(debugPanelBody.lastChild);
     }
 }
 
@@ -395,34 +367,11 @@ function setVisitedStage(stageId) {
     const visited = getVisitedStages();
     visited.add(stageId);
     localStorage.setItem(VISITED_KEY, JSON.stringify(Array.from(visited)));
+    updateBadges();
 }
 
 function getChecklistSet() {
     return new Set(JSON.parse(localStorage.getItem('learnfree_checklist') || '[]'));
-}
-
-function markTodayActivity() {
-    const today = new Date().toISOString().slice(0, 10);
-    const days = new Set(JSON.parse(localStorage.getItem(ACTIVITY_KEY) || '[]'));
-    days.add(today);
-    localStorage.setItem(ACTIVITY_KEY, JSON.stringify(Array.from(days).sort()));
-}
-
-function getStreakCount() {
-    const saved = JSON.parse(localStorage.getItem(ACTIVITY_KEY) || '[]').sort();
-    if (saved.length === 0) return 0;
-
-    const set = new Set(saved);
-    let streak = 0;
-    const d = new Date();
-
-    while (true) {
-        const key = d.toISOString().slice(0, 10);
-        if (!set.has(key)) break;
-        streak += 1;
-        d.setDate(d.getDate() - 1);
-    }
-    return streak;
 }
 
 function updateLearnProgressUI() {
@@ -439,7 +388,6 @@ function updateLearnProgressUI() {
 
     const ring = document.getElementById('learnRing');
     const pctEl = document.getElementById('learnProgressPct');
-    const streakEl = document.getElementById('streakDays');
     const tasksEl = document.getElementById('tasksDone');
     const stagesEl = document.getElementById('stagesSeen');
 
@@ -449,9 +397,33 @@ function updateLearnProgressUI() {
         ring.style.strokeDashoffset = `${offset}`;
     }
     if (pctEl) pctEl.textContent = `${overallPct}%`;
-    if (streakEl) streakEl.textContent = `${getStreakCount()}`;
     if (tasksEl) tasksEl.textContent = `${tasksDone}/${tasksTotal}`;
     if (stagesEl) stagesEl.textContent = `${stageSeen}/${stageTotal}`;
+
+    if (overallPct === 100) triggerConfetti();
+    updateBadges();
+}
+
+function updateBadges() {
+    const visited = getVisitedStages();
+    const checklist = getChecklistSet();
+    const totalChecklist = launchChecklist.length;
+    
+    const bNiche = document.getElementById('badge-niche');
+    const bStack = document.getElementById('badge-stack');
+    const bContent = document.getElementById('badge-content');
+    const bHero = document.getElementById('badge-hero');
+
+    if (visited.has('free:niche') || visited.has('paid:market')) bNiche?.classList.remove('locked'), bNiche?.classList.add('unlocked');
+    if (visited.has('free:stack') || visited.has('paid:hosting')) bStack?.classList.remove('locked'), bStack?.classList.add('unlocked');
+    if (visited.has('free:content') || visited.has('paid:content-scale')) bContent?.classList.remove('locked'), bContent?.classList.add('unlocked');
+    if (checklist.size === totalChecklist) bHero?.classList.remove('locked'), bHero?.classList.add('unlocked');
+}
+
+function triggerConfetti() {
+    if (window.confettiActive) return;
+    window.confettiActive = true;
+    showToast('YOU ARE A WEBSITE HERO!', '🏆');
 }
 
 function renderStageDetail() {
@@ -461,9 +433,8 @@ function renderStageDetail() {
     const meta = document.getElementById('stageMeta');
     const tasks = document.getElementById('stageTasks');
     const detailList = document.getElementById('stageStepList');
-    const domainLink = document.getElementById('stageDomainLink');
 
-    if (!stage || !title || !summary || !meta || !tasks || !detailList || !domainLink) return;
+    if (!stage || !title || !summary || !meta || !tasks || !detailList) return;
 
     title.textContent = stage.title;
     summary.textContent = stage.outcome;
@@ -477,7 +448,8 @@ function renderStageDetail() {
 
     const detailKey = `${activePath}:${stage.id}`;
     const detailSteps = stageDetailMap[detailKey] || [];
-    detailList.innerHTML = detailSteps.map((step, idx) => `
+    
+    let html = detailSteps.map((step, idx) => `
         <article class="stage-step" style="--delay:${idx * 70}ms">
             <div class="stage-step-head">
                 <span class="stage-step-index">${idx + 1}</span>
@@ -487,33 +459,89 @@ function renderStageDetail() {
         </article>
     `).join('');
 
-    const showDomainLink = stage.id === 'domain' || stage.id === 'stack';
-    domainLink.style.display = showDomainLink ? 'inline-flex' : 'none';
+    if (stage.mistake) {
+        html += `
+            <div class="mistake-box">
+                <strong>🚫 Common Mistake to Avoid</strong>
+                <p>${stage.mistake}</p>
+            </div>
+        `;
+    }
+
+    html += `
+        <div class="mentor-btn-wrap">
+            <button class="btn-mentor" onclick="askMentor('${stage.id}')">
+                <span>🤖 Ask the AI Mentor about this stage</span>
+            </button>
+        </div>
+    `;
+
+    detailList.innerHTML = html;
+}
+
+window.askMentor = function(stageId) {
+    const stage = roadmapByPath[activePath][activeStageIndex];
+    const msg = `I am currently in ${stage.title} (${activePath} path). I have a question about using ${stage.tools.split(',')[0]} for my website. Can you give me a beginner-friendly tip?`;
+    
+    if (window.triggerInteraction) {
+        window.triggerInteraction(msg);
+    } else {
+        showToast('Chat with AI using the bubble at the bottom!', '🤖');
+    }
+}
+
+// Quiz Logic
+let quizAnswers = [];
+window.nextQuiz = function(qNum, value) {
+    quizAnswers.push(value);
+    const curr = document.querySelector(`.quiz-q[data-q="${qNum}"]`);
+    const next = document.querySelector(`.quiz-q[data-q="${qNum + 1}"]`);
+    if (curr && next) {
+        curr.classList.remove('active');
+        next.classList.add('active');
+    }
+}
+
+window.finishQuiz = function(value) {
+    quizAnswers.push(value);
+    const freeCount = quizAnswers.filter(v => v === 'free').length;
+    const paidCount = quizAnswers.filter(v => v === 'paid').length;
+    const result = freeCount >= paidCount ? 'free' : 'paid';
+    
+    document.querySelector('.quiz-questions').style.display = 'none';
+    const resEl = document.getElementById('quizResult');
+    const msgEl = document.getElementById('quizResultMsg');
+    
+    resEl.hidden = false;
+    msgEl.innerHTML = result === 'free' 
+        ? "We recommend the <strong>Free Path</strong>. It's perfect for learning the ropes without any financial risk."
+        : "We recommend the <strong>Paid Path</strong>. Your goals and budget suggest you're ready for professional growth.";
+    
+    window.setPath(result);
+}
+
+window.resetQuiz = function() {
+    quizAnswers = [];
+    document.querySelector('.quiz-questions').style.display = 'block';
+    document.getElementById('quizResult').hidden = true;
+    document.querySelectorAll('.quiz-q').forEach(q => q.classList.remove('active'));
+    document.querySelector('.quiz-q[data-q="1"]').classList.add('active');
 }
 
 window.setPath = function(path) {
     activePath = path === 'paid' ? 'paid' : 'free';
     activeStageIndex = 0;
-
     document.getElementById('freePathBtn')?.classList.toggle('active', activePath === 'free');
     document.getElementById('paidPathBtn')?.classList.toggle('active', activePath === 'paid');
-
     renderRoadmap();
     updateBudget();
     updateLearnProgressUI();
-    trackEvent('learnfree_path_switch', { path: activePath });
-    showToast(`${activePath.toUpperCase()} path loaded`, '🧭');
 };
 
 window.selectStage = function(index) {
     activeStageIndex = index;
     const stage = roadmapByPath[activePath][index];
-    if (stage) {
-        setVisitedStage(`${activePath}:${stage.id}`);
-        markTodayActivity();
-        updateLearnProgressUI();
-        trackEvent('learnfree_stage_select', { path: activePath, stage_id: stage.id, stage_title: stage.title });
-    }
+    if (stage) setVisitedStage(`${activePath}:${stage.id}`);
     renderRoadmap();
 };
 
@@ -618,105 +646,31 @@ window.generateSprintPlan = function() {
 
     const saveBtn = document.getElementById('savePlanPdfBtn');
     if (saveBtn) saveBtn.disabled = false;
-
-    markTodayActivity();
     updateLearnProgressUI();
-    trackEvent('learnfree_sprint_generated', { channel, intensity, hours_per_week: hours });
-
     showToast('Growth sprint generated', '🚀');
 };
 
 window.saveSprintPlanAsPdf = function() {
-    if (!currentSprintPlan) {
-        showToast('Generate a sprint plan first', '⚠️');
-        return;
-    }
-
-    const saveBtn = document.getElementById('savePlanPdfBtn');
-    const prevText = saveBtn ? saveBtn.textContent : '';
-
-    if (saveBtn) {
-        saveBtn.disabled = true;
-        saveBtn.textContent = 'Preparing PDF...';
-    }
-
+    if (!currentSprintPlan) return;
     prefetchJspdf().then(({ jsPDF }) => {
-        const doc = new jsPDF({ unit: 'pt', format: 'a4' });
-        const margin = 48;
-        let y = margin;
-
-        const addLine = (text, size = 12, spacing = 20) => {
-            doc.setFont('helvetica', 'normal');
-            doc.setFontSize(size);
-            const lines = doc.splitTextToSize(text, 500);
-            doc.text(lines, margin, y);
-            y += (lines.length * spacing);
-            if (y > 760) {
-                doc.addPage();
-                y = margin;
-            }
-        };
-
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(18);
-        doc.text('SanzyAI 30-Day Growth Sprint Plan', margin, y);
-        y += 30;
-
-        addLine(`Niche: ${currentSprintPlan.niche}`);
-        addLine(`Intensity: ${currentSprintPlan.intensity}`);
-        addLine(`Primary Channel: ${currentSprintPlan.channel}`);
-        addLine(`Hours/Week: ${currentSprintPlan.hours}`);
-        y += 4;
-
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(14);
-        doc.text('Week-by-Week Actions', margin, y);
-        y += 24;
-
-        addLine('Week 1: Finalize offer, launch homepage, publish first practical guide.');
-        addLine(`Week 2: ${currentSprintPlan.channelTasks.join(' | ')}`);
-        addLine('Week 3: Improve conversion blocks, lead magnet, and test headline.');
-        addLine('Week 4: Scale winning channel, remove weak pages, define next sprint.');
-
-        y += 10;
-        addLine('Generated from Learn Free Interactive Lab on SanzyAI.', 10, 16);
-
-        const fileSafeNiche = currentSprintPlan.niche.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        doc.save(`sanzyai-sprint-plan-${fileSafeNiche || 'website'}.pdf`);
-
-        markTodayActivity();
-        updateLearnProgressUI();
-        trackEvent('learnfree_sprint_pdf_saved', {
-            niche: currentSprintPlan.niche,
-            channel: currentSprintPlan.channel,
-            intensity: currentSprintPlan.intensity
-        });
-        showToast('Sprint plan PDF saved', '📄');
-    }).catch(() => {
-        trackEvent('learnfree_sprint_pdf_error');
-        showToast('Could not generate PDF right now', '⚠️');
-    }).finally(() => {
-        if (saveBtn) {
-            saveBtn.textContent = prevText || 'Save My Sprint Plan as PDF';
-            saveBtn.disabled = false;
-        }
+        const doc = new jsPDF();
+        doc.text(`SanzyAI Sprint Plan: ${currentSprintPlan.niche}`, 10, 10);
+        doc.save('sprint-plan.pdf');
     });
 };
 
 function renderChecklist() {
     const grid = document.getElementById('checkGrid');
     if (!grid) return;
-
     const saved = JSON.parse(localStorage.getItem('learnfree_checklist') || '[]');
     const active = new Set(saved);
 
     grid.innerHTML = launchChecklist.map((item, index) => `
         <label class="check-item">
-            <input type="checkbox" ${active.has(index) ? 'checked' : ''} data-action="toggle-checklist" data-item-index="${index}">
+            <input type="checkbox" ${active.has(index) ? 'checked' : ''} data-index="${index}" onchange="toggleCheckItem(${index}, this.checked)">
             <span>${item}</span>
         </label>
     `).join('');
-
     updateChecklistProgress(active);
 }
 
@@ -724,110 +678,36 @@ function updateChecklistProgress(activeSet) {
     const total = launchChecklist.length;
     const done = activeSet.size;
     const pct = Math.round((done / total) * 100);
-
     const bar = document.getElementById('checkProgressBar');
     const text = document.getElementById('checkProgressText');
-
     if (bar) bar.style.width = `${pct}%`;
     if (text) text.textContent = `${pct}% complete (${done}/${total} tasks)`;
 }
 
-window.toggleChecklist = function(index, checked) {
+window.toggleCheckItem = function(index, checked) {
     const saved = new Set(JSON.parse(localStorage.getItem('learnfree_checklist') || '[]'));
-    if (checked) saved.add(index);
-    else saved.delete(index);
-
+    if (checked) saved.add(index); else saved.delete(index);
     localStorage.setItem('learnfree_checklist', JSON.stringify(Array.from(saved)));
     updateChecklistProgress(saved);
-    markTodayActivity();
     updateLearnProgressUI();
-    trackEvent('learnfree_checklist_toggle', {
-        item_index: index,
-        checked,
-        completed_count: saved.size
-    });
 };
 
-function setupMobileNav() {
-    const ham = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileMenu');
-    if (!ham || !mobileNav) return;
-
-    ham.addEventListener('click', () => {
-        ham.classList.toggle('active');
-        mobileNav.classList.toggle('open');
-    });
-
-    mobileNav.querySelectorAll('a').forEach((a) => {
-        a.addEventListener('click', () => {
-            ham.classList.remove('active');
-            mobileNav.classList.remove('open');
-        });
-    });
-}
-
-function bindLearnFreeControls() {
+document.addEventListener('DOMContentLoaded', () => {
+    renderRoadmap();
+    updateLearnProgressUI();
+    renderChecklist();
+    updateBudget();
+    
     document.getElementById('freePathBtn')?.addEventListener('click', () => window.setPath('free'));
     document.getElementById('paidPathBtn')?.addEventListener('click', () => window.setPath('paid'));
+    document.getElementById('projectType')?.addEventListener('change', () => window.updateBudget());
+    document.getElementById('trafficRange')?.addEventListener('input', () => window.updateBudget());
+    document.getElementById('aiUsage')?.addEventListener('change', () => window.updateBudget());
+    document.getElementById('generateSprintBtn')?.addEventListener('click', () => window.generateSprintPlan());
+    document.getElementById('savePlanPdfBtn')?.addEventListener('click', () => window.saveSprintPlanAsPdf());
 
-    ['projectType', 'trafficRange', 'aiUsage'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const evt = id === 'trafficRange' ? 'input' : 'change';
-        el.addEventListener(evt, () => window.updateBudget());
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-action="select-stage"]');
+        if (trigger) window.selectStage(Number(trigger.dataset.stageIndex));
     });
-
-    document.getElementById('generateSprintBtn')?.addEventListener('click', () => {
-        window.generateSprintPlan();
-    });
-
-    document.getElementById('savePlanPdfBtn')?.addEventListener('click', () => {
-        window.saveSprintPlanAsPdf();
-    });
-
-    document.addEventListener('click', (event) => {
-        const trigger = event.target.closest('[data-action]');
-        if (!trigger) return;
-
-        if (trigger.dataset.action === 'select-stage') {
-            const index = Number(trigger.dataset.stageIndex || '-1');
-            if (index >= 0) {
-                window.selectStage(index);
-            }
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        const card = event.target.closest('[data-action="select-stage"]');
-        if (!card || event.target !== card) return;
-        event.preventDefault();
-        const index = Number(card.dataset.stageIndex || '-1');
-        if (index >= 0) {
-            window.selectStage(index);
-        }
-    });
-
-    document.addEventListener('change', (event) => {
-        const input = event.target;
-        if (!(input instanceof HTMLInputElement)) return;
-        if (input.dataset.action !== 'toggle-checklist') return;
-        const index = Number(input.dataset.itemIndex || '-1');
-        if (index >= 0) {
-            window.toggleChecklist(index, input.checked);
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    initDebugPanel();
-    bindLearnFreeControls();
-    renderRoadmap();
-    updateBudget();
-    renderChecklist();
-    setupMobileNav();
-    const hasExistingActivity = getVisitedStages().size > 0;
-    const firstStage = roadmapByPath[activePath][0];
-    if (firstStage && hasExistingActivity) setVisitedStage(`${activePath}:${firstStage.id}`);
-    updateLearnProgressUI();
 });

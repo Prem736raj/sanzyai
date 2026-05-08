@@ -81,7 +81,7 @@
 }
 
 html.light-mode body :focus-visible {
-    outline-color: #0f766e;
+    outline-color: var(--primary);
 }
 
 /* ============================================
@@ -804,27 +804,9 @@ html.light-mode body .submit-card {
    Ensures text remains visible in sections that
    maintain a dark background in Light Mode.
 ============================================ */
-html.light-mode .hero,
-html.light-mode .news-hero,
-html.light-mode .page-hero,
-html.light-mode .prompt-hero,
-html.light-mode .legal-hero,
-html.light-mode .modal-header,
-html.light-mode .exit-popup,
 html.light-mode .dark-section,
 html.light-mode .bg-dark,
-html.light-mode .card-overlay,
-html.light-mode .hero-content,
-html.light-mode .hero-subtitle,
-html.light-mode .hero-trust-item,
-html.light-mode .news-hero h1,
-html.light-mode .news-hero p,
-html.light-mode .page-hero h1,
-html.light-mode .page-hero p,
-html.light-mode .legal-hero h1,
-html.light-mode .legal-hero-sub,
-html.light-mode .hstat strong,
-html.light-mode .hstat span {
+html.light-mode .card-overlay {
     color: #ffffff !important;
 }
 
@@ -840,13 +822,6 @@ html.light-mode .news-hero p,
 html.light-mode .page-hero p,
 html.light-mode .legal-hero-sub {
     opacity: 0.9 !important;
-}
-
-html.light-mode .modal-header .modal-title,
-html.light-mode .modal-header .modal-sub,
-html.light-mode .exit-popup h3,
-html.light-mode .exit-popup p {
-    color: #ffffff !important;
 }
 
 html.light-mode body .tool-card:hover,
@@ -1170,10 +1145,16 @@ body:not(.light-mode) .footer-copy {
     transform: scale(1.15) rotate(5deg);
 }
 
-.logo-img {
+@keyframes logoContinuousSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.logo-img, .logo-official-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    animation: logoContinuousSpin 15s linear infinite;
 }
 
 .motivation-icon-link {
@@ -1580,10 +1561,11 @@ html.light-mode body .mobile-menu a {
 }
 
 .footer-brand .logo-icon {
-    font-size: 1.5rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-brand .logo-text {

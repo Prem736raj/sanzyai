@@ -13,12 +13,12 @@
     --text: #FFFFFF;
     --text-muted: #9999BB;
     --text-dim: #666680;
-    --accent: #00FF88;
+    --accent: #00D4FF;
     --border: rgba(108, 53, 222, 0.25);
     --border-subtle: rgba(255, 255, 255, 0.06);
-    --green: #00C851;
-    --green-bg: rgba(0, 200, 81, 0.1);
-    --green-border: rgba(0, 200, 81, 0.3);
+    --green: #00D4FF;
+    --green-bg: rgba(0, 212, 255, 0.1);
+    --green-border: rgba(0, 212, 255, 0.3);
     --red: #FF4444;
     --red-bg: rgba(255, 68, 68, 0.1);
     --red-border: rgba(255, 68, 68, 0.3);
@@ -318,7 +318,7 @@ body {
     flex: 1;
     background: none;
     border: none;
-    outline: none;
+    outline: none !important;
     color: var(--text);
     font-family: var(--font-heading);
     font-size: 1.05rem;

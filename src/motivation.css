@@ -35,6 +35,23 @@ body.motivation-page {
     pointer-events: none;
 }
 
+html.light-mode body.motivation-page .gradient-overlay {
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(244, 247, 251, 0.85) 100%);
+}
+
+html.light-mode body.motivation-page {
+    background-color: #f4f7fb;
+    color: #0f172a;
+}
+
+html.light-mode body.motivation-page .motivation-title {
+    color: #0f172a;
+}
+
+html.light-mode body.motivation-page .motivation-subtitle {
+    color: #334155;
+}
+
 /* ===== VIEWPORT ===== */
 .motivation-viewport {
     position: relative;
@@ -83,15 +100,12 @@ body.motivation-page {
     box-shadow: 0 8px 30px rgba(108, 99, 255, 0.6);
 }
 
-.logo-animation-container:hover .logo-official-img {
-    animation: logoSpinContinuous 10s linear infinite;
-}
-
 .logo-official-img {
     width: 80%;
     height: 80%;
     object-fit: contain;
     transition: transform 0.6s ease-in-out;
+    animation: logoSpinContinuous 15s linear infinite;
 }
 
 .inner-glow {
