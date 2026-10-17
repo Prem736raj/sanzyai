@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>((t)=>{if(t==="light")document.documentElement.classList.add("light-mode")})(localStorage.getItem("sanzy_theme")||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png">
+    <title>AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI</title>
+    <meta name="description" content="Track AI news by type: model releases, product launches, policy, research, funding, and creator opportunities. Daily actionable AI updates.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://sanzyai.com/blog">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI">
+    <meta property="og:description" content="Daily AI news feed with filters for model releases, product launches, policy, funding and research.">
+    <meta property="og:url" content="https://sanzyai.com/blog">
+    <meta property="og:site_name" content="SanzyAI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Newsroom - Live AI Updates, Releases & Market Signals | SanzyAI">
+    <meta name="twitter:description" content="Daily AI news feed with filters for model releases, product launches, policy, funding and research.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "SanzyAI Newsroom",
+      "url": "https://sanzyai.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SanzyAI",
+        "url": "https://sanzyai.com"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/globals.css">
+    <link rel="stylesheet" href="./src/blog.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav aria-label="Primary" class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <div class="logo-icon-wrap"><img src="/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; display: block; object-fit: contain;" width="28" height="28" decoding="async" loading="eager"></div>
+                <span class="logo-text">SanzyAI</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/domain-finder">Domain Finder</a></li>
+                <li><a href="/ai-tools">AI Tools</a></li>
+                <li><a href="/prompt-store">Prompt Store</a></li>
+                <li><a href="/ai-services">AI Services</a></li>
+                <li><a href="/learn-free">Learn Free</a></li>
+                <li><a href="/blog" class="active">AI News</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="nav-right">
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/domain-finder">Domain Finder</a></li>
+        <li><a href="/ai-tools">AI Tools</a></li>
+        <li><a href="/prompt-store">Prompt Store</a></li>
+        <li><a href="/ai-services">AI Services</a></li>
+        <li><a href="/learn-free">Learn Free</a></li>
+        <li><a href="/blog">AI News</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+        <a href="/prompt-store" class="btn btn-primary">Browse Store →</a>
+    </div>
+</div>
+
+
+
+<main id="main-content" tabindex="-1">
+<section class="news-masthead">
+    <div class="container">
+        <div class="masthead-kicker"><span class="live-mark" aria-hidden="true"></span>AI NEWS · <span id="monthLabel">THIS MONTH</span></div>
+        <div class="masthead-grid">
+            <div class="masthead-copy">
+                <h1>What changed in AI <span id="monthTitle">this month</span>.</h1>
+                <p>A clean month-to-date briefing of launches, research, policy, funding and product moves. Fresh stories first, direct source links, no filler.</p>
+            </div>
+            <div class="masthead-note">
+                <span>MONTH-TO-DATE COVERAGE</span>
+                <strong id="coveragePeriod">Loading October 2026</strong>
+                <small>Updated continuously from official and independent sources.</small>
+            </div>
+        </div>
+
+        <div class="hero-stats" aria-label="Newsroom coverage summary">
+            <div class="hstat"><strong id="statStories">—</strong><span>Stories this month</span></div>
+            <div class="hstat"><strong id="statCritical">—</strong><span>Official updates</span></div>
+            <div class="hstat"><strong id="statFunding">—</strong><span>Sources tracked</span></div>
+            <div class="hstat"><strong>8</strong><span>Coverage lanes</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="lead-news" aria-label="Top AI stories">
+    <div class="container">
+        <div class="lead-grid">
+            <article class="lead-story" id="leadStory" aria-live="polite">
+                <span class="section-label">Top story</span>
+                <div class="lead-placeholder">Loading the latest AI story…</div>
+            </article>
+            <div class="headline-rail">
+                <div class="rail-heading"><span class="section-label">Latest</span><span id="latestRailCount">Live feed</span></div>
+                <div id="latestHeadlines" class="latest-headlines" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-controls" aria-label="AI news filters">
+    <div class="container">
+        <div class="controls-grid">
+            <div class="filter-chips" id="typeFilters"></div>
+            <div class="control-row">
+                <label class="search-shell">
+                    <span>Search</span>
+                    <input id="newsSearch" class="news-search" type="search" placeholder="Company, model, policy, research…" aria-label="Search AI news">
+                </label>
+                <select id="impactSort" class="news-select" aria-label="Sort AI news">
+                    <option value="newest">Newest first</option>
+                    <option value="impact">Top stories</option>
+                    <option value="official">Official sources first</option>
+                </select>
+                <button id="refreshNewsBtn" class="refresh-news" type="button">Refresh feed</button>
+            </div>
+            <div class="news-source-status" id="newsSourceStatus" role="status" aria-live="polite">Connecting to this month’s AI sources…</div>
+        </div>
+    </div>
+</section>
+
+<section class="news-main">
+    <div class="container">
+        <div class="news-layout">
+            <div class="feed-column">
+                <div class="section-head">
+                    <div><span class="section-label">All coverage</span><h2>Latest stories</h2></div>
+                    <span id="feedCount">Showing 0 stories</span>
+                </div>
+                <div class="news-feed data-grid" id="newsFeed" data-state="loading" aria-busy="true"><p class="grid-loading-label" role="status">Loading AI news...</p><div class="ui-skeleton" aria-hidden="true"></div><div class="ui-skeleton" aria-hidden="true"></div><div class="ui-skeleton" aria-hidden="true"></div></div>
+                <div class="feed-pager" id="feedPager" hidden>
+                    <span id="feedProgress">Showing 0 of 0 stories</span>
+                    <button id="loadMoreNewsBtn" class="load-more-news" type="button">Load more stories</button>
+                </div>
+            </div>
+
+            <aside class="news-side" aria-label="Newsroom sidebar">
+                <div class="side-card">
+                    <div class="side-heading"><span class="section-label">In focus</span><h3>Stories to know</h3></div>
+                    <div class="timeline" id="impactTimeline"></div>
+                </div>
+                <div class="side-card">
+                    <div class="side-heading"><span class="section-label">Saved</span><h3>Your reading list</h3></div>
+                    <p class="side-sub">Save anything you want to revisit later.</p>
+                    <div id="watchlistBox" class="watchlist-box">No saved stories yet.</div>
+                </div>
+                <div class="coverage-card">
+                    <span class="section-label">Coverage standard</span>
+                    <p>Stories are limited to the current calendar month, deduplicated, and linked back to their original publisher or feed source.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<div class="news-modal" id="newsModal" aria-hidden="true" inert>
+    <article class="news-modal-card" id="newsModalCard"></article>
+</div>
+
+<!-- Compact Footer -->
+
+</main>
+<footer class="footer-compact">
+    <div class="container">
+        <a href="/" class="footer-compact-brand">
+            <div class="logo-icon-wrap"><img src="/logo-official.png" alt="SanzyAI Logo" class="logo-img" style="width: 28px; height: 28px; display: block; object-fit: contain;" width="28" height="28" decoding="async" loading="eager"></div>
+            <span class="logo-text">SanzyAI</span>
+        </a>
+        <ul class="footer-compact-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+            <li><a href="/terms-of-service">Terms</a></li>
+            <li><a href="/refund-policy">Refunds</a></li>
+        </ul>
+        <p class="footer-compact-copy">© 2026 SanzyAI</p>
+    </div>
+</footer>
+
+<div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg">Done!</span></div>
+
+<script type="module" src="./src/globals.js"></script>
+<script type="module" src="./src/blog.js"></script>
+<script type="module" src="./src/chat-loader.js"></script>
+</body>
+</html>

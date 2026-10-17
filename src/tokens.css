@@ -1,0 +1,43 @@
+/* Semantic values shared by every page. Legacy page variables alias these. */
+:root {
+    color-scheme: dark;
+    --color-canvas: #090b14;
+    --color-surface: #121626;
+    --color-surface-raised: #1a2033;
+    --color-text: #f2f4ff;
+    --color-muted: #abb4cc;
+    --color-border: rgba(146, 158, 201, 0.24);
+    --color-border-subtle: rgba(146, 158, 201, 0.14);
+    --color-brand: #6c35de;
+    --color-brand-hover: #8b5cf6;
+    --color-brand-strong: #5025c4;
+    --color-secondary: #00d4ff;
+    --color-success: #22c55e;
+    --color-warning: #ffb800;
+    --color-danger: #ff6b6b;
+    --radius-control: 10px;
+    --radius-card: 18px;
+    --radius-panel: 24px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --type-body: 'Inter', system-ui, sans-serif;
+    --type-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.2);
+    --motion-ui: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light-mode {
+    color-scheme: light;
+    --color-canvas: #f6f7fc;
+    --color-surface: #ffffff;
+    --color-surface-raised: #edf0fa;
+    --color-text: #20283e;
+    --color-muted: #536079;
+    --color-border: rgba(70, 85, 130, 0.22);
+    --color-border-subtle: rgba(70, 85, 130, 0.12);
+    --shadow-card: 0 8px 28px rgba(38, 49, 87, 0.08);
+}

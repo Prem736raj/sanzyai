@@ -1,0 +1,7 @@
+{
+  "verdict": "PASS",
+  "builtHtmlPages": 31,
+  "inlineScriptHashesVerified": 37,
+  "knownServerSecretMatches": 0,
+  "scope": "Known server secret identifiers and key prefix in emitted JS; not a general secret scan or penetration test."
+}

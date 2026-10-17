@@ -1,0 +1,245 @@
+{
+  "scope": "Eight critical pages, desktop, light/dark; WCAG A/AA tags through 2.1; external media/providers mocked. Automated checks do not establish full accessibility conformance.",
+  "verdict": "FAIL",
+  "reports": [
+    {
+      "path": "/",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/domain-finder",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/ai-tools",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/prompt-store",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/ai-services",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "div[data-step=\"1\"] > .hiw-step-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #64748b, background color: #eef3fb, font size: 10.2pt (13.6px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "div[data-step=\"2\"] > .hiw-step-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #64748b, background color: #eef3fb, font size: 10.2pt (13.6px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "div[data-step=\"3\"] > .hiw-step-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #64748b, background color: #eef3fb, font size: 10.2pt (13.6px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/learn-free",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/blog",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".masthead-note > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7f7b73, background color: #f7fafc, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "small"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7f7b73, background color: #f7fafc, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(1) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #7f7b73, background color: #ffffff, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(2) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #7f7b73, background color: #ffffff, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(3) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #7f7b73, background color: #ffffff, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(4) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #7f7b73, background color: #ffffff, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#latestRailCount"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7f7b73, background color: #f7fafc, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #7f7b73, background color: #ffffff, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#feedCount"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7f7b73, background color: #f7fafc, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#feedProgress"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7f7b73, background color: #f7fafc, font size: 8.9pt (11.84px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "path": "/",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/domain-finder",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/ai-tools",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/prompt-store",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/ai-services",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/learn-free",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/blog",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".masthead-note > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "small"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(1) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(2) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(3) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hstat:nth-child(4) > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.4pt (12.48px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#latestRailCount"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "label > span"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.95 (foreground color: #77746d, background color: #141412, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#feedCount"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#feedProgress"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #77746d, background color: #0d0d0c, font size: 8.9pt (11.84px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "theme": "dark",
+      "violations": []
+    }
+  ]
+}

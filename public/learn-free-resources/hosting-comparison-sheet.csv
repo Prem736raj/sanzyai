@@ -1,0 +1,7 @@
+provider,type,monthly_usd,storage,bandwidth,best_for,notes
+Cloudflare Pages,free,0,unlimited static,generous,static sites,Excellent for Jamstack
+Vercel Hobby,free,0,project based,generous,frontend apps,Great DX for React/Vite
+Netlify Free,free,0,project based,generous,landing pages,Easy forms and deploys
+Hostinger shared,paid,2.99,100 GB,unmetered,small business,Lowest paid entry
+DigitalOcean droplet,paid,6,25 GB,1 TB,developers,More control and flexibility
+Managed VPS,paid,20,80+ GB,2+ TB,growing sites,Best when traffic scales

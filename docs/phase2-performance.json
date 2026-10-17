@@ -1,0 +1,85 @@
+{
+  "method": "Manifest static import graph; dynamic imports excluded. Transfer estimates do not measure real-user Core Web Vitals.",
+  "pages": {
+    "index": {
+      "initialJsBytes": 41038,
+      "initialJsGzipBytes": 14790,
+      "budgetBytes": 50000,
+      "baselineJsBytes": 498747,
+      "reductionPercent": 91.8,
+      "files": [
+        "assets/catalog-summary-9GUlkCr-.js",
+        "assets/chat-loader-ChBO-r2E.js",
+        "assets/globals-6NzZaQdl.js",
+        "assets/globals-DSOth8nF.js",
+        "assets/main-DDQ5Xlsj.js",
+        "assets/preload-helper-BLdHbfdN.js"
+      ]
+    },
+    "learn-free": {
+      "initialJsBytes": 56772,
+      "initialJsGzipBytes": 21064,
+      "budgetBytes": 65000,
+      "baselineJsBytes": 499306,
+      "reductionPercent": 88.6,
+      "files": [
+        "assets/chat-loader-ChBO-r2E.js",
+        "assets/globals-6NzZaQdl.js",
+        "assets/globals-DSOth8nF.js",
+        "assets/learnFree-D9g-cIA7.js",
+        "assets/pdf-loader-zSCVwSwW.js",
+        "assets/preload-helper-BLdHbfdN.js"
+      ]
+    },
+    "prompt-store": {
+      "initialJsBytes": 75701,
+      "initialJsGzipBytes": 25719,
+      "budgetBytes": 85000,
+      "baselineJsBytes": 515310,
+      "reductionPercent": 85.3,
+      "files": [
+        "assets/catalog-summary-9GUlkCr-.js",
+        "assets/chat-loader-ChBO-r2E.js",
+        "assets/globals-6NzZaQdl.js",
+        "assets/globals-DSOth8nF.js",
+        "assets/grid-state-DD-gKzhJ.js",
+        "assets/pdf-loader-zSCVwSwW.js",
+        "assets/preload-helper-BLdHbfdN.js",
+        "assets/promptStore-CosbpAHH.js"
+      ]
+    },
+    "ai-tools": {
+      "initialJsBytes": 62074,
+      "initialJsGzipBytes": 20053,
+      "budgetBytes": 70000,
+      "baselineJsBytes": 503320,
+      "reductionPercent": 87.7,
+      "files": [
+        "assets/aiTools-aWzwDniU.js",
+        "assets/chat-loader-ChBO-r2E.js",
+        "assets/globals-6NzZaQdl.js",
+        "assets/globals-DSOth8nF.js",
+        "assets/grid-state-DD-gKzhJ.js",
+        "assets/preload-helper-BLdHbfdN.js"
+      ]
+    },
+    "blog": {
+      "initialJsBytes": 47417,
+      "initialJsGzipBytes": 15976,
+      "budgetBytes": 55000,
+      "baselineJsBytes": 489347,
+      "reductionPercent": 90.3,
+      "files": [
+        "assets/blog-CSWtMbVm.js",
+        "assets/chat-loader-ChBO-r2E.js",
+        "assets/globals-6NzZaQdl.js",
+        "assets/globals-DSOth8nF.js",
+        "assets/grid-state-DD-gKzhJ.js",
+        "assets/preload-helper-BLdHbfdN.js"
+      ]
+    }
+  },
+  "staticImagesAudited": 77,
+  "verdict": "PASS",
+  "failures": []
+}

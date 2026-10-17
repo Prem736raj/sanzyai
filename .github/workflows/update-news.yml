@@ -1,0 +1,49 @@
+name: Update AI News
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 6am UTC
+  workflow_dispatch: {}
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Fetch latest AI news
+        run: |
+          # Fetch from free RSS/API sources
+          curl -s "https://hn.algolia.com/api/v1/search?query=AI+artificial+intelligence&tags=story&hitsPerPage=8" \
+            | node -e "
+              const data = JSON.parse(require('fs').readFileSync('/dev/stdin', 'utf8'));
+              const items = data.hits.map((h, i) => ({
+                id: i + 1,
+                type: ['Model Release','Product Launch','Research','Policy','AI Update','Creator Economy','Funding'][i % 7],
+                urgency: h.points > 200 ? 'high' : h.points > 100 ? 'medium' : 'low',
+                title: h.title,
+                source: 'Hacker News',
+                sourceType: 'news',
+                sourceUrl: h.url || 'https://news.ycombinator.com/item?id=' + h.objectID,
+                timeAgo: new Date(h.created_at).toLocaleDateString(),
+                impact: Math.min(99, Math.floor(h.points / 3)),
+                opportunity: Math.floor(Math.random() * 30) + 60,
+                company: 'AI Industry',
+                summary: h.title + '. This story received ' + h.points + ' points on Hacker News.',
+                whyItMatters: 'Stay informed about the latest developments in AI technology and policy.',
+                actions: ['Read the full article for details.', 'Consider how this affects your AI workflow.', 'Share with your team if relevant.']
+              }));
+              console.log('const fallbackNewsItems = ' + JSON.stringify(items, null, 4) + ';');
+            " > /tmp/news_update.js
+          
+          # Only update fallback data, keep rest of file
+          head -n 0 src/blog.js > /tmp/blog_header.js  # empty
+          tail -n +$(grep -n 'const typeOrder' src/blog.js | cut -d: -f1) src/blog.js > /tmp/blog_rest.js
+          cat /tmp/news_update.js /tmp/blog_rest.js > src/blog.js
+      
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/blog.js
+          git diff --cached --quiet || git commit -m "chore: auto-update AI news fallback stories [skip ci]"
+          git push

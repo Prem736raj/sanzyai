@@ -1,0 +1,7 @@
+{
+  "verdict": "PASS",
+  "productionPages": 31,
+  "inlineScriptHashesVerified": 37,
+  "clientSecretMatches": 0,
+  "scope": "Emitted HTML, JS and JSON scanned for known server secret identifiers/key prefix; this is not a general secret scanner."
+}

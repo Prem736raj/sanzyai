@@ -1,0 +1,21 @@
+Website Launch Checklist
+
+Technical
+- Domain points correctly to host
+- SSL certificate active (https)
+- No broken links on core pages
+- Mobile layout tested on 3 screen sizes
+- Favicon, title and meta description set
+
+Content
+- Homepage headline is clear
+- CTA above fold and in footer
+- About and Contact pages published
+- Privacy policy and terms published
+
+Growth
+- Google Search Console connected
+- Analytics installed and events checked
+- Sitemap submitted
+- First 3 content pages published
+- One lead magnet ready

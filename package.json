@@ -1,0 +1,39 @@
+{
+  "name": "sanzy_ai_website",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "bot:proxy": "node server/groq-proxy.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "scaffold:page": "node scripts/scaffold-page.mjs",
+    "generate:premium-packs": "node scripts/generate-premium-pack-files.mjs",
+    "check:inline-handlers": "node scripts/check-inline-handlers.mjs",
+    "test:smoke": "npx playwright install chromium && start-server-and-test \"vite preview --host 127.0.0.1 --port 4173\" http://127.0.0.1:4173 \"playwright test\"",
+    "test:a11y:ci": "start-server-and-test \"vite preview --host 127.0.0.1 --port 4173\" http://127.0.0.1:4173 \"node scripts/audit-accessibility.mjs\"",
+    "validate:html": "html-validate \"*.html\" \"blog/*.html\"",
+    "validate:structured-data": "node scripts/validate-structured-data.mjs",
+    "check:routes": "node scripts/check-routes.mjs",
+    "quality:ci": "npm run check:inline-handlers && npm run validate:structured-data && npm run check:routes && npm run test:api && npm run build && npm run test:performance && npm run validate:html && npm run test:smoke && npm run test:a11y:ci",
+    "release:check": "npm run quality:ci",
+    "test:api": "node --test server/tests/*.test.mjs",
+    "test:performance": "node scripts/check-performance.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.59.1",
+    "html-validate": "^10.13.1",
+    "start-server-and-test": "^3.0.2",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.17",
+    "fast-xml-parser": "^5.11.2",
+    "jspdf": "^4.2.1"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

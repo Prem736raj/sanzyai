@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Energy Hub | SanzyAI</title>
+    <link rel="stylesheet" href="./src/globals.css">
+    <link rel="stylesheet" href="./src/motivation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="motivation-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Particle Background -->
+    <div class="energy-field">
+        <canvas id="energy-canvas"></canvas>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Main Motivation Experience -->
+    <main class="motivation-viewport" id="main-content" tabindex="-1">
+        <!-- Magnetic Logo Hub -->
+        <div class="logo-animation-container" id="logoAnimation">
+            <!-- Animation Layers -->
+            <div id="ring-layer"></div>
+            <div id="dot-layer"></div>
+            <div id="spark-layer"></div>
+            <div id="shockwave-layer"></div>
+            
+            <!-- Floating Tooltip -->
+            <div class="logo-tooltip" id="logoTooltip">Inspiration Hub</div>
+
+            <!-- Central Logo Component -->
+            <div class="logo-wrapper">
+                <button type="button" aria-label="Generate an inspiration quote" class="main-logo-button" id="mainLogo" style="background: none; box-shadow: none;">
+                    <img src="/logo-official.png" alt="SanzyAI Official Logo" class="logo-official-img" style="width: 100%; height: 100%; object-fit: contain;" width="28" height="28" decoding="async" loading="eager">
+                    <div class="inner-glow" id="innerGlow"></div>
+                </button>
+                <h1 class="brand-name" id="brandName">SanzyAI</h1>
+            </div>
+        </div>
+
+        <!-- Dynamic Quote Section -->
+        <div class="typography-layer">
+            <div class="quote-stage">
+                <p class="quote-text active" id="quoteText" role="status" aria-live="polite">Click the core to discover principles for modern builders.</p>
+                <p class="quote-author active" id="quoteAuthor">— Sanzy Perspectives</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="./src/motivation.js"></script>
+</body>
+</html>

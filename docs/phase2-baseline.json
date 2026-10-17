@@ -1,0 +1,68 @@
+{
+  "backup": "C:\\Users\\prem7\\AppData\\Local\\Temp\\sanzy-phase2-1792175814",
+  "method": "Built HTML module scripts and modulepreload JS; excludes dynamically imported code. Bytes are transfer-size proxies, not Core Web Vitals.",
+  "pages": {
+    "index": {
+      "initialJsBytes": 498747,
+      "initialJsGzipBytes": 164788,
+      "files": [
+        "/assets/chat-B5CPITJH.js",
+        "/assets/globals-D7mWnbT1.js",
+        "/assets/globals-T-6tiz4P.js",
+        "/assets/jspdf.es.min-DEqM9RWX.js",
+        "/assets/main-d3xDiuW4.js",
+        "/assets/preload-helper-BLdHbfdN.js",
+        "/assets/product-catalog--QUlo2Et.js"
+      ]
+    },
+    "learn-free": {
+      "initialJsBytes": 499306,
+      "initialJsGzipBytes": 164720,
+      "files": [
+        "/assets/chat-B5CPITJH.js",
+        "/assets/globals-D7mWnbT1.js",
+        "/assets/globals-T-6tiz4P.js",
+        "/assets/jspdf.es.min-DEqM9RWX.js",
+        "/assets/learnFree-jcWGt_ex.js",
+        "/assets/preload-helper-BLdHbfdN.js"
+      ]
+    },
+    "prompt-store": {
+      "initialJsBytes": 515310,
+      "initialJsGzipBytes": 169086,
+      "files": [
+        "/assets/chat-B5CPITJH.js",
+        "/assets/globals-D7mWnbT1.js",
+        "/assets/globals-T-6tiz4P.js",
+        "/assets/jspdf.es.min-DEqM9RWX.js",
+        "/assets/preload-helper-BLdHbfdN.js",
+        "/assets/product-catalog--QUlo2Et.js",
+        "/assets/promptStore-B0QQtJP5.js"
+      ]
+    },
+    "ai-tools": {
+      "initialJsBytes": 503320,
+      "initialJsGzipBytes": 163534,
+      "files": [
+        "/assets/aiTools-Dtryw7Lo.js",
+        "/assets/chat-B5CPITJH.js",
+        "/assets/globals-D7mWnbT1.js",
+        "/assets/globals-T-6tiz4P.js",
+        "/assets/jspdf.es.min-DEqM9RWX.js",
+        "/assets/preload-helper-BLdHbfdN.js"
+      ]
+    },
+    "blog": {
+      "initialJsBytes": 489347,
+      "initialJsGzipBytes": 159635,
+      "files": [
+        "/assets/blog-DbAsPB5_.js",
+        "/assets/chat-B5CPITJH.js",
+        "/assets/globals-D7mWnbT1.js",
+        "/assets/globals-T-6tiz4P.js",
+        "/assets/jspdf.es.min-DEqM9RWX.js",
+        "/assets/preload-helper-BLdHbfdN.js"
+      ]
+    }
+  }
+}

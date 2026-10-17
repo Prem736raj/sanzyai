@@ -1,0 +1,59 @@
+@import './tokens.css';
+
+html { scrollbar-gutter: stable; }
+body { font-family: var(--type-body); }
+
+.ui-card {
+    min-inline-size: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+.ui-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-block-size: 44px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    padding: 10px 16px;
+    font: 600 0.9rem/1.4 var(--type-body);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--motion-ui), border-color var(--motion-ui), box-shadow var(--motion-ui);
+}
+.ui-button--primary { background: var(--color-brand); color: #fff; border-color: transparent; }
+.ui-button--primary:hover { background: var(--color-brand-strong); color: #fff; }
+.ui-button:disabled { opacity: 0.6; cursor: not-allowed; }
+.ui-button:focus-visible { outline: 3px solid var(--color-brand-hover); outline-offset: 3px; }
+
+.data-grid { min-block-size: var(--grid-reserved-size, 360px); align-content: start; }
+.data-grid > * { min-inline-size: 0; }
+#featuredProducts { --grid-reserved-size: 300px; }
+#promptGrid { --grid-reserved-size: 560px; }
+#featuredToolsGrid, #toolsGrid { --grid-reserved-size: 420px; }
+.grid-message { grid-column: 1 / -1; color: var(--color-muted); padding: var(--space-6); }
+.grid-message .ui-button { margin-block-start: var(--space-4); }
+.grid-loading-label { grid-column: 1 / -1; color: var(--color-muted); }
+.ui-skeleton {
+    min-block-size: var(--grid-reserved-size, 320px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: linear-gradient(110deg, var(--color-surface) 20%, var(--color-surface-raised) 45%, var(--color-surface) 70%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer { to { background-position: -200% 0; } }
+
+/* This launcher is styled before the larger chat stylesheet is downloaded. */
+.chat-launcher { position: fixed; inset-inline-end: 24px; inset-block-end: 24px; z-index: 9999; }
+.chat-launcher button { width: 52px; height: 52px; border: 0; border-radius: 50%; background: var(--color-brand); color: #fff; font-size: 1.4rem; cursor: pointer; box-shadow: var(--shadow-card); }
+.chat-launcher button[aria-busy="true"] { cursor: progress; }
+.chat-launcher [role="status"]:not(:empty) { display: block; max-width: 240px; padding: 12px; margin-top: 8px; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-control); }
+
+@media (max-width: 640px) { .data-grid > .ui-skeleton:nth-of-type(n+3) { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-skeleton { animation: none; } }
+
+.hero-stat-number, .stat-number, .hstat strong { font-variant-numeric: tabular-nums; min-inline-size: 3ch; }
