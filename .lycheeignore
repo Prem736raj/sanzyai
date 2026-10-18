@@ -3,6 +3,12 @@
 # Mailto links
 ^mailto:
 
+# Root-relative paths (validated by npm run check:routes)
+^/
+
+# Live production domain (unregistered/NXDOMAIN in public DNS)
+^https?://(www\.)?sanzyai\.com
+
 # Generated build artifacts and dependencies
 ^dist/
 ^node_modules/

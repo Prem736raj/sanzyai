@@ -63,4 +63,4 @@ jobs:
       - name: Link checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --accept 200,206,301,302,307,308,429 --base https://sanzyai.com --exclude "^mailto:" *.html blog/*.html README.md
+          args: --verbose --no-progress --accept 200,206,301,302,307,308,429 --exclude "^mailto:" *.html blog/*.html README.md
