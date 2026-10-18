@@ -46,7 +46,8 @@ test('slow news reserves space, then analysis opens without moving the header', 
     let release;
     const gate = new Promise(resolve => { release = resolve; });
     await page.route('**/api/ai-news', async route => { await gate; await route.fulfill({ json: payload }); });
-    await page.goto('/blog');
+    // Check the loading state as soon as the document is ready, before optional assets finish.
+    await page.goto('/blog', { waitUntil: 'domcontentloaded' });
     const feed = page.locator('#newsFeed');
     try {
         await expect(feed).toHaveAttribute('aria-busy', 'true');

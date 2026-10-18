@@ -89,9 +89,9 @@ const roadmapByPath = {
             outcome: 'First 500 organic visitors',
             mistake: 'Buying "backlinks" or fake traffic. It will get your site banned from Google permanently.',
             tasks: [
-                'Post 3 "Value Bombs" in subreddits without being "spammy".',
+                'Publish 3 comprehensive, high-utility answers to recurring technical or practical questions in niche communities.',
                 'Set up a free newsletter and add a signup box to your site.',
-                'Reach out to 5 other sites for a "guest post" exchange.'
+                'Reach out to 5 relevant technical platforms or communities for guest content distribution.'
             ]
         },
         {
@@ -189,15 +189,15 @@ const roadmapByPath = {
         },
         {
             id: 'ads',
-            title: 'Phase 7: Paid Acquisition (The Gas)',
+            title: 'Phase 7: Targeted Customer Acquisition',
             duration: 'Week 4',
             tools: 'Google Ads, Meta Ads, TikTok Ads, AdEspresso, WordStream',
-            outcome: 'Predictable, scalable traffic',
-            mistake: 'Scaling a losing ad. If it doesn\'t convert at $10/day, it won\'t convert at $1000/day. Fix the offer.',
+            outcome: 'Predictable, scalable customer acquisition channels',
+            mistake: 'Scaling an unvalidated campaign. If conversion economics fail at small daily test budgets, fix the core value proposition first.',
             tasks: [
-                'Launch a lead-gen ad campaign with $20/day.',
-                'Setup Retargeting for anyone who visits the site.',
-                'A/B test 3 different ad headlines and images.'
+                'Launch a targeted lead-gen campaign with controlled test budget.',
+                'Configure retargeting audiences for high-intent visitors.',
+                'Run structured A/B tests across value headlines and creative variants.'
             ]
         },
         {
@@ -205,7 +205,7 @@ const roadmapByPath = {
             title: 'Phase 8: Revenue Automation',
             duration: 'Ongoing',
             tools: 'ConvertKit, Zapier, Make.com, Stripe, ActiveCampaign, HubSpot',
-            outcome: 'Passive income machine',
+            outcome: 'Reliable recurring revenue operations and automated fulfillment workflows.',
             mistake: 'Automating a broken process. Automate things only AFTER you have done them manually and they work.',
             tasks: [
                 'Automate your sales funnel from Lead -> Sale.',
@@ -419,7 +419,7 @@ function updateBadges() {
 function triggerConfetti() {
     if (window.confettiActive) return;
     window.confettiActive = true;
-    showToast('Roadmap completed successfully!');
+    showToast('Curriculum milestone completed successfully!');
 }
 
 function renderStageDetail() {
@@ -437,10 +437,15 @@ function renderStageDetail() {
     meta.innerHTML = `
         <span class="pill">Path: ${activePath.toUpperCase()}</span>
         <span class="pill">Timing: ${stage.duration}</span>
-        <span class="pill">Tools: ${stage.tools}</span>
+        <span class="pill">Toolchain: ${stage.tools}</span>
     `;
 
     tasks.innerHTML = stage.tasks.map((task) => `<li>${task}</li>`).join('');
+
+    const domainLink = document.getElementById('stageDomainLink');
+    if (domainLink) {
+        domainLink.style.display = (stage.id === 'niche' || stage.id === 'market' || stage.id === 'hosting') ? 'inline-flex' : 'none';
+    }
 
     const detailKey = `${activePath}:${stage.id}`;
     const detailSteps = stageDetailMap[detailKey] || [];
@@ -458,7 +463,7 @@ function renderStageDetail() {
     if (stage.mistake) {
         html += `
             <div class="mistake-box">
-                <strong>Common Mistake to Avoid</strong>
+                <strong>Common Pitfall to Avoid</strong>
                 <p>${stage.mistake}</p>
             </div>
         `;
@@ -468,7 +473,7 @@ function renderStageDetail() {
         <div class="mentor-btn-wrap">
             <button class="btn-mentor" data-action="ask-mentor" data-stage-id="${stage.id}">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                <span>Ask Sanzy Guide about this stage</span>
+                <span>Consult Implementation Guide</span>
             </button>
         </div>
     `;
@@ -478,12 +483,12 @@ function renderStageDetail() {
 
 window.askMentor = function(stageId) {
     const stage = roadmapByPath[activePath][activeStageIndex];
-    const msg = `I am currently in ${stage.title} (${activePath} path). I have a question about using ${stage.tools.split(',')[0]} for my website. Can you give me a beginner-friendly tip?`;
+    const msg = `I am currently working on ${stage.title} (${activePath} architecture path). I have a technical question regarding ${stage.tools.split(',')[0]} for my deployment. What are recommended best practices?`;
     
     if (window.triggerInteraction) {
         window.triggerInteraction(msg);
     } else {
-        showToast('Start a conversation using the guide bubble at the bottom right.');
+        showToast('Consult the guide dialog at the bottom right.');
     }
 }
 
@@ -511,8 +516,8 @@ window.finishQuiz = function(value) {
     
     resEl.hidden = false;
     msgEl.innerHTML = result === 'free' 
-        ? "We recommend the <strong>Free Path</strong>. It's perfect for learning the ropes without any financial risk."
-        : "We recommend the <strong>Paid Path</strong>. Your goals and budget suggest you're ready for professional growth.";
+        ? "Recommendation: <strong>Free Edge Path</strong>. A zero-overhead foundation utilizing global edge infrastructure to validate product-market fit."
+        : "Recommendation: <strong>Managed Infrastructure Path</strong>. Best aligned with high-throughput compute, dedicated apex domains, and scalable billing workflows.";
     
     window.setPath(result);
 }
@@ -648,7 +653,7 @@ window.generateSprintPlan = function() {
     const saveBtn = document.getElementById('savePlanPdfBtn');
     if (saveBtn) saveBtn.disabled = false;
     updateLearnProgressUI();
-    showToast('Growth sprint generated');
+    showToast('30-Day sprint plan generated');
 };
 
 window.saveSprintPlanAsPdf = async function() {

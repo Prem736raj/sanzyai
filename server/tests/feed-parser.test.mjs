@@ -61,5 +61,7 @@ test('sanitizeText strips dangerous tags cleanly', () => {
   assert.equal(sanitizeText('Hello <script>bad()</script>world'), 'Hello world');
   assert.equal(sanitizeText('Hello <style>body{}</style>world'), 'Hello world');
   assert.equal(sanitizeText('<b>Bold</b> &amp; Clean'), 'Bold & Clean');
+  assert.equal(sanitizeText('New AI research [&#8230;] &#x2014; &hellip;'), 'New AI research […] — …');
+  assert.equal(sanitizeText('&#999999999; &#xD800;'), '&#999999999; &#xD800;');
 });
 

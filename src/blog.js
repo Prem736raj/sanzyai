@@ -130,15 +130,21 @@ function renderTypeFilters() {
         btn.className = `type-chip ${type === activeType ? 'active' : ''}`;
         btn.dataset.action = 'set-news-type';
         btn.dataset.newsType = type;
+        btn.setAttribute('aria-pressed', String(type === activeType));
         btn.textContent = type;
         holder.appendChild(btn);
     });
 }
 
 window.setNewsType = function(type) {
+    const restoreFocus = document.activeElement?.dataset.action === 'set-news-type';
     activeType = type;
     visibleNewsCount = FEED_PAGE_SIZE;
     renderTypeFilters();
+    if (restoreFocus) {
+        [...document.querySelectorAll('#typeFilters button')]
+            .find(button => button.dataset.newsType === type)?.focus({ preventScroll: true });
+    }
     renderNewsFeed();
 };
 
@@ -237,6 +243,7 @@ function renderNewsFeed() {
         watchBtn.dataset.action = 'toggle-watch';
         watchBtn.dataset.storyKey = String(item.storyKey || '');
         watchBtn.className = `watch-btn ${isSaved ? 'on' : ''}`;
+        watchBtn.setAttribute('aria-pressed', String(isSaved));
         watchBtn.textContent = isSaved ? 'Saved' : 'Save';
 
         const readBtn = document.createElement('button');
@@ -638,7 +645,8 @@ async function fetchAiNews() {
         method: 'GET',
         headers: { Accept: 'application/json' },
         cache: 'no-store',
-        signal: AbortSignal.timeout(12_000),
+        // A cold refresh collects several feeds before the proxy can answer.
+        signal: AbortSignal.timeout(30_000),
     });
 
     if (!response.ok) throw new Error(`AI news request failed (${response.status})`);

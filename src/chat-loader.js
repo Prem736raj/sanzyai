@@ -5,8 +5,11 @@ let failed = false;
 
 export async function loadChat(open = false) {
     const launcher = document.getElementById('sanzyFloatBtn');
+    const trigger = document.getElementById('askLearningAssistantBtn');
+    if (launcher) launcher.setAttribute('aria-busy', 'true');
+    if (trigger) trigger.setAttribute('aria-busy', 'true');
+
     if (!loading) {
-        launcher?.setAttribute('aria-busy', 'true');
         loading = import('./chat.js').then(({ initializeChat }) => initializeChat()).catch(() => {
             loading = undefined;
             failed = true;
@@ -14,20 +17,50 @@ export async function loadChat(open = false) {
             if (status) {
                 status.textContent = 'Guide could not load. Reload this page to try again, or ';
                 const contact = document.createElement('a');
-                contact.href = '/contact'; contact.textContent = 'contact us'; status.append(contact);
+                contact.href = '/contact';
+                contact.textContent = 'contact us';
+                status.append(contact);
             }
-            launcher?.setAttribute('aria-label', 'Reload page to retry guide');
-            if (launcher) launcher.textContent = '↻';
+            const learnStatus = document.getElementById('learningAssistantStatus');
+            if (learnStatus) {
+                learnStatus.textContent = 'Learning assistant is currently unavailable. You can reach us via our contact page.';
+            }
+            if (launcher) {
+                launcher.setAttribute('aria-label', 'Reload page to retry guide');
+                launcher.textContent = '↻';
+            }
+            if (trigger) {
+                trigger.textContent = 'Assistant unavailable';
+                trigger.disabled = true;
+            }
             return null;
-        }).finally(() => launcher?.removeAttribute('aria-busy'));
+        }).finally(() => {
+            if (launcher) launcher.removeAttribute('aria-busy');
+            if (trigger) trigger.removeAttribute('aria-busy');
+        });
     }
+
     const bot = await loading;
     if (open && bot) bot.open();
     return bot;
 }
 
+function setupLearningAssistantTrigger() {
+    const trigger = document.getElementById('askLearningAssistantBtn');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+        if (failed) return;
+        void loadChat(true);
+    });
+}
+
 function installLauncher() {
+    setupLearningAssistantTrigger();
+
     if (document.body.classList.contains('no-float-widgets')) return;
+    if (document.getElementById('sanzyFloatBtn')) return;
+
     const wrap = document.createElement('div');
     wrap.id = 'sanzyLauncherWrap';
     wrap.className = 'chat-launcher';

@@ -1,3 +1,5 @@
+import { buildAffiliateSearchLink, AFFILIATE_LINK_REL } from './domain-affiliates.js';
+
 // ============================================
 // DATA — Prices verified April 2026
 // Standard (non-promo) registration prices shown
@@ -349,22 +351,23 @@ window.selectTLD = function(el, tld) {
 }
 
 function getRegistrarSearchLink(registrar, domain) {
-    const d = encodeURIComponent(domain);
+    const d = domain ? encodeURIComponent(domain) : '';
 
     const links = {
-        cloudflare: `https://dash.cloudflare.com/?to=/:account/domains/register/${d}`,
-        porkbun: `https://porkbun.com/checkout/search?q=${d}`,
-        spaceship: `https://spaceship.com/domain-search?query=${d}`,
-        namecheap: `https://www.namecheap.com/domains/registration/results/?domain=${d}`,
-        hostinger: `https://www.hostinger.com/domain-checker?domain=${d}`,
-        dynadot: `https://www.dynadot.com/domain/search.html?domain=${d}`,
-        godaddy: `https://www.godaddy.com/domainsearch/find?domainToCheck=${d}`,
-        ionos: `https://www.ionos.com/domains/domain-name-registration?domain=${d}`,
-        squarespace: `https://domains.squarespace.com/?query=${d}`,
-        namedotcom: `https://www.name.com/domain/search/${d}`
+        cloudflare: domain ? `https://dash.cloudflare.com/?to=/:account/domains/register/${d}` : registrar.link,
+        porkbun: domain ? `https://porkbun.com/checkout/search?q=${d}` : registrar.link,
+        spaceship: domain ? `https://spaceship.com/domain-search?query=${d}` : registrar.link,
+        namecheap: domain ? `https://www.namecheap.com/domains/registration/results/?domain=${d}` : registrar.link,
+        hostinger: domain ? `https://www.hostinger.com/domain-checker?domain=${d}` : registrar.link,
+        dynadot: domain ? `https://www.dynadot.com/domain/search.html?domain=${d}` : registrar.link,
+        godaddy: domain ? `https://www.godaddy.com/domainsearch/find?domainToCheck=${d}` : registrar.link,
+        ionos: domain ? `https://www.ionos.com/domains/domain-name-registration?domain=${d}` : registrar.link,
+        squarespace: domain ? `https://domains.squarespace.com/?query=${d}` : registrar.link,
+        namedotcom: domain ? `https://www.name.com/domain/search/${d}` : registrar.link
     };
 
-    return links[registrar.id] || registrar.link;
+    const targetUrl = links[registrar.id] || registrar.link;
+    return buildAffiliateSearchLink(registrar.id, targetUrl, domain);
 }
 
 // ============================================
@@ -457,7 +460,7 @@ function showAvailStatus(status, domain) {
             <div class="avail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></div>
             <div class="avail-body">
                 <div class="avail-title">Checking availability for ${domain}...</div>
-                <div class="avail-desc">Querying DNS records to verify if this domain is registered.</div>
+                <div class="avail-desc">Querying DNS records to verify whether this domain is actively registered.</div>
             </div>
         `;
         return;
@@ -467,8 +470,8 @@ function showAvailStatus(status, domain) {
         el.innerHTML = `
             <div class="avail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
             <div class="avail-body">
-                <div class="avail-title">${domain} appears to be available!</div>
-                <div class="avail-desc">Great news! This domain doesn't have DNS records, which means it's likely available for registration. Compare prices below and grab it before someone else does!</div>
+                <div class="avail-title">${domain} is available for registration</div>
+                <div class="avail-desc">No active DNS records found. Compare registrar pricing below to register this domain.</div>
             </div>
         `;
         return;
@@ -484,8 +487,8 @@ function showAvailStatus(status, domain) {
         el.innerHTML = `
             <div class="avail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
             <div class="avail-body">
-                <div class="avail-title">${domain} is already taken</div>
-                <div class="avail-desc">This domain is already registered by someone else. You can try to purchase it on the aftermarket, or register one of these alternatives:</div>
+                <div class="avail-title">${domain} is already registered</div>
+                <div class="avail-desc">Active DNS records detected. Available alternative extensions:</div>
                 <div class="avail-suggestions">
                     ${alts.map((alt) => `<span class="avail-sug-chip" data-action="try-suggestion" data-domain-suggestion="${alt}" role="button" tabindex="0">${alt}</span>`).join('')}
                 </div>
@@ -498,8 +501,8 @@ function showAvailStatus(status, domain) {
     el.innerHTML = `
         <div class="avail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
         <div class="avail-body">
-            <div class="avail-title">Couldn't verify availability for ${domain}</div>
-            <div class="avail-desc">We were unable to check this domain's DNS records. Please verify availability directly on the registrar's website before purchasing.</div>
+            <div class="avail-title">Could not verify availability for ${domain}</div>
+            <div class="avail-desc">DNS check timed out or was inconclusive. Verify availability directly on registrar websites.</div>
         </div>
     `;
 }
@@ -516,26 +519,13 @@ window.trySuggestion = function(domain) {
 function shakeInput() {
     const box = document.getElementById('searchBox');
     if (!box) return;
-    box.style.animation = 'shake 0.4s ease';
-    box.style.borderColor = 'var(--red)';
+    box.classList.remove('shake');
+    // Trigger reflow to restart animation
+    void box.offsetWidth;
+    box.classList.add('shake');
     setTimeout(() => {
-        box.style.animation = '';
-        box.style.borderColor = '';
+        box.classList.remove('shake');
     }, 500);
-}
-
-// Add shake keyframe dynamically
-if (!document.getElementById('shake-keyframes')) {
-    const shakeStyle = document.createElement('style');
-    shakeStyle.id = 'shake-keyframes';
-    shakeStyle.textContent = `@keyframes shake {
-        0%,100% { transform: translateX(0); }
-        20% { transform: translateX(-8px); }
-        40% { transform: translateX(8px); }
-        60% { transform: translateX(-6px); }
-        80% { transform: translateX(6px); }
-    }`;
-    document.head.appendChild(shakeStyle);
 }
 
 // ============================================
@@ -544,7 +534,7 @@ if (!document.getElementById('shake-keyframes')) {
 function getAdjustedRegistrars(domain) {
     // Extract the TLD from the domain
     const dotIndex = domain.lastIndexOf('.');
-    const tld = dotIndex !== -1 ? domain.substring(dotIndex) : '.com';
+    const tld = dotIndex !== -1 ? domain.substring(dotIndex).toLowerCase() : '.com';
     
     // Find matching TLD data
     const tld_info = tldData.find(t => t.ext === tld);
@@ -665,7 +655,7 @@ function showResults(domain, availStatus) {
         if (bestName) bestName.textContent = `${best.name} — Best for ${tld} domains`;
         if (bestSub) bestSub.textContent = `Save vs. average ${tld} price of ${avgPrice}/year`;
         if (bestBtn) {
-            bestBtn.textContent = `Get This Deal at ${best.name} →`;
+            bestBtn.textContent = `Register at ${best.name} →`;
             bestBtn.href = getRegistrarSearchLink(best, domain);
             bestBtn.target = '_blank';
             bestBtn.rel = 'noopener sponsored';
@@ -713,10 +703,10 @@ function renderTableRows() {
         const stars = renderStars(r.rating);
 
         const buyCell = currentAvailStatus === 'taken'
-            ? `<button class="buy-btn disabled" disabled>Taken</button>`
+            ? `<button type="button" class="buy-btn disabled" disabled>Taken</button>`
             : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored" \
                    class="buy-btn ${r.isBest ? 'best' : ''}" data-action="open-registrar" data-registrar-name="${r.name}">\
-                    Buy Now\
+                    Register →\
                 </a>`;
 
         return `
@@ -778,12 +768,12 @@ function renderCards() {
     container.innerHTML = tableData.map(r => {
         const regClass = getPriceClass(r.register, minPrice, maxPrice);
         const buyCell = currentAvailStatus === 'taken'
-            ? `<button class="buy-btn disabled" disabled style="width:100%;justify-content:center;">Taken</button>`
+            ? `<button type="button" class="buy-btn disabled" disabled style="width:100%;justify-content:center;">Taken</button>`
             : `<a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
                class="buy-btn ${r.isBest ? 'best' : ''}" 
                style="width:100%;justify-content:center;"
                data-action="open-registrar" data-registrar-name="${r.name}">\
-                Buy at ${r.name}
+                Register at ${r.name} →
             </a>`;
 
         return `
@@ -820,12 +810,7 @@ function renderCards() {
                    </button>`
                 : `<div style="color:var(--text-dim);font-size:0.8rem;margin-bottom:12px;text-align:center;">${r.offer}</div>`
             }
-                <a href="${getRegistrarSearchLink(r, currentDomain)}" target="_blank" rel="noopener sponsored"
-               class="buy-btn ${r.isBest ? 'best' : ''}" 
-               style="width:100%;justify-content:center;"
-               data-action="open-registrar" data-registrar-name="${r.name}">
-                Buy at ${r.name}
-            </a>
+            ${buyCell}
         </div>`;
     }).join('');
 }

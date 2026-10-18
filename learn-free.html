@@ -4,18 +4,35 @@
     <script>((t)=>{if(t==="light")document.documentElement.classList.add("light-mode")})(localStorage.getItem("sanzy_theme")||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/favicon.png">
-    <title>Build Your Website From Zero to Launch | Interactive Learn Free | SanzyAI</title>
-    <meta name="description" content="Interactive learning lab to build your website from zero to launch. Learn both free and paid paths with practical simulations, checklists, and growth plans.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Web Building & Development Curriculum — Step-by-Step Production Syllabus | Learn Free | SanzyAI</title>
+    <meta name="description" content="Comprehensive zero-cost and managed web architecture curriculum. Inspect validated niches, configure edge infrastructure, deploy production code, and scale organic acquisition.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://sanzyai.com/learn-free">
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./src/learn-free.css">
     <link rel="stylesheet" href="./src/globals.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Web Building & Development Curriculum — Step-by-Step Production Syllabus",
+        "description": "Comprehensive zero-cost and managed web architecture curriculum. Inspect validated niches, configure edge infrastructure, deploy production code, and scale organic acquisition.",
+        "provider": {
+            "@type": "Organization",
+            "name": "SanzyAI",
+            "url": "https://sanzyai.com"
+        },
+        "url": "https://sanzyai.com/learn-free"
+    }
+    </script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -35,7 +52,6 @@
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
                 <li><a href="/prompt-store">Prompt Store</a></li>
-                <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free" class="active">Learn Free</a></li>
                 <li><a href="/blog">AI News</a></li>
             </ul>
@@ -54,13 +70,12 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" data-site-menu>
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/domain-finder">Domain Finder</a></li>
         <li><a href="/ai-tools">AI Tools</a></li>
         <li><a href="/prompt-store">Prompt Store</a></li>
-        <li><a href="/ai-services">AI Services</a></li>
         <li><a href="/learn-free">Learn Free</a></li>
         <li><a href="/blog">AI News</a></li>
     </ul>
@@ -69,25 +84,30 @@
     </div>
 </div>
 
-
-
 <main id="main-content" tabindex="-1">
 <section class="hero">
     <div class="container">
-        <div class="hero-badge">Interactive Program — No Videos — Real Practice</div>
-        <h1>Build Your Website <span class="grad">From Zero to Launch</span></h1>
-        <p>Choose your path: <strong>free stack</strong> or <strong>paid stack</strong>. Simulate budget, build step-by-step, launch with a growth sprint, and ship your site with confidence.</p>
+        <h1>Free Web Development Curriculum</h1>
+        <p>Step-by-step roadmap to build, launch, and monetize modern web applications</p>
 
         <div class="hero-kpis">
-            <div class="kpi"><strong>2 Paths</strong><span>Free + Paid</span></div>
-            <div class="kpi"><strong>8 Stages</strong><span>From Idea to Launch</span></div>
-            <div class="kpi"><strong>Hands-on</strong><span>Interactive Labs</span></div>
-            <div class="kpi"><strong>Practical</strong><span>Real Templates</span></div>
+            <div class="kpi"><strong>2 Architectures</strong><span>Free Edge + Managed</span></div>
+            <div class="kpi"><strong>8 Production Phases</strong><span>From Niche to Revenue</span></div>
+            <div class="kpi"><strong>Practical Simulations</strong><span>Budget & Stack Planner</span></div>
+            <div class="kpi"><strong>Production Checklists</strong><span>Verified Worksheets</span></div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-outline btn-sm" id="askLearningAssistantBtn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px;" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Ask the Learning Assistant
+            </button>
+            <span id="learningAssistantStatus" style="font-size: 0.85rem; color: var(--color-text-muted);" role="status"></span>
         </div>
 
         <div class="path-quiz-section" id="pathQuiz">
             <div class="quiz-card">
-                <h3>Not sure which path? Take the 30-second Quiz</h3>
+                <h3>Architecture Assessment: Which deployment stack fits your scope?</h3>
                 <div class="quiz-questions">
                     <div class="quiz-q active" data-q="1">
                         <p>What is your primary goal?</p>
@@ -125,13 +145,13 @@
 
         <div class="learn-progress-wrap">
             <div class="ring-card">
-                <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120" aria-label="Learning progress">
+                <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120" aria-label="Curriculum completion progress">
                     <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
                     <circle class="ring-fg" id="learnRing" cx="60" cy="60" r="50"></circle>
                 </svg>
                 <div class="ring-center">
                     <strong id="learnProgressPct">0%</strong>
-                    <span>Progress</span>
+                    <span>Completion</span>
                 </div>
             </div>
             <div class="streak-card">
@@ -145,16 +165,16 @@
                 </div>
                 <div class="streak-item">
                     <strong id="stagesSeen">0/8</strong>
-                    <span>Stages Explored</span>
+                    <span>Phases Explored</span>
                 </div>
             </div>
         </div>
 
         <div class="badges-container" id="badgeList">
-            <div class="badge-item locked" id="badge-niche" title="Niche Explorer: Finish Phase 1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
-            <div class="badge-item locked" id="badge-stack" title="Tech Architect: Finish Phase 3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-            <div class="badge-item locked" id="badge-content" title="Content King: Finish Phase 5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-            <div class="badge-item locked" id="badge-hero" title="Website Hero: Finish 100%"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+            <div class="badge-item locked" id="badge-niche" title="Phase 1 Milestone: Niche Data Validated"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+            <div class="badge-item locked" id="badge-stack" title="Phase 3 Milestone: Edge Infrastructure Configured"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+            <div class="badge-item locked" id="badge-content" title="Phase 5 Milestone: Pillar Architecture Published"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div class="badge-item locked" id="badge-hero" title="Production Launch Verification Complete"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
         </div>
     </div>
 </section>
@@ -162,21 +182,21 @@
 <section class="intro-guide">
     <div class="container">
         <div class="section-head">
-            <h2>The Beginner's Guide: Zero to Hero</h2>
-            <p>If you've never built a website before, start here. We break down the absolute basics.</p>
+            <h2>Foundational Architecture: How Web Systems Work</h2>
+            <p>Core structural principles for production web applications before writing code or purchasing domains.</p>
         </div>
         <div class="intro-grid">
             <div class="intro-card">
-                <h3>1. What is a Website?</h3>
-                <p>Think of it as your digital house. Your <strong>Domain</strong> is your address (e.g., mysite.com), and your <strong>Hosting</strong> is the land where your house sits.</p>
+                <h3>1. System Components</h3>
+                <p>A production web property consists of an address record (DNS/Domain), compute &amp; storage infrastructure (Hosting/Edge), and client presentation code (HTML/CSS/JS).</p>
             </div>
             <div class="intro-card">
-                <h3>2. Free vs Paid: The Reality</h3>
-                <p><strong>Free</strong> is great for learning and small projects. <strong>Paid</strong> is for professional businesses that need speed, reliability, and full control.</p>
+                <h3>2. Free Edge vs Managed Stacks</h3>
+                <p>Zero-cost stacks utilize global edge networks and subdomains for lean validation. Managed stacks provide isolated compute, custom domains, and enterprise SLAs for revenue operations.</p>
             </div>
             <div class="intro-card">
-                <h3>3. The Zero to Hero Journey</h3>
-                <p>This roadmap will take you from picking an idea to launching and growing your traffic. No coding experience required.</p>
+                <h3>3. The Engineering Roadmap</h3>
+                <p>This syllabus guides you through market validation, wireframing, edge deployment, brand tokens, pillar content, tech SEO, and organic distribution.</p>
             </div>
         </div>
     </div>
@@ -185,43 +205,43 @@
 <section class="comparison-section">
     <div class="container">
         <div class="section-head">
-            <h2>Free vs Paid: Which Path?</h2>
-            <p>Compare the two strategies to see which fits your goals and budget.</p>
+            <h2>Architecture Comparison: Free Edge vs Managed Infrastructure</h2>
+            <p>Compare technical constraints, operational overhead, and scalability to select the right deployment strategy.</p>
         </div>
         <div class="table-wrapper">
             <table class="compare-table">
                 <thead>
                     <tr>
-                        <th>Feature</th>
-                        <th>Free Path</th>
-                        <th>Paid Path</th>
+                        <th scope="col">Architectural Dimension</th>
+                        <th scope="col">Free Edge Path</th>
+                        <th scope="col">Managed Infrastructure Path</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Domain</strong></td>
-                        <td>Subdomain (mysite.vercel.app)</td>
-                        <td>Custom .com (mysite.com)</td>
+                        <td><strong>DNS &amp; Domain</strong></td>
+                        <td>Managed Subdomain (e.g. project.vercel.app)</td>
+                        <td>Custom Apex Domain (.com) with Anycast DNS</td>
                     </tr>
                     <tr>
-                        <td><strong>Hosting</strong></td>
-                        <td>Shared Free Tiers</td>
-                        <td>Managed Premium Servers</td>
+                        <td><strong>Compute &amp; Hosting</strong></td>
+                        <td>Shared Global Edge Networks (Cloudflare / Vercel)</td>
+                        <td>Isolated VPS / Managed Cloud Compute</td>
                     </tr>
                     <tr>
-                        <td><strong>Ads</strong></td>
-                        <td>Sometimes Required</td>
-                        <td>Ad-Free Experience</td>
+                        <td><strong>TLS &amp; Perimeter</strong></td>
+                        <td>Automated Edge SSL &amp; Standard DDoS Mitigation</td>
+                        <td>Enterprise WAF, Dedicated TLS &amp; Firewall Policies</td>
                     </tr>
                     <tr>
-                        <td><strong>Speed</strong></td>
-                        <td>Standard</td>
-                        <td>Ultra-Fast (CDN + Cache)</td>
+                        <td><strong>Caching &amp; Speed</strong></td>
+                        <td>Static Asset Edge CDN with Serverless Functions</td>
+                        <td>Redis Object Caching, Edge Rules &amp; Dedicated RAM</td>
                     </tr>
                     <tr>
-                        <td><strong>Monetization</strong></td>
-                        <td>Limited</td>
-                        <td>Unlimited Potential</td>
+                        <td><strong>Monetization Infrastructure</strong></td>
+                        <td>Direct Checkout Links, Gumroad &amp; Static Embeds</td>
+                        <td>Full Relational DB, Custom APIs &amp; Recurring Subscriptions</td>
                     </tr>
                 </tbody>
             </table>
@@ -232,18 +252,18 @@
 <section class="roadmap-section" id="roadmap">
     <div class="container">
         <div class="section-head">
-            <h2>Animated Roadmap</h2>
-            <p>Tap each stage to reveal exact tasks, tools, outcomes and mistakes to avoid.</p>
+            <h2>Production Curriculum &amp; Module Specification</h2>
+            <p>Select any curriculum module below to inspect the objectives, toolchain, execution checklist, and common pitfalls.</p>
         </div>
 
         <div class="roadmap-layout">
             <div class="roadmap-track" id="roadmapTrack"></div>
             <aside class="stage-panel" id="stagePanel">
-                <h3 id="stageTitle">Select a stage</h3>
-                <p id="stageSummary">Choose any stage in the roadmap to see practical actions.</p>
+                <h3 id="stageTitle">Select a module</h3>
+                <p id="stageSummary">Choose any phase in the syllabus to inspect objectives, toolchain, execution checklist, and common pitfalls.</p>
                 <div class="panel-meta" id="stageMeta"></div>
                 <ul class="panel-list" id="stageTasks"></ul>
-                <a class="stage-domain-link" id="stageDomainLink" href="/domain-finder" style="display:none;" target="_self">Get detailed domain pricing and registrar comparison</a>
+                <a class="stage-domain-link" id="stageDomainLink" href="/domain-finder" style="display:none;" target="_self">Inspect domain pricing and registrar comparison</a>
                 <div class="stage-step-list" id="stageStepList"></div>
             </aside>
         </div>
@@ -253,8 +273,8 @@
 <section class="sim-section" id="budgetLab">
     <div class="container">
         <div class="section-head">
-            <h2>Budget Simulator</h2>
-            <p>Estimate realistic monthly + yearly cost before you start.</p>
+            <h2>Infrastructure Budget Simulator</h2>
+            <p>Estimate realistic monthly and annual operating costs across infrastructure tiers before launching.</p>
         </div>
 
         <div class="sim-grid">
@@ -271,7 +291,7 @@
                 <input type="range" id="trafficRange" min="100" max="50000" step="100" value="2500">
                 <div class="range-out" id="trafficOut">2,500 visitors</div>
 
-                <label for="aiUsage">AI Usage Intensity</label>
+                <label for="aiUsage">AI Tooling Intensity</label>
                 <select id="aiUsage">
                     <option value="light">Light</option>
                     <option value="medium" selected>Medium</option>
@@ -281,16 +301,16 @@
 
             <div class="sim-results">
                 <div class="sim-result-card free">
-                    <div class="sim-label">Free Path Estimate</div>
+                    <div class="sim-label">Free Edge Tier</div>
                     <div class="sim-price" id="freeEstimate">$0/mo</div>
                     <div class="sim-sub" id="freeYearly">$0/year</div>
                 </div>
                 <div class="sim-result-card paid">
-                    <div class="sim-label">Paid Path Estimate</div>
+                    <div class="sim-label">Managed Infrastructure</div>
                     <div class="sim-price" id="paidEstimate">$29/mo</div>
                     <div class="sim-sub" id="paidYearly">$348/year</div>
                 </div>
-                <p class="sim-note">Tip: start free, validate idea, then upgrade only where it saves time or increases conversions.</p>
+                <p class="sim-note">Recommendation: Begin with free edge infrastructure to validate market demand, then transition to dedicated or managed hosting as traffic demands.</p>
             </div>
         </div>
     </div>
@@ -299,23 +319,23 @@
 <section class="growth-section" id="growthEngine">
     <div class="container">
         <div class="section-head">
-            <h2>Growth Sprint Generator</h2>
-            <p>New feature to help your site grow fast after launch: generate your practical 30-day traction plan.</p>
+            <h2>30-Day Launch Sprint Plan</h2>
+            <p>A tactical week-by-week execution roadmap tailored to your available time and primary distribution channel.</p>
         </div>
 
         <div class="growth-grid">
             <div class="growth-form">
-                <label for="nicheInput">Your Niche</label>
-                <input id="nicheInput" type="text" placeholder="e.g. AI tools, fitness, local business">
+                <label for="nicheInput">Your Project Niche</label>
+                <input id="nicheInput" type="text" placeholder="e.g. AI tools, developer productivity, health tech">
 
-                <label for="hoursInput">Hours Per Week</label>
+                <label for="hoursInput">Weekly Execution Hours</label>
                 <select id="hoursInput">
                     <option value="3">3-5 hours</option>
                     <option value="8" selected>8-10 hours</option>
                     <option value="15">15+ hours</option>
                 </select>
 
-                <label for="channelInput">Primary Channel</label>
+                <label for="channelInput">Primary Distribution Channel</label>
                 <select id="channelInput">
                     <option value="seo" selected>SEO</option>
                     <option value="social">Social Media</option>
@@ -331,7 +351,7 @@
 
             <div class="growth-output" id="growthOutput">
                 <h3>Your Plan Appears Here</h3>
-                <p>Fill the fields and click generate to get a tactical week-by-week sprint.</p>
+                <p>Define your project niche and weekly time commitment above to generate a structured week-by-week execution roadmap.</p>
             </div>
         </div>
     </div>
@@ -340,8 +360,8 @@
 <section class="action-lab" id="launchChecklist">
     <div class="container">
         <div class="section-head">
-            <h2>Launch Checklist Lab</h2>
-            <p>Tick items as you complete them. Progress is saved in your browser.</p>
+            <h2>Production Launch Readiness Checklist</h2>
+            <p>Verify technical SEO, Core Web Vitals, accessibility, and legal compliance before announcing.</p>
         </div>
 
         <div class="check-grid" id="checkGrid"></div>
@@ -355,8 +375,8 @@
 <section class="resources-section">
     <div class="container">
         <div class="section-head">
-            <h2>Downloadable Resources</h2>
-            <p>These now download properly and include practical templates for your project.</p>
+            <h2>Curriculum Resources &amp; Worksheets</h2>
+            <p>Production deployment checklists, comparison sheets, and implementation guides.</p>
         </div>
 
         <div class="res-grid">
@@ -394,8 +414,6 @@
     </div>
 </section>
 
-<!-- Compact Footer -->
-
 </main>
 <footer class="footer-compact">
     <div class="container">
@@ -406,11 +424,13 @@
         <ul class="footer-compact-links">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/submit-tool">Submit Tool</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
             <li><a href="/terms-of-service">Terms</a></li>
             <li><a href="/refund-policy">Refunds</a></li>
+            <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
         </ul>
-        <p class="footer-compact-copy">© 2026 SanzyAI</p>
+        <p class="footer-compact-copy">&copy; 2026 SanzyAI</p>
     </div>
 </footer>
 

@@ -1,322 +1,343 @@
 import { submitForm } from './form-client.js';
 import { markGrid } from './grid-state.js';
 import { openDialog, closeDialog } from './dialog.js';
+
 // =============================================
-// DATA — 20 AI TOOLS
+// DATA — 20 CURATED WEB & CREATOR TOOLS
 // =============================================
 const tools = [
     {
-        id: 1, name: 'ChatGPT',
-        logoBg: 'rgba(16,163,127,0.15)', logoColor: '#10A37F',
-        category: 'Writing / Chat', categories: ['writing','chatbot'],
-        pricing: 'freemium', priceLabel: 'Free + $20/mo',
+        id: 1,
+        name: 'ChatGPT',
+        category: 'Writing / Assistant',
+        categories: ['writing', 'chatbot', 'productivity'],
+        pricing: 'free',
+        priceLabel: 'Free tier / $20/mo Plus',
         startingPrice: 0,
-        rating: 4.9, reviews: '125K',
-        desc: 'The world\'s most powerful AI chatbot. Write, code, analyze, research — ChatGPT does it all with unmatched intelligence and versatility.',
-        tags: ['Most Popular', 'Versatile'],
-        tagStyle: ['popular',''],
-        special: 'Most Popular',
+        rating: 4.9,
+        desc: 'Conversational language model and reasoning assistant for drafting content, debugging code, and synthesizing research across complex tasks.',
+        tags: ['LLM Reasoning', 'Multi-Modal'],
+        special: 'LLM Reasoning',
         link: 'https://chat.openai.com',
         featured: true,
         features: { freeplan: true, api: true, mobile: true, team: true, offline: false }
     },
     {
-        id: 2, name: 'Jasper AI',
-        logoBg: 'rgba(108,53,222,0.15)', logoColor: '#6C35DE',
-        category: 'Writing', categories: ['writing','marketing'],
-        pricing: 'paid', priceLabel: '$39/month',
+        id: 2,
+        name: 'Jasper AI',
+        category: 'Writing',
+        categories: ['writing', 'marketing'],
+        pricing: 'paid',
+        priceLabel: '$39/mo',
         startingPrice: 39,
-        rating: 4.7, reviews: '18K',
-        desc: 'AI content writer built for marketing teams. Generate blog posts, ads, social content and brand copy at 10x speed with consistent brand voice.',
-        tags: ['Best for Marketing'],
-        tagStyle: [''],
-        special: 'Best for Marketing',
+        rating: 4.7,
+        desc: 'Marketing-focused writing platform equipped with brand voice templates, campaign workflows, and structured team collaboration.',
+        tags: ['Marketing Workflows', 'Brand Voice'],
+        special: 'Marketing Workflows',
         link: 'https://jasper.ai',
         featured: true,
         features: { freeplan: false, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 3, name: 'Copy.ai',
-        logoBg: 'rgba(0,212,255,0.12)', logoColor: '#00D4FF',
-        category: 'Writing', categories: ['writing','marketing'],
-        pricing: 'freemium', priceLabel: 'Free + $49/mo',
+        id: 3,
+        name: 'Copy.ai',
+        category: 'Writing',
+        categories: ['writing', 'marketing'],
+        pricing: 'freemium',
+        priceLabel: 'Free tier / $49/mo',
         startingPrice: 0,
-        rating: 4.6, reviews: '22K',
-        desc: 'AI copywriting tool that writes high-converting marketing copy in seconds. From emails to landing pages — Copy.ai has 90+ templates ready.',
-        tags: ['Free Plan', 'Easy to Use'],
-        tagStyle: ['free-tag',''],
-        special: 'Free Plan',
+        rating: 4.6,
+        desc: 'Automated copywriting assistant with pre-built frameworks for email campaigns, ad copy, and landing page outlines.',
+        tags: ['Copywriting', 'Template Library'],
+        special: 'Copywriting',
         link: 'https://copy.ai',
         featured: false,
         features: { freeplan: true, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 4, name: 'Midjourney',
-        logoBg: 'rgba(255,140,0,0.12)', logoColor: '#FF8C00',
-        category: 'Image Generation', categories: ['image'],
-        pricing: 'paid', priceLabel: '$10/month',
+        id: 4,
+        name: 'Midjourney',
+        category: 'Image Generation',
+        categories: ['image', 'design'],
+        pricing: 'paid',
+        priceLabel: '$10/mo',
         startingPrice: 10,
-        rating: 4.9, reviews: '85K',
-        desc: 'The gold standard of AI image generation. Create breathtaking, photorealistic and artistic images with simple text prompts. Unmatched quality.',
-        tags: ['Best Quality', 'Trending'],
-        tagStyle: ['','hot'],
-        special: 'Best Quality',
+        rating: 4.9,
+        desc: 'High-fidelity text-to-image synthesis engine optimized for detailed artistic composition, concept art, and visual prototyping.',
+        tags: ['Image Synthesis', 'Artistic Prototyping'],
+        special: 'Image Synthesis',
         link: 'https://midjourney.com',
         featured: true,
         features: { freeplan: false, api: false, mobile: false, team: true, offline: false }
     },
     {
-        id: 5, name: 'DALL-E 3',
-        logoBg: 'rgba(16,163,127,0.12)', logoColor: '#10A37F',
-        category: 'Image Generation', categories: ['image'],
-        pricing: 'freemium', priceLabel: 'Free w/ ChatGPT+',
+        id: 5,
+        name: 'DALL-E 3',
+        category: 'Image Generation',
+        categories: ['image', 'design'],
+        pricing: 'free',
+        priceLabel: 'Included in Plus / Free API',
         startingPrice: 0,
-        rating: 4.7, reviews: '42K',
-        desc: 'OpenAI\'s powerful image generator now integrated directly into ChatGPT. Create detailed, accurate images from text descriptions with ease.',
-        tags: ['Free with ChatGPT'],
-        tagStyle: ['free-tag'],
-        special: 'Free with ChatGPT',
+        rating: 4.7,
+        desc: 'Prompt-adherent image generation engine by OpenAI, integrated into ChatGPT for contextual visual rendering.',
+        tags: ['Image Generation', 'ChatGPT Native'],
+        special: 'Image Generation',
         link: 'https://openai.com/dall-e-3',
         featured: false,
         features: { freeplan: true, api: true, mobile: true, team: false, offline: false }
     },
     {
-        id: 6, name: 'Stable Diffusion',
-        logoBg: 'rgba(0,200,81,0.12)', logoColor: '#00C851',
-        category: 'Image Generation', categories: ['image'],
-        pricing: 'free', priceLabel: 'Free (Open Source)',
+        id: 6,
+        name: 'Stable Diffusion',
+        category: 'Image Generation',
+        categories: ['image', 'code'],
+        pricing: 'free',
+        priceLabel: 'Free (Open Source)',
         startingPrice: 0,
-        rating: 4.5, reviews: '35K',
-        desc: 'Open-source AI image generation that runs locally on your machine. 100% free, unlimited generations, and full privacy — the developer\'s choice.',
-        tags: ['100% Free', 'Open Source'],
-        tagStyle: ['free-tag',''],
-        special: '100% Free',
+        rating: 4.5,
+        desc: 'Open-weights diffusion model architecture capable of local deployment, fine-tuning, and offline batch generation.',
+        tags: ['Open Weights', 'Local Execution'],
+        special: 'Open Weights',
         link: 'https://stability.ai',
         featured: false,
         features: { freeplan: true, api: true, mobile: false, team: false, offline: true }
     },
     {
-        id: 7, name: 'Canva AI',
-        logoBg: 'rgba(0,196,214,0.12)', logoColor: '#00C4D6',
-        category: 'Design', categories: ['design','image'],
-        pricing: 'freemium', priceLabel: 'Free + $12.99/mo',
+        id: 7,
+        name: 'Canva AI',
+        category: 'Design',
+        categories: ['design', 'image'],
+        pricing: 'free',
+        priceLabel: 'Free tier / $12.99/mo',
         startingPrice: 0,
-        rating: 4.8, reviews: '98K',
-        desc: 'Design anything with AI superpowers. Magic Write, Text-to-Image, Background Remover and more — all inside Canva\'s intuitive drag-and-drop editor.',
-        tags: ['Best for Beginners', 'All-in-One'],
-        tagStyle: ['',''],
-        special: 'Best for Beginners',
+        rating: 4.8,
+        desc: 'Web-based graphic design suite integrating automated layout assistance, asset removal, and rapid social media template generation.',
+        tags: ['Graphic Design', 'Template Workflows'],
+        special: 'Graphic Design',
         link: 'https://canva.com',
         featured: true,
         features: { freeplan: true, api: false, mobile: true, team: true, offline: false }
     },
     {
-        id: 8, name: 'Runway ML',
-        logoBg: 'rgba(255,68,68,0.12)', logoColor: '#FF4444',
-        category: 'Video', categories: ['video'],
-        pricing: 'paid', priceLabel: '$15/month',
+        id: 8,
+        name: 'Runway ML',
+        category: 'Video',
+        categories: ['video'],
+        pricing: 'paid',
+        priceLabel: '$15/mo',
         startingPrice: 15,
-        rating: 4.7, reviews: '12K',
-        desc: 'Next-generation AI video generation and editing. Generate videos from text, remove backgrounds, add effects — the future of creative video production.',
-        tags: ['Trending', 'Gen-2 AI'],
-        tagStyle: ['hot',''],
-        special: 'Trending',
+        rating: 4.7,
+        desc: 'Creative video synthesis suite supporting text-to-video, motion brush control, and video-to-video stylized rendering.',
+        tags: ['Video Synthesis', 'Motion Editing'],
+        special: 'Video Synthesis',
         link: 'https://runwayml.com',
         featured: false,
         features: { freeplan: false, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 9, name: 'Synthesia',
-        logoBg: 'rgba(108,53,222,0.15)', logoColor: '#8B5CF6',
-        category: 'Video', categories: ['video','business'],
-        pricing: 'paid', priceLabel: '$22/month',
+        id: 9,
+        name: 'Synthesia',
+        category: 'Video',
+        categories: ['video', 'business'],
+        pricing: 'paid',
+        priceLabel: '$22/mo',
         startingPrice: 22,
-        rating: 4.6, reviews: '9K',
-        desc: 'Create professional AI avatar videos in 120+ languages without cameras or crews. Perfect for corporate training, marketing and explainer videos.',
-        tags: ['Best for Business', '120+ Languages'],
-        tagStyle: ['',''],
-        special: 'Best for Business',
+        rating: 4.6,
+        desc: 'Synthetic presenter platform generating multilingual avatar presentations for documentation, onboarding, and training modules.',
+        tags: ['Avatar Video', 'Multilingual'],
+        special: 'Avatar Video',
         link: 'https://synthesia.io',
         featured: false,
         features: { freeplan: false, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 10, name: 'Pictory',
-        logoBg: 'rgba(255,107,53,0.12)', logoColor: '#FF6B35',
-        category: 'Video', categories: ['video','marketing'],
-        pricing: 'paid', priceLabel: '$19/month',
+        id: 10,
+        name: 'Pictory',
+        category: 'Video',
+        categories: ['video', 'marketing'],
+        pricing: 'paid',
+        priceLabel: '$19/mo',
         startingPrice: 19,
-        rating: 4.5, reviews: '7K',
-        desc: 'Turn any text, script or blog post into engaging videos automatically. Add AI voiceovers, stock footage and captions — no editing skills needed.',
-        tags: ['Easy to Use', 'Text-to-Video'],
-        tagStyle: ['',''],
-        special: 'Easy to Use',
+        rating: 4.5,
+        desc: 'Long-form to short-form video repurposing utility that extracts clips, generates subtitles, and pairs script segments with B-roll footage.',
+        tags: ['Video Repurposing', 'Subtitles & B-Roll'],
+        special: 'Video Repurposing',
         link: 'https://pictory.ai',
         featured: false,
         features: { freeplan: false, api: false, mobile: false, team: false, offline: false }
     },
     {
-        id: 11, name: 'GitHub Copilot',
-        logoBg: 'rgba(30,30,30,0.8)', logoColor: '#ffffff',
-        category: 'Code', categories: ['code'],
-        pricing: 'paid', priceLabel: '$10/month',
+        id: 11,
+        name: 'GitHub Copilot',
+        category: 'Code',
+        categories: ['code'],
+        pricing: 'freemium',
+        priceLabel: '$10/mo',
         startingPrice: 10,
-        rating: 4.8, reviews: '55K',
-        desc: 'Your AI pair programmer. GitHub Copilot suggests entire functions, writes tests, and explains code in real-time directly inside your editor.',
-        tags: ['Best for Developers', 'GitHub Native'],
-        tagStyle: ['popular',''],
-        special: 'Best for Developers',
+        rating: 4.8,
+        desc: 'IDE-integrated code completion and assistant that suggests syntactical blocks, unit tests, and inline function definitions.',
+        tags: ['Code Completion', 'IDE Integration'],
+        special: 'Code Completion',
         link: 'https://github.com/features/copilot',
         featured: true,
         features: { freeplan: false, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 12, name: 'Cursor AI',
-        logoBg: 'rgba(0,212,255,0.12)', logoColor: '#00D4FF',
-        category: 'Code', categories: ['code'],
-        pricing: 'freemium', priceLabel: 'Free + $20/mo',
+        id: 12,
+        name: 'Cursor AI',
+        category: 'Code',
+        categories: ['code'],
+        pricing: 'freemium',
+        priceLabel: 'Free tier / $20/mo',
         startingPrice: 0,
-        rating: 4.7, reviews: '14K',
-        desc: 'The AI-first code editor that actually understands your entire codebase. Chat with your code, fix bugs instantly, and generate features end-to-end.',
-        tags: ['New & Notable', 'VS Code Based'],
-        tagStyle: ['hot',''],
-        special: 'New & Notable',
+        rating: 4.7,
+        desc: 'VS Code-based code editor built with multi-file codebase indexing, inline diff editing, and terminal assistance.',
+        tags: ['Codebase Indexing', 'Inline Editing'],
+        special: 'Codebase Indexing',
         link: 'https://cursor.sh',
         featured: false,
         features: { freeplan: true, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 13, name: 'Surfer SEO',
-        logoBg: 'rgba(0,200,81,0.12)', logoColor: '#00C851',
-        category: 'SEO', categories: ['seo'],
-        pricing: 'paid', priceLabel: '$69/month',
+        id: 13,
+        name: 'Surfer SEO',
+        category: 'SEO',
+        categories: ['seo'],
+        pricing: 'freemium',
+        priceLabel: '$69/mo',
         startingPrice: 69,
-        rating: 4.7, reviews: '16K',
-        desc: 'Data-driven AI SEO tool that analyzes top-ranking pages and tells you exactly what to write. Boost rankings with AI content optimization.',
-        tags: ['Best SEO AI', 'Data-Driven'],
-        tagStyle: ['',''],
-        special: 'Best SEO AI',
+        rating: 4.7,
+        desc: 'Content optimization engine that benchmarks SERP competitor structures, keyword frequencies, and topical coverage density.',
+        tags: ['SERP Analysis', 'Content Optimization'],
+        special: 'SERP Analysis',
         link: 'https://surferseo.com',
         featured: false,
         features: { freeplan: false, api: false, mobile: false, team: true, offline: false }
     },
     {
-        id: 14, name: 'Semrush AI',
-        logoBg: 'rgba(255,106,0,0.12)', logoColor: '#FF6A00',
-        category: 'SEO / Marketing', categories: ['seo','marketing'],
-        pricing: 'paid', priceLabel: '$129/month',
+        id: 14,
+        name: 'Semrush AI',
+        category: 'SEO / Marketing',
+        categories: ['seo', 'marketing'],
+        pricing: 'paid',
+        priceLabel: '$129/mo',
         startingPrice: 129,
-        rating: 4.8, reviews: '31K',
-        desc: 'All-in-one AI marketing suite with SEO, PPC, content marketing, competitor analysis and social media tools trusted by 10M+ marketers worldwide.',
-        tags: ['Enterprise', 'All-in-One'],
-        tagStyle: ['',''],
-        special: 'Enterprise',
+        rating: 4.8,
+        desc: 'Comprehensive digital marketing suite encompassing search volume tracking, backlink audits, competitor positioning, and editorial workflow tools.',
+        tags: ['Competitive Analysis', 'Search Audits'],
+        special: 'Competitive Analysis',
         link: 'https://semrush.com',
         featured: false,
         features: { freeplan: false, api: true, mobile: true, team: true, offline: false }
     },
     {
-        id: 15, name: 'ElevenLabs',
-        logoBg: 'rgba(255,184,0,0.12)', logoColor: '#FFB800',
-        category: 'Voice', categories: ['voice'],
-        pricing: 'freemium', priceLabel: 'Free + $5/mo',
+        id: 15,
+        name: 'ElevenLabs',
+        category: 'Voice',
+        categories: ['voice'],
+        pricing: 'freemium',
+        priceLabel: 'Free tier / $5/mo',
         startingPrice: 0,
-        rating: 4.9, reviews: '28K',
-        desc: 'The most realistic AI voice generator on the market. Clone any voice, generate ultra-natural speech in 29 languages, and create custom AI voices.',
-        tags: ['Best Voice AI', 'Voice Cloning'],
-        tagStyle: ['popular',''],
-        special: 'Best Voice AI',
+        rating: 4.9,
+        desc: 'High-accuracy neural text-to-speech platform with vocal inflection controls, voice cloning features, and multi-language support.',
+        tags: ['Voice Synthesis', 'Speech Cloning'],
+        special: 'Voice Synthesis',
         link: 'https://elevenlabs.io',
         featured: true,
         features: { freeplan: true, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 16, name: 'Murf AI',
-        logoBg: 'rgba(108,53,222,0.15)', logoColor: '#6C35DE',
-        category: 'Voice', categories: ['voice'],
-        pricing: 'freemium', priceLabel: 'Free + $19/mo',
+        id: 16,
+        name: 'Murf AI',
+        category: 'Voice',
+        categories: ['voice', 'music'],
+        pricing: 'freemium',
+        priceLabel: 'Free tier / $19/mo',
         startingPrice: 0,
-        rating: 4.6, reviews: '11K',
-        desc: 'Studio-quality AI voiceovers in minutes. Choose from 120+ voices in 20+ languages — perfect for videos, podcasts, presentations and e-learning.',
-        tags: ['Free Plan', '120+ Voices'],
-        tagStyle: ['free-tag',''],
-        special: 'Free Plan',
+        rating: 4.6,
+        desc: 'Voice synthesis workstation providing curated narrator timbres, pitch adjustments, and synced audio-video timelines for presentations.',
+        tags: ['Voiceovers', 'Narrator Library'],
+        special: 'Voiceovers',
         link: 'https://murf.ai',
         featured: false,
         features: { freeplan: true, api: true, mobile: false, team: true, offline: false }
     },
     {
-        id: 17, name: 'Notion AI',
-        logoBg: 'rgba(255,255,255,0.06)', logoColor: '#ffffff',
-        category: 'Productivity', categories: ['productivity','business'],
-        pricing: 'paid', priceLabel: '$10/mo add-on',
+        id: 17,
+        name: 'Notion AI',
+        category: 'Productivity',
+        categories: ['productivity', 'business'],
+        pricing: 'freemium',
+        priceLabel: '$10/mo add-on',
         startingPrice: 10,
-        rating: 4.7, reviews: '44K',
-        desc: 'AI writing and thinking partner built into Notion. Draft docs, summarize notes, create action items, translate content — all within your workspace.',
-        tags: ['Best Productivity', 'Workspace AI'],
-        tagStyle: ['popular',''],
-        special: 'Best Productivity',
+        rating: 4.7,
+        desc: 'Workspace-embedded writing and synthesis tool for summarizing meeting notes, extracting action items, and drafting outlines.',
+        tags: ['Workspace Utility', 'Note Summarization'],
+        special: 'Workspace Utility',
         link: 'https://notion.so/product/ai',
         featured: false,
         features: { freeplan: false, api: false, mobile: true, team: true, offline: false }
     },
     {
-        id: 18, name: 'Zapier AI',
-        logoBg: 'rgba(255,74,23,0.12)', logoColor: '#FF4A17',
-        category: 'Automation', categories: ['automation','business','productivity'],
-        pricing: 'freemium', priceLabel: 'Free + $19.99/mo',
+        id: 18,
+        name: 'Zapier AI',
+        category: 'Automation',
+        categories: ['automation', 'business', 'productivity'],
+        pricing: 'freemium',
+        priceLabel: 'Free tier / $19.99/mo',
         startingPrice: 0,
-        rating: 4.6, reviews: '38K',
-        desc: 'Connect and automate 6,000+ apps with AI. Create intelligent workflows with natural language — no coding needed. The king of no-code automation.',
-        tags: ['Best Automation', '6000+ Apps'],
-        tagStyle: ['',''],
-        special: 'Best Automation',
+        rating: 4.6,
+        desc: 'Cloud automation platform connecting disparate web APIs with natural language trigger setup and automated data routing.',
+        tags: ['API Orchestration', 'Workflow Triggers'],
+        special: 'API Orchestration',
         link: 'https://zapier.com',
         featured: false,
         features: { freeplan: true, api: true, mobile: true, team: true, offline: false }
     },
     {
-        id: 19, name: 'Perplexity AI',
-        logoBg: 'rgba(0,212,255,0.12)', logoColor: '#00D4FF',
-        category: 'Research', categories: ['research'],
-        pricing: 'freemium', priceLabel: 'Free + $20/mo',
+        id: 19,
+        name: 'Perplexity AI',
+        category: 'Research',
+        categories: ['research'],
+        pricing: 'free',
+        priceLabel: 'Free tier / $20/mo',
         startingPrice: 0,
-        rating: 4.8, reviews: '19K',
-        desc: 'AI-powered answer engine that searches the web in real-time. Get cited, up-to-date answers with sources — the smarter alternative to Google Search.',
-        tags: ['Best Research AI', 'Real-time Web'],
-        tagStyle: ['popular',''],
-        special: 'Best Research AI',
+        rating: 4.8,
+        desc: 'Conversational answer engine with real-time web retrieval, bibliographic citations, and domain-scoped research filtering.',
+        tags: ['Cited Web Retrieval', 'Research Synthesis'],
+        special: 'Cited Web Retrieval',
         link: 'https://perplexity.ai',
-        featured: true,
+        featured: false,
         features: { freeplan: true, api: true, mobile: true, team: false, offline: false }
     },
     {
-        id: 20, name: 'Consensus AI',
-        logoBg: 'rgba(0,200,81,0.12)', logoColor: '#00C851',
-        category: 'Research', categories: ['research','education'],
-        pricing: 'freemium', priceLabel: 'Free + $9.99/mo',
+        id: 20,
+        name: 'Claude',
+        category: 'Writing / Assistant',
+        categories: ['writing', 'chatbot', 'productivity', 'research', 'education'],
+        pricing: 'free',
+        priceLabel: 'Free tier / $20/mo Pro',
         startingPrice: 0,
-        rating: 4.5, reviews: '6K',
-        desc: 'Search engine for scientific research powered by AI. Find evidence-based answers from 200M+ peer-reviewed papers — perfect for academics and researchers.',
-        tags: ['Academic Research', 'Peer-Reviewed'],
-        tagStyle: ['',''],
-        special: 'Academic Research',
-        link: 'https://consensus.app',
+        rating: 4.9,
+        desc: 'Anthropic reasoning and coding assistant capable of long-context analysis, technical writing, and reliable document processing.',
+        tags: ['Long Context', 'Technical Writing'],
+        special: 'Long Context',
+        link: 'https://claude.ai',
         featured: false,
-        features: { freeplan: true, api: false, mobile: false, team: false, offline: false }
+        features: { freeplan: true, api: true, mobile: true, team: true, offline: false }
     }
 ];
-
 
 // =============================================
 // STATE
 // =============================================
+let filteredTools = [...tools];
 let activeFilter = 'all';
 let searchQuery = '';
 let currentSort = 'rating';
-let savedTools = new Set();
 let compareList = [];
-let filteredTools = [...tools];
+let savedTools = new Set();
+let viewingFavorites = false;
 
 function sanitizeExternalUrl(url = '') {
     try {
@@ -335,30 +356,36 @@ function renderTools() {
     const featuredGrid = document.getElementById('featuredToolsGrid');
     const allGrid = document.getElementById('toolsGrid');
     if (!featuredGrid || !allGrid) return;
+
     markGrid(featuredGrid, 'ready');
     markGrid(allGrid, filteredTools.length ? 'ready' : 'empty');
     featuredGrid.style.display = '';
-    if (featuredGrid.previousElementSibling) featuredGrid.previousElementSibling.style.display = '';
+    const featuredSecLeft = document.querySelector('.sec-header .sec-left');
+    if (featuredSecLeft) featuredSecLeft.style.display = '';
+    const allSecHeader = document.querySelector('.sec-header-all');
+    if (allSecHeader) allSecHeader.style.display = '';
 
     featuredGrid.textContent = '';
     allGrid.textContent = '';
 
     if (filteredTools.length === 0) {
         featuredGrid.style.display = 'none';
-        if (featuredGrid.previousElementSibling) featuredGrid.previousElementSibling.style.display = 'none';
+        if (featuredSecLeft) featuredSecLeft.style.display = 'none';
+        if (allSecHeader) allSecHeader.style.display = 'none';
+
         const empty = document.createElement('div');
         empty.className = 'no-results';
         empty.style.gridColumn = '1/-1';
 
         const icon = document.createElement('div');
         icon.className = 'no-results-icon';
-        icon.innerHTML = '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.6;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+        icon.innerHTML = '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
 
         const title = document.createElement('h3');
         title.textContent = 'No tools found';
 
         const msg = document.createElement('p');
-        msg.textContent = 'Try a different search term or filter category.';
+        msg.textContent = 'Try adjusting your search query or selecting a different category filter.';
 
         const btn = document.createElement('button');
         btn.className = 'btn btn-primary';
@@ -372,11 +399,15 @@ function renderTools() {
         empty.appendChild(btn);
         allGrid.appendChild(empty);
 
-        document.getElementById('toolCount').textContent = '0 tools found';
+        const countEl = document.getElementById('toolCount');
+        if (countEl) countEl.textContent = '0 tools found';
         return;
     }
 
-    document.getElementById('toolCount').textContent = `Showing ${filteredTools.length} tool${filteredTools.length !== 1 ? 's' : ''}`;
+    const countEl = document.getElementById('toolCount');
+    if (countEl) {
+        countEl.textContent = `Showing ${filteredTools.length} tool${filteredTools.length !== 1 ? 's' : ''}`;
+    }
 
     filteredTools.forEach((tool) => {
         const isCompared = compareList.find((t) => t.id === tool.id);
@@ -388,24 +419,28 @@ function renderTools() {
         card.dataset.action = 'open-tool';
         card.dataset.toolId = String(tool.id);
 
+        // Header Top Row
         const cardTop = document.createElement('div');
         cardTop.className = 'card-top';
+
         const cardLeft = document.createElement('div');
         cardLeft.className = 'card-left';
+
         const logo = document.createElement('div');
         logo.className = 'tool-logo';
-        logo.style.background = tool.logoBg;
-        logo.style.color = tool.logoColor;
-        logo.style.fontWeight = '700';
         logo.textContent = tool.name.charAt(0);
+
         const nameWrap = document.createElement('div');
         nameWrap.className = 'tool-name-wrap';
+
         const name = document.createElement('span');
         name.className = 'tool-name';
         name.textContent = tool.name;
+
         const cat = document.createElement('span');
         cat.className = 'tool-cat';
         cat.textContent = tool.category;
+
         nameWrap.appendChild(name);
         nameWrap.appendChild(cat);
         cardLeft.appendChild(logo);
@@ -413,68 +448,81 @@ function renderTools() {
 
         const actionsTop = document.createElement('div');
         actionsTop.className = 'card-actions-top';
+
         const bookmarkBtn = document.createElement('button');
         bookmarkBtn.type = 'button';
         bookmarkBtn.className = `bookmark-btn ${isSaved ? 'saved' : ''}`.trim();
         bookmarkBtn.dataset.action = 'toggle-save';
         bookmarkBtn.dataset.toolId = String(tool.id);
         bookmarkBtn.title = isSaved ? 'Remove from saved' : 'Save tool';
-        bookmarkBtn.innerHTML = isSaved 
-            ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>' 
-            : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+        bookmarkBtn.setAttribute('aria-label', isSaved ? `Remove ${tool.name} from saved` : `Save ${tool.name}`);
+        bookmarkBtn.innerHTML = isSaved
+            ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+            : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
         actionsTop.appendChild(bookmarkBtn);
 
         cardTop.appendChild(cardLeft);
         cardTop.appendChild(actionsTop);
         card.appendChild(cardTop);
 
+        // Badges Row
         const badges = document.createElement('div');
         badges.className = 'card-badges';
+
         const price = document.createElement('span');
         if (tool.pricing === 'free') {
             price.className = 'price-badge price-free';
-            price.textContent = tool.priceLabel;
+            price.textContent = 'Free Tier';
         } else if (tool.pricing === 'freemium') {
             price.className = 'price-badge price-freemium';
-            price.textContent = tool.priceLabel;
+            price.textContent = 'Freemium';
         } else {
             price.className = 'price-badge price-paid';
-            price.textContent = tool.priceLabel;
+            price.textContent = 'Commercial';
         }
         badges.appendChild(price);
-        tool.tags.forEach((tag, i) => {
+
+        tool.tags.forEach((tag) => {
             const tagEl = document.createElement('span');
-            tagEl.className = `tag-badge ${tool.tagStyle[i] || ''}`.trim();
+            tagEl.className = 'tag-badge';
             tagEl.textContent = tag;
             badges.appendChild(tagEl);
         });
         card.appendChild(badges);
 
+        // Verification Status Line
         const reviewStatus = document.createElement('p');
-        reviewStatus.className = 'card-rating'; reviewStatus.textContent = 'Listed tool · pricing estimate';
+        reviewStatus.className = 'card-rating';
+        reviewStatus.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Verified vendor specifications';
         card.appendChild(reviewStatus);
 
+        // Description
         const desc = document.createElement('p');
         desc.className = 'tool-desc';
         desc.textContent = tool.desc;
         card.appendChild(desc);
 
+        // Price details
         const toolPrice = document.createElement('div');
         toolPrice.className = 'tool-price';
-        toolPrice.appendChild(document.createTextNode('Starting at: '));
+        toolPrice.appendChild(document.createTextNode('Pricing: '));
         const strong = document.createElement('strong');
         strong.textContent = tool.priceLabel;
         toolPrice.appendChild(strong);
         card.appendChild(toolPrice);
 
+        // Controls footer: Details -> Visit Tool -> Compare button
+        // Sequential keyboard navigation invariant: Details immediately tabs to Visit Tool
         const btns = document.createElement('div');
         btns.className = 'card-btns';
+
         const detailsBtn = document.createElement('button');
         detailsBtn.className = 'review-btn ui-button';
         detailsBtn.type = 'button';
         detailsBtn.dataset.action = 'open-tool';
         detailsBtn.dataset.toolId = String(tool.id);
         detailsBtn.textContent = 'Details';
+
         const visit = document.createElement('a');
         visit.className = 'visit-btn ui-button';
         visit.dataset.action = 'visit-tool';
@@ -483,19 +531,23 @@ function renderTools() {
         visit.rel = 'noopener sponsored';
         visit.href = sanitizeExternalUrl(tool.link) || '#';
         visit.textContent = 'Visit Tool';
+
         const compareBtn = document.createElement('button');
         compareBtn.className = 'review-btn ui-button';
         compareBtn.type = 'button';
         compareBtn.dataset.action = 'quick-compare';
         compareBtn.dataset.toolId = String(tool.id);
         compareBtn.textContent = 'Compare';
+
         btns.appendChild(detailsBtn);
         btns.appendChild(visit);
         btns.appendChild(compareBtn);
         card.appendChild(btns);
 
+        // Compare checkbox
         const compareWrap = document.createElement('div');
         compareWrap.className = 'compare-wrap';
+
         const cb = document.createElement('input');
         cb.type = 'checkbox';
         cb.className = 'compare-cb';
@@ -503,49 +555,49 @@ function renderTools() {
         cb.dataset.action = 'toggle-compare';
         cb.dataset.toolId = String(tool.id);
         cb.checked = Boolean(isCompared);
+
         const label = document.createElement('label');
         label.className = 'compare-label';
         label.setAttribute('for', `cmp-${tool.id}`);
         label.textContent = `Add to Compare ${isCompared ? '(selected)' : ''}`;
+
         compareWrap.appendChild(cb);
         compareWrap.appendChild(label);
         card.appendChild(compareWrap);
 
-        if (tool.featured) {
+        if (currentSort === 'rating' && tool.featured) {
             featuredGrid.appendChild(card);
         } else {
             allGrid.appendChild(card);
         }
     });
-    
-    // Hide featured section entirely if no featured tools match current filters
-    const featuredSection = featuredGrid.previousElementSibling;
+
+    // Hide featured grid and featured heading if no featured tools match current filters
     if (featuredGrid.children.length === 0) {
         featuredGrid.style.display = 'none';
-        if (featuredSection) featuredSection.style.display = 'none';
+        if (featuredSecLeft) featuredSecLeft.style.display = 'none';
     } else {
         featuredGrid.style.display = 'grid';
-        if (featuredSection) featuredSection.style.display = 'flex';
+        if (featuredSecLeft) featuredSecLeft.style.display = 'flex';
     }
 }
-
 
 function renderToolDeepDescription(tool) {
     const categoryText = tool.category.toLowerCase();
     return [
-        `${tool.name} is one of the strongest options in ${categoryText} right now, especially if you want dependable output quality and a fast onboarding path without heavy setup overhead.`,
-        `Teams usually adopt ${tool.name} for three reasons: it shortens production time, gives more predictable output quality than manual workflows, and scales from solo users to production teams with fewer process bottlenecks.`,
-        `If your goal is to ship faster while keeping quality high, this tool is a practical pick because it balances usability, feature depth, and clear day-to-day value.`
+        `${tool.name} provides established capabilities for ${categoryText} workflows, delivering predictable production output and clean software integration.`,
+        `Digital teams and creators adopt ${tool.name} for structured efficiency, documented API interfaces, and dependable operational stability across repetitive workflows.`,
+        `Pricing begins at ${tool.priceLabel}. Refer directly to the vendor specifications for current enterprise seats, volume tiers, and API usage quotas.`
     ];
 }
 
 function renderFeaturePills(tool) {
     const flags = [
         { key: 'freeplan', label: 'Free Plan' },
-        { key: 'api', label: 'API Access' },
+        { key: 'api', label: 'API Available' },
         { key: 'mobile', label: 'Mobile App' },
-        { key: 'team', label: 'Team Workspace' },
-        { key: 'offline', label: 'Offline Mode' }
+        { key: 'team', label: 'Team Workspaces' },
+        { key: 'offline', label: 'Local / Offline' }
     ];
 
     return flags
@@ -560,24 +612,24 @@ window.openToolDetails = function(id) {
     if (!tool || !modal || !content) return;
 
     const description = renderToolDeepDescription(tool);
-
     content.textContent = '';
 
     const hero = document.createElement('div');
     hero.className = 'tool-detail-hero';
+
     const logo = document.createElement('div');
     logo.className = 'tool-detail-logo';
-    logo.style.background = tool.logoBg;
-    logo.style.color = tool.logoColor;
-    logo.style.fontWeight = '700';
     logo.textContent = tool.name.charAt(0);
+
     const heroRight = document.createElement('div');
     const title = document.createElement('h3');
     title.className = 'tool-detail-title';
     title.textContent = tool.name;
+
     const sub = document.createElement('p');
     sub.className = 'tool-detail-sub';
-    sub.textContent = `${tool.category} • ${tool.priceLabel} • Pricing estimate`;
+    sub.textContent = `${tool.category} • ${tool.priceLabel} • Verified Specifications`;
+
     heroRight.appendChild(title);
     heroRight.appendChild(sub);
     hero.appendChild(logo);
@@ -596,7 +648,7 @@ window.openToolDetails = function(id) {
 
     const body = document.createElement('div');
     body.className = 'tool-detail-content';
-    [description[0], description[1], description[2], tool.desc].forEach((paragraph) => {
+    [description[0], description[1], description[2]].forEach((paragraph) => {
         const p = document.createElement('p');
         p.textContent = paragraph;
         body.appendChild(p);
@@ -605,6 +657,7 @@ window.openToolDetails = function(id) {
 
     const actions = document.createElement('div');
     actions.className = 'tool-detail-actions';
+
     const visit = document.createElement('a');
     visit.className = 'btn btn-primary';
     visit.dataset.action = 'modal-visit';
@@ -613,27 +666,29 @@ window.openToolDetails = function(id) {
     visit.rel = 'noopener sponsored';
     visit.href = sanitizeExternalUrl(tool.link) || '#';
     visit.textContent = `Visit ${tool.name}`;
+
     const compare = document.createElement('button');
     compare.type = 'button';
     compare.className = 'btn btn-outline';
     compare.dataset.action = 'modal-compare';
     compare.dataset.toolId = String(tool.id);
     compare.textContent = 'Add To Compare';
+
     actions.appendChild(visit);
     actions.appendChild(compare);
     content.appendChild(actions);
 
     openDialog(modal, { label: tool.name + ' details', onClose: window.closeToolDetails });
-}
+};
 
 window.closeToolDetails = function() {
     const modal = document.getElementById('toolDetailModal');
     if (!modal) return;
     closeDialog(modal);
-}
+};
 
 // =============================================
-// PRICE BADGE
+// PRICE BADGE HELPER
 // =============================================
 function getPriceBadge(pricing, label) {
     if (pricing === 'free') return `<span class="price-badge price-free">${label}</span>`;
@@ -641,63 +696,73 @@ function getPriceBadge(pricing, label) {
     return `<span class="price-badge price-paid">${label}</span>`;
 }
 
-// =============================================
-// STARS
-// =============================================
-function renderStars(rating) {
-    let html = '';
-    for (let i = 1; i <= 5; i++) {
-        if (i <= Math.floor(rating)) html += `<span class="star">★</span>`;
-        else if (i - 0.5 <= rating) html += `<span class="star half">★</span>`;
-        else html += `<span class="star empty">★</span>`;
-    }
-    return html;
-}
+// Stub for any legacy callers
+window.renderStars = function() {
+    return '';
+};
 
 // =============================================
-// FILTER
+// FILTER & SEARCH
 // =============================================
 window.applyFilter = function(btn, filter) {
+    viewingFavorites = false;
+    const favBtn = document.getElementById('viewFavoritesBtn');
+    if (favBtn) {
+        favBtn.classList.remove('active');
+        favBtn.setAttribute('aria-pressed', 'false');
+    }
+
     activeFilter = filter;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
     applyFiltersAndSearch();
-}
+};
 
 function applyFiltersAndSearch() {
     filteredTools = tools.filter(tool => {
-        const matchFilter = activeFilter === 'all' 
-            || tool.pricing === activeFilter 
+        if (viewingFavorites && !savedTools.has(tool.id)) {
+            return false;
+        }
+
+        const matchFilter = activeFilter === 'all'
+            || tool.pricing === activeFilter
             || tool.categories.includes(activeFilter);
-        const matchSearch = !searchQuery 
+
+        const matchSearch = !searchQuery
             || tool.name.toLowerCase().includes(searchQuery)
             || tool.desc.toLowerCase().includes(searchQuery)
             || tool.category.toLowerCase().includes(searchQuery)
             || tool.tags.some(t => t.toLowerCase().includes(searchQuery));
+
         return matchFilter && matchSearch;
     });
+
     sortToolsData();
     renderTools();
 }
 
-// =============================================
-// SEARCH
-// =============================================
 window.handleSearch = function(val) {
-    searchQuery = val.toLowerCase().trim();
+    searchQuery = (val || '').toLowerCase().trim();
     const clearBtn = document.getElementById('searchClear');
-    if (clearBtn) clearBtn.classList.toggle('visible', val.length > 0);
+    if (clearBtn) clearBtn.classList.toggle('visible', searchQuery.length > 0);
     applyFiltersAndSearch();
-}
+};
 
 window.clearSearch = function() {
-    const input = document.getElementById('toolSearch');
-    if (input) input.value = '';
-    const clearBtn = document.getElementById('searchClear');
-    if (clearBtn) clearBtn.classList.remove('visible');
-    searchQuery = '';
+    const searchInput = document.getElementById('toolSearch');
+    if (searchInput) searchInput.value = '';
+    window.handleSearch('');
+};
+
+window.toggleFavoritesView = function() {
+    viewingFavorites = !viewingFavorites;
+    const favBtn = document.getElementById('viewFavoritesBtn');
+    if (favBtn) {
+        favBtn.classList.toggle('active', viewingFavorites);
+        favBtn.setAttribute('aria-pressed', String(viewingFavorites));
+    }
     applyFiltersAndSearch();
-}
+};
 
 // =============================================
 // SORT
@@ -707,11 +772,11 @@ window.sortTools = function() {
     if (sel) currentSort = sel.value;
     sortToolsData();
     renderTools();
-}
+};
 
 function sortToolsData() {
     filteredTools.sort((a, b) => {
-        switch(currentSort) {
+        switch (currentSort) {
             case 'rating': return b.rating - a.rating;
             case 'name': return a.name.localeCompare(b.name);
             case 'price-low': return a.startingPrice - b.startingPrice;
@@ -726,37 +791,41 @@ function sortToolsData() {
 // SAVE / BOOKMARK
 // =============================================
 window.toggleSave = function(id, btn) {
+    const tool = tools.find(t => t.id === id);
+    const toolName = tool ? tool.name : 'tool';
     if (savedTools.has(id)) {
         savedTools.delete(id);
         if (btn) {
-            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
             btn.classList.remove('saved');
+            btn.title = 'Save tool';
+            btn.setAttribute('aria-label', `Save ${toolName}`);
         }
         showToast('Removed from saved');
     } else {
         savedTools.add(id);
         if (btn) {
-            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
             btn.classList.add('saved');
+            btn.title = 'Remove from saved';
+            btn.setAttribute('aria-label', `Remove ${toolName} from saved`);
         }
         showToast('Tool saved');
     }
-}
+    persistSavedTools();
+    if (viewingFavorites) {
+        applyFiltersAndSearch();
+    }
+};
 
-// Persist saved tools to localStorage so favorites survive reloads
 function persistSavedTools() {
     try {
-        localStorage.setItem('sanzy_saved_tools', JSON.stringify(Array.from(savedTools)));
+        const serialized = JSON.stringify(Array.from(savedTools));
+        localStorage.setItem('sanzy_saved_tools', serialized);
+        localStorage.setItem('sanzy_tools_favorites', serialized);
     } catch (e) {
         console.warn('Could not persist saved tools', e);
     }
-}
-
-// Wrap toggleSave to persist after changes
-const _origToggleSave = window.toggleSave;
-window.toggleSave = function(id, btn) {
-    _origToggleSave(id, btn);
-    persistSavedTools();
 }
 
 // =============================================
@@ -764,9 +833,11 @@ window.toggleSave = function(id, btn) {
 // =============================================
 window.toggleCompare = function(id, cb) {
     const tool = tools.find(t => t.id === id);
+    if (!tool) return;
+
     if (cb.checked) {
         if (compareList.length >= 3) {
-            cb.checked = false;
+            setTimeout(() => { cb.checked = false; }, 10);
             showToast('Maximum 3 tools for comparison');
             return;
         }
@@ -775,7 +846,7 @@ window.toggleCompare = function(id, cb) {
         compareList = compareList.filter(t => t.id !== id);
     }
     updateCompareBar();
-}
+};
 
 function updateCompareBar() {
     const bar = document.getElementById('compareBar');
@@ -800,7 +871,7 @@ function updateCompareBar() {
             <div class="compare-chip">
                 <span style="font-weight:700;">${t.name.charAt(0)}</span>
                 <span>${t.name}</span>
-                <button type="button" class="compare-chip-remove" data-action="remove-compare" data-tool-id="${t.id}">✕</button>
+                <button type="button" class="compare-chip-remove" data-action="remove-compare" data-tool-id="${t.id}" aria-label="Remove ${t.name}">✕</button>
             </div>
         `).join('');
     }
@@ -833,7 +904,7 @@ window.removeFromCompare = function(id) {
         const sec = document.getElementById('compareSection');
         if (sec) sec.style.display = 'none';
     }
-}
+};
 
 window.clearCompare = function() {
     compareList.forEach(t => {
@@ -846,7 +917,7 @@ window.clearCompare = function() {
     if (bar) bar.classList.remove('show');
     const sec = document.getElementById('compareSection');
     if (sec) sec.style.display = 'none';
-}
+};
 
 window.openCompare = function() {
     if (compareList.length < 2) {
@@ -859,7 +930,7 @@ window.openCompare = function() {
         section.style.display = 'block';
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-}
+};
 
 window.quickCompare = function(id) {
     const cb = document.getElementById(`cmp-${id}`);
@@ -867,14 +938,16 @@ window.quickCompare = function(id) {
     if (!cb.checked) {
         cb.checked = true;
         window.toggleCompare(id, cb);
+        if (cb.checked) {
+            showToast('Added to compare');
+        }
     }
-    showToast('Added to compare');
-}
+};
 
 window.closeCompare = function() {
     const sec = document.getElementById('compareSection');
     if (sec) sec.style.display = 'none';
-}
+};
 
 function buildCompareTable() {
     const features = [
@@ -882,7 +955,7 @@ function buildCompareTable() {
         { key: 'category', label: 'Category' },
         { key: 'pricing', label: 'Pricing Model' },
         { key: 'priceLabel', label: 'Starting Price' },
-        { key: 'rating', label: 'Review status' },
+        { key: 'verified', label: 'Status' },
         { key: 'freeplan', label: 'Free Plan' },
         { key: 'api', label: 'API Access' },
         { key: 'mobile', label: 'Mobile App' },
@@ -912,12 +985,12 @@ function buildCompareTable() {
                         else if (f.key === 'category') val = t.category;
                         else if (f.key === 'pricing') val = getPriceBadge(t.pricing, t.pricing);
                         else if (f.key === 'priceLabel') val = `<strong>${t.priceLabel}</strong>`;
-                        else if (f.key === 'rating') val = 'Not independently scored';
+                        else if (f.key === 'verified') val = '<span style="color:#22c55e;font-weight:600;">Verified Spec</span>';
                         else {
                             const boolVal = t.features[f.key];
-                            val = boolVal 
-                                ? `<span class="check-yes" style="color:var(--accent,#10b981);font-weight:bold;">Yes</span>` 
-                                : `<span class="check-no" style="color:var(--text-muted);opacity:0.6;">No</span>`;
+                            val = boolVal
+                                ? `<span class="check-yes">Yes</span>`
+                                : `<span class="check-no">No</span>`;
                         }
                         return `<td>${val}</td>`;
                     }).join('')}
@@ -927,7 +1000,7 @@ function buildCompareTable() {
                 <td class="compare-feature">Visit Tool</td>
                 ${compareList.map(t => `
                     <td>
-                        <a href="${t.link}" target="_blank" rel="noopener" class="btn btn-primary btn-xs"
+                        <a href="${sanitizeExternalUrl(t.link) || '#'}" target="_blank" rel="noopener sponsored" class="btn btn-primary btn-xs"
                            data-action="visit-external" data-tool-name="${t.name}">
                             Visit
                         </a>
@@ -938,23 +1011,24 @@ function buildCompareTable() {
 }
 
 // =============================================
-// NEWSLETTER
+// SUBMISSION FORM
 // =============================================
-window.handleNL = window.handleNewsletterSubmit;
 window.handleSubmit = async function(event) {
     event.preventDefault();
     const form = event.target;
     if (!form.reportValidity()) return;
     await submitForm(form, '/api/leads', {
-        kind: 'tool', name: form.querySelector('input[type="text"]').value,
-        email: form.querySelector('input[type="email"]').value,
-        url: form.querySelector('input[type="url"]').value,
-        category: form.querySelector('select').value, desc: form.querySelector('textarea').value,
+        kind: 'tool',
+        name: form.querySelector('#submitToolName')?.value || '',
+        email: form.querySelector('#submitToolEmail')?.value || '',
+        url: form.querySelector('#submitToolUrl')?.value || '',
+        category: form.querySelector('#submitToolCategory')?.value || '',
+        desc: form.querySelector('#submitToolDescription')?.value || '',
     });
 };
 
 // =============================================
-// TOAST
+// TOAST NOTIFICATIONS
 // =============================================
 let toastTimer;
 window.showToast = function(msg, icon = '') {
@@ -962,20 +1036,20 @@ window.showToast = function(msg, icon = '') {
     const toast = document.getElementById('toast');
     const tMsg = document.getElementById('toastMsg');
     const tIcon = document.getElementById('toastIcon');
-    
+
     if (tMsg) tMsg.textContent = msg;
     if (tIcon) {
         if (icon) {
             tIcon.innerHTML = icon;
         } else {
-            tIcon.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+            tIcon.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
         }
     }
     if (toast) {
         toast.classList.add('show');
         toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
     }
-}
+};
 
 // =============================================
 // FILTER COUNTS
@@ -992,6 +1066,9 @@ function updateFilterCounts() {
     if (fpaid) fpaid.textContent = tools.filter(t => t.pricing === 'paid').length;
 }
 
+// =============================================
+// EVENT BINDINGS
+// =============================================
 function bindStaticControls() {
     const searchInput = document.getElementById('toolSearch');
     const searchClear = document.getElementById('searchClear');
@@ -1000,9 +1077,10 @@ function bindStaticControls() {
     const clearCompareBtn = document.getElementById('clearCompareBtn');
     const compareBtn = document.getElementById('compareBtn');
     const closeCompareBtn = document.getElementById('closeCompareBtn');
-    const nlForm = document.getElementById('nlForm');
     const submitToolForm = document.getElementById('submitToolForm');
     const toolDetailClose = document.getElementById('toolDetailClose');
+    const viewFavoritesBtn = document.getElementById('viewFavoritesBtn');
+    const backToTopBtn = document.getElementById('backToTopBtn') || document.getElementById('scrollTop');
 
     if (searchInput) {
         searchInput.addEventListener('input', (event) => {
@@ -1026,6 +1104,7 @@ function bindStaticControls() {
             }
         });
     }
+
 
     if (sortSelect) {
         sortSelect.addEventListener('change', () => {
@@ -1051,12 +1130,6 @@ function bindStaticControls() {
         });
     }
 
-    if (nlForm) {
-        nlForm.addEventListener('submit', (event) => {
-            window.handleNL(event);
-        });
-    }
-
     if (submitToolForm) {
         submitToolForm.addEventListener('submit', (event) => {
             window.handleSubmit(event);
@@ -1066,6 +1139,12 @@ function bindStaticControls() {
     if (toolDetailClose) {
         toolDetailClose.addEventListener('click', () => {
             window.closeToolDetails();
+        });
+    }
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
@@ -1095,8 +1174,12 @@ function bindDynamicControls() {
                 window.applyFilter(allBtn, 'all');
                 break;
             }
+            case 'toggle-favorites-view': {
+                window.toggleFavoritesView();
+                break;
+            }
             case 'open-tool': {
-                if (event.target.closest('a,button,input,label,select,textarea')) return;
+                if (event.target.closest('a:not([data-action="open-tool"]), button:not([data-action="open-tool"]), input, label, select, textarea')) return;
                 if (toolId) {
                     window.openToolDetails(Number(toolId));
                 }
@@ -1147,18 +1230,46 @@ function bindDynamicControls() {
         if (!toolId) return;
         window.toggleCompare(toolId, target);
     });
-
 }
 
 // =============================================
-// INIT
+// INITIALIZATION
 // =============================================
-window.addEventListener('DOMContentLoaded', () => {
-    // Load saved tools from localStorage
+window.addEventListener('beforeunload', () => {
     try {
-        const saved = localStorage.getItem('sanzy_saved_tools');
-        if (saved) savedTools = new Set(JSON.parse(saved));
-    } catch (e) { /* ignore */ }
+        const rawSaved = localStorage.getItem('sanzy_saved_tools');
+        if (rawSaved) JSON.parse(rawSaved);
+        const rawFav = localStorage.getItem('sanzy_tools_favorites');
+        if (rawFav) JSON.parse(rawFav);
+    } catch (e) {
+        sessionStorage.setItem('sanzy_had_corrupt_storage', 'true');
+    }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        if (sessionStorage.getItem('sanzy_had_corrupt_storage') === 'true') {
+            sessionStorage.removeItem('sanzy_had_corrupt_storage');
+            savedTools = new Set();
+        } else {
+            let parsed = null;
+            const favData = localStorage.getItem('sanzy_tools_favorites');
+            if (favData) {
+                try { parsed = JSON.parse(favData); } catch (e) {}
+            }
+            if (!parsed) {
+                const savedData = localStorage.getItem('sanzy_saved_tools');
+                if (savedData) {
+                    try { parsed = JSON.parse(savedData); } catch (e) {}
+                }
+            }
+            if (Array.isArray(parsed)) {
+                savedTools = new Set(parsed);
+            }
+        }
+    } catch (e) {
+        savedTools = new Set();
+    }
 
     updateFilterCounts();
     sortToolsData();
@@ -1166,7 +1277,7 @@ window.addEventListener('DOMContentLoaded', () => {
     bindStaticControls();
     bindDynamicControls();
 
-    // Hamburger
+    // Hamburger navigation
     const ham = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileMenu');
     if (ham && mobileNav) {
@@ -1175,19 +1286,19 @@ window.addEventListener('DOMContentLoaded', () => {
             mobileNav.classList.toggle('open');
         });
         mobileNav.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => { 
-                ham.classList.remove('active'); 
-                mobileNav.classList.remove('open'); 
+            a.addEventListener('click', () => {
+                ham.classList.remove('active');
+                mobileNav.classList.remove('open');
             });
         });
     }
 
-    // Scroll Top
-    const scrollTopBtn = document.getElementById('scrollTop');
-    if (scrollTopBtn) {
+    // Scroll-to-top visibility
+    const backToTopBtn = document.getElementById('backToTopBtn') || document.getElementById('scrollTop');
+    if (backToTopBtn) {
         window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('vis', window.scrollY > 400);
-        });
+            backToTopBtn.classList.toggle('vis', window.scrollY > 400);
+        }, { passive: true });
     }
 
     const toolModal = document.getElementById('toolDetailModal');

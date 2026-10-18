@@ -1,18 +1,35 @@
 :root {
-    --news-bg: #0d0d0c;
-    --news-surface: #141412;
-    --news-surface-2: #1a1a17;
-    --news-text: #f2f0e9;
-    --news-muted: #a9a69c;
-    --news-faint: #8b887f;
-    --news-line: #30302b;
-    --news-line-soft: #23231f;
-    --news-accent: #8db2ff;
-    --news-accent-strong: #b8ccff;
-    --news-focus: rgba(141, 178, 255, 0.28);
-    --news-good: #a7c7a1;
-    --news-warn: #d8bb7a;
-    --news-bad: #d39a93;
+    --news-bg: #0B0F19;
+    --news-surface: #111827;
+    --news-surface-2: #1F2937;
+    --news-text: #F8FAFC;
+    --news-muted: #CBD5E1;
+    --news-faint: #94A3B8;
+    --news-line: rgba(255, 255, 255, 0.08);
+    --news-line-soft: rgba(255, 255, 255, 0.04);
+    --news-accent: #6366F1;
+    --news-accent-strong: #818CF8;
+    --news-focus: rgba(99, 102, 241, 0.28);
+    --news-good: #10B981;
+    --news-warn: #F59E0B;
+    --news-bad: #EF4444;
+}
+
+html.light-mode {
+    --news-bg: #F8FAFC;
+    --news-surface: #FFFFFF;
+    --news-surface-2: #F1F5F9;
+    --news-text: #0F172A;
+    --news-muted: #334155;
+    --news-faint: #475569;
+    --news-line: #E2E8F0;
+    --news-line-soft: #EDF2F7;
+    --news-accent: #2563EB;
+    --news-accent-strong: #3B82F6;
+    --news-focus: rgba(37, 99, 235, 0.25);
+    --news-good: #059669;
+    --news-warn: #D97706;
+    --news-bad: #DC2626;
 }
 
 * {
@@ -33,6 +50,19 @@ body {
     line-height: 1.6;
 }
 
+.news-page .footer-compact {
+    background: var(--news-bg);
+    border-color: var(--news-line);
+}
+
+.news-page .footer-compact-links a {
+    color: var(--news-muted);
+}
+
+.news-page .footer-compact-links a:hover {
+    color: var(--news-text);
+}
+
 .news-masthead .container,
 .lead-news .container,
 .news-controls .container,
@@ -41,9 +71,36 @@ body {
     margin-inline: auto;
 }
 
+.news-hero,
 .news-masthead {
-    padding: 124px 0 30px;
+    padding: 40px 0 24px;
+    text-align: center;
     border-bottom: 1px solid var(--news-line);
+}
+
+.news-hero h1,
+.masthead-copy h1 {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .news-hero h1,
+    .masthead-copy h1 {
+        white-space: normal;
+    }
+}
+
+.news-hero .hero-desc {
+    color: var(--news-muted);
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin: 0 auto 20px;
 }
 
 .masthead-kicker,
@@ -71,16 +128,6 @@ body {
     gap: 56px;
     align-items: end;
     margin-top: 22px;
-}
-
-.masthead-copy h1 {
-    max-width: 900px;
-    margin: 0;
-    font-family: 'Source Serif 4', serif;
-    font-size: clamp(2.8rem, 6vw, 5.35rem);
-    font-weight: 600;
-    letter-spacing: -0.055em;
-    line-height: 0.98;
 }
 
 .masthead-copy h1 span {
@@ -111,7 +158,7 @@ body {
 .masthead-note strong {
     display: block;
     margin: 8px 0 7px;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-size: 1.12rem;
     font-weight: 600;
     line-height: 1.35;
@@ -190,7 +237,7 @@ body {
 .lead-story h2 {
     max-width: 820px;
     margin: 10px 0 14px;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-size: clamp(2rem, 4.4vw, 3.7rem);
     font-weight: 600;
     letter-spacing: -0.045em;
@@ -461,7 +508,7 @@ body {
 }
 
 .news-main {
-    padding: 38px 0 80px;
+    padding: 32px 0 36px;
 }
 
 .news-layout {
@@ -483,7 +530,7 @@ body {
 .section-head h2,
 .side-heading h3 {
     margin: 4px 0 0;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-weight: 600;
     letter-spacing: -0.025em;
 }
@@ -557,7 +604,7 @@ body {
 .news-card h3 {
     max-width: 900px;
     margin: 0;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-size: clamp(1.12rem, 2vw, 1.45rem);
     font-weight: 600;
     letter-spacing: -0.025em;
@@ -782,7 +829,7 @@ body {
     max-width: 650px;
     margin: 0;
     padding-right: 30px;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-size: clamp(1.6rem, 4vw, 2.45rem);
     font-weight: 600;
     letter-spacing: -0.04em;
@@ -813,7 +860,7 @@ body {
 
 .modal-block h3 {
     margin: 0 0 8px;
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -889,6 +936,15 @@ html.light-mode body {
     color: var(--news-text);
 }
 
+html.light-mode body.news-page {
+    background: var(--news-bg) !important;
+    color: var(--news-text) !important;
+}
+
+html.light-mode body.news-page p {
+    color: var(--news-muted) !important;
+}
+
 html.light-mode body .news-controls {
     background: var(--news-bg);
 }
@@ -927,6 +983,14 @@ html.light-mode body .news-controls {
 }
 
 @media (max-width: 760px) {
+    .news-page .chat-launcher,
+    .news-page .sanzy-btn-wrap {
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        inset-inline-end: 12px;
+        inset-block-end: max(12px, env(safe-area-inset-bottom));
+    }
+
     .news-masthead .container,
     .lead-news .container,
     .news-controls .container,
@@ -935,7 +999,7 @@ html.light-mode body .news-controls {
     }
 
     .news-masthead {
-        padding: 100px 0 24px;
+        padding: 32px 0 20px;
     }
 
     .masthead-copy h1 {
@@ -961,6 +1025,11 @@ html.light-mode body .news-controls {
 
     .hstat:nth-child(-n + 2) {
         border-bottom: 1px solid var(--news-line);
+    }
+
+    .news-hero,
+    .news-masthead {
+        padding: 32px 0 20px;
     }
 
     .lead-news {

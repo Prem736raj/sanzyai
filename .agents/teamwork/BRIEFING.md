@@ -29,8 +29,8 @@ Supervise the modern SaaS redesign and aesthetic de-slop of Learn Free, Tools Di
 - **Phase**: in progress
 - **Active Subagent**: teamwork_preview_orchestrator (1a4b2012-a7ae-4b11-adaa-48708eba8bda)
 - **Monitoring Tasks**:
-  - Cron 1 (Progress Reporting */8): task-14
-  - Cron 2 (Liveness Check */10): task-16
+  - Cron 1 (Progress Reporting */8): task-175
+  - Cron 2 (Liveness Check */10): task-177
 
 ## Victory Audit Status
 - **Triggered**: no

@@ -32,9 +32,11 @@
         }
         </script>
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./src/prompt-store.css">
 
@@ -61,7 +63,6 @@
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
                 <li><a href="/prompt-store" class="active">Prompt Store</a></li>
-                <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog">AI News</a></li>
             </ul>
@@ -86,7 +87,6 @@
         <li><a href="/domain-finder">Domain Finder</a></li>
         <li><a href="/ai-tools">AI Tools</a></li>
         <li><a href="/prompt-store">Prompt Store</a></li>
-        <li><a href="/ai-services">AI Services</a></li>
         <li><a href="/learn-free">Learn Free</a></li>
         <li><a href="/blog">AI News</a></li>
     </ul>
@@ -106,9 +106,8 @@
 <main id="main-content" tabindex="-1">
 <section class="hero">
     <div class="container">
-        <div class="hero-label">AI Prompt Marketplace 2026</div>
-        <h1>Explore AI <span class="gradient-text">Prompt Samples</span></h1>
-        <p>Editable samples for ChatGPT, Midjourney, Claude and Gemini. Paid checkout is paused while the delivery files undergo quality review.</p>
+        <h1>AI Prompt Library &amp; Samples</h1>
+        <p>Tested templates and editable sample workflows for developers, marketers, and creators</p>
 
         <!-- Stats -->
         <div class="stats-bar">
@@ -145,17 +144,22 @@
 <!-- ============================================
      MAIN PRODUCTS
 ============================================ -->
-<section class="main-section" id="free"><div class="container"><h2>10 free starter prompts</h2><p>No signup required. Download the starter pack and try a workflow.</p><button type="button" class="btn btn-primary" data-action="download-free-pack">Download free starter pack</button></div>
+<section class="main-section" id="free">
     <div class="container">
+        <div class="free-starter-banner">
+            <div class="free-starter-text">
+                <h2>10 free starter prompts</h2>
+                <p>No signup required. Download the starter pack and try a workflow.</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-action="download-free-pack">Download free starter pack</button>
+        </div>
+
         <div class="sample-filters">
             <label class="filter-field"><span>Search samples</span><input class="filter-search" id="searchInput" type="search" placeholder="Search by topic or workflow"></label>
             <label class="filter-field"><span>AI platform</span><select class="filter-search" id="platformSel"><option value="all">All platforms</option><option value="chatgpt">ChatGPT</option><option value="claude">Claude</option><option value="midjourney">Midjourney</option></select></label>
         </div>
         <div class="sec-head">
-            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-                <div class="sec-badge">Draft Previews</div>
-                <h2 class="sec-title">Explore <span class="gradient-text">Prompt Samples</span></h2>
-            </div>
+            <h2 class="sec-title">Explore Prompt Samples</h2>
             <span class="sec-count" id="packCount">Showing 7 packs</span>
         </div>
 
@@ -225,9 +229,11 @@
         <ul class="footer-compact-links">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/submit-tool">Submit Tool</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
             <li><a href="/terms-of-service">Terms</a></li>
             <li><a href="/refund-policy">Refunds</a></li>
+            <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
         </ul>
         <p class="footer-compact-copy">© 2026 SanzyAI</p>
     </div>
@@ -249,7 +255,7 @@
     <div class="email-modal" style="position:relative;">
         <button type="button" class="email-modal-close" id="emailModalCloseBtn" aria-label="Close">×</button>
         <span class="email-modal-icon"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        <h2 class="email-modal-title">Get Your <span class="gradient-text">FREE Pack!</span></h2>
+        <h2 class="email-modal-title">Get Your Free Starter Pack</h2>
         <p class="email-modal-sub">Enter your email to instantly download the <strong>10 Starter ChatGPT Prompts</strong> — completely free, no credit card needed.</p>
         <form id="freeDownloadForm">
             <input type="email" class="email-modal-input" placeholder="Enter your email address..." required id="freePackEmail">
@@ -281,6 +287,5 @@
 
 <script type="module" src="./src/globals.js"></script>
 <script type="module" src="./src/prompt-store.js"></script>
-<script type="module" src="./src/chat-loader.js"></script>
 </body>
 </html>

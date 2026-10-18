@@ -607,12 +607,18 @@ async function buildAiNewsPayload() {
 
 async function handleAiNews(req, res) {
   const now = Date.now();
+  const monthStart = getCurrentMonthWindow().start.toISOString();
+  const cacheKey = `${AI_NEWS_CACHE_KEY}:${monthStart.slice(0, 7)}`;
+  if (aiNewsCache.payload?.period?.start !== monthStart) {
+    aiNewsCache.payload = null;
+    aiNewsCache.expiresAt = 0;
+  }
   if (aiNewsCache.payload && aiNewsCache.expiresAt > now) {
     sendJson(req, res, 200, { ...aiNewsCache.payload, cached: true });
     return;
   }
 
-  const sharedCached = await sharedStore.getCache(AI_NEWS_CACHE_KEY);
+  const sharedCached = await sharedStore.getCache(cacheKey);
   if (sharedCached) {
     // Keep a local stale copy for upstream failure recovery without extending
     // the shared cache's TTL on this replica.
@@ -632,7 +638,7 @@ async function handleAiNews(req, res) {
     const payload = await aiNewsRefresh;
     aiNewsCache.payload = payload;
     aiNewsCache.expiresAt = Date.now() + AI_NEWS_CACHE_TTL_MS;
-    await sharedStore.setCache(AI_NEWS_CACHE_KEY, payload, AI_NEWS_CACHE_TTL_MS);
+    await sharedStore.setCache(cacheKey, payload, AI_NEWS_CACHE_TTL_MS);
 
     sendJson(req, res, 200, { ...payload, cached: false });
   } catch (e) {

@@ -22,6 +22,12 @@ export function sanitizeText(val = '') {
            .replace(/&quot;/g, '"')
            .replace(/&#39;/g, "'")
            .replace(/&nbsp;/g, ' ')
+           .replace(/&hellip;/g, '…')
+           .replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, value) => {
+             const code = value[0].toLowerCase() === 'x' ? parseInt(value.slice(1), 16) : Number(value);
+             return code > 0 && code <= 0x10ffff && !(code >= 0xd800 && code <= 0xdfff)
+               ? String.fromCodePoint(code) : entity;
+           })
            .replace(/\s+/g, ' ')
            .trim();
   return str;

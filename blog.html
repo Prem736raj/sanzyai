@@ -33,14 +33,16 @@
     }
     </script>
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./src/globals.css">
     <link rel="stylesheet" href="./src/blog.css">
 </head>
-<body>
+<body class="news-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <nav aria-label="Primary" class="navbar" id="navbar">
@@ -58,7 +60,6 @@
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
                 <li><a href="/prompt-store">Prompt Store</a></li>
-                <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog" class="active">AI News</a></li>
             </ul>
@@ -83,7 +84,6 @@
         <li><a href="/domain-finder">Domain Finder</a></li>
         <li><a href="/ai-tools">AI Tools</a></li>
         <li><a href="/prompt-store">Prompt Store</a></li>
-        <li><a href="/ai-services">AI Services</a></li>
         <li><a href="/learn-free">Learn Free</a></li>
         <li><a href="/blog">AI News</a></li>
     </ul>
@@ -95,26 +95,18 @@
 
 
 <main id="main-content" tabindex="-1">
-<section class="news-masthead">
+<section class="page-hero news-hero">
     <div class="container">
-        <div class="masthead-kicker"><span class="live-mark" aria-hidden="true"></span>AI NEWS · <span id="monthLabel">THIS MONTH</span></div>
-        <div class="masthead-grid">
-            <div class="masthead-copy">
-                <h1>What changed in AI <span id="monthTitle">this month</span>.</h1>
-                <p>A clean month-to-date briefing of launches, research, policy, funding and product moves. Fresh stories first, direct source links, no filler.</p>
-            </div>
-            <div class="masthead-note">
-                <span>MONTH-TO-DATE COVERAGE</span>
-                <strong id="coveragePeriod">Loading October 2026</strong>
-                <small>Updated continuously from official and independent sources.</small>
-            </div>
-        </div>
+        <div class="masthead-kicker"><span class="live-mark" aria-hidden="true"></span>AI NEWS &middot; <span id="monthLabel">THIS MONTH</span></div>
+        <h1>Latest AI News &amp; Model Updates</h1>
+        <span id="monthTitle" hidden></span>
+        <p class="hero-desc">Curated month-to-date briefing of model releases, developer tooling, research, and product moves</p>
 
         <div class="hero-stats" aria-label="Newsroom coverage summary">
             <div class="hstat"><strong id="statStories">—</strong><span>Stories this month</span></div>
             <div class="hstat"><strong id="statCritical">—</strong><span>Official updates</span></div>
             <div class="hstat"><strong id="statFunding">—</strong><span>Sources tracked</span></div>
-            <div class="hstat"><strong>8</strong><span>Coverage lanes</span></div>
+            <div class="hstat"><strong id="coveragePeriod">—</strong><span>Coverage period</span></div>
         </div>
     </div>
 </section>
@@ -177,12 +169,12 @@
                 </div>
                 <div class="side-card">
                     <div class="side-heading"><span class="section-label">Saved</span><h3>Your reading list</h3></div>
-                    <p class="side-sub">Save anything you want to revisit later.</p>
-                    <div id="watchlistBox" class="watchlist-box">No saved stories yet.</div>
+                    <p class="side-sub">Save anything you want to revisit later</p>
+                    <div id="watchlistBox" class="watchlist-box">No saved stories yet</div>
                 </div>
                 <div class="coverage-card">
                     <span class="section-label">Coverage standard</span>
-                    <p>Stories are limited to the current calendar month, deduplicated, and linked back to their original publisher or feed source.</p>
+                    <p>Stories are limited to the current calendar month, deduplicated, and linked back to their original publisher or feed source</p>
                 </div>
             </aside>
         </div>
@@ -205,9 +197,11 @@
         <ul class="footer-compact-links">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/submit-tool">Submit Tool</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
             <li><a href="/terms-of-service">Terms</a></li>
             <li><a href="/refund-policy">Refunds</a></li>
+            <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
         </ul>
         <p class="footer-compact-copy">© 2026 SanzyAI</p>
     </div>
@@ -217,6 +211,5 @@
 
 <script type="module" src="./src/globals.js"></script>
 <script type="module" src="./src/blog.js"></script>
-<script type="module" src="./src/chat-loader.js"></script>
 </body>
 </html>

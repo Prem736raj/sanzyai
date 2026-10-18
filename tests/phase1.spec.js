@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-const criticalPages = ['/', '/domain-finder', '/ai-tools', '/prompt-store', '/ai-services', '/learn-free', '/blog'];
-const portfolioPages = ['ecommerce', 'fintech', 'fitness', 'linkedin', 'restaurant', 'saas-content', 'tiktok', 'video-scripts'];
-const supportingPages = ['motivation', '404', 'submit-tool', 'affiliate-disclosure', 'playground', 'refund-policy',
-  'portfolio', 'terms-of-service', 'about', 'contact', 'affiliate', 'privacy-policy', 'wellness-app-showcase',
+const criticalPages = ['/', '/domain-finder', '/ai-tools', '/prompt-store', '/learn-free', '/blog', '/contact'];
+const supportingPages = ['404', 'submit-tool', 'affiliate-disclosure', 'refund-policy',
+  'terms-of-service', 'about', 'privacy-policy',
   'blog/best-chatgpt-prompts-business', 'blog/how-to-write-ai-prompts', 'blog/midjourney-product-photography'];
 
 test.beforeEach(async ({ page }) => {
@@ -20,23 +19,10 @@ for (const path of supportingPages) {
     const response = await page.goto(`/${path}.html`, { waitUntil: 'domcontentloaded' });
     expect(response.ok()).toBeTruthy();
     await expect(page.locator('h1').first()).toBeVisible();
-    if (path !== 'motivation') await expect(page.locator('#siteControls')).toBeAttached();
     if (path === '404') {
-      // Cover the former 3.5-second auto-open race against deferred chat startup.
-      await page.waitForTimeout(5000);
-      await expect(page.locator('#sanzyFloatBtn')).toBeAttached();
-      await expect(page.locator('#sanzyWindow')).not.toHaveClass(/open/);
-      await page.locator('#cookieDeclineBtn').click();
-      await page.locator('#sanzyFloatBtn').click();
-      await expect(page.locator('#sanzyWindow')).toHaveClass(/open/);
-      await page.locator('#sanzyQuickReplies').getByRole('button', { name: 'Prompt Samples' }).click();
-      await expect(page.locator('#sanzyMessages')).toContainText('Paid prompt packs are paused');
-      await expect(page.locator('#sanzyMessages a[href="/prompt-store"]')).toBeVisible();
-      await expect(page.locator('#sanzyMessages')).not.toBeEmpty();
-      await page.keyboard.press('Escape');
-      await expect(page.locator('#sanzyWindow')).not.toHaveClass(/open/);
-      await page.locator('#sanzyFloatBtn').click();
-      await expect(page.locator('#sanzyWindow')).toHaveClass(/open/);
+      await expect(page.locator('h1')).toContainText('Page Not Found');
+      await expect(page.locator('.error-code')).toContainText('404');
+      await expect(page.locator('a[href="/"]').first()).toBeVisible();
     }
     expect(errors).toEqual([]);
   });
@@ -48,7 +34,6 @@ for (const path of criticalPages) {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(path, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('h1').first()).toBeVisible();
-    await expect(page.locator('#siteControls')).toBeAttached();
     if (isMobile) {
       const toggle = page.getByRole('button', { name: 'Toggle menu', exact: true });
       await expect(toggle).toBeVisible();
@@ -65,22 +50,6 @@ for (const path of criticalPages) {
   });
 }
 
-for (const slug of portfolioPages) {
-  test(`portfolio cards and declarative controls: ${slug}`, async ({ page }) => {
-    const errors = [];
-    page.on('pageerror', error => errors.push(error.message));
-    await page.goto(`/${slug}-portfolio.html`, { waitUntil: 'domcontentloaded' });
-    await expect(page.locator('.concept-notice')).toBeVisible();
-    const card = page.locator('.glass-card[data-site-click="openModal"]').first();
-    await expect(card).toBeVisible();
-    await card.click();
-    await expect(page.locator('#modalOverlay')).toHaveClass(/active/);
-    await page.locator('.modal-close').click();
-    await expect(page.locator('#modalOverlay')).not.toHaveClass(/active/);
-    expect(errors).toEqual([]);
-  });
-}
-
 test('store excludes paused bundle and offers working previews and free download', async ({ page }) => {
   await page.goto('/prompt-store');
   await expect(page.locator('#promptGrid .prod-card')).toHaveCount(7);
@@ -93,24 +62,6 @@ test('store excludes paused bundle and offers working previews and free download
   const download = page.waitForEvent('download');
   await page.locator('[data-action="download-free-pack"]').first().click();
   expect((await download).suggestedFilename()).toMatch(/\.pdf$/);
-});
-
-test('failed quote keeps details and does not show success; accepted quote clears details', async ({ page }) => {
-  await page.route('**/api/leads', route => route.fulfill({ status: 503, json: { error: 'Requests are temporarily unavailable.' } }));
-  await page.goto('/ai-services');
-  await page.locator('#fname').fill('Test Customer');
-  await page.locator('#femail').fill('test@example.com');
-  await page.locator('#fservice').selectOption({ index: 1 });
-  await page.locator('#fbudget').selectOption({ index: 1 });
-  await page.locator('#fdesc').fill('A test project brief.');
-  await page.locator('#submitBtn').click();
-  await expect(page.locator('[data-submit-status]')).toContainText('temporarily unavailable');
-  await expect(page.locator('#fname')).toHaveValue('Test Customer');
-  await expect(page.locator('#successOverlay')).not.toHaveClass(/open/);
-  await page.route('**/api/leads', route => route.fulfill({ json: { ok: true, accepted: true } }));
-  await page.locator('#submitBtn').click();
-  await expect(page.locator('#successOverlay')).toHaveClass(/open/);
-  await expect(page.locator('#fname')).toHaveValue('');
 });
 
 test('newsletter failure preserves address and does not store it locally', async ({ page }) => {

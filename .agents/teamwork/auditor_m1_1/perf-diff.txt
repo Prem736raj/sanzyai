@@ -1,0 +1,21 @@
+﻿diff --git a/docs/phase2-performance.json b/docs/phase2-performance.json
+index a60b048..1cfaef7 100644
+--- a/docs/phase2-performance.json
++++ b/docs/phase2-performance.json
+@@ -64,13 +64,13 @@
+       ]
+     },
+     "blog": {
+-      "initialJsBytes": 47417,
+-      "initialJsGzipBytes": 15976,
++      "initialJsBytes": 47295,
++      "initialJsGzipBytes": 15964,
+       "budgetBytes": 55000,
+       "baselineJsBytes": 489347,
+       "reductionPercent": 90.3,
+       "files": [
+-        "assets/blog-CSWtMbVm.js",
++        "assets/blog-BdcMeG-V.js",
+         "assets/chat-loader-ChBO-r2E.js",
+         "assets/globals-6NzZaQdl.js",
+         "assets/globals-DSOth8nF.js",

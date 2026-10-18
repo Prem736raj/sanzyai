@@ -5,7 +5,7 @@ const pages = [
   { path: '/domain-finder', titlePart: 'Domain' },
   { path: '/ai-tools', titlePart: 'AI Tools' },
   { path: '/prompt-store', titlePart: 'Prompt' },
-  { path: '/ai-services', titlePart: 'AI Services' },
+  { path: '/contact', titlePart: 'Contact' },
   { path: '/learn-free', titlePart: 'Learn' },
   { path: '/blog', titlePart: 'AI Newsroom' },
 ];

@@ -248,10 +248,7 @@ body {
 ============================================ */
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 0 40px;
+    padding: 48px 0 32px;
     overflow: hidden;
     clip-path: inset(0);
 }
@@ -347,7 +344,7 @@ body {
     border: 1px solid rgba(108, 53, 222, 0.25);
     border-radius: 100px;
     padding: 8px 22px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     font-size: 0.85rem;
     font-family: var(--font-heading);
     font-weight: 500;
@@ -381,40 +378,27 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
     font-weight: 700;
-    line-height: 1.08;
-    margin-bottom: 24px;
-    letter-spacing: -1.5px;
-}
-
-.hero-title .line-1 {
-    display: block;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
     color: var(--text);
+    white-space: nowrap;
 }
 
-.hero-title .line-2 {
-    display: block;
-    background: linear-gradient(135deg, var(--primary-light), var(--secondary), var(--accent));
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 4s ease infinite;
-}
-
-@keyframes gradient-shift {
-    0% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-    100% { background-position: 0% center; }
+@media (max-width: 768px) {
+    .hero-title {
+        white-space: normal;
+    }
 }
 
 .hero-subtitle {
     font-size: clamp(0.98rem, 1.8vw, 1.15rem);
     color: var(--text-muted);
     max-width: 580px;
-    margin: 0 auto 40px;
-    line-height: 1.75;
+    margin: 0 auto 24px;
+    line-height: 1.7;
 }
 
 .hero-buttons {
@@ -423,7 +407,7 @@ body {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 48px;
+    margin-bottom: 0;
 }
 
 /* Hero Trust Row */
@@ -433,6 +417,7 @@ body {
     justify-content: center;
     gap: 28px;
     flex-wrap: wrap;
+    margin-top: 24px;
 }
 
 .hero-trust-item {
@@ -454,7 +439,7 @@ body {
    STATS BAR
 ============================================ */
 .stats-bar {
-    padding: 48px 0;
+    padding: 32px 0;
     position: relative;
 }
 
@@ -573,13 +558,15 @@ body {
    FEATURED PRODUCTS
 ============================================ */
 .featured-products {
-    padding: 100px 0 80px;
+    padding: 48px 0 40px;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
 }
 
 .section-title {
@@ -603,7 +590,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 
 .product-card {
@@ -753,8 +740,10 @@ body {
    FEATURES SECTION
 ============================================ */
 .features {
-    padding: 80px 0 60px;
+    padding: 48px 0 40px;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
 }
 
 .features::before {
@@ -956,7 +945,7 @@ body {
    HOW IT WORKS SECTION
 ============================================ */
 .how-it-works {
-    padding: 80px 0 60px;
+    padding: 48px 0 40px;
 }
 
 .steps-grid {
@@ -1030,7 +1019,7 @@ body {
    TESTIMONIALS
 ============================================ */
 .testimonials {
-    padding: 80px 0;
+    padding: 48px 0 40px;
     position: relative;
 }
 
@@ -1121,14 +1110,14 @@ body {
    CTA SECTION
 ============================================ */
 .cta-section {
-    padding: 20px 0 80px;
+    padding: 20px 0 48px;
 }
 
 .cta-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-xl);
-    padding: 80px 60px;
+    padding: 48px 36px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1158,13 +1147,20 @@ body {
     margin-bottom: 16px;
     line-height: 1.15;
     letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        white-space: normal;
+    }
 }
 
 .cta-subtitle {
     font-size: 1rem;
     color: var(--text-muted);
     max-width: 500px;
-    margin: 0 auto 40px;
+    margin: 0 auto 24px;
     line-height: 1.7;
 }
 
@@ -1182,7 +1178,7 @@ body {
 .footer {
     background: var(--surface);
     border-top: 1px solid var(--border);
-    padding: 60px 0 0;
+    padding: 44px 0 0;
 }
 
 .footer-grid {
@@ -1524,7 +1520,7 @@ body {
 /* ============================================
    PROMPT PLAYGROUND
 ============================================ */
-.playground-section { padding: 60px 0; }
+.playground-section { padding: 36px 0; }
 .playground-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -1795,7 +1791,7 @@ body.js-ready .fade-up.visible {
     }
 
     .hero {
-        padding: 90px 0 40px;
+        padding: 36px 0 24px;
         min-height: auto;
     }
 
@@ -1840,15 +1836,15 @@ body.js-ready .fade-up.visible {
     }
 
     .features {
-        padding: 60px 0 40px;
+        padding: 36px 0 24px;
     }
 
     .featured-products {
-        padding: 60px 0;
+        padding: 36px 0;
     }
 
     .how-it-works {
-        padding: 60px 0;
+        padding: 36px 0;
     }
 
     .steps-grid {
@@ -1857,11 +1853,11 @@ body.js-ready .fade-up.visible {
     }
 
     .testimonials {
-        padding: 60px 0;
+        padding: 36px 0;
     }
 
     .cta-card {
-        padding: 48px 24px;
+        padding: 32px 20px;
     }
 
     .cta-buttons {
@@ -1874,7 +1870,7 @@ body.js-ready .fade-up.visible {
     }
 
     .footer {
-        padding: 60px 0 0;
+        padding: 32px 0 0;
     }
 
     .footer-grid {
@@ -2155,7 +2151,7 @@ html.light-mode body .product-rating .rating-text {
 
 @media (max-width: 768px) {
     html.light-mode body .hero {
-        padding: 86px 0 36px;
+        padding: 36px 0 24px;
     }
 
     html.light-mode body .trust-bar {
@@ -2167,14 +2163,14 @@ html.light-mode body .product-rating .rating-text {
    LEGAL PAGES (Privacy, Terms, Refund)
 ============================================ */
 .legal-page {
-    padding-top: 100px;
-    padding-bottom: 60px;
-    min-height: 100vh;
+    padding-top: 32px;
+    padding-bottom: 48px;
+    min-height: 400px;
 }
 
 .legal-hero {
     text-align: center;
-    padding: 40px 0 50px;
+    padding: 16px 0 28px;
     position: relative;
 }
 
@@ -2184,6 +2180,13 @@ html.light-mode body .product-rating .rating-text {
     font-weight: 700;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .legal-hero h1 {
+        white-space: normal;
+    }
 }
 
 .legal-hero-sub {
@@ -2258,7 +2261,7 @@ html.light-mode body .product-rating .rating-text {
    ABOUT PAGE
 ============================================ */
 .about-section {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 
 .about-section h2 {
@@ -2343,7 +2346,7 @@ html.light-mode body .product-rating .rating-text {
 
 .about-cta {
     text-align: center;
-    padding: 48px 32px;
+    padding: 36px 24px;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -2354,7 +2357,7 @@ html.light-mode body .product-rating .rating-text {
 }
 
 .about-cta p {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 /* ============================================

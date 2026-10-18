@@ -9,22 +9,24 @@
     <meta name="description" content="Oops! The page you're looking for doesn't exist. Find domain prices, AI tools, or prompts on SanzyAI.">
     <meta name="robots" content="noindex,follow">
     
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/globals.css">
 
     <style>
         .error-section {
-            min-height: 100vh;
+            min-height: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 24px;
+            padding: 40px 24px 44px;
             position: relative;
             overflow: hidden;
         }
@@ -66,7 +68,6 @@
                 <li><a href="/domain-finder">Domain Finder</a></li>
                 <li><a href="/ai-tools">AI Tools</a></li>
                 <li><a href="/prompt-store">Prompt Store</a></li>
-                <li><a href="/ai-services">AI Services</a></li>
                 <li><a href="/learn-free">Learn Free</a></li>
                 <li><a href="/blog">AI News</a></li>
             </ul>
@@ -95,10 +96,10 @@
         </div>
         <div class="error-code">404</div>
         <h1 class="error-title">Page Not Found</h1>
-        <p class="error-desc">The page you are looking for does not exist or has been moved. Explore our core resources or return to the home page.</p>
+        <p class="error-desc">The page you are looking for does not exist or has been moved. Explore our core directory or return home</p>
         
-        <form class="error-search" action="index.html">
-            <input type="text" placeholder="Search SanzyAI...">
+        <form class="error-search" action="/">
+            <input type="text" placeholder="Search SanzyAI..." aria-label="Search SanzyAI">
             <button type="submit">Search</button>
         </form>
 
@@ -123,16 +124,17 @@
         <ul class="footer-compact-links">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/submit-tool">Submit Tool</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
             <li><a href="/terms-of-service">Terms</a></li>
             <li><a href="/refund-policy">Refunds</a></li>
+            <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
         </ul>
         <p class="footer-compact-copy">© 2026 SanzyAI</p>
     </div>
 </footer>
 
 <!-- SCRIPTS -->
-<script type="module" src="./src/chat-loader.js"></script>
 <script type="module" src="./src/globals.js"></script>
 <script type="module" src="./src/404.js"></script>
 </body>

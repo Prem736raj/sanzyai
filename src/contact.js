@@ -35,18 +35,7 @@ if (form) {
         setTimeout(() => {
             btn.textContent = originalText;
             btn.style.background = '';
-
         }, 3000);
     });
 }
 
-// Open Chat Assistant Button
-const openChatBtn = document.getElementById('openChatAssistantInfoBtn');
-if (openChatBtn) {
-    openChatBtn.addEventListener('click', () => {
-        const chatToggle = document.getElementById('sanzyFloatBtn');
-        if (chatToggle) {
-            chatToggle.click();
-        }
-    });
-}

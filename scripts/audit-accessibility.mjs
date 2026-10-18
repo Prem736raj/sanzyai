@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { writeFileSync } from 'node:fs';
 
-const paths = ['/', '/domain-finder', '/ai-tools', '/prompt-store', '/ai-services', '/learn-free', '/blog', '/contact'];
+const paths = ['/', '/domain-finder', '/ai-tools', '/prompt-store', '/learn-free', '/blog', '/contact'];
 const channel = process.env.PLAYWRIGHT_CHANNEL || undefined;
 const browser = await chromium.launch({ channel });
 const reports = [];

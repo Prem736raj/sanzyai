@@ -1,43 +1,70 @@
 /* Semantic values shared by every page. Legacy page variables alias these. */
 :root {
     color-scheme: dark;
-    --color-canvas: #090b14;
-    --color-surface: #121626;
-    --color-surface-raised: #1a2033;
-    --color-text: #f2f4ff;
-    --color-muted: #abb4cc;
-    --color-border: rgba(146, 158, 201, 0.24);
-    --color-border-subtle: rgba(146, 158, 201, 0.14);
-    --color-brand: #6c35de;
-    --color-brand-hover: #8b5cf6;
-    --color-brand-strong: #5025c4;
-    --color-secondary: #00d4ff;
-    --color-success: #22c55e;
-    --color-warning: #ffb800;
-    --color-danger: #ff6b6b;
-    --radius-control: 10px;
-    --radius-card: 18px;
-    --radius-panel: 24px;
+
+    /* Neutral Slate/Zinc Foundations */
+    --color-canvas: #0b0f19;         /* Slate-950 base */
+    --color-surface: #111827;        /* Slate-900 surface */
+    --color-surface-raised: #1f2937; /* Slate-800 raised card/panel */
+    --color-text: #f8fafc;           /* Slate-50 high-contrast text */
+    --color-muted: #94a3b8;          /* Slate-400 secondary text */
+
+    /* 1px Solid Neutral Borders */
+    --color-border: #334155;         /* Slate-700 solid border */
+    --color-border-subtle: #1e293b;  /* Slate-800 subtle divider */
+
+    /* Controlled Accent (Subdued Indigo/Sky) */
+    --color-brand: #4f46e5;          /* Indigo-600 */
+    --color-brand-hover: #6366f1;    /* Indigo-500 */
+    --color-brand-strong: #4338ca;   /* Indigo-700 */
+    --color-secondary: #38bdf8;      /* Sky-400 utility accent */
+
+    /* Status Tokens */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    /* Restrained Geometry (4px-8px max) */
+    --radius-control: 6px;
+    --radius-card: 8px;
+    --radius-panel: 8px;
+
+    /* Standard Spacing Scale */
     --space-1: 4px;
     --space-2: 8px;
     --space-3: 12px;
     --space-4: 16px;
     --space-6: 24px;
     --space-8: 32px;
-    --type-body: 'Inter', system-ui, sans-serif;
+
+    /* Typography */
+    --type-body: 'Inter', system-ui, -apple-system, sans-serif;
     --type-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-    --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.2);
-    --motion-ui: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Subtle Elevation (No Glow) */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+    --motion-ui: 160ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html.light-mode {
     color-scheme: light;
-    --color-canvas: #f6f7fc;
-    --color-surface: #ffffff;
-    --color-surface-raised: #edf0fa;
-    --color-text: #20283e;
-    --color-muted: #536079;
-    --color-border: rgba(70, 85, 130, 0.22);
-    --color-border-subtle: rgba(70, 85, 130, 0.12);
-    --shadow-card: 0 8px 28px rgba(38, 49, 87, 0.08);
+
+    /* Neutral Slate Light Foundations */
+    --color-canvas: #f8fafc;         /* Slate-50 light base */
+    --color-surface: #ffffff;        /* Pure white card surface */
+    --color-surface-raised: #f1f5f9; /* Slate-100 raised surface */
+    --color-text: #0f172a;           /* Slate-900 high-contrast body */
+    --color-muted: #475569;          /* Slate-600 muted text */
+
+    /* 1px Solid Neutral Borders */
+    --color-border: #e2e8f0;         /* Slate-200 border */
+    --color-border-subtle: #f1f5f9;  /* Slate-100 border */
+
+    /* Controlled Accent in Light Mode (contrast > 4.5:1 on white) */
+    --color-brand: #4338ca;          /* Indigo-700 */
+    --color-brand-hover: #3730a3;    /* Indigo-800 */
+    --color-brand-strong: #312e81;   /* Indigo-900 */
+    --color-secondary: #0284c7;      /* Sky-600 */
+
+    --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
 }
