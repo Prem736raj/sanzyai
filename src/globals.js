@@ -210,11 +210,6 @@ import { openDialog, closeDialog } from './dialog.js';
             description: 'Preview editable AI prompt samples and download the free starter pack. Paid checkout is paused during content-quality review.',
             type: 'product.group',
         },
-        '/ai-services': {
-            title: 'AI Services - Content, Brand, and Growth Ops | SanzyAI',
-            description: 'Done-for-you AI services for content, branding, automation, and growth with fast execution.',
-            type: 'website',
-        },
         '/learn-free': {
             title: 'Build Your Website From Zero to Launch | Learn Free Lab',
             description: 'Interactive website growth lab with practical roadmaps, checklists, calculators, and sprint planning.',
