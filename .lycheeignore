@@ -3,8 +3,10 @@
 # Mailto links
 ^mailto:
 
-# Root-relative paths (validated by npm run check:routes)
+# Root-relative paths and file URIs (internal routes strictly validated by npm run check:routes)
+^file:
 ^/
+^/[^/]
 
 # Live production domain (unregistered/NXDOMAIN in public DNS)
 ^https?://(www\.)?sanzyai\.com
@@ -19,3 +21,4 @@
 ^https?://(www\.)?twitter\.com
 ^https?://(www\.)?instagram\.com
 ^https?://(www\.)?linkedin\.com
+^https?://(www\.)?customers\.gumroad\.com
