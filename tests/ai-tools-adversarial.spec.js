@@ -112,7 +112,7 @@ test.describe('Milestone 3 Tools Directory Adversarial & Stress Suite', () => {
       await page.locator('.filter-btn[data-filter="writing"]').click();
     }
     const finalWritingCount = await page.locator('#featuredToolsGrid .tool-card, #toolsGrid .tool-card').count();
-    expect(finalWritingCount).toBe(4); // ChatGPT, Jasper, Copy.ai, Claude
+    expect(finalWritingCount).toBe(4); // ChatGPT, Jasper, Gemini, Claude
   });
 
   test('4. Sorting: All sort modes maintain valid ordering across catalog', async ({ page }) => {
