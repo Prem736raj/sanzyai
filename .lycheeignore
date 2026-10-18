@@ -3,9 +3,13 @@
 # Mailto links
 ^mailto:
 
+# Generated build artifacts and dependencies
+^dist/
+^node_modules/
+^artifacts/
+
 # External platforms with strict bot blocking / anti-scraping challenges in CI
 ^https?://(www\.)?x\.com
 ^https?://(www\.)?twitter\.com
 ^https?://(www\.)?instagram\.com
 ^https?://(www\.)?linkedin\.com
-

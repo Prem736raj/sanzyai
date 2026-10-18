@@ -140,3 +140,4 @@ Automated A11y (Axe-Core)       npm run test:a11y:ci            PASS         14/
 2. **Review:** Inspect diff against `main` using `git diff main...astra/sanzyai-production-hardening`.
 3. **Continuous Integration:** Pushing this branch triggers the updated `.github/workflows/quality-gates.yml`, verifying that the Lychee link checker step now runs cleanly.
 4. **Merge Authorization:** Await explicit user authorization before opening or merging the pull request into `main`.
+
