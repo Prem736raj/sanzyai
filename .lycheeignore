@@ -1,0 +1,11 @@
+# Lychee ignore list for SanzyAI
+
+# Mailto links
+^mailto:
+
+# External platforms with strict bot blocking / anti-scraping challenges in CI
+^https?://(www\.)?x\.com
+^https?://(www\.)?twitter\.com
+^https?://(www\.)?instagram\.com
+^https?://(www\.)?linkedin\.com
+
