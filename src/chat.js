@@ -169,11 +169,9 @@ import './chat.css';
             },
             services: {
                 keywords: ['service','services','hire','agency','content','logo','chatbot','automation','social media','ai service','freelance','build for me','help me','setup','create','make','design'],
-                response: `Explore the services page and request a quote with your goals, budget and timeline. Scope, price and delivery dates need confirmation by the team.
+                response: `For custom project inquiries, reach out through our contact page with your goals, budget, and timeline. Scope, pricing, and delivery dates are confirmed directly with our team.
 
-<a class="bot-link-btn" href="/ai-services">Explore services and request a quote →</a>
-
-The form confirms receipt only when the configured receiver accepts it. If unavailable, use the contact page.`
+<a class="bot-link-btn" href="/contact">Send a project inquiry →</a>`
             },
             learn: {
                 keywords: ['learn','course','tutorial','free course','website','build website','hosting','seo learn','how to','guide','beginner','start','domain learn','make money learn','certificate'],
@@ -194,7 +192,7 @@ The form confirms receipt only when the configured receiver accepts it. If unava
 Paid prompt checkout is paused during a content-quality review. Service quotes need confirmation for your scope.
 
 <a class="bot-link-btn" href="/prompt-store">View prompt samples →</a>
-<a class="bot-link-btn" href="/ai-services">Request a service quote →</a>`
+<a class="bot-link-btn" href="/contact">Send a project inquiry →</a>`
             },
             hello: {
                 keywords: ['hi','hello','hey','hiya','howdy','sup','what\'s up','good morning','good evening','greetings','yo'],
@@ -206,7 +204,7 @@ Here is what I can help with:
 • Find cheapest domain prices
 • Discover the best AI tools
 • Explore prompt samples
-• Explore our AI services
+• Get in touch for custom projects
 • Start learning for free
 
 What would you like to explore today?`

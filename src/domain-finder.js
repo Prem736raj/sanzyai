@@ -373,6 +373,9 @@ function getRegistrarSearchLink(registrar, domain) {
 // ============================================
 // SEARCH
 // ============================================
+let activeSearchId = 0;
+let activeSearchController = null;
+
 window.searchDomain = function() {
     const input = document.getElementById('domainInput');
     if (!input) return;
@@ -393,6 +396,19 @@ window.searchDomain = function() {
     currentDomain = domain;
     sessionStorage.setItem(domainSessionKey, domain);
 
+    activeSearchId += 1;
+    const searchId = activeSearchId;
+
+    if (activeSearchController) {
+        try {
+            activeSearchController.abort();
+        } catch {
+            // Ignore previous abortion
+        }
+    }
+    activeSearchController = new AbortController();
+    const currentSignal = activeSearchController.signal;
+
     // Show loading
     const btn = document.getElementById('searchBtn');
     const loadingBar = document.getElementById('loadingBar');
@@ -412,23 +428,35 @@ window.searchDomain = function() {
     showAvailStatus('checking', domain);
 
     // Check availability + show results in parallel
-    checkDomainAvailability(domain).then(status => {
-        if (btn) btn.classList.remove('loading');
-        if (loadingBar) loadingBar.classList.remove('active');
-        
-        showAvailStatus(status, domain);
-        showResults(domain, status);
-    });
+    checkDomainAvailability(domain, currentSignal)
+        .then(status => {
+            if (searchId !== activeSearchId) return;
+            if (btn) btn.classList.remove('loading');
+            if (loadingBar) loadingBar.classList.remove('active');
+            
+            showAvailStatus(status, domain);
+            showResults(domain, status);
+        })
+        .catch(error => {
+            if (searchId !== activeSearchId) return;
+            if (btn) btn.classList.remove('loading');
+            if (loadingBar) loadingBar.classList.remove('active');
+            
+            showAvailStatus('unknown', domain);
+            showResults(domain, 'unknown');
+        });
 }
 
 // ============================================
 // DOMAIN AVAILABILITY CHECK (via Custom API)
 // ============================================
-async function checkDomainAvailability(domain) {
+async function checkDomainAvailability(domain, signal) {
     try {
+        const timeoutSignal = AbortSignal.timeout(6000);
+        const combinedSignal = signal ? AbortSignal.any([signal, timeoutSignal]) : timeoutSignal;
         const response = await fetch(
             `https://domain-price-api.prem736raj.workers.dev/availability?domain=${encodeURIComponent(domain)}`,
-            { signal: AbortSignal.timeout(6000) }
+            { signal: combinedSignal }
         );
         
         if (!response.ok) return 'unknown';
@@ -436,8 +464,11 @@ async function checkDomainAvailability(domain) {
         const data = await response.json();
         
         // Custom API returns { domain, status: 'available'|'taken'|'unknown' }
-        return data.status || 'unknown';
+        return data?.status || 'unknown';
     } catch (error) {
+        if (signal?.aborted) {
+            throw error;
+        }
         console.warn('API check failed:', error);
         return 'unknown';
     }
