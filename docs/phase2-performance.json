@@ -45,13 +45,13 @@
       ]
     },
     "ai-tools": {
-      "initialJsBytes": 59091,
-      "initialJsGzipBytes": 18211,
+      "initialJsBytes": 59389,
+      "initialJsGzipBytes": 18312,
       "budgetBytes": 70000,
       "baselineJsBytes": 503320,
-      "reductionPercent": 88.3,
+      "reductionPercent": 88.2,
       "files": [
-        "assets/aiTools-B-K9bNSC.js",
+        "assets/aiTools-C0J4-d8N.js",
         "assets/globals-B1tFRZJF.js",
         "assets/grid-state-DD-gKzhJ.js"
       ]
